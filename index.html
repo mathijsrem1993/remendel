@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>reMendel — Economie en bedrijfseconomie</title>
+  <meta name="description" content="Oefenmateriaal en toetsanalyse voor economie en bedrijfseconomie op mavo, havo en vwo.">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="rm-page" id="page">
+
+    <!-- Menuknop -->
+    <button class="rm-menu-toggle" id="menuToggle" aria-label="Menu openen" aria-expanded="false" aria-controls="band">
+      <span class="bars" aria-hidden="true"><span></span><span></span><span></span></span>
+      <span class="label">Menu</span>
+    </button>
+
+    <!-- Zijmenu -->
+    <nav class="rm-band" id="band" aria-label="Hoofdmenu">
+      <a href="index.html" aria-current="page">Home <span class="pijl" aria-hidden="true">→</span></a>
+      <a href="toetsanalyse.html">Toetsanalyse <span class="pijl" aria-hidden="true">→</span></a>
+      <a href="oefenmateriaal.html">Oefenmateriaal <span class="pijl" aria-hidden="true">→</span></a>
+    </nav>
+    <div class="rm-scrim" id="scrim"></div>
+
+    <!-- Kop -->
+    <div class="rm-headband">
+      <header class="rm-header">
+        <span class="rm-logo">
+          <span class="naam">reMendel</span>
+          <span class="stip" aria-hidden="true"></span>
+        </span>
+      </header>
+      <p class="rm-subtitle">Economie en bedrijfseconomie<br>Mavo, havo en vwo</p>
+    </div>
+    <svg class="rm-wave" viewBox="0 0 1440 90" preserveAspectRatio="none" aria-hidden="true">
+      <path d="M0,0 L1440,0 L1440,34 C1170,86 870,86 600,52 C420,30 200,40 0,58 Z" fill="#DCE8F4"></path>
+      <path d="M1440,34 C1170,86 870,86 600,52 C420,30 200,40 0,58" fill="none" stroke="#C57B5C" stroke-width="2.4" stroke-opacity="0.6" vector-effect="non-scaling-stroke"></path>
+    </svg>
+
+    <!-- Tegels -->
+    <main class="rm-main">
+      <div class="rm-tiles">
+
+        <a class="rm-tile" href="toetsanalyse.html">
+          <div class="rm-tile-top">
+            <div class="rm-tile-body">
+              <h3>Toetsanalyse</h3>
+              <p>Voer je toetsscores in en krijg per fout gerichte feedback, plus oefenadvies om beter te worden.</p>
+            </div>
+            <img class="rm-tile-illu" src="assets/illu-toetsanalyse.png" alt="">
+          </div>
+          <div class="rm-tile-cta">
+            <span class="rm-cta">Toets analyseren <span class="rm-arrow" aria-hidden="true">→</span></span>
+          </div>
+        </a>
+
+        <a class="rm-tile" href="oefenmateriaal.html">
+          <div class="rm-tile-top">
+            <div class="rm-tile-body">
+              <h3>Oefenmateriaal</h3>
+              <p>Dit oefenmateriaal is heel anders dan het oefenmateriaal uit de boeken. Daardoor is het prikkelend en uitdagend.</p>
+            </div>
+            <img class="rm-tile-illu" src="assets/illu-oefenmateriaal.png" alt="">
+          </div>
+          <div class="rm-tile-cta">
+            <span class="rm-cta">Onderwerpen bekijken <span class="rm-arrow" aria-hidden="true">→</span></span>
+          </div>
+        </a>
+
+      </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="rm-footer">
+      <img src="assets/logo-mendel.png" alt="Mendel College">
+    </footer>
+
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
