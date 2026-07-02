@@ -1,0 +1,1037 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>reMendel · Toetsanalyse</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:wght@400;500;600&family=Hanken+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js" defer></script>
+<style>
+  :root {
+    --inkt: #1C3A5E;
+    --inkt-diep: #142C49;
+    --inkt-zacht: #4C6885;
+    --lucht: #DCE8F4;
+    --kaartvlak: #E6EEF5;
+    --lijn: #DCE6F1;
+    --lijn-sterk: #C9D8EC;
+    --terra: #C57B5C;
+    --terra-licht: #F4E7E0;
+    --wit: #ffffff;
+    --achtergrond: #ffffff;
+    --radius: 16px;
+    /* fouttype-kleuren: gedempt en passend bij de huisstijl */
+    --ft-reken: #C57B5C;
+    --ft-lees: #3E6FA0;
+    --ft-begrip: #4E927B;
+    --ft-redeneer: #6A6FA0;
+    --ft-overig: #8595A8;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; background: var(--achtergrond); color: var(--inkt);
+    font-family: 'Hanken Grotesk', system-ui, sans-serif; line-height: 1.55;
+    -webkit-font-smoothing: antialiased;
+  }
+  .wrap { max-width: 800px; margin: 0 auto; padding: 34px 20px 80px; }
+
+  /* MERK + KOP */
+  .merk { display: inline-flex; align-items: baseline; margin-bottom: 20px; }
+  .merk-naam { font-family: 'Newsreader', Georgia, serif; font-weight: 500; font-size: 30px;
+               letter-spacing: -.014em; color: var(--inkt); line-height: 1; }
+  .merk-stip { width: 7px; height: 7px; border-radius: 50%; background: var(--terra);
+               display: inline-block; margin-left: 5px; transform: translateY(-6px); }
+  header { margin-bottom: 28px; }
+  .eyebrow { font-size: 13px; font-weight: 600; letter-spacing: 0.07em; text-transform: uppercase;
+             color: var(--terra); margin: 0 0 8px; }
+  h1 { font-family: 'Hanken Grotesk', sans-serif; font-weight: 700; font-size: 29px;
+       line-height: 1.15; margin: 0 0 10px; letter-spacing: -0.015em; color: var(--inkt); }
+  .intro { color: var(--inkt-zacht); font-size: 15px; margin: 0; max-width: none; }
+
+  /* VRAAGKAART */
+  .vraag { background: var(--wit); border: 1px solid var(--lijn); border-radius: var(--radius);
+           padding: 16px 18px; margin-bottom: 12px; transition: border-color .15s, box-shadow .15s; }
+  .vraag.ingevuld { border-color: var(--lijn-sterk); box-shadow: 0 10px 26px -22px rgba(28,58,94,.4); }
+  .vraag-top { display: flex; align-items: baseline; gap: 12px; flex-wrap: wrap; }
+  .vraag-nr { font-weight: 700; font-size: 15px; color: var(--inkt); min-width: 26px; }
+  .vraag-onderwerp { font-weight: 600; font-size: 15px; flex: 1 1 auto; color: var(--inkt); }
+  .wds { font-size: 11px; font-weight: 600; letter-spacing: 0.04em; text-transform: uppercase;
+         padding: 3px 9px; border-radius: 999px; white-space: nowrap; }
+  .wds-W { background: #E4E7EC; color: var(--inkt); }
+  .wds-D { background: var(--terra-licht); color: var(--terra); }
+  .wds-S { background: #E4EFEB; color: var(--ft-begrip); }
+  .punt-rij { display: flex; align-items: center; gap: 10px; margin-top: 12px; }
+  .punt-rij label { font-size: 14px; color: var(--inkt-zacht); }
+  .punt-input { width: 58px; padding: 8px; font-size: 15px; font-family: inherit;
+                border: 1px solid var(--lijn-sterk); border-radius: 10px; text-align: center;
+                color: var(--inkt); background: #fff; -moz-appearance: textfield; appearance: textfield; }
+  .punt-input::-webkit-outer-spin-button, .punt-input::-webkit-inner-spin-button { -webkit-appearance: none; margin: 0; }
+  .punt-input:focus { outline: 2px solid var(--inkt); outline-offset: 1px; border-color: var(--inkt); }
+  .punt-max { font-size: 14px; color: var(--inkt-zacht); }
+  .goed-vlag { font-size: 13px; color: var(--ft-begrip); font-weight: 600; display: none;
+               align-items: center; gap: 5px; }
+  .fout-blok { margin-top: 14px; display: none; }
+  .fout-blok.zichtbaar { display: block; }
+  .fout-vraag { font-size: 13px; color: var(--inkt-zacht); margin: 0 0 8px; }
+  .fout-knoppen { display: flex; flex-wrap: wrap; gap: 8px; }
+  .fout-knop { font-family: inherit; font-size: 13px; font-weight: 500; padding: 8px 14px;
+               border: 1px solid var(--lijn-sterk); border-radius: 999px; background: #fff;
+               color: var(--inkt-zacht); cursor: pointer; transition: all .12s; }
+  .fout-knop:hover { border-color: var(--inkt); color: var(--inkt); }
+  .fout-knop.aan { background: var(--inkt); border-color: var(--inkt); color: #fff; }
+  .vraag.markeer { border-color: var(--terra); background: var(--terra-licht); }
+  .actie-melding { color: var(--terra); font-weight: 600; font-size: 14px; margin: 12px 0 0; }
+
+  /* ACTIE / KNOPPEN */
+  .actie { margin-top: 24px; display: flex; gap: 12px; flex-wrap: wrap; }
+  .knop-primair { font-family: inherit; font-size: 15px; font-weight: 600; padding: 13px 28px;
+                  border: none; border-radius: 999px; background: var(--inkt); color: #fff;
+                  cursor: pointer; transition: background .18s; }
+  .knop-primair:hover { background: var(--inkt-diep); }
+  .knop-secundair { font-family: inherit; font-size: 15px; font-weight: 600; padding: 12px 24px;
+                    border: 1.5px solid var(--lijn-sterk); border-radius: 999px; background: #fff;
+                    color: var(--inkt); cursor: pointer; transition: border-color .18s; }
+  .knop-secundair:hover { border-color: var(--inkt); }
+
+  /* REFLECTIE */
+  .reflectie { background: var(--kaartvlak); border: 1px solid var(--lijn); border-radius: var(--radius);
+               padding: 20px 22px; margin-top: 24px; }
+  .reflectie-label { display: block; font-size: 15px; font-weight: 600; color: var(--inkt);
+                     margin-bottom: 12px; line-height: 1.5; }
+  .reflectie-vak { width: 100%; min-height: 96px; padding: 12px 14px; font-size: 15px; font-family: inherit;
+                   line-height: 1.55; border: 1px solid var(--lijn-sterk); border-radius: 12px;
+                   color: var(--inkt); background: #fff; resize: vertical; }
+  .reflectie-vak:focus { outline: 2px solid var(--inkt); outline-offset: 1px; border-color: var(--inkt); }
+
+  /* RESULTAAT */
+  #resultaat { display: none; }
+  .terug { background: none; border: none; color: var(--inkt); cursor: pointer; font-family: inherit;
+           font-weight: 600; font-size: 14px; padding: 0; margin-bottom: 18px; }
+  .terug:hover { color: var(--inkt-diep); }
+  .score-kaart { background: var(--inkt); color: #fff; border-radius: 20px; padding: 24px 26px;
+                 margin-bottom: 22px; display: flex; gap: 26px; align-items: center; flex-wrap: wrap; }
+  .score-cijfer { font-weight: 700; font-size: 44px; line-height: 1; }
+  .score-detail { font-size: 14px; color: #C6D6E6; }
+  .score-detail strong { font-weight: 600; color: #fff; }
+
+  h2 { font-family: 'Hanken Grotesk', sans-serif; font-weight: 700; font-size: 20px;
+       margin: 32px 0 6px; letter-spacing: -0.01em; color: var(--inkt); }
+  .sectie-uitleg { color: var(--inkt-zacht); font-size: 14px; margin: 0 0 18px; }
+
+  /* STAVEN */
+  .staven { display: flex; flex-direction: column; gap: 16px; }
+  .staaf-kaart { background: var(--wit); border: 1px solid var(--lijn); border-radius: var(--radius); padding: 16px 18px; }
+  .staaf-rij { display: grid; grid-template-columns: 1fr 70px; align-items: center; gap: 12px; margin-bottom: 4px; }
+  .staaf-naam { font-weight: 600; font-size: 15px; color: var(--inkt); }
+  .staaf-pct { font-size: 13px; color: var(--inkt-zacht); text-align: right; font-variant-numeric: tabular-nums; }
+  .staaf-spoor { background: #EAF1F8; height: 10px; border-radius: 999px; overflow: hidden; margin: 8px 0 14px; }
+  .staaf-vul { display: block; height: 100%; border-radius: 999px; min-width: 3px; }
+  .staaf-tip { font-size: 14px; color: var(--inkt); margin: 0; }
+
+  /* PER-VRAAG TIPS */
+  .tip-vraag { background: var(--wit); border: 1px solid var(--lijn); border-radius: var(--radius); padding: 16px 18px; margin-bottom: 12px; }
+  .tip-kop { font-weight: 600; font-size: 15px; margin-bottom: 9px; color: var(--inkt); }
+  .tip-kop .nr { color: var(--inkt); }
+  .type-badges { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 10px; }
+  .type-badge { font-size: 12px; font-weight: 600; padding: 3px 11px; border-radius: 999px; }
+  .type-reken { background: #F6EBE7; color: var(--ft-reken); }
+  .type-lees { background: #E2E9F1; color: var(--ft-lees); }
+  .type-begrip { background: #E4EFEB; color: var(--ft-begrip); }
+  .type-redeneer { background: #E9E9F1; color: var(--ft-redeneer); }
+  .type-overig { background: #EDEFF2; color: var(--ft-overig); }
+  .type-geen { background: #EEF3F8; color: var(--inkt-zacht); }
+  .haak { font-size: 13px; padding: 10px 13px; border-radius: 12px; border: 1px dashed var(--lijn-sterk);
+          background: #F5F9FC; color: var(--inkt-zacht); margin-top: 7px; display: flex; gap: 7px; align-items: flex-start; }
+  .haak .merk { font-weight: 600; color: var(--inkt); white-space: nowrap; }
+
+  .niets { background: #EAF2EF; border: 1px solid #CADED7;
+           color: #2C6B56; border-radius: var(--radius); padding: 18px 20px; font-size: 14.5px; }
+
+  .let-op { font-size: 14.5px; color: var(--inkt); margin: 0 0 14px; }
+
+  /* NAAM (invoer) */
+  .naam-blok { background: var(--wit); border: 1px solid var(--lijn); border-radius: var(--radius); padding: 18px 22px; margin-bottom: 22px; }
+  .naam-label { display: block; font-size: 14px; font-weight: 600; color: var(--inkt); margin-bottom: 8px; }
+  .naam-blok { display: flex; flex-wrap: wrap; gap: 14px 22px; }
+  .naam-blok > div { flex: 1 1 240px; max-width: 360px; }
+  select.naam-input { max-width: 100%; background: #fff; cursor: pointer; }
+  .privacy-voetnoot { font-size: 12px; color: var(--inkt-zacht); margin: 18px 0 0; line-height: 1.5; }
+  .naam-input { width: 100%; padding: 11px 13px; font-size: 15px; font-family: inherit;
+                border: 1px solid var(--lijn-sterk); border-radius: 10px; color: var(--inkt); background: #fff; }
+  .naam-input:focus { outline: 2px solid var(--inkt); outline-offset: 1px; border-color: var(--inkt); }
+  .laad-toets { background: var(--kaartvlak); border: 1px solid var(--lijn); border-radius: var(--radius); padding: 4px 18px; margin-bottom: 22px; }
+  .laad-toets summary { font-weight: 600; font-size: 14px; color: var(--inkt); cursor: pointer; padding: 13px 0; list-style: none; }
+  .laad-toets summary::-webkit-details-marker { display: none; }
+  .laad-toets summary::before { content: "\25B8"; color: var(--terra); margin-right: 9px; font-size: 12px; }
+  .laad-toets[open] summary::before { content: "\25BE"; }
+  .laad-uitleg { font-size: 13.5px; color: var(--inkt-zacht); margin: 0 0 12px; max-width: 60ch; }
+  .laad-tekst { width: 100%; min-height: 90px; padding: 10px 12px; font-family: ui-monospace, monospace; font-size: 12.5px; border: 1px solid var(--lijn-sterk); border-radius: 12px; resize: vertical; color: var(--inkt); background: #fff; }
+  .laad-tekst:focus { outline: 2px solid var(--inkt); outline-offset: 1px; border-color: var(--inkt); }
+  .laad-acties { display: flex; gap: 10px; align-items: center; margin: 12px 0 6px; flex-wrap: wrap; }
+  .laad-bestand-label { font-size: 13.5px; font-weight: 600; color: var(--inkt); background: #fff; border: 1px solid var(--lijn-sterk); border-radius: 999px; padding: 9px 18px; cursor: pointer; }
+  .laad-bestand-label:hover { border-color: var(--inkt); }
+  .laad-knop { font-family: inherit; font-size: 14px; font-weight: 600; padding: 10px 22px; border: none; border-radius: 999px; background: var(--inkt); color: #fff; cursor: pointer; }
+  .laad-knop:hover { background: var(--inkt-diep); }
+  .laad-melding { font-size: 13px; font-weight: 500; margin: 8px 0 12px; min-height: 1em; }
+
+  /* FEEDBACK: naam-regel + eigen voornemens */
+  .fb-naam-regel { font-size: 15px; color: var(--inkt-zacht); margin: 0 0 16px; }
+  .fb-naam-regel strong { color: var(--inkt); font-weight: 600; }
+  .kopie-melding { font-size: 13px; color: var(--inkt-zacht); margin: -8px 0 16px; }
+  .eigen-voornemens { background: var(--wit); border: 1px solid var(--lijn); border-radius: var(--radius);
+                      padding: 16px 18px; font-size: 14.5px; color: var(--inkt); white-space: pre-wrap; line-height: 1.55; }
+  .eigen-voornemens.leeg { color: var(--inkt-zacht); font-style: italic; }
+
+  /* PDF-blok */
+  .pdf-blok { background: var(--kaartvlak); border: 1px solid var(--lijn); border-radius: var(--radius); padding: 22px; margin-top: 28px; }
+  .pdf-uitleg { font-size: 14.5px; color: var(--inkt-zacht); margin: 0 0 16px; }
+  .pdf-knoppen { display: flex; gap: 12px; flex-wrap: wrap; }
+  .pdf-melding { margin-top: 14px; font-size: 14px; padding: 12px 14px; border-radius: 10px;
+                 background: var(--lucht); color: var(--inkt); display: none; }
+  .pdf-melding.zichtbaar { display: block; }
+
+  /* PRINT (pdf-structuur) */
+  @media print {
+    @page { margin: 14mm; }
+    body { background: #fff; margin: 0; }
+    .geen-print { display: none !important; }
+    .wrap { max-width: 100%; padding: 0; }
+    .staaf-kaart, .tip-vraag, .score-kaart, .vraag, .eigen-voornemens { break-inside: avoid; }
+    .score-kaart { background: #1C3A5E !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    .staaf-vul, .type-badge, .wds, .haak { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    .pv-sectie { page-break-before: always; }
+    h2 { page-break-after: avoid; }
+  }
+  @media (max-width: 480px) {
+    .score-cijfer { font-size: 36px; }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <!-- ===================== SCHERM 1 — INVOER ===================== -->
+  <div id="invoer">
+    <details class="laad-toets geen-print" id="laad-paneel">
+      <summary>Toets laden</summary>
+      <p class="laad-uitleg">Heb je een toetsbestand van je docent gekregen? Plak het hieronder of kies het bestand, en klik op "Toets laden". De tool stelt zich dan in op die toets. Zonder bestand zie je de ingebouwde voorbeeldtoets.</p>
+      <textarea id="laad-tekst" class="laad-tekst" placeholder="Plak hier de inhoud van het toetsbestand..." spellcheck="false"></textarea>
+      <div class="laad-acties">
+        <label class="laad-bestand-label">Bestand kiezen<input type="file" id="laad-bestand" accept=".json,application/json" hidden></label>
+        <button id="laad-knop" class="laad-knop" type="button">Toets laden</button>
+      </div>
+      <p id="laad-melding" class="laad-melding"></p>
+    </details>
+    <header>
+      <h1 id="toets-titel"></h1>
+      <p class="intro">Vul per vraag in hoeveel punten je hebt gehaald en klik bij de mindere vragen aan wat er misging. Daarna krijg je gerichte tips om je voor de volgende toets te verbeteren.</p>
+    </header>
+    <div class="naam-blok">
+      <div>
+        <label class="naam-label" for="leerling-naam">Je naam</label>
+        <input class="naam-input" id="leerling-naam" type="text" placeholder="Voor- en achternaam" autocomplete="name">
+      </div>
+      <div>
+        <label class="naam-label" for="leerling-docent">Je docent</label>
+        <select class="naam-input" id="leerling-docent">
+          <option value="" selected disabled>Kies je docent</option>
+          <option value="Rem">Rem</option>
+        </select>
+      </div>
+    </div>
+    <div id="vragen-lijst"></div>
+    <div class="reflectie">
+      <label class="reflectie-label" for="eigen-tips">Welke tips wil je jezelf geven bij de voorbereiding op de volgende toets? Wat moet je beter doen? Wat moet je blijven doen?</label>
+      <textarea class="reflectie-vak" id="eigen-tips" placeholder="Schrijf hier je eigen tips voor de volgende keer…"></textarea>
+    </div>
+    <div class="actie">
+      <button class="knop-primair" id="genereer">Toon mijn feedback*</button>
+    </div>
+    <p class="actie-melding" id="actie-melding"></p>
+    <p class="privacy-voetnoot">*Jouw feedback wordt ook inzichtelijk voor jouw docent. Deze gegevens worden enkel voor onderwijskundige doeleinden, en dus niet voor commerciële doeleinden, gebruikt.</p>
+  </div>
+
+  <!-- ===================== SCHERM 2 — FEEDBACK ===================== -->
+  <div id="resultaat">
+    <button class="terug geen-print" id="terug">← Terug naar invoer</button>
+
+    <p class="fb-naam-regel" id="fb-naam-regel"></p>
+    <p class="kopie-melding geen-print" id="kopie-melding" style="display:none;"></p>
+
+    <div class="score-kaart">
+      <div>
+        <div class="score-cijfer" id="cijfer">–</div>
+        <div class="score-detail" style="margin-top:4px;">indicatief cijfer</div>
+      </div>
+      <div class="score-detail">
+        Je haalde <strong id="score-punten"></strong> van de <strong id="score-max"></strong> punten<br>
+        Dat is <strong id="score-pct"></strong> van het totaal
+      </div>
+    </div>
+
+    <h2>Waar verlies je de meeste punten?</h2>
+    <p class="sectie-uitleg">Per type fout zie je welk deel van je gemiste punten daar vandaan komt, en hoe je die vaardigheid verbetert. De bovenste is je grootste verbeterpunt.</p>
+    <div class="staven" id="staven"></div>
+
+    <h2>Jouw eigen voornemens</h2>
+    <p class="sectie-uitleg">Wat je jezelf hebt voorgenomen voor de volgende toets.</p>
+    <div class="eigen-voornemens" id="eigen-voornemens"></div>
+
+    <div class="pv-sectie">
+      <h2>Aan de slag per vraag</h2>
+      <p class="sectie-uitleg">De vragen die niet helemaal goed gingen, met het onderwerp dat je kunt oefenen.</p>
+      <div id="vraag-tips"></div>
+    </div>
+
+    <h2>Let op: niet alle stof is getoetst</h2>
+    <p class="let-op">Niet alle leerstof is op deze toets aan bod gekomen. Hieronder zie je welke onderwerpen je wél moest leren, maar die niet zijn getoetst. Neem die mee in je voorbereiding voor de volgende toets.</p>
+    <div id="niet-getoetst"></div>
+
+    <div class="pdf-blok geen-print">
+      <p class="pdf-uitleg">Bewaar je feedback zelf als pdf. Dit formulier wordt automatisch naar jouw docent gestuurd.</p>
+      <div class="pdf-knoppen">
+        <button class="knop-primair" id="pdf-download">Download als pdf</button>
+      </div>
+      <div class="pdf-melding" id="pdf-melding"></div>
+    </div>
+  </div>
+
+</div>
+
+<script>
+/* ======================================================================
+   1. DE BLAUWDRUK VAN DEZE TOETS  (geen vraagteksten — niets te reconstrueren)
+   ====================================================================== */
+/* De toets die standaard geladen wordt (zelfde formaat als het exportbestand van de docenttool).
+   Een ander exportbestand laden via het laadpaneel blijft gewoon werken. */
+const INGEBOUWDE_TOETS = {
+  "titel": "4 havo · Economie PW M2 (H2 + H3)",
+  "stof": "M2 Vraag en aanbod — hoofdstuk 2 en 3",
+  "maxPunten": 27,
+  "nterm": 1,
+  "fouttypen": [
+    {
+      "key": "reken",
+      "label": "Rekenfout",
+      "tekst": "Schrijf je tussenstappen en berekeningen altijd uit in plaats van alles in de rekenmachine te doen. Als je klaar bent, kijk dan of wat je hebt opgeschreven een logisch antwoord op de vraag is.",
+      "kleur": "var(--ft-reken)",
+      "custom": false
+    },
+    {
+      "key": "lees",
+      "label": "Leesfout",
+      "tekst": "Neem een markeerstift en markeer wat er precies gevraagd wordt voordat je begint. Markeer in de bron de gegevens die je nodig hebt. Om dit goed onder de knie te krijgen moet je oefenen met vragen waarbij je een bron moet interpreteren.",
+      "kleur": "var(--ft-lees)",
+      "custom": false
+    },
+    {
+      "key": "begrip",
+      "label": "Begripsfout",
+      "tekst": "Bestudeer de begrippenlijst die je van je docent hebt gekregen. Lees deze door en schrijf alleen de begrippen op die je nog niet kent. Lees daarnaast ook eenmaal alle PowerPoints door. Beide zijn te vinden op Classroom.",
+      "kleur": "var(--ft-begrip)",
+      "custom": false
+    },
+    {
+      "key": "redeneer",
+      "label": "Redeneerfout",
+      "tekst": "Maak redeneervragen van je huiswerk alsof je antwoord geeft op de toets. Alleen dan kan je bij het nakijken beoordelen of je het echt begrijpt. Schrijf bij elke uitlegvraag bewust béide stappen op — bij economie zit het tweede punt vaak in het gevolg dat je nog moet benoemen. Twijfel je, of wil je meer feedback? Lever je schrift in tijdens de les, of maak thuis een foto van je antwoord en mail die. Antwoorden van het boek én het extra oefenmateriaal staan op Classroom.",
+      "kleur": "var(--ft-redeneer)",
+      "custom": false
+    },
+    {
+      "key": "overig",
+      "label": "Overig",
+      "tekst": "Het is misschien nog niet helemaal duidelijk waarom je deze punten hebt laten liggen. Vraag eventueel aan je docent om er samen nog eens naar te kijken.",
+      "kleur": "var(--ft-overig)",
+      "custom": false
+    }
+  ],
+  "nietGetoetst": [
+    "Consumenten- en producentensurplus berekenen en arceren (oefenboekje opgave 2, 5, 51 en 53e t/m g)",
+    "Marktomzet berekenen (oefenboekje opgave 46h en 53d)",
+    "Totale winst (TW) in tabellen en grafieken (oefenboekje opgave 40, 41 en 50)",
+    "Kostenschema's met GVK en GCK volledig invullen (oefenboekje opgave 29 en 45)"
+  ],
+  "vragen": [
+    {
+      "nr": "1a",
+      "onderwerp": "Kostentabel invullen (TO, TK, MO, MK, GTK)",
+      "wds": "D",
+      "max": 4,
+      "oefenBoekje": "29, 40, 41 en 45"
+    },
+    {
+      "nr": "1b",
+      "onderwerp": "Proportioneel of progressief variabele kosten herkennen",
+      "wds": "S",
+      "max": 2,
+      "specifiek": "Kijk naar de kostenfunctie: staat er een kwadraat (q²), dan stijgen de kosten per extra product en zijn ze progressief. Staat er alleen een getal × q, dan zijn ze proportioneel.",
+      "oefenBoekje": "25a, 26a, 27 en 52h/i"
+    },
+    {
+      "nr": "1c",
+      "onderwerp": "Gemiddelde constante kosten (GCK) berekenen",
+      "wds": "D",
+      "max": 1,
+      "oefenBoekje": "28b, 29 en 34f"
+    },
+    {
+      "nr": "1d",
+      "onderwerp": "Productiefactoren met voorbeelden",
+      "wds": "W",
+      "max": 2,
+      "oefenBoekje": "35"
+    },
+    {
+      "nr": "2",
+      "onderwerp": "Begrippen kosten, opbrengsten en surplus koppelen",
+      "wds": "W",
+      "max": 3,
+      "oefenBoekje": "1, 30, 31 en 52"
+    },
+    {
+      "nr": "3a",
+      "onderwerp": "Verschuiving aanbodlijn (hogere loonkosten)",
+      "wds": "S",
+      "max": 1,
+      "specifiek": "De aanbodlijn verschuift door veranderingen bij de aanbieders. Hogere kosten betekent minder aanbod bij elke prijs: de aanbodlijn schuift naar links.",
+      "oefenBoekje": "4 en 20d"
+    },
+    {
+      "nr": "3b",
+      "onderwerp": "Verschuiving vraaglijn (substitutiegoed)",
+      "wds": "S",
+      "max": 1,
+      "specifiek": "Als een vervangend product (substituut) duurder wordt, stappen kopers over: de vraaglijn van dit product schuift naar rechts.",
+      "oefenBoekje": "3h, 4 en 20d"
+    },
+    {
+      "nr": "3c",
+      "onderwerp": "Verschuiving aanbodlijn (grotere oogst)",
+      "wds": "S",
+      "max": 1,
+      "specifiek": "Een grotere oogst betekent meer aanbod bij elke prijs: de aanbodlijn schuift naar rechts.",
+      "oefenBoekje": "4 en 20d"
+    },
+    {
+      "nr": "4a",
+      "onderwerp": "Break-evenpunt aflezen in een grafiek (P = GTK)",
+      "wds": "D",
+      "max": 2,
+      "oefenBoekje": "37, 42g, 43f en 48"
+    },
+    {
+      "nr": "4b",
+      "onderwerp": "Maximale winst berekenen met de grafiek (MO = MK)",
+      "wds": "D",
+      "max": 2,
+      "oefenBoekje": "41b, 43g/h, 44 en 48c"
+    },
+    {
+      "nr": "4c",
+      "onderwerp": "Redeneren over winst voorbij het punt MO = MK",
+      "wds": "S",
+      "max": 1,
+      "oefenBoekje": "43g/h, 44h en 52e/f"
+    },
+    {
+      "nr": "5a",
+      "onderwerp": "Evenwichtsprijs en -hoeveelheid berekenen",
+      "wds": "D",
+      "max": 2,
+      "oefenBoekje": "46f/g, 47a en 53b/c"
+    },
+    {
+      "nr": "5b",
+      "onderwerp": "Vraag- en aanbodlijn tekenen",
+      "wds": "D",
+      "max": 2,
+      "specifiek": "Benoem altijd je lijnen (Qv en Qa) en je assen. Zonder benaming kost dat punten.",
+      "oefenBoekje": "2, 20a, 46e en 53a"
+    },
+    {
+      "nr": "5c",
+      "onderwerp": "Vraag- of aanbodoverschot berekenen",
+      "wds": "D",
+      "max": 2,
+      "oefenBoekje": "7b t/m e, 51f/g en 53"
+    },
+    {
+      "nr": "5d",
+      "onderwerp": "Prijsvorming bij een overschot uitleggen",
+      "wds": "S",
+      "max": 1,
+      "oefenBoekje": "51f/g"
+    }
+  ]
+};
+
+let TOETS = null; // wordt gevuld door laadConfig()
+
+/* ======================================================================
+   2. FEEDBACKBIBLIOTHEEK (vaste teksten, herbruikbaar over álle toetsen)
+   ====================================================================== */
+let FOUTTYPEN = {
+  reken:    { label: "Rekenfout",    klasse: "reken",    kleur: "var(--ft-reken)",
+    tekst: "Schrijf je tussenstappen en berekeningen altijd uit in plaats van alles in de rekenmachine te doen. Als je klaar bent, kijk dan of wat je hebt opgeschreven een logisch antwoord op de vraag is." },
+  lees:     { label: "Leesfout",     klasse: "lees",     kleur: "var(--ft-lees)",
+    tekst: "Neem een markeerstift en markeer wat er precies gevraagd wordt voordat je begint. Markeer in de bron de gegevens die je nodig hebt. Om dit goed onder de knie te krijgen moet je oefenen met vragen waarbij je een bron moet interpreteren." },
+  begrip:   { label: "Begripsfout",  klasse: "begrip",   kleur: "var(--ft-begrip)",
+    tekst: "Bestudeer de begrippenlijst die je van je docent hebt gekregen. Lees deze door en schrijf alleen de begrippen op die je nog niet kent. Lees daarnaast ook eenmaal alle PowerPoints door. Beide zijn te vinden op Classroom." },
+  redeneer: { label: "Redeneerfout", klasse: "redeneer", kleur: "var(--ft-redeneer)",
+    tekst: "Maak redeneervragen van je huiswerk alsof je antwoord geeft op de toets. Alleen dan kan je bij het nakijken beoordelen of je het echt begrijpt. Schrijf bij elke uitlegvraag bewust béide stappen op — bij economie zit het tweede punt vaak in het gevolg dat je nog moet benoemen. Twijfel je, of wil je meer feedback? Lever je schrift in tijdens de les, of maak thuis een foto van je antwoord en mail die. Antwoorden van het boek én het extra oefenmateriaal staan op Classroom." },
+  overig:   { label: "Overig", klasse: "overig", kleur: "var(--ft-overig)",
+    tekst: "Het is misschien nog niet helemaal duidelijk waarom je deze punten hebt laten liggen. Vraag eventueel aan je docent om er samen nog eens naar te kijken." }
+};
+let FOUT_VOLGORDE = ["reken", "lees", "begrip", "redeneer", "overig"];
+
+/* ======================================================================
+   3. HAKEN VOOR LATER
+   ====================================================================== */
+let OEFENSTOF = {};        // per onderwerp: "Maak opgave 6.3 t/m 6.6"  (na upload lesmateriaal)
+let VRAAGSPECIFIEK = {};   // per vraagnr: vrije tekst, door docent ingevuld (component 2)
+let NIET_GETOETST = [];    // onderwerpen wel leren, niet getoetst (na upload boek/begrippenlijst)
+
+/* ======================================================================
+   APP-LOGICA
+   ====================================================================== */
+const wdsNaam = { W: "Weten", D: "Doen", S: "Snappen" };
+function esc(s){ return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;'); }
+const lijst = document.getElementById("vragen-lijst");
+let kaarten = [];
+let state = [];
+
+// --- Scherm 1 opbouwen (herbruikbaar: draait opnieuw als er een andere toets wordt geladen) ---
+function bouwInvoer() {
+  document.getElementById("toets-titel").textContent = TOETS.titel;
+  state = TOETS.vragen.map(v => ({ nr: v.nr, behaald: null, fouten: new Set() }));
+  lijst.innerHTML = "";
+  kaarten = [];
+  TOETS.vragen.forEach((v, i) => {
+  const kaart = document.createElement("div");
+  kaart.className = "vraag";
+  kaart.innerHTML = `
+    <div class="vraag-top">
+      <span class="vraag-nr">${v.nr}</span>
+      <span class="vraag-onderwerp">${esc(v.onderwerp)}</span>
+      <span class="wds wds-${v.wds}">${wdsNaam[v.wds]}</span>
+    </div>
+    <div class="punt-rij">
+      <label for="p${v.nr}">Behaalde punten</label>
+      <input class="punt-input" id="p${v.nr}" type="number" min="0" max="${v.max}" inputmode="numeric">
+      <span class="punt-max">van ${v.max}</span>
+      <span class="goed-vlag" id="goed${v.nr}">✓ helemaal goed</span>
+    </div>
+    <div class="fout-blok" id="fout${v.nr}">
+      <p class="fout-vraag">Wat ging er mis bij deze vraag?</p>
+      <div class="fout-knoppen">
+        ${FOUT_VOLGORDE.map(k => `<button class="fout-knop" data-vraag="${v.nr}" data-fout="${k}">${FOUTTYPEN[k].label}</button>`).join("")}
+      </div>
+    </div>`;
+  lijst.appendChild(kaart);
+  kaarten.push(kaart);
+
+  const input = kaart.querySelector(`#p${v.nr}`);
+  input.addEventListener("input", () => {
+    let val = input.value === "" ? null : Math.max(0, Math.min(v.max, parseInt(input.value)));
+    if (val !== null) input.value = val;
+    state[i].behaald = val;
+    const foutBlok = document.getElementById(`fout${v.nr}`);
+    const goedVlag = document.getElementById(`goed${v.nr}`);
+    kaart.classList.toggle("ingevuld", val !== null);
+    kaart.classList.remove("markeer");
+    document.getElementById("actie-melding").textContent = "";
+    if (val !== null && val < v.max) {
+      foutBlok.classList.add("zichtbaar");
+      goedVlag.style.display = "none";
+    } else {
+      foutBlok.classList.remove("zichtbaar");
+      state[i].fouten.clear();
+      kaart.querySelectorAll(".fout-knop").forEach(b => b.classList.remove("aan"));
+      goedVlag.style.display = (val !== null && val === v.max) ? "inline-flex" : "none";
+      if (val !== null && val === v.max) focusVolgendePunt(input);
+    }
+  });
+
+  kaart.querySelectorAll(".fout-knop").forEach(btn => {
+    btn.addEventListener("click", () => {
+      const fout = btn.dataset.fout;
+      state[i].fouten.clear();
+      kaart.querySelectorAll(".fout-knop").forEach(b => b.classList.remove("aan"));
+      state[i].fouten.add(fout);
+      btn.classList.add("aan");
+      kaart.classList.remove("markeer");
+      document.getElementById("actie-melding").textContent = "";
+      focusVolgendePunt(kaart.querySelector(".punt-input"));
+    });
+  });
+  });
+}
+
+// (De eerste opbouw gebeurt onderaan via laadConfig(INGEBOUWDE_TOETS).)
+
+// --- Een toets inladen uit een docent-export ---
+let TOETS_ID = "";
+function laadConfig(config) {
+  const maxP = Number(config.maxPunten) || (config.vragen || []).reduce((s, v) => s + (Number(v.max) || 0), 0) || 1;
+  const nterm = Number(config.nterm) || 0;
+  TOETS = {
+    titel: config.titel || "Toets",
+    maxPunten: maxP,
+    nterm: nterm,
+    cijfer: (score) => Math.round((score / maxP * 9 + nterm) * 10) / 10,
+    vragen: (config.vragen || []).map(v => ({
+      nr: String(v.nr), onderwerp: v.onderwerp || "", wds: (v.wds || "S"), max: Number(v.max) || 1,
+      oefenBoekje: v.oefenBoekje || "", oefenPE: v.oefenPE || ""
+    }))
+  };
+  TOETS_ID = String(config.id || config.titel || "toets");
+  if (Array.isArray(config.fouttypen) && config.fouttypen.length) {
+    FOUTTYPEN = {};
+    FOUT_VOLGORDE = [];
+    config.fouttypen.forEach(ft => {
+      FOUTTYPEN[ft.key] = { label: ft.label, klasse: ft.custom ? null : ft.key, kleur: ft.kleur, tekst: ft.tekst, custom: !!ft.custom };
+      FOUT_VOLGORDE.push(ft.key);
+    });
+  }
+  VRAAGSPECIFIEK = {};
+  (config.vragen || []).forEach(v => { if (v.specifiek) VRAAGSPECIFIEK[String(v.nr)] = v.specifiek; });
+  NIET_GETOETST = Array.isArray(config.nietGetoetst) ? config.nietGetoetst : [];
+  bouwInvoer();
+}
+
+// --- Knoppen van het laad-paneel ---
+const laadTekst = document.getElementById("laad-tekst");
+const laadBestand = document.getElementById("laad-bestand");
+const laadMelding = document.getElementById("laad-melding");
+function toonLaadMelding(tekst, ok) {
+  laadMelding.textContent = tekst;
+  laadMelding.style.color = ok ? "var(--ft-begrip)" : "var(--terra)";
+}
+laadBestand.addEventListener("change", () => {
+  const file = laadBestand.files[0];
+  if (!file) return;
+  const reader = new FileReader();
+  reader.onload = () => { laadTekst.value = reader.result; verwerkLaden(); };
+  reader.readAsText(file);
+});
+document.getElementById("laad-knop").addEventListener("click", verwerkLaden);
+function verwerkLaden() {
+  const ruw = laadTekst.value.trim();
+  if (!ruw) { toonLaadMelding("Plak eerst een toets of kies een bestand.", false); return; }
+  let config;
+  try { config = JSON.parse(ruw); }
+  catch (e) { toonLaadMelding("Dit lijkt geen geldig toetsbestand. Controleer of je de volledige inhoud hebt gekopieerd.", false); return; }
+  if (!Array.isArray(config.vragen) || config.vragen.length === 0) {
+    toonLaadMelding("Er staan geen vragen in dit bestand.", false); return;
+  }
+  laadConfig(config);
+  toonLaadMelding(`Toets geladen: ${config.titel || "(zonder titel)"} (${config.vragen.length} vragen).`, true);
+}
+
+// --- Cursor naar het puntenvak van de volgende vraag ---
+function focusVolgendePunt(huidige) {
+  if (!huidige) return;
+  const alle = Array.from(document.querySelectorAll(".punt-input"));
+  const idx = alle.indexOf(huidige);
+  if (idx > -1 && idx + 1 < alle.length) {
+    const volgende = alle[idx + 1];
+    volgende.focus();
+    volgende.select();
+  }
+}
+
+// --- Feedback genereren ---
+document.getElementById("genereer").addEventListener("click", () => {
+  // Verplicht: naam invullen
+  const naam = document.getElementById("leerling-naam").value.trim();
+  if (!naam) {
+    document.getElementById("actie-melding").textContent = "Vul eerst je naam in.";
+    document.getElementById("leerling-naam").focus();
+    document.getElementById("leerling-naam").scrollIntoView({ behavior: "smooth", block: "center" });
+    return;
+  }
+  // Verplicht: docent kiezen
+  const docent = document.getElementById("leerling-docent").value;
+  if (!docent) {
+    document.getElementById("actie-melding").textContent = "Kies eerst je docent.";
+    document.getElementById("leerling-docent").focus();
+    document.getElementById("leerling-docent").scrollIntoView({ behavior: "smooth", block: "center" });
+    return;
+  }
+  // Verplicht: elke vraag moet een ingevulde puntenwaarde hebben
+  let leeg = -1;
+  for (let i = 0; i < TOETS.vragen.length; i++) {
+    if (state[i].behaald === null) { leeg = i; break; }
+  }
+  if (leeg !== -1) {
+    document.getElementById("actie-melding").textContent = `Vul bij vraag ${TOETS.vragen[leeg].nr} in hoeveel punten je hebt gehaald.`;
+    kaarten[leeg].classList.add("markeer");
+    kaarten[leeg].scrollIntoView({ behavior: "smooth", block: "center" });
+    return;
+  }
+  // Verplicht: bij elke onvolledig gescoorde vraag moet een fouttype gekozen zijn
+  let mistFout = -1;
+  for (let i = 0; i < TOETS.vragen.length; i++) {
+    if (state[i].behaald !== null && state[i].behaald < TOETS.vragen[i].max && state[i].fouten.size === 0) { mistFout = i; break; }
+  }
+  if (mistFout !== -1) {
+    const nr = TOETS.vragen[mistFout].nr;
+    document.getElementById("actie-melding").textContent = `Geef bij vraag ${nr} aan wat er misging voordat je verdergaat.`;
+    kaarten[mistFout].classList.add("markeer");
+    kaarten[mistFout].scrollIntoView({ behavior: "smooth", block: "center" });
+    return;
+  }
+  const totaalBehaald = state.reduce((s, r) => s + (r.behaald || 0), 0);
+  document.getElementById("cijfer").textContent = TOETS.cijfer(totaalBehaald).toFixed(1).replace(".", ",");
+  document.getElementById("score-punten").textContent = totaalBehaald;
+  document.getElementById("score-max").textContent = TOETS.maxPunten;
+  document.getElementById("score-pct").textContent = Math.round(totaalBehaald / TOETS.maxPunten * 100) + "%";
+
+  // Puntenverlies per fouttype (gemiste punten verdeeld over aangevinkte typen)
+  const miss = {};
+  FOUT_VOLGORDE.forEach(t => { miss[t] = 0; });
+  let totaalMiss = 0;
+  TOETS.vragen.forEach((v, i) => {
+    const beh = state[i].behaald;
+    if (beh === null || beh >= v.max) return;
+    const types = [...state[i].fouten];
+    if (types.length === 0) return;
+    const gemist = v.max - beh;
+    const deel = gemist / types.length;
+    types.forEach(t => { miss[t] += deel; });
+    totaalMiss += gemist;
+  });
+
+  // Staven + algemene feedback eronder (gesorteerd op grootste verlies)
+  const staven = document.getElementById("staven");
+  staven.innerHTML = "";
+  const aanwezig = FOUT_VOLGORDE.filter(t => miss[t] > 0).sort((a, b) => miss[b] - miss[a]);
+  if (aanwezig.length === 0) {
+    staven.innerHTML = `<div class="niets">Je hebt geen fouttypen aangeklikt. Vul bij de vragen die niet helemaal goed gingen aan wat er misging, dan zie je hier per type hoe je je kunt verbeteren.</div>`;
+  } else {
+    aanwezig.forEach(t => {
+      const f = FOUTTYPEN[t];
+      const pct = Math.round(miss[t] / totaalMiss * 100);
+      const kaart = document.createElement("div");
+      kaart.className = "staaf-kaart";
+      kaart.innerHTML = `
+        <div class="staaf-rij">
+          <span class="staaf-naam">${f.label}</span>
+          <span class="staaf-pct">${pct}% van verlies</span>
+        </div>
+        <div class="staaf-spoor"><span class="staaf-vul" style="width:${pct}%;background:${f.kleur}"></span></div>
+        <p class="staaf-tip"><strong>Algemene tip:</strong> ${f.tekst}</p>`;
+      staven.appendChild(kaart);
+    });
+  }
+
+  // Per-vraag tips: vraag eerst, dan fouttype-badge(s), dan oefenstof
+  const tips = document.getElementById("vraag-tips");
+  tips.innerHTML = "";
+  const fouteVragen = TOETS.vragen.filter((v, i) => state[i].behaald !== null && state[i].behaald < v.max);
+  if (fouteVragen.length === 0) {
+    tips.innerHTML = `<div class="niets">Je hebt op alle ingevulde vragen de punten gehaald. Sterk gedaan!</div>`;
+  } else {
+    fouteVragen.forEach(v => {
+      const i = TOETS.vragen.indexOf(v);
+      const types = [...state[i].fouten];
+      const badges = types.length
+        ? types.map(t => {
+            const ft = FOUTTYPEN[t];
+            return ft.klasse
+              ? `<span class="type-badge type-${ft.klasse}">${ft.label}</span>`
+              : `<span class="type-badge" style="background:color-mix(in srgb, ${ft.kleur} 16%, white);color:${ft.kleur}">${ft.label}</span>`;
+          }).join("")
+        : `<span class="type-badge type-geen">geen type gekozen</span>`;
+      const oefB = v.oefenBoekje
+        ? `<div class="haak"><span class="merk">Oefenboekje:</span><span>opgave ${esc(v.oefenBoekje)}</span></div>` : "";
+      const oefP = v.oefenPE
+        ? `<div class="haak"><span class="merk">PE-boek:</span><span>${esc(v.oefenPE)}</span></div>`
+        : `<div class="haak"><span class="merk">PE-boek:</span><span>opgaven en pagina's volgen nog</span></div>`;
+      const vsHaak = VRAAGSPECIFIEK[v.nr]
+        ? `<div class="haak" style="border-style:solid;background:var(--terra-licht);border-color:#EBD1C6;"><span class="merk" style="color:var(--terra)">Let op:</span><span>${esc(VRAAGSPECIFIEK[v.nr])}</span></div>`
+        : "";
+      const kaart = document.createElement("div");
+      kaart.className = "tip-vraag";
+      kaart.innerHTML = `
+        <div class="tip-kop"><span class="nr">Vraag ${esc(v.nr)}</span>: ${esc(v.onderwerp)}</div>
+        <div class="type-badges">${badges}</div>
+        ${oefB}${oefP}${vsHaak}`;
+      tips.appendChild(kaart);
+    });
+  }
+
+  // Niet-getoetste stof
+  const ng = document.getElementById("niet-getoetst");
+  ng.innerHTML = NIET_GETOETST.length
+    ? `<div class="tip-vraag"><ul style="margin:0;padding-left:20px;">${NIET_GETOETST.map(o => `<li>${o}</li>`).join("")}</ul></div>`
+    : `<div class="haak"><span class="merk">Lijst:</span><span>volgt zodra het boek, het oefenmateriaal en de begrippenlijst zijn toegevoegd</span></div>`;
+
+  document.getElementById("fb-naam-regel").innerHTML = `Feedback voor <strong>${esc(naam)}</strong> · docent ${esc(docent)} · ${esc(TOETS.titel)}`;
+  const voornemens = document.getElementById("eigen-tips").value.trim();
+  const ev = document.getElementById("eigen-voornemens");
+  if (voornemens) { ev.textContent = voornemens; ev.classList.remove("leeg"); }
+  else { ev.textContent = "Je hebt geen eigen voornemens opgeschreven."; ev.classList.add("leeg"); }
+
+  laatsteResultaat = maakResultaat(naam, totaalBehaald, miss, totaalMiss);
+  stuurKopie(laatsteResultaat);
+
+  document.getElementById("invoer").style.display = "none";
+  document.getElementById("resultaat").style.display = "block";
+  window.scrollTo({ top: 0, behavior: "smooth" });
+});
+
+document.getElementById("terug").addEventListener("click", () => {
+  document.getElementById("resultaat").style.display = "none";
+  document.getElementById("invoer").style.display = "block";
+  document.getElementById("pdf-melding").classList.remove("zichtbaar");
+  window.scrollTo({ top: 0, behavior: "smooth" });
+});
+
+/* ======================================================================
+   INSTELLINGEN
+   ====================================================================== */
+// Plak hier de web-app-URL van je Google Apps Script (eindigt op /exec).
+// Zolang dit leeg is, wordt er geen kopie gemaild en ziet de leerling daar ook niets over.
+const APPS_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbwX0WFM9nr1FHAgTO_cBk8sxkMpt1PnP3baVGy0rlWJogYMj9298F7McQ1vhOiJE6yRSA/exec";
+
+/* ======================================================================
+   RESULTAAT VERZAMELEN (gedeeld door pdf en mail)
+   ====================================================================== */
+let laatsteResultaat = null;
+
+function maakResultaat(naam, totaalBehaald, miss, totaalMiss) {
+  const fouttypen = FOUT_VOLGORDE
+    .filter(t => miss[t] > 0)
+    .sort((a, b) => miss[b] - miss[a])
+    .map(t => ({ key: t, label: FOUTTYPEN[t].label, pct: Math.round(miss[t] / totaalMiss * 100), tekst: FOUTTYPEN[t].tekst }));
+  const vragen = TOETS.vragen.map((v, i) => ({
+    nr: v.nr, onderwerp: v.onderwerp, wds: v.wds,
+    behaald: state[i].behaald, max: v.max,
+    fouten: [...state[i].fouten].map(t => FOUTTYPEN[t] ? FOUTTYPEN[t].label : t),
+    oefenBoekje: v.oefenBoekje || "", oefenPE: v.oefenPE || "",
+    specifiek: VRAAGSPECIFIEK[v.nr] || ""
+  }));
+  return {
+    naam: naam,
+    docent: document.getElementById("leerling-docent").value,
+    toets: TOETS.titel,
+    toetsId: TOETS_ID,
+    datum: new Date().toISOString(),
+    cijfer: TOETS.cijfer(totaalBehaald),
+    punten: totaalBehaald,
+    max: TOETS.maxPunten,
+    pct: Math.round(totaalBehaald / TOETS.maxPunten * 100),
+    fouttypen: fouttypen,
+    vragen: vragen,
+    voornemens: document.getElementById("eigen-tips").value.trim(),
+    nietGetoetst: NIET_GETOETST
+  };
+}
+
+/* ======================================================================
+   KOPIE NAAR DE DOCENT (via Google Apps Script)
+   ====================================================================== */
+function stuurKopie(res) {
+  const melding = document.getElementById("kopie-melding");
+  if (!APPS_SCRIPT_URL) { melding.style.display = "none"; return; }
+  melding.style.display = "block";
+  melding.textContent = "Je feedback wordt gedeeld met je docent…";
+  fetch(APPS_SCRIPT_URL, {
+    method: "POST",
+    mode: "no-cors", // Apps Script stuurt geen CORS-headers; verzenden lukt, het antwoord is niet leesbaar
+    headers: { "Content-Type": "text/plain;charset=utf-8" },
+    body: JSON.stringify(res)
+  }).then(() => {
+    melding.textContent = "Je feedback is gedeeld met je docent.";
+  }).catch(() => {
+    melding.textContent = "Je feedback kon niet worden gedeeld met je docent (geen verbinding). Download de pdf en mail die zelf even.";
+  });
+}
+
+/* ======================================================================
+   DOWNLOAD ALS PDF (jsPDF: scherpe tekst, eigen opmaak, nette pagina-einden)
+   ====================================================================== */
+function toonMelding(tekst) {
+  const m = document.getElementById("pdf-melding");
+  m.textContent = tekst;
+  m.classList.add("zichtbaar");
+}
+
+const PDF_KLEUR = {
+  inkt: [28, 58, 94], inktZacht: [76, 104, 133], lijn: [220, 230, 241],
+  reken: [197, 123, 92], lees: [62, 111, 160], begrip: [78, 146, 123],
+  redeneer: [106, 111, 160], overig: [133, 149, 168]
+};
+function pdfKleur(key, cssKleur) {
+  if (PDF_KLEUR[key]) return PDF_KLEUR[key];
+  const m = /^#([0-9a-f]{6})$/i.exec(String(cssKleur || "").trim());
+  if (m) return [parseInt(m[1].slice(0,2),16), parseInt(m[1].slice(2,4),16), parseInt(m[1].slice(4,6),16)];
+  return PDF_KLEUR.inkt;
+}
+
+function maakPdf(res) {
+  const { jsPDF } = window.jspdf;
+  const doc = new jsPDF({ unit: "mm", format: "a4" });
+  const marge = 18, breed = 210 - 2 * marge, onder = 279;
+  let y = marge;
+
+  function ruimte(h) { if (y + h > onder) { doc.addPage(); y = marge; } }
+  function nieuwePagina() { if (y > marge + 2) { doc.addPage(); y = marge; } }
+  function hoogteVan(str, size, stijl, inspring, extra) {
+    doc.setFont("helvetica", stijl); doc.setFontSize(size);
+    return doc.splitTextToSize(str, breed - inspring).length * extra;
+  }
+  function tekst(str, opties) {
+    const o = Object.assign({ size: 10.5, stijl: "normal", kleur: PDF_KLEUR.inkt, extra: 4.8, inspring: 0 }, opties || {});
+    doc.setFont("helvetica", o.stijl); doc.setFontSize(o.size); doc.setTextColor(...o.kleur);
+    const regels = doc.splitTextToSize(str, breed - o.inspring);
+    regels.forEach(r => { ruimte(o.extra); doc.text(r, marge + o.inspring, y); y += o.extra; });
+  }
+  function kop(str) { y += 4; ruimte(12); tekst(str, { size: 13.5, stijl: "bold", extra: 6 }); y += 1; }
+  function labelTekst(label, str, opties) {
+    const o = Object.assign({ size: 9.5, kleur: PDF_KLEUR.inktZacht, extra: 4.4, inspring: 0 }, opties || {});
+    ruimte(o.extra);
+    doc.setFont("helvetica", "bold"); doc.setFontSize(o.size); doc.setTextColor(...PDF_KLEUR.inkt);
+    doc.text(label, marge + o.inspring, y);
+    const labelBreedte = doc.getTextWidth(label + " ");
+    doc.setFont("helvetica", "normal"); doc.setTextColor(...o.kleur);
+    const eerste = doc.splitTextToSize(str, breed - o.inspring - labelBreedte)[0] || "";
+    doc.text(eerste, marge + o.inspring + labelBreedte, y); y += o.extra;
+    const rest = str.slice(eerste.length).trim();
+    if (rest) tekst(rest, { size: o.size, kleur: o.kleur, extra: o.extra, inspring: o.inspring });
+  }
+
+  // Kopregel
+  doc.setFont("helvetica", "bold"); doc.setFontSize(9); doc.setTextColor(...PDF_KLEUR.inktZacht);
+  doc.text("MENDELCOLLEGE  ·  ECONOMIE  ·  TOETSANALYSE", marge, y); y += 7;
+  tekst(res.toets, { size: 17, stijl: "bold", extra: 7.5 });
+  const d = new Date(res.datum);
+  tekst(`${res.naam}  ·  docent ${res.docent}  ·  ${d.toLocaleDateString("nl-NL", { day: "numeric", month: "long", year: "numeric" })}`, { size: 10.5, kleur: PDF_KLEUR.inktZacht, extra: 5.5 });
+  y += 2;
+
+  // Scoreblok
+  ruimte(24);
+  doc.setFillColor(...PDF_KLEUR.inkt);
+  doc.roundedRect(marge, y, breed, 20, 3, 3, "F");
+  doc.setTextColor(255, 255, 255);
+  doc.setFont("helvetica", "bold"); doc.setFontSize(22);
+  doc.text(String(res.cijfer.toFixed(1)).replace(".", ","), marge + 8, y + 13);
+  doc.setFont("helvetica", "normal"); doc.setFontSize(10.5);
+  const scoreZin = `Op basis van de gegeven informatie haal je ${res.punten} van de ${res.max} punten (${res.pct}%).`;
+  const scoreRegels = doc.splitTextToSize(scoreZin, breed - 40);
+  if (scoreRegels.length === 1) { doc.text(scoreRegels[0], marge + 32, y + 12); }
+  else { doc.text(scoreRegels[0], marge + 32, y + 9.5); doc.text(scoreRegels[1], marge + 32, y + 14.5); }
+  y += 26;
+
+  // Fouttypen
+  kop("Waar verlies je de meeste punten?");
+  if (!res.fouttypen.length) {
+    tekst("Geen fouttypen aangeklikt of geen punten gemist.", { kleur: PDF_KLEUR.inktZacht });
+  } else {
+    res.fouttypen.forEach(f => {
+      ruimte(10);
+      const kleur = pdfKleur(f.key, FOUTTYPEN[f.key] && FOUTTYPEN[f.key].kleur);
+      doc.setFont("helvetica", "bold"); doc.setFontSize(11); doc.setTextColor(...PDF_KLEUR.inkt);
+      doc.text(f.label, marge, y);
+      doc.setFont("helvetica", "normal"); doc.setFontSize(9.5); doc.setTextColor(...PDF_KLEUR.inktZacht);
+      doc.text(`${f.pct}% van je puntenverlies`, marge + breed, y, { align: "right" });
+      y += 2.5;
+      doc.setFillColor(...PDF_KLEUR.lijn); doc.roundedRect(marge, y, breed, 2.6, 1.3, 1.3, "F");
+      doc.setFillColor(...kleur); doc.roundedRect(marge, y, Math.max(3, breed * f.pct / 100), 2.6, 1.3, 1.3, "F");
+      y += 7;
+      labelTekst("Algemene tip:", f.tekst, { size: 9.5, kleur: PDF_KLEUR.inktZacht, extra: 4.4 });
+      y += 3;
+    });
+  }
+
+  // Per vraag: altijd op een nieuwe pagina
+  nieuwePagina();
+  kop("Aan de slag per vraag");
+  const foute = res.vragen.filter(v => v.behaald !== null && v.behaald < v.max);
+  if (!foute.length) {
+    tekst("Je hebt op alle ingevulde vragen de punten gehaald. Sterk gedaan!", { kleur: PDF_KLEUR.begrip });
+  } else {
+    foute.forEach(v => {
+      const foutStr = v.fouten.length ? `  ·  ${v.fouten.join(", ")}` : "";
+      const kopStr = `Vraag ${v.nr}: ${v.onderwerp}  (${v.behaald}/${v.max} punten${foutStr})`;
+      const peStr = `PE-boek: ${v.oefenPE || "opgaven en pagina's volgen nog"}`;
+      let blokH = hoogteVan(kopStr, 10.5, "bold", 0, 5) + hoogteVan(peStr, 9.5, "normal", 4, 4.4) + 2.5;
+      if (v.oefenBoekje) blokH += hoogteVan(`Oefenboekje: opgave ${v.oefenBoekje}`, 9.5, "normal", 4, 4.4);
+      if (v.specifiek) blokH += hoogteVan("Let op: " + v.specifiek, 9.5, "normal", 4, 4.4);
+      ruimte(blokH); // past het blok niet meer op deze pagina, dan in zijn geheel naar de volgende
+      tekst(kopStr, { size: 10.5, stijl: "bold", extra: 5 });
+      if (v.oefenBoekje) tekst(`\u2022  Oefenboekje: opgave ${v.oefenBoekje}`, { size: 9.5, kleur: PDF_KLEUR.inktZacht, extra: 4.4, inspring: 4 });
+      tekst("\u2022  " + peStr, { size: 9.5, kleur: PDF_KLEUR.inktZacht, extra: 4.4, inspring: 4 });
+      if (v.specifiek) tekst("\u2022  Let op: " + v.specifiek, { size: 9.5, kleur: PDF_KLEUR.reken, extra: 4.4, inspring: 4 });
+      y += 2.5;
+    });
+  }
+
+  // Eigen voornemens
+  kop("Je eigen voornemens");
+  tekst(res.voornemens || "Je hebt geen eigen voornemens opgeschreven.", { kleur: res.voornemens ? PDF_KLEUR.inkt : PDF_KLEUR.inktZacht });
+
+  // Niet-getoetste stof
+  if (res.nietGetoetst && res.nietGetoetst.length) {
+    kop("Let op: niet alle stof is getoetst");
+    tekst("Deze onderwerpen moest je wel leren, maar zijn niet getoetst:", { size: 9.5, kleur: PDF_KLEUR.inktZacht, extra: 4.6 });
+    res.nietGetoetst.forEach(o => tekst("\u2022  " + o, { size: 9.5, extra: 4.6, inspring: 2 }));
+  }
+
+  // Voettekst met paginanummers
+  const paginas = doc.getNumberOfPages();
+  for (let p = 1; p <= paginas; p++) {
+    doc.setPage(p);
+    doc.setFont("helvetica", "normal"); doc.setFontSize(8.5); doc.setTextColor(...PDF_KLEUR.inktZacht);
+    doc.text(`${res.naam} · ${res.toets}`, marge, 291);
+    doc.text(`pagina ${p} van ${paginas}`, 210 - marge, 291, { align: "right" });
+  }
+
+  const veiligeNaam = res.naam.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
+  doc.save(`toetsanalyse-${veiligeNaam || "leerling"}.pdf`);
+}
+
+document.getElementById("pdf-download").addEventListener("click", () => {
+  if (!laatsteResultaat) { toonMelding("Genereer eerst je feedback."); return; }
+  if (window.jspdf && window.jspdf.jsPDF) {
+    try { maakPdf(laatsteResultaat); return; }
+    catch (e) { console.error(e); }
+  }
+  // Vangnet: als de pdf-bibliotheek niet laadt, valt de knop terug op het printvenster.
+  toonMelding('De pdf-maker kon niet laden. Kies in het printvenster "Opslaan als pdf".');
+  window.print();
+});
+
+/* ======================================================================
+   START
+   Op de reMendel-site wordt de tool geopend met ?toets=<naam>. De tool haalt
+   dan het bestand toetsen/<naam>.json op en verbergt het laadpaneel. Zonder
+   parameter (los geopend) laadt de ingebouwde toets en blijft het paneel
+   zichtbaar, handig voor testen.
+   ====================================================================== */
+(function start() {
+  const param = new URLSearchParams(location.search).get("toets");
+  const veilig = param && /^[a-z0-9_-]+$/i.test(param) ? param : null;
+  if (!veilig) { laadConfig(INGEBOUWDE_TOETS); return; }
+
+  document.getElementById("laad-paneel").style.display = "none";
+  fetch("toetsen/" + veilig + ".json", { cache: "no-store" })
+    .then(r => { if (!r.ok) throw new Error(r.status); return r.json(); })
+    .then(config => {
+      if (!Array.isArray(config.vragen) || !config.vragen.length) throw new Error("leeg");
+      laadConfig(config);
+    })
+    .catch(() => {
+      laadConfig(INGEBOUWDE_TOETS);
+      document.getElementById("laad-paneel").style.display = "";
+      toonLaadMelding("De toets kon niet automatisch geladen worden. Vraag je docent om het toetsbestand en laad het hierboven in.", false);
+      document.getElementById("laad-paneel").open = true;
+    });
+})();
+</script>
+</body>
+</html>
