@@ -1,0 +1,161 @@
+{
+  "titel": "4 havo · Economie PW M2 (H2 + H3)",
+  "stof": "M2 Vraag en aanbod — hoofdstuk 2 en 3",
+  "maxPunten": 27,
+  "nterm": 1,
+  "fouttypen": [
+    {
+      "key": "reken",
+      "label": "Rekenfout",
+      "tekst": "Schrijf je tussenstappen en berekeningen altijd uit in plaats van alles in de rekenmachine te doen. Als je klaar bent, kijk dan of wat je hebt opgeschreven een logisch antwoord op de vraag is.",
+      "kleur": "var(--ft-reken)",
+      "custom": false
+    },
+    {
+      "key": "lees",
+      "label": "Leesfout",
+      "tekst": "Neem een markeerstift en markeer wat er precies gevraagd wordt voordat je begint. Markeer in de bron de gegevens die je nodig hebt. Om dit goed onder de knie te krijgen moet je oefenen met vragen waarbij je een bron moet interpreteren.",
+      "kleur": "var(--ft-lees)",
+      "custom": false
+    },
+    {
+      "key": "begrip",
+      "label": "Begripsfout",
+      "tekst": "Bestudeer de begrippenlijst die je van je docent hebt gekregen. Lees deze door en schrijf alleen de begrippen op die je nog niet kent. Lees daarnaast ook eenmaal alle PowerPoints door. Beide zijn te vinden op Classroom.",
+      "kleur": "var(--ft-begrip)",
+      "custom": false
+    },
+    {
+      "key": "redeneer",
+      "label": "Redeneerfout",
+      "tekst": "Maak redeneervragen van je huiswerk alsof je antwoord geeft op de toets. Alleen dan kan je bij het nakijken beoordelen of je het echt begrijpt. Schrijf bij elke uitlegvraag bewust béide stappen op — bij economie zit het tweede punt vaak in het gevolg dat je nog moet benoemen. Twijfel je, of wil je meer feedback? Lever je schrift in tijdens de les, of maak thuis een foto van je antwoord en mail die. Antwoorden van het boek én het extra oefenmateriaal staan op Classroom.",
+      "kleur": "var(--ft-redeneer)",
+      "custom": false
+    },
+    {
+      "key": "overig",
+      "label": "Overig",
+      "tekst": "Het is misschien nog niet helemaal duidelijk waarom je deze punten hebt laten liggen. Vraag eventueel aan je docent om er samen nog eens naar te kijken.",
+      "kleur": "var(--ft-overig)",
+      "custom": false
+    }
+  ],
+  "nietGetoetst": [
+    "Consumenten- en producentensurplus berekenen en arceren (oefenboekje opgave 2, 5, 51 en 53e t/m g)",
+    "Marktomzet berekenen (oefenboekje opgave 46h en 53d)",
+    "Totale winst (TW) in tabellen en grafieken (oefenboekje opgave 40, 41 en 50)",
+    "Kostenschema's met GVK en GCK volledig invullen (oefenboekje opgave 29 en 45)"
+  ],
+  "vragen": [
+    {
+      "nr": "1a",
+      "onderwerp": "Kostentabel invullen (TO, TK, MO, MK, GTK)",
+      "wds": "D",
+      "max": 4,
+      "oefenBoekje": "29, 40, 41 en 45"
+    },
+    {
+      "nr": "1b",
+      "onderwerp": "Proportioneel of progressief variabele kosten herkennen",
+      "wds": "S",
+      "max": 2,
+      "specifiek": "Kijk naar de kostenfunctie: staat er een kwadraat (q²), dan stijgen de kosten per extra product en zijn ze progressief. Staat er alleen een getal × q, dan zijn ze proportioneel.",
+      "oefenBoekje": "25a, 26a, 27 en 52h/i"
+    },
+    {
+      "nr": "1c",
+      "onderwerp": "Gemiddelde constante kosten (GCK) berekenen",
+      "wds": "D",
+      "max": 1,
+      "oefenBoekje": "28b, 29 en 34f"
+    },
+    {
+      "nr": "1d",
+      "onderwerp": "Productiefactoren met voorbeelden",
+      "wds": "W",
+      "max": 2,
+      "oefenBoekje": "35"
+    },
+    {
+      "nr": "2",
+      "onderwerp": "Begrippen kosten, opbrengsten en surplus koppelen",
+      "wds": "W",
+      "max": 3,
+      "oefenBoekje": "1, 30, 31 en 52"
+    },
+    {
+      "nr": "3a",
+      "onderwerp": "Verschuiving aanbodlijn (hogere loonkosten)",
+      "wds": "S",
+      "max": 1,
+      "specifiek": "De aanbodlijn verschuift door veranderingen bij de aanbieders. Hogere kosten betekent minder aanbod bij elke prijs: de aanbodlijn schuift naar links.",
+      "oefenBoekje": "4 en 20d"
+    },
+    {
+      "nr": "3b",
+      "onderwerp": "Verschuiving vraaglijn (substitutiegoed)",
+      "wds": "S",
+      "max": 1,
+      "specifiek": "Als een vervangend product (substituut) duurder wordt, stappen kopers over: de vraaglijn van dit product schuift naar rechts.",
+      "oefenBoekje": "3h, 4 en 20d"
+    },
+    {
+      "nr": "3c",
+      "onderwerp": "Verschuiving aanbodlijn (grotere oogst)",
+      "wds": "S",
+      "max": 1,
+      "specifiek": "Een grotere oogst betekent meer aanbod bij elke prijs: de aanbodlijn schuift naar rechts.",
+      "oefenBoekje": "4 en 20d"
+    },
+    {
+      "nr": "4a",
+      "onderwerp": "Break-evenpunt aflezen in een grafiek (P = GTK)",
+      "wds": "D",
+      "max": 2,
+      "oefenBoekje": "37, 42g, 43f en 48"
+    },
+    {
+      "nr": "4b",
+      "onderwerp": "Maximale winst berekenen met de grafiek (MO = MK)",
+      "wds": "D",
+      "max": 2,
+      "oefenBoekje": "41b, 43g/h, 44 en 48c"
+    },
+    {
+      "nr": "4c",
+      "onderwerp": "Redeneren over winst voorbij het punt MO = MK",
+      "wds": "S",
+      "max": 1,
+      "oefenBoekje": "43g/h, 44h en 52e/f"
+    },
+    {
+      "nr": "5a",
+      "onderwerp": "Evenwichtsprijs en -hoeveelheid berekenen",
+      "wds": "D",
+      "max": 2,
+      "oefenBoekje": "46f/g, 47a en 53b/c"
+    },
+    {
+      "nr": "5b",
+      "onderwerp": "Vraag- en aanbodlijn tekenen",
+      "wds": "D",
+      "max": 2,
+      "specifiek": "Benoem altijd je lijnen (Qv en Qa) en je assen. Zonder benaming kost dat punten.",
+      "oefenBoekje": "2, 20a, 46e en 53a"
+    },
+    {
+      "nr": "5c",
+      "onderwerp": "Vraag- of aanbodoverschot berekenen",
+      "wds": "D",
+      "max": 2,
+      "oefenBoekje": "7b t/m e, 51f/g en 53"
+    },
+    {
+      "nr": "5d",
+      "onderwerp": "Prijsvorming bij een overschot uitleggen",
+      "wds": "S",
+      "max": 1,
+      "oefenBoekje": "51f/g"
+    }
+  ]
+}
