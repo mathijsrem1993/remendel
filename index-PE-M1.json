@@ -1,0 +1,7415 @@
+{
+  "schema": "remendel-index/1",
+  "boek": {
+    "id": "PE-M1",
+    "titel": "Praktische Economie · Module 1: Schaarste, geld en handel",
+    "niveau": "4 havo",
+    "status": "compleet: hoofdstuk 1, 2 en 3 plus Domein A"
+  },
+  "legenda": {
+    "W": "Weten",
+    "D": "Doen",
+    "S": "Snappen",
+    "stof": "true = hoort tot de toetsstof, gemeten aan de begrippenlijst van het oefenboekje"
+  },
+  "rijen": [
+    {
+      "bron": "lesboek",
+      "hoofdstuk": 1,
+      "paragraaf": "§1",
+      "opgave": "1a",
+      "omschrijving": "Behoefte benoemen bij iemand die met het vliegtuig reist",
+      "wds": "D",
+      "tags": [],
+      "blz": 12,
+      "stof": true,
+      "onderwerpen": [
+        "M1-H1-01"
+      ]
+    },
+    {
+      "bron": "lesboek",
+      "hoofdstuk": 1,
+      "paragraaf": "§1",
+      "opgave": "1b",
+      "omschrijving": "Alternatieve aanwendingsrichting van het middel 'vliegtuig' geven",
+      "wds": "D",
+      "tags": [],
+      "blz": 12,
+      "stof": true,
+      "onderwerpen": [
+        "M1-H1-02"
+      ]
+    },
+    {
+      "bron": "lesboek",
+      "hoofdstuk": 1,
+      "paragraaf": "§1",
+      "opgave": "1c",
+      "omschrijving": "Overige kosten van vliegen benoemen naast de ticketprijs",
+      "wds": "D",
+      "tags": [],
+      "blz": 12,
+      "stof": true,
+      "onderwerpen": [
+        "M1-H1-04"
+      ]
+    },
+    {
+      "bron": "lesboek",
+      "hoofdstuk": 1,
+      "paragraaf": "§1",
+      "opgave": "1d",
+      "omschrijving": "Opofferingskosten bepalen bij een week vakantie versus een week werken",
+      "wds": "D",
+      "tags": [],
+      "blz": 12,
+      "stof": false,
+      "onderwerpen": []
+    },
+    {
+      "bron": "lesboek",
+      "hoofdstuk": 1,
+      "paragraaf": "§1",
+      "opgave": "2-I",
+      "omschrijving": "Stelling beoordelen: een schaars middel is zeldzaam",
+      "wds": "S",
+      "tags": [],
+      "blz": 12,
+      "stof": true,
+      "onderwerpen": [
+        "M1-H1-03"
+      ]
+    },
+    {
+      "bron": "lesboek",
+      "hoofdstuk": 1,
+      "paragraaf": "§1",
+      "opgave": "2-II",
+      "omschrijving": "Stelling beoordelen: opofferingskosten zijn de kosten van de beste alternatieve aanwending",
+      "wds": "S",
+      "tags": [],
+      "blz": 12,
+      "stof": false,
+      "onderwerpen": []
+    },
+    {
+      "bron": "lesboek",
+      "hoofdstuk": 1,
+      "paragraaf": "§1",
+      "opgave": "2-III",
+      "omschrijving": "Stelling beoordelen: nettobaten zijn alle opbrengsten min alle kosten",
+      "wds": "S",
+      "tags": [],
+      "blz": 12,
+      "stof": true,
+      "onderwerpen": [
+        "M1-H1-04"
+      ]
+    },
+    {
+      "bron": "lesboek",
+      "hoofdstuk": 1,
+      "paragraaf": "§1",
+      "opgave": "2-IV",
+      "omschrijving": "Stelling beoordelen: dezelfde behoeften leiden tot dezelfde middelen",
+      "wds": "S",
+      "tags": [],
+      "blz": 12,
+      "stof": true,
+      "onderwerpen": [
+        "M1-H1-01"
+      ]
+    },
+    {
+      "bron": "lesboek",
+      "hoofdstuk": 1,
+      "paragraaf": "§1",
+      "opgave": "2-V",
+      "omschrijving": "Stelling beoordelen: het middel 'tijd' is voor iedereen gelijk voorradig",
+      "wds": "S",
+      "tags": [],
+      "blz": 12,
+      "stof": true,
+      "onderwerpen": [
+        "M1-H1-01"
+      ]
+    },
+    {
+      "bron": "lesboek",
+      "hoofdstuk": 1,
+      "paragraaf": "§1",
+      "opgave": "3a",
+      "omschrijving": "Het middel 'auto' indelen als product, dienst of tijd",
+      "wds": "D",
+      "tags": [],
+      "blz": 12,
+      "stof": true,
+      "onderwerpen": [
+        "M1-H1-01"
+      ]
+    },
+    {
+      "bron": "lesboek",
+      "hoofdstuk": 1,
+      "paragraaf": "§1",
+      "opgave": "3b",
+      "omschrijving": "Twee aanwendingsrichtingen van het middel 'auto' benoemen",
+      "wds": "D",
+      "tags": [],
+      "blz": 12,
+      "stof": true,
+      "onderwerpen": [
+        "M1-H1-02"
+      ]
+    },
+    {
+      "bron": "lesboek",
+      "hoofdstuk": 1,
+      "paragraaf": "§1",
+      "opgave": "3c",
+      "omschrijving": "Bron 7 invullen voor de overige middelen",
+      "wds": "D",
+      "tags": [],
+      "blz": 12,
+      "stof": true,
+      "onderwerpen": [
+        "M1-H1-02"
+      ]
+    },
+    {
+      "bron": "lesboek",
+      "hoofdstuk": 1,
+      "paragraaf": "§1",
+      "opgave": "4a",
+      "omschrijving": "Aangeven wat bron 1 laat zien over behoeften",
+      "wds": "D",
+      "tags": [],
+      "blz": 12,
+      "stof": true,
+      "onderwerpen": [
+        "M1-H1-01"
+      ]
+    },
+    {
+      "bron": "lesboek",
+      "hoofdstuk": 1,
+      "paragraaf": "§1",
+      "opgave": "4b",
+      "omschrijving": "Verklaren waarom niet iedereen hetzelfde koopt",
+      "wds": "S",
+      "tags": [],
+      "blz": 12,
+      "stof": true,
+      "onderwerpen": [
+        "M1-H1-01"
+      ]
+    },
+    {
+      "bron": "lesboek",
+      "hoofdstuk": 1,
+      "paragraaf": "§1",
+      "opgave": "5a",
+      "omschrijving": "Uitleggen hoe schaarste ontstaat bij orgaandonatie",
+      "wds": "S",
+      "tags": [],
+      "blz": 12,
+      "stof": true,
+      "onderwerpen": [
+        "M1-H1-03"
+      ]
+    },
+    {
+      "bron": "lesboek",
+      "hoofdstuk": 1,
+      "paragraaf": "§1",
+      "opgave": "5b",
+      "omschrijving": "Bepalen welke keuze de schaarste bij orgaandonatie afdwingt",
+      "wds": "D",
+      "tags": [],
+      "blz": 12,
+      "stof": true,
+      "onderwerpen": [
+        "M1-H1-03"
+      ]
+    },
+    {
+      "bron": "lesboek",
+      "hoofdstuk": 1,
+      "paragraaf": "§1",
+      "opgave": "5c",
+      "omschrijving": "Het Amerikaanse verdeelsysteem uit het praktijkonderzoek benoemen",
+      "wds": "W",
+      "tags": [],
+      "blz": 12,
+      "stof": false,
+      "onderwerpen": []
+    },
+    {
+      "bron": "lesboek",
+      "hoofdstuk": 1,
+      "paragraaf": "§1",
+      "opgave": "5d",
+      "omschrijving": "Twee voordelen en twee nadelen van dat verdeelsysteem benoemen",
+      "wds": "S",
+      "tags": [],
+      "blz": 12,
+      "stof": false,
+      "onderwerpen": []
+    },
+    {
+      "bron": "lesboek",
+      "hoofdstuk": 1,
+      "paragraaf": "§1",
+      "opgave": "5e",
+      "omschrijving": "Twee alternatieve verdeelsystemen bedenken en de keuze verdedigen",
+      "wds": "S",
+      "tags": [],
+      "blz": 13,
+      "stof": false,
+      "onderwerpen": []
+    },
+    {
+      "bron": "lesboek",
+      "hoofdstuk": 1,
+      "paragraaf": "§1",
+      "opgave": "5f",
+      "omschrijving": "Uitleggen hoe een veiling het economische keuzeprobleem oplost",
+      "wds": "S",
+      "tags": [],
+      "blz": 13,
+      "stof": false,
+      "onderwerpen": []
+    },
+    {
+      "bron": "lesboek",
+      "hoofdstuk": 1,
+      "paragraaf": "§1",
+      "opgave": "5g",
+      "omschrijving": "Verklaren waarom een veiling wel bij schilderijen en niet bij donororganen wordt geaccepteerd",
+      "wds": "S",
+      "tags": [],
+      "blz": 13,
+      "stof": false,
+      "onderwerpen": []
+    },
+    {
+      "bron": "lesboek",
+      "hoofdstuk": 1,
+      "paragraaf": "§1",
+      "opgave": "5h",
+      "omschrijving": "Aflezen wat er veranderd is door de nieuwe donorwet (bron 8)",
+      "wds": "D",
+      "tags": [],
+      "blz": 13,
+      "stof": false,
+      "onderwerpen": []
+    },
+    {
+      "bron": "lesboek",
+      "hoofdstuk": 1,
+      "paragraaf": "§1",
+      "opgave": "5i",
+      "omschrijving": "Beoordelen of de nieuwe donorwet het gewenste effect heeft",
+      "wds": "S",
+      "tags": [],
+      "blz": 13,
+      "stof": false,
+      "onderwerpen": []
+    },
+    {
+      "bron": "lesboek",
+      "hoofdstuk": 1,
+      "paragraaf": "§1",
+      "opgave": "5j",
+      "omschrijving": "Uitleggen hoe de donorwet de schaarste bij orgaandonatie vermindert",
+      "wds": "S",
+      "tags": [],
+      "blz": 13,
+      "stof": true,
+      "onderwerpen": [
+        "M1-H1-03"
+      ]
+    },
+    {
+      "bron": "lesboek",
+      "hoofdstuk": 1,
+      "paragraaf": "§1",
+      "opgave": "6",
+      "omschrijving": "Begrippen koppelen aan de voorbeelden in bron 9",
+      "wds": "D",
+      "tags": [],
+      "blz": 13,
+      "stof": true,
+      "onderwerpen": [
+        "M1-H1-01",
+        "M1-H1-02"
+      ]
+    },
+    {
+      "bron": "lesboek",
+      "hoofdstuk": 1,
+      "paragraaf": "§1",
+      "opgave": "7a",
+      "omschrijving": "Benoemen van welke schaarste sprake is in landbouwgebieden (bron 10)",
+      "wds": "D",
+      "tags": [],
+      "blz": 14,
+      "stof": true,
+      "onderwerpen": [
+        "M1-H1-03"
+      ]
+    },
+    {
+      "bron": "lesboek",
+      "hoofdstuk": 1,
+      "paragraaf": "§1",
+      "opgave": "7b",
+      "omschrijving": "Aflezen hoe die schaarste wordt opgevangen",
+      "wds": "D",
+      "tags": [],
+      "blz": 14,
+      "stof": true,
+      "onderwerpen": [
+        "M1-H1-03"
+      ]
+    },
+    {
+      "bron": "lesboek",
+      "hoofdstuk": 1,
+      "paragraaf": "§1",
+      "opgave": "7c",
+      "omschrijving": "Bedenken hoe een boer die schaarste zelf kan opvangen",
+      "wds": "S",
+      "tags": [],
+      "blz": 14,
+      "stof": true,
+      "onderwerpen": [
+        "M1-H1-03"
+      ]
+    },
+    {
+      "bron": "lesboek",
+      "hoofdstuk": 1,
+      "paragraaf": "§1",
+      "opgave": "7d",
+      "omschrijving": "Beredeneren welke andere schaarste daarbij voor de boer een rol speelt",
+      "wds": "S",
+      "tags": [],
+      "blz": 14,
+      "stof": true,
+      "onderwerpen": [
+        "M1-H1-03"
+      ]
+    },
+    {
+      "bron": "lesboek",
+      "hoofdstuk": 1,
+      "paragraaf": "§1",
+      "opgave": "8a",
+      "omschrijving": "Kosten van ongerief bepalen als Tamar uitslaapt",
+      "wds": "D",
+      "tags": [],
+      "blz": 14,
+      "stof": true,
+      "onderwerpen": [
+        "M1-H1-04"
+      ]
+    },
+    {
+      "bron": "lesboek",
+      "hoofdstuk": 1,
+      "paragraaf": "§1",
+      "opgave": "8b",
+      "omschrijving": "Gevolg voor de nettobaten verklaren als werken leuker wordt bij gelijk uurloon",
+      "wds": "S",
+      "tags": [],
+      "blz": 14,
+      "stof": true,
+      "onderwerpen": [
+        "M1-H1-04"
+      ]
+    },
+    {
+      "bron": "lesboek",
+      "hoofdstuk": 1,
+      "paragraaf": "§1",
+      "opgave": "8c",
+      "omschrijving": "Keuze van Tamar bepalen bij een uurloon van € 8,50, met berekening",
+      "wds": "D",
+      "tags": [
+        "rekenen"
+      ],
+      "blz": 14,
+      "stof": true,
+      "onderwerpen": [
+        "M1-H1-04"
+      ]
+    },
+    {
+      "bron": "lesboek",
+      "hoofdstuk": 1,
+      "paragraaf": "§1",
+      "opgave": "8d",
+      "omschrijving": "Opofferingskosten van die keuze bepalen",
+      "wds": "D",
+      "tags": [],
+      "blz": 14,
+      "stof": false,
+      "onderwerpen": []
+    },
+    {
+      "bron": "lesboek",
+      "hoofdstuk": 1,
+      "paragraaf": "§1",
+      "opgave": "9a",
+      "omschrijving": "Uitspraak van Drees uitleggen met het begrip 'schaarste'",
+      "wds": "S",
+      "tags": [],
+      "blz": 14,
+      "stof": true,
+      "onderwerpen": [
+        "M1-H1-03"
+      ]
+    },
+    {
+      "bron": "lesboek",
+      "hoofdstuk": 1,
+      "paragraaf": "§1",
+      "opgave": "9b",
+      "omschrijving": "Twee voorbeelden van schaarste in Nederland noemen",
+      "wds": "D",
+      "tags": [],
+      "blz": 14,
+      "stof": true,
+      "onderwerpen": [
+        "M1-H1-03"
+      ]
+    },
+    {
+      "bron": "lesboek",
+      "hoofdstuk": 1,
+      "paragraaf": "§1",
+      "opgave": "10a",
+      "omschrijving": "Baten van werken in het wijkcentrum op de juiste plek in bron 11 zetten",
+      "wds": "D",
+      "tags": [],
+      "blz": 14,
+      "stof": true,
+      "onderwerpen": [
+        "M1-H1-04"
+      ]
+    },
+    {
+      "bron": "lesboek",
+      "hoofdstuk": 1,
+      "paragraaf": "§1",
+      "opgave": "10b",
+      "omschrijving": "Bron 11 invullen voor de andere activiteiten",
+      "wds": "D",
+      "tags": [],
+      "blz": 14,
+      "stof": true,
+      "onderwerpen": [
+        "M1-H1-04"
+      ]
+    },
+    {
+      "bron": "lesboek",
+      "hoofdstuk": 1,
+      "paragraaf": "§1",
+      "opgave": "10c",
+      "omschrijving": "Keuze van Els bepalen en verklaren met de nettobaten",
+      "wds": "S",
+      "tags": [],
+      "blz": 14,
+      "stof": true,
+      "onderwerpen": [
+        "M1-H1-04"
+      ]
+    },
+    {
+      "bron": "lesboek",
+      "hoofdstuk": 1,
+      "paragraaf": "§1",
+      "opgave": "10d",
+      "omschrijving": "Opofferingskosten van Els bepalen",
+      "wds": "D",
+      "tags": [],
+      "blz": 14,
+      "stof": false,
+      "onderwerpen": []
+    },
+    {
+      "bron": "lesboek",
+      "hoofdstuk": 1,
+      "paragraaf": "§2",
+      "opgave": "1-I",
+      "omschrijving": "Stelling beoordelen: bij een lager budget passen er minder productcombinaties",
+      "wds": "S",
+      "tags": [],
+      "blz": 20,
+      "stof": true,
+      "onderwerpen": [
+        "M1-H1-05"
+      ]
+    },
+    {
+      "bron": "lesboek",
+      "hoofdstuk": 1,
+      "paragraaf": "§2",
+      "opgave": "1-II",
+      "omschrijving": "Stelling beoordelen: productcombinaties bestaan uit middelen voor dezelfde behoefte",
+      "wds": "S",
+      "tags": [],
+      "blz": 20,
+      "stof": true,
+      "onderwerpen": [
+        "M1-H1-05"
+      ]
+    },
+    {
+      "bron": "lesboek",
+      "hoofdstuk": 1,
+      "paragraaf": "§2",
+      "opgave": "1-III",
+      "omschrijving": "Stelling beoordelen: bij een prijsverhoging verschuift de budgetlijn met gelijke helling",
+      "wds": "S",
+      "tags": [],
+      "blz": 20,
+      "stof": true,
+      "onderwerpen": [
+        "M1-H1-07"
+      ]
+    },
+    {
+      "bron": "lesboek",
+      "hoofdstuk": 1,
+      "paragraaf": "§2",
+      "opgave": "1-IV",
+      "omschrijving": "Stelling beoordelen: de opofferingskosten van een uur vrije tijd zijn gelijk aan het uurloon",
+      "wds": "S",
+      "tags": [],
+      "blz": 20,
+      "stof": false,
+      "onderwerpen": []
+    },
+    {
+      "bron": "lesboek",
+      "hoofdstuk": 1,
+      "paragraaf": "§2",
+      "opgave": "1-V",
+      "omschrijving": "Stelling beoordelen: prijsveranderingen hebben geen invloed op het budget",
+      "wds": "S",
+      "tags": [],
+      "blz": 20,
+      "stof": true,
+      "onderwerpen": [
+        "M1-H1-05"
+      ]
+    },
+    {
+      "bron": "lesboek",
+      "hoofdstuk": 1,
+      "paragraaf": "§2",
+      "opgave": "2a",
+      "omschrijving": "Formule van de budgetlijn van Justin opstellen",
+      "wds": "D",
+      "tags": [],
+      "blz": 20,
+      "stof": true,
+      "onderwerpen": [
+        "M1-H1-06"
+      ]
+    },
+    {
+      "bron": "lesboek",
+      "hoofdstuk": 1,
+      "paragraaf": "§2",
+      "opgave": "2b",
+      "omschrijving": "Snijpunten van de budgetlijn met de x-as en de y-as berekenen",
+      "wds": "D",
+      "tags": [
+        "rekenen"
+      ],
+      "blz": 20,
+      "stof": true,
+      "onderwerpen": [
+        "M1-H1-06"
+      ]
+    },
+    {
+      "bron": "lesboek",
+      "hoofdstuk": 1,
+      "paragraaf": "§2",
+      "opgave": "2c",
+      "omschrijving": "Budgetlijn van Justin tekenen in bron 7",
+      "wds": "D",
+      "tags": [
+        "tekenen"
+      ],
+      "blz": 20,
+      "stof": true,
+      "onderwerpen": [
+        "M1-H1-06"
+      ]
+    },
+    {
+      "bron": "lesboek",
+      "hoofdstuk": 1,
+      "paragraaf": "§2",
+      "opgave": "3a",
+      "omschrijving": "Uitgaven en totale uitgaven van een productcombinatie berekenen (bron 8)",
+      "wds": "D",
+      "tags": [
+        "rekenen"
+      ],
+      "blz": 21,
+      "stof": true,
+      "onderwerpen": [
+        "M1-H1-05"
+      ]
+    },
+    {
+      "bron": "lesboek",
+      "hoofdstuk": 1,
+      "paragraaf": "§2",
+      "opgave": "3b",
+      "omschrijving": "Bepalen of de productcombinatie onder, op of boven de budgetlijn ligt",
+      "wds": "D",
+      "tags": [],
+      "blz": 21,
+      "stof": true,
+      "onderwerpen": [
+        "M1-H1-05",
+        "M1-H1-06"
+      ]
+    },
+    {
+      "bron": "lesboek",
+      "hoofdstuk": 1,
+      "paragraaf": "§2",
+      "opgave": "3c",
+      "omschrijving": "Bron 8 invullen voor de overige productcombinaties",
+      "wds": "D",
+      "tags": [],
+      "blz": 21,
+      "stof": true,
+      "onderwerpen": [
+        "M1-H1-05"
+      ]
+    },
+    {
+      "bron": "lesboek",
+      "hoofdstuk": 1,
+      "paragraaf": "§2",
+      "opgave": "4a",
+      "omschrijving": "Uitleggen dat je geld wel kunt sparen en tijd niet",
+      "wds": "S",
+      "tags": [],
+      "blz": 21,
+      "stof": true,
+      "onderwerpen": [
+        "M1-H1-01"
+      ]
+    },
+    {
+      "bron": "lesboek",
+      "hoofdstuk": 1,
+      "paragraaf": "§2",
+      "opgave": "4b",
+      "omschrijving": "Zin uit bron 9 citeren waaruit blijkt dat de hoeveelheid tijd vastligt",
+      "wds": "W",
+      "tags": [],
+      "blz": 21,
+      "stof": true,
+      "onderwerpen": [
+        "M1-H1-01"
+      ]
+    },
+    {
+      "bron": "lesboek",
+      "hoofdstuk": 1,
+      "paragraaf": "§2",
+      "opgave": "4c",
+      "omschrijving": "Boete en gevangenisstraf verklaren als het afnemen van middelen",
+      "wds": "S",
+      "tags": [],
+      "blz": 21,
+      "stof": true,
+      "onderwerpen": [
+        "M1-H1-01"
+      ]
+    },
+    {
+      "bron": "lesboek",
+      "hoofdstuk": 1,
+      "paragraaf": "§2",
+      "opgave": "5a",
+      "omschrijving": "Snijpunten berekenen en de budgetlijn tekenen in bron 10",
+      "wds": "D",
+      "tags": [
+        "rekenen",
+        "tekenen"
+      ],
+      "blz": 22,
+      "stof": true,
+      "onderwerpen": [
+        "M1-H1-06"
+      ]
+    },
+    {
+      "bron": "lesboek",
+      "hoofdstuk": 1,
+      "paragraaf": "§2",
+      "opgave": "5b",
+      "omschrijving": "Beschrijven wat er met de budgetlijn gebeurt bij een prijsstijging van product 1",
+      "wds": "S",
+      "tags": [],
+      "blz": 22,
+      "stof": true,
+      "onderwerpen": [
+        "M1-H1-07"
+      ]
+    },
+    {
+      "bron": "lesboek",
+      "hoofdstuk": 1,
+      "paragraaf": "§2",
+      "opgave": "5c",
+      "omschrijving": "Nieuwe snijpunten berekenen en de nieuwe budgetlijn tekenen",
+      "wds": "D",
+      "tags": [
+        "rekenen",
+        "tekenen"
+      ],
+      "blz": 22,
+      "stof": true,
+      "onderwerpen": [
+        "M1-H1-07"
+      ]
+    },
+    {
+      "bron": "lesboek",
+      "hoofdstuk": 1,
+      "paragraaf": "§2",
+      "opgave": "5d",
+      "omschrijving": "Beschrijven wat er met de budgetlijn gebeurt bij een stijging van het budget",
+      "wds": "S",
+      "tags": [],
+      "blz": 22,
+      "stof": true,
+      "onderwerpen": [
+        "M1-H1-07"
+      ]
+    },
+    {
+      "bron": "lesboek",
+      "hoofdstuk": 1,
+      "paragraaf": "§2",
+      "opgave": "5e",
+      "omschrijving": "Opnieuw de snijpunten berekenen en de budgetlijn tekenen",
+      "wds": "D",
+      "tags": [
+        "rekenen",
+        "tekenen"
+      ],
+      "blz": 22,
+      "stof": true,
+      "onderwerpen": [
+        "M1-H1-07"
+      ]
+    },
+    {
+      "bron": "lesboek",
+      "hoofdstuk": 1,
+      "paragraaf": "§2",
+      "opgave": "6a",
+      "omschrijving": "Uitleggen wat bedoeld wordt met 'aan het einde van hun geld een stukje maand over'",
+      "wds": "S",
+      "tags": [],
+      "blz": 22,
+      "stof": true,
+      "onderwerpen": [
+        "M1-H1-05"
+      ]
+    },
+    {
+      "bron": "lesboek",
+      "hoofdstuk": 1,
+      "paragraaf": "§2",
+      "opgave": "6b",
+      "omschrijving": "Advies van het Nibud samenvatten met 'productcombinatie' en 'budgetlijn'",
+      "wds": "S",
+      "tags": [],
+      "blz": 22,
+      "stof": true,
+      "onderwerpen": [
+        "M1-H1-05"
+      ]
+    },
+    {
+      "bron": "lesboek",
+      "hoofdstuk": 1,
+      "paragraaf": "§2",
+      "opgave": "7a",
+      "omschrijving": "Uitleggen dat de opofferingskosten van een uur vrije tijd € 20 zijn",
+      "wds": "S",
+      "tags": [],
+      "blz": 23,
+      "stof": false,
+      "onderwerpen": []
+    },
+    {
+      "bron": "lesboek",
+      "hoofdstuk": 1,
+      "paragraaf": "§2",
+      "opgave": "7b",
+      "omschrijving": "Nieuwe snijpunten berekenen en de budgetlijn tekenen bij een uurloon van € 25",
+      "wds": "D",
+      "tags": [
+        "rekenen",
+        "tekenen"
+      ],
+      "blz": 23,
+      "stof": true,
+      "onderwerpen": [
+        "M1-H1-07"
+      ]
+    },
+    {
+      "bron": "lesboek",
+      "hoofdstuk": 1,
+      "paragraaf": "§2",
+      "opgave": "7c",
+      "omschrijving": "Nieuwe opofferingskosten van een uur vrije tijd bepalen en verklaren",
+      "wds": "S",
+      "tags": [],
+      "blz": 23,
+      "stof": false,
+      "onderwerpen": []
+    },
+    {
+      "bron": "lesboek",
+      "hoofdstuk": 1,
+      "paragraaf": "§2",
+      "opgave": "7d",
+      "omschrijving": "Berekenen hoeveel uur vrije tijd overblijft bij een inkomen van € 160 per dag",
+      "wds": "D",
+      "tags": [
+        "rekenen"
+      ],
+      "blz": 23,
+      "stof": true,
+      "onderwerpen": [
+        "M1-H1-06"
+      ]
+    },
+    {
+      "bron": "lesboek",
+      "hoofdstuk": 1,
+      "paragraaf": "§2",
+      "opgave": "8",
+      "omschrijving": "Beoordelen of vier prijsveranderingen dezelfde verschuiving van de budgetlijn geven als in bron 4",
+      "wds": "S",
+      "tags": [],
+      "blz": 23,
+      "stof": true,
+      "onderwerpen": [
+        "M1-H1-07"
+      ]
+    },
+    {
+      "bron": "lesboek",
+      "hoofdstuk": 1,
+      "paragraaf": "§2",
+      "opgave": "9a",
+      "omschrijving": "Snijpunten van de budgetlijn van Tamar met de x-as en de y-as berekenen",
+      "wds": "D",
+      "tags": [
+        "rekenen"
+      ],
+      "blz": 24,
+      "stof": true,
+      "onderwerpen": [
+        "M1-H1-06"
+      ]
+    },
+    {
+      "bron": "lesboek",
+      "hoofdstuk": 1,
+      "paragraaf": "§2",
+      "opgave": "9b",
+      "omschrijving": "Formule van de budgetlijn van Tamar opstellen",
+      "wds": "D",
+      "tags": [],
+      "blz": 24,
+      "stof": true,
+      "onderwerpen": [
+        "M1-H1-06"
+      ]
+    },
+    {
+      "bron": "lesboek",
+      "hoofdstuk": 1,
+      "paragraaf": "§2",
+      "opgave": "9c",
+      "omschrijving": "Nieuwe snijpunten berekenen en de nieuwe budgetlijn tekenen in bron 13",
+      "wds": "D",
+      "tags": [
+        "rekenen",
+        "tekenen"
+      ],
+      "blz": 24,
+      "stof": true,
+      "onderwerpen": [
+        "M1-H1-07"
+      ]
+    },
+    {
+      "bron": "lesboek",
+      "hoofdstuk": 1,
+      "paragraaf": "§2",
+      "opgave": "9d",
+      "omschrijving": "Berekenen hoeveel T-shirts Tamar nog kan kopen",
+      "wds": "D",
+      "tags": [
+        "rekenen"
+      ],
+      "blz": 24,
+      "stof": true,
+      "onderwerpen": [
+        "M1-H1-06"
+      ]
+    },
+    {
+      "bron": "lesboek",
+      "hoofdstuk": 1,
+      "paragraaf": "§2",
+      "opgave": "10",
+      "omschrijving": "Oorzaak van de verandering van de budgetlijn benoemen bij A, B en C (bron 14)",
+      "wds": "D",
+      "tags": [],
+      "blz": 24,
+      "stof": true,
+      "onderwerpen": [
+        "M1-H1-07"
+      ]
+    },
+    {
+      "bron": "lesboek",
+      "hoofdstuk": 1,
+      "paragraaf": "§3",
+      "opgave": "1a",
+      "omschrijving": "Bepalen wat er met het budget gebeurt als mensen vakantiegeld krijgen",
+      "wds": "D",
+      "tags": [],
+      "blz": 25,
+      "stof": true,
+      "onderwerpen": [
+        "M1-H1-05"
+      ]
+    },
+    {
+      "bron": "lesboek",
+      "hoofdstuk": 1,
+      "paragraaf": "§3",
+      "opgave": "1b",
+      "omschrijving": "Invloed van het vakantiegeld op de budgetlijn beschrijven",
+      "wds": "S",
+      "tags": [],
+      "blz": 25,
+      "stof": true,
+      "onderwerpen": [
+        "M1-H1-07"
+      ]
+    },
+    {
+      "bron": "lesboek",
+      "hoofdstuk": 1,
+      "paragraaf": "§3",
+      "opgave": "1c",
+      "omschrijving": "Benoemen welk ander middel in de meivakantie meer beschikbaar komt",
+      "wds": "D",
+      "tags": [],
+      "blz": 25,
+      "stof": true,
+      "onderwerpen": [
+        "M1-H1-01"
+      ]
+    },
+    {
+      "bron": "lesboek",
+      "hoofdstuk": 1,
+      "paragraaf": "§3",
+      "opgave": "1d",
+      "omschrijving": "Verklaren waarom meer mensen juist in de meivakantie willen vliegen",
+      "wds": "S",
+      "tags": [],
+      "blz": 25,
+      "stof": true,
+      "onderwerpen": [
+        "M1-H1-01"
+      ]
+    },
+    {
+      "bron": "lesboek",
+      "hoofdstuk": 1,
+      "paragraaf": "§3",
+      "opgave": "2a",
+      "omschrijving": "Bepalen van welk middel de schaarste in bron 1 wordt besproken, met verklaring",
+      "wds": "S",
+      "tags": [],
+      "blz": 25,
+      "stof": true,
+      "onderwerpen": [
+        "M1-H1-03"
+      ]
+    },
+    {
+      "bron": "lesboek",
+      "hoofdstuk": 1,
+      "paragraaf": "§3",
+      "opgave": "2b",
+      "omschrijving": "Opofferingskosten van grond voor biobrandstoffen bepalen",
+      "wds": "D",
+      "tags": [],
+      "blz": 25,
+      "stof": false,
+      "onderwerpen": []
+    },
+    {
+      "bron": "lesboek",
+      "hoofdstuk": 1,
+      "paragraaf": "§3",
+      "opgave": "3a",
+      "omschrijving": "Uitleggen dat gras een alternatief aanwendbaar middel is",
+      "wds": "S",
+      "tags": [],
+      "blz": 25,
+      "stof": true,
+      "onderwerpen": [
+        "M1-H1-02"
+      ]
+    },
+    {
+      "bron": "lesboek",
+      "hoofdstuk": 1,
+      "paragraaf": "§3",
+      "opgave": "3b",
+      "omschrijving": "Beoordelen of oud papier alternatief aanwendbaar is, met verklaring",
+      "wds": "S",
+      "tags": [],
+      "blz": 25,
+      "stof": true,
+      "onderwerpen": [
+        "M1-H1-02"
+      ]
+    },
+    {
+      "bron": "lesboek",
+      "hoofdstuk": 1,
+      "paragraaf": "§3",
+      "opgave": "3c",
+      "omschrijving": "Uitleggen wanneer er wel en niet sprake is van schaarste aan oud papier",
+      "wds": "S",
+      "tags": [],
+      "blz": 25,
+      "stof": true,
+      "onderwerpen": [
+        "M1-H1-03"
+      ]
+    },
+    {
+      "bron": "lesboek",
+      "hoofdstuk": 1,
+      "paragraaf": "§3",
+      "opgave": "4a",
+      "omschrijving": "Formules van de budgetlijnen van Tamar en Lisa opstellen",
+      "wds": "D",
+      "tags": [],
+      "blz": 26,
+      "stof": true,
+      "onderwerpen": [
+        "M1-H1-06"
+      ]
+    },
+    {
+      "bron": "lesboek",
+      "hoofdstuk": 1,
+      "paragraaf": "§3",
+      "opgave": "4b",
+      "omschrijving": "De twee budgetlijnen tekenen in bron 3",
+      "wds": "D",
+      "tags": [
+        "tekenen"
+      ],
+      "blz": 26,
+      "stof": true,
+      "onderwerpen": [
+        "M1-H1-06"
+      ]
+    },
+    {
+      "bron": "lesboek",
+      "hoofdstuk": 1,
+      "paragraaf": "§3",
+      "opgave": "4c",
+      "omschrijving": "Productcombinaties van Tamar en Lisa bepalen en in bron 3 aangeven",
+      "wds": "D",
+      "tags": [],
+      "blz": 26,
+      "stof": true,
+      "onderwerpen": [
+        "M1-H1-05",
+        "M1-H1-06"
+      ]
+    },
+    {
+      "bron": "lesboek",
+      "hoofdstuk": 1,
+      "paragraaf": "§3",
+      "opgave": "5a",
+      "omschrijving": "Uitleggen dat de songtitel verwijst naar een budgetlijn",
+      "wds": "S",
+      "tags": [],
+      "blz": 26,
+      "stof": true,
+      "onderwerpen": [
+        "M1-H1-06"
+      ]
+    },
+    {
+      "bron": "lesboek",
+      "hoofdstuk": 1,
+      "paragraaf": "§3",
+      "opgave": "5b",
+      "omschrijving": "Uitleggen dat de slotzin een economisch keuzeprobleem oplost",
+      "wds": "S",
+      "tags": [],
+      "blz": 26,
+      "stof": true,
+      "onderwerpen": [
+        "M1-H1-03"
+      ]
+    },
+    {
+      "bron": "lesboek",
+      "hoofdstuk": 1,
+      "paragraaf": "§3",
+      "opgave": "6a",
+      "omschrijving": "Omschrijving geven van het begrip 'vacature'",
+      "wds": "W",
+      "tags": [],
+      "blz": 26,
+      "stof": false,
+      "onderwerpen": []
+    },
+    {
+      "bron": "lesboek",
+      "hoofdstuk": 1,
+      "paragraaf": "§3",
+      "opgave": "6b",
+      "omschrijving": "Benoemen welke afweging je maakt bij het aanbieden op de arbeidsmarkt",
+      "wds": "S",
+      "tags": [],
+      "blz": 26,
+      "stof": true,
+      "onderwerpen": [
+        "M1-H1-04"
+      ]
+    },
+    {
+      "bron": "lesboek",
+      "hoofdstuk": 1,
+      "paragraaf": "§3",
+      "opgave": "6c",
+      "omschrijving": "Uitleggen dat mensen die gaan werken zowel middelen opofferen als winnen",
+      "wds": "S",
+      "tags": [],
+      "blz": 26,
+      "stof": true,
+      "onderwerpen": [
+        "M1-H1-01"
+      ]
+    },
+    {
+      "bron": "lesboek",
+      "hoofdstuk": 1,
+      "paragraaf": "§3",
+      "opgave": "6d",
+      "omschrijving": "Bepalen of de opofferingskosten van vrije tijd stijgen of dalen, met verklaring",
+      "wds": "S",
+      "tags": [],
+      "blz": 26,
+      "stof": false,
+      "onderwerpen": []
+    },
+    {
+      "bron": "lesboek",
+      "hoofdstuk": 1,
+      "paragraaf": "§3",
+      "opgave": "7a",
+      "omschrijving": "Verandering in bron 5A verklaren bij een gelijk gebleven budget",
+      "wds": "S",
+      "tags": [],
+      "blz": 27,
+      "stof": true,
+      "onderwerpen": [
+        "M1-H1-07"
+      ]
+    },
+    {
+      "bron": "lesboek",
+      "hoofdstuk": 1,
+      "paragraaf": "§3",
+      "opgave": "7b",
+      "omschrijving": "Verandering in bron 5A verklaren bij een gelijk gebleven prijs van sportschoenen",
+      "wds": "S",
+      "tags": [],
+      "blz": 27,
+      "stof": true,
+      "onderwerpen": [
+        "M1-H1-07"
+      ]
+    },
+    {
+      "bron": "lesboek",
+      "hoofdstuk": 1,
+      "paragraaf": "§3",
+      "opgave": "7c",
+      "omschrijving": "Verandering in bron 5B verklaren bij een gelijk gebleven budget",
+      "wds": "S",
+      "tags": [],
+      "blz": 27,
+      "stof": true,
+      "onderwerpen": [
+        "M1-H1-07"
+      ]
+    },
+    {
+      "bron": "lesboek",
+      "hoofdstuk": 1,
+      "paragraaf": "§3",
+      "opgave": "7d",
+      "omschrijving": "Verandering in bron 5B verklaren bij een gelijk gebleven prijs van sportschoenen",
+      "wds": "S",
+      "tags": [],
+      "blz": 27,
+      "stof": true,
+      "onderwerpen": [
+        "M1-H1-07"
+      ]
+    },
+    {
+      "bron": "lesboek",
+      "hoofdstuk": 1,
+      "paragraaf": "§3",
+      "opgave": "8a",
+      "omschrijving": "Aflezen wat bron 6 zegt over de opofferingskosten van vrije tijd",
+      "wds": "D",
+      "tags": [],
+      "blz": 27,
+      "stof": false,
+      "onderwerpen": []
+    },
+    {
+      "bron": "lesboek",
+      "hoofdstuk": 1,
+      "paragraaf": "§3",
+      "opgave": "8b",
+      "omschrijving": "Reden geven waarom iemand minder gaat werken na een loonsverhoging, met tip uit de bron",
+      "wds": "S",
+      "tags": [],
+      "blz": 27,
+      "stof": true,
+      "onderwerpen": [
+        "M1-H1-04"
+      ]
+    },
+    {
+      "bron": "lesboek",
+      "hoofdstuk": 1,
+      "paragraaf": "§3",
+      "opgave": "8c",
+      "omschrijving": "Reden geven waarom iemand meer gaat werken na een loonsverhoging, met 'opofferingskosten'",
+      "wds": "S",
+      "tags": [],
+      "blz": 27,
+      "stof": false,
+      "onderwerpen": []
+    },
+    {
+      "bron": "lesboek",
+      "hoofdstuk": 1,
+      "paragraaf": "§3",
+      "opgave": "9a",
+      "omschrijving": "Uitleggen dat water een alternatief aanwendbaar middel is",
+      "wds": "S",
+      "tags": [],
+      "blz": 28,
+      "stof": true,
+      "onderwerpen": [
+        "M1-H1-02"
+      ]
+    },
+    {
+      "bron": "lesboek",
+      "hoofdstuk": 1,
+      "paragraaf": "§3",
+      "opgave": "9b",
+      "omschrijving": "Uitleggen waarom water in economische zin schaars is",
+      "wds": "S",
+      "tags": [],
+      "blz": 28,
+      "stof": true,
+      "onderwerpen": [
+        "M1-H1-03"
+      ]
+    },
+    {
+      "bron": "lesboek",
+      "hoofdstuk": 1,
+      "paragraaf": "§3",
+      "opgave": "9c",
+      "omschrijving": "Beoordelen of de schaarste verdwijnt bij voldoende water, met verklaring",
+      "wds": "S",
+      "tags": [],
+      "blz": 28,
+      "stof": true,
+      "onderwerpen": [
+        "M1-H1-03"
+      ]
+    },
+    {
+      "bron": "lesboek",
+      "hoofdstuk": 1,
+      "paragraaf": "§3",
+      "opgave": "10a",
+      "omschrijving": "Uitleggen dat de besteding van het overheidsbudget een economisch keuzeprobleem is",
+      "wds": "S",
+      "tags": [],
+      "blz": 28,
+      "stof": true,
+      "onderwerpen": [
+        "M1-H1-03"
+      ]
+    },
+    {
+      "bron": "lesboek",
+      "hoofdstuk": 1,
+      "paragraaf": "§3",
+      "opgave": "10b",
+      "omschrijving": "Berekenen welk percentage van het budget naar Zorg gaat",
+      "wds": "D",
+      "tags": [
+        "rekenen"
+      ],
+      "blz": 28,
+      "stof": true,
+      "onderwerpen": [
+        "M1-A-01"
+      ]
+    },
+    {
+      "bron": "lesboek",
+      "hoofdstuk": 1,
+      "paragraaf": "§3",
+      "opgave": "10c",
+      "omschrijving": "Berekenen welk percentage van het budget naar Klimaat en Groene Groei gaat",
+      "wds": "D",
+      "tags": [
+        "rekenen"
+      ],
+      "blz": 28,
+      "stof": true,
+      "onderwerpen": [
+        "M1-A-01"
+      ]
+    },
+    {
+      "bron": "lesboek",
+      "hoofdstuk": 1,
+      "paragraaf": "§3",
+      "opgave": "10d",
+      "omschrijving": "Reden geven voor meer geld naar onderwijs en een bezuinigingspost aanwijzen",
+      "wds": "S",
+      "tags": [],
+      "blz": 28,
+      "stof": true,
+      "onderwerpen": [
+        "M1-H1-03"
+      ]
+    },
+    {
+      "bron": "lesboek",
+      "hoofdstuk": 2,
+      "paragraaf": "§1",
+      "opgave": "1a",
+      "omschrijving": "Vrager en aanbieder aanwijzen bij de ruil van de paperclip tegen de pen",
+      "wds": "D",
+      "tags": [],
+      "blz": 35,
+      "stof": true,
+      "onderwerpen": [
+        "M1-H2-01"
+      ]
+    },
+    {
+      "bron": "lesboek",
+      "hoofdstuk": 2,
+      "paragraaf": "§1",
+      "opgave": "1b",
+      "omschrijving": "Beoordelen of er bij deze ruil wederzijds voordeel is, met uitleg",
+      "wds": "S",
+      "tags": [],
+      "blz": 35,
+      "stof": true,
+      "onderwerpen": [
+        "M1-H2-01"
+      ]
+    },
+    {
+      "bron": "lesboek",
+      "hoofdstuk": 2,
+      "paragraaf": "§1",
+      "opgave": "1c",
+      "omschrijving": "Ruilverhouding bij deze ruil bepalen",
+      "wds": "D",
+      "tags": [],
+      "blz": 35,
+      "stof": true,
+      "onderwerpen": [
+        "M1-H2-02"
+      ]
+    },
+    {
+      "bron": "lesboek",
+      "hoofdstuk": 2,
+      "paragraaf": "§1",
+      "opgave": "1d",
+      "omschrijving": "Verklaren waarom elke ruil telkens in het voordeel van Kyle is",
+      "wds": "S",
+      "tags": [],
+      "blz": 35,
+      "stof": true,
+      "onderwerpen": [
+        "M1-H2-01"
+      ]
+    },
+    {
+      "bron": "lesboek",
+      "hoofdstuk": 2,
+      "paragraaf": "§1",
+      "opgave": "1e",
+      "omschrijving": "Het opgetelde voordeel voor Kyle van alle ruilen berekenen",
+      "wds": "D",
+      "tags": [
+        "rekenen"
+      ],
+      "blz": 35,
+      "stof": true,
+      "onderwerpen": [
+        "M1-H2-01",
+        "M1-H2-02"
+      ]
+    },
+    {
+      "bron": "lesboek",
+      "hoofdstuk": 2,
+      "paragraaf": "§1",
+      "opgave": "2-I",
+      "omschrijving": "Stelling beoordelen: de ruilverhouding drukt de waarde van het ene product uit in het andere",
+      "wds": "S",
+      "tags": [],
+      "blz": 35,
+      "stof": true,
+      "onderwerpen": [
+        "M1-H2-02"
+      ]
+    },
+    {
+      "bron": "lesboek",
+      "hoofdstuk": 2,
+      "paragraaf": "§1",
+      "opgave": "2-II",
+      "omschrijving": "Stelling beoordelen: een economie in autarkie exporteert zoveel mogelijk",
+      "wds": "S",
+      "tags": [],
+      "blz": 35,
+      "stof": true,
+      "onderwerpen": [
+        "M1-H2-03"
+      ]
+    },
+    {
+      "bron": "lesboek",
+      "hoofdstuk": 2,
+      "paragraaf": "§1",
+      "opgave": "2-III",
+      "omschrijving": "Stelling beoordelen: bij een ruil ontstaat wederzijds voordeel",
+      "wds": "S",
+      "tags": [],
+      "blz": 35,
+      "stof": true,
+      "onderwerpen": [
+        "M1-H2-01"
+      ]
+    },
+    {
+      "bron": "lesboek",
+      "hoofdstuk": 2,
+      "paragraaf": "§1",
+      "opgave": "2-IV",
+      "omschrijving": "Stelling beoordelen: een patent beschermt de uitvinder tegen illegaal namaken",
+      "wds": "S",
+      "tags": [],
+      "blz": 35,
+      "stof": true,
+      "onderwerpen": [
+        "M1-H2-04"
+      ]
+    },
+    {
+      "bron": "lesboek",
+      "hoofdstuk": 2,
+      "paragraaf": "§1",
+      "opgave": "2-V",
+      "omschrijving": "Stelling beoordelen: een thuiskopievergoeding kan geruild worden voor een USB-stick",
+      "wds": "S",
+      "tags": [],
+      "blz": 35,
+      "stof": false,
+      "onderwerpen": []
+    },
+    {
+      "bron": "lesboek",
+      "hoofdstuk": 2,
+      "paragraaf": "§1",
+      "opgave": "3a",
+      "omschrijving": "Uitleggen dat Merel en Lisa bij vijf oogpotloden op één schoolagenda wederzijds voordeel hebben",
+      "wds": "S",
+      "tags": [],
+      "blz": 35,
+      "stof": true,
+      "onderwerpen": [
+        "M1-H2-01",
+        "M1-H2-02"
+      ]
+    },
+    {
+      "bron": "lesboek",
+      "hoofdstuk": 2,
+      "paragraaf": "§1",
+      "opgave": "3b",
+      "omschrijving": "Bepalen welke ruil Kees en Yassim kunnen maken (bron 6)",
+      "wds": "D",
+      "tags": [],
+      "blz": 35,
+      "stof": true,
+      "onderwerpen": [
+        "M1-H2-01"
+      ]
+    },
+    {
+      "bron": "lesboek",
+      "hoofdstuk": 2,
+      "paragraaf": "§1",
+      "opgave": "3c",
+      "omschrijving": "Beoordelen of Yassim voordeel heeft bij die ruil, met toelichting",
+      "wds": "S",
+      "tags": [],
+      "blz": 35,
+      "stof": true,
+      "onderwerpen": [
+        "M1-H2-01"
+      ]
+    },
+    {
+      "bron": "lesboek",
+      "hoofdstuk": 2,
+      "paragraaf": "§1",
+      "opgave": "3d",
+      "omschrijving": "Beoordelen of Kees voordeel heeft bij die ruil, met toelichting",
+      "wds": "S",
+      "tags": [],
+      "blz": 35,
+      "stof": true,
+      "onderwerpen": [
+        "M1-H2-01"
+      ]
+    },
+    {
+      "bron": "lesboek",
+      "hoofdstuk": 2,
+      "paragraaf": "§1",
+      "opgave": "3e",
+      "omschrijving": "Bepalen wat Kees kan doen nadat hij met Yassim geruild heeft",
+      "wds": "D",
+      "tags": [],
+      "blz": 35,
+      "stof": true,
+      "onderwerpen": [
+        "M1-H2-01"
+      ]
+    },
+    {
+      "bron": "lesboek",
+      "hoofdstuk": 2,
+      "paragraaf": "§1",
+      "opgave": "4a",
+      "omschrijving": "Uitleggen wat een klant bedoelt met 'welke ruilverhouding hanteert u voor een grofvolkoren?'",
+      "wds": "S",
+      "tags": [],
+      "blz": 35,
+      "stof": true,
+      "onderwerpen": [
+        "M1-H2-02"
+      ]
+    },
+    {
+      "bron": "lesboek",
+      "hoofdstuk": 2,
+      "paragraaf": "§1",
+      "opgave": "4b",
+      "omschrijving": "Benoemen welke middelen in bron 7 tegen elkaar geruild worden",
+      "wds": "D",
+      "tags": [],
+      "blz": 35,
+      "stof": true,
+      "onderwerpen": [
+        "M1-H2-01"
+      ]
+    },
+    {
+      "bron": "lesboek",
+      "hoofdstuk": 2,
+      "paragraaf": "§1",
+      "opgave": "5a",
+      "omschrijving": "Uitleggen dat tip 1 en tip 2 samen wijzen op een acceptabele ruilverhouding",
+      "wds": "S",
+      "tags": [],
+      "blz": 36,
+      "stof": true,
+      "onderwerpen": [
+        "M1-H2-02"
+      ]
+    },
+    {
+      "bron": "lesboek",
+      "hoofdstuk": 2,
+      "paragraaf": "§1",
+      "opgave": "5b",
+      "omschrijving": "Verklaren waarom tip 3 en tip 5 een succesvolle ruil bevorderen",
+      "wds": "S",
+      "tags": [],
+      "blz": 36,
+      "stof": true,
+      "onderwerpen": [
+        "M1-H2-01"
+      ]
+    },
+    {
+      "bron": "lesboek",
+      "hoofdstuk": 2,
+      "paragraaf": "§1",
+      "opgave": "5c",
+      "omschrijving": "Benoemen wat er volgens tip 4 bij een ruil moet worden nagestreefd",
+      "wds": "W",
+      "tags": [],
+      "blz": 36,
+      "stof": true,
+      "onderwerpen": [
+        "M1-H2-01"
+      ]
+    },
+    {
+      "bron": "lesboek",
+      "hoofdstuk": 2,
+      "paragraaf": "§1",
+      "opgave": "6a",
+      "omschrijving": "Uitleggen dat middelen bij autarkie minder goed in behoeften voorzien",
+      "wds": "S",
+      "tags": [],
+      "blz": 36,
+      "stof": true,
+      "onderwerpen": [
+        "M1-H2-03"
+      ]
+    },
+    {
+      "bron": "lesboek",
+      "hoofdstuk": 2,
+      "paragraaf": "§1",
+      "opgave": "6b",
+      "omschrijving": "Verklaren waarom volledige autarkie in de praktijk niet voorkomt",
+      "wds": "S",
+      "tags": [],
+      "blz": 36,
+      "stof": true,
+      "onderwerpen": [
+        "M1-H2-03"
+      ]
+    },
+    {
+      "bron": "lesboek",
+      "hoofdstuk": 2,
+      "paragraaf": "§1",
+      "opgave": "7a",
+      "omschrijving": "Stappen ordenen: hoe Amerikaanse producenten door het embargo benadeeld werden",
+      "wds": "S",
+      "tags": [],
+      "blz": 36,
+      "stof": false,
+      "onderwerpen": []
+    },
+    {
+      "bron": "lesboek",
+      "hoofdstuk": 2,
+      "paragraaf": "§1",
+      "opgave": "7b",
+      "omschrijving": "Stappen ordenen: hoe de Amerikaanse consument nadeel ondervond van het embargo",
+      "wds": "S",
+      "tags": [],
+      "blz": 36,
+      "stof": false,
+      "onderwerpen": []
+    },
+    {
+      "bron": "lesboek",
+      "hoofdstuk": 2,
+      "paragraaf": "§1",
+      "opgave": "7c",
+      "omschrijving": "Een voordeel van autarkie voor binnenlandse bedrijven benoemen",
+      "wds": "S",
+      "tags": [],
+      "blz": 36,
+      "stof": true,
+      "onderwerpen": [
+        "M1-H2-03"
+      ]
+    },
+    {
+      "bron": "lesboek",
+      "hoofdstuk": 2,
+      "paragraaf": "§1",
+      "opgave": "8a",
+      "omschrijving": "Bron 10 invullen met vraag en aanbod van Jantine, Koos en Jelmer",
+      "wds": "D",
+      "tags": [],
+      "blz": 37,
+      "stof": true,
+      "onderwerpen": [
+        "M1-H2-01"
+      ]
+    },
+    {
+      "bron": "lesboek",
+      "hoofdstuk": 2,
+      "paragraaf": "§1",
+      "opgave": "8b",
+      "omschrijving": "Uitleggen waarom Koos en Jantine niet tot een wederzijds voordelige ruil komen",
+      "wds": "S",
+      "tags": [],
+      "blz": 37,
+      "stof": true,
+      "onderwerpen": [
+        "M1-H2-01"
+      ]
+    },
+    {
+      "bron": "lesboek",
+      "hoofdstuk": 2,
+      "paragraaf": "§1",
+      "opgave": "8c",
+      "omschrijving": "Uitleggen waarom Jelmer en Koos niet tot een wederzijds voordelige ruil komen",
+      "wds": "S",
+      "tags": [],
+      "blz": 37,
+      "stof": true,
+      "onderwerpen": [
+        "M1-H2-01"
+      ]
+    },
+    {
+      "bron": "lesboek",
+      "hoofdstuk": 2,
+      "paragraaf": "§1",
+      "opgave": "8d",
+      "omschrijving": "Uitleggen waarom Jantine en Jelmer niet tot een wederzijds voordelige ruil komen",
+      "wds": "S",
+      "tags": [],
+      "blz": 37,
+      "stof": true,
+      "onderwerpen": [
+        "M1-H2-01"
+      ]
+    },
+    {
+      "bron": "lesboek",
+      "hoofdstuk": 2,
+      "paragraaf": "§1",
+      "opgave": "8e",
+      "omschrijving": "Bepalen wat Koos na de ruil met Jelmer kan aanbieden",
+      "wds": "D",
+      "tags": [],
+      "blz": 37,
+      "stof": true,
+      "onderwerpen": [
+        "M1-H2-01"
+      ]
+    },
+    {
+      "bron": "lesboek",
+      "hoofdstuk": 2,
+      "paragraaf": "§1",
+      "opgave": "8f",
+      "omschrijving": "Formuleren welke tekst Koos nu op het prikbord kan zetten",
+      "wds": "D",
+      "tags": [],
+      "blz": 37,
+      "stof": true,
+      "onderwerpen": [
+        "M1-H2-01"
+      ]
+    },
+    {
+      "bron": "lesboek",
+      "hoofdstuk": 2,
+      "paragraaf": "§1",
+      "opgave": "8g",
+      "omschrijving": "Uitleggen waarom Koos en Jantine nu wel tot een wederzijds voordelige ruil komen",
+      "wds": "S",
+      "tags": [],
+      "blz": 37,
+      "stof": true,
+      "onderwerpen": [
+        "M1-H2-01"
+      ]
+    },
+    {
+      "bron": "lesboek",
+      "hoofdstuk": 2,
+      "paragraaf": "§1",
+      "opgave": "8h",
+      "omschrijving": "Bepalen welke ruilverhouding daarbij nodig is",
+      "wds": "D",
+      "tags": [],
+      "blz": 37,
+      "stof": true,
+      "onderwerpen": [
+        "M1-H2-02"
+      ]
+    },
+    {
+      "bron": "lesboek",
+      "hoofdstuk": 2,
+      "paragraaf": "§1",
+      "opgave": "9a",
+      "omschrijving": "Benoemen waartegen LEGO beschermd wordt door het patent uit 1957",
+      "wds": "D",
+      "tags": [],
+      "blz": 37,
+      "stof": true,
+      "onderwerpen": [
+        "M1-H2-04"
+      ]
+    },
+    {
+      "bron": "lesboek",
+      "hoofdstuk": 2,
+      "paragraaf": "§1",
+      "opgave": "9b",
+      "omschrijving": "Een voordeel voor consumenten van het patent van LEGO benoemen",
+      "wds": "S",
+      "tags": [],
+      "blz": 37,
+      "stof": true,
+      "onderwerpen": [
+        "M1-H2-04"
+      ]
+    },
+    {
+      "bron": "lesboek",
+      "hoofdstuk": 2,
+      "paragraaf": "§1",
+      "opgave": "9c",
+      "omschrijving": "Een nadeel voor consumenten van het patent van LEGO benoemen",
+      "wds": "S",
+      "tags": [],
+      "blz": 37,
+      "stof": false,
+      "onderwerpen": []
+    },
+    {
+      "bron": "lesboek",
+      "hoofdstuk": 2,
+      "paragraaf": "§1",
+      "opgave": "9d",
+      "omschrijving": "Aangeven waaruit blijkt dat het patent van LEGO grote economische waarde heeft",
+      "wds": "D",
+      "tags": [],
+      "blz": 37,
+      "stof": true,
+      "onderwerpen": [
+        "M1-H2-04"
+      ]
+    },
+    {
+      "bron": "lesboek",
+      "hoofdstuk": 2,
+      "paragraaf": "§1",
+      "opgave": "10a",
+      "omschrijving": "Uitleggen wat bedoeld wordt met deglobalisering (bron 11)",
+      "wds": "D",
+      "tags": [],
+      "blz": 38,
+      "stof": true,
+      "onderwerpen": [
+        "M1-H2-03"
+      ]
+    },
+    {
+      "bron": "lesboek",
+      "hoofdstuk": 2,
+      "paragraaf": "§1",
+      "opgave": "10b",
+      "omschrijving": "Uitleggen dat verdergaande deglobalisering tot een economie in autarkie kan leiden",
+      "wds": "S",
+      "tags": [],
+      "blz": 38,
+      "stof": true,
+      "onderwerpen": [
+        "M1-H2-03"
+      ]
+    },
+    {
+      "bron": "lesboek",
+      "hoofdstuk": 2,
+      "paragraaf": "§1",
+      "opgave": "10c",
+      "omschrijving": "Uitleggen waarom de prijzen in een economie in autarkie hoger zijn",
+      "wds": "S",
+      "tags": [],
+      "blz": 38,
+      "stof": true,
+      "onderwerpen": [
+        "M1-H2-03"
+      ]
+    },
+    {
+      "bron": "lesboek",
+      "hoofdstuk": 2,
+      "paragraaf": "§1",
+      "opgave": "10d",
+      "omschrijving": "Twee producten noemen die Nederland alleen tegen hoge kosten zelf kan produceren",
+      "wds": "D",
+      "tags": [],
+      "blz": 38,
+      "stof": true,
+      "onderwerpen": [
+        "M1-H2-03"
+      ]
+    },
+    {
+      "bron": "lesboek",
+      "hoofdstuk": 2,
+      "paragraaf": "§2",
+      "opgave": "1-I",
+      "omschrijving": "Stelling beoordelen: transactiekosten zijn altijd voor rekening van de vrager",
+      "wds": "S",
+      "tags": [],
+      "blz": 44,
+      "stof": true,
+      "onderwerpen": [
+        "M1-H2-05"
+      ]
+    },
+    {
+      "bron": "lesboek",
+      "hoofdstuk": 2,
+      "paragraaf": "§2",
+      "opgave": "1-II",
+      "omschrijving": "Stelling beoordelen: een ruil verlaagt de transactiekosten",
+      "wds": "S",
+      "tags": [],
+      "blz": 44,
+      "stof": true,
+      "onderwerpen": [
+        "M1-H2-05"
+      ]
+    },
+    {
+      "bron": "lesboek",
+      "hoofdstuk": 2,
+      "paragraaf": "§2",
+      "opgave": "1-III",
+      "omschrijving": "Stelling beoordelen: de tijd die een vrager kwijt is om te ruilen zijn transactiekosten",
+      "wds": "S",
+      "tags": [],
+      "blz": 44,
+      "stof": true,
+      "onderwerpen": [
+        "M1-H2-05"
+      ]
+    },
+    {
+      "bron": "lesboek",
+      "hoofdstuk": 2,
+      "paragraaf": "§2",
+      "opgave": "1-IV",
+      "omschrijving": "Stelling beoordelen: de ACM is een institutie die toeziet op eerlijke concurrentie",
+      "wds": "S",
+      "tags": [],
+      "blz": 44,
+      "stof": false,
+      "onderwerpen": []
+    },
+    {
+      "bron": "lesboek",
+      "hoofdstuk": 2,
+      "paragraaf": "§2",
+      "opgave": "1-V",
+      "omschrijving": "Stelling beoordelen: instituties verhogen de transactiekosten bij een ruil",
+      "wds": "S",
+      "tags": [],
+      "blz": 44,
+      "stof": true,
+      "onderwerpen": [
+        "M1-H2-07"
+      ]
+    },
+    {
+      "bron": "lesboek",
+      "hoofdstuk": 2,
+      "paragraaf": "§2",
+      "opgave": "2a",
+      "omschrijving": "De vier voorwaarden noemen waaraan voldaan moet zijn om tot een ruil te komen",
+      "wds": "W",
+      "tags": [],
+      "blz": 44,
+      "stof": false,
+      "onderwerpen": []
+    },
+    {
+      "bron": "lesboek",
+      "hoofdstuk": 2,
+      "paragraaf": "§2",
+      "opgave": "2b",
+      "omschrijving": "Uitleggen dat minder wantrouwen de transactiekosten van een ruil verlaagt",
+      "wds": "S",
+      "tags": [],
+      "blz": 44,
+      "stof": true,
+      "onderwerpen": [
+        "M1-H2-05"
+      ]
+    },
+    {
+      "bron": "lesboek",
+      "hoofdstuk": 2,
+      "paragraaf": "§2",
+      "opgave": "2c",
+      "omschrijving": "Een voorbeeld beschrijven waarbij automatisering transactiekosten verlaagt (bron 7)",
+      "wds": "D",
+      "tags": [],
+      "blz": 45,
+      "stof": true,
+      "onderwerpen": [
+        "M1-H2-05"
+      ]
+    },
+    {
+      "bron": "lesboek",
+      "hoofdstuk": 2,
+      "paragraaf": "§2",
+      "opgave": "2d",
+      "omschrijving": "Benoemen welke kosten de automatisering in bron 7 verlaagd heeft",
+      "wds": "D",
+      "tags": [],
+      "blz": 45,
+      "stof": true,
+      "onderwerpen": [
+        "M1-H2-05"
+      ]
+    },
+    {
+      "bron": "lesboek",
+      "hoofdstuk": 2,
+      "paragraaf": "§2",
+      "opgave": "3a",
+      "omschrijving": "Een voorbeeld van transactiekosten geven bij de ruil van een paperclip tegen een pen",
+      "wds": "D",
+      "tags": [],
+      "blz": 45,
+      "stof": true,
+      "onderwerpen": [
+        "M1-H2-05"
+      ]
+    },
+    {
+      "bron": "lesboek",
+      "hoofdstuk": 2,
+      "paragraaf": "§2",
+      "opgave": "3b",
+      "omschrijving": "Bepalen of de vrager of de aanbieder die kosten maakt",
+      "wds": "D",
+      "tags": [],
+      "blz": 45,
+      "stof": true,
+      "onderwerpen": [
+        "M1-H2-05"
+      ]
+    },
+    {
+      "bron": "lesboek",
+      "hoofdstuk": 2,
+      "paragraaf": "§2",
+      "opgave": "3c",
+      "omschrijving": "Bron 8 invullen voor de andere ruilen",
+      "wds": "D",
+      "tags": [],
+      "blz": 45,
+      "stof": true,
+      "onderwerpen": [
+        "M1-H2-05"
+      ]
+    },
+    {
+      "bron": "lesboek",
+      "hoofdstuk": 2,
+      "paragraaf": "§2",
+      "opgave": "4a",
+      "omschrijving": "Twee voorbeelden van transactiekosten bij een ruil op marktplaats.nl geven",
+      "wds": "D",
+      "tags": [],
+      "blz": 46,
+      "stof": true,
+      "onderwerpen": [
+        "M1-H2-05"
+      ]
+    },
+    {
+      "bron": "lesboek",
+      "hoofdstuk": 2,
+      "paragraaf": "§2",
+      "opgave": "4b",
+      "omschrijving": "Uitleggen dat het succes van marktplaats.nl komt door lagere transactiekosten",
+      "wds": "S",
+      "tags": [],
+      "blz": 46,
+      "stof": true,
+      "onderwerpen": [
+        "M1-H2-05",
+        "M1-H2-07"
+      ]
+    },
+    {
+      "bron": "lesboek",
+      "hoofdstuk": 2,
+      "paragraaf": "§2",
+      "opgave": "4c",
+      "omschrijving": "Verklaren waarom het ruilen van twee producten moeilijker is dan een ruil tegen geld",
+      "wds": "S",
+      "tags": [],
+      "blz": 46,
+      "stof": true,
+      "onderwerpen": [
+        "M1-H2-05"
+      ]
+    },
+    {
+      "bron": "lesboek",
+      "hoofdstuk": 2,
+      "paragraaf": "§2",
+      "opgave": "5a",
+      "omschrijving": "Benoemen wat er geruild wordt tussen de gemeente en de projectontwikkelaar",
+      "wds": "D",
+      "tags": [],
+      "blz": 46,
+      "stof": true,
+      "onderwerpen": [
+        "M1-H2-01"
+      ]
+    },
+    {
+      "bron": "lesboek",
+      "hoofdstuk": 2,
+      "paragraaf": "§2",
+      "opgave": "5b",
+      "omschrijving": "Verklaren waarom de prijs van de grond geen voorbeeld van transactiekosten is",
+      "wds": "S",
+      "tags": [],
+      "blz": 46,
+      "stof": true,
+      "onderwerpen": [
+        "M1-H2-05"
+      ]
+    },
+    {
+      "bron": "lesboek",
+      "hoofdstuk": 2,
+      "paragraaf": "§2",
+      "opgave": "5c",
+      "omschrijving": "Twee voorbeelden van transactiekosten voor de projectontwikkelaar geven",
+      "wds": "D",
+      "tags": [],
+      "blz": 46,
+      "stof": true,
+      "onderwerpen": [
+        "M1-H2-05"
+      ]
+    },
+    {
+      "bron": "lesboek",
+      "hoofdstuk": 2,
+      "paragraaf": "§2",
+      "opgave": "5d",
+      "omschrijving": "Twee andere voorbeelden van transactiekosten voor de gemeente geven",
+      "wds": "D",
+      "tags": [],
+      "blz": 46,
+      "stof": true,
+      "onderwerpen": [
+        "M1-H2-05"
+      ]
+    },
+    {
+      "bron": "lesboek",
+      "hoofdstuk": 2,
+      "paragraaf": "§2",
+      "opgave": "6",
+      "omschrijving": "Bij vijf situaties de mogelijke ruil benoemen en de voorwaarde aanwijzen waaraan niet is voldaan",
+      "wds": "S",
+      "tags": [],
+      "blz": 46,
+      "stof": false,
+      "onderwerpen": []
+    },
+    {
+      "bron": "lesboek",
+      "hoofdstuk": 2,
+      "paragraaf": "§2",
+      "opgave": "7a",
+      "omschrijving": "Benoemen welke dienst Coinbase aanbiedt",
+      "wds": "D",
+      "tags": [],
+      "blz": 46,
+      "stof": true,
+      "onderwerpen": [
+        "M1-H2-07"
+      ]
+    },
+    {
+      "bron": "lesboek",
+      "hoofdstuk": 2,
+      "paragraaf": "§2",
+      "opgave": "7b",
+      "omschrijving": "Berekenen hoeveel geld een klant gemiddeld bij Coinbase heeft staan",
+      "wds": "D",
+      "tags": [
+        "rekenen"
+      ],
+      "blz": 46,
+      "stof": true,
+      "onderwerpen": [
+        "M1-H2-07"
+      ]
+    },
+    {
+      "bron": "lesboek",
+      "hoofdstuk": 2,
+      "paragraaf": "§2",
+      "opgave": "7c",
+      "omschrijving": "Uitleggen hoe Coinbase geld verdient aan transactiekosten",
+      "wds": "S",
+      "tags": [],
+      "blz": 46,
+      "stof": true,
+      "onderwerpen": [
+        "M1-H2-05",
+        "M1-H2-07"
+      ]
+    },
+    {
+      "bron": "lesboek",
+      "hoofdstuk": 2,
+      "paragraaf": "§2",
+      "opgave": "7d",
+      "omschrijving": "Een nadeel van dit bedrijfsmodel benoemen",
+      "wds": "S",
+      "tags": [],
+      "blz": 46,
+      "stof": true,
+      "onderwerpen": [
+        "M1-H2-07"
+      ]
+    },
+    {
+      "bron": "lesboek",
+      "hoofdstuk": 2,
+      "paragraaf": "§2",
+      "opgave": "8a",
+      "omschrijving": "Het doel van de institutie Airbnb benoemen (bron 10)",
+      "wds": "D",
+      "tags": [],
+      "blz": 47,
+      "stof": true,
+      "onderwerpen": [
+        "M1-H2-07"
+      ]
+    },
+    {
+      "bron": "lesboek",
+      "hoofdstuk": 2,
+      "paragraaf": "§2",
+      "opgave": "8b",
+      "omschrijving": "Benoemen welke transactiekosten door Airbnb verlaagd worden",
+      "wds": "D",
+      "tags": [],
+      "blz": 47,
+      "stof": true,
+      "onderwerpen": [
+        "M1-H2-05",
+        "M1-H2-07"
+      ]
+    },
+    {
+      "bron": "lesboek",
+      "hoofdstuk": 2,
+      "paragraaf": "§2",
+      "opgave": "8c",
+      "omschrijving": "Bron 10 invullen voor de andere instituties",
+      "wds": "D",
+      "tags": [],
+      "blz": 47,
+      "stof": true,
+      "onderwerpen": [
+        "M1-H2-07"
+      ]
+    },
+    {
+      "bron": "lesboek",
+      "hoofdstuk": 2,
+      "paragraaf": "§2",
+      "opgave": "9a",
+      "omschrijving": "Uitleggen dat bij de visafslag aan alle vier de voorwaarden voor een ruil is voldaan",
+      "wds": "S",
+      "tags": [],
+      "blz": 47,
+      "stof": false,
+      "onderwerpen": []
+    },
+    {
+      "bron": "lesboek",
+      "hoofdstuk": 2,
+      "paragraaf": "§2",
+      "opgave": "9b",
+      "omschrijving": "Benoemen welke transactiekosten de visafslag naast zoekkosten verlaagt",
+      "wds": "D",
+      "tags": [],
+      "blz": 47,
+      "stof": true,
+      "onderwerpen": [
+        "M1-H2-05"
+      ]
+    },
+    {
+      "bron": "lesboek",
+      "hoofdstuk": 2,
+      "paragraaf": "§2",
+      "opgave": "9c",
+      "omschrijving": "Verklaren waarom de visafslag de welvaart vergroot",
+      "wds": "S",
+      "tags": [],
+      "blz": 47,
+      "stof": true,
+      "onderwerpen": [
+        "M1-H2-07"
+      ]
+    },
+    {
+      "bron": "lesboek",
+      "hoofdstuk": 2,
+      "paragraaf": "§2",
+      "opgave": "9d",
+      "omschrijving": "Uitleggen waarom een visafslag in de buurt van de kust een logische locatie is",
+      "wds": "S",
+      "tags": [],
+      "blz": 47,
+      "stof": true,
+      "onderwerpen": [
+        "M1-H2-05"
+      ]
+    },
+    {
+      "bron": "lesboek",
+      "hoofdstuk": 2,
+      "paragraaf": "§2",
+      "opgave": "10a",
+      "omschrijving": "Benoemen wat de ACM bij energieleverancier All in Power gedaan heeft",
+      "wds": "D",
+      "tags": [],
+      "blz": 47,
+      "stof": false,
+      "onderwerpen": []
+    },
+    {
+      "bron": "lesboek",
+      "hoofdstuk": 2,
+      "paragraaf": "§2",
+      "opgave": "10b",
+      "omschrijving": "Benoemen wat er met de klanten van All in Power gebeurt",
+      "wds": "D",
+      "tags": [],
+      "blz": 47,
+      "stof": false,
+      "onderwerpen": []
+    },
+    {
+      "bron": "lesboek",
+      "hoofdstuk": 2,
+      "paragraaf": "§2",
+      "opgave": "10c",
+      "omschrijving": "Benoemen wat de klanten van de problemen bij deze energieleverancier merken",
+      "wds": "D",
+      "tags": [],
+      "blz": 47,
+      "stof": false,
+      "onderwerpen": []
+    },
+    {
+      "bron": "lesboek",
+      "hoofdstuk": 2,
+      "paragraaf": "§2",
+      "opgave": "10d",
+      "omschrijving": "Uitleggen dat het werk van de ACM het vertrouwen van consumenten vergroot",
+      "wds": "S",
+      "tags": [],
+      "blz": 47,
+      "stof": false,
+      "onderwerpen": []
+    },
+    {
+      "bron": "lesboek",
+      "hoofdstuk": 2,
+      "paragraaf": "§2",
+      "opgave": "10e",
+      "omschrijving": "Uitleggen hoe toegenomen vertrouwen de transactiekosten op de energiemarkt verlaagt",
+      "wds": "S",
+      "tags": [],
+      "blz": 47,
+      "stof": false,
+      "onderwerpen": []
+    },
+    {
+      "bron": "lesboek",
+      "hoofdstuk": 2,
+      "paragraaf": "§2",
+      "opgave": "10f",
+      "omschrijving": "Beoordelen of de ACM bijdraagt aan de welvaart, met verklaring",
+      "wds": "S",
+      "tags": [],
+      "blz": 47,
+      "stof": false,
+      "onderwerpen": []
+    },
+    {
+      "bron": "lesboek",
+      "hoofdstuk": 2,
+      "paragraaf": "§3",
+      "opgave": "1-I",
+      "omschrijving": "Stelling beoordelen: iedereen is afwisselend consument en producent",
+      "wds": "S",
+      "tags": [],
+      "blz": 52,
+      "stof": true,
+      "onderwerpen": [
+        "M1-H2-08"
+      ]
+    },
+    {
+      "bron": "lesboek",
+      "hoofdstuk": 2,
+      "paragraaf": "§3",
+      "opgave": "1-II",
+      "omschrijving": "Stelling beoordelen: de arbeidsproductiviteit is het aantal gewerkte uren per week",
+      "wds": "S",
+      "tags": [],
+      "blz": 52,
+      "stof": true,
+      "onderwerpen": [
+        "M1-H2-09"
+      ]
+    },
+    {
+      "bron": "lesboek",
+      "hoofdstuk": 2,
+      "paragraaf": "§3",
+      "opgave": "1-III",
+      "omschrijving": "Stelling beoordelen: scholing verhoogt de arbeidsproductiviteit",
+      "wds": "S",
+      "tags": [],
+      "blz": 52,
+      "stof": true,
+      "onderwerpen": [
+        "M1-H2-11"
+      ]
+    },
+    {
+      "bron": "lesboek",
+      "hoofdstuk": 2,
+      "paragraaf": "§3",
+      "opgave": "1-IV",
+      "omschrijving": "Stelling beoordelen: bij arbeidsdeling wordt het productieproces gelijkelijk verdeeld",
+      "wds": "S",
+      "tags": [],
+      "blz": 52,
+      "stof": true,
+      "onderwerpen": [
+        "M1-H2-10"
+      ]
+    },
+    {
+      "bron": "lesboek",
+      "hoofdstuk": 2,
+      "paragraaf": "§3",
+      "opgave": "1-V",
+      "omschrijving": "Stelling beoordelen: de organisatievorm van een institutie wordt bepaald door de arbeidsproductiviteit",
+      "wds": "S",
+      "tags": [],
+      "blz": 52,
+      "stof": false,
+      "onderwerpen": []
+    },
+    {
+      "bron": "lesboek",
+      "hoofdstuk": 2,
+      "paragraaf": "§3",
+      "opgave": "2a",
+      "omschrijving": "Benoemen wat Kai aanbiedt in ruil voor geld",
+      "wds": "D",
+      "tags": [],
+      "blz": 53,
+      "stof": true,
+      "onderwerpen": [
+        "M1-H2-08"
+      ]
+    },
+    {
+      "bron": "lesboek",
+      "hoofdstuk": 2,
+      "paragraaf": "§3",
+      "opgave": "2b",
+      "omschrijving": "Benoemen wat Kai produceert",
+      "wds": "D",
+      "tags": [],
+      "blz": 53,
+      "stof": true,
+      "onderwerpen": [
+        "M1-H2-08"
+      ]
+    },
+    {
+      "bron": "lesboek",
+      "hoofdstuk": 2,
+      "paragraaf": "§3",
+      "opgave": "2c",
+      "omschrijving": "Benoemen welke afweging Kai maakt om wel of niet te gaan werken",
+      "wds": "S",
+      "tags": [],
+      "blz": 53,
+      "stof": true,
+      "onderwerpen": [
+        "M1-H2-08"
+      ]
+    },
+    {
+      "bron": "lesboek",
+      "hoofdstuk": 2,
+      "paragraaf": "§3",
+      "opgave": "2d",
+      "omschrijving": "Benoemen welke afweging de supermarkt maakt om Kai wel of niet aan te nemen",
+      "wds": "S",
+      "tags": [],
+      "blz": 53,
+      "stof": true,
+      "onderwerpen": [
+        "M1-H2-08"
+      ]
+    },
+    {
+      "bron": "lesboek",
+      "hoofdstuk": 2,
+      "paragraaf": "§3",
+      "opgave": "2e",
+      "omschrijving": "Benoemen wat Kai consumeert",
+      "wds": "D",
+      "tags": [],
+      "blz": 53,
+      "stof": true,
+      "onderwerpen": [
+        "M1-H2-08"
+      ]
+    },
+    {
+      "bron": "lesboek",
+      "hoofdstuk": 2,
+      "paragraaf": "§3",
+      "opgave": "2f",
+      "omschrijving": "Uitleggen dat Kai pas kan consumeren nadat hij geproduceerd heeft",
+      "wds": "S",
+      "tags": [],
+      "blz": 53,
+      "stof": true,
+      "onderwerpen": [
+        "M1-H2-08"
+      ]
+    },
+    {
+      "bron": "lesboek",
+      "hoofdstuk": 2,
+      "paragraaf": "§3",
+      "opgave": "3a",
+      "omschrijving": "Uitleggen dat er bij de fruitteler sprake is van arbeidsdeling",
+      "wds": "S",
+      "tags": [],
+      "blz": 53,
+      "stof": true,
+      "onderwerpen": [
+        "M1-H2-10"
+      ]
+    },
+    {
+      "bron": "lesboek",
+      "hoofdstuk": 2,
+      "paragraaf": "§3",
+      "opgave": "3b",
+      "omschrijving": "De arbeidsproductiviteit van Eva berekenen en verklaren (bron 6)",
+      "wds": "D",
+      "tags": [
+        "rekenen"
+      ],
+      "blz": 53,
+      "stof": true,
+      "onderwerpen": [
+        "M1-H2-09"
+      ]
+    },
+    {
+      "bron": "lesboek",
+      "hoofdstuk": 2,
+      "paragraaf": "§3",
+      "opgave": "3c",
+      "omschrijving": "Bron 6 invullen voor de andere klasgenoten",
+      "wds": "D",
+      "tags": [],
+      "blz": 53,
+      "stof": true,
+      "onderwerpen": [
+        "M1-H2-09"
+      ]
+    },
+    {
+      "bron": "lesboek",
+      "hoofdstuk": 2,
+      "paragraaf": "§3",
+      "opgave": "3d",
+      "omschrijving": "Bepalen voor wie de opofferingskosten van een uur vrije tijd het hoogst zijn",
+      "wds": "S",
+      "tags": [],
+      "blz": 53,
+      "stof": false,
+      "onderwerpen": []
+    },
+    {
+      "bron": "lesboek",
+      "hoofdstuk": 2,
+      "paragraaf": "§3",
+      "opgave": "4a",
+      "omschrijving": "Benoemen hoe de arbeidsproductiviteit in de praktijk gemeten wordt",
+      "wds": "D",
+      "tags": [],
+      "blz": 53,
+      "stof": true,
+      "onderwerpen": [
+        "M1-H2-09"
+      ]
+    },
+    {
+      "bron": "lesboek",
+      "hoofdstuk": 2,
+      "paragraaf": "§3",
+      "opgave": "4b",
+      "omschrijving": "Verklaren waarom de arbeidsproductiviteit in het onderwijs hoger kan zijn dan in transport",
+      "wds": "S",
+      "tags": [],
+      "blz": 53,
+      "stof": true,
+      "onderwerpen": [
+        "M1-H2-09"
+      ]
+    },
+    {
+      "bron": "lesboek",
+      "hoofdstuk": 2,
+      "paragraaf": "§3",
+      "opgave": "4c",
+      "omschrijving": "Verklaren waarom de arbeidsproductiviteit in de ICT meer gestegen kan zijn dan in de landbouw",
+      "wds": "S",
+      "tags": [],
+      "blz": 53,
+      "stof": true,
+      "onderwerpen": [
+        "M1-H2-09"
+      ]
+    },
+    {
+      "bron": "lesboek",
+      "hoofdstuk": 2,
+      "paragraaf": "§3",
+      "opgave": "5a",
+      "omschrijving": "Benoemen wat er volgens bron 7 gebeurt bij 'sneller, effectiever of slimmer werken'",
+      "wds": "D",
+      "tags": [],
+      "blz": 53,
+      "stof": true,
+      "onderwerpen": [
+        "M1-H2-09"
+      ]
+    },
+    {
+      "bron": "lesboek",
+      "hoofdstuk": 2,
+      "paragraaf": "§3",
+      "opgave": "5b",
+      "omschrijving": "Uitleggen dat de arbeidsproductiviteit gestegen is bij gelijke productie en lagere loonkosten",
+      "wds": "S",
+      "tags": [],
+      "blz": 53,
+      "stof": true,
+      "onderwerpen": [
+        "M1-H2-09"
+      ]
+    },
+    {
+      "bron": "lesboek",
+      "hoofdstuk": 2,
+      "paragraaf": "§3",
+      "opgave": "5c",
+      "omschrijving": "De totale groei van de arbeidsproductiviteit over 2009-2023 berekenen",
+      "wds": "D",
+      "tags": [
+        "rekenen"
+      ],
+      "blz": 53,
+      "stof": true,
+      "onderwerpen": [
+        "M1-H2-09",
+        "M1-A-01"
+      ]
+    },
+    {
+      "bron": "lesboek",
+      "hoofdstuk": 2,
+      "paragraaf": "§3",
+      "opgave": "6a",
+      "omschrijving": "Benoemen op welke manier de leerling zijn arbeidsproductiviteit verhoogd heeft (bron 8)",
+      "wds": "D",
+      "tags": [],
+      "blz": 54,
+      "stof": true,
+      "onderwerpen": [
+        "M1-H2-09",
+        "M1-H2-11"
+      ]
+    },
+    {
+      "bron": "lesboek",
+      "hoofdstuk": 2,
+      "paragraaf": "§3",
+      "opgave": "6b",
+      "omschrijving": "Beoordelen of dit een vorm van scholing is",
+      "wds": "D",
+      "tags": [],
+      "blz": 54,
+      "stof": true,
+      "onderwerpen": [
+        "M1-H2-11"
+      ]
+    },
+    {
+      "bron": "lesboek",
+      "hoofdstuk": 2,
+      "paragraaf": "§3",
+      "opgave": "6c",
+      "omschrijving": "Een andere manier bedenken waarop de leerling zijn arbeidsproductiviteit kan verhogen",
+      "wds": "S",
+      "tags": [],
+      "blz": 54,
+      "stof": true,
+      "onderwerpen": [
+        "M1-H2-09"
+      ]
+    },
+    {
+      "bron": "lesboek",
+      "hoofdstuk": 2,
+      "paragraaf": "§3",
+      "opgave": "7a",
+      "omschrijving": "Verklaren waarom werkgevers toegang tot nieuwe kennis en vaardigheden stimuleren",
+      "wds": "S",
+      "tags": [],
+      "blz": 54,
+      "stof": true,
+      "onderwerpen": [
+        "M1-H2-11"
+      ]
+    },
+    {
+      "bron": "lesboek",
+      "hoofdstuk": 2,
+      "paragraaf": "§3",
+      "opgave": "7b",
+      "omschrijving": "Het voorbeeld van informeel leren uit bron 9 benoemen",
+      "wds": "W",
+      "tags": [],
+      "blz": 54,
+      "stof": true,
+      "onderwerpen": [
+        "M1-H2-11"
+      ]
+    },
+    {
+      "bron": "lesboek",
+      "hoofdstuk": 2,
+      "paragraaf": "§3",
+      "opgave": "7c",
+      "omschrijving": "Een andere manier dan scholing bedenken om de arbeidsproductiviteit te verhogen",
+      "wds": "S",
+      "tags": [],
+      "blz": 54,
+      "stof": true,
+      "onderwerpen": [
+        "M1-H2-09"
+      ]
+    },
+    {
+      "bron": "lesboek",
+      "hoofdstuk": 2,
+      "paragraaf": "§3",
+      "opgave": "8a",
+      "omschrijving": "Twee redenen noemen waarom een vleugel door verschillende specialisten gemaakt wordt",
+      "wds": "S",
+      "tags": [],
+      "blz": 55,
+      "stof": true,
+      "onderwerpen": [
+        "M1-H2-10"
+      ]
+    },
+    {
+      "bron": "lesboek",
+      "hoofdstuk": 2,
+      "paragraaf": "§3",
+      "opgave": "8b",
+      "omschrijving": "Verklaren waarom tegenwoordig veel vleugels in China geproduceerd worden",
+      "wds": "S",
+      "tags": [],
+      "blz": 55,
+      "stof": true,
+      "onderwerpen": [
+        "M1-H2-10"
+      ]
+    },
+    {
+      "bron": "lesboek",
+      "hoofdstuk": 2,
+      "paragraaf": "§3",
+      "opgave": "9a",
+      "omschrijving": "Bepalen van welk economisch begrip Adam Smith een voorbeeld geeft, met verklaring",
+      "wds": "S",
+      "tags": [],
+      "blz": 55,
+      "stof": true,
+      "onderwerpen": [
+        "M1-H2-10"
+      ]
+    },
+    {
+      "bron": "lesboek",
+      "hoofdstuk": 2,
+      "paragraaf": "§3",
+      "opgave": "9b",
+      "omschrijving": "Uitleggen wat Adam Smith wil laten zien, met het begrip 'arbeidsproductiviteit'",
+      "wds": "S",
+      "tags": [],
+      "blz": 55,
+      "stof": true,
+      "onderwerpen": [
+        "M1-H2-09",
+        "M1-H2-10"
+      ]
+    },
+    {
+      "bron": "lesboek",
+      "hoofdstuk": 2,
+      "paragraaf": "§3",
+      "opgave": "9c",
+      "omschrijving": "Een hedendaags voorbeeld bedenken om hetzelfde uit te leggen",
+      "wds": "D",
+      "tags": [],
+      "blz": 55,
+      "stof": true,
+      "onderwerpen": [
+        "M1-H2-10"
+      ]
+    },
+    {
+      "bron": "lesboek",
+      "hoofdstuk": 2,
+      "paragraaf": "§3",
+      "opgave": "10a",
+      "omschrijving": "De drie factoren benoemen die samen de organisatievorm van een fabriek verklaren",
+      "wds": "W",
+      "tags": [],
+      "blz": 56,
+      "stof": false,
+      "onderwerpen": []
+    },
+    {
+      "bron": "lesboek",
+      "hoofdstuk": 2,
+      "paragraaf": "§3",
+      "opgave": "10b",
+      "omschrijving": "Uitleggen dat er in het organigram sprake is van arbeidsdeling",
+      "wds": "S",
+      "tags": [],
+      "blz": 56,
+      "stof": true,
+      "onderwerpen": [
+        "M1-H2-10"
+      ]
+    },
+    {
+      "bron": "lesboek",
+      "hoofdstuk": 2,
+      "paragraaf": "§3",
+      "opgave": "10c",
+      "omschrijving": "Uitleggen dat er sprake is van specialisatie en het voordeel daarvan benoemen",
+      "wds": "S",
+      "tags": [],
+      "blz": 56,
+      "stof": true,
+      "onderwerpen": [
+        "M1-H2-10"
+      ]
+    },
+    {
+      "bron": "lesboek",
+      "hoofdstuk": 2,
+      "paragraaf": "§4",
+      "opgave": "1a",
+      "omschrijving": "Uitleggen dat Kyle profiteerde van internet, met 'transactiekosten' en 'institutie'",
+      "wds": "S",
+      "tags": [],
+      "blz": 57,
+      "stof": true,
+      "onderwerpen": [
+        "M1-H2-05",
+        "M1-H2-07"
+      ]
+    },
+    {
+      "bron": "lesboek",
+      "hoofdstuk": 2,
+      "paragraaf": "§4",
+      "opgave": "1b",
+      "omschrijving": "Bedenken hoe je de arbeidsproductiviteit van Kyle kunt meten",
+      "wds": "S",
+      "tags": [],
+      "blz": 57,
+      "stof": true,
+      "onderwerpen": [
+        "M1-H2-09"
+      ]
+    },
+    {
+      "bron": "lesboek",
+      "hoofdstuk": 2,
+      "paragraaf": "§4",
+      "opgave": "2a",
+      "omschrijving": "Benoemen welk middel op de ruilbeurs geruild wordt",
+      "wds": "D",
+      "tags": [],
+      "blz": 57,
+      "stof": true,
+      "onderwerpen": [
+        "M1-H2-01"
+      ]
+    },
+    {
+      "bron": "lesboek",
+      "hoofdstuk": 2,
+      "paragraaf": "§4",
+      "opgave": "2b",
+      "omschrijving": "Twee vormen van transactiekosten benoemen die de ruilbeurs verlaagt, met toelichting",
+      "wds": "D",
+      "tags": [],
+      "blz": 57,
+      "stof": true,
+      "onderwerpen": [
+        "M1-H2-05"
+      ]
+    },
+    {
+      "bron": "lesboek",
+      "hoofdstuk": 2,
+      "paragraaf": "§4",
+      "opgave": "2c",
+      "omschrijving": "Beoordelen of lagere transactiekosten de reden waren om de ruilbeurs op te zetten",
+      "wds": "S",
+      "tags": [],
+      "blz": 57,
+      "stof": true,
+      "onderwerpen": [
+        "M1-H2-05",
+        "M1-H2-07"
+      ]
+    },
+    {
+      "bron": "lesboek",
+      "hoofdstuk": 2,
+      "paragraaf": "§4",
+      "opgave": "2d",
+      "omschrijving": "Beoordelen of Joaquin het eens is met de veronderstelling van onbegrensde behoeften",
+      "wds": "S",
+      "tags": [],
+      "blz": 57,
+      "stof": true,
+      "onderwerpen": [
+        "M1-H1-03"
+      ]
+    },
+    {
+      "bron": "lesboek",
+      "hoofdstuk": 2,
+      "paragraaf": "§4",
+      "opgave": "3a",
+      "omschrijving": "Benoemen welk middel op TicketSwap wordt aangeboden",
+      "wds": "D",
+      "tags": [],
+      "blz": 57,
+      "stof": true,
+      "onderwerpen": [
+        "M1-H2-01"
+      ]
+    },
+    {
+      "bron": "lesboek",
+      "hoofdstuk": 2,
+      "paragraaf": "§4",
+      "opgave": "3b",
+      "omschrijving": "Benoemen welke transactiekosten door TicketSwap verlaagd worden",
+      "wds": "D",
+      "tags": [],
+      "blz": 57,
+      "stof": true,
+      "onderwerpen": [
+        "M1-H2-05"
+      ]
+    },
+    {
+      "bron": "lesboek",
+      "hoofdstuk": 2,
+      "paragraaf": "§4",
+      "opgave": "3c",
+      "omschrijving": "Uitleggen dat TicketSwap een institutie is die wederzijds voordelige ruilen vergemakkelijkt",
+      "wds": "S",
+      "tags": [],
+      "blz": 57,
+      "stof": true,
+      "onderwerpen": [
+        "M1-H2-07"
+      ]
+    },
+    {
+      "bron": "lesboek",
+      "hoofdstuk": 2,
+      "paragraaf": "§4",
+      "opgave": "3d",
+      "omschrijving": "Beoordelen of de bron hetzelfde bedoelt met transactiekosten als de leertekst",
+      "wds": "S",
+      "tags": [],
+      "blz": 57,
+      "stof": true,
+      "onderwerpen": [
+        "M1-H2-05"
+      ]
+    },
+    {
+      "bron": "lesboek",
+      "hoofdstuk": 2,
+      "paragraaf": "§4",
+      "opgave": "4a",
+      "omschrijving": "Benoemen welk middel Moonland Online zegt aan te bieden",
+      "wds": "D",
+      "tags": [],
+      "blz": 58,
+      "stof": true,
+      "onderwerpen": [
+        "M1-H2-01"
+      ]
+    },
+    {
+      "bron": "lesboek",
+      "hoofdstuk": 2,
+      "paragraaf": "§4",
+      "opgave": "4b",
+      "omschrijving": "Benoemen welk middel Moonland Online werkelijk aanbiedt",
+      "wds": "D",
+      "tags": [],
+      "blz": 58,
+      "stof": true,
+      "onderwerpen": [
+        "M1-H2-01"
+      ]
+    },
+    {
+      "bron": "lesboek",
+      "hoofdstuk": 2,
+      "paragraaf": "§4",
+      "opgave": "4c",
+      "omschrijving": "Beoordelen of aan de vier voorwaarden om te ruilen is voldaan, met verklaring",
+      "wds": "S",
+      "tags": [],
+      "blz": 58,
+      "stof": false,
+      "onderwerpen": []
+    },
+    {
+      "bron": "lesboek",
+      "hoofdstuk": 2,
+      "paragraaf": "§4",
+      "opgave": "5a",
+      "omschrijving": "Uitleggen dat een smartphone de arbeidsproductiviteit kan verhogen",
+      "wds": "S",
+      "tags": [],
+      "blz": 59,
+      "stof": true,
+      "onderwerpen": [
+        "M1-H2-09"
+      ]
+    },
+    {
+      "bron": "lesboek",
+      "hoofdstuk": 2,
+      "paragraaf": "§4",
+      "opgave": "5b",
+      "omschrijving": "Uitleggen dat een smartphone de arbeidsproductiviteit kan verlagen",
+      "wds": "S",
+      "tags": [],
+      "blz": 59,
+      "stof": true,
+      "onderwerpen": [
+        "M1-H2-09"
+      ]
+    },
+    {
+      "bron": "lesboek",
+      "hoofdstuk": 2,
+      "paragraaf": "§4",
+      "opgave": "5c",
+      "omschrijving": "Beoordelen of de smartphone volgens de cartoon de arbeidsproductiviteit verhoogt",
+      "wds": "S",
+      "tags": [],
+      "blz": 59,
+      "stof": true,
+      "onderwerpen": [
+        "M1-H2-09"
+      ]
+    },
+    {
+      "bron": "lesboek",
+      "hoofdstuk": 2,
+      "paragraaf": "§4",
+      "opgave": "6a",
+      "omschrijving": "Benoemen welke transactiekosten door het Centraal Planbureau verlaagd worden",
+      "wds": "D",
+      "tags": [],
+      "blz": 60,
+      "stof": true,
+      "onderwerpen": [
+        "M1-H2-05",
+        "M1-H2-07"
+      ]
+    },
+    {
+      "bron": "lesboek",
+      "hoofdstuk": 2,
+      "paragraaf": "§4",
+      "opgave": "6b",
+      "omschrijving": "Bron 7 invullen voor de andere nationale instituties",
+      "wds": "D",
+      "tags": [],
+      "blz": 60,
+      "stof": true,
+      "onderwerpen": [
+        "M1-H2-07"
+      ]
+    },
+    {
+      "bron": "lesboek",
+      "hoofdstuk": 2,
+      "paragraaf": "§4",
+      "opgave": "7a",
+      "omschrijving": "Bedenken hoe een klant met 'aloude ruilhandel' zijn eten kan betalen",
+      "wds": "D",
+      "tags": [],
+      "blz": 60,
+      "stof": true,
+      "onderwerpen": [
+        "M1-H2-01"
+      ]
+    },
+    {
+      "bron": "lesboek",
+      "hoofdstuk": 2,
+      "paragraaf": "§4",
+      "opgave": "7b",
+      "omschrijving": "Een voorbeeld van de transactiekosten bij dat antwoord geven",
+      "wds": "D",
+      "tags": [],
+      "blz": 60,
+      "stof": true,
+      "onderwerpen": [
+        "M1-H2-05"
+      ]
+    },
+    {
+      "bron": "lesboek",
+      "hoofdstuk": 2,
+      "paragraaf": "§4",
+      "opgave": "7c",
+      "omschrijving": "Uitleggen dat ruilhandel toeneemt bij een financiële crisis",
+      "wds": "S",
+      "tags": [],
+      "blz": 60,
+      "stof": true,
+      "onderwerpen": [
+        "M1-H2-01",
+        "M1-H2-05"
+      ]
+    },
+    {
+      "bron": "lesboek",
+      "hoofdstuk": 2,
+      "paragraaf": "§4",
+      "opgave": "7d",
+      "omschrijving": "Verklaren waarom het restaurant in crisistijd hogere transactiekosten accepteert",
+      "wds": "S",
+      "tags": [],
+      "blz": 60,
+      "stof": true,
+      "onderwerpen": [
+        "M1-H2-05"
+      ]
+    },
+    {
+      "bron": "lesboek",
+      "hoofdstuk": 2,
+      "paragraaf": "§4",
+      "opgave": "7e",
+      "omschrijving": "Uitleggen waarom bij overwegend ruilhandel weinig specialisatie mogelijk is",
+      "wds": "S",
+      "tags": [],
+      "blz": 60,
+      "stof": true,
+      "onderwerpen": [
+        "M1-H2-10"
+      ]
+    },
+    {
+      "bron": "lesboek",
+      "hoofdstuk": 2,
+      "paragraaf": "§4",
+      "opgave": "8a",
+      "omschrijving": "Benoemen welke middelen bij de ducttape-banaan geruild zijn",
+      "wds": "D",
+      "tags": [],
+      "blz": 61,
+      "stof": true,
+      "onderwerpen": [
+        "M1-H2-01"
+      ]
+    },
+    {
+      "bron": "lesboek",
+      "hoofdstuk": 2,
+      "paragraaf": "§4",
+      "opgave": "8b",
+      "omschrijving": "Uitleggen dat aan alle vier de voorwaarden voor een ruil is voldaan",
+      "wds": "S",
+      "tags": [],
+      "blz": 61,
+      "stof": false,
+      "onderwerpen": []
+    },
+    {
+      "bron": "lesboek",
+      "hoofdstuk": 2,
+      "paragraaf": "§4",
+      "opgave": "8c",
+      "omschrijving": "Een voorbeeld van transactiekosten bij deze ruil geven",
+      "wds": "D",
+      "tags": [],
+      "blz": 61,
+      "stof": true,
+      "onderwerpen": [
+        "M1-H2-05"
+      ]
+    },
+    {
+      "bron": "lesboek",
+      "hoofdstuk": 2,
+      "paragraaf": "§4",
+      "opgave": "8d",
+      "omschrijving": "Benoemen in welke behoefte het middel 'banaan' voorzag (bron 11)",
+      "wds": "D",
+      "tags": [],
+      "blz": 61,
+      "stof": true,
+      "onderwerpen": [
+        "M1-H1-01"
+      ]
+    },
+    {
+      "bron": "lesboek",
+      "hoofdstuk": 2,
+      "paragraaf": "§4",
+      "opgave": "8e",
+      "omschrijving": "Beoordelen of er sprake was van een ruil, met verklaring",
+      "wds": "S",
+      "tags": [],
+      "blz": 61,
+      "stof": true,
+      "onderwerpen": [
+        "M1-H2-01"
+      ]
+    },
+    {
+      "bron": "lesboek",
+      "hoofdstuk": 2,
+      "paragraaf": "§4",
+      "opgave": "9a",
+      "omschrijving": "Aflezen op welke leeftijd kinderen in 1950 en in 2000 school verlieten",
+      "wds": "D",
+      "tags": [],
+      "blz": 62,
+      "stof": true,
+      "onderwerpen": [
+        "M1-A-02"
+      ]
+    },
+    {
+      "bron": "lesboek",
+      "hoofdstuk": 2,
+      "paragraaf": "§4",
+      "opgave": "9b",
+      "omschrijving": "Verklaren waarom de arbeidsproductiviteit in 2000 hoger ligt dan in 1950",
+      "wds": "S",
+      "tags": [],
+      "blz": 62,
+      "stof": true,
+      "onderwerpen": [
+        "M1-H2-09",
+        "M1-H2-11"
+      ]
+    },
+    {
+      "bron": "lesboek",
+      "hoofdstuk": 2,
+      "paragraaf": "§4",
+      "opgave": "9c",
+      "omschrijving": "Beoordelen of een hogere arbeidsproductiviteit meer vrije tijd geeft, met verklaring",
+      "wds": "S",
+      "tags": [],
+      "blz": 62,
+      "stof": true,
+      "onderwerpen": [
+        "M1-H2-09"
+      ]
+    },
+    {
+      "bron": "lesboek",
+      "hoofdstuk": 2,
+      "paragraaf": "§4",
+      "opgave": "9d",
+      "omschrijving": "Uitleggen dat langer onderwijs genieten past bij een kenniseconomie",
+      "wds": "S",
+      "tags": [],
+      "blz": 62,
+      "stof": false,
+      "onderwerpen": []
+    },
+    {
+      "bron": "lesboek",
+      "hoofdstuk": 2,
+      "paragraaf": "§4",
+      "opgave": "9e",
+      "omschrijving": "Beoordelen of Fokke & Sukke het daarmee eens zijn, met verklaring",
+      "wds": "S",
+      "tags": [],
+      "blz": 62,
+      "stof": false,
+      "onderwerpen": []
+    },
+    {
+      "bron": "lesboek",
+      "hoofdstuk": 2,
+      "paragraaf": "§4",
+      "opgave": "10a",
+      "omschrijving": "Verklaren waardoor een kortere werkweek de arbeidsproductiviteit verhoogt",
+      "wds": "S",
+      "tags": [],
+      "blz": 62,
+      "stof": true,
+      "onderwerpen": [
+        "M1-H2-09"
+      ]
+    },
+    {
+      "bron": "lesboek",
+      "hoofdstuk": 2,
+      "paragraaf": "§4",
+      "opgave": "10b",
+      "omschrijving": "Beoordelen of een kortere werkweek nodig is voor die verklaring",
+      "wds": "S",
+      "tags": [],
+      "blz": 62,
+      "stof": true,
+      "onderwerpen": [
+        "M1-H2-09"
+      ]
+    },
+    {
+      "bron": "lesboek",
+      "hoofdstuk": 2,
+      "paragraaf": "§4",
+      "opgave": "10c",
+      "omschrijving": "Twee andere gevolgen van de invoering van een kortere werkweek benoemen",
+      "wds": "D",
+      "tags": [],
+      "blz": 62,
+      "stof": true,
+      "onderwerpen": [
+        "M1-H2-09"
+      ]
+    },
+    {
+      "bron": "lesboek",
+      "hoofdstuk": 2,
+      "paragraaf": "§4",
+      "opgave": "10d",
+      "omschrijving": "Beoordelen of die gevolgen invloed hebben op de arbeidsproductiviteit",
+      "wds": "S",
+      "tags": [],
+      "blz": 62,
+      "stof": true,
+      "onderwerpen": [
+        "M1-H2-09"
+      ]
+    },
+    {
+      "bron": "lesboek",
+      "hoofdstuk": 3,
+      "paragraaf": "§1",
+      "opgave": "1a",
+      "omschrijving": "Beoordelen of een zilveren munt van vijf euro als ruilmiddel wordt gebruikt, met verklaring",
+      "wds": "S",
+      "tags": [],
+      "blz": 68,
+      "stof": true,
+      "onderwerpen": [
+        "M1-H3-02"
+      ]
+    },
+    {
+      "bron": "lesboek",
+      "hoofdstuk": 3,
+      "paragraaf": "§1",
+      "opgave": "1b",
+      "omschrijving": "Beoordelen of die munt als spaarmiddel wordt gebruikt, met verklaring",
+      "wds": "S",
+      "tags": [],
+      "blz": 68,
+      "stof": true,
+      "onderwerpen": [
+        "M1-H3-02"
+      ]
+    },
+    {
+      "bron": "lesboek",
+      "hoofdstuk": 3,
+      "paragraaf": "§1",
+      "opgave": "1c",
+      "omschrijving": "Beoordelen of die munt als rekenmiddel wordt gebruikt, met verklaring",
+      "wds": "S",
+      "tags": [],
+      "blz": 68,
+      "stof": true,
+      "onderwerpen": [
+        "M1-H3-02"
+      ]
+    },
+    {
+      "bron": "lesboek",
+      "hoofdstuk": 3,
+      "paragraaf": "§1",
+      "opgave": "2-I",
+      "omschrijving": "Stelling beoordelen: geld is óf ruilmiddel óf spaarmiddel óf rekenmiddel",
+      "wds": "S",
+      "tags": [],
+      "blz": 68,
+      "stof": true,
+      "onderwerpen": [
+        "M1-H3-02"
+      ]
+    },
+    {
+      "bron": "lesboek",
+      "hoofdstuk": 3,
+      "paragraaf": "§1",
+      "opgave": "2-II",
+      "omschrijving": "Stelling beoordelen: bij een indirecte ruil wordt geen geld gebruikt",
+      "wds": "S",
+      "tags": [],
+      "blz": 68,
+      "stof": true,
+      "onderwerpen": [
+        "M1-H3-01"
+      ]
+    },
+    {
+      "bron": "lesboek",
+      "hoofdstuk": 3,
+      "paragraaf": "§1",
+      "opgave": "2-III",
+      "omschrijving": "Stelling beoordelen: geld als rekenmiddel is een waardemeter",
+      "wds": "S",
+      "tags": [],
+      "blz": 68,
+      "stof": true,
+      "onderwerpen": [
+        "M1-H3-02"
+      ]
+    },
+    {
+      "bron": "lesboek",
+      "hoofdstuk": 3,
+      "paragraaf": "§1",
+      "opgave": "2-IV",
+      "omschrijving": "Stelling beoordelen: een prijs is de waarde van een middel uitgedrukt in geld",
+      "wds": "S",
+      "tags": [],
+      "blz": 68,
+      "stof": true,
+      "onderwerpen": [
+        "M1-H3-02"
+      ]
+    },
+    {
+      "bron": "lesboek",
+      "hoofdstuk": 3,
+      "paragraaf": "§1",
+      "opgave": "2-V",
+      "omschrijving": "Stelling beoordelen: bij een directe ruil is er sprake van ruilhandel",
+      "wds": "S",
+      "tags": [],
+      "blz": 68,
+      "stof": true,
+      "onderwerpen": [
+        "M1-H3-01"
+      ]
+    },
+    {
+      "bron": "lesboek",
+      "hoofdstuk": 3,
+      "paragraaf": "§1",
+      "opgave": "3a",
+      "omschrijving": "Uitleggen dat de Libra de drie functies van geld zou hebben",
+      "wds": "S",
+      "tags": [],
+      "blz": 68,
+      "stof": true,
+      "onderwerpen": [
+        "M1-H3-02"
+      ]
+    },
+    {
+      "bron": "lesboek",
+      "hoofdstuk": 3,
+      "paragraaf": "§1",
+      "opgave": "3b",
+      "omschrijving": "Benoemen wat Facebook aan Silvergate Capital Corporation verkocht heeft",
+      "wds": "D",
+      "tags": [],
+      "blz": 68,
+      "stof": true,
+      "onderwerpen": [
+        "M1-H3-02"
+      ]
+    },
+    {
+      "bron": "lesboek",
+      "hoofdstuk": 3,
+      "paragraaf": "§1",
+      "opgave": "3c",
+      "omschrijving": "Benoemen onder welke voorwaarde de digitale euro kan worden ingevoerd",
+      "wds": "D",
+      "tags": [],
+      "blz": 68,
+      "stof": true,
+      "onderwerpen": [
+        "M1-H3-05"
+      ]
+    },
+    {
+      "bron": "lesboek",
+      "hoofdstuk": 3,
+      "paragraaf": "§1",
+      "opgave": "3d",
+      "omschrijving": "Uitleggen dat die voorwaarde het vertrouwen in de digitale euro versterkt",
+      "wds": "S",
+      "tags": [],
+      "blz": 68,
+      "stof": true,
+      "onderwerpen": [
+        "M1-H3-05"
+      ]
+    },
+    {
+      "bron": "lesboek",
+      "hoofdstuk": 3,
+      "paragraaf": "§1",
+      "opgave": "3e",
+      "omschrijving": "Beredeneren wat er kan gebeuren als het vertrouwen in de euro verdwijnt",
+      "wds": "S",
+      "tags": [],
+      "blz": 68,
+      "stof": true,
+      "onderwerpen": [
+        "M1-H3-05"
+      ]
+    },
+    {
+      "bron": "lesboek",
+      "hoofdstuk": 3,
+      "paragraaf": "§1",
+      "opgave": "4",
+      "omschrijving": "Bij vijf uitspraken de functie van geld benoemen en verklaren",
+      "wds": "S",
+      "tags": [],
+      "blz": 69,
+      "stof": true,
+      "onderwerpen": [
+        "M1-H3-02"
+      ]
+    },
+    {
+      "bron": "lesboek",
+      "hoofdstuk": 3,
+      "paragraaf": "§1",
+      "opgave": "5a",
+      "omschrijving": "Uitleggen dat bij een indirecte ruil van zes middelen zes ruilverhoudingen nodig zijn",
+      "wds": "S",
+      "tags": [],
+      "blz": 69,
+      "stof": true,
+      "onderwerpen": [
+        "M1-H3-01"
+      ]
+    },
+    {
+      "bron": "lesboek",
+      "hoofdstuk": 3,
+      "paragraaf": "§1",
+      "opgave": "5b",
+      "omschrijving": "Uitleggen dat bij een directe ruil van zes middelen vijftien ruilverhoudingen nodig zijn",
+      "wds": "S",
+      "tags": [],
+      "blz": 69,
+      "stof": true,
+      "onderwerpen": [
+        "M1-H3-01"
+      ]
+    },
+    {
+      "bron": "lesboek",
+      "hoofdstuk": 3,
+      "paragraaf": "§1",
+      "opgave": "6a",
+      "omschrijving": "Berekenen hoeveel broden nodig zijn om een notebook te bemachtigen (bron 7)",
+      "wds": "D",
+      "tags": [
+        "rekenen"
+      ],
+      "blz": 69,
+      "stof": true,
+      "onderwerpen": [
+        "M1-H3-01"
+      ]
+    },
+    {
+      "bron": "lesboek",
+      "hoofdstuk": 3,
+      "paragraaf": "§1",
+      "opgave": "6b",
+      "omschrijving": "Twee nadelen van ruilhandel benoemen",
+      "wds": "S",
+      "tags": [],
+      "blz": 69,
+      "stof": true,
+      "onderwerpen": [
+        "M1-H3-01"
+      ]
+    },
+    {
+      "bron": "lesboek",
+      "hoofdstuk": 3,
+      "paragraaf": "§1",
+      "opgave": "6c",
+      "omschrijving": "Uitleggen hoe geld de ruil van brood voor een notebook vergemakkelijkt",
+      "wds": "S",
+      "tags": [],
+      "blz": 69,
+      "stof": true,
+      "onderwerpen": [
+        "M1-H3-01",
+        "M1-H3-02"
+      ]
+    },
+    {
+      "bron": "lesboek",
+      "hoofdstuk": 3,
+      "paragraaf": "§1",
+      "opgave": "6d",
+      "omschrijving": "Berekenen hoe duur een notebook is in euro’s",
+      "wds": "D",
+      "tags": [
+        "rekenen"
+      ],
+      "blz": 69,
+      "stof": true,
+      "onderwerpen": [
+        "M1-H3-01"
+      ]
+    },
+    {
+      "bron": "lesboek",
+      "hoofdstuk": 3,
+      "paragraaf": "§1",
+      "opgave": "7a",
+      "omschrijving": "Benoemen welk geld er in Rusland gebruikt wordt",
+      "wds": "W",
+      "tags": [],
+      "blz": 69,
+      "stof": false,
+      "onderwerpen": []
+    },
+    {
+      "bron": "lesboek",
+      "hoofdstuk": 3,
+      "paragraaf": "§1",
+      "opgave": "7b",
+      "omschrijving": "Uitleggen hoe ruilhandel ontstaat",
+      "wds": "S",
+      "tags": [],
+      "blz": 69,
+      "stof": true,
+      "onderwerpen": [
+        "M1-H3-01"
+      ]
+    },
+    {
+      "bron": "lesboek",
+      "hoofdstuk": 3,
+      "paragraaf": "§1",
+      "opgave": "7c",
+      "omschrijving": "Benoemen hoe belasting bij ruilhandel betaald wordt",
+      "wds": "D",
+      "tags": [],
+      "blz": 69,
+      "stof": false,
+      "onderwerpen": []
+    },
+    {
+      "bron": "lesboek",
+      "hoofdstuk": 3,
+      "paragraaf": "§1",
+      "opgave": "7d",
+      "omschrijving": "Een voorbeeld van ruilhandel tussen twee bedrijven geven",
+      "wds": "D",
+      "tags": [],
+      "blz": 69,
+      "stof": false,
+      "onderwerpen": []
+    },
+    {
+      "bron": "lesboek",
+      "hoofdstuk": 3,
+      "paragraaf": "§1",
+      "opgave": "8a",
+      "omschrijving": "Uitleggen dat ruilen over de tijd alleen mogelijk is met een indirecte ruil",
+      "wds": "S",
+      "tags": [],
+      "blz": 70,
+      "stof": true,
+      "onderwerpen": [
+        "M1-H3-01",
+        "M1-H3-02"
+      ]
+    },
+    {
+      "bron": "lesboek",
+      "hoofdstuk": 3,
+      "paragraaf": "§1",
+      "opgave": "8b",
+      "omschrijving": "Benoemen wat er in bron 8 geruild moet worden",
+      "wds": "D",
+      "tags": [],
+      "blz": 70,
+      "stof": true,
+      "onderwerpen": [
+        "M1-H3-01"
+      ]
+    },
+    {
+      "bron": "lesboek",
+      "hoofdstuk": 3,
+      "paragraaf": "§1",
+      "opgave": "8c",
+      "omschrijving": "Bepalen of er sprake is van een directe of indirecte ruil, met verklaring",
+      "wds": "S",
+      "tags": [],
+      "blz": 70,
+      "stof": true,
+      "onderwerpen": [
+        "M1-H3-01"
+      ]
+    },
+    {
+      "bron": "lesboek",
+      "hoofdstuk": 3,
+      "paragraaf": "§1",
+      "opgave": "9a",
+      "omschrijving": "De juiste functie van geld kiezen op plaats A en B (bron 9)",
+      "wds": "D",
+      "tags": [],
+      "blz": 70,
+      "stof": true,
+      "onderwerpen": [
+        "M1-H3-02"
+      ]
+    },
+    {
+      "bron": "lesboek",
+      "hoofdstuk": 3,
+      "paragraaf": "§1",
+      "opgave": "9b",
+      "omschrijving": "Verklaren waarom er een probleem ontstaat als consumenten te weinig geld uitgeven",
+      "wds": "S",
+      "tags": [],
+      "blz": 70,
+      "stof": true,
+      "onderwerpen": [
+        "M1-H3-02"
+      ]
+    },
+    {
+      "bron": "lesboek",
+      "hoofdstuk": 3,
+      "paragraaf": "§1",
+      "opgave": "9c",
+      "omschrijving": "Benoemen wat de functie van een pensioenpot is",
+      "wds": "D",
+      "tags": [],
+      "blz": 70,
+      "stof": true,
+      "onderwerpen": [
+        "M1-H3-02"
+      ]
+    },
+    {
+      "bron": "lesboek",
+      "hoofdstuk": 3,
+      "paragraaf": "§1",
+      "opgave": "9d",
+      "omschrijving": "Benoemen welke functie van geld het geld in een pensioenpot heeft",
+      "wds": "D",
+      "tags": [],
+      "blz": 70,
+      "stof": true,
+      "onderwerpen": [
+        "M1-H3-02"
+      ]
+    },
+    {
+      "bron": "lesboek",
+      "hoofdstuk": 3,
+      "paragraaf": "§1",
+      "opgave": "10a",
+      "omschrijving": "Bepalen welke functie van geld een consumptiemunt vervult, met verklaring",
+      "wds": "S",
+      "tags": [],
+      "blz": 70,
+      "stof": true,
+      "onderwerpen": [
+        "M1-H3-02"
+      ]
+    },
+    {
+      "bron": "lesboek",
+      "hoofdstuk": 3,
+      "paragraaf": "§1",
+      "opgave": "10b",
+      "omschrijving": "De stappen van de indirecte ruil bij consumptiemunten beschrijven",
+      "wds": "D",
+      "tags": [],
+      "blz": 70,
+      "stof": true,
+      "onderwerpen": [
+        "M1-H3-01"
+      ]
+    },
+    {
+      "bron": "lesboek",
+      "hoofdstuk": 3,
+      "paragraaf": "§1",
+      "opgave": "10c",
+      "omschrijving": "Bepalen of een consumptiemunt een concrete of abstracte vorm van geld is",
+      "wds": "S",
+      "tags": [],
+      "blz": 70,
+      "stof": false,
+      "onderwerpen": []
+    },
+    {
+      "bron": "lesboek",
+      "hoofdstuk": 3,
+      "paragraaf": "§2",
+      "opgave": "1-I",
+      "omschrijving": "Stelling beoordelen: giraal geld is het gepinde geld in je portemonnee",
+      "wds": "S",
+      "tags": [],
+      "blz": 75,
+      "stof": true,
+      "onderwerpen": [
+        "M1-H3-04"
+      ]
+    },
+    {
+      "bron": "lesboek",
+      "hoofdstuk": 3,
+      "paragraaf": "§2",
+      "opgave": "1-II",
+      "omschrijving": "Stelling beoordelen: bij fiduciair geld kan de tegenwaarde in edelmetaal worden opgevraagd",
+      "wds": "S",
+      "tags": [],
+      "blz": 75,
+      "stof": true,
+      "onderwerpen": [
+        "M1-H3-05"
+      ]
+    },
+    {
+      "bron": "lesboek",
+      "hoofdstuk": 3,
+      "paragraaf": "§2",
+      "opgave": "1-III",
+      "omschrijving": "Stelling beoordelen: de valuta van België is de euro",
+      "wds": "S",
+      "tags": [],
+      "blz": 75,
+      "stof": true,
+      "onderwerpen": [
+        "M1-H3-06"
+      ]
+    },
+    {
+      "bron": "lesboek",
+      "hoofdstuk": 3,
+      "paragraaf": "§2",
+      "opgave": "1-IV",
+      "omschrijving": "Stelling beoordelen: in de eurozone zitten dezelfde landen als in de EU",
+      "wds": "S",
+      "tags": [],
+      "blz": 75,
+      "stof": true,
+      "onderwerpen": [
+        "M1-H3-06"
+      ]
+    },
+    {
+      "bron": "lesboek",
+      "hoofdstuk": 3,
+      "paragraaf": "§2",
+      "opgave": "1-V",
+      "omschrijving": "Stelling beoordelen: de bitcoin is concreet geld",
+      "wds": "S",
+      "tags": [],
+      "blz": 75,
+      "stof": false,
+      "onderwerpen": []
+    },
+    {
+      "bron": "lesboek",
+      "hoofdstuk": 3,
+      "paragraaf": "§2",
+      "opgave": "2a",
+      "omschrijving": "Uitleggen hoe gouden en zilveren munten aan de eis 'deelbaar' voldoen",
+      "wds": "S",
+      "tags": [],
+      "blz": 76,
+      "stof": true,
+      "onderwerpen": [
+        "M1-H3-03"
+      ]
+    },
+    {
+      "bron": "lesboek",
+      "hoofdstuk": 3,
+      "paragraaf": "§2",
+      "opgave": "2b",
+      "omschrijving": "Uitleggen dat zout in de Romeinse tijd aan alle technische eisen voldeed",
+      "wds": "S",
+      "tags": [],
+      "blz": 76,
+      "stof": true,
+      "onderwerpen": [
+        "M1-H3-03"
+      ]
+    },
+    {
+      "bron": "lesboek",
+      "hoofdstuk": 3,
+      "paragraaf": "§2",
+      "opgave": "2c",
+      "omschrijving": "De weggelaten woorden op plaats A, B en C invullen (bron 6)",
+      "wds": "W",
+      "tags": [],
+      "blz": 76,
+      "stof": true,
+      "onderwerpen": [
+        "M1-H3-03"
+      ]
+    },
+    {
+      "bron": "lesboek",
+      "hoofdstuk": 3,
+      "paragraaf": "§2",
+      "opgave": "3",
+      "omschrijving": "De stappen van het ontstaan van het bankbiljet in de juiste volgorde zetten",
+      "wds": "S",
+      "tags": [],
+      "blz": 76,
+      "stof": true,
+      "onderwerpen": [
+        "M1-H3-05"
+      ]
+    },
+    {
+      "bron": "lesboek",
+      "hoofdstuk": 3,
+      "paragraaf": "§2",
+      "opgave": "4a",
+      "omschrijving": "Verklaren waarom banken vroeger de tegenwaarde van bankbiljetten in edelmetaal bewaarden",
+      "wds": "S",
+      "tags": [],
+      "blz": 76,
+      "stof": true,
+      "onderwerpen": [
+        "M1-H3-05"
+      ]
+    },
+    {
+      "bron": "lesboek",
+      "hoofdstuk": 3,
+      "paragraaf": "§2",
+      "opgave": "4b",
+      "omschrijving": "Benoemen waar de waarde van de euro op gebaseerd is",
+      "wds": "W",
+      "tags": [],
+      "blz": 76,
+      "stof": true,
+      "onderwerpen": [
+        "M1-H3-05"
+      ]
+    },
+    {
+      "bron": "lesboek",
+      "hoofdstuk": 3,
+      "paragraaf": "§2",
+      "opgave": "4c",
+      "omschrijving": "Benoemen wat voor type geld de euro is",
+      "wds": "W",
+      "tags": [],
+      "blz": 76,
+      "stof": true,
+      "onderwerpen": [
+        "M1-H3-05"
+      ]
+    },
+    {
+      "bron": "lesboek",
+      "hoofdstuk": 3,
+      "paragraaf": "§2",
+      "opgave": "5a",
+      "omschrijving": "Een reden geven waarom het verboden is om geld te vervalsen",
+      "wds": "S",
+      "tags": [],
+      "blz": 76,
+      "stof": true,
+      "onderwerpen": [
+        "M1-H3-05"
+      ]
+    },
+    {
+      "bron": "lesboek",
+      "hoofdstuk": 3,
+      "paragraaf": "§2",
+      "opgave": "5b",
+      "omschrijving": "Benoemen wat de maximale gevangenisstraf voor het vervalsen van geld is",
+      "wds": "W",
+      "tags": [],
+      "blz": 76,
+      "stof": true,
+      "onderwerpen": [
+        "M1-H3-05"
+      ]
+    },
+    {
+      "bron": "lesboek",
+      "hoofdstuk": 3,
+      "paragraaf": "§2",
+      "opgave": "5c",
+      "omschrijving": "Twee redenen geven waarom vooral bankbiljetten en niet munten vervalst worden",
+      "wds": "S",
+      "tags": [],
+      "blz": 76,
+      "stof": true,
+      "onderwerpen": [
+        "M1-H3-05"
+      ]
+    },
+    {
+      "bron": "lesboek",
+      "hoofdstuk": 3,
+      "paragraaf": "§2",
+      "opgave": "5d",
+      "omschrijving": "De winst van de veroordeelde vrouw berekenen als de biljetten niet ontdekt waren",
+      "wds": "D",
+      "tags": [
+        "rekenen"
+      ],
+      "blz": 76,
+      "stof": true,
+      "onderwerpen": [
+        "M1-H3-05"
+      ]
+    },
+    {
+      "bron": "lesboek",
+      "hoofdstuk": 3,
+      "paragraaf": "§2",
+      "opgave": "5e",
+      "omschrijving": "De kans berekenen dat een vals eurobiljet in 2023 uit circulatie werd gehaald",
+      "wds": "D",
+      "tags": [
+        "rekenen"
+      ],
+      "blz": 76,
+      "stof": true,
+      "onderwerpen": [
+        "M1-H3-05",
+        "M1-A-01"
+      ]
+    },
+    {
+      "bron": "lesboek",
+      "hoofdstuk": 3,
+      "paragraaf": "§2",
+      "opgave": "5f",
+      "omschrijving": "De financiële schade voor een winkelier bij een vals briefje van vijftig bepalen",
+      "wds": "S",
+      "tags": [],
+      "blz": 76,
+      "stof": true,
+      "onderwerpen": [
+        "M1-H3-05"
+      ]
+    },
+    {
+      "bron": "lesboek",
+      "hoofdstuk": 3,
+      "paragraaf": "§2",
+      "opgave": "6a",
+      "omschrijving": "Benoemen wie het Nederlandse muntgeld slaat (bron 8)",
+      "wds": "D",
+      "tags": [],
+      "blz": 77,
+      "stof": true,
+      "onderwerpen": [
+        "M1-H3-12"
+      ]
+    },
+    {
+      "bron": "lesboek",
+      "hoofdstuk": 3,
+      "paragraaf": "§2",
+      "opgave": "6b",
+      "omschrijving": "Verklaren waarom DNB op valsmunterij controleert en niet de munt zelf",
+      "wds": "S",
+      "tags": [],
+      "blz": 77,
+      "stof": true,
+      "onderwerpen": [
+        "M1-H3-12",
+        "M1-H3-05"
+      ]
+    },
+    {
+      "bron": "lesboek",
+      "hoofdstuk": 3,
+      "paragraaf": "§2",
+      "opgave": "6c",
+      "omschrijving": "Verklaren waarom DNB beschadigde munten int en niet de munt zelf",
+      "wds": "S",
+      "tags": [],
+      "blz": 77,
+      "stof": true,
+      "onderwerpen": [
+        "M1-H3-12"
+      ]
+    },
+    {
+      "bron": "lesboek",
+      "hoofdstuk": 3,
+      "paragraaf": "§2",
+      "opgave": "7a",
+      "omschrijving": "Bepalen of er in Slovenië en in Zweden met de euro betaald wordt",
+      "wds": "D",
+      "tags": [],
+      "blz": 77,
+      "stof": true,
+      "onderwerpen": [
+        "M1-H3-06"
+      ]
+    },
+    {
+      "bron": "lesboek",
+      "hoofdstuk": 3,
+      "paragraaf": "§2",
+      "opgave": "7b",
+      "omschrijving": "Uitleggen dat de transactiekosten voor een toerist in Slovenië lager zijn dan in Zweden",
+      "wds": "S",
+      "tags": [],
+      "blz": 77,
+      "stof": true,
+      "onderwerpen": [
+        "M1-H3-06",
+        "M1-H2-05"
+      ]
+    },
+    {
+      "bron": "lesboek",
+      "hoofdstuk": 3,
+      "paragraaf": "§2",
+      "opgave": "7c",
+      "omschrijving": "Uitleggen dat de transactiekosten van internationale handel door de euro zijn gedaald",
+      "wds": "S",
+      "tags": [],
+      "blz": 77,
+      "stof": true,
+      "onderwerpen": [
+        "M1-H3-06",
+        "M1-H2-05"
+      ]
+    },
+    {
+      "bron": "lesboek",
+      "hoofdstuk": 3,
+      "paragraaf": "§2",
+      "opgave": "7d",
+      "omschrijving": "Verklaren waarom Nederland geprofiteerd heeft van de invoering van de euro",
+      "wds": "S",
+      "tags": [],
+      "blz": 77,
+      "stof": true,
+      "onderwerpen": [
+        "M1-H3-06"
+      ]
+    },
+    {
+      "bron": "lesboek",
+      "hoofdstuk": 3,
+      "paragraaf": "§2",
+      "opgave": "8a",
+      "omschrijving": "Bepalen of cash geld chartaal of giraal geld is, met verklaring",
+      "wds": "S",
+      "tags": [],
+      "blz": 77,
+      "stof": true,
+      "onderwerpen": [
+        "M1-H3-04"
+      ]
+    },
+    {
+      "bron": "lesboek",
+      "hoofdstuk": 3,
+      "paragraaf": "§2",
+      "opgave": "8b",
+      "omschrijving": "Benoemen wat een flappentapper is",
+      "wds": "W",
+      "tags": [],
+      "blz": 77,
+      "stof": true,
+      "onderwerpen": [
+        "M1-H3-04"
+      ]
+    },
+    {
+      "bron": "lesboek",
+      "hoofdstuk": 3,
+      "paragraaf": "§2",
+      "opgave": "8c",
+      "omschrijving": "Met een berekening laten zien dat er in 2021 1,19 miljard cashbetalingen waren",
+      "wds": "D",
+      "tags": [
+        "rekenen"
+      ],
+      "blz": 77,
+      "stof": true,
+      "onderwerpen": [
+        "M1-H3-04",
+        "M1-A-01"
+      ]
+    },
+    {
+      "bron": "lesboek",
+      "hoofdstuk": 3,
+      "paragraaf": "§2",
+      "opgave": "8d",
+      "omschrijving": "Met een berekening laten zien dat er in 2011 4,25 miljard contante betalingen waren",
+      "wds": "D",
+      "tags": [
+        "rekenen"
+      ],
+      "blz": 77,
+      "stof": true,
+      "onderwerpen": [
+        "M1-H3-04",
+        "M1-A-01"
+      ]
+    },
+    {
+      "bron": "lesboek",
+      "hoofdstuk": 3,
+      "paragraaf": "§2",
+      "opgave": "8e",
+      "omschrijving": "Het totale aantal pin- plus cashbetalingen in 2011 en in 2021 berekenen",
+      "wds": "D",
+      "tags": [
+        "rekenen"
+      ],
+      "blz": 77,
+      "stof": true,
+      "onderwerpen": [
+        "M1-H3-04"
+      ]
+    },
+    {
+      "bron": "lesboek",
+      "hoofdstuk": 3,
+      "paragraaf": "§2",
+      "opgave": "8f",
+      "omschrijving": "Een verklaring geven voor het verschil tussen 2011 en 2021",
+      "wds": "S",
+      "tags": [],
+      "blz": 77,
+      "stof": true,
+      "onderwerpen": [
+        "M1-H3-04"
+      ]
+    },
+    {
+      "bron": "lesboek",
+      "hoofdstuk": 3,
+      "paragraaf": "§2",
+      "opgave": "9a",
+      "omschrijving": "Benoemen wie bepaalt hoeveel bitcoins er in totaal in omloop komen",
+      "wds": "D",
+      "tags": [],
+      "blz": 78,
+      "stof": true,
+      "onderwerpen": [
+        "M1-H3-04"
+      ]
+    },
+    {
+      "bron": "lesboek",
+      "hoofdstuk": 3,
+      "paragraaf": "§2",
+      "opgave": "9b",
+      "omschrijving": "Benoemen hoe nieuwe bitcoins in omloop worden gebracht",
+      "wds": "D",
+      "tags": [],
+      "blz": 78,
+      "stof": true,
+      "onderwerpen": [
+        "M1-H3-04"
+      ]
+    },
+    {
+      "bron": "lesboek",
+      "hoofdstuk": 3,
+      "paragraaf": "§2",
+      "opgave": "9c",
+      "omschrijving": "Benoemen wie bijhoudt waar bitcoins zich bevinden",
+      "wds": "D",
+      "tags": [],
+      "blz": 78,
+      "stof": true,
+      "onderwerpen": [
+        "M1-H3-04"
+      ]
+    },
+    {
+      "bron": "lesboek",
+      "hoofdstuk": 3,
+      "paragraaf": "§2",
+      "opgave": "9d",
+      "omschrijving": "Een nadeel van het sparen van bitcoins noemen",
+      "wds": "S",
+      "tags": [],
+      "blz": 78,
+      "stof": true,
+      "onderwerpen": [
+        "M1-H3-04",
+        "M1-H3-02"
+      ]
+    },
+    {
+      "bron": "lesboek",
+      "hoofdstuk": 3,
+      "paragraaf": "§2",
+      "opgave": "10a",
+      "omschrijving": "Beoordelen of 'fiducie' overeenkomt met het gebruik in 'fiduciair geld', met verklaring",
+      "wds": "S",
+      "tags": [],
+      "blz": 78,
+      "stof": true,
+      "onderwerpen": [
+        "M1-H3-05"
+      ]
+    },
+    {
+      "bron": "lesboek",
+      "hoofdstuk": 3,
+      "paragraaf": "§2",
+      "opgave": "10b",
+      "omschrijving": "Benoemen welke boodschap het administratiekantoor probeert over te brengen",
+      "wds": "S",
+      "tags": [],
+      "blz": 78,
+      "stof": true,
+      "onderwerpen": [
+        "M1-H3-05"
+      ]
+    },
+    {
+      "bron": "lesboek",
+      "hoofdstuk": 3,
+      "paragraaf": "§3",
+      "opgave": "1-I",
+      "omschrijving": "Stelling beoordelen: de intrinsieke waarde van een tien-eurobiljet is € 10",
+      "wds": "S",
+      "tags": [],
+      "blz": 82,
+      "stof": true,
+      "onderwerpen": [
+        "M1-H3-07"
+      ]
+    },
+    {
+      "bron": "lesboek",
+      "hoofdstuk": 3,
+      "paragraaf": "§3",
+      "opgave": "1-II",
+      "omschrijving": "Stelling beoordelen: de nominale waarde van geld kan niet veranderen",
+      "wds": "S",
+      "tags": [],
+      "blz": 82,
+      "stof": true,
+      "onderwerpen": [
+        "M1-H3-07"
+      ]
+    },
+    {
+      "bron": "lesboek",
+      "hoofdstuk": 3,
+      "paragraaf": "§3",
+      "opgave": "1-III",
+      "omschrijving": "Stelling beoordelen: de wet van Gresham verklaart inflatie",
+      "wds": "S",
+      "tags": [],
+      "blz": 82,
+      "stof": true,
+      "onderwerpen": [
+        "M1-H3-09"
+      ]
+    },
+    {
+      "bron": "lesboek",
+      "hoofdstuk": 3,
+      "paragraaf": "§3",
+      "opgave": "1-IV",
+      "omschrijving": "Stelling beoordelen: de reële waarde van geld daalt bij geldontwaarding",
+      "wds": "S",
+      "tags": [],
+      "blz": 82,
+      "stof": true,
+      "onderwerpen": [
+        "M1-H3-08",
+        "M1-H3-10"
+      ]
+    },
+    {
+      "bron": "lesboek",
+      "hoofdstuk": 3,
+      "paragraaf": "§3",
+      "opgave": "1-V",
+      "omschrijving": "Stelling beoordelen: de extrinsieke waarde van geld is gelijk aan de denominatie",
+      "wds": "S",
+      "tags": [],
+      "blz": 82,
+      "stof": true,
+      "onderwerpen": [
+        "M1-H3-07"
+      ]
+    },
+    {
+      "bron": "lesboek",
+      "hoofdstuk": 3,
+      "paragraaf": "§3",
+      "opgave": "2a",
+      "omschrijving": "Het verschil tussen de intrinsieke en de extrinsieke waarde van de euro uitleggen",
+      "wds": "S",
+      "tags": [],
+      "blz": 82,
+      "stof": true,
+      "onderwerpen": [
+        "M1-H3-07"
+      ]
+    },
+    {
+      "bron": "lesboek",
+      "hoofdstuk": 3,
+      "paragraaf": "§3",
+      "opgave": "2b",
+      "omschrijving": "Bepalen wat de nominale waarde van 2 Rai is",
+      "wds": "S",
+      "tags": [],
+      "blz": 82,
+      "stof": true,
+      "onderwerpen": [
+        "M1-H3-07"
+      ]
+    },
+    {
+      "bron": "lesboek",
+      "hoofdstuk": 3,
+      "paragraaf": "§3",
+      "opgave": "2c",
+      "omschrijving": "Beoordelen of Fokke & Sukke het over de reële waarde van euro’s hebben, met verklaring",
+      "wds": "S",
+      "tags": [],
+      "blz": 82,
+      "stof": true,
+      "onderwerpen": [
+        "M1-H3-08"
+      ]
+    },
+    {
+      "bron": "lesboek",
+      "hoofdstuk": 3,
+      "paragraaf": "§3",
+      "opgave": "3a",
+      "omschrijving": "Berekenen hoeveel gram tin, aluminium, zink en koper in een munt van tien eurocent zit",
+      "wds": "D",
+      "tags": [
+        "rekenen"
+      ],
+      "blz": 82,
+      "stof": true,
+      "onderwerpen": [
+        "M1-H3-07"
+      ]
+    },
+    {
+      "bron": "lesboek",
+      "hoofdstuk": 3,
+      "paragraaf": "§3",
+      "opgave": "3b",
+      "omschrijving": "De waarde van elke grondstof in een munt van tien eurocent berekenen",
+      "wds": "D",
+      "tags": [
+        "rekenen"
+      ],
+      "blz": 82,
+      "stof": true,
+      "onderwerpen": [
+        "M1-H3-07"
+      ]
+    },
+    {
+      "bron": "lesboek",
+      "hoofdstuk": 3,
+      "paragraaf": "§3",
+      "opgave": "3c",
+      "omschrijving": "De intrinsieke waarde van een munt van tien eurocent berekenen",
+      "wds": "D",
+      "tags": [
+        "rekenen"
+      ],
+      "blz": 82,
+      "stof": true,
+      "onderwerpen": [
+        "M1-H3-07"
+      ]
+    },
+    {
+      "bron": "lesboek",
+      "hoofdstuk": 3,
+      "paragraaf": "§3",
+      "opgave": "3d",
+      "omschrijving": "De berekening herhalen voor een munt van twintig en van vijftig eurocent",
+      "wds": "D",
+      "tags": [
+        "rekenen"
+      ],
+      "blz": 82,
+      "stof": true,
+      "onderwerpen": [
+        "M1-H3-07"
+      ]
+    },
+    {
+      "bron": "lesboek",
+      "hoofdstuk": 3,
+      "paragraaf": "§3",
+      "opgave": "3e",
+      "omschrijving": "Bepalen welke munt het aantrekkelijkst is om te vervalsen, met verklaring",
+      "wds": "S",
+      "tags": [],
+      "blz": 82,
+      "stof": true,
+      "onderwerpen": [
+        "M1-H3-07",
+        "M1-H3-05"
+      ]
+    },
+    {
+      "bron": "lesboek",
+      "hoofdstuk": 3,
+      "paragraaf": "§3",
+      "opgave": "3f",
+      "omschrijving": "De nominale waarde van het kleingeld van Thomas berekenen",
+      "wds": "D",
+      "tags": [
+        "rekenen"
+      ],
+      "blz": 82,
+      "stof": true,
+      "onderwerpen": [
+        "M1-H3-07"
+      ]
+    },
+    {
+      "bron": "lesboek",
+      "hoofdstuk": 3,
+      "paragraaf": "§3",
+      "opgave": "3g",
+      "omschrijving": "De intrinsieke waarde van het kleingeld van Thomas berekenen",
+      "wds": "D",
+      "tags": [
+        "rekenen"
+      ],
+      "blz": 82,
+      "stof": true,
+      "onderwerpen": [
+        "M1-H3-07"
+      ]
+    },
+    {
+      "bron": "lesboek",
+      "hoofdstuk": 3,
+      "paragraaf": "§3",
+      "opgave": "4",
+      "omschrijving": "De stappen van de werking van de wet van Gresham in de juiste volgorde zetten",
+      "wds": "S",
+      "tags": [],
+      "blz": 83,
+      "stof": true,
+      "onderwerpen": [
+        "M1-H3-09"
+      ]
+    },
+    {
+      "bron": "lesboek",
+      "hoofdstuk": 3,
+      "paragraaf": "§3",
+      "opgave": "5a",
+      "omschrijving": "Bepalen wat er met de intrinsieke waarde van zilveren stuivers gebeurde, met verklaring",
+      "wds": "S",
+      "tags": [],
+      "blz": 83,
+      "stof": true,
+      "onderwerpen": [
+        "M1-H3-07",
+        "M1-H3-09"
+      ]
+    },
+    {
+      "bron": "lesboek",
+      "hoofdstuk": 3,
+      "paragraaf": "§3",
+      "opgave": "5b",
+      "omschrijving": "Bepalen wat er met de intrinsieke waarde van de Brabantse gulden gebeurde, met verklaring",
+      "wds": "S",
+      "tags": [],
+      "blz": 83,
+      "stof": true,
+      "onderwerpen": [
+        "M1-H3-07",
+        "M1-H3-09"
+      ]
+    },
+    {
+      "bron": "lesboek",
+      "hoofdstuk": 3,
+      "paragraaf": "§3",
+      "opgave": "5c",
+      "omschrijving": "Uitleggen waarom de Brabantse gulden niet langer 25 zilveren stuivers waard kon zijn",
+      "wds": "S",
+      "tags": [],
+      "blz": 83,
+      "stof": true,
+      "onderwerpen": [
+        "M1-H3-09"
+      ]
+    },
+    {
+      "bron": "lesboek",
+      "hoofdstuk": 3,
+      "paragraaf": "§3",
+      "opgave": "5d",
+      "omschrijving": "Bepalen welke munten meer in roulatie kwamen, met de wet van Gresham",
+      "wds": "S",
+      "tags": [],
+      "blz": 83,
+      "stof": true,
+      "onderwerpen": [
+        "M1-H3-09"
+      ]
+    },
+    {
+      "bron": "lesboek",
+      "hoofdstuk": 3,
+      "paragraaf": "§3",
+      "opgave": "5e",
+      "omschrijving": "Bepalen welk getal op plaats A is weggelaten, met verklaring",
+      "wds": "D",
+      "tags": [],
+      "blz": 83,
+      "stof": true,
+      "onderwerpen": [
+        "M1-H3-09"
+      ]
+    },
+    {
+      "bron": "lesboek",
+      "hoofdstuk": 3,
+      "paragraaf": "§3",
+      "opgave": "5f",
+      "omschrijving": "Beoordelen of de aanpassing van 1517 het probleem oploste, met verklaring",
+      "wds": "S",
+      "tags": [],
+      "blz": 83,
+      "stof": true,
+      "onderwerpen": [
+        "M1-H3-09"
+      ]
+    },
+    {
+      "bron": "lesboek",
+      "hoofdstuk": 3,
+      "paragraaf": "§3",
+      "opgave": "6a",
+      "omschrijving": "Beoordelen of een spreuk in de rand van een munt nodig is, met verklaring",
+      "wds": "S",
+      "tags": [],
+      "blz": 84,
+      "stof": true,
+      "onderwerpen": [
+        "M1-H3-09"
+      ]
+    },
+    {
+      "bron": "lesboek",
+      "hoofdstuk": 3,
+      "paragraaf": "§3",
+      "opgave": "6b",
+      "omschrijving": "Verklaren waarom mensen een gouden 2-euromunt achterhouden",
+      "wds": "S",
+      "tags": [],
+      "blz": 84,
+      "stof": true,
+      "onderwerpen": [
+        "M1-H3-09"
+      ]
+    },
+    {
+      "bron": "lesboek",
+      "hoofdstuk": 3,
+      "paragraaf": "§3",
+      "opgave": "7a",
+      "omschrijving": "Uitleggen dat chartaal geld in omloop blijft zolang de nominale waarde groter is dan de intrinsieke",
+      "wds": "S",
+      "tags": [],
+      "blz": 84,
+      "stof": true,
+      "onderwerpen": [
+        "M1-H3-07",
+        "M1-H3-09"
+      ]
+    },
+    {
+      "bron": "lesboek",
+      "hoofdstuk": 3,
+      "paragraaf": "§3",
+      "opgave": "7b",
+      "omschrijving": "Verklaren waarom de wet van Gresham niet opgaat bij giraal geld",
+      "wds": "S",
+      "tags": [],
+      "blz": 84,
+      "stof": true,
+      "onderwerpen": [
+        "M1-H3-04",
+        "M1-H3-09"
+      ]
+    },
+    {
+      "bron": "lesboek",
+      "hoofdstuk": 3,
+      "paragraaf": "§3",
+      "opgave": "7c",
+      "omschrijving": "Uitleggen dat de intrinsieke waarde van giraal geld nul is",
+      "wds": "S",
+      "tags": [],
+      "blz": 84,
+      "stof": true,
+      "onderwerpen": [
+        "M1-H3-04",
+        "M1-H3-07"
+      ]
+    },
+    {
+      "bron": "lesboek",
+      "hoofdstuk": 3,
+      "paragraaf": "§3",
+      "opgave": "8a",
+      "omschrijving": "Bepalen wat er met de intrinsieke waarde van een munt gebeurt als de zinkprijs daalt",
+      "wds": "D",
+      "tags": [],
+      "blz": 84,
+      "stof": true,
+      "onderwerpen": [
+        "M1-H3-07"
+      ]
+    },
+    {
+      "bron": "lesboek",
+      "hoofdstuk": 3,
+      "paragraaf": "§3",
+      "opgave": "8b",
+      "omschrijving": "Bepalen wat er met de reële waarde van die munt gebeurt als de zinkprijs daalt",
+      "wds": "D",
+      "tags": [],
+      "blz": 84,
+      "stof": true,
+      "onderwerpen": [
+        "M1-H3-08"
+      ]
+    },
+    {
+      "bron": "lesboek",
+      "hoofdstuk": 3,
+      "paragraaf": "§3",
+      "opgave": "8c",
+      "omschrijving": "Bron 7 invullen voor de overige gebeurtenissen",
+      "wds": "D",
+      "tags": [],
+      "blz": 84,
+      "stof": true,
+      "onderwerpen": [
+        "M1-H3-07",
+        "M1-H3-08"
+      ]
+    },
+    {
+      "bron": "lesboek",
+      "hoofdstuk": 3,
+      "paragraaf": "§3",
+      "opgave": "9a",
+      "omschrijving": "Beoordelen of er geldontwaarding is als de intrinsieke waarde daalt, met verklaring",
+      "wds": "S",
+      "tags": [],
+      "blz": 84,
+      "stof": true,
+      "onderwerpen": [
+        "M1-H3-08",
+        "M1-H3-10"
+      ]
+    },
+    {
+      "bron": "lesboek",
+      "hoofdstuk": 3,
+      "paragraaf": "§3",
+      "opgave": "9b",
+      "omschrijving": "Beoordelen of er inflatie is als een nieuwe munt in omloop wordt gebracht, met verklaring",
+      "wds": "S",
+      "tags": [],
+      "blz": 84,
+      "stof": true,
+      "onderwerpen": [
+        "M1-H3-10"
+      ]
+    },
+    {
+      "bron": "lesboek",
+      "hoofdstuk": 3,
+      "paragraaf": "§3",
+      "opgave": "9c",
+      "omschrijving": "Uitleggen dat er sprake is van inflatie als een middel nu € 5 kost en vroeger € 4",
+      "wds": "S",
+      "tags": [],
+      "blz": 84,
+      "stof": true,
+      "onderwerpen": [
+        "M1-H3-10"
+      ]
+    },
+    {
+      "bron": "lesboek",
+      "hoofdstuk": 3,
+      "paragraaf": "§3",
+      "opgave": "10a",
+      "omschrijving": "Bepalen wat DNB doet als minder dan de helft van een eurobiljet intact is",
+      "wds": "D",
+      "tags": [],
+      "blz": 84,
+      "stof": true,
+      "onderwerpen": [
+        "M1-H3-12"
+      ]
+    },
+    {
+      "bron": "lesboek",
+      "hoofdstuk": 3,
+      "paragraaf": "§3",
+      "opgave": "10b",
+      "omschrijving": "Een reden geven waarom DNB niets uitkeert bij opzettelijk beschadigde biljetten",
+      "wds": "S",
+      "tags": [],
+      "blz": 84,
+      "stof": true,
+      "onderwerpen": [
+        "M1-H3-12"
+      ]
+    },
+    {
+      "bron": "lesboek",
+      "hoofdstuk": 3,
+      "paragraaf": "§3",
+      "opgave": "10c",
+      "omschrijving": "Verklaren waarom de man zijn bankbiljetten moedwillig zou beschadigen",
+      "wds": "S",
+      "tags": [],
+      "blz": 84,
+      "stof": true,
+      "onderwerpen": [
+        "M1-H3-12",
+        "M1-H3-07"
+      ]
+    },
+    {
+      "bron": "lesboek",
+      "hoofdstuk": 3,
+      "paragraaf": "§3",
+      "opgave": "10d",
+      "omschrijving": "Benoemen waaruit volgens DNB blijkt dat de man te kwader trouw handelde",
+      "wds": "D",
+      "tags": [],
+      "blz": 84,
+      "stof": true,
+      "onderwerpen": [
+        "M1-H3-12"
+      ]
+    },
+    {
+      "bron": "lesboek",
+      "hoofdstuk": 3,
+      "paragraaf": "§3",
+      "opgave": "10e",
+      "omschrijving": "De uiteindelijke schade voor de man bepalen",
+      "wds": "D",
+      "tags": [],
+      "blz": 84,
+      "stof": true,
+      "onderwerpen": [
+        "M1-H3-12",
+        "M1-H3-07"
+      ]
+    },
+    {
+      "bron": "lesboek",
+      "hoofdstuk": 3,
+      "paragraaf": "§4",
+      "opgave": "1-I",
+      "omschrijving": "Stelling beoordelen: geldschepping geeft inflatie",
+      "wds": "S",
+      "tags": [],
+      "blz": 91,
+      "stof": true,
+      "onderwerpen": [
+        "M1-H3-11",
+        "M1-H3-10"
+      ]
+    },
+    {
+      "bron": "lesboek",
+      "hoofdstuk": 3,
+      "paragraaf": "§4",
+      "opgave": "1-II",
+      "omschrijving": "Stelling beoordelen: alle Nederlanders krijgen op hun achttiende een bankrekening bij DNB",
+      "wds": "S",
+      "tags": [],
+      "blz": 91,
+      "stof": true,
+      "onderwerpen": [
+        "M1-H3-12"
+      ]
+    },
+    {
+      "bron": "lesboek",
+      "hoofdstuk": 3,
+      "paragraaf": "§4",
+      "opgave": "1-III",
+      "omschrijving": "Stelling beoordelen: via het kredietkanaal schept DNB giraal geld",
+      "wds": "S",
+      "tags": [],
+      "blz": 91,
+      "stof": false,
+      "onderwerpen": []
+    },
+    {
+      "bron": "lesboek",
+      "hoofdstuk": 3,
+      "paragraaf": "§4",
+      "opgave": "1-IV",
+      "omschrijving": "Stelling beoordelen: handelsbanken lenen het ingelegde spaargeld weer uit",
+      "wds": "S",
+      "tags": [],
+      "blz": 91,
+      "stof": false,
+      "onderwerpen": []
+    },
+    {
+      "bron": "lesboek",
+      "hoofdstuk": 3,
+      "paragraaf": "§4",
+      "opgave": "1-V",
+      "omschrijving": "Stelling beoordelen: de kapitaalreserve is gelijk aan al het uitgeleende geld",
+      "wds": "S",
+      "tags": [],
+      "blz": 91,
+      "stof": false,
+      "onderwerpen": []
+    },
+    {
+      "bron": "lesboek",
+      "hoofdstuk": 3,
+      "paragraaf": "§4",
+      "opgave": "2",
+      "omschrijving": "De stappen ordenen die verklaren wat er met het vertrouwen in geld gebeurt als iedereen geld kan scheppen",
+      "wds": "S",
+      "tags": [],
+      "blz": 91,
+      "stof": true,
+      "onderwerpen": [
+        "M1-H3-05",
+        "M1-H3-11"
+      ]
+    },
+    {
+      "bron": "lesboek",
+      "hoofdstuk": 3,
+      "paragraaf": "§4",
+      "opgave": "3a",
+      "omschrijving": "Beoordelen of consumptiemunten alle drie de functies van geld vervullen",
+      "wds": "S",
+      "tags": [],
+      "blz": 91,
+      "stof": true,
+      "onderwerpen": [
+        "M1-H3-02"
+      ]
+    },
+    {
+      "bron": "lesboek",
+      "hoofdstuk": 3,
+      "paragraaf": "§4",
+      "opgave": "3b",
+      "omschrijving": "De vier voordelen van betalen met consumptiemunten benoemen",
+      "wds": "D",
+      "tags": [],
+      "blz": 91,
+      "stof": true,
+      "onderwerpen": [
+        "M1-H3-02"
+      ]
+    },
+    {
+      "bron": "lesboek",
+      "hoofdstuk": 3,
+      "paragraaf": "§4",
+      "opgave": "3c",
+      "omschrijving": "Een reden bedenken waarom consumptiemunten makkelijker uitgegeven worden dan cash",
+      "wds": "S",
+      "tags": [],
+      "blz": 91,
+      "stof": true,
+      "onderwerpen": [
+        "M1-H3-02"
+      ]
+    },
+    {
+      "bron": "lesboek",
+      "hoofdstuk": 3,
+      "paragraaf": "§4",
+      "opgave": "3d",
+      "omschrijving": "Beoordelen of een festival chartaal geld schept met consumptiemunten, met verklaring",
+      "wds": "S",
+      "tags": [],
+      "blz": 91,
+      "stof": true,
+      "onderwerpen": [
+        "M1-H3-11"
+      ]
+    },
+    {
+      "bron": "lesboek",
+      "hoofdstuk": 3,
+      "paragraaf": "§4",
+      "opgave": "4a",
+      "omschrijving": "De prijsstijging van vastkokende aardappelen over 2000-2018 berekenen",
+      "wds": "D",
+      "tags": [
+        "rekenen"
+      ],
+      "blz": 92,
+      "stof": true,
+      "onderwerpen": [
+        "M1-H3-10",
+        "M1-A-01"
+      ]
+    },
+    {
+      "bron": "lesboek",
+      "hoofdstuk": 3,
+      "paragraaf": "§4",
+      "opgave": "4b",
+      "omschrijving": "De inflatie van vastkokende aardappelen over 2000-2018 berekenen",
+      "wds": "D",
+      "tags": [
+        "rekenen"
+      ],
+      "blz": 92,
+      "stof": true,
+      "onderwerpen": [
+        "M1-H3-10",
+        "M1-A-01"
+      ]
+    },
+    {
+      "bron": "lesboek",
+      "hoofdstuk": 3,
+      "paragraaf": "§4",
+      "opgave": "4c",
+      "omschrijving": "Bron 6 invullen voor de overige voedselproducten",
+      "wds": "D",
+      "tags": [],
+      "blz": 92,
+      "stof": true,
+      "onderwerpen": [
+        "M1-H3-10",
+        "M1-A-01"
+      ]
+    },
+    {
+      "bron": "lesboek",
+      "hoofdstuk": 3,
+      "paragraaf": "§4",
+      "opgave": "4d",
+      "omschrijving": "Bepalen wie meer last heeft van de inflatie, Lisa of Job, met verklaring",
+      "wds": "S",
+      "tags": [],
+      "blz": 92,
+      "stof": true,
+      "onderwerpen": [
+        "M1-H3-10",
+        "M1-H3-08"
+      ]
+    },
+    {
+      "bron": "lesboek",
+      "hoofdstuk": 3,
+      "paragraaf": "§4",
+      "opgave": "5a",
+      "omschrijving": "Uitleggen hoe de centrale bank de reële waarde van geld bewaakt",
+      "wds": "S",
+      "tags": [],
+      "blz": 92,
+      "stof": true,
+      "onderwerpen": [
+        "M1-H3-12",
+        "M1-H3-08"
+      ]
+    },
+    {
+      "bron": "lesboek",
+      "hoofdstuk": 3,
+      "paragraaf": "§4",
+      "opgave": "5b",
+      "omschrijving": "Berekenen hoeveel een handelsbank maximaal mag lenen van de centrale bank",
+      "wds": "D",
+      "tags": [
+        "rekenen"
+      ],
+      "blz": 92,
+      "stof": false,
+      "onderwerpen": []
+    },
+    {
+      "bron": "lesboek",
+      "hoofdstuk": 3,
+      "paragraaf": "§4",
+      "opgave": "5c",
+      "omschrijving": "Benoemen hoe consumenten hun girale geld kunnen omzetten in chartaal geld",
+      "wds": "D",
+      "tags": [],
+      "blz": 92,
+      "stof": true,
+      "onderwerpen": [
+        "M1-H3-04"
+      ]
+    },
+    {
+      "bron": "lesboek",
+      "hoofdstuk": 3,
+      "paragraaf": "§4",
+      "opgave": "5d",
+      "omschrijving": "Verklaren waarom die omzetting belangrijk is",
+      "wds": "S",
+      "tags": [],
+      "blz": 92,
+      "stof": true,
+      "onderwerpen": [
+        "M1-H3-04",
+        "M1-H3-05"
+      ]
+    },
+    {
+      "bron": "lesboek",
+      "hoofdstuk": 3,
+      "paragraaf": "§4",
+      "opgave": "5e",
+      "omschrijving": "De nieuwe prijs van een fiets berekenen bij 10% inflatie",
+      "wds": "D",
+      "tags": [
+        "rekenen"
+      ],
+      "blz": 92,
+      "stof": true,
+      "onderwerpen": [
+        "M1-H3-10",
+        "M1-A-01"
+      ]
+    },
+    {
+      "bron": "lesboek",
+      "hoofdstuk": 3,
+      "paragraaf": "§4",
+      "opgave": "5f",
+      "omschrijving": "De prijs opnieuw berekenen als de inflatie vervolgens -10% is",
+      "wds": "D",
+      "tags": [
+        "rekenen"
+      ],
+      "blz": 92,
+      "stof": true,
+      "onderwerpen": [
+        "M1-H3-10",
+        "M1-A-01"
+      ]
+    },
+    {
+      "bron": "lesboek",
+      "hoofdstuk": 3,
+      "paragraaf": "§4",
+      "opgave": "5g",
+      "omschrijving": "Uitleggen waarom die uitkomst lager is dan € 1.000",
+      "wds": "S",
+      "tags": [],
+      "blz": 92,
+      "stof": true,
+      "onderwerpen": [
+        "M1-H3-10"
+      ]
+    },
+    {
+      "bron": "lesboek",
+      "hoofdstuk": 3,
+      "paragraaf": "§4",
+      "opgave": "6a",
+      "omschrijving": "Beoordelen of de centrale bank van Zimbabwe de geldhoeveelheid bepaalde, met verklaring",
+      "wds": "S",
+      "tags": [],
+      "blz": 92,
+      "stof": true,
+      "onderwerpen": [
+        "M1-H3-11",
+        "M1-H3-12"
+      ]
+    },
+    {
+      "bron": "lesboek",
+      "hoofdstuk": 3,
+      "paragraaf": "§4",
+      "opgave": "6b",
+      "omschrijving": "De reden voor de extra geldschepping in Zimbabwe benoemen",
+      "wds": "D",
+      "tags": [],
+      "blz": 92,
+      "stof": true,
+      "onderwerpen": [
+        "M1-H3-11"
+      ]
+    },
+    {
+      "bron": "lesboek",
+      "hoofdstuk": 3,
+      "paragraaf": "§4",
+      "opgave": "6c",
+      "omschrijving": "Verklaren waarom consumenten hun Zimbabwaanse dollars zo snel mogelijk uitgaven",
+      "wds": "S",
+      "tags": [],
+      "blz": 92,
+      "stof": true,
+      "onderwerpen": [
+        "M1-H3-10"
+      ]
+    },
+    {
+      "bron": "lesboek",
+      "hoofdstuk": 3,
+      "paragraaf": "§4",
+      "opgave": "6d",
+      "omschrijving": "Verklaren waarom er een biljet van 100 miljard in omloop werd gebracht",
+      "wds": "S",
+      "tags": [],
+      "blz": 92,
+      "stof": true,
+      "onderwerpen": [
+        "M1-H3-10"
+      ]
+    },
+    {
+      "bron": "lesboek",
+      "hoofdstuk": 3,
+      "paragraaf": "§4",
+      "opgave": "6e",
+      "omschrijving": "Verklaren waarom er geen Zimbabwaanse dollars als munten werden uitgegeven",
+      "wds": "S",
+      "tags": [],
+      "blz": 92,
+      "stof": true,
+      "onderwerpen": [
+        "M1-H3-10",
+        "M1-H3-07"
+      ]
+    },
+    {
+      "bron": "lesboek",
+      "hoofdstuk": 3,
+      "paragraaf": "§4",
+      "opgave": "7a",
+      "omschrijving": "De ruilverhouding tussen de Amerikaanse en de Zimbabwaanse dollar bepalen",
+      "wds": "D",
+      "tags": [],
+      "blz": 93,
+      "stof": true,
+      "onderwerpen": [
+        "M1-H3-13"
+      ]
+    },
+    {
+      "bron": "lesboek",
+      "hoofdstuk": 3,
+      "paragraaf": "§4",
+      "opgave": "7b",
+      "omschrijving": "Uitleggen dat de reële waarde van 35 biljard dollar gelijk is aan die van één dollar",
+      "wds": "S",
+      "tags": [],
+      "blz": 93,
+      "stof": true,
+      "onderwerpen": [
+        "M1-H3-08",
+        "M1-H3-13"
+      ]
+    },
+    {
+      "bron": "lesboek",
+      "hoofdstuk": 3,
+      "paragraaf": "§4",
+      "opgave": "7c",
+      "omschrijving": "Verklaren waarom inwoners slechts tijdelijk kunnen omwisselen",
+      "wds": "S",
+      "tags": [],
+      "blz": 93,
+      "stof": true,
+      "onderwerpen": [
+        "M1-H3-13"
+      ]
+    },
+    {
+      "bron": "lesboek",
+      "hoofdstuk": 3,
+      "paragraaf": "§4",
+      "opgave": "7d",
+      "omschrijving": "Bepalen wat er met de transactiekosten van een indirecte ruil gebeurt bij hyperinflatie",
+      "wds": "S",
+      "tags": [],
+      "blz": 93,
+      "stof": true,
+      "onderwerpen": [
+        "M1-H3-01",
+        "M1-H2-05"
+      ]
+    },
+    {
+      "bron": "lesboek",
+      "hoofdstuk": 3,
+      "paragraaf": "§4",
+      "opgave": "7e",
+      "omschrijving": "Bedenken hoe diamanten het vertrouwen in de Zimbabwaanse dollar konden herstellen",
+      "wds": "S",
+      "tags": [],
+      "blz": 93,
+      "stof": true,
+      "onderwerpen": [
+        "M1-H3-05"
+      ]
+    },
+    {
+      "bron": "lesboek",
+      "hoofdstuk": 3,
+      "paragraaf": "§4",
+      "opgave": "8",
+      "omschrijving": "De stappen ordenen waarmee de ECB de geldhoeveelheid vergroot via de beleidsrente",
+      "wds": "S",
+      "tags": [],
+      "blz": 94,
+      "stof": false,
+      "onderwerpen": []
+    },
+    {
+      "bron": "lesboek",
+      "hoofdstuk": 3,
+      "paragraaf": "§4",
+      "opgave": "9a",
+      "omschrijving": "Berekenen hoeveel muntjes gemiddeld nodig zijn voor één D-mark",
+      "wds": "D",
+      "tags": [
+        "rekenen"
+      ],
+      "blz": 94,
+      "stof": false,
+      "onderwerpen": []
+    },
+    {
+      "bron": "lesboek",
+      "hoofdstuk": 3,
+      "paragraaf": "§4",
+      "opgave": "9b",
+      "omschrijving": "Berekenen hoeveel muntjes de bankbediende geteld heeft",
+      "wds": "D",
+      "tags": [
+        "rekenen"
+      ],
+      "blz": 94,
+      "stof": false,
+      "onderwerpen": []
+    },
+    {
+      "bron": "lesboek",
+      "hoofdstuk": 3,
+      "paragraaf": "§4",
+      "opgave": "9c",
+      "omschrijving": "Een manier bedenken om de totale waarde van de muntjes te schatten",
+      "wds": "S",
+      "tags": [],
+      "blz": 94,
+      "stof": false,
+      "onderwerpen": []
+    },
+    {
+      "bron": "lesboek",
+      "hoofdstuk": 3,
+      "paragraaf": "§4",
+      "opgave": "10a",
+      "omschrijving": "Uitleggen wanneer prijzen 'veel te hard' stijgen, met het begrip gewenste inflatie",
+      "wds": "S",
+      "tags": [],
+      "blz": 94,
+      "stof": false,
+      "onderwerpen": []
+    },
+    {
+      "bron": "lesboek",
+      "hoofdstuk": 3,
+      "paragraaf": "§4",
+      "opgave": "10b",
+      "omschrijving": "Uitleggen dat lenen bij de ECB duurder wordt als de beleidsrente stijgt",
+      "wds": "S",
+      "tags": [],
+      "blz": 94,
+      "stof": false,
+      "onderwerpen": []
+    },
+    {
+      "bron": "lesboek",
+      "hoofdstuk": 3,
+      "paragraaf": "§4",
+      "opgave": "10c",
+      "omschrijving": "Uitleggen dat handelsbanken een hogere hypotheekrente vragen bij een hogere beleidsrente",
+      "wds": "S",
+      "tags": [],
+      "blz": 94,
+      "stof": false,
+      "onderwerpen": []
+    },
+    {
+      "bron": "lesboek",
+      "hoofdstuk": 3,
+      "paragraaf": "§4",
+      "opgave": "10d",
+      "omschrijving": "Uitleggen dat consumenten minder snel een woning kopen bij een hogere beleidsrente",
+      "wds": "S",
+      "tags": [],
+      "blz": 94,
+      "stof": false,
+      "onderwerpen": []
+    },
+    {
+      "bron": "lesboek",
+      "hoofdstuk": 3,
+      "paragraaf": "§4",
+      "opgave": "10e",
+      "omschrijving": "Uitleggen dat er in de bouw minder arbeid gevraagd wordt bij een hogere beleidsrente",
+      "wds": "S",
+      "tags": [],
+      "blz": 94,
+      "stof": false,
+      "onderwerpen": []
+    },
+    {
+      "bron": "lesboek",
+      "hoofdstuk": 3,
+      "paragraaf": "§4",
+      "opgave": "10f",
+      "omschrijving": "De zin over de rente als 'gas- en rempedaal van de economie' toelichten",
+      "wds": "S",
+      "tags": [],
+      "blz": 94,
+      "stof": false,
+      "onderwerpen": []
+    },
+    {
+      "bron": "lesboek",
+      "hoofdstuk": 3,
+      "paragraaf": "§4",
+      "opgave": "10g",
+      "omschrijving": "Bepalen of de ECB de beleidsrente verhoogt of verlaagt bij te hard stijgende prijzen",
+      "wds": "S",
+      "tags": [],
+      "blz": 94,
+      "stof": false,
+      "onderwerpen": []
+    },
+    {
+      "bron": "lesboek",
+      "hoofdstuk": 3,
+      "paragraaf": "§5",
+      "opgave": "1a",
+      "omschrijving": "De nominale waarde van een zilveren vijfeuroherdenkingsmunt bepalen",
+      "wds": "D",
+      "tags": [
+        "rekenen"
+      ],
+      "blz": 95,
+      "stof": true,
+      "onderwerpen": [
+        "M1-H3-07"
+      ]
+    },
+    {
+      "bron": "lesboek",
+      "hoofdstuk": 3,
+      "paragraaf": "§5",
+      "opgave": "1b",
+      "omschrijving": "De reële waarde van die munt bepalen",
+      "wds": "D",
+      "tags": [
+        "rekenen"
+      ],
+      "blz": 95,
+      "stof": true,
+      "onderwerpen": [
+        "M1-H3-08"
+      ]
+    },
+    {
+      "bron": "lesboek",
+      "hoofdstuk": 3,
+      "paragraaf": "§5",
+      "opgave": "1c",
+      "omschrijving": "De intrinsieke waarde van die munt bepalen",
+      "wds": "D",
+      "tags": [
+        "rekenen"
+      ],
+      "blz": 95,
+      "stof": true,
+      "onderwerpen": [
+        "M1-H3-07"
+      ]
+    },
+    {
+      "bron": "lesboek",
+      "hoofdstuk": 3,
+      "paragraaf": "§5",
+      "opgave": "1d",
+      "omschrijving": "Met de wet van Gresham uitleggen waarom die munten niet als cash gebruikt worden",
+      "wds": "S",
+      "tags": [],
+      "blz": 95,
+      "stof": true,
+      "onderwerpen": [
+        "M1-H3-09"
+      ]
+    },
+    {
+      "bron": "lesboek",
+      "hoofdstuk": 3,
+      "paragraaf": "§5",
+      "opgave": "2a",
+      "omschrijving": "Beoordelen of zout in bron 1 de rol van geld vervult",
+      "wds": "S",
+      "tags": [],
+      "blz": 95,
+      "stof": true,
+      "onderwerpen": [
+        "M1-H3-02"
+      ]
+    },
+    {
+      "bron": "lesboek",
+      "hoofdstuk": 3,
+      "paragraaf": "§5",
+      "opgave": "2b",
+      "omschrijving": "Benoemen hoe de bakkers in Florence op de hoge zoutprijs reageerden",
+      "wds": "D",
+      "tags": [],
+      "blz": 95,
+      "stof": true,
+      "onderwerpen": [
+        "M1-H3-02"
+      ]
+    },
+    {
+      "bron": "lesboek",
+      "hoofdstuk": 3,
+      "paragraaf": "§5",
+      "opgave": "2c",
+      "omschrijving": "Beoordelen of zout schaars is in economische zin",
+      "wds": "S",
+      "tags": [],
+      "blz": 95,
+      "stof": true,
+      "onderwerpen": [
+        "M1-H1-03"
+      ]
+    },
+    {
+      "bron": "lesboek",
+      "hoofdstuk": 3,
+      "paragraaf": "§5",
+      "opgave": "2d",
+      "omschrijving": "Uitleggen dat de intrinsieke waarde van Toscaans brood lager is dan van Nederlands brood",
+      "wds": "S",
+      "tags": [],
+      "blz": 95,
+      "stof": true,
+      "onderwerpen": [
+        "M1-H3-07"
+      ]
+    },
+    {
+      "bron": "lesboek",
+      "hoofdstuk": 3,
+      "paragraaf": "§5",
+      "opgave": "3a",
+      "omschrijving": "Uitleggen dat meer vals geld de functie van geld als ruilmiddel ondermijnt",
+      "wds": "S",
+      "tags": [],
+      "blz": 95,
+      "stof": true,
+      "onderwerpen": [
+        "M1-H3-05",
+        "M1-H3-02"
+      ]
+    },
+    {
+      "bron": "lesboek",
+      "hoofdstuk": 3,
+      "paragraaf": "§5",
+      "opgave": "3b",
+      "omschrijving": "Benoemen wat een centrale bank tegen geldvervalsing kan doen",
+      "wds": "S",
+      "tags": [],
+      "blz": 95,
+      "stof": true,
+      "onderwerpen": [
+        "M1-H3-12",
+        "M1-H3-05"
+      ]
+    },
+    {
+      "bron": "lesboek",
+      "hoofdstuk": 3,
+      "paragraaf": "§5",
+      "opgave": "3c",
+      "omschrijving": "Benoemen wat de overheid tegen geldvervalsing kan doen",
+      "wds": "S",
+      "tags": [],
+      "blz": 95,
+      "stof": true,
+      "onderwerpen": [
+        "M1-H3-05"
+      ]
+    },
+    {
+      "bron": "lesboek",
+      "hoofdstuk": 3,
+      "paragraaf": "§5",
+      "opgave": "3d",
+      "omschrijving": "Twee redenen geven waarom de transactiekosten bij een biljet van € 500 hoger zijn",
+      "wds": "S",
+      "tags": [],
+      "blz": 95,
+      "stof": true,
+      "onderwerpen": [
+        "M1-H2-05"
+      ]
+    },
+    {
+      "bron": "lesboek",
+      "hoofdstuk": 3,
+      "paragraaf": "§5",
+      "opgave": "3e",
+      "omschrijving": "Beoordelen of het aannemelijk is dat de man niet wist dat hij met vals geld betaalde",
+      "wds": "S",
+      "tags": [],
+      "blz": 95,
+      "stof": true,
+      "onderwerpen": [
+        "M1-H3-05"
+      ]
+    },
+    {
+      "bron": "lesboek",
+      "hoofdstuk": 3,
+      "paragraaf": "§5",
+      "opgave": "4a",
+      "omschrijving": "Bedenken wat Keynes bedoelde met zijn uitspraak over het bederven van de valuta",
+      "wds": "S",
+      "tags": [],
+      "blz": 96,
+      "stof": true,
+      "onderwerpen": [
+        "M1-H3-10"
+      ]
+    },
+    {
+      "bron": "lesboek",
+      "hoofdstuk": 3,
+      "paragraaf": "§5",
+      "opgave": "4b",
+      "omschrijving": "Bepalen welke waarde van geld in bron 4 bedoeld wordt, met verklaring",
+      "wds": "S",
+      "tags": [],
+      "blz": 96,
+      "stof": true,
+      "onderwerpen": [
+        "M1-H3-08"
+      ]
+    },
+    {
+      "bron": "lesboek",
+      "hoofdstuk": 3,
+      "paragraaf": "§5",
+      "opgave": "4c",
+      "omschrijving": "Beoordelen of bron 4 de uitspraak van Keynes ondersteunt, met verklaring",
+      "wds": "S",
+      "tags": [],
+      "blz": 96,
+      "stof": true,
+      "onderwerpen": [
+        "M1-H3-10"
+      ]
+    },
+    {
+      "bron": "lesboek",
+      "hoofdstuk": 3,
+      "paragraaf": "§5",
+      "opgave": "5a",
+      "omschrijving": "Beoordelen of de bitcoin alle functies van geld kan vervullen, met verklaring",
+      "wds": "S",
+      "tags": [],
+      "blz": 96,
+      "stof": true,
+      "onderwerpen": [
+        "M1-H3-02"
+      ]
+    },
+    {
+      "bron": "lesboek",
+      "hoofdstuk": 3,
+      "paragraaf": "§5",
+      "opgave": "5b",
+      "omschrijving": "Verklaren waarom de bitcoin volgens de rechter geen giraal geld is",
+      "wds": "S",
+      "tags": [],
+      "blz": 96,
+      "stof": true,
+      "onderwerpen": [
+        "M1-H3-04"
+      ]
+    },
+    {
+      "bron": "lesboek",
+      "hoofdstuk": 3,
+      "paragraaf": "§5",
+      "opgave": "5c",
+      "omschrijving": "Verklaren waarom de bitcoin volgens de rechter geen chartaal geld is",
+      "wds": "S",
+      "tags": [],
+      "blz": 96,
+      "stof": true,
+      "onderwerpen": [
+        "M1-H3-04"
+      ]
+    },
+    {
+      "bron": "lesboek",
+      "hoofdstuk": 3,
+      "paragraaf": "§5",
+      "opgave": "5d",
+      "omschrijving": "De intrinsieke waarde van een bitcoin bepalen",
+      "wds": "D",
+      "tags": [
+        "rekenen"
+      ],
+      "blz": 96,
+      "stof": true,
+      "onderwerpen": [
+        "M1-H3-07"
+      ]
+    },
+    {
+      "bron": "lesboek",
+      "hoofdstuk": 3,
+      "paragraaf": "§5",
+      "opgave": "5e",
+      "omschrijving": "Beoordelen of die intrinsieke waarde opweegt tegen de kosten van delving, met verklaring",
+      "wds": "S",
+      "tags": [],
+      "blz": 96,
+      "stof": true,
+      "onderwerpen": [
+        "M1-H3-07"
+      ]
+    },
+    {
+      "bron": "lesboek",
+      "hoofdstuk": 3,
+      "paragraaf": "§5",
+      "opgave": "5f",
+      "omschrijving": "De reële waarde van een bitcoin bepalen",
+      "wds": "D",
+      "tags": [
+        "rekenen"
+      ],
+      "blz": 96,
+      "stof": true,
+      "onderwerpen": [
+        "M1-H3-08"
+      ]
+    },
+    {
+      "bron": "lesboek",
+      "hoofdstuk": 3,
+      "paragraaf": "§5",
+      "opgave": "5g",
+      "omschrijving": "Verklaren waarom de grillige koers de bitcoin ongeschikt maakt als betaalmiddel",
+      "wds": "S",
+      "tags": [],
+      "blz": 96,
+      "stof": true,
+      "onderwerpen": [
+        "M1-H3-02",
+        "M1-H3-08"
+      ]
+    },
+    {
+      "bron": "lesboek",
+      "hoofdstuk": 3,
+      "paragraaf": "§5",
+      "opgave": "5h",
+      "omschrijving": "Beoordelen of de maatschappelijke geldhoeveelheid gedaald is, met verklaring",
+      "wds": "S",
+      "tags": [],
+      "blz": 97,
+      "stof": true,
+      "onderwerpen": [
+        "M1-H3-11"
+      ]
+    },
+    {
+      "bron": "lesboek",
+      "hoofdstuk": 3,
+      "paragraaf": "§5",
+      "opgave": "6a",
+      "omschrijving": "Bepalen wat er met de nominale waarde van de bolivar gebeurt bij het schrappen van nullen",
+      "wds": "S",
+      "tags": [],
+      "blz": 97,
+      "stof": true,
+      "onderwerpen": [
+        "M1-H3-07"
+      ]
+    },
+    {
+      "bron": "lesboek",
+      "hoofdstuk": 3,
+      "paragraaf": "§5",
+      "opgave": "6b",
+      "omschrijving": "Verklaren waarom de bolivar daardoor gebruiksvriendelijker wordt",
+      "wds": "S",
+      "tags": [],
+      "blz": 97,
+      "stof": true,
+      "onderwerpen": [
+        "M1-H3-07",
+        "M1-H3-10"
+      ]
+    },
+    {
+      "bron": "lesboek",
+      "hoofdstuk": 3,
+      "paragraaf": "§5",
+      "opgave": "6c",
+      "omschrijving": "Bepalen welk papier een hogere intrinsieke waarde had, met verklaring",
+      "wds": "S",
+      "tags": [],
+      "blz": 97,
+      "stof": true,
+      "onderwerpen": [
+        "M1-H3-07"
+      ]
+    },
+    {
+      "bron": "lesboek",
+      "hoofdstuk": 3,
+      "paragraaf": "§5",
+      "opgave": "6d",
+      "omschrijving": "Een aanwendingsrichting van bolivar-bankbiljetten anders dan als ruilmiddel geven",
+      "wds": "D",
+      "tags": [],
+      "blz": 97,
+      "stof": true,
+      "onderwerpen": [
+        "M1-H1-02"
+      ]
+    },
+    {
+      "bron": "lesboek",
+      "hoofdstuk": 3,
+      "paragraaf": "§5",
+      "opgave": "7a",
+      "omschrijving": "Berekenen hoe zwaar de gestolen buit was",
+      "wds": "D",
+      "tags": [
+        "rekenen"
+      ],
+      "blz": 98,
+      "stof": true,
+      "onderwerpen": [
+        "M1-H3-07"
+      ]
+    },
+    {
+      "bron": "lesboek",
+      "hoofdstuk": 3,
+      "paragraaf": "§5",
+      "opgave": "7b",
+      "omschrijving": "De geschatte waarde van de buit ten tijde van de overval berekenen",
+      "wds": "D",
+      "tags": [
+        "rekenen"
+      ],
+      "blz": 98,
+      "stof": true,
+      "onderwerpen": [
+        "M1-H3-07"
+      ]
+    },
+    {
+      "bron": "lesboek",
+      "hoofdstuk": 3,
+      "paragraaf": "§5",
+      "opgave": "7c",
+      "omschrijving": "De nominale waarde in euro’s van een gestolen munt berekenen",
+      "wds": "D",
+      "tags": [
+        "rekenen"
+      ],
+      "blz": 98,
+      "stof": true,
+      "onderwerpen": [
+        "M1-H3-07"
+      ]
+    },
+    {
+      "bron": "lesboek",
+      "hoofdstuk": 3,
+      "paragraaf": "§5",
+      "opgave": "7d",
+      "omschrijving": "De gemiddelde intrinsieke waarde van een gestolen munt berekenen",
+      "wds": "D",
+      "tags": [
+        "rekenen"
+      ],
+      "blz": 98,
+      "stof": true,
+      "onderwerpen": [
+        "M1-H3-07"
+      ]
+    },
+    {
+      "bron": "lesboek",
+      "hoofdstuk": 3,
+      "paragraaf": "§5",
+      "opgave": "7e",
+      "omschrijving": "Verklaren waarom de intrinsieke waarde hoger is dan de nominale waarde",
+      "wds": "S",
+      "tags": [],
+      "blz": 98,
+      "stof": true,
+      "onderwerpen": [
+        "M1-H3-07",
+        "M1-H3-09"
+      ]
+    },
+    {
+      "bron": "lesboek",
+      "hoofdstuk": 3,
+      "paragraaf": "§5",
+      "opgave": "7f",
+      "omschrijving": "De reële waarde van een gestolen munt ten tijde van de overval bepalen",
+      "wds": "D",
+      "tags": [
+        "rekenen"
+      ],
+      "blz": 98,
+      "stof": true,
+      "onderwerpen": [
+        "M1-H3-08"
+      ]
+    },
+    {
+      "bron": "lesboek",
+      "hoofdstuk": 3,
+      "paragraaf": "§5",
+      "opgave": "7g",
+      "omschrijving": "Beoordelen of de munten omgesmolten zullen worden, met verklaring",
+      "wds": "S",
+      "tags": [],
+      "blz": 98,
+      "stof": true,
+      "onderwerpen": [
+        "M1-H3-09"
+      ]
+    },
+    {
+      "bron": "lesboek",
+      "hoofdstuk": 3,
+      "paragraaf": "§5",
+      "opgave": "8a",
+      "omschrijving": "Bepalen wat er met de intrinsieke waarde van een munt gebeurde door de koperprijs",
+      "wds": "S",
+      "tags": [],
+      "blz": 98,
+      "stof": true,
+      "onderwerpen": [
+        "M1-H3-07"
+      ]
+    },
+    {
+      "bron": "lesboek",
+      "hoofdstuk": 3,
+      "paragraaf": "§5",
+      "opgave": "8b",
+      "omschrijving": "Bepalen wat er met de reële waarde van die munt gebeurde door de ijzerprijs",
+      "wds": "S",
+      "tags": [],
+      "blz": 98,
+      "stof": true,
+      "onderwerpen": [
+        "M1-H3-08"
+      ]
+    },
+    {
+      "bron": "lesboek",
+      "hoofdstuk": 3,
+      "paragraaf": "§5",
+      "opgave": "8c",
+      "omschrijving": "Het juiste woord kiezen over de ruilverhouding tussen ijzer en koper",
+      "wds": "D",
+      "tags": [],
+      "blz": 98,
+      "stof": true,
+      "onderwerpen": [
+        "M1-H2-02"
+      ]
+    },
+    {
+      "bron": "lesboek",
+      "hoofdstuk": 3,
+      "paragraaf": "§5",
+      "opgave": "8d",
+      "omschrijving": "Beoordelen of ijzer beter met munten of met giraal geld betaald wordt, met verklaring",
+      "wds": "S",
+      "tags": [],
+      "blz": 98,
+      "stof": true,
+      "onderwerpen": [
+        "M1-H3-04"
+      ]
+    },
+    {
+      "bron": "lesboek",
+      "hoofdstuk": 3,
+      "paragraaf": "§5",
+      "opgave": "9a",
+      "omschrijving": "Bepalen wanneer de intrinsieke waarde van chartaal geld hoger is, met toelichting",
+      "wds": "S",
+      "tags": [],
+      "blz": 99,
+      "stof": true,
+      "onderwerpen": [
+        "M1-H3-07"
+      ]
+    },
+    {
+      "bron": "lesboek",
+      "hoofdstuk": 3,
+      "paragraaf": "§5",
+      "opgave": "9b",
+      "omschrijving": "Bepalen wanneer de reële waarde van chartaal geld hoger is, met verklaring",
+      "wds": "S",
+      "tags": [],
+      "blz": 99,
+      "stof": true,
+      "onderwerpen": [
+        "M1-H3-08"
+      ]
+    },
+    {
+      "bron": "lesboek",
+      "hoofdstuk": 3,
+      "paragraaf": "§5",
+      "opgave": "9c",
+      "omschrijving": "Bepalen wanneer de nominale waarde van chartaal geld hoger is, met verklaring",
+      "wds": "S",
+      "tags": [],
+      "blz": 99,
+      "stof": true,
+      "onderwerpen": [
+        "M1-H3-07"
+      ]
+    },
+    {
+      "bron": "lesboek",
+      "hoofdstuk": 3,
+      "paragraaf": "§5",
+      "opgave": "10a",
+      "omschrijving": "Uitleggen dat consumenten eerder aflossen als de ECB de beleidsrente verhoogt",
+      "wds": "S",
+      "tags": [],
+      "blz": 99,
+      "stof": false,
+      "onderwerpen": []
+    },
+    {
+      "bron": "lesboek",
+      "hoofdstuk": 3,
+      "paragraaf": "§5",
+      "opgave": "10b",
+      "omschrijving": "Uitleggen dat de maatschappelijke geldhoeveelheid afneemt bij een hogere beleidsrente",
+      "wds": "S",
+      "tags": [],
+      "blz": 99,
+      "stof": false,
+      "onderwerpen": []
+    },
+    {
+      "bron": "lesboek",
+      "hoofdstuk": 3,
+      "paragraaf": "§5",
+      "opgave": "10c",
+      "omschrijving": "Beoordelen of een verandering van de beleidsrente direct doorwerkt in de economie",
+      "wds": "S",
+      "tags": [],
+      "blz": 99,
+      "stof": false,
+      "onderwerpen": []
+    },
+    {
+      "bron": "lesboek",
+      "hoofdstuk": 3,
+      "paragraaf": "§5",
+      "opgave": "10d",
+      "omschrijving": "Verklaren waarom de ECB de beleidsrente niet meteen verlaagt als de inflatie daalt",
+      "wds": "S",
+      "tags": [],
+      "blz": 99,
+      "stof": false,
+      "onderwerpen": []
+    },
+    {
+      "bron": "oefenboekje",
+      "sectie": "theorievragen",
+      "opgave": "1a",
+      "omschrijving": "Uitleggen dat de arbeidsproductiviteit stijgt door arbeidsdeling en specialisatie",
+      "begrippen_of_vaardigheid": "arbeidsproductiviteit, arbeidsdeling, specialisatie",
+      "wds": "S",
+      "tags": [],
+      "blz": null,
+      "stof": true,
+      "verwijzing": "H2 §3",
+      "onderwerpen": [
+        "M1-H2-09",
+        "M1-H2-10"
+      ]
+    },
+    {
+      "bron": "oefenboekje",
+      "sectie": "theorievragen",
+      "opgave": "1b",
+      "omschrijving": "De relatie tussen de budgetlijn en de economische wetenschap uitleggen",
+      "begrippen_of_vaardigheid": "budgetlijn, economie, schaarste",
+      "wds": "S",
+      "tags": [],
+      "blz": null,
+      "stof": true,
+      "verwijzing": "H1 §2",
+      "onderwerpen": [
+        "M1-H1-03",
+        "M1-H1-06"
+      ]
+    },
+    {
+      "bron": "oefenboekje",
+      "sectie": "theorievragen",
+      "opgave": "1c",
+      "omschrijving": "Uitleggen dat er een positief verband is tussen inflatie en geldontwaarding",
+      "begrippen_of_vaardigheid": "inflatie, geldontwaarding, algemeen prijspeil",
+      "wds": "S",
+      "tags": [],
+      "blz": null,
+      "stof": true,
+      "verwijzing": "H3 §3",
+      "onderwerpen": [
+        "M1-H3-10"
+      ]
+    },
+    {
+      "bron": "oefenboekje",
+      "sectie": "theorievragen",
+      "opgave": "1d",
+      "omschrijving": "Uitleggen dat meer gebruik van giraal geld leidt tot minder chartaal geld",
+      "begrippen_of_vaardigheid": "giraal geld, chartaal geld, maatschappelijke geldhoeveelheid",
+      "wds": "S",
+      "tags": [],
+      "blz": null,
+      "stof": true,
+      "verwijzing": "H3 §2",
+      "onderwerpen": [
+        "M1-H3-04"
+      ]
+    },
+    {
+      "bron": "oefenboekje",
+      "sectie": "gemengd H1",
+      "opgave": "2a",
+      "omschrijving": "De vergelijking van de budgetfunctie opstellen",
+      "begrippen_of_vaardigheid": "vergelijking van de budgetlijn, budget",
+      "wds": "D",
+      "tags": [],
+      "blz": null,
+      "stof": true,
+      "verwijzing": "H1 §2",
+      "onderwerpen": [
+        "M1-H1-06"
+      ]
+    },
+    {
+      "bron": "oefenboekje",
+      "sectie": "gemengd H1",
+      "opgave": "2b",
+      "omschrijving": "De budgetlijn tekenen met q1 op de y-as en q2 op de x-as",
+      "begrippen_of_vaardigheid": "budgetlijn",
+      "wds": "D",
+      "tags": [
+        "tekenen"
+      ],
+      "blz": null,
+      "stof": true,
+      "verwijzing": "H1 §2",
+      "onderwerpen": [
+        "M1-H1-06"
+      ]
+    },
+    {
+      "bron": "oefenboekje",
+      "sectie": "gemengd H1",
+      "opgave": "2c",
+      "omschrijving": "Berekenen hoeveel shirts maximaal gekocht kunnen worden bij een halve budgetbesteding",
+      "begrippen_of_vaardigheid": "budgetlijn, productcombinatie",
+      "wds": "D",
+      "tags": [
+        "rekenen"
+      ],
+      "blz": null,
+      "stof": true,
+      "verwijzing": "H1 §2",
+      "onderwerpen": [
+        "M1-H1-05",
+        "M1-H1-06"
+      ]
+    },
+    {
+      "bron": "oefenboekje",
+      "sectie": "gemengd H1",
+      "opgave": "3a",
+      "omschrijving": "Berekenen hoeveel voetbalveldjes er aangelegd kunnen worden",
+      "begrippen_of_vaardigheid": "budget, productcombinatie",
+      "wds": "D",
+      "tags": [
+        "rekenen"
+      ],
+      "blz": null,
+      "stof": true,
+      "verwijzing": "H1 §2",
+      "onderwerpen": [
+        "M1-H1-05"
+      ]
+    },
+    {
+      "bron": "oefenboekje",
+      "sectie": "gemengd H1",
+      "opgave": "3b",
+      "omschrijving": "Verklaren waarom het onwaarschijnlijk is dat er 150 voetbalvelden komen",
+      "begrippen_of_vaardigheid": "budgetlijn, schaarste",
+      "wds": "S",
+      "tags": [],
+      "blz": null,
+      "stof": true,
+      "verwijzing": "H1 §2",
+      "onderwerpen": [
+        "M1-H1-05"
+      ]
+    },
+    {
+      "bron": "oefenboekje",
+      "sectie": "gemengd H1",
+      "opgave": "4a",
+      "omschrijving": "De nettobaten van het bezoek aan ARTIS berekenen",
+      "begrippen_of_vaardigheid": "netto-baten, baten, daadwerkelijke kosten",
+      "wds": "D",
+      "tags": [
+        "rekenen"
+      ],
+      "blz": null,
+      "stof": true,
+      "verwijzing": "H1 §1",
+      "onderwerpen": [
+        "M1-H1-04"
+      ]
+    },
+    {
+      "bron": "oefenboekje",
+      "sectie": "gemengd H1",
+      "opgave": "4b",
+      "omschrijving": "Berekenen hoe hoog de kosten van ongerief van werken minimaal moeten zijn",
+      "begrippen_of_vaardigheid": "kosten van ongerief, netto-baten, aanwendingsrichting",
+      "wds": "D",
+      "tags": [
+        "rekenen"
+      ],
+      "blz": null,
+      "stof": true,
+      "verwijzing": "H1 §1",
+      "onderwerpen": [
+        "M1-H1-04"
+      ]
+    },
+    {
+      "bron": "oefenboekje",
+      "sectie": "gemengd H1",
+      "opgave": "5a",
+      "omschrijving": "Berekenen welk aantal stuks op plaats B hoort",
+      "begrippen_of_vaardigheid": "vergelijking van de budgetlijn, budget",
+      "wds": "D",
+      "tags": [
+        "rekenen"
+      ],
+      "blz": null,
+      "stof": true,
+      "verwijzing": "H1 §2",
+      "onderwerpen": [
+        "M1-H1-06"
+      ]
+    },
+    {
+      "bron": "oefenboekje",
+      "sectie": "gemengd H1",
+      "opgave": "5b",
+      "omschrijving": "Bepalen welke combinatie van oorzaken de verschuiving van I naar II verklaart",
+      "begrippen_of_vaardigheid": "budgetlijn, budget",
+      "wds": "S",
+      "tags": [],
+      "blz": null,
+      "stof": true,
+      "verwijzing": "H1 §2",
+      "onderwerpen": [
+        "M1-H1-07"
+      ]
+    },
+    {
+      "bron": "oefenboekje",
+      "sectie": "H2 §3",
+      "opgave": "6a",
+      "omschrijving": "De arbeidsproductiviteit per medewerker per uur berekenen",
+      "begrippen_of_vaardigheid": "arbeidsproductiviteit, productie",
+      "wds": "D",
+      "tags": [
+        "rekenen"
+      ],
+      "blz": null,
+      "stof": true,
+      "verwijzing": "H2 §3",
+      "onderwerpen": [
+        "M1-H2-09"
+      ]
+    },
+    {
+      "bron": "oefenboekje",
+      "sectie": "H2 §3",
+      "opgave": "6b",
+      "omschrijving": "De loonkosten per medewerker per uur berekenen",
+      "begrippen_of_vaardigheid": "arbeid",
+      "wds": "D",
+      "tags": [
+        "rekenen"
+      ],
+      "blz": null,
+      "stof": true,
+      "verwijzing": "H2 §3",
+      "onderwerpen": [
+        "M1-H2-08",
+        "M1-H2-09"
+      ]
+    },
+    {
+      "bron": "oefenboekje",
+      "sectie": "H2 §3",
+      "opgave": "6c",
+      "omschrijving": "De loonkosten per rekenmachine berekenen",
+      "begrippen_of_vaardigheid": "arbeidsproductiviteit, productie",
+      "wds": "D",
+      "tags": [
+        "rekenen"
+      ],
+      "blz": null,
+      "stof": true,
+      "verwijzing": "H2 §3",
+      "onderwerpen": [
+        "M1-H2-09"
+      ]
+    },
+    {
+      "bron": "oefenboekje",
+      "sectie": "H2 §3",
+      "opgave": "7a",
+      "omschrijving": "Berekenen hoeveel uur de Amerikaanse medewerkers per dag werken",
+      "begrippen_of_vaardigheid": "arbeidsproductiviteit",
+      "wds": "D",
+      "tags": [
+        "rekenen"
+      ],
+      "blz": null,
+      "stof": true,
+      "verwijzing": "H2 §3",
+      "onderwerpen": [
+        "M1-H2-09"
+      ]
+    },
+    {
+      "bron": "oefenboekje",
+      "sectie": "H2 §3",
+      "opgave": "7b",
+      "omschrijving": "De loonkosten per medewerker per uur berekenen",
+      "begrippen_of_vaardigheid": "arbeid",
+      "wds": "D",
+      "tags": [
+        "rekenen"
+      ],
+      "blz": null,
+      "stof": true,
+      "verwijzing": "H2 §3",
+      "onderwerpen": [
+        "M1-H2-08",
+        "M1-H2-09"
+      ]
+    },
+    {
+      "bron": "oefenboekje",
+      "sectie": "H2 §3",
+      "opgave": "7c",
+      "omschrijving": "De loonkosten per rekenmachine berekenen",
+      "begrippen_of_vaardigheid": "arbeidsproductiviteit, productie",
+      "wds": "D",
+      "tags": [
+        "rekenen"
+      ],
+      "blz": null,
+      "stof": true,
+      "verwijzing": "H2 §3",
+      "onderwerpen": [
+        "M1-H2-09"
+      ]
+    },
+    {
+      "bron": "oefenboekje",
+      "sectie": "H2 §3",
+      "opgave": "8a",
+      "omschrijving": "Berekenen hoeveel rekenmachines er na specialisatie per jaar gemaakt kunnen worden",
+      "begrippen_of_vaardigheid": "specialisatie, arbeidsdeling, arbeidsproductiviteit",
+      "wds": "D",
+      "tags": [
+        "rekenen"
+      ],
+      "blz": null,
+      "stof": true,
+      "verwijzing": "H2 §3",
+      "onderwerpen": [
+        "M1-H2-09",
+        "M1-H2-10"
+      ]
+    },
+    {
+      "bron": "oefenboekje",
+      "sectie": "H2 §3",
+      "opgave": "8b",
+      "omschrijving": "De loonkosten per rekenmachine na specialisatie berekenen",
+      "begrippen_of_vaardigheid": "arbeidsproductiviteit, specialisatie",
+      "wds": "D",
+      "tags": [
+        "rekenen"
+      ],
+      "blz": null,
+      "stof": true,
+      "verwijzing": "H2 §3",
+      "onderwerpen": [
+        "M1-H2-09",
+        "M1-H2-10"
+      ]
+    },
+    {
+      "bron": "oefenboekje",
+      "sectie": "H2 §3",
+      "opgave": "8c",
+      "omschrijving": "Berekenen hoeveel fte ontslagen kan worden bij een gelijkblijvende productie",
+      "begrippen_of_vaardigheid": "arbeidsproductiviteit, arbeid",
+      "wds": "D",
+      "tags": [
+        "rekenen"
+      ],
+      "blz": null,
+      "stof": true,
+      "verwijzing": "H2 §3",
+      "onderwerpen": [
+        "M1-H2-08",
+        "M1-H2-09"
+      ]
+    },
+    {
+      "bron": "oefenboekje",
+      "sectie": "H2 §3",
+      "opgave": "8d",
+      "omschrijving": "Berekenen hoeveel uur per dag gewerkt zou worden om ontslag te voorkomen",
+      "begrippen_of_vaardigheid": "arbeidsproductiviteit, arbeid",
+      "wds": "D",
+      "tags": [
+        "rekenen"
+      ],
+      "blz": null,
+      "stof": true,
+      "verwijzing": "H2 §3",
+      "onderwerpen": [
+        "M1-H2-09"
+      ]
+    },
+    {
+      "bron": "oefenboekje",
+      "sectie": "gemengd M1",
+      "opgave": "9a",
+      "omschrijving": "Zelf een budget en twee producten kiezen en de budgetfunctie opstellen",
+      "begrippen_of_vaardigheid": "vergelijking van de budgetlijn, budget",
+      "wds": "D",
+      "tags": [],
+      "blz": null,
+      "stof": true,
+      "verwijzing": "H1 §2",
+      "onderwerpen": [
+        "M1-H1-06"
+      ]
+    },
+    {
+      "bron": "oefenboekje",
+      "sectie": "gemengd M1",
+      "opgave": "9b",
+      "omschrijving": "De bijbehorende budgetlijn tekenen en de assen benoemen",
+      "begrippen_of_vaardigheid": "budgetlijn",
+      "wds": "D",
+      "tags": [
+        "tekenen"
+      ],
+      "blz": null,
+      "stof": true,
+      "verwijzing": "H1 §2",
+      "onderwerpen": [
+        "M1-H1-06"
+      ]
+    },
+    {
+      "bron": "oefenboekje",
+      "sectie": "gemengd M1",
+      "opgave": "9c",
+      "omschrijving": "Drie manieren omschrijven en tekenen waarop de budgetlijn kan verschuiven",
+      "begrippen_of_vaardigheid": "budgetlijn, budget",
+      "wds": "S",
+      "tags": [
+        "tekenen"
+      ],
+      "blz": null,
+      "stof": true,
+      "verwijzing": "H1 §2",
+      "onderwerpen": [
+        "M1-H1-07"
+      ]
+    },
+    {
+      "bron": "oefenboekje",
+      "sectie": "gemengd M1",
+      "opgave": "10a",
+      "omschrijving": "De nettobaten van de drie aanwendingsrichtingen berekenen",
+      "begrippen_of_vaardigheid": "netto-baten, baten, kosten van ongerief, aanwendingsrichting",
+      "wds": "D",
+      "tags": [
+        "rekenen"
+      ],
+      "blz": null,
+      "stof": true,
+      "verwijzing": "H1 §1",
+      "onderwerpen": [
+        "M1-H1-02",
+        "M1-H1-04"
+      ]
+    },
+    {
+      "bron": "oefenboekje",
+      "sectie": "gemengd M1",
+      "opgave": "10b",
+      "omschrijving": "Bepalen welke keuze Emely zal maken",
+      "begrippen_of_vaardigheid": "netto-baten, aanwendingsrichting",
+      "wds": "D",
+      "tags": [],
+      "blz": null,
+      "stof": true,
+      "verwijzing": "H1 §1",
+      "onderwerpen": [
+        "M1-H1-04"
+      ]
+    },
+    {
+      "bron": "oefenboekje",
+      "sectie": "gemengd M1",
+      "opgave": "10c",
+      "omschrijving": "Een reden geven waarom de hoogste nettobaten niet altijd gekozen worden",
+      "begrippen_of_vaardigheid": "netto-baten, niet-geregistreerde baten",
+      "wds": "S",
+      "tags": [],
+      "blz": null,
+      "stof": true,
+      "verwijzing": "H1 §1",
+      "onderwerpen": [
+        "M1-H1-04"
+      ]
+    },
+    {
+      "bron": "oefenboekje",
+      "sectie": "gemengd M1",
+      "opgave": "11a",
+      "omschrijving": "De definities van twaalf begrippen geven",
+      "begrippen_of_vaardigheid": "twaalf begrippen uit de begrippenlijst van H1, H2 en H3",
+      "wds": "W",
+      "tags": [],
+      "blz": null,
+      "stof": true,
+      "verwijzing": "H1 t/m H3",
+      "onderwerpen": [
+        "M1-H1-02",
+        "M1-H1-03",
+        "M1-H2-02",
+        "M1-H2-03",
+        "M1-H2-05",
+        "M1-H2-09",
+        "M1-H3-04",
+        "M1-H3-05",
+        "M1-H3-10",
+        "M1-H3-11"
+      ]
+    },
+    {
+      "bron": "oefenboekje",
+      "sectie": "gemengd M1",
+      "opgave": "11b",
+      "omschrijving": "Beredeneren in stappen wat er gebeurt als het vertrouwen in het geldsysteem verdwijnt",
+      "begrippen_of_vaardigheid": "fiduciair geld, betaalmiddel, directe ruil, geldontwaarding",
+      "wds": "S",
+      "tags": [],
+      "blz": null,
+      "stof": true,
+      "verwijzing": "H3 §1 en §4",
+      "onderwerpen": [
+        "M1-H3-05"
+      ]
+    },
+    {
+      "bron": "oefenboekje",
+      "sectie": "gemengd M1",
+      "opgave": "12",
+      "omschrijving": "In een tekst telkens het juiste woord kiezen over patent, geldfuncties en de wet van Gresham",
+      "begrippen_of_vaardigheid": "patent, rekenmiddel, intrinsieke waarde, nominale waarde, wet van Gresham",
+      "wds": "W",
+      "tags": [],
+      "blz": null,
+      "stof": true,
+      "verwijzing": "H2 §1 en H3 §3",
+      "onderwerpen": [
+        "M1-H2-04",
+        "M1-H3-02",
+        "M1-H3-07",
+        "M1-H3-09"
+      ]
+    },
+    {
+      "bron": "oefenboekje",
+      "sectie": "gemengd M1",
+      "opgave": "13a",
+      "omschrijving": "Twee technische vereisten van geld benoemen waaraan de bitcoin voldoet",
+      "begrippen_of_vaardigheid": "betaalmiddel, chartaal geld, giraal geld",
+      "wds": "W",
+      "tags": [],
+      "blz": null,
+      "stof": true,
+      "verwijzing": "H3 §2",
+      "onderwerpen": [
+        "M1-H3-03"
+      ]
+    },
+    {
+      "bron": "oefenboekje",
+      "sectie": "gemengd M1",
+      "opgave": "13b",
+      "omschrijving": "Uitleggen wat er met de maatschappelijke geldhoeveelheid gebeurt bij de aankoop van bitcoin",
+      "begrippen_of_vaardigheid": "maatschappelijke geldhoeveelheid, giraal geld",
+      "wds": "S",
+      "tags": [],
+      "blz": null,
+      "stof": true,
+      "verwijzing": "H3 §2 en §4",
+      "onderwerpen": [
+        "M1-H3-11",
+        "M1-H3-04"
+      ]
+    },
+    {
+      "bron": "oefenboekje",
+      "sectie": "gemengd M1",
+      "opgave": "13c",
+      "omschrijving": "Verklaren waarom het totale budget van Youri niet veel groter kan zijn",
+      "begrippen_of_vaardigheid": "budget, budgetlijn, schaarste",
+      "wds": "S",
+      "tags": [],
+      "blz": null,
+      "stof": true,
+      "verwijzing": "H1 §2",
+      "onderwerpen": [
+        "M1-H1-03",
+        "M1-H1-05"
+      ]
+    },
+    {
+      "bron": "oefenboekje",
+      "sectie": "gemengd M1",
+      "opgave": "13d",
+      "omschrijving": "De oude en de nieuwe budgetlijn tekenen na het defect aan de videokaart",
+      "begrippen_of_vaardigheid": "budgetlijn, vergelijking van de budgetlijn",
+      "wds": "D",
+      "tags": [
+        "tekenen"
+      ],
+      "blz": null,
+      "stof": true,
+      "verwijzing": "H1 §2",
+      "onderwerpen": [
+        "M1-H1-07"
+      ]
+    },
+    {
+      "bron": "oefenboekje",
+      "sectie": "procenten",
+      "opgave": "14a",
+      "omschrijving": "Het aandeel cd's in de totale verkoop berekenen",
+      "begrippen_of_vaardigheid": "aandeel in procenten",
+      "wds": "D",
+      "tags": [
+        "rekenen"
+      ],
+      "blz": null,
+      "stof": true,
+      "verwijzing": "Domein A",
+      "onderwerpen": [
+        "M1-A-01"
+      ]
+    },
+    {
+      "bron": "oefenboekje",
+      "sectie": "procenten",
+      "opgave": "14b",
+      "omschrijving": "De verkoopprijs van een fles berekenen uit een percentage van de opbrengst",
+      "begrippen_of_vaardigheid": "percentage terugrekenen",
+      "wds": "D",
+      "tags": [
+        "rekenen"
+      ],
+      "blz": null,
+      "stof": true,
+      "verwijzing": "Domein A",
+      "onderwerpen": [
+        "M1-A-01"
+      ]
+    },
+    {
+      "bron": "oefenboekje",
+      "sectie": "procenten",
+      "opgave": "14c",
+      "omschrijving": "De rente na een jaar berekenen",
+      "begrippen_of_vaardigheid": "percentage van een bedrag",
+      "wds": "D",
+      "tags": [
+        "rekenen"
+      ],
+      "blz": null,
+      "stof": true,
+      "verwijzing": "Domein A",
+      "onderwerpen": [
+        "M1-A-01"
+      ]
+    },
+    {
+      "bron": "oefenboekje",
+      "sectie": "procenten",
+      "opgave": "14d",
+      "omschrijving": "De procentuele stijging van het aantal voetbalsters berekenen",
+      "begrippen_of_vaardigheid": "procentuele verandering",
+      "wds": "D",
+      "tags": [
+        "rekenen"
+      ],
+      "blz": null,
+      "stof": true,
+      "verwijzing": "Domein A",
+      "onderwerpen": [
+        "M1-A-01"
+      ]
+    },
+    {
+      "bron": "oefenboekje",
+      "sectie": "procenten",
+      "opgave": "14e",
+      "omschrijving": "Het btw-percentage berekenen",
+      "begrippen_of_vaardigheid": "percentage berekenen uit twee bedragen",
+      "wds": "D",
+      "tags": [
+        "rekenen"
+      ],
+      "blz": null,
+      "stof": true,
+      "verwijzing": "Domein A",
+      "onderwerpen": [
+        "M1-A-01"
+      ]
+    },
+    {
+      "bron": "oefenboekje",
+      "sectie": "procenten",
+      "opgave": "14f",
+      "omschrijving": "Het percentage berekenen bij één op de acht",
+      "begrippen_of_vaardigheid": "verhouding omzetten naar procenten",
+      "wds": "D",
+      "tags": [
+        "rekenen"
+      ],
+      "blz": null,
+      "stof": true,
+      "verwijzing": "Domein A",
+      "onderwerpen": [
+        "M1-A-01"
+      ]
+    },
+    {
+      "bron": "oefenboekje",
+      "sectie": "procenten",
+      "opgave": "14g",
+      "omschrijving": "De procentuele stijging van het spaarsaldo berekenen",
+      "begrippen_of_vaardigheid": "procentuele verandering",
+      "wds": "D",
+      "tags": [
+        "rekenen"
+      ],
+      "blz": null,
+      "stof": true,
+      "verwijzing": "Domein A",
+      "onderwerpen": [
+        "M1-A-01"
+      ]
+    },
+    {
+      "bron": "oefenboekje",
+      "sectie": "procenten",
+      "opgave": "14h",
+      "omschrijving": "De prijs van de jurk vóór de korting berekenen",
+      "begrippen_of_vaardigheid": "percentage terugrekenen",
+      "wds": "D",
+      "tags": [
+        "rekenen"
+      ],
+      "blz": null,
+      "stof": true,
+      "verwijzing": "Domein A",
+      "onderwerpen": [
+        "M1-A-01"
+      ]
+    },
+    {
+      "bron": "oefenboekje",
+      "sectie": "procenten",
+      "opgave": "14i",
+      "omschrijving": "De procentuele stijging van de benzineprijs berekenen",
+      "begrippen_of_vaardigheid": "procentuele verandering",
+      "wds": "D",
+      "tags": [
+        "rekenen"
+      ],
+      "blz": null,
+      "stof": true,
+      "verwijzing": "Domein A",
+      "onderwerpen": [
+        "M1-A-01"
+      ]
+    },
+    {
+      "bron": "oefenboekje",
+      "sectie": "procenten",
+      "opgave": "15a",
+      "omschrijving": "Berekenen welke maatregel het grootste effect op de vleesprijs heeft",
+      "begrippen_of_vaardigheid": "btw en accijns, procentuele verandering",
+      "wds": "D",
+      "tags": [
+        "rekenen"
+      ],
+      "blz": null,
+      "stof": true,
+      "verwijzing": "Domein A",
+      "onderwerpen": [
+        "M1-A-01"
+      ]
+    },
+    {
+      "bron": "oefenboekje",
+      "sectie": "procenten",
+      "opgave": "16a",
+      "omschrijving": "Het aandeel e-bikes in de fietsverkoop in 2020 berekenen",
+      "begrippen_of_vaardigheid": "aandeel in procenten",
+      "wds": "D",
+      "tags": [
+        "rekenen"
+      ],
+      "blz": null,
+      "stof": true,
+      "verwijzing": "Domein A",
+      "onderwerpen": [
+        "M1-A-01"
+      ]
+    },
+    {
+      "bron": "oefenboekje",
+      "sectie": "procenten",
+      "opgave": "16b",
+      "omschrijving": "Het aandeel e-bikes in de fietsverkoop in 2021 berekenen",
+      "begrippen_of_vaardigheid": "aandeel in procenten",
+      "wds": "D",
+      "tags": [
+        "rekenen"
+      ],
+      "blz": null,
+      "stof": true,
+      "verwijzing": "Domein A",
+      "onderwerpen": [
+        "M1-A-01"
+      ]
+    },
+    {
+      "bron": "oefenboekje",
+      "sectie": "procenten",
+      "opgave": "16c",
+      "omschrijving": "De verandering van het aandeel e-bikes in procentpunt bepalen",
+      "begrippen_of_vaardigheid": "procentpunt",
+      "wds": "D",
+      "tags": [],
+      "blz": null,
+      "stof": true,
+      "verwijzing": "Domein A",
+      "onderwerpen": [
+        "M1-A-01"
+      ]
+    },
+    {
+      "bron": "oefenboekje",
+      "sectie": "procenten",
+      "opgave": "16d",
+      "omschrijving": "De verandering van het aandeel e-bikes in procenten bepalen",
+      "begrippen_of_vaardigheid": "procentuele verandering",
+      "wds": "D",
+      "tags": [],
+      "blz": null,
+      "stof": true,
+      "verwijzing": "Domein A",
+      "onderwerpen": [
+        "M1-A-01"
+      ]
+    },
+    {
+      "bron": "oefenboekje",
+      "sectie": "procenten",
+      "opgave": "17a",
+      "omschrijving": "Berekenen met hoeveel procent het marktaandeel van de pabo is gedaald",
+      "begrippen_of_vaardigheid": "procentuele verandering",
+      "wds": "D",
+      "tags": [
+        "rekenen"
+      ],
+      "blz": null,
+      "stof": true,
+      "verwijzing": "Domein A",
+      "onderwerpen": [
+        "M1-A-01"
+      ]
+    },
+    {
+      "bron": "oefenboekje",
+      "sectie": "procenten",
+      "opgave": "17b",
+      "omschrijving": "De stijging van het aandeel jongens in procentpunt berekenen",
+      "begrippen_of_vaardigheid": "procentpunt",
+      "wds": "D",
+      "tags": [
+        "rekenen"
+      ],
+      "blz": null,
+      "stof": true,
+      "verwijzing": "Domein A",
+      "onderwerpen": [
+        "M1-A-01"
+      ]
+    },
+    {
+      "bron": "oefenboekje",
+      "sectie": "procenten",
+      "opgave": "17c",
+      "omschrijving": "De stijging van het aandeel jongens in procenten berekenen",
+      "begrippen_of_vaardigheid": "procentuele verandering",
+      "wds": "D",
+      "tags": [
+        "rekenen"
+      ],
+      "blz": null,
+      "stof": true,
+      "verwijzing": "Domein A",
+      "onderwerpen": [
+        "M1-A-01"
+      ]
+    },
+    {
+      "bron": "oefenboekje",
+      "sectie": "grafieken",
+      "opgave": "18a",
+      "omschrijving": "Uitleggen in welke situatie er meer vrouwen dan mannen met een startkwalificatie zijn",
+      "begrippen_of_vaardigheid": "staafdiagram met percentages lezen",
+      "wds": "S",
+      "tags": [],
+      "blz": null,
+      "stof": true,
+      "verwijzing": "Domein A",
+      "onderwerpen": [
+        "M1-A-02"
+      ]
+    },
+    {
+      "bron": "oefenboekje",
+      "sectie": "grafieken",
+      "opgave": "18b",
+      "omschrijving": "Berekenen of er meer mannen of vrouwen met een startkwalificatie hbo/wo zijn",
+      "begrippen_of_vaardigheid": "percentage van een absoluut aantal",
+      "wds": "D",
+      "tags": [
+        "rekenen"
+      ],
+      "blz": null,
+      "stof": true,
+      "verwijzing": "Domein A",
+      "onderwerpen": [
+        "M1-A-02"
+      ]
+    },
+    {
+      "bron": "oefenboekje",
+      "sectie": "grafieken",
+      "opgave": "19a",
+      "omschrijving": "Kritiek geven op de manier waarop de gegevens gepresenteerd zijn",
+      "begrippen_of_vaardigheid": "diagram beoordelen",
+      "wds": "S",
+      "tags": [],
+      "blz": null,
+      "stof": true,
+      "verwijzing": "Domein A",
+      "onderwerpen": [
+        "M1-A-02"
+      ]
+    },
+    {
+      "bron": "oefenboekje",
+      "sectie": "grafieken",
+      "opgave": "19b",
+      "omschrijving": "Berekenen hoeveel energie de overige sectoren verbruiken",
+      "begrippen_of_vaardigheid": "aandeel in procenten",
+      "wds": "D",
+      "tags": [
+        "rekenen"
+      ],
+      "blz": null,
+      "stof": true,
+      "verwijzing": "Domein A",
+      "onderwerpen": [
+        "M1-A-02"
+      ]
+    },
+    {
+      "bron": "oefenboekje",
+      "sectie": "grafieken",
+      "opgave": "20a",
+      "omschrijving": "Berekenen hoeveel energie er in 2012 in totaal werd opgewekt",
+      "begrippen_of_vaardigheid": "percentage terugrekenen",
+      "wds": "D",
+      "tags": [
+        "rekenen"
+      ],
+      "blz": null,
+      "stof": true,
+      "verwijzing": "Domein A",
+      "onderwerpen": [
+        "M1-A-02"
+      ]
+    },
+    {
+      "bron": "oefenboekje",
+      "sectie": "grafieken",
+      "opgave": "20b",
+      "omschrijving": "De stelling van de activist over CO2-uitstoot uitleggen",
+      "begrippen_of_vaardigheid": "grafiek met aandelen interpreteren",
+      "wds": "S",
+      "tags": [],
+      "blz": null,
+      "stof": true,
+      "verwijzing": "Domein A",
+      "onderwerpen": [
+        "M1-A-02"
+      ]
+    },
+    {
+      "bron": "oefenboekje",
+      "sectie": "grafieken",
+      "opgave": "21a",
+      "omschrijving": "Berekenen hoeveel personen er in 2013 werkloos waren",
+      "begrippen_of_vaardigheid": "procentuele verandering toepassen",
+      "wds": "D",
+      "tags": [
+        "rekenen"
+      ],
+      "blz": null,
+      "stof": true,
+      "verwijzing": "Domein A",
+      "onderwerpen": [
+        "M1-A-02"
+      ]
+    },
+    {
+      "bron": "oefenboekje",
+      "sectie": "grafieken",
+      "opgave": "21b",
+      "omschrijving": "Berekenen welk percentage van de bevolking in 2022 werkloos was",
+      "begrippen_of_vaardigheid": "aandeel in procenten, samengestelde groei",
+      "wds": "D",
+      "tags": [
+        "rekenen"
+      ],
+      "blz": null,
+      "stof": true,
+      "verwijzing": "Domein A",
+      "onderwerpen": [
+        "M1-A-02"
+      ]
+    },
+    {
+      "bron": "oefenboekje",
+      "sectie": "grafieken",
+      "opgave": "21c",
+      "omschrijving": "De procentuele verandering van het aantal werklozen over 2012-2022 berekenen",
+      "begrippen_of_vaardigheid": "procentuele verandering",
+      "wds": "D",
+      "tags": [
+        "rekenen"
+      ],
+      "blz": null,
+      "stof": true,
+      "verwijzing": "Domein A",
+      "onderwerpen": [
+        "M1-A-02"
+      ]
+    },
+    {
+      "bron": "oefenboekje",
+      "sectie": "grafieken",
+      "opgave": "21d",
+      "omschrijving": "Bepalen met hoeveel procentpunten het aantal werklozen is veranderd",
+      "begrippen_of_vaardigheid": "procentpunt",
+      "wds": "D",
+      "tags": [],
+      "blz": null,
+      "stof": true,
+      "verwijzing": "Domein A",
+      "onderwerpen": [
+        "M1-A-02"
+      ]
+    },
+    {
+      "bron": "oefenboekje",
+      "sectie": "grafieken",
+      "opgave": "21e",
+      "omschrijving": "Berekenen hoeveel personen er in 2011 werkloos waren",
+      "begrippen_of_vaardigheid": "procentuele verandering terugrekenen",
+      "wds": "D",
+      "tags": [
+        "rekenen"
+      ],
+      "blz": null,
+      "stof": true,
+      "verwijzing": "Domein A",
+      "onderwerpen": [
+        "M1-A-02"
+      ]
+    },
+    {
+      "bron": "oefenboekje",
+      "sectie": "grafieken",
+      "opgave": "21f",
+      "omschrijving": "Beoordelen of het aantal werklozen in 2016 hoger of lager was dan in 2015",
+      "begrippen_of_vaardigheid": "grafiek met procentuele veranderingen lezen",
+      "wds": "S",
+      "tags": [],
+      "blz": null,
+      "stof": true,
+      "verwijzing": "Domein A",
+      "onderwerpen": [
+        "M1-A-02"
+      ]
+    }
+  ]
+}

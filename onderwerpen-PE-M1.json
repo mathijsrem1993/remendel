@@ -1,0 +1,925 @@
+{
+  "schema": "remendel-onderwerpen/1",
+  "boek": {
+    "id": "PE-M1",
+    "titel": "Praktische Economie · Module 1: Schaarste, geld en handel",
+    "niveau": "4 havo",
+    "toetsstofcriterium": "De begrippenlijst per hoofdstuk uit het oefenboekje 4H Module 1, aangevuld met de begrippen die alleen via de presentatie worden behandeld.",
+    "status": "compleet: hoofdstuk 1, 2 en 3 plus Domein A"
+  },
+  "onderwerpen": [
+    {
+      "id": "M1-H1-01",
+      "label": "Behoeften en middelen",
+      "hoofdstuk": 1,
+      "paragrafen": [
+        "§1",
+        "§2"
+      ],
+      "begrippen": [
+        "behoefte",
+        "middel",
+        "goederen",
+        "diensten"
+      ],
+      "begrippen_via_presentatie": [
+        "tijd als derde soort middel",
+        "voorkeuren"
+      ],
+      "synoniemen": [
+        "behoeften",
+        "middelen",
+        "goed of dienst",
+        "soorten middelen",
+        "tijd als middel"
+      ],
+      "wds": [
+        "D",
+        "S",
+        "W"
+      ],
+      "aantal_opgaven": 14
+    },
+    {
+      "id": "M1-H1-02",
+      "label": "Aanwendingsrichting en alternatief aanwendbaar",
+      "hoofdstuk": 1,
+      "paragrafen": [
+        "§1"
+      ],
+      "begrippen": [
+        "aanwendingsrichting",
+        "alternatief aanwendbaar"
+      ],
+      "begrippen_via_presentatie": [],
+      "synoniemen": [
+        "aanwendingsrichtingen",
+        "alternatieve aanwendbaarheid"
+      ],
+      "wds": [
+        "D",
+        "S",
+        "W"
+      ],
+      "aantal_opgaven": 10
+    },
+    {
+      "id": "M1-H1-03",
+      "label": "Schaarste en het economisch keuzeprobleem",
+      "hoofdstuk": 1,
+      "paragrafen": [
+        "§1"
+      ],
+      "begrippen": [
+        "schaarste",
+        "economie"
+      ],
+      "begrippen_via_presentatie": [
+        "keuzeprobleem"
+      ],
+      "synoniemen": [
+        "schaars",
+        "economisch keuzeprobleem",
+        "keuzeprobleem",
+        "economische wetenschap"
+      ],
+      "wds": [
+        "D",
+        "S",
+        "W"
+      ],
+      "aantal_opgaven": 22
+    },
+    {
+      "id": "M1-H1-04",
+      "label": "Baten, kosten en nettobaten",
+      "hoofdstuk": 1,
+      "paragrafen": [
+        "§1"
+      ],
+      "begrippen": [
+        "baten",
+        "geregistreerde baten",
+        "niet-geregistreerde baten",
+        "kosten",
+        "daadwerkelijke kosten",
+        "kosten van ongerief",
+        "netto-baten"
+      ],
+      "begrippen_via_presentatie": [],
+      "synoniemen": [
+        "nettobaten",
+        "netto baten",
+        "baten en kosten",
+        "kosten van ongerief"
+      ],
+      "wds": [
+        "D",
+        "S"
+      ],
+      "aantal_opgaven": 15
+    },
+    {
+      "id": "M1-H1-05",
+      "label": "Budget en productcombinatie",
+      "hoofdstuk": 1,
+      "paragrafen": [
+        "§2"
+      ],
+      "begrippen": [
+        "budget",
+        "productcombinatie"
+      ],
+      "begrippen_via_presentatie": [],
+      "synoniemen": [
+        "productcombinaties",
+        "budgetbesteding"
+      ],
+      "wds": [
+        "D",
+        "S"
+      ],
+      "aantal_opgaven": 14
+    },
+    {
+      "id": "M1-H1-06",
+      "label": "De budgetlijn opstellen en tekenen",
+      "hoofdstuk": 1,
+      "paragrafen": [
+        "§2"
+      ],
+      "begrippen": [
+        "budgetlijn",
+        "vergelijking van de budgetlijn"
+      ],
+      "begrippen_via_presentatie": [],
+      "synoniemen": [
+        "budgetfunctie",
+        "vergelijking budgetlijn",
+        "budgetlijn tekenen",
+        "snijpunten budgetlijn"
+      ],
+      "wds": [
+        "D",
+        "S"
+      ],
+      "aantal_opgaven": 20
+    },
+    {
+      "id": "M1-H1-07",
+      "label": "Verschuivingen van de budgetlijn",
+      "hoofdstuk": 1,
+      "paragrafen": [
+        "§2"
+      ],
+      "begrippen": [
+        "budgetlijn",
+        "budget"
+      ],
+      "begrippen_via_presentatie": [],
+      "synoniemen": [
+        "verschuiving budgetlijn",
+        "draaiing budgetlijn",
+        "budgetlijn verschuiven"
+      ],
+      "wds": [
+        "D",
+        "S"
+      ],
+      "aantal_opgaven": 17
+    },
+    {
+      "id": "M1-H2-01",
+      "label": "Ruil, vrager en aanbieder, wederzijds voordeel",
+      "hoofdstuk": 2,
+      "paragrafen": [
+        "§1"
+      ],
+      "begrippen": [
+        "ruil",
+        "vrager",
+        "aanbieder",
+        "wederzijds voordeel"
+      ],
+      "begrippen_via_presentatie": [],
+      "synoniemen": [
+        "ruilen",
+        "wederzijds voordelige ruil",
+        "vraag en aanbod bij ruil",
+        "directe ruil"
+      ],
+      "wds": [
+        "D",
+        "S",
+        "W"
+      ],
+      "aantal_opgaven": 29
+    },
+    {
+      "id": "M1-H2-02",
+      "label": "Ruilverhouding",
+      "hoofdstuk": 2,
+      "paragrafen": [
+        "§1"
+      ],
+      "begrippen": [
+        "ruilverhouding"
+      ],
+      "begrippen_via_presentatie": [],
+      "synoniemen": [
+        "ruilwaarde",
+        "ruilverhoudingen"
+      ],
+      "wds": [
+        "D",
+        "S",
+        "W"
+      ],
+      "aantal_opgaven": 9
+    },
+    {
+      "id": "M1-H2-03",
+      "label": "Autarkie",
+      "hoofdstuk": 2,
+      "paragrafen": [
+        "§1"
+      ],
+      "begrippen": [
+        "autarkie"
+      ],
+      "begrippen_via_presentatie": [],
+      "synoniemen": [
+        "zelfvoorziening",
+        "deglobalisering"
+      ],
+      "wds": [
+        "D",
+        "S",
+        "W"
+      ],
+      "aantal_opgaven": 9
+    },
+    {
+      "id": "M1-H2-04",
+      "label": "Eigendomsrechten, patenten en contracten",
+      "hoofdstuk": 2,
+      "paragrafen": [
+        "§1"
+      ],
+      "begrippen": [
+        "eigendomsrecht",
+        "intellectueel eigendomsrecht",
+        "auteursrecht",
+        "patent / octrooi",
+        "contract"
+      ],
+      "begrippen_via_presentatie": [],
+      "synoniemen": [
+        "patent",
+        "octrooi",
+        "auteursrecht",
+        "intellectueel eigendom",
+        "eigendomsrechten"
+      ],
+      "wds": [
+        "D",
+        "S",
+        "W"
+      ],
+      "aantal_opgaven": 5
+    },
+    {
+      "id": "M1-H2-05",
+      "label": "Transactiekosten",
+      "hoofdstuk": 2,
+      "paragrafen": [
+        "§2"
+      ],
+      "begrippen": [
+        "transactiekosten"
+      ],
+      "begrippen_via_presentatie": [],
+      "synoniemen": [
+        "zoekkosten",
+        "onderhandelingskosten",
+        "kosten van een ruil"
+      ],
+      "wds": [
+        "D",
+        "S",
+        "W"
+      ],
+      "aantal_opgaven": 34
+    },
+    {
+      "id": "M1-H2-07",
+      "label": "Instituties",
+      "hoofdstuk": 2,
+      "paragrafen": [
+        "§2"
+      ],
+      "begrippen": [
+        "institutie"
+      ],
+      "begrippen_via_presentatie": [],
+      "synoniemen": [
+        "instituties",
+        "institutie",
+        "organisaties die ruil vergemakkelijken"
+      ],
+      "wds": [
+        "D",
+        "S"
+      ],
+      "aantal_opgaven": 15
+    },
+    {
+      "id": "M1-H2-08",
+      "label": "Productie, consumptie en arbeid",
+      "hoofdstuk": 2,
+      "paragrafen": [
+        "§3"
+      ],
+      "begrippen": [
+        "productie",
+        "consument / consumptie",
+        "arbeid"
+      ],
+      "begrippen_via_presentatie": [],
+      "synoniemen": [
+        "produceren",
+        "consumeren",
+        "producent",
+        "loonkosten"
+      ],
+      "wds": [
+        "D",
+        "S"
+      ],
+      "aantal_opgaven": 10
+    },
+    {
+      "id": "M1-H2-09",
+      "label": "Arbeidsproductiviteit",
+      "hoofdstuk": 2,
+      "paragrafen": [
+        "§3"
+      ],
+      "begrippen": [
+        "arbeidsproductiviteit"
+      ],
+      "begrippen_via_presentatie": [],
+      "synoniemen": [
+        "APT",
+        "arbeidsproductiviteit per uur",
+        "productiviteit"
+      ],
+      "wds": [
+        "D",
+        "S",
+        "W"
+      ],
+      "aantal_opgaven": 35
+    },
+    {
+      "id": "M1-H2-10",
+      "label": "Arbeidsdeling en specialisatie",
+      "hoofdstuk": 2,
+      "paragrafen": [
+        "§3"
+      ],
+      "begrippen": [
+        "arbeidsdeling",
+        "specialisatie"
+      ],
+      "begrippen_via_presentatie": [],
+      "synoniemen": [
+        "deeltaken",
+        "specialiseren",
+        "taakverdeling"
+      ],
+      "wds": [
+        "D",
+        "S"
+      ],
+      "aantal_opgaven": 13
+    },
+    {
+      "id": "M1-H2-11",
+      "label": "Scholing",
+      "hoofdstuk": 2,
+      "paragrafen": [
+        "§3"
+      ],
+      "begrippen": [
+        "scholing"
+      ],
+      "begrippen_via_presentatie": [],
+      "synoniemen": [
+        "opleiding",
+        "informeel leren",
+        "bijscholing"
+      ],
+      "wds": [
+        "D",
+        "S",
+        "W"
+      ],
+      "aantal_opgaven": 6
+    },
+    {
+      "id": "M1-H3-01",
+      "label": "Directe en indirecte ruil",
+      "hoofdstuk": 3,
+      "paragrafen": [
+        "§1"
+      ],
+      "begrippen": [
+        "directe ruil",
+        "indirecte ruil"
+      ],
+      "begrippen_via_presentatie": [],
+      "synoniemen": [
+        "ruilhandel",
+        "directe ruil",
+        "indirecte ruil",
+        "ruilen zonder geld"
+      ],
+      "wds": [
+        "D",
+        "S"
+      ],
+      "aantal_opgaven": 14
+    },
+    {
+      "id": "M1-H3-02",
+      "label": "De functies van geld",
+      "hoofdstuk": 3,
+      "paragrafen": [
+        "§1"
+      ],
+      "begrippen": [
+        "betaalmiddel / geld",
+        "ruilmiddel",
+        "oppotmiddel",
+        "rekenmiddel / waardemiddel"
+      ],
+      "begrippen_via_presentatie": [],
+      "synoniemen": [
+        "functies van geld",
+        "spaarmiddel",
+        "waardemeter",
+        "drie functies van geld",
+        "betaalmiddel"
+      ],
+      "wds": [
+        "D",
+        "S",
+        "W"
+      ],
+      "aantal_opgaven": 26
+    },
+    {
+      "id": "M1-H3-03",
+      "label": "De technische eisen aan geld",
+      "hoofdstuk": 3,
+      "paragrafen": [
+        "§2"
+      ],
+      "begrippen": [
+        "technische eisen aan geld"
+      ],
+      "begrippen_via_presentatie": [],
+      "synoniemen": [
+        "technische eisen",
+        "eisen aan geld",
+        "deelbaar duurzaam schaars"
+      ],
+      "wds": [
+        "S",
+        "W"
+      ],
+      "aantal_opgaven": 4
+    },
+    {
+      "id": "M1-H3-04",
+      "label": "Chartaal en giraal geld",
+      "hoofdstuk": 3,
+      "paragrafen": [
+        "§2"
+      ],
+      "begrippen": [
+        "chartaal geld",
+        "giraal geld"
+      ],
+      "begrippen_via_presentatie": [],
+      "synoniemen": [
+        "contant geld",
+        "cash",
+        "pinnen",
+        "chartaal",
+        "giraal"
+      ],
+      "wds": [
+        "D",
+        "S",
+        "W"
+      ],
+      "aantal_opgaven": 21
+    },
+    {
+      "id": "M1-H3-05",
+      "label": "Fiduciair geld en het vertrouwen in geld",
+      "hoofdstuk": 3,
+      "paragrafen": [
+        "§1",
+        "§2"
+      ],
+      "begrippen": [
+        "fiduciair geld",
+        "geldwissel"
+      ],
+      "begrippen_via_presentatie": [],
+      "synoniemen": [
+        "vertrouwen in geld",
+        "bankbiljet",
+        "valsmunterij",
+        "vals geld",
+        "geldvervalsing"
+      ],
+      "wds": [
+        "D",
+        "S",
+        "W"
+      ],
+      "aantal_opgaven": 27
+    },
+    {
+      "id": "M1-H3-06",
+      "label": "Valuta, de euro en de eurozone",
+      "hoofdstuk": 3,
+      "paragrafen": [
+        "§2"
+      ],
+      "begrippen": [
+        "valuta"
+      ],
+      "begrippen_via_presentatie": [
+        "eurozone en EMU"
+      ],
+      "synoniemen": [
+        "euro",
+        "eurozone",
+        "EMU",
+        "muntsoort",
+        "wisselkoers"
+      ],
+      "wds": [
+        "D",
+        "S"
+      ],
+      "aantal_opgaven": 6
+    },
+    {
+      "id": "M1-H3-07",
+      "label": "Nominale en intrinsieke waarde van geld",
+      "hoofdstuk": 3,
+      "paragrafen": [
+        "§3"
+      ],
+      "begrippen": [
+        "denominatie / nominale of extrinsieke waarde",
+        "intrinsieke waarde van geld"
+      ],
+      "begrippen_via_presentatie": [],
+      "synoniemen": [
+        "nominale waarde",
+        "extrinsieke waarde",
+        "denominatie",
+        "intrinsieke waarde"
+      ],
+      "wds": [
+        "D",
+        "S",
+        "W"
+      ],
+      "aantal_opgaven": 38
+    },
+    {
+      "id": "M1-H3-08",
+      "label": "Reële waarde en koopkracht",
+      "hoofdstuk": 3,
+      "paragrafen": [
+        "§3"
+      ],
+      "begrippen": [
+        "interne / reële waarde van geld",
+        "koopkracht van het geld"
+      ],
+      "begrippen_via_presentatie": [],
+      "synoniemen": [
+        "reële waarde",
+        "interne waarde",
+        "koopkracht",
+        "ruilwaarde van geld"
+      ],
+      "wds": [
+        "D",
+        "S"
+      ],
+      "aantal_opgaven": 15
+    },
+    {
+      "id": "M1-H3-09",
+      "label": "De wet van Gresham",
+      "hoofdstuk": 3,
+      "paragrafen": [
+        "§3"
+      ],
+      "begrippen": [
+        "wet van Gresham"
+      ],
+      "begrippen_via_presentatie": [],
+      "synoniemen": [
+        "Gresham",
+        "wet van Gresham"
+      ],
+      "wds": [
+        "D",
+        "S",
+        "W"
+      ],
+      "aantal_opgaven": 16
+    },
+    {
+      "id": "M1-H3-10",
+      "label": "Inflatie en geldontwaarding",
+      "hoofdstuk": 3,
+      "paragrafen": [
+        "§3",
+        "§4"
+      ],
+      "begrippen": [
+        "inflatie",
+        "geldontwaarding",
+        "algemeen prijspeil"
+      ],
+      "begrippen_via_presentatie": [],
+      "synoniemen": [
+        "inflatie",
+        "geldontwaarding",
+        "hyperinflatie",
+        "prijspeil",
+        "prijsstijging"
+      ],
+      "wds": [
+        "D",
+        "S",
+        "W"
+      ],
+      "aantal_opgaven": 20
+    },
+    {
+      "id": "M1-H3-11",
+      "label": "Geldschepping en de maatschappelijke geldhoeveelheid",
+      "hoofdstuk": 3,
+      "paragrafen": [
+        "§4"
+      ],
+      "begrippen": [
+        "geldschepping",
+        "maatschappelijke geldhoeveelheid"
+      ],
+      "begrippen_via_presentatie": [],
+      "synoniemen": [
+        "geldschepping",
+        "geldhoeveelheid",
+        "maatschappelijke geldhoeveelheid"
+      ],
+      "wds": [
+        "D",
+        "S",
+        "W"
+      ],
+      "aantal_opgaven": 8
+    },
+    {
+      "id": "M1-H3-13",
+      "label": "Wisselkoers en de externe waarde van geld",
+      "hoofdstuk": 3,
+      "paragrafen": [
+        "§3",
+        "§4"
+      ],
+      "begrippen": [
+        "wisselkoers",
+        "externe waarde van het geld"
+      ],
+      "begrippen_via_presentatie": [],
+      "synoniemen": [
+        "wisselkoers",
+        "externe waarde",
+        "koers",
+        "valutakoers"
+      ],
+      "wds": [
+        "D",
+        "S"
+      ],
+      "aantal_opgaven": 3
+    },
+    {
+      "id": "M1-H3-12",
+      "label": "De centrale bank, DNB en de ECB",
+      "hoofdstuk": 3,
+      "paragrafen": [
+        "§2",
+        "§4"
+      ],
+      "begrippen": [
+        "centrale bank",
+        "De Nederlandsche Bank (DNB)",
+        "Europese Centrale Bank (ECB)",
+        "monetair beleid",
+        "handelsbank"
+      ],
+      "begrippen_via_presentatie": [],
+      "synoniemen": [
+        "DNB",
+        "ECB",
+        "centrale bank",
+        "De Nederlandsche Bank",
+        "Europese Centrale Bank"
+      ],
+      "wds": [
+        "D",
+        "S"
+      ],
+      "aantal_opgaven": 12
+    },
+    {
+      "id": "M1-A-01",
+      "label": "Rekenen met procenten",
+      "hoofdstuk": null,
+      "paragrafen": [
+        "Domein A"
+      ],
+      "begrippen": [],
+      "begrippen_via_presentatie": [],
+      "synoniemen": [
+        "procenten",
+        "procentuele verandering",
+        "procentpunt",
+        "aandeel in procenten"
+      ],
+      "wds": [
+        "D"
+      ],
+      "aantal_opgaven": 28,
+      "toelichting": "Basisvaardigheid. Hoort bij de stof van de hele module en van alle volgende modules."
+    },
+    {
+      "id": "M1-A-02",
+      "label": "Grafieken, tabellen en diagrammen aflezen",
+      "hoofdstuk": null,
+      "paragrafen": [
+        "Domein A"
+      ],
+      "begrippen": [],
+      "begrippen_via_presentatie": [],
+      "synoniemen": [
+        "grafiek aflezen",
+        "diagram lezen",
+        "tabel aflezen"
+      ],
+      "wds": [
+        "D",
+        "S"
+      ],
+      "aantal_opgaven": 13,
+      "toelichting": "Basisvaardigheid. Hoort bij de stof van de hele module en van alle volgende modules."
+    }
+  ],
+  "buiten_toetsstof": [
+    {
+      "hoofdstuk": 1,
+      "label": "Opofferingskosten",
+      "waar": "H1 §1 blz. 11, §2 blz. 17, leerdoel blz. 7",
+      "reden": "Staat niet in de begrippenlijst van hoofdstuk 1"
+    },
+    {
+      "hoofdstuk": 1,
+      "label": "Praktijkonderzoek 'Wie krijgt een donororgaan?'",
+      "waar": "H1 §1 blz. 9 en 10, bron 8 blz. 13",
+      "reden": "Praktijkonderzoek; de begrippen horen niet tot de leerstof"
+    },
+    {
+      "hoofdstuk": 1,
+      "label": "Vacature",
+      "waar": "H1 §3 blz. 26",
+      "reden": "Op jouw aangeven uit het programma gehaald; staat niet in de begrippenlijst"
+    },
+    {
+      "hoofdstuk": 2,
+      "label": "Monopolie",
+      "waar": "H2 §1 blz. 33",
+      "reden": "Nog geen vereiste voor deze leerlingen"
+    },
+    {
+      "hoofdstuk": 2,
+      "label": "ACM en NVWA",
+      "waar": "H2 §2 blz. 43, bron 11 blz. 47",
+      "reden": "Nog geen vereiste voor deze leerlingen"
+    },
+    {
+      "hoofdstuk": 2,
+      "label": "Praktijkonderzoek 'Het handelsembargo van president Jefferson'",
+      "waar": "H2 §1 blz. 32",
+      "reden": "Praktijkonderzoek; de begrippen horen niet tot de leerstof"
+    },
+    {
+      "hoofdstuk": 2,
+      "label": "Thuiskopievergoeding",
+      "waar": "H2 §1 blz. 34, bron 5",
+      "reden": "Staat niet in de begrippenlijst van hoofdstuk 2. Twijfelgeval, jouw keuze"
+    },
+    {
+      "hoofdstuk": 2,
+      "label": "Kenniseconomie",
+      "waar": "H2 §4 bron 12 en 13, blz. 62",
+      "reden": "Staat niet in de begrippenlijst van hoofdstuk 2. Twijfelgeval, jouw keuze"
+    },
+    {
+      "hoofdstuk": 2,
+      "label": "Organisatievorm",
+      "waar": "H2 §3 blz. 51, leerdoel blz. 48",
+      "reden": "Nog geen vereiste voor deze leerlingen"
+    },
+    {
+      "hoofdstuk": 2,
+      "label": "Managers en generalisten",
+      "waar": "H2 §3 blz. 51",
+      "reden": "Nog geen vereiste voor deze leerlingen"
+    },
+    {
+      "hoofdstuk": 3,
+      "label": "Concreet en abstract geld",
+      "waar": "H3 §1 blz. 68",
+      "reden": "Volgens jouw opgave niet in de stof"
+    },
+    {
+      "hoofdstuk": 3,
+      "label": "Praktijkonderzoek 'Ruilhandel in Rusland'",
+      "waar": "H3 §1 blz. 66 en 67",
+      "reden": "Praktijkonderzoek; de begrippen horen niet tot de leerstof"
+    },
+    {
+      "hoofdstuk": 3,
+      "label": "Geldschepping via geldautomaten, kredietkanaal, beleidsrente, kapitaalreserve, gewenste inflatie en monetair beleid",
+      "waar": "H3 §4 blz. 88 t/m 90",
+      "reden": "Van §4 worden alleen blz. 86 en 87 besproken"
+    },
+    {
+      "hoofdstuk": 3,
+      "label": "In context 'Muntjes tellen'",
+      "waar": "H3 §4 blz. 88",
+      "reden": "Valt buiten blz. 86 en 87"
+    },
+    {
+      "hoofdstuk": 2,
+      "label": "De vier voorwaarden om tot een ruil te komen",
+      "waar": "H2 §1, leertekst. De expliciete opgaven staan pas in §2 (2a, 6, 9a) en §4 (4c, 8b)",
+      "reden": "Op jouw aangeven niet opgenomen in de begrippenlijst"
+    }
+  ],
+  "aandachtspunten": [
+    {
+      "onderwerp": "M1-H3-06",
+      "punt": "'Eurozone' en 'EMU' staan niet in de begrippenlijst, terwijl §2 opgave 1-III, 1-IV en 7a t/m 7d erover gaan. Wel opgenomen: 'valuta'."
+    },
+    {
+      "onderwerp": "M1-H2-01",
+      "punt": "De vier voorwaarden worden uitgelegd in §1 maar pas in §2 en §4 expliciet bevraagd. In §1 staan wel zeven verwante opgaven (5a t/m 5c, 8b t/m 8d, 8g) over het wel of niet tot stand komen van een ruil. Die blijven binnen de toetsstof onder dit onderwerp."
+    },
+    {
+      "onderwerp": "M1-H3-02",
+      "punt": "Het boek gebruikt op blz. 67 de term 'spaarmiddel' voor wat de begrippenlijst 'oppotmiddel' noemt. Beide woorden staan als synoniem in dit bestand, zodat de koppeling niet breekt. Raakt §1 opgave 1b, 2-I, 4 en 9d."
+    },
+    {
+      "onderwerp": "M1-H3-13",
+      "punt": "Wisselkoers en externe waarde worden als extra bij §3 besproken, maar de leertekst staat op blz. 88. Er zijn maar drie opgaven binnen de toetsstof, alle drie in de Zimbabwe-casus van §4."
+    },
+    {
+      "onderwerp": "M1-H3-12",
+      "punt": "'Monetair beleid' blijft als extra in de stof, maar de leertekst staat op blz. 90 en er is geen enkele opgave binnen de toetsstof om het mee te oefenen."
+    },
+    {
+      "onderwerp": "M1-H3-05",
+      "punt": "27 opgaven, veruit het grootste onderwerp van hoofdstuk 3. Mathijs gaat hier nog in snijden zodra de lijst met te zwakke opgaven er is."
+    },
+    {
+      "onderwerp": "M1-H3-07",
+      "punt": "38 opgaven, het grootste onderwerp van de module. Splitsbaar in nominaal tegenover intrinsiek als het te grof blijkt."
+    }
+  ]
+}
