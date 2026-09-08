@@ -1,0 +1,251 @@
+{
+  "id": "4h-m1-h1h2",
+  "titel": "4 havo · Economie PW Module 1 (H1 + H2)",
+  "docent": "Rem",
+  "boek": "PE-M1",
+  "maxPunten": 26,
+  "nterm": 1,
+  "stofafbakening": {
+    "hoofdstukken": [
+      1,
+      2
+    ],
+    "extra": [
+      "M1-A-01",
+      "M1-A-02"
+    ],
+    "uitgesloten": []
+  },
+  "fouttypen": [
+    {
+      "key": "reken",
+      "label": "Rekenfout",
+      "tekst": "Schrijf je tussenstappen en berekeningen altijd uit in plaats van alles in de rekenmachine te doen. Als je klaar bent, kijk dan of wat je hebt opgeschreven een logisch antwoord op de vraag is.",
+      "kleur": "var(--ft-reken)",
+      "custom": false
+    },
+    {
+      "key": "lees",
+      "label": "Leesfout",
+      "tekst": "Neem een markeerstift en markeer wat er precies gevraagd wordt voordat je begint. Markeer in de bron de gegevens die je nodig hebt. Om dit goed onder de knie te krijgen moet je oefenen met vragen waarbij je een bron moet interpreteren.",
+      "kleur": "var(--ft-lees)",
+      "custom": false
+    },
+    {
+      "key": "begrip",
+      "label": "Begripsfout",
+      "tekst": "Bestudeer de begrippenlijst die je van je docent hebt gekregen. Lees deze door en schrijf alleen de begrippen op die je nog niet kent. Lees daarnaast ook eenmaal alle PowerPoints door. Beide zijn te vinden op Classroom.",
+      "kleur": "var(--ft-begrip)",
+      "custom": false
+    },
+    {
+      "key": "redeneer",
+      "label": "Redeneerfout",
+      "tekst": "Maak redeneervragen van je huiswerk alsof je antwoord geeft op de toets. Alleen dan kan je bij het nakijken beoordelen of je het echt begrijpt. Schrijf bij elke uitlegvraag bewust béide stappen op — bij economie zit het tweede punt vaak in het gevolg dat je nog moet benoemen. Twijfel je, of wil je meer feedback? Lever je schrift in tijdens de les, of maak thuis een foto van je antwoord en mail die. Antwoorden van het boek én het extra oefenmateriaal staan op Classroom.",
+      "kleur": "var(--ft-redeneer)",
+      "custom": false
+    },
+    {
+      "key": "overig",
+      "label": "Overig",
+      "tekst": "Het is misschien nog niet helemaal duidelijk waarom je deze punten hebt laten liggen. Vraag eventueel aan je docent om er samen nog eens naar te kijken.",
+      "kleur": "var(--ft-overig)",
+      "custom": false
+    }
+  ],
+  "vragen": [
+    {
+      "nr": "1a",
+      "onderwerp": "Nettobaten van werken berekenen",
+      "onderwerpen": [
+        "M1-H1-04"
+      ],
+      "wds": "D",
+      "max": 1,
+      "oefenBoekje": "",
+      "oefenPE": "",
+      "specifiek": "Nettobaten = baten min kosten. Vergeet de kosten van ongerief niet: die tellen mee, ook al betaal je ze niet."
+    },
+    {
+      "nr": "1b",
+      "onderwerp": "De minimale baten van een alternatief bepalen",
+      "onderwerpen": [
+        "M1-H1-04"
+      ],
+      "wds": "S",
+      "max": 2,
+      "oefenBoekje": "",
+      "oefenPE": "",
+      "specifiek": "Reken eerst de nettobaten van beide werkopties uit. Je vergelijkt met de hoogste van de twee, niet met allebei."
+    },
+    {
+      "nr": "2",
+      "onderwerp": "Zes begrippen aan hun omschrijving koppelen",
+      "onderwerpen": [
+        "M1-H1-03",
+        "M1-H1-05",
+        "M1-H1-06",
+        "M1-H2-05",
+        "M1-H2-08",
+        "M1-H2-09"
+      ],
+      "wds": "W",
+      "max": 3,
+      "oefenBoekje": "",
+      "oefenPE": "",
+      "specifiek": "Dit is pure begripskennis. Leer de definities uit de begrippenlijst van het oefenboekje, opgaven maken helpt hier niet."
+    },
+    {
+      "nr": "3",
+      "onderwerp": "Zes beweringen beoordelen op juistheid",
+      "onderwerpen": [
+        "M1-H1-01",
+        "M1-H1-03",
+        "M1-H2-01",
+        "M1-H2-04",
+        "M1-H2-05"
+      ],
+      "wds": "S",
+      "max": 3,
+      "oefenBoekje": "",
+      "oefenPE": "",
+      "specifiek": "Lees elke bewering woord voor woord. Bij 'beperkte behoeftes' en 'minder middelen dan behoeftes' draait alles om een enkel woord."
+    },
+    {
+      "nr": "4a",
+      "onderwerp": "Arbeidsproductiviteit per uur berekenen en vergelijken",
+      "onderwerpen": [
+        "M1-H2-09"
+      ],
+      "wds": "D",
+      "max": 1,
+      "oefenBoekje": "",
+      "oefenPE": "",
+      "specifiek": "Arbeidsproductiviteit is productie gedeeld door arbeid. Let op de tijdseenheid: hier per uur, niet per werknemer."
+    },
+    {
+      "nr": "4b",
+      "onderwerp": "Twee oorzaken van een verschil in arbeidsproductiviteit",
+      "onderwerpen": [
+        "M1-H2-09",
+        "M1-H2-10",
+        "M1-H2-11"
+      ],
+      "wds": "S",
+      "max": 2,
+      "oefenBoekje": "",
+      "oefenPE": "",
+      "specifiek": "Denk aan de drie manieren om de arbeidsproductiviteit te verhogen: betere machines, scholing en specialisatie."
+    },
+    {
+      "nr": "4c",
+      "onderwerp": "Loonkosten per product berekenen",
+      "onderwerpen": [
+        "M1-H2-08",
+        "M1-H2-09"
+      ],
+      "wds": "D",
+      "max": 1,
+      "oefenBoekje": "",
+      "oefenPE": "",
+      "specifiek": "Loonkosten per product = totale loonkosten gedeeld door de productie. Reken eerst de totale loonkosten uit."
+    },
+    {
+      "nr": "4d",
+      "onderwerp": "Procentuele toename van de productie berekenen",
+      "onderwerpen": [
+        "M1-A-01"
+      ],
+      "wds": "D",
+      "max": 2,
+      "oefenBoekje": "",
+      "oefenPE": "",
+      "specifiek": "Procentuele verandering = verschil gedeeld door de oude waarde, maal 100. Deel door de oude waarde, niet door het verschil."
+    },
+    {
+      "nr": "4e",
+      "onderwerp": "Een motief voor het aanvragen van een patent omschrijven",
+      "onderwerpen": [
+        "M1-H2-04"
+      ],
+      "wds": "S",
+      "max": 1,
+      "oefenBoekje": "",
+      "oefenPE": "",
+      "specifiek": "Een patent is een intellectueel eigendomsrecht. Denk na over wat de eigenaar ermee wint tegenover concurrenten."
+    },
+    {
+      "nr": "4f",
+      "onderwerp": "Uitleggen waarom een patent nadelig kan zijn voor consumenten",
+      "onderwerpen": [
+        "M1-H2-04"
+      ],
+      "wds": "S",
+      "max": 2,
+      "oefenBoekje": "",
+      "oefenPE": "",
+      "specifiek": "Een uitleg heeft twee stappen: wat doet het patent met de concurrentie, en wat betekent dat vervolgens voor de prijs."
+    },
+    {
+      "nr": "5a",
+      "onderwerp": "De vergelijking van de budgetlijn opstellen",
+      "onderwerpen": [
+        "M1-H1-06"
+      ],
+      "wds": "D",
+      "max": 1,
+      "oefenBoekje": "",
+      "oefenPE": "",
+      "specifiek": "De vergelijking is: budget = prijs 1 maal hoeveelheid 1 plus prijs 2 maal hoeveelheid 2."
+    },
+    {
+      "nr": "5b",
+      "onderwerp": "De budgetlijn tekenen",
+      "onderwerpen": [
+        "M1-H1-06"
+      ],
+      "wds": "D",
+      "max": 2,
+      "oefenBoekje": "",
+      "oefenPE": "",
+      "specifiek": "Bereken eerst beide snijpunten met de assen: alles aan het ene product, dan alles aan het andere."
+    },
+    {
+      "nr": "5c",
+      "onderwerp": "Een productcombinatie berekenen",
+      "onderwerpen": [
+        "M1-H1-05",
+        "M1-H1-06"
+      ],
+      "wds": "D",
+      "max": 2,
+      "oefenBoekje": "",
+      "oefenPE": "",
+      "specifiek": "Bij een gelijk aantal van beide kun je de prijzen optellen tot de prijs van een pakket, en het budget daardoor delen."
+    },
+    {
+      "nr": "5d",
+      "onderwerp": "Een verschuiving van de budgetlijn beschrijven",
+      "onderwerpen": [
+        "M1-H1-07"
+      ],
+      "wds": "S",
+      "max": 1,
+      "oefenBoekje": "",
+      "oefenPE": "",
+      "specifiek": "Stijgen beide prijzen met hetzelfde percentage, dan verandert de helling niet. Beschrijf richting en vorm allebei."
+    },
+    {
+      "nr": "5e",
+      "onderwerp": "Beoordelen of een prijsstijging hetzelfde effect heeft als een kleiner budget",
+      "onderwerpen": [
+        "M1-H1-07"
+      ],
+      "wds": "S",
+      "max": 2,
+      "oefenBoekje": "",
+      "oefenPE": "",
+      "specifiek": "Reken beide situaties uit en vergelijk de snijpunten. 25% duurder is niet hetzelfde als 25% minder budget."
+    }
+  ]
+}

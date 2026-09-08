@@ -620,6 +620,8 @@ function bouwInvoer() {
 
 // --- Een toets inladen uit een docent-export ---
 let TOETS_ID = "";
+let TOETS_BOEK = "";              // config.boek, bv. "PE-M1" — leeg als de toets geen boek opgeeft
+let TOETS_STOFAFBAKENING = null;  // config.stofafbakening — hoofdstukken/extra/uitgesloten, of null
 function laadConfig(config) {
   const maxP = Number(config.maxPunten) || (config.vragen || []).reduce((s, v) => s + (Number(v.max) || 0), 0) || 1;
   const nterm = Number(config.nterm) || 0;
@@ -630,7 +632,8 @@ function laadConfig(config) {
     cijfer: (score) => Math.round((score / maxP * 9 + nterm) * 10) / 10,
     vragen: (config.vragen || []).map(v => ({
       nr: String(v.nr), onderwerp: v.onderwerp || "", wds: (v.wds || "S"), max: Number(v.max) || 1,
-      oefenBoekje: v.oefenBoekje || "", oefenPE: v.oefenPE || ""
+      oefenBoekje: v.oefenBoekje || "", oefenPE: v.oefenPE || "",
+      onderwerpen: Array.isArray(v.onderwerpen) ? v.onderwerpen.map(String) : []
     }))
   };
   TOETS_ID = String(config.id || config.titel || "toets");
@@ -644,8 +647,52 @@ function laadConfig(config) {
   }
   VRAAGSPECIFIEK = {};
   (config.vragen || []).forEach(v => { if (v.specifiek) VRAAGSPECIFIEK[String(v.nr)] = v.specifiek; });
+  // Handmatige lijst: blijft de bron zolang er geen boek is, en de terugvaloptie
+  // als het ophalen van de stofdata hieronder mislukt.
   NIET_GETOETST = Array.isArray(config.nietGetoetst) ? config.nietGetoetst : [];
+  TOETS_BOEK = config.boek ? String(config.boek) : "";
+  TOETS_STOFAFBAKENING = (config.stofafbakening && typeof config.stofafbakening === "object") ? config.stofafbakening : null;
+  STOFDATA_BELOFTE = laadStofdata(TOETS_BOEK);
   bouwInvoer();
+}
+
+// ======================================================================
+// STOFDATA: index-<boek>.json en onderwerpen-<boek>.json
+// Alleen relevant als de toets een "boek"-veld heeft (optioneel, zie
+// STAP 2/3). Ontbreekt "boek", dan gebeurt hier niets en blijft de
+// handmatige nietGetoetst-lijst hierboven gewoon gelden — de tool
+// gedraagt zich dan exact als voorheen.
+// Mislukt het ophalen (netwerk, 404, kapotte JSON), dan blijft de
+// handmatige lijst ook gelden; alleen de console krijgt een melding.
+// De leerling krijgt hier nooit een foutmelding van te zien.
+// ======================================================================
+let BOEK_ONDERWERPEN = null;  // ingeladen onderwerpen-<boek>.json, of null
+let BOEK_INDEX = null;        // ingeladen index-<boek>.json, of null
+let STOFDATA_BELOFTE = null;  // de lopende/afgeronde Promise van laadStofdata()
+
+function laadStofdata(boek) {
+  BOEK_ONDERWERPEN = null;
+  BOEK_INDEX = null;
+  if (!boek) return Promise.resolve(null);
+  const veilig = /^[a-z0-9_-]+$/i.test(boek) ? boek : null;
+  if (!veilig) {
+    console.warn(`Stofdata niet geladen: ongeldige boek-code "${boek}". De handmatige nietGetoetst-lijst blijft gebruikt.`);
+    return Promise.resolve(null);
+  }
+  const ophalen = (naam) => fetch(`${naam}-${veilig}.json`, { cache: "no-store" })
+    .then(r => { if (!r.ok) throw new Error(`${naam}-${veilig}.json: HTTP ${r.status}`); return r.json(); });
+  return Promise.all([ophalen("index"), ophalen("onderwerpen")])
+    .then(([index, onderwerpen]) => {
+      BOEK_INDEX = index;
+      BOEK_ONDERWERPEN = onderwerpen;
+      return { index, onderwerpen };
+    })
+    .catch(err => {
+      console.warn(`Stofdata voor boek "${veilig}" kon niet geladen worden, de handmatige nietGetoetst-lijst blijft gebruikt:`, err);
+      BOEK_INDEX = null;
+      BOEK_ONDERWERPEN = null;
+      return null;
+    });
 }
 
 // --- Knoppen van het laad-paneel ---
@@ -793,7 +840,103 @@ function controleerPrintwens() {
   maakFeedback();
 }
 
-function maakFeedback() {
+// ======================================================================
+// STAP 4: DE AFTREKKING
+// Welke onderwerpen van de getoetste hoofdstukken kwamen niet in déze
+// toets voor? Alleen mogelijk met boek + stofafbakening + de twee
+// stofdata-bestanden; ontbreekt een van die, dan geeft dit null terug
+// en blijft de handmatige NIET_GETOETST-lijst (uit config.nietGetoetst)
+// gewoon staan.
+// ======================================================================
+function berekenNietGetoetst() {
+  if (!TOETS_STOFAFBAKENING || !BOEK_ONDERWERPEN || !BOEK_INDEX) return null;
+
+  const hoofdstukken = Array.isArray(TOETS_STOFAFBAKENING.hoofdstukken) ? TOETS_STOFAFBAKENING.hoofdstukken : [];
+  const extra = Array.isArray(TOETS_STOFAFBAKENING.extra) ? TOETS_STOFAFBAKENING.extra : [];
+  const uitgesloten = Array.isArray(TOETS_STOFAFBAKENING.uitgesloten) ? TOETS_STOFAFBAKENING.uitgesloten : [];
+
+  // Alle codes van de getoetste hoofdstukken, plus 'extra', min 'uitgesloten'
+  const stofCodes = new Set();
+  (BOEK_ONDERWERPEN.onderwerpen || []).forEach(o => { if (hoofdstukken.includes(o.hoofdstuk)) stofCodes.add(o.id); });
+  extra.forEach(c => stofCodes.add(c));
+  uitgesloten.forEach(c => stofCodes.delete(c));
+
+  // min de codes die daadwerkelijk in de vragen van déze toets voorkomen
+  TOETS.vragen.forEach(v => v.onderwerpen.forEach(c => stofCodes.delete(c)));
+
+  // Sorteren op code, niet op volgorde in het bestand
+  const overCodes = [...stofCodes].sort();
+
+  return overCodes.map(code => {
+    const ond = (BOEK_ONDERWERPEN.onderwerpen || []).find(o => o.id === code);
+    const label = ond ? ond.label : code;
+    const rijen = (BOEK_INDEX.rijen || []).filter(r => r.stof === true && Array.isArray(r.onderwerpen) && r.onderwerpen.includes(code));
+    const magReken = r => (Array.isArray(r.tags) && r.tags.includes("rekenen")) ? "*" : "";
+
+    // Lesboek: groeperen op hoofdstuk/paragraaf/paginanummer, zodat dat niet
+    // per losse opgave herhaald hoeft te worden.
+    const lesGroepen = new Map();
+    rijen.filter(r => r.bron === "lesboek").forEach(r => {
+      const sleutel = `${r.hoofdstuk}|${r.paragraaf}|${r.blz}`;
+      if (!lesGroepen.has(sleutel)) lesGroepen.set(sleutel, { hoofdstuk: r.hoofdstuk, paragraaf: r.paragraaf, blz: r.blz, opgaven: [] });
+      lesGroepen.get(sleutel).opgaven.push(r.opgave + magReken(r));
+    });
+    const lesDeel = [...lesGroepen.values()]
+      .sort((a, b) => (a.hoofdstuk - b.hoofdstuk) || String(a.paragraaf).localeCompare(String(b.paragraaf)) || ((a.blz || 0) - (b.blz || 0)))
+      .map(g => `H${g.hoofdstuk} ${g.paragraaf}${g.blz ? " (blz. " + g.blz + ")" : ""}: opgave ${g.opgaven.join(", ")}`)
+      .join("; ");
+
+    // Oefenboekje: alleen het opgavenummer, geen hoofdstuk/paragraaf/blz.
+    const oefOpgaven = rijen.filter(r => r.bron === "oefenboekje").map(r => r.opgave + magReken(r));
+    const oefDeel = oefOpgaven.length ? `oefenboekje opgave ${oefOpgaven.join(", ")}` : "";
+
+    const delen = [lesDeel, oefDeel].filter(Boolean).join("  ·  ");
+    return esc(label) + (delen ? ` — ${esc(delen)}` : " — geen oefenopgaven binnen de toetsstof gevonden");
+  });
+}
+
+// ======================================================================
+// STAP 5: OEFENVERWIJZING PER VRAAG
+// Vult v.oefenBoekje / v.oefenPE aan uit de onderwerpcodes van de vraag,
+// maar alleen als de docent dat veld zelf leeg heeft gelaten. Top af op
+// 5 opgaven per bron. Zonder geladen stofdata (BOEK_INDEX) gebeurt hier
+// niets en blijft een leeg veld gewoon leeg, zoals nu.
+// ======================================================================
+function dutchLijst(items) {
+  if (items.length === 0) return "";
+  if (items.length === 1) return items[0];
+  return items.slice(0, -1).join(", ") + " en " + items[items.length - 1];
+}
+
+function vulOefenverwijzingenAan() {
+  if (!BOEK_INDEX) return;
+  const MAX = 5;
+  TOETS.vragen.forEach(v => {
+    if (!v.onderwerpen || !v.onderwerpen.length) return;
+    const rijen = (BOEK_INDEX.rijen || []).filter(r => r.stof === true && Array.isArray(r.onderwerpen) &&
+      r.onderwerpen.some(c => v.onderwerpen.includes(c)));
+
+    if (!v.oefenBoekje) {
+      const nummers = rijen.filter(r => r.bron === "oefenboekje").map(r => r.opgave).slice(0, MAX);
+      if (nummers.length) v.oefenBoekje = dutchLijst(nummers);
+    }
+    if (!v.oefenPE) {
+      const eenheden = rijen.filter(r => r.bron === "lesboek")
+        .map(r => `${r.opgave}${r.blz ? " (blz. " + r.blz + ")" : ""}`).slice(0, MAX);
+      if (eenheden.length) v.oefenPE = "opgave " + dutchLijst(eenheden);
+    }
+  });
+}
+
+async function maakFeedback() {
+  // Als er stofdata voor een boek onderweg is, eerst afwachten (in de
+  // praktijk allang binnen tegen de tijd dat de leerling klaar is met
+  // invullen) zodat de berekende lijst hieronder klopt.
+  if (STOFDATA_BELOFTE) { try { await STOFDATA_BELOFTE; } catch (e) { /* laadStofdata() vangt dit al af */ } }
+  const berekend = berekenNietGetoetst();
+  if (berekend) NIET_GETOETST = berekend;
+  vulOefenverwijzingenAan();
+
   const naam = document.getElementById("leerling-naam").value.trim();
   const docent = document.getElementById("leerling-docent").value;
   const totaalBehaald = state.reduce((s, r) => s + (r.behaald || 0), 0);
