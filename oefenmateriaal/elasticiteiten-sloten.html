@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cijfersloten</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js"></script>
+</head>
+
+<body class="bg-gray-100 flex flex-col items-center justify-center min-h-screen p-6">
+  <h1 class="text-2xl font-bold mb-8">Voer de juiste codes in om de sloten te openen 🔒</h1>
+
+  <!-- Container met beide sloten -->
+  <div class="flex flex-col md:flex-row gap-16 items-start">
+
+    <!-- Zwart slot -->
+    <div class="flex flex-col items-center">
+      <h2 class="text-lg font-semibold mb-3 text-gray-800">Zwart slot</h2>
+      <div id="blackLock" class="flex gap-2 mb-2"></div>
+      <div id="blackFeedback" class="flex gap-2 text-xl"></div>
+    </div>
+
+    <!-- Blauw slot -->
+    <div class="flex flex-col items-center">
+      <h2 class="text-lg font-semibold mb-3 text-gray-800">Blauw slot</h2>
+      <div id="blueLock" class="flex gap-2 mb-2"></div>
+      <div id="blueFeedback" class="flex gap-2 text-xl"></div>
+    </div>
+  </div>
+
+  <!-- Controleerknop -->
+  <button id="checkButton"
+    class="mt-8 px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white rounded-xl text-lg shadow-md transition">
+    Controleer codes
+  </button>
+
+  <script>
+    const correctCodes = {
+      black: "3755",
+      blue: "1855"
+    };
+
+    // Functie om een slot te maken
+    function createLock(id) {
+      const container = document.getElementById(id);
+      const inputs = [];
+
+      for (let i = 0; i < 4; i++) {
+        const input = document.createElement("input");
+        input.type = "password";
+        input.maxLength = 1;
+        input.inputMode = "numeric";
+        input.pattern = "[0-9]*";
+        input.className =
+          "w-12 h-12 text-center text-xl rounded-lg border border-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-400";
+
+        input.addEventListener("input", (e) => {
+          if (e.target.value.length === 1 && i < 3) {
+            inputs[i + 1].focus();
+          }
+        });
+
+        input.addEventListener("keydown", (e) => {
+          if (e.key === "Backspace" && !input.value && i > 0) {
+            inputs[i - 1].focus();
+          }
+        });
+
+        container.appendChild(input);
+        inputs.push(input);
+      }
+
+      return inputs;
+    }
+
+    // Maak beide sloten aan
+    const blackInputs = createLock("blackLock");
+    const blueInputs = createLock("blueLock");
+
+    // Controleerknop
+    document.getElementById("checkButton").addEventListener("click", () => {
+      checkLock("black", blackInputs, correctCodes.black);
+      checkLock("blue", blueInputs, correctCodes.blue);
+
+      const blackCode = blackInputs.map(i => i.value).join("");
+      const blueCode = blueInputs.map(i => i.value).join("");
+
+      if (blackCode === correctCodes.black && blueCode === correctCodes.blue) {
+        launchConfetti();
+      }
+    });
+
+    // Controlefunctie
+    function checkLock(id, inputs, correctCode) {
+      const feedback = document.getElementById(id + "Feedback");
+      feedback.innerHTML = "";
+      const entered = inputs.map(i => i.value).join("");
+
+      if (entered.length === 4) {
+        for (let j = 0; j < 4; j++) {
+          const mark = document.createElement("span");
+          mark.textContent = entered[j] === correctCode[j] ? "✅" : "❌";
+          feedback.appendChild(mark);
+        }
+      } else {
+        feedback.textContent = "❗ Vul alle cijfers in";
+      }
+    }
+
+    // Confetti 🎉
+    function launchConfetti() {
+      const duration = 2000;
+      const end = Date.now() + duration;
+
+      (function frame() {
+        confetti({
+          particleCount: 6,
+          angle: 60,
+          spread: 55,
+          origin: { x: 0 },
+        });
+        confetti({
+          particleCount: 6,
+          angle: 120,
+          spread: 55,
+          origin: { x: 1 },
+        });
+
+        if (Date.now() < end) requestAnimationFrame(frame);
+      })();
+    }
+  </script>
+</body>
+</html>

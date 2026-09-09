@@ -16,8 +16,8 @@ var KEUZE_DATA = [
   ] },
   { niveau: "HAVO", klassen: [
     { naam: "4 HAVO eco", items: [
-      { titel: "Voorbeeld (zo werkt het)", bron: "oefenmateriaal/voorbeeld.html" },
-      { titel: "EU-spel", bron: "oefenmateriaal/eu-spel/index.html" }
+      { titel: "EU-spel", bron: "oefenmateriaal/eu-spel/index.html" },
+      { titel: "Elasticiteiten sloten", bron: "oefenmateriaal/elasticiteiten-sloten.html" }
     ] }
   ] },
   { niveau: "VWO", klassen: [
