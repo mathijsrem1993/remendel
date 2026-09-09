@@ -121,7 +121,7 @@ function Level3({ onComplete }) {
     : false;
 
   return (
-    <div className="w-full h-screen bg-gradient-to-b from-slate-100 to-slate-50 relative overflow-hidden flex flex-col">
+    <div className="w-[1200px] h-[700px] flex-shrink-0 bg-gradient-to-b from-slate-100 to-slate-50 relative overflow-hidden flex flex-col">
       
       {/* Hint Button */}
       <button

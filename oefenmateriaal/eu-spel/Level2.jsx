@@ -93,7 +93,7 @@ function Level2({ onComplete }) {
   };
 
   return (
-    <div className="w-full h-screen bg-gradient-to-b from-stone-100 to-stone-50 relative overflow-hidden flex flex-col">
+    <div className="w-[1200px] h-[700px] flex-shrink-0 bg-gradient-to-b from-stone-100 to-stone-50 relative overflow-hidden flex flex-col">
       {/* Hint Button */}
       <button
         onClick={() => setShowHint(!showHint)}

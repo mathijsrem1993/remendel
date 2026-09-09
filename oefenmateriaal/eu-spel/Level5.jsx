@@ -52,7 +52,7 @@ function Level5() {
   }, []);
 
   return (
-    <div className="w-full h-screen bg-gradient-to-b from-slate-100 to-slate-50 relative overflow-hidden flex flex-col">
+    <div className="w-[1200px] h-[700px] flex-shrink-0 bg-gradient-to-b from-slate-100 to-slate-50 relative overflow-hidden flex flex-col">
       
       {/* Main office scene */}
       <div className="flex-1 flex items-center justify-center relative">
