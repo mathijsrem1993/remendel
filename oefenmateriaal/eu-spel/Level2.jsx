@@ -191,8 +191,8 @@ function Level2({ onComplete }) {
           <circle cx="497.5" cy="203.35" r="3.5" fill="#FFCC00" /> {/* 11 o'clock */}
         </svg>
 
-        {/* Mario Draghi - to the RIGHT of report, with more space */}
-        <div className="absolute bottom-[140px] left-[770px] z-10">
+        {/* Mario Draghi - to the RIGHT of report, roughly boven zijn eigen naamplaatje (x 750-890) */}
+        <div className="absolute bottom-[140px] left-[698px] z-10">
           <svg width="220" height="270" viewBox="0 0 280 340">
             {/* Body - sitting, BLACK suit */}
             <g>
@@ -301,11 +301,11 @@ function Level2({ onComplete }) {
           </svg>
         </div>
 
-        {/* David van Weel - LOWER so legs are behind desk, a bit more LEFT */}
-        <div 
+        {/* David van Weel - LOWER so legs are behind desk. Lichaamsmidden op de linkerkant van de EU-vlag (x=450) */}
+        <div
           className="absolute bottom-[140px] z-10"
           style={{
-            left: '460px'
+            left: '329px'
           }}
         >
           <svg width="230" height="255" viewBox="0 0 300 320">
