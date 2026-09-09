@@ -36,11 +36,11 @@ function Level1({ onComplete }) {
   };
 
   const texts = [
-    "Hallo! Ik ben David van Weel, minister van Buitenlandse Zaken namens de VVD in het kabinet-Schoof. Als minister ben ik verantwoordelijk voor de Nederlandse betrekkingen met andere landen en onze positie binnen de Europese Unie.",
-    "Europa staat voor grote uitdagingen. Onze economische concurrentiepositie staat onder druk door China en de VS. Tegelijkertijd zien we een groeiende militaire dreiging aan onze grenzen. De vraag is: hoe reageren we hierop als Europa?",
-    "Volgende week staat er een belangrijk debat op de agenda in de Tweede Kamer. Het gaat over de toekomst van Europese integratie. Moeten we meer of minder Europees samenwerken? Op de korte termijn levert dit kosten op voor Nederland. Op de lange termijn levert dit ons een hoop op.",
-    "De discussie komt eigenlijk neer op een afweging: willen we meer autonomie behouden - dat betekent dat Nederland zelfstandig beslissingen blijft nemen - of kiezen we voor meer zekerheid door nauwer samen te werken in Europa?",
-    "Om mijn standpunt goed te onderbouwen, ga ik verschillende experts raadplegen. Zij kunnen me helpen de voor- en nadelen helder te krijgen. Trouwens, als je tijdens het spel ergens niet uitkomt, klik dan rechtsboven op het vraagteken voor hints!"
+    "Hallo! Ik ben David van Weel, minister van Buitenlandse Zaken (VVD) in het kabinet-Schoof. Ik ben verantwoordelijk voor de Nederlandse betrekkingen met andere landen en onze positie binnen de Europese Unie.",
+    "Europa staat voor grote uitdagingen: onze economische concurrentiepositie staat onder druk door China en de VS, en er is een groeiende militaire dreiging aan onze grenzen. Hoe reageren we hierop als Europa?",
+    "Volgende week is er een belangrijk Kamerdebat over de toekomst van Europese integratie: meer of minder Europees samenwerken? Dat kost Nederland op de korte termijn, maar levert op de lange termijn juist veel op.",
+    "De discussie komt neer op een afweging: meer autonomie behouden — zelfstandig beslissingen blijven nemen — of meer zekerheid door nauwer samen te werken in Europa?",
+    "Om mijn standpunt te onderbouwen raadpleeg ik verschillende experts over de voor- en nadelen. Kom je er tijdens het spel niet uit? Klik dan rechtsboven op het vraagteken voor hints!"
   ];
 
   const handleNext = () => {
@@ -74,7 +74,7 @@ function Level1({ onComplete }) {
         >
           <div className="text-center">
             <p className="text-white text-2xl mb-8 max-w-2xl px-8">
-              Welkom bij het spel over Europese integratie. Dit spel bestaat uit een fictief verhaal dat losjes op de werkelijkheid gebaseerd is en zich afspeelt in oktober 2025. Veel (leer)plezier!
+              Welkom bij dit spel over Europese integratie: een fictief verhaal, losjes gebaseerd op de werkelijkheid, dat zich afspeelt in oktober 2025. Veel (leer)plezier!
             </p>
             <button
               onClick={handleStartGame}

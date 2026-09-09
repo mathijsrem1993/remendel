@@ -26,16 +26,16 @@ function Level3({ onComplete }) {
   const texts = [
     "<strong>Van Weel:</strong> Dat was een goed gesprek. Fijn om weer in mijn werkkamer te zijn.",
     "<strong>Van Weel:</strong> Oh, ik word gebeld. Ik ben benieuwd wie dat is.",
-    "Dit was een interessant gesprek met mevrouw von der Leyen. Laten we dit verwerken in onze opbrengstenmatrix.",
-    "Je moet de correcte opbrengsten in de cel linksboven slepen. Baseer je antwoord op het gesprek met mevrouw von der Leyen. Een pijl omhoog staat voor positieve nettobaten (economische groei - investeringen) hoe meer hoe beter. Een pijl naar beneden staat voor negatieve nettobaten. Hoe meer hoe slechter.",
+    "Interessant gesprek met mevrouw von der Leyen. Laten we dit verwerken in onze opbrengstenmatrix.",
+    "Sleep de correcte opbrengsten naar de cel linksboven, gebaseerd op het gesprek met mevrouw von der Leyen. Een pijl omhoog = positieve nettobaten (economische groei - investeringen), hoe meer hoe beter. Een pijl omlaag = negatieve nettobaten, hoe meer hoe slechter.",
     "Correct! Mevrouw von der Leyen ziet dit als het meest optimistische scenario voor alle EU-lidstaten.",
-    "Ik weet nu wat de opbrengsten zijn als lidstaten allemaal wel inzetten op Europese integratie of dat allemaal niet doen. Ik ben uitgenodigd om met twee Britten in gesprek te gaan over de gevolgen van de Brexit."
+    "Nu weet ik de opbrengsten als lidstaten allemaal wél of juist niet inzetten op Europese integratie. Ik ben uitgenodigd om met twee Britten te praten over de gevolgen van de Brexit."
   ];
 
   const phoneCallTexts = [
-    "<strong>Van Weel:</strong> Mevrouw von der Leyen, wat fijn dat u mij terugbelt. Aangezien u de voorzitter bent van de Europese Commissie wil ik u graag vragen wat meer Europese integratie alle lidstaten kan opleveren.",
+    "<strong>Van Weel:</strong> Mevrouw von der Leyen, fijn dat u terugbelt. Als voorzitter van de Europese Commissie wil ik u vragen: wat kan meer Europese integratie alle lidstaten opleveren?",
     "<strong>Von der Leyen:</strong> Ik vind het altijd leuk om met een collega te spreken over Eu...pa. Wat wil u w-w-w-w....en over de Europese ..nie?",
-    "<strong>Van Weel:</strong> De verbinding is niet zo goed, u hapert een beetje. Ik ga mijn best doen om u zo goed mogelijk te verstaan.",
+    "<strong>Van Weel:</strong> De verbinding is niet goed, u hapert. Ik doe mijn best om u zo goed mogelijk te verstaan.",
     "dragdrop1", // First drag-drop exercise
     "dragdrop2", // Second drag-drop exercise
     "dragdrop3", // Third drag-drop exercise
@@ -101,13 +101,28 @@ function Level3({ onComplete }) {
 
   const handleDragOver = (e) => e.preventDefault();
 
+  // Volgorde van de woordenbank wordt één keer per spelsessie door elkaar
+  // gehusseld, zodat het juiste antwoord niet steeds op dezelfde (eerste)
+  // plek staat.
+  const shuffleArray = (arr) => {
+    const copy = [...arr];
+    for (let i = copy.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [copy[i], copy[j]] = [copy[j], copy[i]];
+    }
+    return copy;
+  };
+  const [wordBank1] = useState(() => shuffleArray(['hoge', 'gemiddelde', 'lage']));
+  const [wordBank2] = useState(() => shuffleArray(['besparen', 'verliezen', 'veel sterker', 'minder sterk']));
+  const [wordBank3] = useState(() => shuffleArray(['investeringen', 'economische groei', 'veiligheid', 'besparingen', 'integratie']));
+
   // Available words depend on which drag-drop exercise is active
-  const availableWords = phoneCallText === 3 
-    ? ['hoge', 'gemiddelde', 'lage'].filter(word => word !== filledWords.gap1 && word !== filledWords.gap2)
+  const availableWords = phoneCallText === 3
+    ? wordBank1.filter(word => word !== filledWords.gap1 && word !== filledWords.gap2)
     : phoneCallText === 4
-    ? ['besparen', 'verliezen', 'veel sterker', 'minder sterk'].filter(word => word !== filledWords.gap3 && word !== filledWords.gap4)
+    ? wordBank2.filter(word => word !== filledWords.gap3 && word !== filledWords.gap4)
     : phoneCallText === 5
-    ? ['investeringen', 'economische groei', 'veiligheid', 'besparingen', 'integratie'].filter(word => word !== filledWords.gap5 && word !== filledWords.gap6 && word !== filledWords.gap7)
+    ? wordBank3.filter(word => word !== filledWords.gap5 && word !== filledWords.gap6 && word !== filledWords.gap7)
     : [];
 
   const isDragDropComplete = phoneCallText === 3
@@ -702,7 +717,7 @@ function Level3({ onComplete }) {
                 /* First drag-drop exercise */
                 <>
                   <p className="text-base text-gray-800 leading-snug font-sans mb-4">
-                    <strong>Von der Leyen:</strong> Als we als losse landen blijven werken, verliezen we het van grootmachten zoals de VS en China, wat slecht is voor onze internationale concurrentiepositie. Door als Europa samen te werken, kunnen we veel meer investeren in nieuwe technieken en slimme innovaties, waardoor we de producten van{' '}
+                    <strong>Von der Leyen:</strong> Blijven we als losse landen werken, dan verliezen we het van grootmachten zoals de VS en China — slecht voor onze internationale concurrentiepositie. Werken we als Europa samen, dan kunnen we veel meer investeren in nieuwe technieken en innovaties, waardoor we producten van{' '}
                     <span
                       onDragOver={handleDragOver}
                       onDrop={() => handleDrop('gap1', 'hoge')}
@@ -715,7 +730,7 @@ function Level3({ onComplete }) {
                     >
                       {filledWords.gap1 || '____'}
                     </span>
-                    {' '}kwaliteit en een{' '}
+                    {' '}kwaliteit tegen een{' '}
                     <span
                       onDragOver={handleDragOver}
                       onDrop={() => handleDrop('gap2', 'lage')}
@@ -728,7 +743,7 @@ function Level3({ onComplete }) {
                     >
                       {filledWords.gap2 || '____'}
                     </span>
-                    {' '}prijs kunnen maken. Alleen door voorsprong in kennis en vernieuwing zorgen we ervoor dat onze bedrijven sterk genoeg blijven om wereldwijd te competitief te blijven.
+                    {' '}prijs kunnen maken. Alleen met voorsprong in kennis en vernieuwing blijven onze bedrijven wereldwijd competitief.
                   </p>
 
                   <div className="bg-blue-50 border-2 border-blue-300 rounded-lg p-3 mb-4">
@@ -751,7 +766,7 @@ function Level3({ onComplete }) {
                 /* Second drag-drop exercise */
                 <>
                   <p className="text-base text-gray-800 leading-snug font-sans mb-4">
-                    <strong>Von der Leyen:</strong> Het is hartstikke duur en onhandig als elk land in de EU zijn eigen tanks en software ontwikkelt die niet op elkaar aansluiten. Als we onze legers en cybersecurity samenvoegen,{' '}
+                    <strong>Von der Leyen:</strong> Het is duur en onhandig als elk land in de EU zijn eigen tanks en software ontwikkelt die niet op elkaar aansluiten. Voegen we onze legers en cybersecurity samen, dan{' '}
                     <span
                       onDragOver={handleDragOver}
                       onDrop={() => handleDrop('gap3', 'besparen')}
@@ -777,7 +792,7 @@ function Level3({ onComplete }) {
                     >
                       {filledWords.gap4 || '____'}
                     </span>
-                    {' '}tegenover landen die ons bedreigen. In je eentje ben je een makkelijk doelwit, maar als we de beveiliging van Europa samen regelen, is dat de beste garantie dat we hier veilig kunnen blijven wonen.
+                    {' '}tegenover landen die ons bedreigen. In je eentje ben je een makkelijk doelwit; samen de beveiliging van Europa regelen is de beste garantie om hier veilig te blijven wonen.
                   </p>
 
                   <div className="bg-blue-50 border-2 border-blue-300 rounded-lg p-3 mb-4">
@@ -800,7 +815,7 @@ function Level3({ onComplete }) {
                 /* Third drag-drop exercise */
                 <>
                   <p className="text-base text-gray-800 leading-snug font-sans mb-4">
-                    <strong>Von der Leyen:</strong> Natuurlijk vraagt dit op de korte termijn om flinke{' '}
+                    <strong>Von der Leyen:</strong> Dit vraagt op korte termijn om flinke{' '}
                     <span
                       onDragOver={handleDragOver}
                       onDrop={() => handleDrop('gap5', 'investeringen')}
@@ -813,7 +828,7 @@ function Level3({ onComplete }) {
                     >
                       {filledWords.gap5 || '____'}
                     </span>
-                    , maar die verdienen we op de lange termijn dubbel en dwars terug in{' '}
+                    , maar dat verdienen we op lange termijn dubbel en dwars terug in{' '}
                     <span
                       onDragOver={handleDragOver}
                       onDrop={() => handleDrop('gap6', 'economische groei')}
@@ -839,7 +854,7 @@ function Level3({ onComplete }) {
                     >
                       {filledWords.gap7 || '____'}
                     </span>
-                    . Het is simpelweg het beste scenario voor de lidstaten om nu geld in de EU te steken, zodat we later niet de rekening betalen voor onze eigen zwakte. De grote uitdaging is het creëren van draagvlak.
+                    . Het is het beste scenario voor de lidstaten om nu in de EU te investeren, zodat we later niet de rekening betalen voor onze eigen zwakte. De grote uitdaging is het creëren van draagvlak.
                   </p>
 
                   <div className="bg-blue-50 border-2 border-blue-300 rounded-lg p-3 mb-4">

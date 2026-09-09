@@ -60,6 +60,24 @@ function Level4({ onComplete }) {
   const [cellFlash, setCellFlash] = useState(null); // 'correct' or 'incorrect'
   const [showFinalText, setShowFinalText] = useState(false);
 
+  // Volgorde van de sleepbare opbrengst-opties wordt één keer per
+  // spelsessie door elkaar gehusseld, zodat het juiste antwoord niet
+  // steeds op dezelfde (eerste) plek staat.
+  const [payoffOptions] = useState(() => {
+    const options = [
+      { vk: '↓↓↓', eu: '↓↓' },
+      { vk: '↑', eu: '↑↑' },
+      { vk: '↑↑', eu: '↑' },
+      { vk: '↓↓', eu: '↓↓↓' }
+    ];
+    const shuffled = [...options];
+    for (let i = shuffled.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
+    }
+    return shuffled;
+  });
+
   // Determine bubble position based on text index
   const getBubblePosition = (index) => {
     if (index === 0 || index === 1) return 'center';
@@ -244,11 +262,11 @@ function Level4({ onComplete }) {
 
   const texts = [
     "Van Weel: Gezellig om jullie, Boris Johnson en Keir Starmer, te ontmoeten in een traditionele pub.",
-    "Van Weel: Nu het vijf jaar geleden is wil ik het met jullie hebben over de gevolgen van de Brexit. Maar eerst wil ik jullie vragen om uzelf te introduceren.",
-    "Johnson: Hallo, van 2019 tot en met 2022, en dus tijdens de Brexit, was ik premier van het VK. Ik was een uitgesproken voorstander van Brexit en vond dat het Verenigd Koninkrijk beter af zou zijn buiten de EU. Volgens mij zou Brexit zorgen voor meer controle over eigen wetten en grenzen en nieuwe handelsmogelijkheden buiten Europa.",
-    "Starmer: Hallo, sinds 2020 ben ik leider van de Labour Party en sinds 2024 premier van het Verenigd Koninkrijk. Ik was kritisch over Brexit en heb steeds gewaarschuwd voor de mogelijke economische nadelen. Volgens mij zou het verlaten van de EU leiden tot meer handelsbarrières, minder investeringen en economische schade voor het VK.",
-    "Van Weel: Bedankt voor jullie introductie. Nu vertel ik meer over het spel. Telkens geef ik een stelling. Jullie mogen reageren op de stelling. De leerlingen thuis krijgen een bron om te controleren wat daadwerkelijk waar is.",
-    "Door de juiste optie aan te klikken wordt er in de impactmeter aangegeven of de Brexit meer economische impact had voor het VK of de EU. Hier is de eerste stelling."
+    "Van Weel: Nu het vijf jaar geleden is, wil ik het met jullie hebben over de gevolgen van de Brexit. Maar eerst: stel uzelf even voor.",
+    "Johnson: Hallo, van 2019 tot en met 2022 — tijdens de Brexit — was ik premier van het VK. Ik was een uitgesproken voorstander en vond dat het VK beter af zou zijn buiten de EU: meer controle over eigen wetten en grenzen, en nieuwe handelsmogelijkheden buiten Europa.",
+    "Starmer: Hallo, sinds 2020 ben ik leider van de Labour Party en sinds 2024 premier van het Verenigd Koninkrijk. Ik was kritisch over Brexit en waarschuwde steeds voor de economische nadelen: meer handelsbarrières, minder investeringen en economische schade voor het VK.",
+    "Van Weel: Bedankt voor jullie introductie. Zo werkt het spel: ik geef telkens een stelling, jullie reageren erop, en de leerlingen thuis krijgen een bron om te checken wat daadwerkelijk waar is.",
+    "Door de juiste optie te kiezen laat de impactmeter zien of Brexit meer economische impact had voor het VK of de EU. Hier is de eerste stelling."
   ];
 
   const handleNext = () => {
@@ -1126,7 +1144,7 @@ function Level4({ onComplete }) {
           >
             <div className="relative bg-white rounded-2xl px-6 py-4 shadow-2xl border-4 border-gray-800 max-w-xs">
               <p className="text-base text-gray-800 leading-snug font-sans">
-                <strong>Starmer:</strong> Er zijn duidelijk extra handelskosten en papierwerk gekomen voor Britse exporteurs. Dit bemoeilijkt de handel.
+                <strong>Starmer:</strong> Er zijn duidelijk extra handelskosten en papierwerk voor Britse exporteurs bijgekomen, wat de handel bemoeilijkt.
               </p>
             </div>
           </div>
@@ -1154,7 +1172,7 @@ function Level4({ onComplete }) {
           >
             <div className="relative bg-white rounded-2xl px-6 py-4 shadow-2xl border-4 border-gray-800 max-w-xs">
               <p className="text-base text-gray-800 leading-snug font-sans">
-                <strong>Johnson:</strong> Investeringsschommelingen komen door wereldwijde onzekerheid, niet door Brexit. Zo zijn we in het VK een voorloper in de ontwikkeling van kweekvlees. Onder de EU-regels had dit niet gekund.
+                <strong>Johnson:</strong> Investeringsschommelingen komen door wereldwijde onzekerheid, niet door Brexit. Zo lopen we in het VK juist voorop bij de ontwikkeling van kweekvlees — onder EU-regels had dat niet gekund.
               </p>
             </div>
           </div>
@@ -1277,34 +1295,16 @@ function Level4({ onComplete }) {
             <div className="bg-white rounded-lg shadow-xl p-4 border-2 border-gray-800">
               <h3 className="text-lg font-bold text-center mb-3 text-gray-800">Opbrengsten</h3>
               <div className="flex flex-col gap-2">
-                <div
-                  draggable
-                  onDragStart={() => handleDragStart({vk: '↓↓↓', eu: '↓↓'})}
-                  className="p-2 bg-blue-100 border-2 border-blue-400 rounded cursor-move hover:bg-blue-200 text-center"
-                >
-                  <span className="text-sm">↓↓↓, ↓↓</span>
-                </div>
-                <div
-                  draggable
-                  onDragStart={() => handleDragStart({vk: '↑', eu: '↑↑'})}
-                  className="p-2 bg-blue-100 border-2 border-blue-400 rounded cursor-move hover:bg-blue-200 text-center"
-                >
-                  <span className="text-sm">↑, ↑↑</span>
-                </div>
-                <div
-                  draggable
-                  onDragStart={() => handleDragStart({vk: '↑↑', eu: '↑'})}
-                  className="p-2 bg-blue-100 border-2 border-blue-400 rounded cursor-move hover:bg-blue-200 text-center"
-                >
-                  <span className="text-sm">↑↑, ↑</span>
-                </div>
-                <div
-                  draggable
-                  onDragStart={() => handleDragStart({vk: '↓↓', eu: '↓↓↓'})}
-                  className="p-2 bg-blue-100 border-2 border-blue-400 rounded cursor-move hover:bg-blue-200 text-center"
-                >
-                  <span className="text-sm">↓↓, ↓↓↓</span>
-                </div>
+                {payoffOptions.map((option, i) => (
+                  <div
+                    key={i}
+                    draggable
+                    onDragStart={() => handleDragStart(option)}
+                    className="p-2 bg-blue-100 border-2 border-blue-400 rounded cursor-move hover:bg-blue-200 text-center"
+                  >
+                    <span className="text-sm">{option.vk}, {option.eu}</span>
+                  </div>
+                ))}
               </div>
             </div>
           </div>
@@ -1437,7 +1437,7 @@ function Level4({ onComplete }) {
               
               {/* Article Text */}
               <p className="text-sm text-gray-700 leading-relaxed">
-                Brexit heeft geleid tot een daling van 15% in de handelsintensiteit tussen het VK en de EU door toegenomen administratieve lasten en douanecontroles. De economische schade voor het VK is aanzienlijk groter dan voor EU-lidstaten.
+                Brexit leidde tot een daling van 15% in de handelsintensiteit tussen VK en EU, door meer administratieve lasten en douanecontroles. De economische schade voor het VK is aanzienlijk groter dan voor EU-lidstaten.
               </p>
             </div>
           </div>
@@ -1471,7 +1471,7 @@ function Level4({ onComplete }) {
               
               {/* Article Text */}
               <p className="text-sm text-gray-700 leading-relaxed">
-                Brexit maakt het Britse bbp op lange termijn 2-3% lager door verminderde handel en minder buitenlandse investeringen. Dit effect is structureel en blijvend vanwege permanente handelsbarrières. Ondanks dat andere zaken meespelen is de Brexit de belangrijkste oorzaak.
+                Brexit maakt het Britse bbp op lange termijn 2-3% lager, door minder handel en buitenlandse investeringen. Dit effect is structureel door de permanente handelsbarrières. Andere factoren spelen mee, maar Brexit is de belangrijkste oorzaak.
               </p>
             </div>
           </div>
@@ -1496,7 +1496,7 @@ function Level4({ onComplete }) {
               
               {/* Article Text */}
               <p className="text-sm text-gray-700 leading-relaxed">
-                Bedrijfsinvesteringen in het VK groeiden sinds Brexit significant trager dan in vergelijkbare economieën door onzekerheid over toekomstige handelsrelaties. Ook EU-bedrijven stelden investeringen in het VK uit.
+                Bedrijfsinvesteringen in het VK groeiden sinds Brexit trager dan in vergelijkbare economieën door onzekerheid over toekomstige handelsrelaties, en ook EU-bedrijven stelden investeringen in het VK uit.
               </p>
             </div>
           </div>
@@ -1697,7 +1697,7 @@ function Level4({ onComplete }) {
           >
             <div className="relative bg-white rounded-2xl px-6 py-4 shadow-2xl border-4 border-gray-800 max-w-md">
               <p className="text-base text-gray-800 leading-snug font-sans">
-                <strong>Van Weel:</strong> Heel goed. Hoewel het ook voor de EU negatieve gevolgen heeft, zijn de gevolgen relatief groter voor het VK. Laten we dit in de impactmeter verwerken.
+                <strong>Van Weel:</strong> Heel goed. Ook de EU ondervindt gevolgen, maar relatief groter voor het VK. Laten we dit in de impactmeter verwerken.
               </p>
             </div>
           </div>
@@ -1813,7 +1813,7 @@ function Level4({ onComplete }) {
               {/* Text content based on index */}
               {endingTextIndex === 0 && (
                 <p className="text-base text-gray-800 leading-snug font-sans mb-4">
-                  <strong>Van Weel:</strong> Het is goed om te bedenken dat we ons tijdens dit debat hebben gefocust op economische gevolgen. Brexit heeft veel andere gevolgen gehad voor het VK. Zo hebben ze meer grip op regelgeving en migratie gekregen.
+                  <strong>Van Weel:</strong> Let wel: dit debat ging alleen over economische gevolgen. Brexit had ook veel andere gevolgen voor het VK, zoals meer grip op regelgeving en migratie.
                 </p>
               )}
               {endingTextIndex === 1 && (
@@ -1823,7 +1823,7 @@ function Level4({ onComplete }) {
               )}
               {endingTextIndex === 2 && (
                 <p className="text-base text-gray-800 leading-snug font-sans mb-4">
-                  <strong>Van Weel:</strong> We moeten de extremere situatie van het VK vertalen naar de situatie van Nederland. Als we als enige het huidige beleid van de EU willen voortzetten blokkeren we EU-integratie of zwakken we deze af. Onze netto baten dalen hard, terwijl de netto baten van de overige lidstaten ook lager uitvallen.
+                  <strong>Van Weel:</strong> We moeten de extremere situatie van het VK vertalen naar Nederland. Willen wij als enige het huidige EU-beleid voortzetten, dan blokkeren of verzwakken we EU-integratie: onze nettobaten dalen hard, en ook die van de overige lidstaten vallen lager uit.
                 </p>
               )}
               
@@ -1857,7 +1857,7 @@ function Level4({ onComplete }) {
           >
             <div className="relative bg-white rounded-2xl px-6 py-4 shadow-2xl border-4 border-gray-800 max-w-lg">
               <p className="text-base text-gray-800 leading-snug font-sans mb-4">
-                <strong>Van Weel:</strong> Heel goed! Als één land niet inzet op meer EU-integratie dan schaadt het zichzelf het meest, maar het heeft ook een negatief effect op de andere lidstaten.
+                <strong>Van Weel:</strong> Heel goed! Zet één land niet in op meer EU-integratie, dan schaadt dat vooral zichzelf, maar het raakt ook de andere lidstaten.
               </p>
               <div className="flex justify-center">
                 <button

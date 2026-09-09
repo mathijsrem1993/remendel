@@ -740,7 +740,7 @@ function Level5() {
               {conversationStep === 0 && (
                 <>
                   <p className="text-lg text-gray-800 leading-relaxed font-sans mb-4">
-                    <strong>Van Weel:</strong> Het is goed om na mijn bezoek aan het VK weer in Nederland te zijn. Vandaag verwacht ik nog twee politici die hun mening geven over het Nederlands standpunt betreft EU-integratie.
+                    <strong>Van Weel:</strong> Fijn om na mijn bezoek aan het VK weer in Nederland te zijn. Vandaag verwacht ik nog twee politici die hun mening geven over het Nederlandse standpunt over EU-integratie.
                   </p>
                   <div className="flex justify-end">
                     <span 
@@ -791,7 +791,7 @@ function Level5() {
               {conversationStep === 2 && (
                 <>
                   <p className="text-lg text-gray-800 leading-relaxed font-sans mb-4">
-                    <strong>Van Weel:</strong> Ik wil u vragen naar een situatie waarin andere lidstaten niet inzetten op EU-integratie, wat zou Nederland in dit geval moeten doen?
+                    <strong>Van Weel:</strong> Stel dat andere lidstaten niet inzetten op EU-integratie — wat zou Nederland dan moeten doen?
                   </p>
                   <div className="flex justify-between">
                     <span 
@@ -919,7 +919,7 @@ function Level5() {
               {conversationStep === 9 && (
                 <>
                   <p className="text-lg text-gray-800 leading-relaxed font-sans mb-4">
-                    <strong>Van Weel:</strong> U neemt duidelijk stelling in. Bedankt voor het delen. Ik neem dit mee in mijn voorbereiding op het debat. Fijne dag!
+                    <strong>Van Weel:</strong> U neemt duidelijk stelling in. Bedankt voor het delen — ik neem dit mee in mijn voorbereiding op het debat. Fijne dag!
                   </p>
                   <div className="flex justify-between">
                     <span 
@@ -959,7 +959,7 @@ function Level5() {
               {conversationStep === 10 && (
                 <>
                   <p className="text-lg text-gray-800 leading-relaxed font-sans mb-4">
-                    <strong>Van Weel:</strong> Hoewel Wilders erg sterk stelling in neemt heeft hij wel een punt. Wat is het nut van inzetten op meer Europese integratie als de rest van de EU-lidstaten dit niet doet?
+                    <strong>Van Weel:</strong> Wilders neemt sterk stelling, maar heeft wel een punt. Wat is het nut van meer Europese integratie als de rest van de EU-lidstaten dit niet doet?
                   </p>
                   <div className="flex justify-between">
                     <span 
@@ -989,7 +989,7 @@ function Level5() {
               {conversationStep === 11 && (
                 <>
                   <p className="text-lg text-gray-800 font-sans mb-3" style={{lineHeight: '1.3'}}>
-                    <strong>Van Weel:</strong> Nederland moet veel extra investeren, terwijl de kans dat we in ons eentje alle andere lidstaten op andere gedachten kunnen brengen vrij klein is. Dit scenario levert ons de laagst mogelijke netto baten op.
+                    <strong>Van Weel:</strong> Nederland moet veel extra investeren, terwijl de kans klein is dat we in ons eentje alle andere lidstaten op andere gedachten brengen. Dit scenario levert de laagst mogelijke netto baten op.
                   </p>
                   <div className="flex justify-between">
                     <span 
@@ -1039,7 +1039,7 @@ function Level5() {
               {conversationStep === 13 && (
                 <>
                   <p className="text-lg text-gray-800 font-sans mb-3" style={{lineHeight: '1.3'}}>
-                    <strong>Van Weel:</strong> Om conclusies te trekken en mij van advies te voorzien heb je een stencil nodig. Steek je vinger op en vraag dit aan je docent. Ik kijk uit naar het advies dat ik van je ontvang. Doeg!
+                    <strong>Van Weel:</strong> Om conclusies te trekken en mij te adviseren heb je een stencil nodig — steek je vinger op en vraag dit aan je docent. Ik kijk uit naar je advies. Doeg!
                   </p>
                   <div className="flex justify-end">
                     <span 
@@ -1080,7 +1080,7 @@ function Level5() {
               {conversationStep === 3 && (
                 <>
                   <p className="text-lg text-gray-800 leading-relaxed font-sans mb-4">
-                    <strong>Timmermans:</strong> Als voormalig vicevoorzitter van de Europese Commissie verbaast het u vast niet als ik zeg dat Nederland juist in zo'n situatie het voortouw moet nemen.
+                    <strong>Timmermans:</strong> Als voormalig vicevoorzitter van de Europese Commissie zal het u niet verbazen dat ik vind dat Nederland juist dán het voortouw moet nemen.
                   </p>
                   <div className="flex justify-between">
                     <span 
@@ -1112,7 +1112,7 @@ function Level5() {
               {conversationStep === 4 && (
                 <>
                   <p className="text-lg text-gray-800 leading-relaxed font-sans mb-4">
-                    <strong>Timmermans:</strong> We moeten blijven investeren in verdere Europese integratie. Alleen door consequent te kiezen voor meer samenwerking kan Europa sterker, veiliger en weerbaarder worden.
+                    <strong>Timmermans:</strong> We moeten blijven investeren in verdere Europese integratie. Alleen door consequent voor meer samenwerking te kiezen wordt Europa sterker, veiliger en weerbaarder.
                   </p>
                   <div className="flex justify-between">
                     <span 
@@ -1160,7 +1160,7 @@ function Level5() {
               {conversationStep === 8 && (
                 <>
                   <p className="text-lg text-gray-800 leading-relaxed font-sans mb-4">
-                    <strong>Wilders:</strong> Alleen maar blijven drammen over meer EU-integratie terwijl andere landen afhaken is natuurlijk totaal onverantwoord en weggegooid geld. Nederland moet stoppen met het braafste jongetje van de klas spelen!
+                    <strong>Wilders:</strong> Blijven drammen over meer EU-integratie terwijl andere landen afhaken is onverantwoord en weggegooid geld. Nederland moet stoppen met het braafste jongetje van de klas te spelen!
                   </p>
                   <div className="flex justify-between">
                     <span 
