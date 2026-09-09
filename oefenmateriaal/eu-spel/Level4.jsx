@@ -288,9 +288,13 @@ function Level4({ onComplete }) {
 
   const handleToggleArticle = () => {
     if (showArticle) {
-      // Hide article and show quiz
+      // Hide article and show quiz. De bron is nu beoordeeld: verberg de
+      // knop voor de rest van deze stelling, anders kan de bron opnieuw
+      // geopend worden terwijl de quiz (of het feedback/impactmeter-
+      // gedeelte) al bezig is.
       setShowArticle(false);
       setShowQuiz(true);
+      setShowSourceButton(false);
     } else {
       // Hide response bubbles when article opens
       setJohnsonResponse(false);
@@ -357,8 +361,10 @@ function Level4({ onComplete }) {
 
   const handleToggleArticle2 = () => {
     if (showArticle2) {
+      // Bron beoordeeld: knop blijft nu verborgen tot de volgende stelling
       setShowArticle2(false);
       setShowQuiz2(true);
+      setShowSourceButton2(false);
     } else {
       setJohnsonResponse2(false);
       setStarmerResponse2(false);
@@ -506,8 +512,10 @@ function Level4({ onComplete }) {
 
   const handleToggleArticle3 = () => {
     if (showArticle3) {
+      // Bron beoordeeld: knop blijft nu verborgen tot het einde van het level
       setShowArticle3(false);
       setShowQuiz3(true);
+      setShowSourceButton3(false);
     } else {
       setJohnsonResponse3(false);
       setStarmerResponse3(false);
