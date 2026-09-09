@@ -378,7 +378,7 @@ function Level1({ onComplete }) {
         {showSpeechBubble && texts[currentText] && (
           <div 
             key={speechBubbleKey}
-            className="absolute top-8 right-28 z-10 animate-poof"
+            className="absolute top-8 right-16 z-10 animate-poof"
             style={{maxWidth: '900px'}}
           >
             <div className="relative bg-white rounded-2xl px-8 py-6 shadow-2xl border-4 border-gray-800">
