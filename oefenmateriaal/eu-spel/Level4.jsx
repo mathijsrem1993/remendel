@@ -1,5 +1,15 @@
 const { useState, useEffect } = React;
 
+// Husselt een array (Fisher-Yates), zonder het origineel te wijzigen.
+function shuffleArray(arr) {
+  const copy = [...arr];
+  for (let i = copy.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [copy[i], copy[j]] = [copy[j], copy[i]];
+  }
+  return copy;
+}
+
 function Level4({ onComplete }) {
   const [currentText, setCurrentText] = useState(0);
   const [showHint, setShowHint] = useState(false);
@@ -63,20 +73,33 @@ function Level4({ onComplete }) {
   // Volgorde van de sleepbare opbrengst-opties wordt één keer per
   // spelsessie door elkaar gehusseld, zodat het juiste antwoord niet
   // steeds op dezelfde (eerste) plek staat.
-  const [payoffOptions] = useState(() => {
-    const options = [
-      { vk: '↓↓↓', eu: '↓↓' },
-      { vk: '↑', eu: '↑↑' },
-      { vk: '↑↑', eu: '↑' },
-      { vk: '↓↓', eu: '↓↓↓' }
-    ];
-    const shuffled = [...options];
-    for (let i = shuffled.length - 1; i > 0; i--) {
-      const j = Math.floor(Math.random() * (i + 1));
-      [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
-    }
-    return shuffled;
-  });
+  const [payoffOptions] = useState(() => shuffleArray([
+    { vk: '↓↓↓', eu: '↓↓' },
+    { vk: '↑', eu: '↑↑' },
+    { vk: '↑↑', eu: '↑' },
+    { vk: '↓↓', eu: '↓↓↓' }
+  ]));
+
+  // Idem voor de meerkeuzevragen: welk antwoord "correct" is, staat vast,
+  // maar de volgorde (en dus de letter A/B/C/D) wisselt per spelsessie.
+  const [quizOptions1] = useState(() => shuffleArray([
+    { id: 'correct', text: 'Vooral het VK ondervindt negatieve gevolgen' },
+    { id: 'w1', text: 'Vooral de EU ondervindt negatieve gevolgen' },
+    { id: 'w2', text: 'Het VK en de EU worden ongeveer even hard geraakt' },
+    { id: 'w3', text: 'Er is geen duidelijk economisch effect' }
+  ]));
+  const [quizOptions2] = useState(() => shuffleArray([
+    { id: 'correct', text: 'Het VK heeft economische schade ondervonden door Brexit' },
+    { id: 'w1', text: 'De EU ondervindt waarschijnlijk de meeste schade' },
+    { id: 'w2', text: 'Brexit heeft waarschijnlijk geen merkbaar effect' },
+    { id: 'w3', text: 'De economie van het VK groeit juist door Brexit' }
+  ]));
+  const [quizOptions3] = useState(() => shuffleArray([
+    { id: 'correct', text: 'Vooral het VK ondervindt negatieve gevolgen' },
+    { id: 'w1', text: 'Vooral de EU ondervindt negatieve gevolgen' },
+    { id: 'w2', text: 'VK en EU ongeveer even' },
+    { id: 'w3', text: 'Geen duidelijk effect' }
+  ]));
 
   // Determine bubble position based on text index
   const getBubblePosition = (index) => {
@@ -321,10 +344,10 @@ function Level4({ onComplete }) {
     }
   };
 
-  const handleAnswerClick = (answer) => {
+  const handleAnswerClick = (answer, optionId) => {
     const isStatement2 = currentStatement === 2;
     const isStatement3 = currentStatement === 3;
-    
+
     if (isStatement3) {
       setSelectedAnswer3(answer);
     } else if (isStatement2) {
@@ -332,9 +355,9 @@ function Level4({ onComplete }) {
     } else {
       setSelectedAnswer(answer);
     }
-    
+
     setTimeout(() => {
-      if (answer === 'A') {
+      if (optionId === 'correct') {
         // Correct answer
         if (isStatement3) {
           setShowQuiz3(false);
@@ -1511,54 +1534,25 @@ function Level4({ onComplete }) {
               </h3>
               
               <div className="space-y-2">
-                <button 
-                  onClick={() => handleAnswerClick('A')}
-                  className={`w-full text-left p-2.5 rounded-lg border-2 transition-all text-xs ${
-                    selectedAnswer === 'A' 
-                      ? 'border-green-600 bg-green-50' 
-                      : selectedAnswer && selectedAnswer !== 'A'
-                      ? 'border-gray-300'
-                      : 'border-gray-300 hover:border-blue-600 hover:bg-blue-50'
-                  }`}
-                >
-                  <span className="font-bold">A.</span> Vooral het VK ondervindt negatieve gevolgen
-                </button>
-                <button 
-                  onClick={() => handleAnswerClick('B')}
-                  className={`w-full text-left p-2.5 rounded-lg border-2 transition-all text-xs ${
-                    selectedAnswer === 'B' 
-                      ? 'border-red-600 bg-red-50' 
-                      : selectedAnswer && selectedAnswer !== 'B'
-                      ? 'border-gray-300'
-                      : 'border-gray-300 hover:border-blue-600 hover:bg-blue-50'
-                  }`}
-                >
-                  <span className="font-bold">B.</span> Vooral de EU ondervindt negatieve gevolgen
-                </button>
-                <button 
-                  onClick={() => handleAnswerClick('C')}
-                  className={`w-full text-left p-2.5 rounded-lg border-2 transition-all text-xs ${
-                    selectedAnswer === 'C' 
-                      ? 'border-red-600 bg-red-50' 
-                      : selectedAnswer && selectedAnswer !== 'C'
-                      ? 'border-gray-300'
-                      : 'border-gray-300 hover:border-blue-600 hover:bg-blue-50'
-                  }`}
-                >
-                  <span className="font-bold">C.</span> Het VK en de EU worden ongeveer even hard geraakt
-                </button>
-                <button 
-                  onClick={() => handleAnswerClick('D')}
-                  className={`w-full text-left p-2.5 rounded-lg border-2 transition-all text-xs ${
-                    selectedAnswer === 'D' 
-                      ? 'border-red-600 bg-red-50' 
-                      : selectedAnswer && selectedAnswer !== 'D'
-                      ? 'border-gray-300'
-                      : 'border-gray-300 hover:border-blue-600 hover:bg-blue-50'
-                  }`}
-                >
-                  <span className="font-bold">D.</span> Er is geen duidelijk economisch effect
-                </button>
+                {quizOptions1.map((option, i) => {
+                  const letter = String.fromCharCode(65 + i); // A, B, C, D
+                  const isSelected = selectedAnswer === letter;
+                  return (
+                    <button
+                      key={option.id}
+                      onClick={() => handleAnswerClick(letter, option.id)}
+                      className={`w-full text-left p-2.5 rounded-lg border-2 transition-all text-xs ${
+                        isSelected
+                          ? (option.id === 'correct' ? 'border-green-600 bg-green-50' : 'border-red-600 bg-red-50')
+                          : selectedAnswer
+                          ? 'border-gray-300'
+                          : 'border-gray-300 hover:border-blue-600 hover:bg-blue-50'
+                      }`}
+                    >
+                      <span className="font-bold">{letter}.</span> {option.text}
+                    </button>
+                  );
+                })}
               </div>
             </div>
           </div>
@@ -1573,54 +1567,25 @@ function Level4({ onComplete }) {
               </h3>
               
               <div className="space-y-2">
-                <button 
-                  onClick={() => handleAnswerClick('A')}
-                  className={`w-full text-left p-2.5 rounded-lg border-2 transition-all text-xs ${
-                    selectedAnswer2 === 'A' 
-                      ? 'border-green-600 bg-green-50' 
-                      : selectedAnswer2 && selectedAnswer2 !== 'A'
-                      ? 'border-gray-300'
-                      : 'border-gray-300 hover:border-blue-600 hover:bg-blue-50'
-                  }`}
-                >
-                  <span className="font-bold">A.</span> Het VK heeft economische schade ondervonden door Brexit
-                </button>
-                <button 
-                  onClick={() => handleAnswerClick('B')}
-                  className={`w-full text-left p-2.5 rounded-lg border-2 transition-all text-xs ${
-                    selectedAnswer2 === 'B' 
-                      ? 'border-red-600 bg-red-50' 
-                      : selectedAnswer2 && selectedAnswer2 !== 'B'
-                      ? 'border-gray-300'
-                      : 'border-gray-300 hover:border-blue-600 hover:bg-blue-50'
-                  }`}
-                >
-                  <span className="font-bold">B.</span> De EU ondervindt waarschijnlijk de meeste schade
-                </button>
-                <button 
-                  onClick={() => handleAnswerClick('C')}
-                  className={`w-full text-left p-2.5 rounded-lg border-2 transition-all text-xs ${
-                    selectedAnswer2 === 'C' 
-                      ? 'border-red-600 bg-red-50' 
-                      : selectedAnswer2 && selectedAnswer2 !== 'C'
-                      ? 'border-gray-300'
-                      : 'border-gray-300 hover:border-blue-600 hover:bg-blue-50'
-                  }`}
-                >
-                  <span className="font-bold">C.</span> Brexit heeft waarschijnlijk geen merkbaar effect
-                </button>
-                <button 
-                  onClick={() => handleAnswerClick('D')}
-                  className={`w-full text-left p-2.5 rounded-lg border-2 transition-all text-xs ${
-                    selectedAnswer2 === 'D' 
-                      ? 'border-red-600 bg-red-50' 
-                      : selectedAnswer2 && selectedAnswer2 !== 'D'
-                      ? 'border-gray-300'
-                      : 'border-gray-300 hover:border-blue-600 hover:bg-blue-50'
-                  }`}
-                >
-                  <span className="font-bold">D.</span> De economie van het VK groeit juist door Brexit
-                </button>
+                {quizOptions2.map((option, i) => {
+                  const letter = String.fromCharCode(65 + i); // A, B, C, D
+                  const isSelected = selectedAnswer2 === letter;
+                  return (
+                    <button
+                      key={option.id}
+                      onClick={() => handleAnswerClick(letter, option.id)}
+                      className={`w-full text-left p-2.5 rounded-lg border-2 transition-all text-xs ${
+                        isSelected
+                          ? (option.id === 'correct' ? 'border-green-600 bg-green-50' : 'border-red-600 bg-red-50')
+                          : selectedAnswer2
+                          ? 'border-gray-300'
+                          : 'border-gray-300 hover:border-blue-600 hover:bg-blue-50'
+                      }`}
+                    >
+                      <span className="font-bold">{letter}.</span> {option.text}
+                    </button>
+                  );
+                })}
               </div>
             </div>
           </div>
@@ -1635,54 +1600,25 @@ function Level4({ onComplete }) {
               </h3>
               
               <div className="space-y-2">
-                <button 
-                  onClick={() => handleAnswerClick('A')}
-                  className={`w-full text-left p-2.5 rounded-lg border-2 transition-all text-xs ${
-                    selectedAnswer3 === 'A' 
-                      ? 'border-green-600 bg-green-50' 
-                      : selectedAnswer3 && selectedAnswer3 !== 'A'
-                      ? 'border-gray-300'
-                      : 'border-gray-300 hover:border-blue-600 hover:bg-blue-50'
-                  }`}
-                >
-                  <span className="font-bold">A.</span> Vooral het VK ondervindt negatieve gevolgen
-                </button>
-                <button 
-                  onClick={() => handleAnswerClick('B')}
-                  className={`w-full text-left p-2.5 rounded-lg border-2 transition-all text-xs ${
-                    selectedAnswer3 === 'B' 
-                      ? 'border-red-600 bg-red-50' 
-                      : selectedAnswer3 && selectedAnswer3 !== 'B'
-                      ? 'border-gray-300'
-                      : 'border-gray-300 hover:border-blue-600 hover:bg-blue-50'
-                  }`}
-                >
-                  <span className="font-bold">B.</span> Vooral de EU ondervindt negatieve gevolgen
-                </button>
-                <button 
-                  onClick={() => handleAnswerClick('C')}
-                  className={`w-full text-left p-2.5 rounded-lg border-2 transition-all text-xs ${
-                    selectedAnswer3 === 'C' 
-                      ? 'border-red-600 bg-red-50' 
-                      : selectedAnswer3 && selectedAnswer3 !== 'C'
-                      ? 'border-gray-300'
-                      : 'border-gray-300 hover:border-blue-600 hover:bg-blue-50'
-                  }`}
-                >
-                  <span className="font-bold">C.</span> VK en EU ongeveer even
-                </button>
-                <button 
-                  onClick={() => handleAnswerClick('D')}
-                  className={`w-full text-left p-2.5 rounded-lg border-2 transition-all text-xs ${
-                    selectedAnswer3 === 'D' 
-                      ? 'border-red-600 bg-red-50' 
-                      : selectedAnswer3 && selectedAnswer3 !== 'D'
-                      ? 'border-gray-300'
-                      : 'border-gray-300 hover:border-blue-600 hover:bg-blue-50'
-                  }`}
-                >
-                  <span className="font-bold">D.</span> Geen duidelijk effect
-                </button>
+                {quizOptions3.map((option, i) => {
+                  const letter = String.fromCharCode(65 + i); // A, B, C, D
+                  const isSelected = selectedAnswer3 === letter;
+                  return (
+                    <button
+                      key={option.id}
+                      onClick={() => handleAnswerClick(letter, option.id)}
+                      className={`w-full text-left p-2.5 rounded-lg border-2 transition-all text-xs ${
+                        isSelected
+                          ? (option.id === 'correct' ? 'border-green-600 bg-green-50' : 'border-red-600 bg-red-50')
+                          : selectedAnswer3
+                          ? 'border-gray-300'
+                          : 'border-gray-300 hover:border-blue-600 hover:bg-blue-50'
+                      }`}
+                    >
+                      <span className="font-bold">{letter}.</span> {option.text}
+                    </button>
+                  );
+                })}
               </div>
             </div>
           </div>
