@@ -736,7 +736,7 @@ function Level5() {
             }}
             key={speechBubbleKey}
           >
-            <div className="relative bg-white rounded-2xl px-8 py-4 shadow-2xl border-4 border-gray-800" style={{maxWidth: (conversationStep === 11 || conversationStep === 13) ? '1350px' : '1200px'}}>
+            <div className="relative bg-white rounded-2xl px-8 py-4 shadow-2xl border-4 border-gray-800" style={{width: '780px'}}>
               {conversationStep === 0 && (
                 <>
                   <p className="text-lg text-gray-800 leading-relaxed font-sans mb-4">
