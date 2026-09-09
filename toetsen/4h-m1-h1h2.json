@@ -93,6 +93,7 @@
       "max": 3,
       "oefenBoekje": "",
       "oefenPE": "",
+      "geenOefenadvies": true,
       "specifiek": "Dit is pure begripskennis. Leer de definities uit de begrippenlijst van het oefenboekje, opgaven maken helpt hier niet."
     },
     {
@@ -109,6 +110,7 @@
       "max": 3,
       "oefenBoekje": "",
       "oefenPE": "",
+      "geenOefenadvies": true,
       "specifiek": "Lees elke bewering woord voor woord. Bij 'beperkte behoeftes' en 'minder middelen dan behoeftes' draait alles om een enkel woord."
     },
     {
