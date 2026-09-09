@@ -633,7 +633,8 @@ function laadConfig(config) {
     vragen: (config.vragen || []).map(v => ({
       nr: String(v.nr), onderwerp: v.onderwerp || "", wds: (v.wds || "S"), max: Number(v.max) || 1,
       oefenBoekje: v.oefenBoekje || "", oefenPE: v.oefenPE || "",
-      onderwerpen: Array.isArray(v.onderwerpen) ? v.onderwerpen.map(String) : []
+      onderwerpen: Array.isArray(v.onderwerpen) ? v.onderwerpen.map(String) : [],
+      geenOefenadvies: v.geenOefenadvies === true
     }))
   };
   TOETS_ID = String(config.id || config.titel || "toets");
@@ -841,6 +842,110 @@ function controleerPrintwens() {
 }
 
 // ======================================================================
+// OPGAVENNOTATIE: subdelen samenvoegen, bereiken vormen
+// Een opgave als "18a" bestaat uit grondnummer "18" en subdeel "a" (bij
+// grondnummer 1 en 2 ook romeinse subdelen, bv. "2-III"). Horen ALLE
+// stof-subdelen van een grondnummer (binnen dezelfde paragraaf/sectie)
+// bij dit onderwerp, dan tonen we alleen het kale grondnummer. Hoort
+// maar een deel erbij, dan tonen we die specifieke subdelen. Drie of
+// meer opeenvolgende volledige grondnummers worden samengevoegd tot
+// "X t/m Y".
+// ======================================================================
+function grondnummerVan(opgave) {
+  const m = /^(\d+)(?:[a-z]|-[IVXLC]+)$/.exec(String(opgave));
+  return m ? m[1] : String(opgave);
+}
+
+function vergelijkOpgave(a, b) {
+  const ga = Number(grondnummerVan(a)), gb = Number(grondnummerVan(b));
+  if (ga !== gb) return ga - gb;
+  return String(a).localeCompare(String(b));
+}
+
+function dutchLijst(items) {
+  if (items.length === 0) return "";
+  if (items.length === 1) return items[0];
+  return items.slice(0, -1).join(", ") + " en " + items[items.length - 1];
+}
+
+// Groepeert al-gefilterde rijen (stof:true + hoort bij dit onderwerp/deze
+// vraag) per grondnummer binnen dezelfde locatie, en bepaalt per groep of
+// dat grondnummer volledig is t.o.v. alle stof-rijen met dat grondnummer
+// op die locatie (ongeacht paginanummer). "alleRijen" is de ongefilterde
+// pool (BOEK_INDEX.rijen) waarin dat universum wordt opgezocht.
+function groepeerOpGrondnummer(matchRijen, alleRijen, bron) {
+  const isLesboek = bron === "lesboek";
+  const lokatieVan = r => isLesboek ? `${r.hoofdstuk}|${r.paragraaf}` : `${r.sectie}`;
+
+  const groepen = new Map();
+  matchRijen.forEach(r => {
+    const gn = grondnummerVan(r.opgave);
+    const sleutel = `${lokatieVan(r)}|${gn}`;
+    if (!groepen.has(sleutel)) groepen.set(sleutel, { lokatie: lokatieVan(r), grondnummer: gn, rijen: [] });
+    groepen.get(sleutel).rijen.push(r);
+  });
+
+  return [...groepen.values()].map(g => {
+    const universum = alleRijen.filter(r => r.bron === bron && r.stof === true &&
+      lokatieVan(r) === g.lokatie && grondnummerVan(r.opgave) === g.grondnummer);
+    const volledig = universum.length > 0 && universum.length === g.rijen.length;
+    const gesorteerd = [...g.rijen].sort((a, b) => vergelijkOpgave(a.opgave, b.opgave));
+    const blzSet = isLesboek ? [...new Set(gesorteerd.map(r => r.blz).filter(b => b != null))].sort((a, b) => a - b) : [];
+    return {
+      grondnummer: g.grondnummer, volledig, blzSet, rijen: gesorteerd,
+      hoofdstuk: isLesboek ? gesorteerd[0].hoofdstuk : null,
+      paragraaf: isLesboek ? gesorteerd[0].paragraaf : null,
+      tonen: volledig ? g.grondnummer : gesorteerd.map(r => r.opgave).join(", ")
+    };
+  }).sort((a, b) => Number(a.grondnummer) - Number(b.grondnummer));
+}
+
+// Voegt 3+ opeenvolgende VOLLEDIGE items samen tot "X t/m Y". Verwacht
+// dat "items" al op grondnummer gesorteerd is en bij elkaar hoort (zelfde
+// paginagroep). Gedeeltelijke of niet-opeenvolgende items blijven los.
+function voegBereikenSamen(items) {
+  const resultaat = [];
+  let i = 0;
+  while (i < items.length) {
+    if (!items[i].volledig) { resultaat.push(items[i].tonen); i++; continue; }
+    let j = i;
+    while (j + 1 < items.length && items[j + 1].volledig &&
+           Number(items[j + 1].grondnummer) === Number(items[j].grondnummer) + 1) {
+      j++;
+    }
+    if (j - i + 1 >= 3) {
+      resultaat.push(`${items[i].grondnummer} t/m ${items[j].grondnummer}`);
+    } else {
+      for (let k = i; k <= j; k++) resultaat.push(items[k].tonen);
+    }
+    i = j + 1;
+  }
+  return resultaat;
+}
+
+// Lesboek-items met paginanummer: groepeert op paginasignatuur (meestal
+// één pagina; bij een opgave die over twee pagina's loopt "X-Y"), vormt
+// per paginagroep de bereiken, en zet er "(blz. ...)" achter.
+function formatMetPagina(items) {
+  const subgroepen = new Map();
+  items.forEach(it => {
+    const sleutel = it.blzSet.join(",");
+    if (!subgroepen.has(sleutel)) subgroepen.set(sleutel, { blzSet: it.blzSet, items: [] });
+    subgroepen.get(sleutel).items.push(it);
+  });
+  const stukken = [];
+  [...subgroepen.values()]
+    .sort((a, b) => (a.blzSet[0] || 0) - (b.blzSet[0] || 0))
+    .forEach(sub => {
+      const opgaven = voegBereikenSamen(sub.items.sort((a, b) => Number(a.grondnummer) - Number(b.grondnummer)));
+      const blzLabel = sub.blzSet.length === 0 ? "" :
+        sub.blzSet.length === 1 ? ` (blz. ${sub.blzSet[0]})` : ` (blz. ${sub.blzSet[0]}-${sub.blzSet[sub.blzSet.length - 1]})`;
+      opgaven.forEach(o => stukken.push(o + blzLabel));
+    });
+  return stukken;
+}
+
+// ======================================================================
 // STAP 4: DE AFTREKKING
 // Welke onderwerpen van de getoetste hoofdstukken kwamen niet in déze
 // toets voor? Alleen mogelijk met boek + stofafbakening + de twee
@@ -866,29 +971,33 @@ function berekenNietGetoetst() {
 
   // Sorteren op code, niet op volgorde in het bestand
   const overCodes = [...stofCodes].sort();
+  const alleRijen = BOEK_INDEX.rijen || [];
 
   return overCodes.map(code => {
     const ond = (BOEK_ONDERWERPEN.onderwerpen || []).find(o => o.id === code);
     const label = ond ? ond.label : code;
-    const rijen = (BOEK_INDEX.rijen || []).filter(r => r.stof === true && Array.isArray(r.onderwerpen) && r.onderwerpen.includes(code));
-    const magReken = r => (Array.isArray(r.tags) && r.tags.includes("rekenen")) ? "*" : "";
+    const rijen = alleRijen.filter(r => r.stof === true && Array.isArray(r.onderwerpen) && r.onderwerpen.includes(code));
 
-    // Lesboek: groeperen op hoofdstuk/paragraaf/paginanummer, zodat dat niet
-    // per losse opgave herhaald hoeft te worden.
-    const lesGroepen = new Map();
-    rijen.filter(r => r.bron === "lesboek").forEach(r => {
-      const sleutel = `${r.hoofdstuk}|${r.paragraaf}|${r.blz}`;
-      if (!lesGroepen.has(sleutel)) lesGroepen.set(sleutel, { hoofdstuk: r.hoofdstuk, paragraaf: r.paragraaf, blz: r.blz, opgaven: [] });
-      lesGroepen.get(sleutel).opgaven.push(r.opgave + magReken(r));
+    // Lesboek: per hoofdstuk/paragraaf gegroepeerd, met paginanummer(s) erbij.
+    const lesItems = groepeerOpGrondnummer(rijen.filter(r => r.bron === "lesboek"), alleRijen, "lesboek");
+    const hpGroepen = new Map();
+    lesItems.forEach(it => {
+      const sleutel = `${it.hoofdstuk}|${it.paragraaf}`;
+      if (!hpGroepen.has(sleutel)) hpGroepen.set(sleutel, { hoofdstuk: it.hoofdstuk, paragraaf: it.paragraaf, items: [] });
+      hpGroepen.get(sleutel).items.push(it);
     });
-    const lesDeel = [...lesGroepen.values()]
-      .sort((a, b) => (a.hoofdstuk - b.hoofdstuk) || String(a.paragraaf).localeCompare(String(b.paragraaf)) || ((a.blz || 0) - (b.blz || 0)))
-      .map(g => `H${g.hoofdstuk} ${g.paragraaf}${g.blz ? " (blz. " + g.blz + ")" : ""}: opgave ${g.opgaven.join(", ")}`)
+    const lesDeel = [...hpGroepen.values()]
+      .sort((a, b) => (a.hoofdstuk - b.hoofdstuk) || String(a.paragraaf).localeCompare(String(b.paragraaf)))
+      .map(hp => {
+        const stukken = formatMetPagina(hp.items); // elk stuk: "opgave(n) (blz. ...)"
+        return `H${hp.hoofdstuk} ${hp.paragraaf}: opgave ${dutchLijst(stukken)}`;
+      })
       .join("; ");
 
-    // Oefenboekje: alleen het opgavenummer, geen hoofdstuk/paragraaf/blz.
-    const oefOpgaven = rijen.filter(r => r.bron === "oefenboekje").map(r => r.opgave + magReken(r));
-    const oefDeel = oefOpgaven.length ? `oefenboekje opgave ${oefOpgaven.join(", ")}` : "";
+    // Oefenboekje: alleen het opgavenummer/bereik, geen sectie of paginanummer.
+    const oefItems = groepeerOpGrondnummer(rijen.filter(r => r.bron === "oefenboekje"), alleRijen, "oefenboekje");
+    const oefOpgaven = voegBereikenSamen(oefItems);
+    const oefDeel = oefOpgaven.length ? `oefenboekje opgave ${dutchLijst(oefOpgaven)}` : "";
 
     const delen = [lesDeel, oefDeel].filter(Boolean).join("  ·  ");
     return esc(label) + (delen ? ` — ${esc(delen)}` : " — geen oefenopgaven binnen de toetsstof gevonden");
@@ -897,33 +1006,103 @@ function berekenNietGetoetst() {
 
 // ======================================================================
 // STAP 5: OEFENVERWIJZING PER VRAAG
-// Vult v.oefenBoekje / v.oefenPE aan uit de onderwerpcodes van de vraag,
-// maar alleen als de docent dat veld zelf leeg heeft gelaten. Top af op
-// 5 opgaven per bron. Zonder geladen stofdata (BOEK_INDEX) gebeurt hier
-// niets en blijft een leeg veld gewoon leeg, zoals nu.
+// Vult v.oefenBoekje / v.oefenPE aan uit de onderwerpcodes van de vraag.
+// Wat de docent al handmatig heeft ingevuld staat voorop en telt mee
+// voor het maximum van 5 opgaven per bron (in grondnummers, na samen-
+// voegen — "1a, 1c" telt als 1, "18 t/m 21" telt als 4); is er nog
+// ruimte, dan wordt er aangevuld uit de index met afwisseling over de
+// WDS-niveaus (W, D, S, W, D, ...), zonder dubbelingen met wat al
+// handmatig staat. Vragen met geenOefenadvies:true worden overgeslagen
+// (die krijgen straks alleen de vaste advies-tekst te zien). Zonder
+// geladen stofdata (BOEK_INDEX) gebeurt hier niets en blijft een leeg
+// veld gewoon leeg.
 // ======================================================================
-function dutchLijst(items) {
-  if (items.length === 0) return "";
-  if (items.length === 1) return items[0];
-  return items.slice(0, -1).join(", ") + " en " + items[items.length - 1];
+
+// Ontleedt een al ingevulde tekst (handmatig of eerder aangevuld) in de
+// afzonderlijke Nederlands-genoteerde stukken, en de grondnummers die
+// daarin voorkomen (voor het niet-dubbel-aanbieden). Bij oefenPE wordt
+// een leidend "opgave " weggehaald.
+function ontledHandmatig(tekst, isOefenPE) {
+  if (!tekst) return { aantal: 0, grondnummers: new Set(), segmenten: [] };
+  let schoon = tekst.trim();
+  if (isOefenPE) schoon = schoon.replace(/^opgave\s+/i, "");
+  const segmenten = schoon.split(/,\s*|\s+en\s+/).map(s => s.trim()).filter(Boolean);
+  const grondnummers = new Set();
+  segmenten.forEach(s => { const m = /(\d+)/.exec(s); if (m) grondnummers.add(m[1]); });
+  return { aantal: segmenten.length, grondnummers, segmenten };
+}
+
+// Het WDS-niveau van een grondnummer-item: het niveau dat het vaakst
+// voorkomt onder zijn (bij dit onderwerp horende) subdelen — bij een
+// gelijke stand wint het subdeel dat het eerst in het boek staat. Dit
+// bepaalt alleen in welk vakje het item meetelt bij het afwisselen
+// hieronder; het heeft geen invloed op wat er getoond wordt (dat komt
+// uit "tonen", ongewijzigd).
+function niveauVanItem(it) {
+  const tellingen = { W: 0, D: 0, S: 0 };
+  it.rijen.forEach(r => { if (tellingen[r.wds] !== undefined) tellingen[r.wds]++; });
+  let beste = it.rijen[0].wds in tellingen ? it.rijen[0].wds : "S";
+  let besteAantal = tellingen[beste] || 0;
+  for (const r of it.rijen) {
+    const n = tellingen[r.wds] !== undefined ? r.wds : "S";
+    if (tellingen[n] > besteAantal) { beste = n; besteAantal = tellingen[n]; }
+  }
+  return beste;
+}
+
+// Kiest, uit grondnummer-items (zie groepeerOpGrondnummer) die nog niet
+// via "uitsluiten" zijn afgedekt, er "aantal" met afwisseling over de
+// WDS-niveaus (zie niveauVanItem hierboven). Binnen elk niveau blijft de
+// volgorde van de items (= boekvolgorde) gehandhaafd; lege of uitgeputte
+// niveaus worden overgeslagen.
+function selecteerMetAfwisseling(items, uitsluiten, aantal) {
+  if (aantal <= 0) return [];
+  const beschikbaar = items.filter(it => !uitsluiten.has(it.grondnummer));
+  const perNiveau = { W: [], D: [], S: [] };
+  beschikbaar.forEach(it => { perNiveau[niveauVanItem(it)].push(it); });
+  const wijzers = { W: 0, D: 0, S: 0 };
+  const gekozen = [];
+  let vooruitgang = true;
+  while (gekozen.length < aantal && vooruitgang) {
+    vooruitgang = false;
+    for (const n of ["W", "D", "S"]) {
+      if (gekozen.length >= aantal) break;
+      if (wijzers[n] < perNiveau[n].length) {
+        gekozen.push(perNiveau[n][wijzers[n]]);
+        wijzers[n]++;
+        vooruitgang = true;
+      }
+    }
+  }
+  return gekozen.sort((a, b) => Number(a.grondnummer) - Number(b.grondnummer));
 }
 
 function vulOefenverwijzingenAan() {
   if (!BOEK_INDEX) return;
   const MAX = 5;
+  const alleRijen = BOEK_INDEX.rijen || [];
   TOETS.vragen.forEach(v => {
+    if (v.geenOefenadvies) return;
     if (!v.onderwerpen || !v.onderwerpen.length) return;
-    const rijen = (BOEK_INDEX.rijen || []).filter(r => r.stof === true && Array.isArray(r.onderwerpen) &&
+    const rijen = alleRijen.filter(r => r.stof === true && Array.isArray(r.onderwerpen) &&
       r.onderwerpen.some(c => v.onderwerpen.includes(c)));
 
-    if (!v.oefenBoekje) {
-      const nummers = rijen.filter(r => r.bron === "oefenboekje").map(r => r.opgave).slice(0, MAX);
-      if (nummers.length) v.oefenBoekje = dutchLijst(nummers);
+    const handmatigOefB = ontledHandmatig(v.oefenBoekje, false);
+    const resterendOefB = MAX - handmatigOefB.aantal;
+    if (resterendOefB > 0) {
+      const items = groepeerOpGrondnummer(rijen.filter(r => r.bron === "oefenboekje"), alleRijen, "oefenboekje");
+      const gekozen = selecteerMetAfwisseling(items, handmatigOefB.grondnummers, resterendOefB);
+      const nieuw = voegBereikenSamen(gekozen);
+      if (nieuw.length) v.oefenBoekje = dutchLijst([...handmatigOefB.segmenten, ...nieuw]);
     }
-    if (!v.oefenPE) {
-      const eenheden = rijen.filter(r => r.bron === "lesboek")
-        .map(r => `${r.opgave}${r.blz ? " (blz. " + r.blz + ")" : ""}`).slice(0, MAX);
-      if (eenheden.length) v.oefenPE = "opgave " + dutchLijst(eenheden);
+
+    const handmatigOefP = ontledHandmatig(v.oefenPE, true);
+    const resterendOefP = MAX - handmatigOefP.aantal;
+    if (resterendOefP > 0) {
+      const items = groepeerOpGrondnummer(rijen.filter(r => r.bron === "lesboek"), alleRijen, "lesboek");
+      const gekozen = selecteerMetAfwisseling(items, handmatigOefP.grondnummers, resterendOefP);
+      const nieuw = formatMetPagina(gekozen);
+      if (nieuw.length) v.oefenPE = "opgave " + dutchLijst([...handmatigOefP.segmenten, ...nieuw]);
     }
   });
 }
@@ -1001,11 +1180,14 @@ async function maakFeedback() {
               : `<span class="type-badge" style="background:color-mix(in srgb, ${ft.kleur} 16%, white);color:${ft.kleur}">${ft.label}</span>`;
           }).join("")
         : `<span class="type-badge type-geen">geen type gekozen</span>`;
-      const oefB = v.oefenBoekje
-        ? `<div class="haak"><span class="merk">Oefenboekje:</span><span>opgave ${esc(v.oefenBoekje)}</span></div>` : "";
-      const oefP = v.oefenPE
-        ? `<div class="haak"><span class="merk">PE-boek:</span><span>${esc(v.oefenPE)}</span></div>`
-        : `<div class="haak"><span class="merk">PE-boek:</span><span>opgaven en pagina's volgen nog</span></div>`;
+      const geenAdviesTekst = "Bij deze vraag wordt je begripskennis getest. Om het de volgende keer beter te doen, moet je de begrippenlijst beter bestuderen.";
+      const oefB = v.geenOefenadvies || !v.oefenBoekje
+        ? "" : `<div class="haak"><span class="merk">Oefenboekje:</span><span>opgave ${esc(v.oefenBoekje)}</span></div>`;
+      const oefP = v.geenOefenadvies
+        ? `<div class="haak"><span class="merk">Advies:</span><span>${esc(geenAdviesTekst)}</span></div>`
+        : v.oefenPE
+          ? `<div class="haak"><span class="merk">PE-boek:</span><span>${esc(v.oefenPE)}</span></div>`
+          : `<div class="haak"><span class="merk">PE-boek:</span><span>opgaven en pagina's volgen nog</span></div>`;
       const vsHaak = VRAAGSPECIFIEK[v.nr]
         ? `<div class="haak"><span class="merk">Tip van je docent:</span><span>${esc(VRAAGSPECIFIEK[v.nr])}</span></div>`
         : "";
@@ -1079,6 +1261,7 @@ function maakResultaat(naam, totaalBehaald, miss, totaalMiss) {
     behaald: state[i].behaald, max: v.max,
     fouten: [...state[i].fouten].map(t => FOUTTYPEN[t] ? FOUTTYPEN[t].label : t),
     oefenBoekje: v.oefenBoekje || "", oefenPE: v.oefenPE || "",
+    geenOefenadvies: !!v.geenOefenadvies,
     specifiek: VRAAGSPECIFIEK[v.nr] || ""
   }));
   return {
@@ -1245,14 +1428,19 @@ function maakPdf(res) {
     foute.forEach(v => {
       const foutStr = v.fouten.length ? `  ·  ${v.fouten.join(", ")}` : "";
       const kopStr = `Vraag ${v.nr}: ${v.onderwerp}  (${v.behaald}/${v.max} punten${foutStr})`;
-      const peStr = `PE-boek: ${v.oefenPE || "opgaven en pagina's volgen nog"}`;
+      const geenAdviesTekst = "Bij deze vraag wordt je begripskennis getest. Om het de volgende keer beter te doen, moet je de begrippenlijst beter bestuderen.";
+      const peStr = v.geenOefenadvies ? `Advies: ${geenAdviesTekst}` : `PE-boek: ${v.oefenPE || "opgaven en pagina's volgen nog"}`;
       let blokH = hoogteVan(kopStr, 10.5, "bold", 0, 5) + hoogteVan(peStr, 9.5, "normal", 4, 4.4) + 2.5;
-      if (v.oefenBoekje) blokH += hoogteVan(`Oefenboekje: opgave ${v.oefenBoekje}`, 9.5, "normal", 4, 4.4);
+      if (!v.geenOefenadvies && v.oefenBoekje) blokH += hoogteVan(`Oefenboekje: opgave ${v.oefenBoekje}`, 9.5, "normal", 4, 4.4);
       if (v.specifiek) blokH += hoogteVan("Let op: " + v.specifiek, 9.5, "normal", 4, 4.4);
       ruimte(blokH); // past het blok niet meer op deze pagina, dan in zijn geheel naar de volgende
       tekst(kopStr, { size: 10.5, stijl: "bold", extra: 5 });
-      if (v.oefenBoekje) labelTekst("\u2022  Oefenboekje:", `opgave ${v.oefenBoekje}`, { size: 9.5, kleur: PDF_KLEUR.inktZacht, extra: 4.4, inspring: 4 });
-      labelTekst("\u2022  PE-boek:", v.oefenPE || "opgaven en pagina's volgen nog", { size: 9.5, kleur: PDF_KLEUR.inktZacht, extra: 4.4, inspring: 4 });
+      if (v.geenOefenadvies) {
+        labelTekst("\u2022  Advies:", geenAdviesTekst, { size: 9.5, kleur: PDF_KLEUR.inktZacht, extra: 4.4, inspring: 4 });
+      } else {
+        if (v.oefenBoekje) labelTekst("\u2022  Oefenboekje:", `opgave ${v.oefenBoekje}`, { size: 9.5, kleur: PDF_KLEUR.inktZacht, extra: 4.4, inspring: 4 });
+        labelTekst("\u2022  PE-boek:", v.oefenPE || "opgaven en pagina's volgen nog", { size: 9.5, kleur: PDF_KLEUR.inktZacht, extra: 4.4, inspring: 4 });
+      }
       if (v.specifiek) labelTekst("\u2022  Tip van je docent:", v.specifiek, { size: 9.5, kleur: PDF_KLEUR.inktZacht, extra: 4.4, inspring: 4 });
       y += 2.5;
     });
