@@ -7,35 +7,35 @@
     {
       "key": "reken",
       "label": "Rekenfout",
-      "tekst": "Schrijf je tussenstappen en berekeningen altijd uit in plaats van alles in de rekenmachine te doen. Als je klaar bent, kijk dan of wat je hebt opgeschreven een logisch antwoord op de vraag is.",
+      "tekst": "Je wordt beter in rekenvragen door meer te oefenen en je antwoorden goed na te kijken. Schrijf je tussenstappen en berekeningen altijd uit in plaats van alles in de rekenmachine te doen. Als je klaar bent, kijk dan of wat je hebt opgeschreven een logisch antwoord op de vraag is.",
       "kleur": "var(--ft-reken)",
       "custom": false
     },
     {
       "key": "lees",
       "label": "Leesfout",
-      "tekst": "Neem een markeerstift en markeer wat er precies gevraagd wordt voordat je begint. Markeer in de bron de gegevens die je nodig hebt. Om dit goed onder de knie te krijgen moet je oefenen met vragen waarbij je een bron moet interpreteren.",
+      "tekst": "Markeer wat er precies gevraagd wordt voordat je begint, en markeer in de bron de gegevens die je nodig hebt. Let op woorden als minimaal, per week of in procenten, want daar zit vaak het verschil tussen goed en fout. Oefen dit met vragen waarbij je een bron moet gebruiken.",
       "kleur": "var(--ft-lees)",
       "custom": false
     },
     {
       "key": "begrip",
       "label": "Begripsfout",
-      "tekst": "Bestudeer de begrippenlijst die je van je docent hebt gekregen. Lees deze door en schrijf alleen de begrippen op die je nog niet kent. Lees daarnaast ook eenmaal alle PowerPoints door. Beide zijn te vinden op Classroom.",
+      "tekst": "Pak de begrippenlijst erbij en overhoor jezelf: dek de omschrijving af, zeg het begrip hardop en controleer daarna of het klopte. Dat werkt aantoonbaar beter dan de lijst doorlezen, want je merkt meteen wat je nog niet weet. Schrijf de begrippen op die je niet kon en herhaal die een paar dagen later opnieuw. De begrippenlijst en de PowerPoints staan op Classroom.",
       "kleur": "var(--ft-begrip)",
       "custom": false
     },
     {
       "key": "redeneer",
       "label": "Redeneerfout",
-      "tekst": "Maak redeneervragen van je huiswerk alsof je antwoord geeft op de toets. Alleen dan kan je bij het nakijken beoordelen of je het echt begrijpt. Schrijf bij elke uitlegvraag bewust béide stappen op — bij economie zit het tweede punt vaak in het gevolg dat je nog moet benoemen. Twijfel je, of wil je meer feedback? Lever je schrift in tijdens de les, of maak thuis een foto van je antwoord en mail die. Antwoorden van het boek én het extra oefenmateriaal staan op Classroom.",
+      "tekst": "Bouw je antwoord in stappen op. Begin met de oorzaak en gebruik daarbij het juiste begrip. Zet dan de stap naar het gevolg, ook weer met het juiste begrip. Is de stap niet logisch of te groot, geef dan een verklaring. Elke stap is meestal een punt waard, dus één zin is bijna altijd te kort. Je herkent deze vragen aan woorden als leg uit, verklaar, waarom of beredeneer. Oefen ze vooral met de opgaven uit Toepassen en met oude examenvragen, want daar komen ze het vaakst voor. Maak ze thuis alsof het de toets is, dan kun je bij het nakijken zien of je het echt begrijpt. Twijfel je, lever dan je schrift in tijdens de les of mail een foto van je antwoord.",
       "kleur": "var(--ft-redeneer)",
       "custom": false
     },
     {
       "key": "overig",
       "label": "Overig",
-      "tekst": "Het is misschien nog niet helemaal duidelijk waarom je deze punten hebt laten liggen. Vraag eventueel aan je docent om er samen nog eens naar te kijken.",
+      "tekst": "Het is misschien nog niet helemaal duidelijk waarom je sommige punten hebt laten liggen. Als dit het geval is, vraag dan aan je docent om er samen naar te kijken. Je mag ook gemaakt huiswerk inleveren, dan krijg je daar gerichte feedback op.",
       "kleur": "var(--ft-overig)",
       "custom": false
     }

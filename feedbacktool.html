@@ -130,6 +130,9 @@
   .staaf-spoor { background: #EAF1F8; height: 10px; border-radius: 999px; overflow: hidden; margin: 8px 0 14px; }
   .staaf-vul { display: block; height: 100%; border-radius: 999px; min-width: 3px; }
   .staaf-tip { font-size: 14px; color: var(--inkt); margin: 0; }
+  .wds-overzicht { font-weight: 600; font-size: 15px; color: var(--inkt); margin: 0 0 14px; }
+  .staaf-kaart ul { font-size: 14px; }
+  .tekst-zacht, .tekst-zacht li { color: var(--inkt-zacht); }
 
   /* PER-VRAAG TIPS */
   .tip-vraag { background: var(--wit); border: 1px solid var(--lijn); border-radius: var(--radius); padding: 16px 18px; margin-bottom: 12px; }
@@ -313,9 +316,12 @@
       </div>
     </div>
 
-    <h2>Waar verlies je de meeste punten?</h2>
+    <h2>Jouw aandachtspunten per soort fout, en wat je eraan kunt doen</h2>
     <p class="sectie-uitleg">Per type fout zie je welk deel van je gemiste punten daar vandaan komt, en hoe je die vaardigheid verbetert. De bovenste is je grootste verbeterpunt.</p>
     <div class="staven" id="staven"></div>
+
+    <h2>Bij welk vraagniveau valt voor jou winst te halen?</h2>
+    <div id="wds-winst"></div>
 
     <h2>Dit ging goed</h2>
     <p class="sectie-uitleg">Bij onderstaande onderwerpen heb je alle punten behaald. Blijf er wel mee oefenen want ze kunnen op een volgende toets terugkomen.</p>
@@ -332,7 +338,7 @@
     </div>
 
     <h2>Niet alle stof is getoetst</h2>
-    <p class="let-op">Deze onderwerpen moest je wel leren, maar kwamen niet op de toets voor. Met de stof waarover je de vragen goed hebt beantwoord moet je natuurlijk ook oefenen.</p>
+    <p class="let-op">Deze onderwerpen moest je wel leren, maar kwamen niet op de toets voor. Ze kunnen terugkomen bij het schoolexamen, dus het loont om ze niet te laten liggen.</p>
     <div id="niet-getoetst"></div>
 
     <div class="pdf-blok geen-print">
@@ -361,35 +367,35 @@ const INGEBOUWDE_TOETS = {
     {
       "key": "reken",
       "label": "Rekenfout",
-      "tekst": "Schrijf je tussenstappen en berekeningen altijd uit in plaats van alles in de rekenmachine te doen. Als je klaar bent, kijk dan of wat je hebt opgeschreven een logisch antwoord op de vraag is.",
+      "tekst": "Je wordt beter in rekenvragen door meer te oefenen en je antwoorden goed na te kijken. Schrijf je tussenstappen en berekeningen altijd uit in plaats van alles in de rekenmachine te doen. Als je klaar bent, kijk dan of wat je hebt opgeschreven een logisch antwoord op de vraag is.",
       "kleur": "var(--ft-reken)",
       "custom": false
     },
     {
       "key": "lees",
       "label": "Leesfout",
-      "tekst": "Neem een markeerstift en markeer wat er precies gevraagd wordt voordat je begint. Markeer in de bron de gegevens die je nodig hebt. Om dit goed onder de knie te krijgen moet je oefenen met vragen waarbij je een bron moet interpreteren.",
+      "tekst": "Markeer wat er precies gevraagd wordt voordat je begint, en markeer in de bron de gegevens die je nodig hebt. Let op woorden als minimaal, per week of in procenten, want daar zit vaak het verschil tussen goed en fout. Oefen dit met vragen waarbij je een bron moet gebruiken.",
       "kleur": "var(--ft-lees)",
       "custom": false
     },
     {
       "key": "begrip",
       "label": "Begripsfout",
-      "tekst": "Bestudeer de begrippenlijst die je van je docent hebt gekregen. Lees deze door en schrijf alleen de begrippen op die je nog niet kent. Lees daarnaast ook eenmaal alle PowerPoints door. Beide zijn te vinden op Classroom.",
+      "tekst": "Pak de begrippenlijst erbij en overhoor jezelf: dek de omschrijving af, zeg het begrip hardop en controleer daarna of het klopte. Dat werkt aantoonbaar beter dan de lijst doorlezen, want je merkt meteen wat je nog niet weet. Schrijf de begrippen op die je niet kon en herhaal die een paar dagen later opnieuw. De begrippenlijst en de PowerPoints staan op Classroom.",
       "kleur": "var(--ft-begrip)",
       "custom": false
     },
     {
       "key": "redeneer",
       "label": "Redeneerfout",
-      "tekst": "Maak redeneervragen van je huiswerk alsof je antwoord geeft op de toets. Alleen dan kan je bij het nakijken beoordelen of je het echt begrijpt. Schrijf bij elke uitlegvraag bewust béide stappen op — bij economie zit het tweede punt vaak in het gevolg dat je nog moet benoemen. Twijfel je, of wil je meer feedback? Lever je schrift in tijdens de les, of maak thuis een foto van je antwoord en mail die. Antwoorden van het boek én het extra oefenmateriaal staan op Classroom.",
+      "tekst": "Bouw je antwoord in stappen op. Begin met de oorzaak en gebruik daarbij het juiste begrip. Zet dan de stap naar het gevolg, ook weer met het juiste begrip. Is de stap niet logisch of te groot, geef dan een verklaring. Elke stap is meestal een punt waard, dus één zin is bijna altijd te kort. Je herkent deze vragen aan woorden als leg uit, verklaar, waarom of beredeneer. Oefen ze vooral met de opgaven uit Toepassen en met oude examenvragen, want daar komen ze het vaakst voor. Maak ze thuis alsof het de toets is, dan kun je bij het nakijken zien of je het echt begrijpt. Twijfel je, lever dan je schrift in tijdens de les of mail een foto van je antwoord.",
       "kleur": "var(--ft-redeneer)",
       "custom": false
     },
     {
       "key": "overig",
       "label": "Overig",
-      "tekst": "Het is misschien nog niet helemaal duidelijk waarom je deze punten hebt laten liggen. Vraag eventueel aan je docent om er samen nog eens naar te kijken.",
+      "tekst": "Het is misschien nog niet helemaal duidelijk waarom je sommige punten hebt laten liggen. Als dit het geval is, vraag dan aan je docent om er samen naar te kijken. Je mag ook gemaakt huiswerk inleveren, dan krijg je daar gerichte feedback op.",
       "kleur": "var(--ft-overig)",
       "custom": false
     }
@@ -521,17 +527,53 @@ let TOETS = null; // wordt gevuld door laadConfig()
    ====================================================================== */
 let FOUTTYPEN = {
   reken:    { label: "Rekenfout",    klasse: "reken",    kleur: "var(--ft-reken)",
-    tekst: "Schrijf je tussenstappen en berekeningen altijd uit in plaats van alles in de rekenmachine te doen. Als je klaar bent, kijk dan of wat je hebt opgeschreven een logisch antwoord op de vraag is." },
+    tekst: "Je wordt beter in rekenvragen door meer te oefenen en je antwoorden goed na te kijken. Schrijf je tussenstappen en berekeningen altijd uit in plaats van alles in de rekenmachine te doen. Als je klaar bent, kijk dan of wat je hebt opgeschreven een logisch antwoord op de vraag is." },
   lees:     { label: "Leesfout",     klasse: "lees",     kleur: "var(--ft-lees)",
-    tekst: "Neem een markeerstift en markeer wat er precies gevraagd wordt voordat je begint. Markeer in de bron de gegevens die je nodig hebt. Om dit goed onder de knie te krijgen moet je oefenen met vragen waarbij je een bron moet interpreteren." },
+    tekst: "Markeer wat er precies gevraagd wordt voordat je begint, en markeer in de bron de gegevens die je nodig hebt. Let op woorden als minimaal, per week of in procenten, want daar zit vaak het verschil tussen goed en fout. Oefen dit met vragen waarbij je een bron moet gebruiken." },
   begrip:   { label: "Begripsfout",  klasse: "begrip",   kleur: "var(--ft-begrip)",
-    tekst: "Bestudeer de begrippenlijst die je van je docent hebt gekregen. Lees deze door en schrijf alleen de begrippen op die je nog niet kent. Lees daarnaast ook eenmaal alle PowerPoints door. Beide zijn te vinden op Classroom." },
+    tekst: "Pak de begrippenlijst erbij en overhoor jezelf: dek de omschrijving af, zeg het begrip hardop en controleer daarna of het klopte. Dat werkt aantoonbaar beter dan de lijst doorlezen, want je merkt meteen wat je nog niet weet. Schrijf de begrippen op die je niet kon en herhaal die een paar dagen later opnieuw. De begrippenlijst en de PowerPoints staan op Classroom." },
   redeneer: { label: "Redeneerfout", klasse: "redeneer", kleur: "var(--ft-redeneer)",
-    tekst: "Maak redeneervragen van je huiswerk alsof je antwoord geeft op de toets. Alleen dan kan je bij het nakijken beoordelen of je het echt begrijpt. Schrijf bij elke uitlegvraag bewust béide stappen op — bij economie zit het tweede punt vaak in het gevolg dat je nog moet benoemen. Twijfel je, of wil je meer feedback? Lever je schrift in tijdens de les, of maak thuis een foto van je antwoord en mail die. Antwoorden van het boek én het extra oefenmateriaal staan op Classroom." },
+    tekst: "Bouw je antwoord in stappen op. Begin met de oorzaak en gebruik daarbij het juiste begrip. Zet dan de stap naar het gevolg, ook weer met het juiste begrip. Is de stap niet logisch of te groot, geef dan een verklaring. Elke stap is meestal een punt waard, dus één zin is bijna altijd te kort. Je herkent deze vragen aan woorden als leg uit, verklaar, waarom of beredeneer. Oefen ze vooral met de opgaven uit Toepassen en met oude examenvragen, want daar komen ze het vaakst voor. Maak ze thuis alsof het de toets is, dan kun je bij het nakijken zien of je het echt begrijpt. Twijfel je, lever dan je schrift in tijdens de les of mail een foto van je antwoord." },
   overig:   { label: "Overig", klasse: "overig", kleur: "var(--ft-overig)",
-    tekst: "Het is misschien nog niet helemaal duidelijk waarom je deze punten hebt laten liggen. Vraag eventueel aan je docent om er samen nog eens naar te kijken." }
+    tekst: "Het is misschien nog niet helemaal duidelijk waarom je sommige punten hebt laten liggen. Als dit het geval is, vraag dan aan je docent om er samen naar te kijken. Je mag ook gemaakt huiswerk inleveren, dan krijg je daar gerichte feedback op." }
 };
 let FOUT_VOLGORDE = ["reken", "lees", "begrip", "redeneer", "overig"];
+
+// Teksten voor "Bij welk vraagniveau valt voor jou winst te halen?" (score per WDS-niveau).
+const WDS_ADVIES = {
+  W: { naam: "Weten", intro: "Bij vragen waarbij je iets moet weten haal je nu te weinig rendement uit je leerwerk. Dit zijn de punten die het makkelijkst terug te winnen zijn, want ze vragen geen inzicht maar herhaling.", tips: [
+    "Overhoor jezelf met de begrippenlijst in plaats van hem door te lezen.",
+    "Herhaal de stof vaker en korter. Drie keer twintig minuten werkt beter dan één keer een uur.",
+    "Bedenk bij elk begrip een eigen voorbeeld. Lukt dat niet, dan ken je het nog niet goed genoeg."
+  ] },
+  D: { naam: "Doen", intro: "Bij vragen waarbij je iets moet doen, zoals rekenen, tekenen of een tabel invullen, haal je te weinig uit de opdrachten die we in de les en thuis maken.", tips: [
+    "Maak je huiswerk zonder de antwoorden ernaast. Geef jezelf de ruimte om fouten te maken.",
+    "Kijk daarna na en vraag je bij elke fout af wat er misging én waarom je dacht dat het goed was.",
+    "Maak moeilijke opgaven een paar dagen later nog een keer."
+  ] },
+  S: { naam: "Snappen", intro: "Bij vragen waarbij je iets moet uitleggen of verklaren valt voor jou de meeste winst te behalen. Snappen begint wel bij de twee onderdelen hierboven: zonder de begrippen en zonder oefening kom je hier niet.", tips: [
+    "Let echt op in de les en stel vaker een vraag, ook over gemaakt huiswerk.",
+    "Zodra de basis goed zit, ga oefenen met de moeilijkere Toepassen-vragen of oude examenopdrachten. Kijk je antwoorden goed na.",
+    "Leg moeilijke stof uit aan iemand anders. Waar je vastloopt, zit je gat.",
+    "Bedenk zelf een toetsvraag over de stof en schrijf het antwoordmodel erbij."
+  ] }
+};
+
+// Rekent per WDS-niveau (elke vraag heeft er precies één) uit hoeveel
+// punten de leerling haalde van het totaal in dat niveau.
+function berekenWdsScores() {
+  const ruw = { W: { behaald: 0, max: 0 }, D: { behaald: 0, max: 0 }, S: { behaald: 0, max: 0 } };
+  TOETS.vragen.forEach((v, i) => {
+    const beh = state[i].behaald;
+    if (beh === null || !ruw[v.wds]) return;
+    ruw[v.wds].behaald += beh;
+    ruw[v.wds].max += v.max;
+  });
+  return ["W", "D", "S"].map(n => ({
+    key: n, naam: WDS_ADVIES[n].naam, behaald: ruw[n].behaald, max: ruw[n].max,
+    pct: ruw[n].max > 0 ? Math.round(ruw[n].behaald / ruw[n].max * 100) : null
+  }));
+}
 
 /* ======================================================================
    3. HAKEN VOOR LATER
@@ -1156,11 +1198,36 @@ async function maakFeedback() {
           <span class="staaf-naam">${f.label}</span>
           <span class="staaf-pct">${Math.round(miss[t]*10)/10} van ${Math.round(totaalMiss*10)/10} gemiste punten (${pct}%)</span>
         </div>
-        <div class="staaf-spoor"><span class="staaf-vul" style="width:${pct}%;background:${f.kleur}"></span></div>
+        <div class="staaf-spoor"><span class="staaf-vul" style="width:${pct}%;background:var(--inkt)"></span></div>
         <p class="staaf-tip"><strong>Algemene tip:</strong> ${f.tekst}</p>`;
       staven.appendChild(kaart);
     });
   }
+
+  // WDS-winst: score per niveau (Weten/Doen/Snappen). Alle niveaus met
+  // punten worden altijd getoond, met een balk zoals bij de fouttypen —
+  // ook bij 100%, want dat geeft ook inzicht.
+  const wdsWinst = document.getElementById("wds-winst");
+  const wdsScores = berekenWdsScores();
+  const wdsOverzicht = wdsScores.filter(s => s.pct !== null).map(s => `${s.naam} ${s.pct}%`).join("  ·  ");
+  const wdsHeelGoedTekst = "Heel goed, je hebt alle vragen in deze categorie goed beantwoord. Zorg ervoor dat je je op eenzelfde manier voor dit soort vragen voorbereidt op de volgende toets.";
+  const wdsBlokken = wdsScores.filter(s => s.max > 0).map(s => {
+    const advies = WDS_ADVIES[s.key];
+    const inhoud = s.pct === 100
+      ? `<p class="staaf-tip tekst-zacht">${esc(wdsHeelGoedTekst)}</p>`
+      : `<p class="staaf-tip tekst-zacht">${esc(advies.intro)}</p>
+         <ul class="tekst-zacht" style="margin:8px 0 0;padding-left:20px;">${advies.tips.map(t => `<li>${esc(t)}</li>`).join("")}</ul>`;
+    return `<div class="staaf-kaart">
+      <div class="staaf-rij">
+        <span class="staaf-naam">${esc(advies.naam)}</span>
+        <span class="staaf-pct">${s.behaald} van ${s.max} punten (${s.pct}%)</span>
+      </div>
+      <div class="staaf-spoor"><span class="staaf-vul" style="width:${s.pct}%;background:var(--terra)"></span></div>
+      ${inhoud}
+    </div>`;
+  }).join("");
+  wdsWinst.innerHTML = (wdsOverzicht ? `<p class="wds-overzicht">${esc(wdsOverzicht)}</p>` : "") +
+    `<div class="staven">${wdsBlokken}</div>`;
 
   // Per-vraag tips: vraag eerst, dan fouttype-badge(s), dan oefenstof
   const tips = document.getElementById("vraag-tips");
@@ -1204,7 +1271,7 @@ async function maakFeedback() {
   // Niet-getoetste stof
   const ng = document.getElementById("niet-getoetst");
   ng.innerHTML = NIET_GETOETST.length
-    ? `<div class="tip-vraag"><ul style="margin:0;padding-left:20px;">${NIET_GETOETST.map(o => `<li>${o}</li>`).join("")}</ul></div>`
+    ? `<div class="tip-vraag"><ul class="tekst-zacht" style="margin:0;padding-left:20px;">${NIET_GETOETST.map(o => `<li>${o}</li>`).join("")}</ul></div>`
     : `<div class="haak"><span class="merk">Lijst:</span><span>volgt zodra het boek, het oefenmateriaal en de begrippenlijst zijn toegevoegd</span></div>`;
 
   // Blok "Dit ging goed"
@@ -1276,6 +1343,7 @@ function maakResultaat(naam, totaalBehaald, miss, totaalMiss) {
     max: TOETS.maxPunten,
     pct: Math.round(totaalBehaald / TOETS.maxPunten * 100),
     fouttypen: fouttypen,
+    wdsScores: berekenWdsScores(),
     gemistTotaal: Math.round(totaalMiss * 10) / 10,
     vragen: vragen,
     voornemens: document.getElementById("eigen-tips").value.trim(),
@@ -1317,12 +1385,6 @@ const PDF_KLEUR = {
   reken: [197, 123, 92], lees: [62, 111, 160], begrip: [78, 146, 123],
   redeneer: [106, 111, 160], overig: [133, 149, 168]
 };
-function pdfKleur(key, cssKleur) {
-  if (PDF_KLEUR[key]) return PDF_KLEUR[key];
-  const m = /^#([0-9a-f]{6})$/i.exec(String(cssKleur || "").trim());
-  if (m) return [parseInt(m[1].slice(0,2),16), parseInt(m[1].slice(2,4),16), parseInt(m[1].slice(4,6),16)];
-  return PDF_KLEUR.inkt;
-}
 
 function maakPdf(res) {
   const { jsPDF } = window.jspdf;
@@ -1331,7 +1393,6 @@ function maakPdf(res) {
   let y = marge;
 
   function ruimte(h) { if (y + h > onder) { doc.addPage(); y = marge; } }
-  function nieuwePagina() { if (y > marge + 2) { doc.addPage(); y = marge; } }
   function hoogteVan(str, size, stijl, inspring, extra) {
     doc.setFont("helvetica", stijl); doc.setFontSize(size);
     return doc.splitTextToSize(str, breed - inspring).length * extra;
@@ -1385,9 +1446,9 @@ function maakPdf(res) {
   if (goed.length) {
     kop("Dit ging goed");
     tekst("Bij onderstaande onderwerpen heb je alle punten behaald. Blijf er wel mee oefenen want ze kunnen op een volgende toets terugkomen.",
-          { size: 9.5, stijl: "bold", kleur: PDF_KLEUR.inkt, extra: 4.6 });
+          { size: 9.5, kleur: PDF_KLEUR.inktZacht, extra: 4.6 });
     tekst(goed.map(v => v.onderwerp + " (vraag " + v.nr + ")").join("  \u00b7  "),
-          { size: 9.5, kleur: PDF_KLEUR.inkt, extra: 4.6 });
+          { size: 9.5, kleur: PDF_KLEUR.inktZacht, extra: 4.6 });
   }
 
   // Eigen voornemens: het eerste wat de leerling terugleest
@@ -1395,14 +1456,22 @@ function maakPdf(res) {
   tekst(res.voornemens || "Je hebt geen eigen voornemens opgeschreven.",
         { kleur: res.voornemens ? PDF_KLEUR.inkt : PDF_KLEUR.inktZacht });
 
-  // Fouttypen
-  kop("Waar verlies je de meeste punten?");
+  // Niet-getoetste stof — hoort nog bij pagina 1
+  if (res.nietGetoetst && res.nietGetoetst.length) {
+    kop("Niet alle stof is getoetst");
+    tekst("Deze onderwerpen moest je wel leren, maar kwamen niet op de toets voor. Ze kunnen terugkomen bij het schoolexamen, dus het loont om ze niet te laten liggen.",
+          { size: 9.5, stijl: "bold", kleur: PDF_KLEUR.inkt, extra: 4.6 });
+    res.nietGetoetst.forEach(o => tekst("•  " + o, { size: 9.5, kleur: PDF_KLEUR.inktZacht, extra: 4.6 }));
+  }
+
+  // Fouttypen — begint altijd op pagina 2
+  doc.addPage(); y = marge;
+  kop("Jouw aandachtspunten per soort fout, en wat je eraan kunt doen");
   if (!res.fouttypen.length) {
     tekst("Geen fouttypen aangeklikt of geen punten gemist.", { kleur: PDF_KLEUR.inktZacht });
   } else {
     res.fouttypen.forEach(f => {
       ruimte(10);
-      const kleur = pdfKleur(f.key, FOUTTYPEN[f.key] && FOUTTYPEN[f.key].kleur);
       doc.setFont("helvetica", "bold"); doc.setFontSize(11); doc.setTextColor(...PDF_KLEUR.inkt);
       doc.text(f.label, marge, y);
       doc.setFont("helvetica", "normal"); doc.setFontSize(9.5); doc.setTextColor(...PDF_KLEUR.inktZacht);
@@ -1411,15 +1480,48 @@ function maakPdf(res) {
                " gemiste " + puntWoord + " (" + f.pct + "%)", marge + breed, y, { align: "right" });
       y += 2.5;
       doc.setFillColor(...PDF_KLEUR.lijn); doc.roundedRect(marge, y, breed, 2.6, 1.3, 1.3, "F");
-      doc.setFillColor(...kleur); doc.roundedRect(marge, y, Math.max(3, breed * f.pct / 100), 2.6, 1.3, 1.3, "F");
+      doc.setFillColor(...PDF_KLEUR.inkt); doc.roundedRect(marge, y, Math.max(3, breed * f.pct / 100), 2.6, 1.3, 1.3, "F");
       y += 7;
       labelTekst("Algemene tip:", f.tekst, { size: 9.5, kleur: PDF_KLEUR.inktZacht, extra: 4.4 });
       y += 3;
     });
   }
 
-  // Per vraag: altijd op een nieuwe pagina
-  nieuwePagina();
+  // WDS-winst: score per niveau (Weten/Doen/Snappen) — begint altijd op
+  // een nieuwe pagina. Alle niveaus met punten worden getoond, met een
+  // balk zoals bij de fouttypen hierboven — ook bij 100%.
+  doc.addPage(); y = marge;
+  kop("Bij welk vraagniveau valt voor jou winst te halen?");
+  const wdsOverzicht = res.wdsScores.filter(s => s.pct !== null).map(s => `${s.naam} ${s.pct}%`).join("  ·  ");
+  if (wdsOverzicht) tekst(wdsOverzicht, { size: 10.5, stijl: "bold", kleur: PDF_KLEUR.inkt, extra: 5.2 });
+  const wdsHeelGoedTekst = "Heel goed, je hebt alle vragen in deze categorie goed beantwoord. Zorg ervoor dat je je op eenzelfde manier voor dit soort vragen voorbereidt op de volgende toets.";
+  res.wdsScores.filter(s => s.max > 0).forEach(s => {
+    const advies = WDS_ADVIES[s.key];
+    const regels = s.pct === 100 ? [wdsHeelGoedTekst] : [advies.intro, ...advies.tips.map(t => "•  " + t)];
+    let blokH = hoogteVan(advies.naam, 11, "bold", 0, 5) + 7; // kop + balk
+    regels.forEach((r, i) => { blokH += hoogteVan(r, 9.5, "normal", i > 0 ? 4 : 0, 4.4); });
+    blokH += 3;
+    ruimte(blokH); // past het blok niet meer op deze pagina, dan in zijn geheel naar de volgende
+    doc.setFont("helvetica", "bold"); doc.setFontSize(11); doc.setTextColor(...PDF_KLEUR.inkt);
+    doc.text(advies.naam, marge, y);
+    doc.setFont("helvetica", "normal"); doc.setFontSize(9.5); doc.setTextColor(...PDF_KLEUR.inktZacht);
+    const puntWoord = s.max === 1 ? "punt" : "punten";
+    doc.text(`${s.behaald} van de ${s.max} ${puntWoord} (${s.pct}%)`, marge + breed, y, { align: "right" });
+    y += 2.5;
+    doc.setFillColor(...PDF_KLEUR.lijn); doc.roundedRect(marge, y, breed, 2.6, 1.3, 1.3, "F");
+    doc.setFillColor(...PDF_KLEUR.terra); doc.roundedRect(marge, y, Math.max(3, breed * s.pct / 100), 2.6, 1.3, 1.3, "F");
+    y += 7;
+    if (s.pct === 100) {
+      tekst(wdsHeelGoedTekst, { size: 9.5, kleur: PDF_KLEUR.inktZacht, extra: 4.4 });
+    } else {
+      tekst(advies.intro, { size: 9.5, kleur: PDF_KLEUR.inktZacht, extra: 4.4 });
+      advies.tips.forEach(t => tekst("•  " + t, { size: 9.5, kleur: PDF_KLEUR.inktZacht, extra: 4.4, inspring: 4 }));
+    }
+    y += 3;
+  });
+
+  // Per vraag: begint altijd op pagina 4
+  doc.addPage(); y = marge;
   kop("Aan de slag per vraag");
   const foute = res.vragen.filter(v => v.behaald !== null && v.behaald < v.max);
   if (!foute.length) {
@@ -1444,14 +1546,6 @@ function maakPdf(res) {
       if (v.specifiek) labelTekst("\u2022  Tip van je docent:", v.specifiek, { size: 9.5, kleur: PDF_KLEUR.inktZacht, extra: 4.4, inspring: 4 });
       y += 2.5;
     });
-  }
-
-  // Niet-getoetste stof
-  if (res.nietGetoetst && res.nietGetoetst.length) {
-    kop("Niet alle stof is getoetst");
-    tekst("Deze onderwerpen moest je wel leren, maar kwamen niet op de toets voor. Met de stof waarover je de vragen goed hebt beantwoord moet je natuurlijk ook oefenen.",
-          { size: 9.5, stijl: "bold", kleur: PDF_KLEUR.inkt, extra: 4.6 });
-    res.nietGetoetst.forEach(o => tekst("\u2022  " + o, { size: 9.5, kleur: PDF_KLEUR.inkt, extra: 4.6 }));
   }
 
   const veiligeNaam = res.naam.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
