@@ -39,7 +39,7 @@ function Level1({ onComplete }) {
     "Hallo! Ik ben David van Weel, minister van Buitenlandse Zaken (VVD) in het kabinet-Schoof. Ik ben verantwoordelijk voor de Nederlandse betrekkingen met andere landen en onze positie binnen de Europese Unie.",
     "Europa staat voor grote uitdagingen: onze economische concurrentiepositie staat onder druk door China en de VS, en er is een groeiende militaire dreiging aan onze grenzen. Hoe reageren we hierop als Europa?",
     "Volgende week is er een belangrijk Kamerdebat over de toekomst van Europese integratie: meer of minder Europees samenwerken? Dat kost Nederland op de korte termijn, maar levert op de lange termijn juist veel op.",
-    "De discussie komt neer op een afweging: meer autonomie behouden — zelfstandig beslissingen blijven nemen — of meer zekerheid door nauwer samen te werken in Europa?",
+    "De discussie komt neer op een afweging: meer autonomie behouden (zelfstandig beslissingen blijven nemen) of meer zekerheid door nauwer samen te werken in Europa?",
     "Om mijn standpunt te onderbouwen raadpleeg ik verschillende experts over de voor- en nadelen. Kom je er tijdens het spel niet uit? Klik dan rechtsboven op het vraagteken voor hints!"
   ];
 

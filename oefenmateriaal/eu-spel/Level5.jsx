@@ -791,7 +791,7 @@ function Level5() {
               {conversationStep === 2 && (
                 <>
                   <p className="text-lg text-gray-800 leading-relaxed font-sans mb-4">
-                    <strong>Van Weel:</strong> Stel dat andere lidstaten niet inzetten op EU-integratie — wat zou Nederland dan moeten doen?
+                    <strong>Van Weel:</strong> Stel dat andere lidstaten niet inzetten op EU-integratie, wat zou Nederland dan moeten doen?
                   </p>
                   <div className="flex justify-between">
                     <span 
@@ -919,7 +919,7 @@ function Level5() {
               {conversationStep === 9 && (
                 <>
                   <p className="text-lg text-gray-800 leading-relaxed font-sans mb-4">
-                    <strong>Van Weel:</strong> U neemt duidelijk stelling in. Bedankt voor het delen — ik neem dit mee in mijn voorbereiding op het debat. Fijne dag!
+                    <strong>Van Weel:</strong> U neemt duidelijk stelling in. Bedankt voor het delen. Ik neem dit mee in mijn voorbereiding op het debat. Fijne dag!
                   </p>
                   <div className="flex justify-between">
                     <span 
@@ -1039,7 +1039,7 @@ function Level5() {
               {conversationStep === 13 && (
                 <>
                   <p className="text-lg text-gray-800 font-sans mb-3" style={{lineHeight: '1.3'}}>
-                    <strong>Van Weel:</strong> Om conclusies te trekken en mij te adviseren heb je een stencil nodig — steek je vinger op en vraag dit aan je docent. Ik kijk uit naar je advies. Doeg!
+                    <strong>Van Weel:</strong> Om conclusies te trekken en mij te adviseren heb je een stencil nodig. Steek je vinger op en vraag dit aan je docent. Ik kijk uit naar je advies. Doeg!
                   </p>
                   <div className="flex justify-end">
                     <span 

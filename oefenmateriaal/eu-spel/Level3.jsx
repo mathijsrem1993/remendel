@@ -717,7 +717,7 @@ function Level3({ onComplete }) {
                 /* First drag-drop exercise */
                 <>
                   <p className="text-base text-gray-800 leading-snug font-sans mb-4">
-                    <strong>Von der Leyen:</strong> Blijven we als losse landen werken, dan verliezen we het van grootmachten zoals de VS en China — slecht voor onze internationale concurrentiepositie. Werken we als Europa samen, dan kunnen we veel meer investeren in nieuwe technieken en innovaties, waardoor we producten van{' '}
+                    <strong>Von der Leyen:</strong> Blijven we als losse landen werken, dan verliezen we het van grootmachten zoals de VS en China (slecht voor onze internationale concurrentiepositie). Werken we als Europa samen, dan kunnen we veel meer investeren in nieuwe technieken en innovaties, waardoor we producten van{' '}
                     <span
                       onDragOver={handleDragOver}
                       onDrop={() => handleDrop('gap1', 'hoge')}

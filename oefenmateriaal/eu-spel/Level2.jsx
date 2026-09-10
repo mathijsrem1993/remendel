@@ -24,9 +24,9 @@ function Level2({ onComplete }) {
     "<strong>Van Weel:</strong> Dank u dat ik mag langskomen, meneer Draghi. Als voormalig president van de Europese Centrale Bank en voormalig premier van Italië heeft u weinig gelijken op het gebied van Europese samenwerking.",
     "<strong>Van Weel:</strong> Kunt u me meer vertellen over het rapport dat op tafel ligt? 'The future of European competitiveness' klinkt erg relevant voor mijn debat over Europese integratie.",
     "<strong>Draghi:</strong> Europa staat op een kruispunt. We verliezen terrein op de VS en China op cruciale gebieden: innovatie, productiviteit en economische groei. Zonder diepere integratie en gezamenlijke investeringen dreigt Europa irrelevant te worden op het wereldtoneel.",
-    "<strong>Draghi:</strong> Zie het als een economische spelsituatie: zetten Nederland en alle andere lidstaten niet in op meer Europese integratie, dan worden we nog afhankelijker van andere wereldmachten en dreigt onze economie irrelevant te worden — het slechtst denkbare scenario.",
+    "<strong>Draghi:</strong> Zie het als een economische spelsituatie: zetten Nederland en alle andere lidstaten niet in op meer Europese integratie, dan worden we nog afhankelijker van andere wereldmachten en dreigt onze economie irrelevant te worden. Dit is het slechtst denkbare scenario.",
     "<strong>Draghi:</strong> In de matrix zetten we de opbrengsten van keuzes op een rij. Een pijl omhoog = gestegen nettobaten (nettobaten = economische groei − investeringen), hoe meer hoe beter. Een pijl omlaag = gedaalde nettobaten, hoe meer hoe slechter. Sleep de passende opbrengsten naar de cel rechtsonder.",
-    "<strong>Draghi:</strong> Dit zijn inderdaad de juiste opbrengsten. Als EU-lidstaten hoeven we dan geen extra investeringen te doen — op korte termijn interessant, maar op lange termijn worden we hierdoor ingehaald door andere landen.",
+    "<strong>Draghi:</strong> Dit zijn inderdaad de juiste opbrengsten. Als EU-lidstaten hoeven we dan geen extra investeringen te doen. Op korte termijn is dat interessant, maar op lange termijn worden we hierdoor ingehaald door andere landen.",
     "<strong>Van Weel:</strong> Bedankt voor uw tijd, meneer Draghi. Ik ga terug naar mijn werkkamer, daar heb ik een afspraak."
   ];
 
@@ -192,7 +192,7 @@ function Level2({ onComplete }) {
         </svg>
 
         {/* Mario Draghi - to the RIGHT of report, roughly boven zijn eigen naamplaatje (x 750-890) */}
-        <div className="absolute bottom-[140px] left-[698px] z-10">
+        <div className="absolute bottom-[100px] left-[698px] z-10">
           <svg width="220" height="270" viewBox="0 0 280 340">
             {/* Body - sitting, BLACK suit */}
             <g>
@@ -303,7 +303,7 @@ function Level2({ onComplete }) {
 
         {/* David van Weel - LOWER so legs are behind desk. Lichaamsmidden op de linkerkant van de EU-vlag (x=450) */}
         <div
-          className="absolute bottom-[140px] z-10"
+          className="absolute bottom-[100px] z-10"
           style={{
             left: '329px'
           }}

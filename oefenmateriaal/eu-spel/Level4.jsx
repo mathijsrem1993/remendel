@@ -286,7 +286,7 @@ function Level4({ onComplete }) {
   const texts = [
     "Van Weel: Gezellig om jullie, Boris Johnson en Keir Starmer, te ontmoeten in een traditionele pub.",
     "Van Weel: Nu het vijf jaar geleden is, wil ik het met jullie hebben over de gevolgen van de Brexit. Maar eerst: stel uzelf even voor.",
-    "Johnson: Hallo, van 2019 tot en met 2022 — tijdens de Brexit — was ik premier van het VK. Ik was een uitgesproken voorstander en vond dat het VK beter af zou zijn buiten de EU: meer controle over eigen wetten en grenzen, en nieuwe handelsmogelijkheden buiten Europa.",
+    "Johnson: Hallo, van 2019 tot en met 2022 (tijdens de Brexit) was ik premier van het VK. Ik was een uitgesproken voorstander en vond dat het VK beter af zou zijn buiten de EU: meer controle over eigen wetten en grenzen, en nieuwe handelsmogelijkheden buiten Europa.",
     "Starmer: Hallo, sinds 2020 ben ik leider van de Labour Party en sinds 2024 premier van het Verenigd Koninkrijk. Ik was kritisch over Brexit en waarschuwde steeds voor de economische nadelen: meer handelsbarrières, minder investeringen en economische schade voor het VK.",
     "Van Weel: Bedankt voor jullie introductie. Zo werkt het spel: ik geef telkens een stelling, jullie reageren erop, en de leerlingen thuis krijgen een bron om te checken wat daadwerkelijk waar is.",
     "Door de juiste optie te kiezen laat de impactmeter zien of Brexit meer economische impact had voor het VK of de EU. Hier is de eerste stelling."
@@ -374,13 +374,17 @@ function Level4({ onComplete }) {
           setSelectedAnswer(null);
         }
       } else {
-        // Wrong answer - reset
+        // Wrong answer - reset, en geef de leerling de kans om de bron
+        // nog eens te bekijken voordat hij/zij het opnieuw probeert.
         if (isStatement3) {
           setSelectedAnswer3(null);
+          setShowSourceButton3(true);
         } else if (isStatement2) {
           setSelectedAnswer2(null);
+          setShowSourceButton2(true);
         } else {
           setSelectedAnswer(null);
+          setShowSourceButton(true);
         }
       }
     }, 1000);
@@ -1139,7 +1143,7 @@ function Level4({ onComplete }) {
           >
             <div className="relative bg-white rounded-2xl px-6 py-4 shadow-2xl border-4 border-gray-800 max-w-xs">
               <p className="text-base text-gray-800 leading-snug font-sans">
-                <strong>Johnson:</strong> "Dat klopt niet — Britse bedrijven handelen nog steeds vrij met Europa en hebben nieuwe wereldwijde kansen gekregen."
+                <strong>Johnson:</strong> "Dat klopt niet. Britse bedrijven handelen nog steeds vrij met Europa en hebben nieuwe wereldwijde kansen gekregen."
               </p>
             </div>
           </div>
@@ -1195,7 +1199,7 @@ function Level4({ onComplete }) {
           >
             <div className="relative bg-white rounded-2xl px-6 py-4 shadow-2xl border-4 border-gray-800 max-w-xs">
               <p className="text-base text-gray-800 leading-snug font-sans">
-                <strong>Johnson:</strong> Investeringsschommelingen komen door wereldwijde onzekerheid, niet door Brexit. Zo lopen we in het VK juist voorop bij de ontwikkeling van kweekvlees — onder EU-regels had dat niet gekund.
+                <strong>Johnson:</strong> Investeringsschommelingen komen door wereldwijde onzekerheid, niet door Brexit. Zo lopen we in het VK juist voorop bij de ontwikkeling van kweekvlees, iets wat onder EU-regels niet had gekund.
               </p>
             </div>
           </div>
@@ -1671,7 +1675,7 @@ function Level4({ onComplete }) {
           >
             <div className="relative bg-white rounded-2xl px-6 py-4 shadow-2xl border-4 border-gray-800 max-w-md">
               <p className="text-base text-gray-800 leading-snug font-sans">
-                <strong>Van Weel:</strong> Inderdaad — hoewel andere factoren meespelen, wijzen de meeste studies op een negatief effect voor het VK. Laten we dit verwerken in de impactmeter.
+                <strong>Van Weel:</strong> Inderdaad, hoewel andere factoren meespelen, wijzen de meeste studies op een negatief effect voor het VK. Laten we dit verwerken in de impactmeter.
               </p>
             </div>
           </div>
