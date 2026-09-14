@@ -8,6 +8,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Newsreader:wght@400;500;600&family=Hanken+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js" defer></script>
+<script src="scripts/stofafbakening.js"></script>
 <style>
   :root {
     --inkt: #1C3A5E;
@@ -711,7 +712,8 @@ function laadConfig(config) {
       nr: String(v.nr), onderwerp: v.onderwerp || "", wds: (v.wds || "S"), max: Number(v.max) || 1,
       oefenBoekje: tekstOf(v.oefenBoekje), oefenPE: tekstOf(v.oefenPE),
       onderwerpen: Array.isArray(v.onderwerpen) ? v.onderwerpen.map(String) : [],
-      geenOefenadvies: v.geenOefenadvies === true
+      geenOefenadvies: v.geenOefenadvies === true,
+      algemeneFeedback: tekstOf(v.algemeneFeedback)
     }))
   };
   TOETS_ID = String(config.id || config.toetsId || titel || "toets");
@@ -1033,21 +1035,9 @@ function formatMetPagina(items) {
 function berekenNietGetoetst() {
   if (!TOETS_STOFAFBAKENING || !BOEK_ONDERWERPEN || !BOEK_INDEX) return null;
 
-  const hoofdstukken = Array.isArray(TOETS_STOFAFBAKENING.hoofdstukken) ? TOETS_STOFAFBAKENING.hoofdstukken : [];
-  const extra = Array.isArray(TOETS_STOFAFBAKENING.extra) ? TOETS_STOFAFBAKENING.extra : [];
-  const uitgesloten = Array.isArray(TOETS_STOFAFBAKENING.uitgesloten) ? TOETS_STOFAFBAKENING.uitgesloten : [];
-
-  // Alle codes van de getoetste hoofdstukken, plus 'extra', min 'uitgesloten'
-  const stofCodes = new Set();
-  (BOEK_ONDERWERPEN.onderwerpen || []).forEach(o => { if (hoofdstukken.includes(o.hoofdstuk)) stofCodes.add(o.id); });
-  extra.forEach(c => stofCodes.add(c));
-  uitgesloten.forEach(c => stofCodes.delete(c));
-
-  // min de codes die daadwerkelijk in de vragen van déze toets voorkomen
-  TOETS.vragen.forEach(v => v.onderwerpen.forEach(c => stofCodes.delete(c)));
-
-  // Sorteren op code, niet op volgorde in het bestand
-  const overCodes = [...stofCodes].sort();
+  // Welke codes binnen de stofafbakening niet getoetst zijn: gedeelde logica
+  // met controle.html, zie scripts/stofafbakening.js.
+  const overCodes = berekenStofafbakening(TOETS_STOFAFBAKENING, TOETS.vragen, BOEK_ONDERWERPEN, BOEK_INDEX).nietGetoetstCodes;
   const alleRijen = BOEK_INDEX.rijen || [];
 
   return overCodes.map(code => {
@@ -1284,7 +1274,11 @@ async function maakFeedback() {
               : `<span class="type-badge" style="background:color-mix(in srgb, ${ft.kleur} 16%, white);color:${ft.kleur}">${ft.label}</span>`;
           }).join("")
         : `<span class="type-badge type-geen">geen type gekozen</span>`;
-      const geenAdviesTekst = "Bij deze vraag wordt je begripskennis getest. Om het de volgende keer beter te doen, moet je de begrippenlijst beter bestuderen.";
+      // Standaardtekst voor geenOefenadvies-vragen, tenzij de vraag zelf een
+      // algemeneFeedback heeft (bv. een rekenvraag zonder onderwerpen, waar
+      // de standaardtekst over begripskennis niet klopt).
+      const geenAdviesStandaard = "Bij deze vraag wordt je begripskennis getest. Om het de volgende keer beter te doen, moet je de begrippenlijst beter bestuderen.";
+      const geenAdviesTekst = v.algemeneFeedback || geenAdviesStandaard;
       const oefB = v.geenOefenadvies || !v.oefenBoekje
         ? "" : `<div class="haak"><span class="merk">Oefenboekje:</span><span>opgave ${esc(v.oefenBoekje)}</span></div>`;
       const oefP = v.geenOefenadvies
@@ -1366,6 +1360,7 @@ function maakResultaat(naam, totaalBehaald, miss, totaalMiss) {
     fouten: [...state[i].fouten].map(t => FOUTTYPEN[t] ? FOUTTYPEN[t].label : t),
     oefenBoekje: v.oefenBoekje || "", oefenPE: v.oefenPE || "",
     geenOefenadvies: !!v.geenOefenadvies,
+    algemeneFeedback: v.algemeneFeedback || "",
     specifiek: VRAAGSPECIFIEK[v.nr] || ""
   }));
   return {
@@ -1567,7 +1562,8 @@ function maakPdf(res) {
     foute.forEach(v => {
       const foutStr = v.fouten.length ? `  ·  ${v.fouten.join(", ")}` : "";
       const kopStr = `Vraag ${v.nr}: ${v.onderwerp}  (${formatPunten(v.behaald)}/${v.max} punten${foutStr})`;
-      const geenAdviesTekst = "Bij deze vraag wordt je begripskennis getest. Om het de volgende keer beter te doen, moet je de begrippenlijst beter bestuderen.";
+      const geenAdviesStandaard = "Bij deze vraag wordt je begripskennis getest. Om het de volgende keer beter te doen, moet je de begrippenlijst beter bestuderen.";
+      const geenAdviesTekst = v.algemeneFeedback || geenAdviesStandaard;
       const peStr = v.geenOefenadvies ? `Advies: ${geenAdviesTekst}` : `PE-boek: ${v.oefenPE || "opgaven en pagina's volgen nog"}`;
       let blokH = hoogteVan(kopStr, 10.5, "bold", 0, 5) + hoogteVan(peStr, 9.5, "normal", 4, 4.4) + 2.5;
       if (!v.geenOefenadvies && v.oefenBoekje) blokH += hoogteVan(`Oefenboekje: opgave ${v.oefenBoekje}`, 9.5, "normal", 4, 4.4);

@@ -34,11 +34,17 @@
   .fout-melding { background: #FBEFEA; border: 1px solid #E8C9BE; border-radius: 10px; padding: 14px 16px; color: var(--fout); }
   .uitleg { color: var(--inkt-zacht); font-size: 12.5px; margin: 6px 0 14px; max-width: 70ch; }
   code { background: #EEF3F8; padding: 1px 5px; border-radius: 5px; font-size: 12px; }
+  .check-ok { background: #EAF2EF; border: 1px solid #B9D9CD; border-radius: 10px; padding: 12px 16px; color: var(--goed); font-size: 13px; margin-bottom: 20px; }
+  .check-fout { background: #FBEFEA; border: 1px solid #E8C9BE; border-radius: 10px; padding: 12px 16px; color: var(--fout); font-size: 13px; margin-bottom: 20px; font-weight: 600; }
+  .kaart-groot { border-color: var(--goed); border-width: 2px; }
+  .kaart-groot .totaal { font-size: 34px; color: var(--goed); }
 </style>
 </head>
 <body>
   <h1>Controle stofafbakening</h1>
   <p class="sub">Interne controleweergave — niet gelinkt vanuit het menu, niet bedoeld voor leerlingen.</p>
+
+  <div id="regressie"></div>
 
   <div class="kies">
     <label for="toetsKeuze">Toets:</label>
@@ -48,13 +54,55 @@
 
   <div id="inhoud"></div>
 
+<script src="scripts/stofafbakening.js"></script>
 <script>
 // Handmatig bijhouden welke toetsen er zijn (dezelfde bestanden als toetsen/*.json).
 // Alleen voor het keuzemenu van deze controlepagina.
 const BEKENDE_TOETSEN = ["4h-m1-h1h2", "4h-m2-h2h3", "4h-pw-m1-h1h2"];
 
 function esc(s) { return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;'); }
-function fmt(n) { return String(Math.round(n * 10) / 10).replace(".", ","); }
+
+async function laadStofdataVoor(toetsId) {
+  const toets = await fetch(`toetsen/${toetsId}.json`, { cache: "no-store" }).then(r => { if (!r.ok) throw new Error("toets: HTTP " + r.status); return r.json(); });
+  if (!toets.boek || !toets.stofafbakening) throw new Error("geen boek/stofafbakening");
+  const [index, onderwerpen] = await Promise.all([
+    fetch(`index-${toets.boek}.json`, { cache: "no-store" }).then(r => { if (!r.ok) throw new Error("index: HTTP " + r.status); return r.json(); }),
+    fetch(`onderwerpen-${toets.boek}.json`, { cache: "no-store" }).then(r => { if (!r.ok) throw new Error("onderwerpen: HTTP " + r.status); return r.json(); })
+  ]);
+  return { toets, index, onderwerpen };
+}
+
+// ---------------------------------------------------------------------------
+// Regressiecheck: vaste, met de hand nagerekende controlegetallen voor
+// 4H-PW-M1-H1H2, hardgecodeerd. Slaagt of faalt zichtbaar, onafhankelijk van
+// welke toets er in het keuzemenu hieronder staat — zodat een latere
+// wijziging aan de logica (in scripts/stofafbakening.js) meteen opvalt.
+// ---------------------------------------------------------------------------
+const VERWACHT_4H_PW_M1_H1H2 = { binnenStofafbakening: 318, aftrekking: 56, adviespool: 262, alleenGeenAdvies: 109, strengeAdviespool: 153 };
+
+async function voerRegressiecheckUit() {
+  const el = document.getElementById("regressie");
+  try {
+    const { toets, index, onderwerpen } = await laadStofdataVoor("4h-pw-m1-h1h2");
+    const b = berekenStofafbakening(toets.stofafbakening, toets.vragen, onderwerpen, index);
+    const alleCodes = [...b.stofCodes];
+    const gevonden = {
+      binnenStofafbakening: b.somVan(alleCodes).totaal,
+      aftrekking: b.somVan(b.nietGetoetstCodes).totaal,
+      adviespool: b.somVan(alleCodes).totaal - b.somVan(b.nietGetoetstCodes).totaal,
+      alleenGeenAdvies: b.somVan(b.alleenGeenAdvies).totaal,
+      strengeAdviespool: b.somVan(alleCodes).totaal - b.somVan(b.strengNietGetoetstCodes).totaal
+    };
+    const verschillen = Object.keys(VERWACHT_4H_PW_M1_H1H2).filter(k => VERWACHT_4H_PW_M1_H1H2[k] !== gevonden[k]);
+    if (verschillen.length === 0) {
+      el.innerHTML = `<div class="check-ok">✓ Regressiecheck geslaagd — 4H-PW-M1-H1H2 geeft nog steeds 318 / 56 / 262 / 109 / 153.</div>`;
+    } else {
+      el.innerHTML = `<div class="check-fout">✗ Regressiecheck GEFAALD — de berekening is veranderd: ${esc(verschillen.map(k => `${k} verwacht ${VERWACHT_4H_PW_M1_H1H2[k]}, nu ${gevonden[k]}`).join("; "))}</div>`;
+    }
+  } catch (e) {
+    el.innerHTML = `<div class="check-fout">✗ Regressiecheck kon niet draaien: ${esc(e.message)}</div>`;
+  }
+}
 
 const select = document.getElementById("toetsKeuze");
 BEKENDE_TOETSEN.forEach(id => {
@@ -77,99 +125,49 @@ async function laad(toetsId) {
 
   let toets, index, onderwerpen;
   try {
-    toets = await fetch(`toetsen/${toetsId}.json`, { cache: "no-store" }).then(r => { if (!r.ok) throw new Error("toets: HTTP " + r.status); return r.json(); });
+    ({ toets, index, onderwerpen } = await laadStofdataVoor(toetsId));
   } catch (e) {
-    inhoud.innerHTML = `<div class="fout-melding">Kon <code>toetsen/${esc(toetsId)}.json</code> niet laden: ${esc(e.message)}</div>`;
-    return;
-  }
-  if (!toets.boek || !toets.stofafbakening) {
-    inhoud.innerHTML = `<div class="fout-melding">Deze toets heeft geen <code>boek</code>- of <code>stofafbakening</code>-veld, dus er is niets te controleren (werkt met de handmatige nietGetoetst-lijst).</div>`;
-    return;
-  }
-  const boek = toets.boek;
-  try {
-    [index, onderwerpen] = await Promise.all([
-      fetch(`index-${boek}.json`, { cache: "no-store" }).then(r => { if (!r.ok) throw new Error("index: HTTP " + r.status); return r.json(); }),
-      fetch(`onderwerpen-${boek}.json`, { cache: "no-store" }).then(r => { if (!r.ok) throw new Error("onderwerpen: HTTP " + r.status); return r.json(); })
-    ]);
-  } catch (e) {
-    inhoud.innerHTML = `<div class="fout-melding">Kon de stofdata voor boek "${esc(boek)}" niet laden: ${esc(e.message)}</div>`;
+    inhoud.innerHTML = `<div class="fout-melding">Kon de toets of stofdata niet laden: ${esc(e.message)}</div>`;
     return;
   }
 
-  // ---- Dezelfde aftrekking als berekenNietGetoetst() in feedbacktool.html ----
+  // ---- Gedeelde logica met feedbacktool.html, zie scripts/stofafbakening.js ----
+  const b = berekenStofafbakening(toets.stofafbakening, toets.vragen, onderwerpen, index);
   const hoofdstukken = Array.isArray(toets.stofafbakening.hoofdstukken) ? toets.stofafbakening.hoofdstukken : [];
   const extra = Array.isArray(toets.stofafbakening.extra) ? toets.stofafbakening.extra : [];
-  const uitgesloten = Array.isArray(toets.stofafbakening.uitgesloten) ? toets.stofafbakening.uitgesloten : [];
+  const alleCodes = [...b.stofCodes].sort();
 
-  const stofCodes = new Set();
-  (onderwerpen.onderwerpen || []).forEach(o => { if (hoofdstukken.includes(o.hoofdstuk)) stofCodes.add(o.id); });
-  extra.forEach(c => stofCodes.add(c));
-  uitgesloten.forEach(c => stofCodes.delete(c)); // codes, geen vrije tekst -- meestal een no-op
-
-  // Per code: komt hij voor in een gewone vraag, en/of alleen in een
-  // geenOefenadvies-vraag?
-  const perCode = {};
-  (toets.vragen || []).forEach(v => {
-    (v.onderwerpen || []).forEach(c => {
-      if (!perCode[c]) perCode[c] = { gewoon: false, geenAdvies: false };
-      if (v.geenOefenadvies) perCode[c].geenAdvies = true; else perCode[c].gewoon = true;
-    });
-  });
-  const getoetst = new Set(Object.keys(perCode));
-  const alleenGeenAdvies = Object.keys(perCode).filter(c => perCode[c].geenAdvies && !perCode[c].gewoon);
-
-  function telOpgaven(code) {
-    const rijen = (index.rijen || []).filter(r => r.stof === true && Array.isArray(r.onderwerpen) && r.onderwerpen.includes(code));
-    const pe = rijen.filter(r => r.bron === "lesboek").length;
-    const boekje = rijen.filter(r => r.bron === "oefenboekje").length;
-    return { pe, boekje, totaal: pe + boekje };
-  }
-
-  const rijenPerCode = {};
-  [...stofCodes].forEach(c => { rijenPerCode[c] = telOpgaven(c); });
-
-  function som(codes) {
-    const t = { pe: 0, boekje: 0, totaal: 0 };
-    codes.forEach(c => { t.pe += rijenPerCode[c].pe; t.boekje += rijenPerCode[c].boekje; t.totaal += rijenPerCode[c].totaal; });
-    return t;
-  }
-
-  const alleCodes = [...stofCodes].sort();
-  const totaalBinnen = som(alleCodes);
-  const nietGetoetstCodes = alleCodes.filter(c => !getoetst.has(c));
-  const aftrekking = som(nietGetoetstCodes);
+  const totaalBinnen = b.somVan(alleCodes);
+  const aftrekking = b.somVan(b.nietGetoetstCodes);
   const adviespool = { pe: totaalBinnen.pe - aftrekking.pe, boekje: totaalBinnen.boekje - aftrekking.boekje, totaal: totaalBinnen.totaal - aftrekking.totaal };
-
-  const strengeAftrekCodes = alleCodes.filter(c => !getoetst.has(c) || alleenGeenAdvies.includes(c));
-  const strengeAftrek = som(strengeAftrekCodes);
+  const strengeAftrek = b.somVan(b.strengNietGetoetstCodes);
   const strengeAdviespool = { pe: totaalBinnen.pe - strengeAftrek.pe, boekje: totaalBinnen.boekje - strengeAftrek.boekje, totaal: totaalBinnen.totaal - strengeAftrek.totaal };
-  const alleenGeenAdviesSom = som(alleenGeenAdvies);
+  const alleenGeenAdviesSom = b.somVan(b.alleenGeenAdvies);
 
   const labelVan = code => { const o = (onderwerpen.onderwerpen || []).find(x => x.id === code); return o ? o.label : code; };
 
   // ---- Renderen ----
-  const kaart = (label, t) => `<div class="kaart"><div class="label">${esc(label)}</div>
+  const kaart = (label, t, groot) => `<div class="kaart${groot ? " kaart-groot" : ""}"><div class="label">${esc(label)}</div>
     <div class="totaal">${t.totaal}</div>
     <div class="getallen">PE: ${t.pe} · boekje: ${t.boekje}</div></div>`;
 
   const rijenHtml = alleCodes.map(c => {
-    const info = perCode[c];
-    const opToets = getoetst.has(c);
+    const opToets = b.getoetst.has(c);
     const status = !opToets ? `<span class="nee">nee</span>`
-      : (alleenGeenAdvies.includes(c) ? `<span class="ja">ja</span><span class="badge">alleen geenOefenadvies</span>` : `<span class="ja">ja</span>`);
+      : (b.alleenGeenAdvies.includes(c) ? `<span class="ja">ja</span><span class="badge">alleen geenOefenadvies</span>` : `<span class="ja">ja</span>`);
+    const r = b.telOpgaven(c);
     return `<tr>
       <td><code>${esc(c)}</code></td>
       <td>${esc(labelVan(c))}</td>
-      <td class="num">${rijenPerCode[c].pe}</td>
-      <td class="num">${rijenPerCode[c].boekje}</td>
-      <td class="num">${rijenPerCode[c].totaal}</td>
+      <td class="num">${r.pe}</td>
+      <td class="num">${r.boekje}</td>
+      <td class="num">${r.totaal}</td>
       <td>${status}</td>
     </tr>`;
   }).join("");
 
   inhoud.innerHTML = `
-    <p class="sub"><strong>${esc(toets.titel || toets.toets || toetsId)}</strong> — boek <code>${esc(boek)}</code>,
+    <p class="sub"><strong>${esc(toets.titel || toets.toets || toetsId)}</strong> — boek <code>${esc(toets.boek)}</code>,
       hoofdstukken ${esc(hoofdstukken.join(", "))}${extra.length ? ", extra " + esc(extra.join(", ")) : ""},
       ${alleCodes.length} onderwerpen binnen de stofafbakening.</p>
 
@@ -178,19 +176,18 @@ async function laad(toetsId) {
 
     <h2>Aftrekking — onderwerpen die niet op deze toets voorkomen</h2>
     <div class="kaarten">${kaart("Aftrekking", aftrekking)}</div>
-    <p class="uitleg">Codes: ${nietGetoetstCodes.length ? esc(nietGetoetstCodes.join(", ")) : "(geen)"}</p>
+    <p class="uitleg">Codes: ${b.nietGetoetstCodes.length ? esc(b.nietGetoetstCodes.join(", ")) : "(geen)"}</p>
 
-    <h2>Adviespool — zo rekent de tool het nu (stap 4/5 in feedbacktool.html)</h2>
-    <div class="kaarten">${kaart("Adviespool", adviespool)}</div>
-    <p class="uitleg">Dit is de huidige logica: een onderwerp telt als "getoetst" zodra het in de <code>onderwerpen</code>-lijst van een vraag staat, óók als die vraag <code>geenOefenadvies: true</code> heeft.</p>
+    <h2>Adviespool</h2>
+    <div class="kaarten">
+      ${kaart("Bereikbare adviespool (excl. alleen-geenOefenadvies)", strengeAdviespool, true)}
+      ${kaart("Tussenstap — zo rekent de tool nu voor 'Niet alle stof is getoetst'", adviespool)}
+    </div>
+    <p class="uitleg">De tool zelf blijft rekenen met de tussenstap (262) voor de lijst die leerlingen zien — dat is niet veranderd. De bereikbare adviespool (153) is wat overblijft als je de onderwerpen die uitsluitend in een geenOefenadvies-vraag voorkomen er ook uit haalt; die onderwerpen leveren toch nooit advies op.</p>
 
     <h2>Apart: onderwerpen die uitsluitend in een geenOefenadvies-vraag voorkomen</h2>
     <div class="kaarten">${kaart("Opgaven van deze onderwerpen", alleenGeenAdviesSom)}</div>
-    <p class="uitleg">Codes: ${alleenGeenAdvies.length ? esc(alleenGeenAdvies.join(", ")) : "(geen)"} — deze onderwerpen worden nu wél als "getoetst" gerekend (zie kolom hieronder), maar leveren nooit oefenadvies op omdat de enige vraag die ze noemt geen advies toont.</p>
-
-    <h2>Ter vergelijking: strengere variant (deze onderwerpen óók wegstrepen)</h2>
-    <div class="kaarten">${kaart("Strengere adviespool", strengeAdviespool)}</div>
-    <p class="uitleg">Dit is <strong>niet</strong> wat de tool nu doet — puur ter vergelijking, voor het geval je de logica wilt aanscherpen.</p>
+    <p class="uitleg">Codes: ${b.alleenGeenAdvies.length ? esc(b.alleenGeenAdvies.join(", ")) : "(geen)"} — deze onderwerpen worden nu wél als "getoetst" gerekend (zie kolom hieronder), maar leveren nooit oefenadvies op omdat de enige vraag die ze noemt geen advies toont.</p>
 
     <h2>Per onderwerp</h2>
     <table>
@@ -200,6 +197,7 @@ async function laad(toetsId) {
   `;
 }
 
+voerRegressiecheckUit();
 if (select.value) laad(select.value);
 else if (BEKENDE_TOETSEN.length) { select.value = BEKENDE_TOETSEN[0]; laad(select.value); }
 </script>
