@@ -1,0 +1,195 @@
+{
+  "toetsId": "4H-PW-M1-H1H2",
+  "toets": "Proefwerk Module 1, hoofdstuk 1 en 2 (4 havo, 45 minuten, 27 punten)",
+  "docent": "Mathijs Remmerswaal",
+  "boek": "PE-M1",
+  "publicatie": "2026-09-21",
+  "stofafbakening": {
+    "hoofdstukken": [1, 2],
+    "extra": [
+      "M1-A-01",
+      "M1-A-02"
+    ],
+    "uitgesloten": [
+      "Opofferingskosten (H1 §1 blz. 11, §2 blz. 17)",
+      "Praktijkonderzoek 'Wie krijgt een donororgaan?' (H1 §1)",
+      "Vacature (H1 §3 blz. 26)",
+      "Monopolie (H2 §1 blz. 33)",
+      "ACM en NVWA (H2 §2 blz. 43)",
+      "Praktijkonderzoek 'Het handelsembargo van president Jefferson' (H2 §1 blz. 32)",
+      "Thuiskopievergoeding (H2 §1 blz. 34)",
+      "Kenniseconomie (H2 §4 blz. 62)",
+      "Organisatievorm (H2 §3 blz. 51)",
+      "Managers en generalisten (H2 §3 blz. 51)",
+      "De vier voorwaarden om tot een ruil te komen (H2 §1 leertekst)"
+    ]
+  },
+  "vragen": [
+    {
+      "nr": "1a",
+      "onderwerp": "Netto baten van werken berekenen",
+      "onderwerpen": ["M1-H1-04"],
+      "wds": "D",
+      "max": 1,
+      "oefenBoekje": [],
+      "oefenPE": [],
+      "specifiek": "Netto baten = baten − kosten. De kosten van ongerief (het bedrag dat je overhebt om niet te hoeven werken) tellen mee als kosten, ook al betaal je ze niet echt."
+    },
+    {
+      "nr": "1b",
+      "onderwerp": "Minimale baten bepalen door netto baten van alternatieven te vergelijken",
+      "onderwerpen": ["M1-H1-04"],
+      "wds": "S",
+      "max": 2,
+      "oefenBoekje": [],
+      "oefenPE": [],
+      "specifiek": "Vergelijk met het beste alternatief, niet met het slechtste. Reken eerst de netto baten van beide werkopties uit, neem de hoogste, en tel die op bij de kosten van het uitje."
+    },
+    {
+      "nr": "2",
+      "onderwerp": "Koppelvraag: zes begrippen aan omschrijvingen koppelen",
+      "onderwerpen": [
+        "M1-H2-09",
+        "M1-H1-06",
+        "M1-H2-05",
+        "M1-H2-08",
+        "M1-H1-03",
+        "M1-H1-05"
+      ],
+      "wds": "W",
+      "max": 3,
+      "oefenBoekje": [],
+      "oefenPE": [],
+      "specifiek": "Let op het verschil tussen budget (de bestedingsruimte, een bedrag) en budgetlijn (alle productcombinaties die je met dat budget maximaal kunt kopen).",
+      "geenOefenadvies": true
+    },
+    {
+      "nr": "3",
+      "onderwerp": "Juist/onjuist: zes beweringen over behoeften, schaarste, auteursrecht en transactiekosten",
+      "onderwerpen": [
+        "M1-H1-01",
+        "M1-H1-03",
+        "M1-H2-04",
+        "M1-H2-05",
+        "M1-H2-01"
+      ],
+      "wds": "S",
+      "max": 3,
+      "oefenBoekje": [],
+      "oefenPE": [],
+      "specifiek": "Schaarste betekent niet zeldzaam: ook kraanwater is schaars zolang er middelen (arbeid, kapitaal) nodig zijn om het te maken. En een ruil gaat juist wél door als de transactiekosten kleiner zijn dan het wederzijds voordeel.",
+      "geenOefenadvies": true
+    },
+    {
+      "nr": "4a",
+      "onderwerp": "Arbeidsproductiviteit per uur in euro's berekenen en vergelijken",
+      "onderwerpen": ["M1-H2-09"],
+      "wds": "D",
+      "max": 2,
+      "oefenBoekje": [],
+      "oefenPE": [],
+      "specifiek": "Arbeidsproductiviteit in euro's = productie × prijs ÷ aantal uren. Deel door de uren, niet door het aantal werknemers, als er om 'per uur' wordt gevraagd."
+    },
+    {
+      "nr": "4b",
+      "onderwerp": "Twee oorzaken van een verschil in arbeidsproductiviteit noemen",
+      "onderwerpen": ["M1-H2-09", "M1-H2-11", "M1-H2-10"],
+      "wds": "S",
+      "max": 2,
+      "oefenBoekje": [],
+      "oefenPE": [],
+      "specifiek": "Denk aan de drie standaardoorzaken: betere machines (kapitaal), beter geschoold personeel (scholing) en meer arbeidsdeling/specialisatie. 'Ze werken harder' telt niet."
+    },
+    {
+      "nr": "4c",
+      "onderwerp": "Loonkosten per product berekenen en vergelijken",
+      "onderwerpen": [],
+      "wds": "D",
+      "max": 1,
+      "oefenBoekje": [],
+      "oefenPE": [],
+      "specifiek": "Dit is een vraag waarbij je algemene rekenvaardigheden worden getest. Oefenen met rekenvragen helpt je om hier beter in te worden.",
+      "geenOefenadvies": true
+    },
+    {
+      "nr": "4d",
+      "onderwerp": "Procentuele toename van de productie berekenen",
+      "onderwerpen": ["M1-A-01"],
+      "wds": "D",
+      "max": 2,
+      "oefenBoekje": [],
+      "oefenPE": [],
+      "specifiek": "Procentuele verandering = (nieuw − oud) ÷ oud × 100%. Deel door de oude waarde, niet door de nieuwe."
+    },
+    {
+      "nr": "4e",
+      "onderwerp": "Patent: motief voor aanvragen (versie A) / omschrijving van het begrip (versie B)",
+      "onderwerpen": ["M1-H2-04"],
+      "wds": "S",
+      "max": 1,
+      "oefenBoekje": [],
+      "oefenPE": [],
+      "specifiek": "Een patent is een intellectueel eigendomsrecht: anderen mogen de vinding niet namaken. Het motief is het concurrentievoordeel waarmee de ontwikkelkosten terugverdiend kunnen worden."
+    },
+    {
+      "nr": "4f",
+      "onderwerp": "Nadeel van een patent voor consumenten uitleggen",
+      "onderwerpen": ["M1-H2-04"],
+      "wds": "S",
+      "max": 2,
+      "oefenBoekje": [],
+      "oefenPE": [],
+      "specifiek": "Maak de redenering in twee stappen af: minder concurrentie (of hogere kosten) → hogere prijs → nadeel voor de consument. Alleen 'de kwaliteit blijft gelijk' is geen economische verklaring."
+    },
+    {
+      "nr": "5a",
+      "onderwerp": "Vergelijking van de budgetlijn opstellen",
+      "onderwerpen": ["M1-H1-06"],
+      "wds": "D",
+      "max": 1,
+      "oefenBoekje": [],
+      "oefenPE": [],
+      "specifiek": "De vergelijking heeft de vorm budget = prijs₁ × hoeveelheid₁ + prijs₂ × hoeveelheid₂. Gebruik dezelfde eenheid (hier miljoenen euro's) aan beide kanten."
+    },
+    {
+      "nr": "5b",
+      "onderwerp": "Budgetlijn tekenen met behulp van de snijpunten",
+      "onderwerpen": ["M1-H1-06"],
+      "wds": "D",
+      "max": 2,
+      "oefenBoekje": [],
+      "oefenPE": [],
+      "specifiek": "Bereken eerst beide snijpunten: budget ÷ prijs van het ene product (als je alles daaraan besteedt) en hetzelfde voor het andere. Trek daarna een rechte lijn en let op welke as welk product is."
+    },
+    {
+      "nr": "5c",
+      "onderwerp": "Productcombinatie op de budgetlijn berekenen bij een gelijke verhouding",
+      "onderwerpen": ["M1-H1-06", "M1-H1-05"],
+      "wds": "D",
+      "max": 2,
+      "oefenBoekje": [],
+      "oefenPE": [],
+      "specifiek": "Bij 'evenveel van allebei' tel je de prijs van één van elk op tot een pakketprijs en deel je het budget daardoor. Werk met een berekening, niet met gokken en aflezen."
+    },
+    {
+      "nr": "5d",
+      "onderwerp": "De juiste verschuiving van de budgetlijn herkennen bij een prijsstijging van beide producten",
+      "onderwerpen": ["M1-H1-07"],
+      "wds": "S",
+      "max": 1,
+      "oefenBoekje": [],
+      "oefenPE": [],
+      "specifiek": "Worden beide producten even veel duurder, dan schuift de hele lijn evenwijdig naar binnen: de helling verandert niet. Alleen als één prijs verandert, draait de lijn."
+    },
+    {
+      "nr": "5e",
+      "onderwerp": "Aantonen dat een prijsstijging hetzelfde effect heeft als een budgetdaling",
+      "onderwerpen": ["M1-H1-07", "M1-A-01"],
+      "wds": "S",
+      "max": 2,
+      "oefenBoekje": [],
+      "oefenPE": [],
+      "specifiek": "Reken beide situaties helemaal door en vergelijk de uitkomsten. Let op: prijzen ×1,25 komt neer op een budget ×0,80 (niet −25%), want 1 ÷ 1,25 = 0,80."
+    }
+  ]
+}

@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Controle stofafbakening</title>
+<style>
+  :root {
+    --inkt: #1C3A5E; --inkt-zacht: #4C6885; --lijn: #DCE6F1; --wit: #fff;
+    --achtergrond: #F5F8FB; --terra: #C57B5C; --goed: #4E927B; --fout: #B2503A;
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--achtergrond); color: var(--inkt); font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; font-size: 14px; line-height: 1.5; padding: 24px; }
+  h1 { font-size: 22px; margin: 0 0 4px; }
+  h2 { font-size: 16px; margin: 32px 0 10px; }
+  .sub { color: var(--inkt-zacht); margin: 0 0 20px; font-size: 13px; }
+  .kies { display: flex; gap: 10px; align-items: center; margin-bottom: 20px; flex-wrap: wrap; }
+  select, button { font: inherit; padding: 8px 12px; border-radius: 8px; border: 1px solid var(--lijn); background: var(--wit); color: var(--inkt); }
+  button { cursor: pointer; border-color: var(--inkt); }
+  .kaarten { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 12px; margin-bottom: 8px; }
+  .kaart { background: var(--wit); border: 1px solid var(--lijn); border-radius: 10px; padding: 14px 16px; }
+  .kaart .label { font-size: 12px; color: var(--inkt-zacht); margin-bottom: 6px; }
+  .kaart .getallen { font-size: 13px; }
+  .kaart .totaal { font-size: 22px; font-weight: 700; }
+  table { width: 100%; border-collapse: collapse; background: var(--wit); border: 1px solid var(--lijn); border-radius: 10px; overflow: hidden; font-size: 13px; }
+  th, td { text-align: left; padding: 7px 10px; border-bottom: 1px solid var(--lijn); }
+  th { background: #EEF3F8; font-weight: 600; font-size: 12px; color: var(--inkt-zacht); }
+  tr:last-child td { border-bottom: none; }
+  .num { text-align: right; font-variant-numeric: tabular-nums; }
+  .ja { color: var(--goed); font-weight: 600; }
+  .nee { color: var(--fout); }
+  .badge { display: inline-block; font-size: 11px; padding: 1px 7px; border-radius: 999px; background: #FBEFEA; color: var(--fout); margin-left: 6px; }
+  .fout-melding { background: #FBEFEA; border: 1px solid #E8C9BE; border-radius: 10px; padding: 14px 16px; color: var(--fout); }
+  .uitleg { color: var(--inkt-zacht); font-size: 12.5px; margin: 6px 0 14px; max-width: 70ch; }
+  code { background: #EEF3F8; padding: 1px 5px; border-radius: 5px; font-size: 12px; }
+</style>
+</head>
+<body>
+  <h1>Controle stofafbakening</h1>
+  <p class="sub">Interne controleweergave — niet gelinkt vanuit het menu, niet bedoeld voor leerlingen.</p>
+
+  <div class="kies">
+    <label for="toetsKeuze">Toets:</label>
+    <select id="toetsKeuze"></select>
+    <button id="ververs">Vernieuwen</button>
+  </div>
+
+  <div id="inhoud"></div>
+
+<script>
+// Handmatig bijhouden welke toetsen er zijn (dezelfde bestanden als toetsen/*.json).
+// Alleen voor het keuzemenu van deze controlepagina.
+const BEKENDE_TOETSEN = ["4h-m1-h1h2", "4h-m2-h2h3", "4h-pw-m1-h1h2"];
+
+function esc(s) { return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;'); }
+function fmt(n) { return String(Math.round(n * 10) / 10).replace(".", ","); }
+
+const select = document.getElementById("toetsKeuze");
+BEKENDE_TOETSEN.forEach(id => {
+  const o = document.createElement("option");
+  o.value = id; o.textContent = id;
+  select.appendChild(o);
+});
+
+const zoek = new URLSearchParams(location.search);
+const gevraagd = zoek.get("toets");
+if (gevraagd && BEKENDE_TOETSEN.includes(gevraagd)) select.value = gevraagd;
+
+select.addEventListener("change", () => laad(select.value));
+document.getElementById("ververs").addEventListener("click", () => laad(select.value));
+
+async function laad(toetsId) {
+  const inhoud = document.getElementById("inhoud");
+  inhoud.innerHTML = "<p>Bezig met laden…</p>";
+  history.replaceState(null, "", "?toets=" + encodeURIComponent(toetsId));
+
+  let toets, index, onderwerpen;
+  try {
+    toets = await fetch(`toetsen/${toetsId}.json`, { cache: "no-store" }).then(r => { if (!r.ok) throw new Error("toets: HTTP " + r.status); return r.json(); });
+  } catch (e) {
+    inhoud.innerHTML = `<div class="fout-melding">Kon <code>toetsen/${esc(toetsId)}.json</code> niet laden: ${esc(e.message)}</div>`;
+    return;
+  }
+  if (!toets.boek || !toets.stofafbakening) {
+    inhoud.innerHTML = `<div class="fout-melding">Deze toets heeft geen <code>boek</code>- of <code>stofafbakening</code>-veld, dus er is niets te controleren (werkt met de handmatige nietGetoetst-lijst).</div>`;
+    return;
+  }
+  const boek = toets.boek;
+  try {
+    [index, onderwerpen] = await Promise.all([
+      fetch(`index-${boek}.json`, { cache: "no-store" }).then(r => { if (!r.ok) throw new Error("index: HTTP " + r.status); return r.json(); }),
+      fetch(`onderwerpen-${boek}.json`, { cache: "no-store" }).then(r => { if (!r.ok) throw new Error("onderwerpen: HTTP " + r.status); return r.json(); })
+    ]);
+  } catch (e) {
+    inhoud.innerHTML = `<div class="fout-melding">Kon de stofdata voor boek "${esc(boek)}" niet laden: ${esc(e.message)}</div>`;
+    return;
+  }
+
+  // ---- Dezelfde aftrekking als berekenNietGetoetst() in feedbacktool.html ----
+  const hoofdstukken = Array.isArray(toets.stofafbakening.hoofdstukken) ? toets.stofafbakening.hoofdstukken : [];
+  const extra = Array.isArray(toets.stofafbakening.extra) ? toets.stofafbakening.extra : [];
+  const uitgesloten = Array.isArray(toets.stofafbakening.uitgesloten) ? toets.stofafbakening.uitgesloten : [];
+
+  const stofCodes = new Set();
+  (onderwerpen.onderwerpen || []).forEach(o => { if (hoofdstukken.includes(o.hoofdstuk)) stofCodes.add(o.id); });
+  extra.forEach(c => stofCodes.add(c));
+  uitgesloten.forEach(c => stofCodes.delete(c)); // codes, geen vrije tekst -- meestal een no-op
+
+  // Per code: komt hij voor in een gewone vraag, en/of alleen in een
+  // geenOefenadvies-vraag?
+  const perCode = {};
+  (toets.vragen || []).forEach(v => {
+    (v.onderwerpen || []).forEach(c => {
+      if (!perCode[c]) perCode[c] = { gewoon: false, geenAdvies: false };
+      if (v.geenOefenadvies) perCode[c].geenAdvies = true; else perCode[c].gewoon = true;
+    });
+  });
+  const getoetst = new Set(Object.keys(perCode));
+  const alleenGeenAdvies = Object.keys(perCode).filter(c => perCode[c].geenAdvies && !perCode[c].gewoon);
+
+  function telOpgaven(code) {
+    const rijen = (index.rijen || []).filter(r => r.stof === true && Array.isArray(r.onderwerpen) && r.onderwerpen.includes(code));
+    const pe = rijen.filter(r => r.bron === "lesboek").length;
+    const boekje = rijen.filter(r => r.bron === "oefenboekje").length;
+    return { pe, boekje, totaal: pe + boekje };
+  }
+
+  const rijenPerCode = {};
+  [...stofCodes].forEach(c => { rijenPerCode[c] = telOpgaven(c); });
+
+  function som(codes) {
+    const t = { pe: 0, boekje: 0, totaal: 0 };
+    codes.forEach(c => { t.pe += rijenPerCode[c].pe; t.boekje += rijenPerCode[c].boekje; t.totaal += rijenPerCode[c].totaal; });
+    return t;
+  }
+
+  const alleCodes = [...stofCodes].sort();
+  const totaalBinnen = som(alleCodes);
+  const nietGetoetstCodes = alleCodes.filter(c => !getoetst.has(c));
+  const aftrekking = som(nietGetoetstCodes);
+  const adviespool = { pe: totaalBinnen.pe - aftrekking.pe, boekje: totaalBinnen.boekje - aftrekking.boekje, totaal: totaalBinnen.totaal - aftrekking.totaal };
+
+  const strengeAftrekCodes = alleCodes.filter(c => !getoetst.has(c) || alleenGeenAdvies.includes(c));
+  const strengeAftrek = som(strengeAftrekCodes);
+  const strengeAdviespool = { pe: totaalBinnen.pe - strengeAftrek.pe, boekje: totaalBinnen.boekje - strengeAftrek.boekje, totaal: totaalBinnen.totaal - strengeAftrek.totaal };
+  const alleenGeenAdviesSom = som(alleenGeenAdvies);
+
+  const labelVan = code => { const o = (onderwerpen.onderwerpen || []).find(x => x.id === code); return o ? o.label : code; };
+
+  // ---- Renderen ----
+  const kaart = (label, t) => `<div class="kaart"><div class="label">${esc(label)}</div>
+    <div class="totaal">${t.totaal}</div>
+    <div class="getallen">PE: ${t.pe} · boekje: ${t.boekje}</div></div>`;
+
+  const rijenHtml = alleCodes.map(c => {
+    const info = perCode[c];
+    const opToets = getoetst.has(c);
+    const status = !opToets ? `<span class="nee">nee</span>`
+      : (alleenGeenAdvies.includes(c) ? `<span class="ja">ja</span><span class="badge">alleen geenOefenadvies</span>` : `<span class="ja">ja</span>`);
+    return `<tr>
+      <td><code>${esc(c)}</code></td>
+      <td>${esc(labelVan(c))}</td>
+      <td class="num">${rijenPerCode[c].pe}</td>
+      <td class="num">${rijenPerCode[c].boekje}</td>
+      <td class="num">${rijenPerCode[c].totaal}</td>
+      <td>${status}</td>
+    </tr>`;
+  }).join("");
+
+  inhoud.innerHTML = `
+    <p class="sub"><strong>${esc(toets.titel || toets.toets || toetsId)}</strong> — boek <code>${esc(boek)}</code>,
+      hoofdstukken ${esc(hoofdstukken.join(", "))}${extra.length ? ", extra " + esc(extra.join(", ")) : ""},
+      ${alleCodes.length} onderwerpen binnen de stofafbakening.</p>
+
+    <h2>Binnen de stofafbakening</h2>
+    <div class="kaarten">${kaart("Totaal opgaven", totaalBinnen)}</div>
+
+    <h2>Aftrekking — onderwerpen die niet op deze toets voorkomen</h2>
+    <div class="kaarten">${kaart("Aftrekking", aftrekking)}</div>
+    <p class="uitleg">Codes: ${nietGetoetstCodes.length ? esc(nietGetoetstCodes.join(", ")) : "(geen)"}</p>
+
+    <h2>Adviespool — zo rekent de tool het nu (stap 4/5 in feedbacktool.html)</h2>
+    <div class="kaarten">${kaart("Adviespool", adviespool)}</div>
+    <p class="uitleg">Dit is de huidige logica: een onderwerp telt als "getoetst" zodra het in de <code>onderwerpen</code>-lijst van een vraag staat, óók als die vraag <code>geenOefenadvies: true</code> heeft.</p>
+
+    <h2>Apart: onderwerpen die uitsluitend in een geenOefenadvies-vraag voorkomen</h2>
+    <div class="kaarten">${kaart("Opgaven van deze onderwerpen", alleenGeenAdviesSom)}</div>
+    <p class="uitleg">Codes: ${alleenGeenAdvies.length ? esc(alleenGeenAdvies.join(", ")) : "(geen)"} — deze onderwerpen worden nu wél als "getoetst" gerekend (zie kolom hieronder), maar leveren nooit oefenadvies op omdat de enige vraag die ze noemt geen advies toont.</p>
+
+    <h2>Ter vergelijking: strengere variant (deze onderwerpen óók wegstrepen)</h2>
+    <div class="kaarten">${kaart("Strengere adviespool", strengeAdviespool)}</div>
+    <p class="uitleg">Dit is <strong>niet</strong> wat de tool nu doet — puur ter vergelijking, voor het geval je de logica wilt aanscherpen.</p>
+
+    <h2>Per onderwerp</h2>
+    <table>
+      <thead><tr><th>Code</th><th>Label</th><th class="num">PE</th><th class="num">Boekje</th><th class="num">Totaal</th><th>Op toets?</th></tr></thead>
+      <tbody>${rijenHtml}</tbody>
+    </table>
+  `;
+}
+
+if (select.value) laad(select.value);
+else if (BEKENDE_TOETSEN.length) { select.value = BEKENDE_TOETSEN[0]; laad(select.value); }
+</script>
+</body>
+</html>
