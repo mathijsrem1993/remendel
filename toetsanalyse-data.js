@@ -11,8 +11,6 @@ var KEUZE_DATA = [
   ] },
   { niveau: "HAVO", klassen: [
     { naam: "4 HAVO eco", items: [
-      { titel: "PW M1 (H1 + H2) \u00b7 schaarste en ruil", bron: "feedbacktool.html?v=10&toets=4h-m1-h1h2" },
-      { titel: "PW M2 (H2 + H3) \u00b7 vraag en aanbod", bron: "feedbacktool.html?v=10&toets=4h-m2-h2h3" },
       { titel: "Proefwerk M1 (H1 + H2)", bron: "feedbacktool.html?v=1&toets=4h-pw-m1-h1h2" }
     ] }
   ] },
