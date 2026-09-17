@@ -1,0 +1,4 @@
+# Lokaal materiaal, niet voor de live site en niet voor GitHub.
+# Zie stencils/LEESMIJ-stencil.txt voor uitleg.
+/stencils/
+.claude/

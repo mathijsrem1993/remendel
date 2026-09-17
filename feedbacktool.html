@@ -120,20 +120,18 @@
 
   h2 { font-family: 'Hanken Grotesk', sans-serif; font-weight: 700; font-size: 20px;
        margin: 32px 0 6px; letter-spacing: -0.01em; color: var(--inkt); }
-  .sectie-uitleg { color: var(--inkt-zacht); font-size: 14px; margin: 0 0 18px; }
+  .sectie-uitleg { color: var(--inkt); font-size: 14px; margin: 0 0 18px; }
 
   /* STAVEN */
   .staven { display: flex; flex-direction: column; gap: 16px; }
   .staaf-kaart { background: var(--wit); border: 1px solid var(--lijn); border-radius: var(--radius); padding: 16px 18px; }
-  .staaf-rij { display: grid; grid-template-columns: 1fr 70px; align-items: center; gap: 12px; margin-bottom: 4px; }
+  .staaf-rij { display: grid; grid-template-columns: 1fr auto; align-items: baseline; gap: 12px; margin-bottom: 4px; }
   .staaf-naam { font-weight: 600; font-size: 15px; color: var(--inkt); }
-  .staaf-pct { font-size: 13px; color: var(--inkt-zacht); text-align: right; font-variant-numeric: tabular-nums; }
+  .staaf-pct { font-size: 14px; color: var(--inkt); text-align: right; white-space: nowrap; font-variant-numeric: tabular-nums; }
   .staaf-spoor { background: #EAF1F8; height: 10px; border-radius: 999px; overflow: hidden; margin: 8px 0 14px; }
   .staaf-vul { display: block; height: 100%; border-radius: 999px; min-width: 3px; }
   .staaf-tip { font-size: 14px; color: var(--inkt); margin: 0; }
-  .wds-overzicht { font-weight: 600; font-size: 15px; color: var(--inkt); margin: 0 0 14px; }
   .staaf-kaart ul { font-size: 14px; }
-  .tekst-zacht, .tekst-zacht li { color: var(--inkt-zacht); }
 
   /* PER-VRAAG TIPS */
   .tip-vraag { background: var(--wit); border: 1px solid var(--lijn); border-radius: var(--radius); padding: 16px 18px; margin-bottom: 12px; }
@@ -148,7 +146,7 @@
   .type-overig { background: #EDEFF2; color: var(--ft-overig); }
   .type-geen { background: #EEF3F8; color: var(--inkt-zacht); }
   .haak { font-size: 13px; padding: 10px 13px; border-radius: 12px; border: 1px dashed var(--lijn-sterk);
-          background: #F5F9FC; color: var(--inkt-zacht); margin-top: 7px; display: flex; gap: 7px; align-items: flex-start; }
+          background: #F5F9FC; color: var(--inkt); margin-top: 7px; display: flex; gap: 7px; align-items: flex-start; }
   .haak .merk { font-weight: 600; color: var(--inkt); white-space: nowrap; }
 
   .niets { background: #EAF2EF; border: 1px solid #CADED7;
@@ -202,12 +200,12 @@
   .laad-melding { font-size: 13px; font-weight: 500; margin: 8px 0 12px; min-height: 1em; }
 
   /* FEEDBACK: naam-regel + eigen voornemens */
-  .fb-naam-regel { font-size: 15px; color: var(--inkt-zacht); margin: 0 0 16px; }
+  .fb-naam-regel { font-size: 15px; color: var(--inkt); margin: 0 0 16px; }
   .fb-naam-regel strong { color: var(--inkt); font-weight: 600; }
   .kopie-melding { font-size: 13px; color: var(--inkt-zacht); margin: -8px 0 16px; }
   .eigen-voornemens { background: var(--wit); border: 1px solid var(--lijn); border-radius: var(--radius);
                       padding: 16px 18px; font-size: 14.5px; color: var(--inkt); white-space: pre-wrap; line-height: 1.55; }
-  .eigen-voornemens.leeg { color: var(--inkt-zacht); font-style: italic; }
+  .eigen-voornemens.leeg { color: var(--inkt); font-style: italic; }
 
   /* PDF-blok */
   .pdf-blok { background: var(--kaartvlak); border: 1px solid var(--lijn); border-radius: var(--radius); padding: 22px; margin-top: 28px; }
@@ -265,6 +263,9 @@
         <label class="naam-label" for="leerling-docent">Je docent</label>
         <select class="naam-input" id="leerling-docent">
           <option value="" selected disabled>Kies je docent</option>
+          <option value="Kloek">Kloek</option>
+          <option value="Werter">Werter</option>
+          <option value="Kers">Kers</option>
           <option value="Rem">Rem</option>
         </select>
       </div>
@@ -322,6 +323,7 @@
     <div class="staven" id="staven"></div>
 
     <h2>Bij welk vraagniveau valt voor jou winst te halen?</h2>
+    <p class="sectie-uitleg">Elke vraag vraagt iets anders van je: bij Weten moet je je kennis paraat hebben, bij Doen moet je iets uitvoeren zoals rekenen of een grafiek tekenen, en bij Snappen moet je iets uitleggen of verklaren. Hieronder zie je per soort vraag hoeveel punten je haalde, zodat je weet waar je voorbereiding het meeste oplevert.</p>
     <div id="wds-winst"></div>
 
     <h2>Dit ging goed</h2>
@@ -702,7 +704,10 @@ function laadConfig(config) {
   const nterm = Number(config.nterm) || 0;
   // Sommige exports gebruiken "toets"/"toetsId" i.p.v. "titel"/"id" — beide
   // vormen worden geaccepteerd.
-  const titel = config.titel || config.toets || "Toets";
+  // De info tussen haakjes aan het eind (bv. "(4 havo, 45 minuten, 27 punten)")
+  // staat al impliciet in de vragenlijst en het puntentotaal, dus die knippen
+  // we overal waar de titel getoond wordt (scherm, feedbackregel en pdf) eraf.
+  const titel = (config.titel || config.toets || "Toets").replace(/\s*\([^)]*\)\s*$/, "");
   TOETS = {
     titel: titel,
     maxPunten: maxP,
@@ -1032,6 +1037,11 @@ function formatMetPagina(items) {
 // en blijft de handmatige NIET_GETOETST-lijst (uit config.nietGetoetst)
 // gewoon staan.
 // ======================================================================
+// Hoeveel opgaven er per bron hoogstens bij één onderwerp worden genoemd.
+// Geteld in grondnummers, net als het maximum per vraag in STAP 5 hieronder:
+// "1a, 1c" telt als 1, "18 t/m 21" als 4.
+const MAX_NIET_GETOETST = 3;
+
 function berekenNietGetoetst() {
   if (!TOETS_STOFAFBAKENING || !BOEK_ONDERWERPEN || !BOEK_INDEX) return null;
 
@@ -1045,29 +1055,23 @@ function berekenNietGetoetst() {
     const label = ond ? ond.label : code;
     const rijen = alleRijen.filter(r => r.stof === true && Array.isArray(r.onderwerpen) && r.onderwerpen.includes(code));
 
-    // Lesboek: per hoofdstuk/paragraaf gegroepeerd, met paginanummer(s) erbij.
-    const lesItems = groepeerOpGrondnummer(rijen.filter(r => r.bron === "lesboek"), alleRijen, "lesboek");
-    const hpGroepen = new Map();
-    lesItems.forEach(it => {
-      const sleutel = `${it.hoofdstuk}|${it.paragraaf}`;
-      if (!hpGroepen.has(sleutel)) hpGroepen.set(sleutel, { hoofdstuk: it.hoofdstuk, paragraaf: it.paragraaf, items: [] });
-      hpGroepen.get(sleutel).items.push(it);
-    });
-    const lesDeel = [...hpGroepen.values()]
-      .sort((a, b) => (a.hoofdstuk - b.hoofdstuk) || String(a.paragraaf).localeCompare(String(b.paragraaf)))
-      .map(hp => {
-        const stukken = formatMetPagina(hp.items); // elk stuk: "opgave(n) (blz. ...)"
-        return `H${hp.hoofdstuk} ${hp.paragraaf}: opgave ${dutchLijst(stukken)}`;
-      })
-      .join("; ");
+    // Lesboek: op boekvolgorde (paginanummer), met paginanummer(s) erbij.
+    const lesItems = groepeerOpGrondnummer(rijen.filter(r => r.bron === "lesboek"), alleRijen, "lesboek")
+      .sort((a, b) => (a.blzSet[0] || 0) - (b.blzSet[0] || 0) || Number(a.grondnummer) - Number(b.grondnummer))
+      .slice(0, MAX_NIET_GETOETST);
+    const lesStukken = formatMetPagina(lesItems); // elk stuk: "opgave(n) (blz. ...)"
+    const peDeel = lesStukken.length ? `PE-boek: opgave ${dutchLijst(lesStukken)}` : "";
 
     // Oefenboekje: alleen het opgavenummer/bereik, geen sectie of paginanummer.
-    const oefItems = groepeerOpGrondnummer(rijen.filter(r => r.bron === "oefenboekje"), alleRijen, "oefenboekje");
+    const oefItems = groepeerOpGrondnummer(rijen.filter(r => r.bron === "oefenboekje"), alleRijen, "oefenboekje")
+      .slice(0, MAX_NIET_GETOETST);
     const oefOpgaven = voegBereikenSamen(oefItems);
-    const oefDeel = oefOpgaven.length ? `oefenboekje opgave ${dutchLijst(oefOpgaven)}` : "";
+    const oefDeel = oefOpgaven.length ? `Oefenboekje: opgave ${dutchLijst(oefOpgaven)}` : "";
 
-    const delen = [lesDeel, oefDeel].filter(Boolean).join("  ·  ");
-    return esc(label) + (delen ? ` — ${esc(delen)}` : " — geen oefenopgaven binnen de toetsstof gevonden");
+    // Zelfde volgorde en labels als bij het vraagspecifieke advies: eerst het
+    // oefenboekje, dan het PE-boek.
+    const delen = [oefDeel, peDeel].filter(Boolean).join(". ");
+    return esc(label) + ". " + (delen ? esc(delen) : "Geen oefenopgaven binnen de toetsstof gevonden");
   });
 }
 
@@ -1223,10 +1227,10 @@ async function maakFeedback() {
       kaart.innerHTML = `
         <div class="staaf-rij">
           <span class="staaf-naam">${f.label}</span>
-          <span class="staaf-pct">${Math.round(miss[t]*10)/10} van ${Math.round(totaalMiss*10)/10} gemiste punten (${pct}%)</span>
+          <span class="staaf-pct">${formatPunten(miss[t])} van je ${formatPunten(totaalMiss)} gemiste ${totaalMiss === 1 ? "punt" : "punten"} (${pct}%)</span>
         </div>
         <div class="staaf-spoor"><span class="staaf-vul" style="width:${pct}%;background:var(--inkt)"></span></div>
-        <p class="staaf-tip"><strong>Algemene tip:</strong> ${f.tekst}</p>`;
+        <p class="staaf-tip"><strong>Tip:</strong> ${f.tekst}</p>`;
       staven.appendChild(kaart);
     });
   }
@@ -1236,25 +1240,23 @@ async function maakFeedback() {
   // ook bij 100%, want dat geeft ook inzicht.
   const wdsWinst = document.getElementById("wds-winst");
   const wdsScores = berekenWdsScores();
-  const wdsOverzicht = wdsScores.filter(s => s.pct !== null).map(s => `${s.naam} ${s.pct}%`).join("  ·  ");
   const wdsHeelGoedTekst = "Heel goed, je hebt alle vragen in deze categorie goed beantwoord. Zorg ervoor dat je je op eenzelfde manier voor dit soort vragen voorbereidt op de volgende toets.";
   const wdsBlokken = wdsScores.filter(s => s.max > 0).map(s => {
     const advies = WDS_ADVIES[s.key];
     const inhoud = s.pct === 100
-      ? `<p class="staaf-tip tekst-zacht">${esc(wdsHeelGoedTekst)}</p>`
-      : `<p class="staaf-tip tekst-zacht">${esc(advies.intro)}</p>
-         <ul class="tekst-zacht" style="margin:8px 0 0;padding-left:20px;">${advies.tips.map(t => `<li>${esc(t)}</li>`).join("")}</ul>`;
+      ? `<p class="staaf-tip"><strong>Tip:</strong> ${esc(wdsHeelGoedTekst)}</p>`
+      : `<p class="staaf-tip"><strong>Tip:</strong> ${esc(advies.intro)}</p>
+         <ul style="margin:8px 0 0;padding-left:20px;">${advies.tips.map(t => `<li>${esc(t)}</li>`).join("")}</ul>`;
     return `<div class="staaf-kaart">
       <div class="staaf-rij">
         <span class="staaf-naam">${esc(advies.naam)}</span>
-        <span class="staaf-pct">${formatPunten(s.behaald)} van ${s.max} punten (${s.pct}%)</span>
+        <span class="staaf-pct">${formatPunten(s.behaald)} van de ${s.max} ${s.max === 1 ? "punt" : "punten"} (${s.pct}%)</span>
       </div>
       <div class="staaf-spoor"><span class="staaf-vul" style="width:${s.pct}%;background:var(--terra)"></span></div>
       ${inhoud}
     </div>`;
   }).join("");
-  wdsWinst.innerHTML = (wdsOverzicht ? `<p class="wds-overzicht">${esc(wdsOverzicht)}</p>` : "") +
-    `<div class="staven">${wdsBlokken}</div>`;
+  wdsWinst.innerHTML = `<div class="staven">${wdsBlokken}</div>`;
 
   // Per-vraag tips: vraag eerst, dan fouttype-badge(s), dan oefenstof
   const tips = document.getElementById("vraag-tips");
@@ -1276,9 +1278,9 @@ async function maakFeedback() {
         : `<span class="type-badge type-geen">geen type gekozen</span>`;
       // Standaardtekst voor geenOefenadvies-vragen, tenzij de vraag zelf een
       // algemeneFeedback heeft (bv. een rekenvraag zonder onderwerpen, waar
-      // de standaardtekst over begripskennis niet klopt).
-      const geenAdviesStandaard = "Bij deze vraag wordt je begripskennis getest. Om het de volgende keer beter te doen, moet je de begrippenlijst beter bestuderen.";
-      const geenAdviesTekst = v.algemeneFeedback || geenAdviesStandaard;
+      // deze tekst over begripskennis niet klopt).
+      const algemeneFeedbackTheorievragen = "Deze opgave test jouw kennis van de begrippen. Om deze de volgende keer beter te beheersen kan je jezelf overhoren met behulp van de begrippenlijst. Schrijf de begrippen die je nog niet kent over.";
+      const geenAdviesTekst = v.algemeneFeedback || algemeneFeedbackTheorievragen;
       const oefB = v.geenOefenadvies || !v.oefenBoekje
         ? "" : `<div class="haak"><span class="merk">Oefenboekje:</span><span>opgave ${esc(v.oefenBoekje)}</span></div>`;
       const oefP = v.geenOefenadvies
@@ -1302,7 +1304,7 @@ async function maakFeedback() {
   // Niet-getoetste stof
   const ng = document.getElementById("niet-getoetst");
   ng.innerHTML = NIET_GETOETST.length
-    ? `<div class="tip-vraag"><ul class="tekst-zacht" style="margin:0;padding-left:20px;">${NIET_GETOETST.map(o => `<li>${o}</li>`).join("")}</ul></div>`
+    ? `<div class="tip-vraag"><ul style="margin:0;padding-left:20px;">${NIET_GETOETST.map(o => `<li>${o}</li>`).join("")}</ul></div>`
     : `<div class="haak"><span class="merk">Lijst:</span><span>volgt zodra het boek, het oefenmateriaal en de begrippenlijst zijn toegevoegd</span></div>`;
 
   // Blok "Dit ging goed"
@@ -1310,9 +1312,11 @@ async function maakFeedback() {
     .map((v, i) => ({ v: v, beh: state[i].behaald }))
     .filter(r => r.beh !== null && r.v.max > 0 && r.beh >= r.v.max);
   const gg = document.getElementById("ging-goed");
-  gg.innerHTML = goedLijst.length
-    ? `<div class="tip-vraag"><ul style="margin:0;padding-left:20px;">${goedLijst.map(r =>
-        `<li><strong>Vraag ${esc(r.v.nr)}</strong>: ${esc(r.v.onderwerp)} (${formatPunten(r.beh)}/${r.v.max})</li>`).join("")}</ul></div>`
+  // Alleen de onderwerpen, zonder vraagnummers en zonder dubbelen — net als in de pdf.
+  const goedOnderwerpen = [...new Set(goedLijst.map(r => r.v.onderwerp).filter(Boolean))];
+  gg.innerHTML = goedOnderwerpen.length
+    ? `<div class="tip-vraag"><ul style="margin:0;padding-left:20px;">${goedOnderwerpen.map(o =>
+        `<li>${esc(o)}</li>`).join("")}</ul></div>`
     : `<div class="haak"><span class="merk">Nog geen:</span><span>op deze toets heb je bij geen enkele vraag alle punten behaald. Focus op de tips hieronder.</span></div>`;
 
   document.getElementById("fb-naam-regel").innerHTML = `Feedback voor leerling <strong>${esc(naam)}</strong> · docent ${esc(docent)} · ${esc(TOETS.titel)}`;
@@ -1412,11 +1416,13 @@ function toonMelding(tekst) {
   m.classList.add("zichtbaar");
 }
 
-const PDF_KLEUR = {
-  inkt: [28, 58, 94], inktZacht: [76, 104, 133], lijn: [220, 230, 241], terra: [197, 123, 92],
-  reken: [197, 123, 92], lees: [62, 111, 160], begrip: [78, 146, 123],
-  redeneer: [106, 111, 160], overig: [133, 149, 168]
-};
+// Alle tekst in de pdf krijgt dezelfde donkerblauwe inkt als de cijferbalk;
+// alleen de tekst ín die balk is wit. De lopende tekst heeft overal dezelfde
+// lettergrootte, alleen koppen wijken af.
+const PDF_KLEUR = { inkt: [28, 58, 94], lijn: [220, 230, 241], terra: [197, 123, 92] };
+const PDF_TEKST = 10.5;   // lettergrootte van alle lopende tekst
+const PDF_REGEL = 5.2;    // regelafstand daarbij
+const PDF_BULLET = 4.2;   // breedte die het bolletje inneemt (hangende inspringing)
 
 function maakPdf(res) {
   const { jsPDF } = window.jspdf;
@@ -1425,96 +1431,145 @@ function maakPdf(res) {
   let y = marge;
 
   function ruimte(h) { if (y + h > onder) { doc.addPage(); y = marge; } }
-  function hoogteVan(str, size, stijl, inspring, extra) {
-    doc.setFont("helvetica", stijl); doc.setFontSize(size);
-    return doc.splitTextToSize(str, breed - inspring).length * extra;
+
+  // Breekt tekst zelf af (in plaats van splitTextToSize), zodat de eerste
+  // regel smaller mag zijn dan de rest — daar staat namelijk het vette label
+  // voor. Lettertype en -grootte moeten al gezet zijn.
+  function wikkel(str, eersteBreedte, restBreedte) {
+    const woorden = String(str).split(/\s+/).filter(Boolean);
+    const regels = [];
+    let huidig = "", max = eersteBreedte;
+    woorden.forEach(w => {
+      const kandidaat = huidig ? huidig + " " + w : w;
+      if (huidig && doc.getTextWidth(kandidaat) > max) { regels.push(huidig); huidig = w; max = restBreedte; }
+      else { huidig = kandidaat; }
+    });
+    if (huidig) regels.push(huidig);
+    return regels.length ? regels : [""];
   }
-  function tekst(str, opties) {
-    const o = Object.assign({ size: 10.5, stijl: "normal", kleur: PDF_KLEUR.inkt, extra: 4.8, inspring: 0 }, opties || {});
-    doc.setFont("helvetica", o.stijl); doc.setFontSize(o.size); doc.setTextColor(...o.kleur);
-    const regels = doc.splitTextToSize(str, breed - o.inspring);
-    regels.forEach(r => { ruimte(o.extra); doc.text(r, marge + o.inspring, y); y += o.extra; });
+
+  function opties(o) {
+    return Object.assign({ size: PDF_TEKST, stijl: "normal", extra: PDF_REGEL,
+                           inspring: 0, bullet: false, label: "", rechts: "" }, o || {});
   }
-  function kop(str) { y += 4; ruimte(12); tekst(str, { size: 13.5, stijl: "bold", extra: 6 }); y += 1; }
-  function labelTekst(label, str, opties) {
-    const o = Object.assign({ size: 9.5, kleur: PDF_KLEUR.inktZacht, extra: 4.4, inspring: 0 }, opties || {});
-    ruimte(o.extra);
-    doc.setFont("helvetica", "bold"); doc.setFontSize(o.size); doc.setTextColor(...PDF_KLEUR.inkt);
-    doc.text(label, marge + o.inspring, y);
-    const labelBreedte = doc.getTextWidth(label + " ");
-    doc.setFont("helvetica", "normal"); doc.setTextColor(...o.kleur);
-    const eerste = doc.splitTextToSize(str, breed - o.inspring - labelBreedte)[0] || "";
-    doc.text(eerste, marge + o.inspring + labelBreedte, y); y += o.extra;
-    const rest = str.slice(eerste.length).trim();
-    if (rest) tekst(rest, { size: o.size, kleur: o.kleur, extra: o.extra, inspring: o.inspring });
+
+  // De regels van één alinea plus de maten om hem te tekenen. Wordt ook los
+  // gebruikt om vooraf de hoogte van een heel blok te meten.
+  function alineaRegels(str, o) {
+    const links = marge + o.inspring + (o.bullet ? PDF_BULLET : 0);
+    const rand = marge + breed;
+    doc.setFontSize(o.size);
+    doc.setFont("helvetica", "bold");
+    const labelBreedte = o.label ? doc.getTextWidth(o.label + " ") : 0;
+    doc.setFont("helvetica", "normal");
+    const rechtsBreedte = o.rechts ? doc.getTextWidth(o.rechts) + 6 : 0;
+    doc.setFont("helvetica", o.stijl);
+    return { links, labelBreedte,
+             regels: wikkel(str, rand - links - labelBreedte - rechtsBreedte, rand - links) };
+  }
+
+  // Eén alinea: optioneel een bolletje en/of een vet label vooraan, optioneel
+  // een rechts uitgelijnd bijschrift op de eerste regel, en altijd een
+  // hangende inspringing — vervolgregels beginnen recht onder de eerste
+  // letter van de eerste regel, niet onder het bolletje.
+  function tekst(str, o) {
+    o = opties(o);
+    const { links, labelBreedte, regels } = alineaRegels(str, o);
+    doc.setTextColor(...PDF_KLEUR.inkt);
+    regels.forEach((r, i) => {
+      ruimte(o.extra);
+      doc.setFontSize(o.size);
+      if (i === 0 && o.bullet) { doc.setFont("helvetica", "normal"); doc.text("•", marge + o.inspring, y); }
+      if (i === 0 && o.label) { doc.setFont("helvetica", "bold"); doc.text(o.label, links, y); }
+      if (i === 0 && o.rechts) { doc.setFont("helvetica", "normal"); doc.text(o.rechts, marge + breed, y, { align: "right" }); }
+      doc.setFont("helvetica", o.stijl);
+      doc.text(r, links + (i === 0 ? labelBreedte : 0), y);
+      y += o.extra;
+    });
+  }
+
+  function hoogte(str, o) { o = opties(o); return alineaRegels(str, o).regels.length * o.extra; }
+
+  // Een kop houdt meer lucht boven zich dan eronder, en komt nooit alleen
+  // onder aan een pagina te staan: hij verhuist mee als er geen twee regels
+  // tekst meer onder passen.
+  function kop(str) {
+    const o = { size: 13.5, stijl: "bold", extra: 6 };
+    y += 4;
+    ruimte(hoogte(str, o) + 2 * PDF_REGEL);
+    tekst(str, o);
+    y += 1;
+  }
+
+  // Kop van een blok met een balk: naam links, score rechts, dan de balk.
+  function balkKop(naam, rechtsStr, pct, vulKleur) {
+    doc.setFont("helvetica", "bold"); doc.setFontSize(11); doc.setTextColor(...PDF_KLEUR.inkt);
+    doc.text(naam, marge, y);
+    doc.setFont("helvetica", "normal"); doc.setFontSize(PDF_TEKST);
+    doc.text(rechtsStr, marge + breed, y, { align: "right" });
+    y += 2.5;
+    doc.setFillColor(...PDF_KLEUR.lijn); doc.roundedRect(marge, y, breed, 2.6, 1.3, 1.3, "F");
+    doc.setFillColor(...vulKleur); doc.roundedRect(marge, y, Math.max(3, breed * pct / 100), 2.6, 1.3, 1.3, "F");
+    y += 7;
   }
 
   // Kopregel
-  doc.setFont("helvetica", "bold"); doc.setFontSize(9); doc.setTextColor(...PDF_KLEUR.inktZacht);
+  doc.setFont("helvetica", "bold"); doc.setFontSize(9); doc.setTextColor(...PDF_KLEUR.inkt);
   doc.text("MENDELCOLLEGE  -  ECONOMIE  -  TOETSANALYSE VOOR GERICHTE FEEDFORWARD", marge, y); y += 7.9;
   tekst(res.toets, { size: 17, stijl: "bold", extra: 7.5 });
-  tekst(`Leerling ${res.naam}  ·  docent ${res.docent}`, { size: 10.5, kleur: PDF_KLEUR.inktZacht, extra: 5.5 });
+  tekst(`Leerling ${res.naam}  ·  docent ${res.docent}`, { extra: 5.5 });
   y += 1.5;
   doc.setDrawColor(...PDF_KLEUR.terra); doc.setLineWidth(1.1);
   doc.line(marge, y, marge + breed, y);
   y += 5;
 
-  // Scoreblok
+  // Scoreblok — de enige plek met witte tekst
   ruimte(17);
   doc.setFillColor(...PDF_KLEUR.inkt);
   doc.roundedRect(marge, y, breed, 13, 2.5, 2.5, "F");
   doc.setTextColor(255, 255, 255);
   doc.setFont("helvetica", "bold"); doc.setFontSize(17.6);
   doc.text(String(res.cijfer.toFixed(1)).replace(".", ","), marge + 8, y + 8.4);
-  doc.setFont("helvetica", "normal"); doc.setFontSize(10.5);
+  doc.setFont("helvetica", "normal"); doc.setFontSize(PDF_TEKST);
   const scoreZin = `Op basis van de gegeven informatie haal je ${formatPunten(res.punten)} van de ${res.max} punten (${res.pct}%).`;
   const scoreRegels = doc.splitTextToSize(scoreZin, breed - 40);
   if (scoreRegels.length === 1) { doc.text(scoreRegels[0], marge + 30, y + 8.1); }
   else { doc.text(scoreRegels[0], marge + 30, y + 5.9); doc.text(scoreRegels[1], marge + 30, y + 10.4); }
   y += 19;
 
-  // Wat ging goed: 80% of meer van de punten
+  // Wat ging goed: alle punten behaald. Alleen de onderwerpen, geen vraagnummers.
   const goed = res.vragen.filter(v => v.behaald !== null && v.max > 0 && v.behaald >= v.max);
   if (goed.length) {
     kop("Dit ging goed");
-    tekst("Bij onderstaande onderwerpen heb je alle punten behaald. Blijf er wel mee oefenen want ze kunnen op een volgende toets terugkomen.",
-          { size: 9.5, kleur: PDF_KLEUR.inktZacht, extra: 4.6 });
-    tekst(goed.map(v => v.onderwerp + " (vraag " + v.nr + ")").join("  \u00b7  "),
-          { size: 9.5, kleur: PDF_KLEUR.inktZacht, extra: 4.6 });
+    tekst("Bij onderstaande onderwerpen heb je alle punten behaald. Blijf er wel mee oefenen want ze kunnen op een volgende toets terugkomen.");
+    [...new Set(goed.map(v => v.onderwerp).filter(Boolean))].forEach(o => tekst(o, { bullet: true }));
   }
 
   // Eigen voornemens: het eerste wat de leerling terugleest
   kop("Je eigen voornemens");
-  tekst(res.voornemens || "Je hebt geen eigen voornemens opgeschreven.",
-        { kleur: res.voornemens ? PDF_KLEUR.inkt : PDF_KLEUR.inktZacht });
+  tekst(res.voornemens || "Je hebt geen eigen voornemens opgeschreven.");
 
   // Niet-getoetste stof — hoort nog bij pagina 1
   if (res.nietGetoetst && res.nietGetoetst.length) {
     kop("Niet alle stof is getoetst");
-    tekst("Deze onderwerpen moest je wel leren, maar kwamen niet op de toets voor. Ze kunnen terugkomen bij het schoolexamen, dus het loont om ze niet te laten liggen.",
-          { size: 9.5, stijl: "bold", kleur: PDF_KLEUR.inkt, extra: 4.6 });
-    res.nietGetoetst.forEach(o => tekst("•  " + o, { size: 9.5, kleur: PDF_KLEUR.inktZacht, extra: 4.6 }));
+    tekst("Deze onderwerpen moest je wel leren, maar kwamen niet op de toets voor. Ze kunnen terugkomen bij het schoolexamen, dus het loont om ze niet te laten liggen.");
+    res.nietGetoetst.forEach(o => tekst(o, { bullet: true }));
   }
 
   // Fouttypen — begint altijd op pagina 2
   doc.addPage(); y = marge;
   kop("Jouw aandachtspunten per soort fout, en wat je eraan kunt doen");
   if (!res.fouttypen.length) {
-    tekst("Geen fouttypen aangeklikt of geen punten gemist.", { kleur: PDF_KLEUR.inktZacht });
+    tekst("Geen fouttypen aangeklikt of geen punten gemist.");
   } else {
+    // Het zelfstandig naamwoord hoort bij het totaal aantal gemiste punten,
+    // niet bij het deel van dit fouttype: "1 van je 4 gemiste punten".
+    const puntWoord = res.gemistTotaal === 1 ? "punt" : "punten";
     res.fouttypen.forEach(f => {
-      ruimte(10);
-      doc.setFont("helvetica", "bold"); doc.setFontSize(11); doc.setTextColor(...PDF_KLEUR.inkt);
-      doc.text(f.label, marge, y);
-      doc.setFont("helvetica", "normal"); doc.setFontSize(9.5); doc.setTextColor(...PDF_KLEUR.inktZacht);
-      const puntWoord = f.punten === 1 ? "punt" : "punten";
-      doc.text(String(f.punten).replace(".", ",") + " van je " + String(res.gemistTotaal).replace(".", ",") +
-               " gemiste " + puntWoord + " (" + f.pct + "%)", marge + breed, y, { align: "right" });
-      y += 2.5;
-      doc.setFillColor(...PDF_KLEUR.lijn); doc.roundedRect(marge, y, breed, 2.6, 1.3, 1.3, "F");
-      doc.setFillColor(...PDF_KLEUR.inkt); doc.roundedRect(marge, y, Math.max(3, breed * f.pct / 100), 2.6, 1.3, 1.3, "F");
-      y += 7;
-      labelTekst("Algemene tip:", f.tekst, { size: 9.5, kleur: PDF_KLEUR.inktZacht, extra: 4.4 });
+      ruimte(10 + hoogte(f.tekst, { label: "Tip:" }));
+      balkKop(f.label, String(f.punten).replace(".", ",") + " van je " + String(res.gemistTotaal).replace(".", ",") +
+              " gemiste " + puntWoord + " (" + f.pct + "%)", f.pct, PDF_KLEUR.inkt);
+      tekst(f.tekst, { label: "Tip:" });
       y += 3;
     });
   }
@@ -1524,31 +1579,22 @@ function maakPdf(res) {
   // balk zoals bij de fouttypen hierboven — ook bij 100%.
   doc.addPage(); y = marge;
   kop("Bij welk vraagniveau valt voor jou winst te halen?");
-  const wdsOverzicht = res.wdsScores.filter(s => s.pct !== null).map(s => `${s.naam} ${s.pct}%`).join("  ·  ");
-  if (wdsOverzicht) tekst(wdsOverzicht, { size: 10.5, stijl: "bold", kleur: PDF_KLEUR.inkt, extra: 5.2 });
+  tekst("Elke vraag vraagt iets anders van je: bij Weten moet je je kennis paraat hebben, bij Doen moet je iets uitvoeren zoals rekenen of een grafiek tekenen, en bij Snappen moet je iets uitleggen of verklaren. Hieronder zie je per soort vraag hoeveel punten je haalde, zodat je weet waar je voorbereiding het meeste oplevert.");
+  y += 4; // witregel tussen de uitleg en het eerste niveau
   const wdsHeelGoedTekst = "Heel goed, je hebt alle vragen in deze categorie goed beantwoord. Zorg ervoor dat je je op eenzelfde manier voor dit soort vragen voorbereidt op de volgende toets.";
   res.wdsScores.filter(s => s.max > 0).forEach(s => {
     const advies = WDS_ADVIES[s.key];
-    const regels = s.pct === 100 ? [wdsHeelGoedTekst] : [advies.intro, ...advies.tips.map(t => "•  " + t)];
-    let blokH = hoogteVan(advies.naam, 11, "bold", 0, 5) + 7; // kop + balk
-    regels.forEach((r, i) => { blokH += hoogteVan(r, 9.5, "normal", i > 0 ? 4 : 0, 4.4); });
+    const tipTekst = s.pct === 100 ? wdsHeelGoedTekst : advies.intro;
+    const tips = s.pct === 100 ? [] : advies.tips;
+    let blokH = hoogte(advies.naam, { size: 11, stijl: "bold", extra: 5 }) + 7; // kop + balk
+    blokH += hoogte(tipTekst, { label: "Tip:" });
+    tips.forEach(t => { blokH += hoogte(t, { bullet: true }); });
     blokH += 3;
     ruimte(blokH); // past het blok niet meer op deze pagina, dan in zijn geheel naar de volgende
-    doc.setFont("helvetica", "bold"); doc.setFontSize(11); doc.setTextColor(...PDF_KLEUR.inkt);
-    doc.text(advies.naam, marge, y);
-    doc.setFont("helvetica", "normal"); doc.setFontSize(9.5); doc.setTextColor(...PDF_KLEUR.inktZacht);
     const puntWoord = s.max === 1 ? "punt" : "punten";
-    doc.text(`${formatPunten(s.behaald)} van de ${s.max} ${puntWoord} (${s.pct}%)`, marge + breed, y, { align: "right" });
-    y += 2.5;
-    doc.setFillColor(...PDF_KLEUR.lijn); doc.roundedRect(marge, y, breed, 2.6, 1.3, 1.3, "F");
-    doc.setFillColor(...PDF_KLEUR.terra); doc.roundedRect(marge, y, Math.max(3, breed * s.pct / 100), 2.6, 1.3, 1.3, "F");
-    y += 7;
-    if (s.pct === 100) {
-      tekst(wdsHeelGoedTekst, { size: 9.5, kleur: PDF_KLEUR.inktZacht, extra: 4.4 });
-    } else {
-      tekst(advies.intro, { size: 9.5, kleur: PDF_KLEUR.inktZacht, extra: 4.4 });
-      advies.tips.forEach(t => tekst("•  " + t, { size: 9.5, kleur: PDF_KLEUR.inktZacht, extra: 4.4, inspring: 4 }));
-    }
+    balkKop(advies.naam, `${formatPunten(s.behaald)} van de ${s.max} ${puntWoord} (${s.pct}%)`, s.pct, PDF_KLEUR.terra);
+    tekst(tipTekst, { label: "Tip:" });
+    tips.forEach(t => tekst(t, { bullet: true }));
     y += 3;
   });
 
@@ -1557,26 +1603,29 @@ function maakPdf(res) {
   kop("Aan de slag per vraag");
   const foute = res.vragen.filter(v => v.behaald !== null && v.behaald < v.max);
   if (!foute.length) {
-    tekst("Je hebt op alle ingevulde vragen de punten gehaald. Sterk gedaan!", { kleur: PDF_KLEUR.begrip });
+    tekst("Je hebt op alle ingevulde vragen de punten gehaald. Sterk gedaan!");
   } else {
     foute.forEach(v => {
+      // Vaste opmaak: vraag en onderwerp links (mag afbreken), punten en
+      // fouttype rechts uitgelijnd op de eerste regel — net als de score bij
+      // de fouttypen en de vraagniveaus.
       const foutStr = v.fouten.length ? `  ·  ${v.fouten.join(", ")}` : "";
-      const kopStr = `Vraag ${v.nr}: ${v.onderwerp}  (${formatPunten(v.behaald)}/${v.max} punten${foutStr})`;
-      const geenAdviesStandaard = "Bij deze vraag wordt je begripskennis getest. Om het de volgende keer beter te doen, moet je de begrippenlijst beter bestuderen.";
-      const geenAdviesTekst = v.algemeneFeedback || geenAdviesStandaard;
-      const peStr = v.geenOefenadvies ? `Advies: ${geenAdviesTekst}` : `PE-boek: ${v.oefenPE || "opgaven en pagina's volgen nog"}`;
-      let blokH = hoogteVan(kopStr, 10.5, "bold", 0, 5) + hoogteVan(peStr, 9.5, "normal", 4, 4.4) + 2.5;
-      if (!v.geenOefenadvies && v.oefenBoekje) blokH += hoogteVan(`Oefenboekje: opgave ${v.oefenBoekje}`, 9.5, "normal", 4, 4.4);
-      if (v.specifiek) blokH += hoogteVan("Let op: " + v.specifiek, 9.5, "normal", 4, 4.4);
+      const kopStr = `Vraag ${v.nr}: ${v.onderwerp}`;
+      const metaStr = `${formatPunten(v.behaald)}/${v.max} punten${foutStr}`;
+      const algemeneFeedbackTheorievragen = "Deze opgave test jouw kennis van de begrippen. Om deze de volgende keer beter te beheersen kan je jezelf overhoren met behulp van de begrippenlijst. Schrijf de begrippen die je nog niet kent over.";
+      const geenAdviesTekst = v.algemeneFeedback || algemeneFeedbackTheorievragen;
+      // Zelfde volgorde als bij de niet-getoetste stof: eerst het oefenboekje,
+      // dan het PE-boek, en de tip van de docent als laatste.
+      const haken = v.geenOefenadvies
+        ? [["Advies:", geenAdviesTekst]]
+        : [...(v.oefenBoekje ? [["Oefenboekje:", `opgave ${v.oefenBoekje}`]] : []),
+           ["PE-boek:", v.oefenPE || "opgaven en pagina's volgen nog"]];
+      if (v.specifiek) haken.push(["Tip van je docent:", v.specifiek]);
+      let blokH = hoogte(kopStr, { stijl: "bold", rechts: metaStr }) + 2.5;
+      haken.forEach(h => { blokH += hoogte(h[1], { label: h[0], bullet: true }); });
       ruimte(blokH); // past het blok niet meer op deze pagina, dan in zijn geheel naar de volgende
-      tekst(kopStr, { size: 10.5, stijl: "bold", extra: 5 });
-      if (v.geenOefenadvies) {
-        labelTekst("\u2022  Advies:", geenAdviesTekst, { size: 9.5, kleur: PDF_KLEUR.inktZacht, extra: 4.4, inspring: 4 });
-      } else {
-        if (v.oefenBoekje) labelTekst("\u2022  Oefenboekje:", `opgave ${v.oefenBoekje}`, { size: 9.5, kleur: PDF_KLEUR.inktZacht, extra: 4.4, inspring: 4 });
-        labelTekst("\u2022  PE-boek:", v.oefenPE || "opgaven en pagina's volgen nog", { size: 9.5, kleur: PDF_KLEUR.inktZacht, extra: 4.4, inspring: 4 });
-      }
-      if (v.specifiek) labelTekst("\u2022  Tip van je docent:", v.specifiek, { size: 9.5, kleur: PDF_KLEUR.inktZacht, extra: 4.4, inspring: 4 });
+      tekst(kopStr, { stijl: "bold", rechts: metaStr });
+      haken.forEach(h => tekst(h[1], { label: h[0], bullet: true }));
       y += 2.5;
     });
   }
