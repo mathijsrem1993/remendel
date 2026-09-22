@@ -780,6 +780,36 @@ function laadStofdata(boek) {
     });
 }
 
+// ----------------------------------------------------------------------
+// Hoe het lesboek in het oefenadvies genoemd wordt. Dat label komt uit het
+// geladen index-<boek>.json, zodat de tool niet aan één boek vastzit:
+//   1. staat er een expliciet `boek.lesboeklabel`, dan wint dat — zo houdt
+//      Praktische Economie zijn vertrouwde "PE-boek";
+//   2. anders wordt het afgeleid uit `boek.titel` en `boek.niveau`: de
+//      boeknaam is het deel vóór de "·" zonder los jaartal, en daarachter
+//      komt de niveau-afkorting (leerjaar + beginletter van de schoolsoort).
+//      "Pincode 4 · vmbo GL/TL" met niveau "4 mavo (GL/TL)" wordt zo
+//      "Pincode 4M", en een latere 3-mavo-index vanzelf "Pincode 3M".
+// Is er geen boek (toets zonder stofdata), dan blijft het "Lesboek".
+// ----------------------------------------------------------------------
+const NIVEAU_LETTERS = [[/vwo|atheneum|gymnasium/i, "V"], [/havo/i, "H"], [/mavo|vmbo/i, "M"]];
+
+function lesboekLabel() {
+  const b = (BOEK_INDEX && BOEK_INDEX.boek) || null;
+  if (!b) return "Lesboek";
+  const expliciet = typeof b.lesboeklabel === "string" ? b.lesboeklabel.trim() : "";
+  if (expliciet) return expliciet;
+  // Boeknaam: "Pincode 4 · vmbo GL/TL" -> "Pincode"
+  const naam = String(b.titel || "").split("·")[0].replace(/\s+\d+\s*$/, "").trim();
+  // Niveau: "4 mavo (GL/TL)" -> "4M"
+  const niveau = String(b.niveau || "");
+  const jaar = (/\d+/.exec(niveau) || [""])[0];
+  const soort = (NIVEAU_LETTERS.find(([re]) => re.test(niveau)) || [null, ""])[1];
+  const kort = jaar + soort;
+  if (naam && kort) return `${naam} ${kort}`;
+  return naam || "Lesboek";
+}
+
 // --- Knoppen van het laad-paneel ---
 const laadTekst = document.getElementById("laad-tekst");
 const laadBestand = document.getElementById("laad-bestand");
@@ -1060,7 +1090,7 @@ function berekenNietGetoetst() {
       .sort((a, b) => (a.blzSet[0] || 0) - (b.blzSet[0] || 0) || Number(a.grondnummer) - Number(b.grondnummer))
       .slice(0, MAX_NIET_GETOETST);
     const lesStukken = formatMetPagina(lesItems); // elk stuk: "opgave(n) (blz. ...)"
-    const peDeel = lesStukken.length ? `PE-boek: opgave ${dutchLijst(lesStukken)}` : "";
+    const lesDeel = lesStukken.length ? `${lesboekLabel()}: opgave ${dutchLijst(lesStukken)}` : "";
 
     // Oefenboekje: alleen het opgavenummer/bereik, geen sectie of paginanummer.
     const oefItems = groepeerOpGrondnummer(rijen.filter(r => r.bron === "oefenboekje"), alleRijen, "oefenboekje")
@@ -1069,8 +1099,10 @@ function berekenNietGetoetst() {
     const oefDeel = oefOpgaven.length ? `Oefenboekje: opgave ${dutchLijst(oefOpgaven)}` : "";
 
     // Zelfde volgorde en labels als bij het vraagspecifieke advies: eerst het
-    // oefenboekje, dan het PE-boek.
-    const delen = [oefDeel, peDeel].filter(Boolean).join(". ");
+    // oefenboekje, dan het lesboek. Heeft het boek geen oefenboekje, dan valt
+    // dat deel hier vanzelf weg: filter(Boolean) laat het lege deel vallen, dus
+    // er blijft geen losse punt of lege zin achter.
+    const delen = [oefDeel, lesDeel].filter(Boolean).join(". ");
     return esc(label) + ". " + (delen ? esc(delen) : "Geen oefenopgaven binnen de toetsstof gevonden");
   });
 }
@@ -1283,11 +1315,12 @@ async function maakFeedback() {
       const geenAdviesTekst = v.algemeneFeedback || algemeneFeedbackTheorievragen;
       const oefB = v.geenOefenadvies || !v.oefenBoekje
         ? "" : `<div class="haak"><span class="merk">Oefenboekje:</span><span>opgave ${esc(v.oefenBoekje)}</span></div>`;
+      const boekMerk = esc(lesboekLabel());
       const oefP = v.geenOefenadvies
         ? `<div class="haak"><span class="merk">Advies:</span><span>${esc(geenAdviesTekst)}</span></div>`
         : v.oefenPE
-          ? `<div class="haak"><span class="merk">PE-boek:</span><span>${esc(v.oefenPE)}</span></div>`
-          : `<div class="haak"><span class="merk">PE-boek:</span><span>opgaven en pagina's volgen nog</span></div>`;
+          ? `<div class="haak"><span class="merk">${boekMerk}:</span><span>${esc(v.oefenPE)}</span></div>`
+          : `<div class="haak"><span class="merk">${boekMerk}:</span><span>opgaven en pagina's volgen nog</span></div>`;
       const vsHaak = VRAAGSPECIFIEK[v.nr]
         ? `<div class="haak"><span class="merk">Tip van je docent:</span><span>${esc(VRAAGSPECIFIEK[v.nr])}</span></div>`
         : "";
@@ -1615,11 +1648,12 @@ function maakPdf(res) {
       const algemeneFeedbackTheorievragen = "Deze opgave test jouw kennis van de begrippen. Om deze de volgende keer beter te beheersen kan je jezelf overhoren met behulp van de begrippenlijst. Schrijf de begrippen die je nog niet kent over.";
       const geenAdviesTekst = v.algemeneFeedback || algemeneFeedbackTheorievragen;
       // Zelfde volgorde als bij de niet-getoetste stof: eerst het oefenboekje,
-      // dan het PE-boek, en de tip van de docent als laatste.
+      // dan het lesboek, en de tip van de docent als laatste. Boeken zonder
+      // oefenboekje laten die eerste regel gewoon weg.
       const haken = v.geenOefenadvies
         ? [["Advies:", geenAdviesTekst]]
         : [...(v.oefenBoekje ? [["Oefenboekje:", `opgave ${v.oefenBoekje}`]] : []),
-           ["PE-boek:", v.oefenPE || "opgaven en pagina's volgen nog"]];
+           [`${lesboekLabel()}:`, v.oefenPE || "opgaven en pagina's volgen nog"]];
       if (v.specifiek) haken.push(["Tip van je docent:", v.specifiek]);
       let blokH = hoogte(kopStr, { stijl: "bold", rechts: metaStr }) + 2.5;
       haken.forEach(h => { blokH += hoogte(h[1], { label: h[0], bullet: true }); });
