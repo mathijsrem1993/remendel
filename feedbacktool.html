@@ -700,9 +700,31 @@ let TOETS_STOFAFBAKENING = null;  // config.stofafbakening — hoofdstukken/extr
 // ingevuld" behandelen. Alleen een echte, niet-lege string telt als tekst.
 function tekstOf(x) { return (typeof x === "string" && x) ? x : ""; }
 
+// De n-term komt uit het toetsbestand en is bij ons altijd 1. Ontbreekt het
+// veld, dan is dat een fout in de export en geen keuze: stil terugvallen op 0
+// zou elk cijfer een vol punt te laag maken, zonder dat iemand het merkt. We
+// vallen daarom terug op 1 en laten een spoor achter in de console. Een
+// expliciete 0 in het bestand blijft gewoon 0 — dat is wél een keuze.
+const NTERM_STANDAARD = 1;
+
+function leesNterm(config) {
+  const ruw = config.nterm;
+  const naam = config.toetsId || config.id || config.titel || config.toets || "onbekende toets";
+  if (ruw === undefined || ruw === null || ruw === "") {
+    console.warn(`Toets "${naam}" heeft geen veld "nterm"; teruggevallen op ${NTERM_STANDAARD}. Zet nterm in het toetsbestand.`);
+    return NTERM_STANDAARD;
+  }
+  const n = Number(ruw);
+  if (!isFinite(n)) {
+    console.warn(`Toets "${naam}" heeft een onleesbare "nterm" (${JSON.stringify(ruw)}); teruggevallen op ${NTERM_STANDAARD}.`);
+    return NTERM_STANDAARD;
+  }
+  return n;
+}
+
 function laadConfig(config) {
   const maxP = Number(config.maxPunten) || (config.vragen || []).reduce((s, v) => s + (Number(v.max) || 0), 0) || 1;
-  const nterm = Number(config.nterm) || 0;
+  const nterm = leesNterm(config);
   // Sommige exports gebruiken "toets"/"toetsId" i.p.v. "titel"/"id" — beide
   // vormen worden geaccepteerd.
   // De info tussen haakjes aan het eind (bv. "(4 havo, 45 minuten, 27 punten)")

@@ -172,6 +172,20 @@ async function laad(toetsId) {
   // komt te staan: staat er geen lesboeklabel in de index, dan leidt de tool
   // er zelf een af uit titel en niveau, en dat is niet altijd wat je wilt.
   const boekLabel = lesboekLabelVan(index.boek);
+
+  // De n-term is bij ons altijd 1. Ontbreekt het veld, dan valt de
+  // feedbacktool terug op 1 en waarschuwt in de console; hier maken we dat
+  // zichtbaar, samen met het cijfer bij een volle score. Boven n-term 1,1
+  // komt daar een cijfer boven de 10 uit, en dat kapt niets af.
+  const ntermRuw = toets.nterm;
+  const ntermOntbreekt = ntermRuw === undefined || ntermRuw === null || ntermRuw === "" || !isFinite(Number(ntermRuw));
+  const nterm = ntermOntbreekt ? 1 : Number(ntermRuw);
+  const maxPunten = Number(toets.maxPunten) || (toets.vragen || []).reduce((s, v) => s + (Number(v.max) || 0), 0) || 1;
+  const cijferVol = (Math.round((9 + nterm) * 10) / 10).toFixed(1).replace(".", ",");
+  const ntermTekst = ntermOntbreekt ? (nterm + " (terugval)") : String(nterm).replace(".", ",");
+  const ntermWaarschuwing = ntermOntbreekt
+    ? ' <strong>Let op:</strong> het veld <code>nterm</code> ontbreekt in het toetsbestand. Zet het erin.'
+    : (9 + nterm > 10 ? ' <strong>Let op:</strong> dat is hoger dan een 10, en de tool kapt dat niet af.' : "");
   const boekLabelBron = lesboekLabelIsExpliciet(index.boek)
     ? 'uit <code>lesboeklabel</code> in de index'
     : '<strong>afgeleid</strong> uit titel en niveau — zet <code>lesboeklabel</code> in de index als dit niet de naam is die leerlingen moeten lezen';
@@ -183,6 +197,9 @@ async function laad(toetsId) {
 
     <h2>Hoe het lesboek heet in de feedback</h2>
     <p class="uitleg">Leerlingen lezen bij elke oefenverwijzing “<strong>${esc(boekLabel)}:</strong> opgave …”. Dat label is ${boekLabelBron}.</p>
+
+    <h2>N-term en cijfer</h2>
+    <p class="uitleg">N-term <strong>${esc(ntermTekst)}</strong>. Bij een volle score (${maxPunten} van de ${maxPunten} punten) wordt het cijfer <strong>${esc(cijferVol)}</strong>.${ntermWaarschuwing}</p>
 
     <h2>Binnen de stofafbakening</h2>
     <div class="kaarten">${kaart("Totaal opgaven", totaalBinnen)}</div>
