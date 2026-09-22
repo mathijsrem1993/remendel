@@ -1,0 +1,259 @@
+{
+  "toetsId": "4M-SE1-H1H2-V1",
+  "toets": "SE1 H1 + H2 Versie 1",
+  "versie": "V1",
+  "docent": "Mathijs Remmerswaal",
+  "boek": "PIN",
+  "weergave": "mavo",
+  "nterm": 1,
+  "publicatie": "2026-09-22",
+  "stofafbakening": {
+    "hoofdstukken": [
+      1,
+      2
+    ],
+    "extra": [
+      "PIN-A-01",
+      "PIN-A-02",
+      "PIN-A-03",
+      "PIN-A-04"
+    ],
+    "uitgesloten": []
+  },
+  "vragen": [
+    {
+      "nr": 1,
+      "onderwerp": "Soort inkomen herkennen",
+      "onderwerpen": [
+        "PIN-H1-12"
+      ],
+      "wds": "W",
+      "max": 1,
+      "oefenBoekje": [],
+      "oefenPE": []
+    },
+    {
+      "nr": 2,
+      "onderwerp": "Procentuele stijging berekenen",
+      "onderwerpen": [
+        "PIN-A-01"
+      ],
+      "wds": "D",
+      "max": 2,
+      "oefenBoekje": [],
+      "oefenPE": []
+    },
+    {
+      "nr": 3,
+      "onderwerp": "Invloed van inkomen op koopgedrag",
+      "onderwerpen": [
+        "PIN-H1-04",
+        "PIN-H1-02"
+      ],
+      "wds": "S",
+      "max": 1,
+      "oefenBoekje": [],
+      "oefenPE": []
+    },
+    {
+      "nr": 4,
+      "onderwerp": "Brutoloon en nettoloon, welvaart en welzijn",
+      "onderwerpen": [
+        "PIN-H1-13",
+        "PIN-H1-19"
+      ],
+      "wds": "D",
+      "max": 2,
+      "oefenBoekje": [],
+      "oefenPE": [],
+      "geenOefenadvies": true
+    },
+    {
+      "nr": 5,
+      "onderwerp": "Hoger inkomen als oorzaak van inflatie",
+      "onderwerpen": [
+        "PIN-H1-21"
+      ],
+      "wds": "S",
+      "max": 2,
+      "oefenBoekje": [],
+      "oefenPE": []
+    },
+    {
+      "nr": 6,
+      "onderwerp": "Spaarmotieven herkennen",
+      "onderwerpen": [
+        "PIN-H2-05"
+      ],
+      "wds": "D",
+      "max": 1,
+      "oefenBoekje": [],
+      "oefenPE": []
+    },
+    {
+      "nr": 7,
+      "onderwerp": "Enkelvoudige en samengestelde rente vergelijken",
+      "onderwerpen": [
+        "PIN-H2-06",
+        "PIN-H2-07",
+        "PIN-A-02"
+      ],
+      "wds": "D",
+      "max": 2,
+      "oefenBoekje": [],
+      "oefenPE": [],
+      "specifiek": "Bij enkelvoudige rente reken je elk jaar over het startbedrag. Bij samengestelde rente reken je over het bedrag inclusief de rente van vorig jaar. Daar gebruik je een groeifactor voor."
+    },
+    {
+      "nr": 8,
+      "onderwerp": "Debetrente, creditrente en de koopkracht van spaargeld",
+      "onderwerpen": [
+        "PIN-H2-22",
+        "PIN-H1-22"
+      ],
+      "wds": "D",
+      "max": 2,
+      "oefenBoekje": [],
+      "oefenPE": [],
+      "geenOefenadvies": true
+    },
+    {
+      "nr": 9,
+      "onderwerp": "Voor- en nadelen van beleggen",
+      "onderwerpen": [
+        "PIN-H2-09"
+      ],
+      "wds": "W",
+      "max": 2,
+      "oefenBoekje": [],
+      "oefenPE": []
+    },
+    {
+      "nr": 10,
+      "onderwerp": "Consumentenprijsindexcijfer berekenen",
+      "onderwerpen": [
+        "PIN-H1-23"
+      ],
+      "wds": "D",
+      "max": 2,
+      "oefenBoekje": [],
+      "oefenPE": [],
+      "specifiek": "Vermenigvuldig elk prijsindexcijfer met zijn wegingsfactor, tel die uitkomsten op en deel door het totaal van de wegingsfactoren."
+    },
+    {
+      "nr": 11,
+      "onderwerp": "Koopkracht bepalen uit loonstijging en inflatie",
+      "onderwerpen": [
+        "PIN-H1-24",
+        "PIN-H1-22"
+      ],
+      "wds": "D",
+      "max": 2,
+      "oefenBoekje": [],
+      "oefenPE": [],
+      "specifiek": "Trek de inflatie van de loonstijging af. Komt daar een negatief getal uit, dan is de koopkracht gedaald."
+    },
+    {
+      "nr": 12,
+      "onderwerp": "Oorzaak van inflatie noemen",
+      "onderwerpen": [
+        "PIN-H1-21"
+      ],
+      "wds": "W",
+      "max": 1,
+      "oefenBoekje": [],
+      "oefenPE": []
+    },
+    {
+      "nr": 13,
+      "onderwerp": "Rentebeleid van de ECB en de inflatie",
+      "onderwerpen": [
+        "PIN-H2-21",
+        "PIN-H1-21"
+      ],
+      "wds": "D",
+      "max": 2,
+      "oefenBoekje": [],
+      "oefenPE": []
+    },
+    {
+      "nr": 14,
+      "onderwerp": "Lorenzcurve aflezen",
+      "onderwerpen": [
+        "PIN-H1-17"
+      ],
+      "wds": "D",
+      "max": 1,
+      "oefenBoekje": [],
+      "oefenPE": []
+    },
+    {
+      "nr": 15,
+      "onderwerp": "Oorzaken van inkomensverschillen",
+      "onderwerpen": [
+        "PIN-H1-15"
+      ],
+      "wds": "S",
+      "max": 2,
+      "oefenBoekje": [],
+      "oefenPE": []
+    },
+    {
+      "nr": 16,
+      "onderwerp": "Overheidsbeleid tegen inkomensverschillen",
+      "onderwerpen": [
+        "PIN-H1-15",
+        "PIN-H1-13"
+      ],
+      "wds": "D",
+      "max": 1,
+      "oefenBoekje": [],
+      "oefenPE": []
+    },
+    {
+      "nr": 17,
+      "onderwerp": "Kredietvorm herkennen",
+      "onderwerpen": [
+        "PIN-H2-13"
+      ],
+      "wds": "D",
+      "max": 1,
+      "oefenBoekje": [],
+      "oefenPE": []
+    },
+    {
+      "nr": 18,
+      "onderwerp": "Kredietkosten berekenen",
+      "onderwerpen": [
+        "PIN-H2-12"
+      ],
+      "wds": "D",
+      "max": 2,
+      "oefenBoekje": [],
+      "oefenPE": []
+    },
+    {
+      "nr": 19,
+      "onderwerp": "Maatschappelijke kosten en opbrengsten",
+      "onderwerpen": [
+        "PIN-H1-10"
+      ],
+      "wds": "S",
+      "max": 2,
+      "oefenBoekje": [],
+      "oefenPE": []
+    },
+    {
+      "nr": 20,
+      "onderwerp": "Maandelijkse reservering berekenen",
+      "onderwerpen": [
+        "PIN-H2-03",
+        "PIN-A-04"
+      ],
+      "wds": "D",
+      "max": 2,
+      "oefenBoekje": [],
+      "oefenPE": []
+    }
+  ]
+}
