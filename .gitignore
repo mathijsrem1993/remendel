@@ -2,3 +2,7 @@
 # Zie stencils/LEESMIJ-stencil.txt voor uitleg.
 /stencils/
 .claude/
+
+# Map waarin gegenereerde bestanden uit een Claude-sessie landen voordat ze
+# op hun plek in de repo worden gezet. De kopie in docs/ is de echte.
+/Claude outputs/

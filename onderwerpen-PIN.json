@@ -1,0 +1,1383 @@
+{
+  "schema": "remendel-onderwerpen/1",
+  "boek": {
+    "id": "PIN",
+    "titel": "Pincode 4 · vmbo GL/TL",
+    "niveau": "4 mavo (GL/TL)",
+    "toetsstofcriterium": "De stof uit het boek, aangevuld met de begrippenlijst bij het vak; die begrippenlijst is gebaseerd op de syllabus van het centraal examen. Begrippen die wel in het boek worden behandeld maar niet in de begrippenlijst staan, zijn opgenomen in het veld begrippen_via_presentatie.",
+    "status": "hoofdstuk 1 en 2 plus basisvaardigheden; hoofdstuk 3 t/m 8 nog te doen"
+  },
+  "onderwerpen": [
+    {
+      "id": "PIN-H1-01",
+      "label": "Behoeften en soorten behoeften",
+      "hoofdstuk": 1,
+      "paragrafen": [
+        "1.1",
+        "Weet je het nog?"
+      ],
+      "begrippen": [
+        "behoeften",
+        "primaire behoeften",
+        "secundaire behoeften"
+      ],
+      "begrippen_via_presentatie": [],
+      "synoniemen": [
+        "behoefte",
+        "basisbehoeften",
+        "noodzakelijke behoeften",
+        "overige behoeften",
+        "luxe behoeften",
+        "oneindige behoeften"
+      ],
+      "wds": [
+        "D",
+        "S"
+      ],
+      "aantal_opgaven": 8
+    },
+    {
+      "id": "PIN-H1-02",
+      "label": "Bestedingen, consumeren en zelfvoorziening",
+      "hoofdstuk": 1,
+      "paragrafen": [
+        "1.1",
+        "Weet je het nog?"
+      ],
+      "begrippen": [
+        "bestedingen",
+        "zelfvoorziening"
+      ],
+      "begrippen_via_presentatie": [
+        "consumeren"
+      ],
+      "synoniemen": [
+        "besteding",
+        "consumptie",
+        "uitgaven aan goederen en diensten",
+        "zelf produceren"
+      ],
+      "wds": [
+        "W",
+        "D",
+        "S"
+      ],
+      "aantal_opgaven": 9
+    },
+    {
+      "id": "PIN-H1-03",
+      "label": "Soorten goederen en diensten",
+      "hoofdstuk": 1,
+      "paragrafen": [
+        "1.1",
+        "Weet je het nog?"
+      ],
+      "begrippen": [
+        "producten",
+        "diensten",
+        "gebruiksgoederen",
+        "verbruiksgoederen"
+      ],
+      "begrippen_via_presentatie": [],
+      "synoniemen": [
+        "product",
+        "dienst",
+        "goederen",
+        "duurzame consumptiegoederen",
+        "tastbaar",
+        "ontastbaar"
+      ],
+      "wds": [
+        "D"
+      ],
+      "aantal_opgaven": 4
+    },
+    {
+      "id": "PIN-H1-04",
+      "label": "Doelgroep en koopgedrag",
+      "hoofdstuk": 1,
+      "paragrafen": [
+        "1.1"
+      ],
+      "begrippen": [
+        "doelgroep",
+        "koopgedrag"
+      ],
+      "begrippen_via_presentatie": [],
+      "synoniemen": [
+        "doelgroepen",
+        "kenmerken van een doelgroep",
+        "koopbeslissing"
+      ],
+      "wds": [
+        "W",
+        "D",
+        "S"
+      ],
+      "aantal_opgaven": 9
+    },
+    {
+      "id": "PIN-H1-05",
+      "label": "Commerciële en sociale beïnvloeding",
+      "hoofdstuk": 1,
+      "paragrafen": [
+        "1.1",
+        "Weet je het nog?"
+      ],
+      "begrippen": [
+        "commerciële beïnvloeding",
+        "sociale beïnvloeding"
+      ],
+      "begrippen_via_presentatie": [],
+      "synoniemen": [
+        "commerciële invloed",
+        "sociale invloed",
+        "beïnvloeding van het koopgedrag"
+      ],
+      "wds": [
+        "W",
+        "D",
+        "S"
+      ],
+      "aantal_opgaven": 4
+    },
+    {
+      "id": "PIN-H1-06",
+      "label": "Soorten reclame",
+      "hoofdstuk": 1,
+      "paragrafen": [
+        "1.1",
+        "Weet je het nog?"
+      ],
+      "begrippen": [
+        "commerciële reclame",
+        "informatieve reclame",
+        "merkreclame",
+        "ideële reclame"
+      ],
+      "begrippen_via_presentatie": [
+        "reclame"
+      ],
+      "synoniemen": [
+        "reclamesoort",
+        "soort reclame"
+      ],
+      "wds": [
+        "D"
+      ],
+      "aantal_opgaven": 1
+    },
+    {
+      "id": "PIN-H1-07",
+      "label": "Marketing en de zes marketinginstrumenten",
+      "hoofdstuk": 1,
+      "paragrafen": [
+        "1.1"
+      ],
+      "begrippen": [
+        "marketing",
+        "marketinginstrumenten",
+        "productbeleid",
+        "prijsbeleid",
+        "plaatsbeleid",
+        "promotiebeleid",
+        "personeelsbeleid",
+        "presentatiebeleid"
+      ],
+      "begrippen_via_presentatie": [],
+      "synoniemen": [
+        "6 p's",
+        "zes p's",
+        "marketinginstrument",
+        "marketingmix"
+      ],
+      "wds": [
+        "W",
+        "D",
+        "S"
+      ],
+      "aantal_opgaven": 6
+    },
+    {
+      "id": "PIN-H1-08",
+      "label": "Consumentenbescherming",
+      "hoofdstuk": 1,
+      "paragrafen": [
+        "1.1"
+      ],
+      "begrippen": [
+        "vergelijkend warenonderzoek",
+        "keurmerk",
+        "productaansprakelijkheid"
+      ],
+      "begrippen_via_presentatie": [],
+      "synoniemen": [
+        "keurmerken",
+        "consumentenbescherming",
+        "positie van de consument"
+      ],
+      "wds": [],
+      "aantal_opgaven": 0
+    },
+    {
+      "id": "PIN-H1-09",
+      "label": "Duurzaam consumeren",
+      "hoofdstuk": 1,
+      "paragrafen": [
+        "1.1"
+      ],
+      "begrippen": [
+        "duurzaam consumeren"
+      ],
+      "begrippen_via_presentatie": [
+        "ecologische voetafdruk",
+        "CO2-uitstoot"
+      ],
+      "synoniemen": [
+        "duurzaam consumeren",
+        "duurzamer consumeren",
+        "duurzaamheid",
+        "fairtrade"
+      ],
+      "wds": [
+        "W",
+        "D",
+        "S"
+      ],
+      "aantal_opgaven": 16
+    },
+    {
+      "id": "PIN-H1-10",
+      "label": "Maatschappelijke kosten en opbrengsten",
+      "hoofdstuk": 1,
+      "paragrafen": [
+        "1.1"
+      ],
+      "begrippen": [
+        "maatschappelijke kosten",
+        "maatschappelijke opbrengsten"
+      ],
+      "begrippen_via_presentatie": [
+        "extern effect"
+      ],
+      "synoniemen": [
+        "externe effecten",
+        "negatief extern effect",
+        "positief extern effect",
+        "kosten voor de samenleving"
+      ],
+      "wds": [
+        "D",
+        "S"
+      ],
+      "aantal_opgaven": 5
+    },
+    {
+      "id": "PIN-H1-11",
+      "label": "Technologische ontwikkeling",
+      "hoofdstuk": 1,
+      "paragrafen": [
+        "1.1"
+      ],
+      "begrippen": [
+        "technologische ontwikkeling"
+      ],
+      "begrippen_via_presentatie": [],
+      "synoniemen": [
+        "technologie",
+        "nieuwe productieprocessen"
+      ],
+      "wds": [],
+      "aantal_opgaven": 0
+    },
+    {
+      "id": "PIN-H1-12",
+      "label": "Inkomen uit arbeid, bezit en overdracht",
+      "hoofdstuk": 1,
+      "paragrafen": [
+        "1.2"
+      ],
+      "begrippen": [
+        "inkomen uit arbeid",
+        "inkomen uit bezit",
+        "inkomen uit overdracht"
+      ],
+      "begrippen_via_presentatie": [],
+      "synoniemen": [
+        "inkomens uit overdrachten",
+        "loon",
+        "huur",
+        "rente",
+        "dividend",
+        "uitkering",
+        "tegenprestatie"
+      ],
+      "wds": [
+        "W",
+        "D",
+        "S"
+      ],
+      "aantal_opgaven": 8
+    },
+    {
+      "id": "PIN-H1-13",
+      "label": "Van brutoloon naar besteedbaar inkomen",
+      "hoofdstuk": 1,
+      "paragrafen": [
+        "1.2"
+      ],
+      "begrippen": [
+        "loonheffing",
+        "besteedbaar inkomen"
+      ],
+      "begrippen_via_presentatie": [
+        "brutoloon",
+        "nettoloon",
+        "toeslagen"
+      ],
+      "synoniemen": [
+        "loonbelasting",
+        "inkomstenbelasting",
+        "premies volksverzekeringen",
+        "netto-inkomen",
+        "bruto-inkomen"
+      ],
+      "wds": [
+        "W",
+        "D",
+        "S"
+      ],
+      "aantal_opgaven": 8
+    },
+    {
+      "id": "PIN-H1-14",
+      "label": "Primair en secundair inkomen",
+      "hoofdstuk": 1,
+      "paragrafen": [
+        "1.2"
+      ],
+      "begrippen": [
+        "primair inkomen",
+        "secundair inkomen"
+      ],
+      "begrippen_via_presentatie": [],
+      "synoniemen": [
+        "primaire inkomens",
+        "secundaire inkomens",
+        "bruto inkomen",
+        "netto inkomen plus overdrachten"
+      ],
+      "wds": [
+        "W",
+        "S"
+      ],
+      "aantal_opgaven": 5
+    },
+    {
+      "id": "PIN-H1-15",
+      "label": "Inkomensverschillen en modaal inkomen",
+      "hoofdstuk": 1,
+      "paragrafen": [
+        "1.2"
+      ],
+      "begrippen": [
+        "modaal inkomen"
+      ],
+      "begrippen_via_presentatie": [
+        "inkomensverschillen",
+        "sociaal minimum"
+      ],
+      "synoniemen": [
+        "modaal",
+        "meest voorkomende inkomen",
+        "minimuminkomen"
+      ],
+      "wds": [
+        "D",
+        "S"
+      ],
+      "aantal_opgaven": 5
+    },
+    {
+      "id": "PIN-H1-16",
+      "label": "Nationaal inkomen",
+      "hoofdstuk": 1,
+      "paragrafen": [
+        "1.2"
+      ],
+      "begrippen": [
+        "nationaal inkomen"
+      ],
+      "begrippen_via_presentatie": [],
+      "synoniemen": [
+        "inkomen per hoofd van de bevolking",
+        "nationaal inkomen per inwoner"
+      ],
+      "wds": [
+        "D",
+        "S"
+      ],
+      "aantal_opgaven": 2
+    },
+    {
+      "id": "PIN-H1-17",
+      "label": "Lorenzcurve",
+      "hoofdstuk": 1,
+      "paragrafen": [
+        "1.2"
+      ],
+      "begrippen": [
+        "lorenzcurve"
+      ],
+      "begrippen_via_presentatie": [],
+      "synoniemen": [
+        "lorenz-curve",
+        "personele inkomensverdeling",
+        "inkomensverdeling"
+      ],
+      "wds": [
+        "D"
+      ],
+      "aantal_opgaven": 6
+    },
+    {
+      "id": "PIN-H1-18",
+      "label": "Schaarste, middelen en prioriteiten",
+      "hoofdstuk": 1,
+      "paragrafen": [
+        "1.3"
+      ],
+      "begrippen": [
+        "schaarste",
+        "middelen",
+        "prioriteiten",
+        "vrije goederen"
+      ],
+      "begrippen_via_presentatie": [],
+      "synoniemen": [
+        "schaars",
+        "schaarse goederen",
+        "prioriteiten stellen",
+        "vrij goed",
+        "niet-schaarse goederen",
+        "keuzeprobleem"
+      ],
+      "wds": [
+        "W",
+        "D",
+        "S"
+      ],
+      "aantal_opgaven": 19
+    },
+    {
+      "id": "PIN-H1-19",
+      "label": "Welvaart en brede welvaart",
+      "hoofdstuk": 1,
+      "paragrafen": [
+        "1.3"
+      ],
+      "begrippen": [
+        "welvaart",
+        "brede welvaart"
+      ],
+      "begrippen_via_presentatie": [
+        "welzijn"
+      ],
+      "synoniemen": [
+        "materiële welvaart",
+        "kwaliteit van leven"
+      ],
+      "wds": [
+        "W",
+        "D",
+        "S"
+      ],
+      "aantal_opgaven": 6
+    },
+    {
+      "id": "PIN-H1-20",
+      "label": "Indexcijfer en het CBS",
+      "hoofdstuk": 1,
+      "paragrafen": [
+        "1.3"
+      ],
+      "begrippen": [
+        "indexcijfer",
+        "centraal bureau voor de statistiek (CBS)"
+      ],
+      "begrippen_via_presentatie": [
+        "basisjaar"
+      ],
+      "synoniemen": [
+        "indexcijfers",
+        "index",
+        "CBS",
+        "Centraal Bureau voor de Statistiek"
+      ],
+      "wds": [
+        "W",
+        "D",
+        "S"
+      ],
+      "aantal_opgaven": 10
+    },
+    {
+      "id": "PIN-H1-21",
+      "label": "Inflatie en deflatie",
+      "hoofdstuk": 1,
+      "paragrafen": [
+        "1.4"
+      ],
+      "begrippen": [
+        "inflatie",
+        "deflatie"
+      ],
+      "begrippen_via_presentatie": [
+        "oorzaken van inflatie"
+      ],
+      "synoniemen": [
+        "prijsstijging",
+        "algemene prijsstijging",
+        "prijsdaling",
+        "inflatiepercentage"
+      ],
+      "wds": [
+        "W",
+        "D",
+        "S"
+      ],
+      "aantal_opgaven": 13
+    },
+    {
+      "id": "PIN-H1-22",
+      "label": "Koopkracht en geldontwaarding",
+      "hoofdstuk": 1,
+      "paragrafen": [
+        "1.4"
+      ],
+      "begrippen": [
+        "koopkracht",
+        "geldontwaarding"
+      ],
+      "begrippen_via_presentatie": [],
+      "synoniemen": [
+        "koopkrachtverandering",
+        "geld wordt minder waard",
+        "reële waarde"
+      ],
+      "wds": [
+        "W",
+        "D",
+        "S"
+      ],
+      "aantal_opgaven": 12
+    },
+    {
+      "id": "PIN-H1-23",
+      "label": "Consumentenprijsindexcijfer",
+      "hoofdstuk": 1,
+      "paragrafen": [
+        "1.4"
+      ],
+      "begrippen": [
+        "consumentenprijs-indexcijfer (cpi)",
+        "samengesteld ongewogen indexcijfer"
+      ],
+      "begrippen_via_presentatie": [
+        "wegingsfactor"
+      ],
+      "synoniemen": [
+        "cpi",
+        "consumentenprijsindex",
+        "samengesteld gewogen indexcijfer",
+        "weging",
+        "wegingsfactoren",
+        "prijsindexcijfer",
+        "persoonlijk prijsindexcijfer"
+      ],
+      "wds": [
+        "D",
+        "S"
+      ],
+      "aantal_opgaven": 17
+    },
+    {
+      "id": "PIN-H1-24",
+      "label": "Nominale en reële verandering",
+      "hoofdstuk": 1,
+      "paragrafen": [
+        "1.4"
+      ],
+      "begrippen": [
+        "nominale loonstijging",
+        "reële verandering van het loon"
+      ],
+      "begrippen_via_presentatie": [],
+      "synoniemen": [
+        "nominale verandering",
+        "reële verandering",
+        "reële loonstijging",
+        "nominaal",
+        "reëel",
+        "nominale inkomensstijging",
+        "reële inkomensstijging"
+      ],
+      "wds": [
+        "D",
+        "S"
+      ],
+      "aantal_opgaven": 13
+    },
+    {
+      "id": "PIN-H1-25",
+      "label": "Prijscompensatie en loon-prijsspiraal",
+      "hoofdstuk": 1,
+      "paragrafen": [
+        "1.4"
+      ],
+      "begrippen": [
+        "prijscompensatie",
+        "loon-prijsspiraal"
+      ],
+      "begrippen_via_presentatie": [],
+      "synoniemen": [
+        "loonprijsspiraal",
+        "cao-loon",
+        "loonsverhoging",
+        "vakbond"
+      ],
+      "wds": [
+        "D",
+        "S"
+      ],
+      "aantal_opgaven": 8
+    },
+    {
+      "id": "PIN-H2-01",
+      "label": "Soorten uitgaven",
+      "hoofdstuk": 2,
+      "paragrafen": [
+        "2.1"
+      ],
+      "begrippen": [
+        "dagelijkse uitgaven",
+        "vaste lasten",
+        "incidentele uitgaven"
+      ],
+      "begrippen_via_presentatie": [],
+      "synoniemen": [
+        "soorten uitgaven",
+        "huishoudelijke uitgaven",
+        "vaste uitgaven",
+        "eenmalige uitgaven"
+      ],
+      "wds": [
+        "W",
+        "D",
+        "S"
+      ],
+      "aantal_opgaven": 9
+    },
+    {
+      "id": "PIN-H2-02",
+      "label": "Budgetteren en het budgetplan",
+      "hoofdstuk": 2,
+      "paragrafen": [
+        "2.1"
+      ],
+      "begrippen": [
+        "budgetplan"
+      ],
+      "begrippen_via_presentatie": [
+        "budgetteren"
+      ],
+      "synoniemen": [
+        "budget",
+        "begroting",
+        "inkomsten en uitgaven op elkaar afstemmen",
+        "huishoudboekje"
+      ],
+      "wds": [
+        "W",
+        "D",
+        "S"
+      ],
+      "aantal_opgaven": 13
+    },
+    {
+      "id": "PIN-H2-03",
+      "label": "Reserveren",
+      "hoofdstuk": 2,
+      "paragrafen": [
+        "2.1"
+      ],
+      "begrippen": [
+        "reserveren"
+      ],
+      "begrippen_via_presentatie": [],
+      "synoniemen": [
+        "reservering",
+        "maandelijks opzijzetten",
+        "sparen voor een grote uitgave"
+      ],
+      "wds": [
+        "D",
+        "S"
+      ],
+      "aantal_opgaven": 10
+    },
+    {
+      "id": "PIN-H2-04",
+      "label": "Nibud en Consumentenbond",
+      "hoofdstuk": 2,
+      "paragrafen": [
+        "2.1"
+      ],
+      "begrippen": [
+        "nibud",
+        "consumentenbond"
+      ],
+      "begrippen_via_presentatie": [],
+      "synoniemen": [
+        "Nationaal Instituut voor Budgetvoorlichting",
+        "budgetvoorlichting"
+      ],
+      "wds": [
+        "D",
+        "S"
+      ],
+      "aantal_opgaven": 3
+    },
+    {
+      "id": "PIN-H2-05",
+      "label": "Sparen en spaarmotieven",
+      "hoofdstuk": 2,
+      "paragrafen": [
+        "2.2"
+      ],
+      "begrippen": [
+        "sparen",
+        "spaarmotieven"
+      ],
+      "begrippen_via_presentatie": [],
+      "synoniemen": [
+        "spaarmotief",
+        "sparen voor een doel",
+        "sparen uit voorzorg",
+        "sparen voor de rente",
+        "banktegoed"
+      ],
+      "wds": [
+        "D",
+        "S"
+      ],
+      "aantal_opgaven": 3
+    },
+    {
+      "id": "PIN-H2-06",
+      "label": "Spaardeposito en enkelvoudige rente",
+      "hoofdstuk": 2,
+      "paragrafen": [
+        "2.2"
+      ],
+      "begrippen": [
+        "spaardeposito",
+        "(enkelvoudige) rente"
+      ],
+      "begrippen_via_presentatie": [],
+      "synoniemen": [
+        "enkelvoudige rente",
+        "rente",
+        "interest",
+        "depositorekening",
+        "spaarrekening",
+        "rentepercentage"
+      ],
+      "wds": [
+        "D"
+      ],
+      "aantal_opgaven": 10
+    },
+    {
+      "id": "PIN-H2-07",
+      "label": "Samengestelde rente",
+      "hoofdstuk": 2,
+      "paragrafen": [
+        "2.2"
+      ],
+      "begrippen": [
+        "samengestelde rente"
+      ],
+      "begrippen_via_presentatie": [],
+      "synoniemen": [
+        "rente op rente",
+        "rente-op-rente",
+        "samengesteld"
+      ],
+      "wds": [
+        "D"
+      ],
+      "aantal_opgaven": 7
+    },
+    {
+      "id": "PIN-H2-08",
+      "label": "Nominale en reële rente",
+      "hoofdstuk": 2,
+      "paragrafen": [
+        "2.2"
+      ],
+      "begrippen": [
+        "nominale rente",
+        "reële rente"
+      ],
+      "begrippen_via_presentatie": [],
+      "synoniemen": [
+        "nominaal rentepercentage",
+        "reëel rentepercentage",
+        "rente gecorrigeerd voor inflatie"
+      ],
+      "wds": [
+        "D",
+        "S"
+      ],
+      "aantal_opgaven": 9
+    },
+    {
+      "id": "PIN-H2-09",
+      "label": "Beleggen en rendement",
+      "hoofdstuk": 2,
+      "paragrafen": [
+        "2.2"
+      ],
+      "begrippen": [
+        "beleggen",
+        "rendement"
+      ],
+      "begrippen_via_presentatie": [],
+      "synoniemen": [
+        "belegging",
+        "effecten",
+        "aandelen",
+        "obligaties",
+        "koerswinst",
+        "duurzaam beleggen"
+      ],
+      "wds": [
+        "W",
+        "D",
+        "S"
+      ],
+      "aantal_opgaven": 6
+    },
+    {
+      "id": "PIN-H2-10",
+      "label": "Lenen, krediet en schuld",
+      "hoofdstuk": 2,
+      "paragrafen": [
+        "2.3",
+        "Weet je het nog?"
+      ],
+      "begrippen": [
+        "lenen",
+        "krediet",
+        "schuld",
+        "aflossen"
+      ],
+      "begrippen_via_presentatie": [
+        "BKR-registratie"
+      ],
+      "synoniemen": [
+        "lening",
+        "aflossing",
+        "schulden",
+        "BKR",
+        "kredietregistratie",
+        "koopkracht naar voren halen"
+      ],
+      "wds": [
+        "W",
+        "S"
+      ],
+      "aantal_opgaven": 10
+    },
+    {
+      "id": "PIN-H2-11",
+      "label": "Leenmotieven",
+      "hoofdstuk": 2,
+      "paragrafen": [
+        "2.3"
+      ],
+      "begrippen": [
+        "leenmotieven"
+      ],
+      "begrippen_via_presentatie": [],
+      "synoniemen": [
+        "leenmotief",
+        "reden om te lenen"
+      ],
+      "wds": [
+        "D",
+        "S"
+      ],
+      "aantal_opgaven": 5
+    },
+    {
+      "id": "PIN-H2-12",
+      "label": "Kredietkosten",
+      "hoofdstuk": 2,
+      "paragrafen": [
+        "2.3",
+        "Weet je het nog?"
+      ],
+      "begrippen": [
+        "kredietkosten"
+      ],
+      "begrippen_via_presentatie": [
+        "termijnbedrag",
+        "looptijd"
+      ],
+      "synoniemen": [
+        "kredietkost",
+        "rente en bijkomende kosten",
+        "totale kosten van een lening"
+      ],
+      "wds": [
+        "W",
+        "D",
+        "S"
+      ],
+      "aantal_opgaven": 19
+    },
+    {
+      "id": "PIN-H2-13",
+      "label": "Kredietvormen bij de bank",
+      "hoofdstuk": 2,
+      "paragrafen": [
+        "2.3"
+      ],
+      "begrippen": [
+        "consumptief krediet",
+        "persoonlijke lening",
+        "doorlopend krediet",
+        "salariskrediet"
+      ],
+      "begrippen_via_presentatie": [
+        "kredietvormen"
+      ],
+      "synoniemen": [
+        "kredietvorm",
+        "rood staan",
+        "kredietlimiet"
+      ],
+      "wds": [
+        "D",
+        "S"
+      ],
+      "aantal_opgaven": 5
+    },
+    {
+      "id": "PIN-H2-14",
+      "label": "Kredietvormen bij de leverancier",
+      "hoofdstuk": 2,
+      "paragrafen": [
+        "2.3"
+      ],
+      "begrippen": [
+        "koop op afbetaling",
+        "private lease",
+        "huurkoop",
+        "leasing"
+      ],
+      "begrippen_via_presentatie": [
+        "achteraf betalen"
+      ],
+      "synoniemen": [
+        "leasen",
+        "lease",
+        "afbetaling",
+        "termijnen"
+      ],
+      "wds": [
+        "D",
+        "S"
+      ],
+      "aantal_opgaven": 10
+    },
+    {
+      "id": "PIN-H2-15",
+      "label": "Hypothecaire lening",
+      "hoofdstuk": 2,
+      "paragrafen": [
+        "2.3"
+      ],
+      "begrippen": [
+        "hypothecaire lening"
+      ],
+      "begrippen_via_presentatie": [
+        "onderpand"
+      ],
+      "synoniemen": [
+        "hypotheek",
+        "hypotheeklasten",
+        "hypotheekrente",
+        "starters",
+        "doorstromers"
+      ],
+      "wds": [
+        "D",
+        "S"
+      ],
+      "aantal_opgaven": 6
+    },
+    {
+      "id": "PIN-H2-16",
+      "label": "Geldfuncties",
+      "hoofdstuk": 2,
+      "paragrafen": [
+        "2.4",
+        "Weet je het nog?"
+      ],
+      "begrippen": [
+        "geldfuncties",
+        "geld als ruilmiddel",
+        "geld als spaarmiddel",
+        "geld als rekenmiddel"
+      ],
+      "begrippen_via_presentatie": [],
+      "synoniemen": [
+        "ruilmiddel",
+        "spaarmiddel",
+        "rekenmiddel",
+        "oppotmiddel",
+        "functies van geld"
+      ],
+      "wds": [
+        "D"
+      ],
+      "aantal_opgaven": 2
+    },
+    {
+      "id": "PIN-H2-17",
+      "label": "Directe en indirecte ruil",
+      "hoofdstuk": 2,
+      "paragrafen": [
+        "2.4",
+        "Weet je het nog?"
+      ],
+      "begrippen": [
+        "directe ruil",
+        "indirecte ruil"
+      ],
+      "begrippen_via_presentatie": [],
+      "synoniemen": [
+        "ruilen",
+        "ruilhandel",
+        "product voor product"
+      ],
+      "wds": [
+        "D"
+      ],
+      "aantal_opgaven": 1
+    },
+    {
+      "id": "PIN-H2-18",
+      "label": "Chartaal en giraal geld",
+      "hoofdstuk": 2,
+      "paragrafen": [
+        "2.4",
+        "Weet je het nog?"
+      ],
+      "begrippen": [
+        "chartaal geld",
+        "giraal geld",
+        "elektronisch betalen"
+      ],
+      "begrippen_via_presentatie": [],
+      "synoniemen": [
+        "contant geld",
+        "contant betalen",
+        "pinnen",
+        "elektronisch geld",
+        "pinpas",
+        "internetbankieren"
+      ],
+      "wds": [
+        "D",
+        "S"
+      ],
+      "aantal_opgaven": 7
+    },
+    {
+      "id": "PIN-H2-19",
+      "label": "Saldo: debet en credit",
+      "hoofdstuk": 2,
+      "paragrafen": [
+        "2.4",
+        "Weet je het nog?"
+      ],
+      "begrippen": [
+        "saldo",
+        "debetsaldo",
+        "creditsaldo"
+      ],
+      "begrippen_via_presentatie": [],
+      "synoniemen": [
+        "rood staan",
+        "tegoed",
+        "negatief saldo",
+        "positief saldo",
+        "bankrekening"
+      ],
+      "wds": [
+        "D",
+        "S"
+      ],
+      "aantal_opgaven": 8
+    },
+    {
+      "id": "PIN-H2-20",
+      "label": "Vraag naar en aanbod van geld",
+      "hoofdstuk": 2,
+      "paragrafen": [
+        "2.4"
+      ],
+      "begrippen": [
+        "vraag naar geld",
+        "aanbod van geld"
+      ],
+      "begrippen_via_presentatie": [
+        "geldkringloop"
+      ],
+      "synoniemen": [
+        "vraag naar en aanbod van geld",
+        "geldstroom",
+        "sparen en lenen in de economie"
+      ],
+      "wds": [
+        "W",
+        "D",
+        "S"
+      ],
+      "aantal_opgaven": 5
+    },
+    {
+      "id": "PIN-H2-21",
+      "label": "Rente als prijs van geld en de ECB",
+      "hoofdstuk": 2,
+      "paragrafen": [
+        "2.4"
+      ],
+      "begrippen": [
+        "rente (prijs van geld)",
+        "europese centrale bank (ECB)"
+      ],
+      "begrippen_via_presentatie": [
+        "basisrente"
+      ],
+      "synoniemen": [
+        "prijs van geld",
+        "ECB",
+        "Europese Centrale Bank",
+        "rentestand",
+        "renteverhoging",
+        "rentedaling"
+      ],
+      "wds": [
+        "W",
+        "D",
+        "S"
+      ],
+      "aantal_opgaven": 7
+    },
+    {
+      "id": "PIN-H2-22",
+      "label": "Hoe banken geld verdienen",
+      "hoofdstuk": 2,
+      "paragrafen": [
+        "2.4"
+      ],
+      "begrippen": [
+        "debetrente",
+        "creditrente"
+      ],
+      "begrippen_via_presentatie": [
+        "risico",
+        "rentemarge"
+      ],
+      "synoniemen": [
+        "verschil tussen spaarrente en leenrente",
+        "marge",
+        "risico-opslag"
+      ],
+      "wds": [
+        "W",
+        "D",
+        "S"
+      ],
+      "aantal_opgaven": 12
+    },
+    {
+      "id": "PIN-A-01",
+      "label": "Rekenen met percentages",
+      "hoofdstuk": null,
+      "paragrafen": [
+        "Rekenen"
+      ],
+      "begrippen": [],
+      "begrippen_via_presentatie": [
+        "percentage berekenen",
+        "bedrag met een percentage berekenen"
+      ],
+      "synoniemen": [
+        "procenten",
+        "percentage",
+        "procentuele stijging",
+        "procentuele daling",
+        "korting"
+      ],
+      "wds": [
+        "D"
+      ],
+      "aantal_opgaven": 29
+    },
+    {
+      "id": "PIN-A-02",
+      "label": "Rekenen met groeifactoren",
+      "hoofdstuk": null,
+      "paragrafen": [
+        "Rekenen"
+      ],
+      "begrippen": [],
+      "begrippen_via_presentatie": [
+        "groeifactor"
+      ],
+      "synoniemen": [
+        "groeifactoren",
+        "vermenigvuldigingsfactor",
+        "terugrekenen met een groeifactor"
+      ],
+      "wds": [
+        "D"
+      ],
+      "aantal_opgaven": 11
+    },
+    {
+      "id": "PIN-A-03",
+      "label": "Absolute en relatieve verandering vergelijken",
+      "hoofdstuk": null,
+      "paragrafen": [
+        "Rekenen"
+      ],
+      "begrippen": [],
+      "begrippen_via_presentatie": [
+        "absolute verandering",
+        "relatieve verandering"
+      ],
+      "synoniemen": [
+        "absoluut",
+        "relatief",
+        "verschil in euro's versus procenten",
+        "toename"
+      ],
+      "wds": [
+        "D",
+        "S"
+      ],
+      "aantal_opgaven": 9
+    },
+    {
+      "id": "PIN-A-04",
+      "label": "Omrekenen tussen week, maand en jaar",
+      "hoofdstuk": null,
+      "paragrafen": [
+        "Rekenen"
+      ],
+      "begrippen": [],
+      "begrippen_via_presentatie": [
+        "omrekenen naar een andere periode"
+      ],
+      "synoniemen": [
+        "per week",
+        "per maand",
+        "per jaar",
+        "deel van een jaar",
+        "naar rato"
+      ],
+      "wds": [
+        "D"
+      ],
+      "aantal_opgaven": 9
+    }
+  ],
+  "buiten_toetsstof": [],
+  "aandachtspunten": [
+    {
+      "onderwerp": "PIN-H1-14",
+      "punt": "De Begrippen-pagina van het boek (blz. 27) plaatst primaire en secundaire inkomens onder §1.1, terwijl alle opgaven erover in §1.2 staan. De onderwerpen volgen de opgaven."
+    },
+    {
+      "onderwerp": "PIN-H1-18",
+      "punt": "Het boek schrijft 'schaars' en 'prioriteiten stellen', de begrippenlijst 'schaarste' en 'prioriteiten'. Beide vormen staan als synoniem opgenomen."
+    },
+    {
+      "onderwerp": "PIN-H1-24",
+      "punt": "Het boek schrijft 'nominale verandering' en 'reële verandering', de begrippenlijst 'nominale loonstijging' en 'reële verandering van het loon'. Beide vormen staan als synoniem opgenomen."
+    },
+    {
+      "onderwerp": "PIN-H1-05",
+      "punt": "Het boek schrijft 'commerciële invloed', de begrippenlijst 'commerciële beïnvloeding'. Beide vormen staan als synoniem opgenomen."
+    },
+    {
+      "onderwerp": "PIN-H1-07",
+      "punt": "Dit onderwerp bevat acht begrippen (marketing plus de zes P's). Bewuste uitzondering op de richtlijn van twee tot drie begrippen: splitsen levert geen ander fouttype op, het is één vaardigheid."
+    },
+    {
+      "onderwerp": "PIN-H1-08",
+      "punt": "Alle drie de begrippen staan alleen in de syllabus en niet in het boek. Er is geen enkele opgave bij dit onderwerp: wel leren, nergens oefenen."
+    },
+    {
+      "onderwerp": "PIN-H1-11",
+      "punt": "Staat in de begrippenlijst maar wordt in hoofdstuk 1 door geen enkele opgave bevraagd."
+    },
+    {
+      "onderwerp": "PIN-H1-10",
+      "punt": "'Maatschappelijke opbrengsten' staat alleen in de syllabus en niet in het boek; de opgaven gaan uitsluitend over maatschappelijke kosten."
+    },
+    {
+      "onderwerp": "PIN-H2-10",
+      "punt": "BKR-registratie staat niet in de begrippenlijst. De opgaven (§2.3 opgave 4a en 4b) leggen zelf uit wat het BKR is en bevragen bestaande kennis in een nieuwe situatie; ze blijven daarom binnen de toetsstof."
+    },
+    {
+      "onderwerp": "PIN-H2-15",
+      "punt": "§2.3 opgave 12b vraagt om een verklaring met vraag en aanbod. Dat is stof uit hoofdstuk 3; zodra hoofdstuk 3 gecodeerd is, kan de opgave daar als kruisverband aan gekoppeld worden."
+    },
+    {
+      "onderwerp": "PIN-H2-16",
+      "punt": "Pincode noemt het 'geld als spaarmiddel'; Praktische Economie noemt dezelfde functie 'oppotmiddel'. Als synoniem opgenomen zodat de koppeling tussen de boeken niet breekt."
+    },
+    {
+      "onderwerp": "PIN-H2-17",
+      "punt": "Slechts één opgave binnen hoofdstuk 2 (Weet je het nog?, opgave 1). Weinig oefenmateriaal voor een begrippenpaar dat op het CE regelmatig terugkomt."
+    },
+    {
+      "onderwerp": "PIN-H1-06",
+      "punt": "Alleen opgave 6 van Weet je het nog? bevraagt de soorten reclame. In paragraaf 1.1 zelf komt er geen enkele opgave over; voor SE-stof is dat weinig oefenmateriaal."
+    },
+    {
+      "onderwerp": "PIN-H1-16",
+      "punt": "Twee opgaven, beide in de Plusopdrachten. Nationaal inkomen komt in de kernopgaven van paragraaf 1.2 niet terug."
+    },
+    {
+      "onderwerp": "PIN-H2-16",
+      "punt": "Twee opgaven, beide van het type 'herken de geldfunctie'. Geen enkele opgave vraagt om uitleg of toepassing."
+    },
+    {
+      "onderwerp": null,
+      "punt": "Van de 347 opgaven in hoofdstuk 1 en 2 staan er 23 op W-niveau (7 procent). 28 van de 51 onderwerpen hebben geen enkele W-opgave. Feedback op weetniveau moet daarom naar de begrippenlijst verwijzen en niet naar boekopgaven."
+    },
+    {
+      "onderwerp": null,
+      "punt": "22 onderwerpen hebben geen enkele opgave met de tag rekenen. Daar kan een leerling met een rekenfout niet naar een oefenopgave binnen het onderwerp zelf worden gestuurd; daarvoor zijn de basisvaardigheden PIN-A-01 tot en met PIN-A-04 bedoeld."
+    }
+  ]
+}
