@@ -697,6 +697,7 @@ let TOETS_ID = "";
 let TOETS_BOEK = "";              // config.boek, bv. "PE-M1" — leeg als de toets geen boek opgeeft
 let TOETS_STOFAFBAKENING = null;  // config.stofafbakening — hoofdstukken/extra/uitgesloten, of null
 let TOETS_WEERGAVE = "";          // config.weergave, bv. "mavo" — leeg is de gewone weergave
+let TOETS_VERSIE = "";            // config.versie, bv. "V1" — leeg als de toets één versie heeft
 let DEKKING_PCT = null;           // % onderwerpen binnen de stofafbakening dat op deze toets voorkwam
 
 // De mavo-weergave is een opmaakkeuze voor die doelgroep, geen boekkeuze:
@@ -777,6 +778,7 @@ function laadConfig(config) {
   TOETS_BOEK = config.boek ? String(config.boek) : "";
   TOETS_STOFAFBAKENING = (config.stofafbakening && typeof config.stofafbakening === "object") ? config.stofafbakening : null;
   TOETS_WEERGAVE = typeof config.weergave === "string" ? config.weergave : "";
+  TOETS_VERSIE = typeof config.versie === "string" ? config.versie : "";
   STOFDATA_BELOFTE = laadStofdata(TOETS_BOEK);
   bouwInvoer();
 }
@@ -1427,6 +1429,13 @@ async function maakFeedback() {
   window.scrollTo({ top: 0, behavior: "smooth" });
 }
 
+// Het keuzemenu op toetsanalyse.html laadt deze pagina in een venster en
+// vraagt hiermee of er al punten zijn ingevuld, voordat het van versie
+// wisselt — dat wist de invoer namelijk. Zie keuzemenu.js.
+window.heeftIngevuldePunten = function () {
+  return state.some(r => r.behaald !== null);
+};
+
 document.getElementById("terug").addEventListener("click", () => {
   document.getElementById("resultaat").style.display = "none";
   document.getElementById("invoer").style.display = "block";
@@ -1467,6 +1476,7 @@ function maakResultaat(naam, totaalBehaald, miss, totaalMiss) {
     printWens: document.getElementById("print-wens").checked ? "ja" : "nee",
     toets: TOETS.titel,
     toetsId: TOETS_ID,
+    versie: TOETS_VERSIE,
     datum: new Date().toISOString(),
     cijfer: TOETS.cijfer(totaalBehaald),
     punten: totaalBehaald,
@@ -1611,7 +1621,10 @@ function maakPdf(res) {
   doc.setFont("helvetica", "bold"); doc.setFontSize(9); doc.setTextColor(...PDF_KLEUR.inkt);
   doc.text("MENDELCOLLEGE  -  ECONOMIE  -  TOETSANALYSE VOOR GERICHTE FEEDFORWARD", marge, y); y += 7.9;
   tekst(res.toets, { size: 17, stijl: "bold", extra: 7.5 });
-  tekst(`Leerling ${res.naam}  ·  docent ${res.docent}`, { extra: 5.5 });
+  // De versie staat erbij als de toets er meer dan één heeft, zodat op het
+  // papier en in de pdf hetzelfde kenmerk staat (V1 of V2, rechtsboven).
+  const versieDeel = res.versie ? `  ·  versie ${res.versie}` : "";
+  tekst(`Leerling ${res.naam}  ·  docent ${res.docent}${versieDeel}`, { extra: 5.5 });
   y += 1.5;
   doc.setDrawColor(...PDF_KLEUR.terra); doc.setLineWidth(1.1);
   doc.line(marge, y, marge + breed, y);

@@ -631,6 +631,32 @@ a { color: inherit; }
 .oef-item.actief { background: var(--inkt); color: #fff; }
 .oef-item.actief::before { background: #fff; }
 
+/* Een toets met meerdere versies. De versiekeuze is de laatste stap in het
+   menu zelf, onder de toets, en geen aparte pagina: de leerling klapt de
+   toets open en ziet de herkenpunten met daaronder de versies. */
+.oef-versies.open > .oef-uitklap { grid-template-rows: 1fr; }
+.oef-versies > .oef-item { font-weight: 600; color: var(--inkt); }
+.oef-versies > .oef-item .caret {
+  margin-left: auto;
+  font-size: 13px;
+  color: var(--terra);
+  transition: transform .22s ease;
+}
+.oef-versies.open > .oef-item .caret { transform: rotate(90deg); }
+.oef-versie-lijst { padding: 2px 0 6px 18px; display: flex; flex-direction: column; gap: 4px; }
+.oef-herkenning {
+  margin: 2px 0 6px;
+  padding: 9px 12px;
+  border-radius: 10px;
+  background: var(--mist);
+  font-size: 13px;
+  line-height: 1.5;
+  color: var(--tekst);
+}
+@media (prefers-reduced-motion: reduce) {
+  .oef-versies > .oef-item .caret { transition: none; }
+}
+
 .oef-leeg {
   padding: 10px 13px 12px;
   font-size: 13.5px;
