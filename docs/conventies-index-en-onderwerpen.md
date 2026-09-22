@@ -28,7 +28,7 @@ Het doel is een aftrekking. Van alle onderwerpen die tot de toetsstof horen, hal
 Dit verschilt per boek en moet aan het begin van een sessie worden vastgelegd in het veld `toetsstofcriterium`.
 
 - **Praktische Economie**: de begrippenlijst per hoofdstuk uit het bijbehorende oefenboekje, aangevuld met begrippen die alleen via de presentatie worden behandeld.
-- **Pincode**: leunt op de syllabus van het centraal examen. Nog vast te leggen wanneer dat boek aan de beurt is.
+- **Pincode**: de stof uit het boek, aangevuld met de begrippenlijst bij het vak. Die begrippenlijst is op de syllabus van het centraal examen gebaseerd. Begrippen die wel in het boek worden behandeld maar niet in de begrippenlijst staan, komen in `begrippen_via_presentatie`.
 
 Een opgave krijgt `stof: false` als het antwoord staat of valt met een begrip of context die daar niet onder valt. Regels blijven altijd in de index staan, ook als ze buiten de stof vallen. Zo is over een jaar nog te zien dat een opgave bewust geschrapt is en niet per ongeluk gemist.
 
@@ -37,6 +37,8 @@ Een opgave krijgt `stof: false` als het antwoord staat of valt met een begrip of
 ## 3. Codes
 
 Vorm: `<boek>-<hoofdstuk>-<volgnummer>`, bijvoorbeeld `M1-H2-05`. Basisvaardigheden krijgen `<boek>-A-<volgnummer>`, bijvoorbeeld `M1-A-01`.
+
+Het voorvoegsel is per boek vastgelegd. Praktische Economie Module 1 gebruikt `M1`, Pincode gebruikt `PIN`: `PIN-H1-01`, `PIN-A-01`. Het boek-id dat in de toets-JSON (`"boek"`) en in de bestandsnamen `index-<boek>.json` en `onderwerpen-<boek>.json` staat is voor Pincode dus `PIN`.
 
 Regels:
 
@@ -87,11 +89,12 @@ aandachtspunten[]           onderwerp of opgave, punt
 ### `index-<boek>.json`
 
 ```
-boek        id, titel, niveau, status
-legenda     uitleg van W, D, S en van het veld stof
+boek        id, titel, niveau, lesboeklabel (optioneel), status
+legenda     uitleg van W, D, S en van de velden stof, paragraaf, soort en blz
 rijen[]
   bron                      "lesboek" of "oefenboekje"
   hoofdstuk, paragraaf      bij lesboek
+  soort                     paragraaf, weet-je-het-nog, herhaling, plus, rekenen of examentraining
   sectie                    bij oefenboekje
   opgave                    "1a", "2-III", "10"
   omschrijving              wat de opgave vraagt, in eigen woorden
@@ -102,6 +105,12 @@ rijen[]
   verwijzing                bij oefenboekje: waar de theorie staat
   onderwerpen[]             codes; leeg als stof false is
 ```
+
+**Het veld `lesboeklabel`** is optioneel en bepaalt hoe het lesboek in de feedbacktool wordt genoemd, bijvoorbeeld `PE-boek`. Staat het er niet, dan maakt de tool er zelf een van `titel` en `niveau`: de boeknaam (het deel vóór de "·", zonder los jaartal) met de niveau-afkorting erachter. Pincode wordt zo "Pincode 4M", en een latere 3-mavo-index vanzelf "Pincode 3M".
+
+**Het veld `soort`** zegt in wat voor onderdeel van het hoofdstuk een opgave staat. `paragraaf` is een gewone paragraafopgave; de andere waarden horen bij de rubrieken die naast de paragrafen staan: `weet-je-het-nog`, `herhaling` (Herhalingsopdrachten), `plus` (Plusopdrachten), `rekenen` en `examentraining`. Boeken zonder die rubrieken hebben overal `paragraaf` staan, of laten het veld weg.
+
+**Bij een rubriek bevat `paragraaf` de rubrieknaam**, dus "Weet je het nog?", "Herhalingsopdrachten", "Plusopdrachten", "Rekenen" of "Examentraining", en geen §-nummer. Dat is nodig omdat de opgavenummering per rubriek opnieuw begint: hoofdstuk 1 heeft een opgave 1 in §1.1, en ook een opgave 1 bij Rekenen. Pas met hoofdstuk + paragraaf + opgave is een regel uniek. In Pincode loopt alleen binnen de Herhalingsopdrachten de nummering door over het hele hoofdstuk.
 
 ---
 
