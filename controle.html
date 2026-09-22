@@ -55,6 +55,7 @@
   <div id="inhoud"></div>
 
 <script src="scripts/stofafbakening.js"></script>
+<script src="scripts/boeklabel.js"></script>
 <script>
 // Handmatig bijhouden welke toetsen er zijn (dezelfde bestanden als toetsen/*.json).
 // Alleen voor het keuzemenu van deze controlepagina.
@@ -166,10 +167,22 @@ async function laad(toetsId) {
     </tr>`;
   }).join("");
 
+  // Het label waarmee het lesboek in de feedback naar leerlingen wordt
+  // genoemd. Hier zichtbaar gemaakt zodat je vóór publicatie ziet wat er
+  // komt te staan: staat er geen lesboeklabel in de index, dan leidt de tool
+  // er zelf een af uit titel en niveau, en dat is niet altijd wat je wilt.
+  const boekLabel = lesboekLabelVan(index.boek);
+  const boekLabelBron = lesboekLabelIsExpliciet(index.boek)
+    ? 'uit <code>lesboeklabel</code> in de index'
+    : '<strong>afgeleid</strong> uit titel en niveau — zet <code>lesboeklabel</code> in de index als dit niet de naam is die leerlingen moeten lezen';
+
   inhoud.innerHTML = `
     <p class="sub"><strong>${esc(toets.titel || toets.toets || toetsId)}</strong> — boek <code>${esc(toets.boek)}</code>,
       hoofdstukken ${esc(hoofdstukken.join(", "))}${extra.length ? ", extra " + esc(extra.join(", ")) : ""},
       ${alleCodes.length} onderwerpen binnen de stofafbakening.</p>
+
+    <h2>Hoe het lesboek heet in de feedback</h2>
+    <p class="uitleg">Leerlingen lezen bij elke oefenverwijzing “<strong>${esc(boekLabel)}:</strong> opgave …”. Dat label is ${boekLabelBron}.</p>
 
     <h2>Binnen de stofafbakening</h2>
     <div class="kaarten">${kaart("Totaal opgaven", totaalBinnen)}</div>

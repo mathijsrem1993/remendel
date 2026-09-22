@@ -106,7 +106,7 @@ rijen[]
   onderwerpen[]             codes; leeg als stof false is
 ```
 
-**Het veld `lesboeklabel`** is optioneel en bepaalt hoe het lesboek in de feedbacktool wordt genoemd, bijvoorbeeld `PE-boek`. Staat het er niet, dan maakt de tool er zelf een van `titel` en `niveau`: de boeknaam (het deel vóór de "·", zonder los jaartal) met de niveau-afkorting erachter. Pincode wordt zo "Pincode 4M", en een latere 3-mavo-index vanzelf "Pincode 3M".
+**Het veld `lesboeklabel`** is optioneel en bepaalt hoe het lesboek in de feedbacktool wordt genoemd, bijvoorbeeld `PE-boek`. Staat het er niet, dan maakt de tool er zelf een van `titel` en `niveau`: de boeknaam (het deel vóór de "·", zonder los jaartal) met de niveau-afkorting erachter. Pincode wordt zo "Pincode 4M", en een latere 3-mavo-index vanzelf "Pincode 3M". `controle.html` toont welk label eruit komt en of het expliciet is of afgeleid.
 
 **Het veld `soort`** zegt in wat voor onderdeel van het hoofdstuk een opgave staat. `paragraaf` is een gewone paragraafopgave; de andere waarden horen bij de rubrieken die naast de paragrafen staan: `weet-je-het-nog`, `herhaling` (Herhalingsopdrachten), `plus` (Plusopdrachten), `rekenen` en `examentraining`. Boeken zonder die rubrieken hebben overal `paragraaf` staan, of laten het veld weg.
 
@@ -140,9 +140,10 @@ Automatisch toekennen op de omschrijving werkt, maar controleer handmatig. Index
    - elke code die in de index voorkomt bestaat in het onderwerpenbestand
    - elk onderwerp wordt door minstens één opgave gebruikt
    - elke regel met `stof: true` heeft minstens één onderwerp
-5. **Controleoverzicht genereren** als leesbaar markdownbestand. Een JSON is niet te controleren, een tabel per onderwerp met de opgaven eronder wel.
-6. **Voorleggen per hoofdstuk**, niet pas aan het eind.
-7. **Docx genereren** uit de JSON, pas als alles klaar is.
+5. **Het lesboeklabel zetten.** Vul `lesboeklabel` in het `boek`-blok van de index en controleer in `controle.html` hoe het lesboek in de feedback genoemd wordt. Doe je dat niet, dan leidt de tool zelf een naam af uit `titel` en `niveau`, en dat is niet altijd de naam die leerlingen moeten lezen: Praktische Economie Module 2 zou zonder label "Praktische Economie 4H" worden in plaats van "PE-boek".
+6. **Controleoverzicht genereren** als leesbaar markdownbestand. Een JSON is niet te controleren, een tabel per onderwerp met de opgaven eronder wel.
+7. **Voorleggen per hoofdstuk**, niet pas aan het eind.
+8. **Docx genereren** uit de JSON, pas als alles klaar is.
 
 ---
 

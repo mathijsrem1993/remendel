@@ -9,6 +9,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Newsreader:wght@400;500;600&family=Hanken+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js" defer></script>
 <script src="scripts/stofafbakening.js"></script>
+<script src="scripts/boeklabel.js"></script>
 <style>
   :root {
     --inkt: #1C3A5E;
@@ -780,34 +781,10 @@ function laadStofdata(boek) {
     });
 }
 
-// ----------------------------------------------------------------------
-// Hoe het lesboek in het oefenadvies genoemd wordt. Dat label komt uit het
-// geladen index-<boek>.json, zodat de tool niet aan één boek vastzit:
-//   1. staat er een expliciet `boek.lesboeklabel`, dan wint dat — zo houdt
-//      Praktische Economie zijn vertrouwde "PE-boek";
-//   2. anders wordt het afgeleid uit `boek.titel` en `boek.niveau`: de
-//      boeknaam is het deel vóór de "·" zonder los jaartal, en daarachter
-//      komt de niveau-afkorting (leerjaar + beginletter van de schoolsoort).
-//      "Pincode 4 · vmbo GL/TL" met niveau "4 mavo (GL/TL)" wordt zo
-//      "Pincode 4M", en een latere 3-mavo-index vanzelf "Pincode 3M".
-// Is er geen boek (toets zonder stofdata), dan blijft het "Lesboek".
-// ----------------------------------------------------------------------
-const NIVEAU_LETTERS = [[/vwo|atheneum|gymnasium/i, "V"], [/havo/i, "H"], [/mavo|vmbo/i, "M"]];
-
+// Hoe het lesboek in het oefenadvies genoemd wordt: gedeelde logica met
+// controle.html, zie scripts/boeklabel.js. Zonder geladen boek "Lesboek".
 function lesboekLabel() {
-  const b = (BOEK_INDEX && BOEK_INDEX.boek) || null;
-  if (!b) return "Lesboek";
-  const expliciet = typeof b.lesboeklabel === "string" ? b.lesboeklabel.trim() : "";
-  if (expliciet) return expliciet;
-  // Boeknaam: "Pincode 4 · vmbo GL/TL" -> "Pincode"
-  const naam = String(b.titel || "").split("·")[0].replace(/\s+\d+\s*$/, "").trim();
-  // Niveau: "4 mavo (GL/TL)" -> "4M"
-  const niveau = String(b.niveau || "");
-  const jaar = (/\d+/.exec(niveau) || [""])[0];
-  const soort = (NIVEAU_LETTERS.find(([re]) => re.test(niveau)) || [null, ""])[1];
-  const kort = jaar + soort;
-  if (naam && kort) return `${naam} ${kort}`;
-  return naam || "Lesboek";
+  return lesboekLabelVan(BOEK_INDEX && BOEK_INDEX.boek);
 }
 
 // --- Knoppen van het laad-paneel ---
