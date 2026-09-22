@@ -790,6 +790,11 @@ function leesNterm(config) {
   return n;
 }
 
+// Het toetsbestand wordt opgehaald, dus vlak na het laden van de pagina is
+// TOETS nog leeg. Bundel.html moet weten wanneer de toets er echt staat.
+let toetsGeladenMelden;
+const TOETS_GELADEN = new Promise(gereed => { toetsGeladenMelden = gereed; });
+
 function laadConfig(config) {
   const maxP = Number(config.maxPunten) || (config.vragen || []).reduce((s, v) => s + (Number(v.max) || 0), 0) || 1;
   const nterm = leesNterm(config);
@@ -839,6 +844,7 @@ function laadConfig(config) {
   vulDocenten(config.docenten);
   STOFDATA_BELOFTE = laadStofdata(TOETS_BOEK);
   bouwInvoer();
+  toetsGeladenMelden();
 }
 
 // ======================================================================
@@ -1481,12 +1487,88 @@ async function maakFeedback() {
   else { ev.textContent = "Je hebt geen eigen voornemens opgeschreven."; ev.classList.add("leeg"); }
 
   laatsteResultaat = maakResultaat(naam, totaalBehaald, miss, totaalMiss);
-  stuurKopie(laatsteResultaat);
+  // In bundelmodus spelen we bestaande inzendingen opnieuw af om er pdf's van
+  // te maken. Die mogen niet nog een keer in de docentensheet belanden.
+  if (!BUNDELMODUS) stuurKopie(laatsteResultaat);
 
   document.getElementById("invoer").style.display = "none";
   document.getElementById("resultaat").style.display = "block";
   window.scrollTo({ top: 0, behavior: "smooth" });
 }
+
+// ----------------------------------------------------------------------
+// BUNDELMODUS — gebruikt door bundel.html
+// ----------------------------------------------------------------------
+// Bundel.html laadt deze pagina in een verborgen venster en speelt daar de
+// inzendingen uit de docentensheet opnieuw af, zodat de afdruk voor de docent
+// precies dezelfde pdf is als die de leerling kreeg. Er wordt in deze modus
+// niets naar de docentensheet gestuurd en niets gedownload: de pdf gaat als
+// bytes terug naar de bundel.
+// ----------------------------------------------------------------------
+let BUNDELMODUS = false;
+
+// De sheet bewaart de fouttypen als label ("Rekenfout"), de tool werkt met
+// sleutels ("reken"). Deze vertaling loopt via foutType(), dus de mavo-labels
+// komen er vanzelf ook goed uit.
+function foutSleutelVan(label) {
+  const gezocht = String(label).trim().toLowerCase();
+  return FOUT_VOLGORDE.find(k => {
+    const ft = foutType(k);
+    return ft && ft.label.toLowerCase() === gezocht;
+  }) || null;
+}
+
+// Variabelen die met let zijn gedeclareerd staan niet op window, dus kan
+// bundel.html er niet bij. Deze functie meldt daarom zelf of de tool klaar is
+// en welke toets er geladen is.
+window.bundelGereed = async function () {
+  await TOETS_GELADEN;
+  if (STOFDATA_BELOFTE) { try { await STOFDATA_BELOFTE; } catch (e) { /* laadStofdata vangt dit af */ } }
+  return {
+    boekGeladen: !!BOEK_INDEX,
+    boek: TOETS_BOEK,
+    titel: TOETS.titel,
+    vraagnummers: TOETS.vragen.map(v => v.nr)
+  };
+};
+
+window.pdfVoorLeerling = async function (invoer) {
+  BUNDELMODUS = true;
+  try {
+    document.getElementById("leerling-naam").value = invoer.naam || "";
+    document.getElementById("eigen-tips").value = invoer.voornemens || "";
+
+    // De docent uit de sheet hoeft niet in de keuzelijst van deze toets te
+    // staan (die kan later gewijzigd zijn). Dan zetten we hem er alsnog bij,
+    // zodat de naam op de pdf klopt met wat de leerling destijds koos.
+    const keuze = document.getElementById("leerling-docent");
+    const docent = String(invoer.docent || "");
+    if (docent && ![...keuze.options].some(o => o.value === docent)) {
+      const o = document.createElement("option");
+      o.value = docent; o.textContent = docent;
+      keuze.appendChild(o);
+    }
+    keuze.value = docent;
+
+    // Per vraag op nummer zoeken, niet op volgorde: dan valt het meteen op als
+    // de vragenlijst sinds de inzending is gewijzigd.
+    const perNr = {};
+    (invoer.vragen || []).forEach(v => { perNr[String(v.nr)] = v; });
+    const ontbrekend = [];
+    TOETS.vragen.forEach((v, i) => {
+      const r = perNr[String(v.nr)];
+      if (!r) { ontbrekend.push(v.nr); state[i].behaald = null; state[i].fouten = new Set(); return; }
+      state[i].behaald = (r.behaald === null || r.behaald === undefined || r.behaald === "") ? null : Number(r.behaald);
+      state[i].fouten = new Set((r.fouten || []).map(foutSleutelVan).filter(Boolean));
+    });
+
+    await maakFeedback();
+    const doc = maakPdf(laatsteResultaat, true);
+    return { bytes: doc.output("arraybuffer"), paginas: doc.internal.getNumberOfPages(), ontbrekend: ontbrekend };
+  } finally {
+    BUNDELMODUS = false;
+  }
+};
 
 // Het keuzemenu op toetsanalyse.html laadt deze pagina in een venster en
 // vraagt hiermee of er al punten zijn ingevuld, voordat het van versie
@@ -1587,7 +1669,7 @@ const PDF_TEKST = 10.5;   // lettergrootte van alle lopende tekst
 const PDF_REGEL = 5.2;    // regelafstand daarbij
 const PDF_BULLET = 4.2;   // breedte die het bolletje inneemt (hangende inspringing)
 
-function maakPdf(res) {
+function maakPdf(res, geefTerug) {
   const { jsPDF } = window.jspdf;
   const doc = new jsPDF({ unit: "mm", format: "a4" });
   const marge = 18, breed = 210 - 2 * marge, onder = 279;
@@ -1807,6 +1889,8 @@ function maakPdf(res) {
     });
   }
 
+  // Bundel.html wil het document zelf, om er één bestand van te maken.
+  if (geefTerug) return doc;
   const veiligeNaam = res.naam.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
   doc.save(`toetsanalyse-${veiligeNaam || "leerling"}.pdf`);
 }

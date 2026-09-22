@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Feedbackbundel voor de docent</title>
+<style>
+  :root {
+    --inkt: #1C3A5E; --inkt-zacht: #4C6885; --lijn: #DCE6F1; --wit: #fff;
+    --achtergrond: #F5F8FB; --terra: #C57B5C; --goed: #4E927B; --fout: #B2503A;
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--achtergrond); color: var(--inkt); font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; font-size: 14px; line-height: 1.5; padding: 24px; }
+  h1 { font-size: 22px; margin: 0 0 4px; }
+  h2 { font-size: 16px; margin: 28px 0 10px; }
+  .sub { color: var(--inkt-zacht); margin: 0 0 20px; font-size: 13px; }
+  .uitleg { color: var(--inkt-zacht); font-size: 12.5px; margin: 6px 0 14px; max-width: 78ch; }
+  .kaart { background: var(--wit); border: 1px solid var(--lijn); border-radius: 10px; padding: 16px; max-width: 900px; }
+  label { display: block; font-weight: 600; margin-bottom: 6px; }
+  textarea, input, select, button { font: inherit; }
+  textarea { width: 100%; min-height: 150px; padding: 10px 12px; border: 1px solid var(--lijn); border-radius: 8px; resize: vertical; font-family: ui-monospace, "Cascadia Mono", Consolas, monospace; font-size: 12px; }
+  input[type="text"] { width: 100%; padding: 8px 12px; border: 1px solid var(--lijn); border-radius: 8px; }
+  .rij { display: flex; gap: 14px; flex-wrap: wrap; align-items: flex-end; margin-bottom: 14px; }
+  .rij > div { flex: 1 1 240px; }
+  button { padding: 9px 16px; border-radius: 8px; border: 1px solid var(--inkt); background: var(--inkt); color: #fff; cursor: pointer; }
+  button.zacht { background: var(--wit); color: var(--inkt); }
+  button[disabled] { opacity: .5; cursor: default; }
+  .knoppen { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 14px; }
+  .melding { margin-top: 14px; padding: 12px 16px; border-radius: 10px; font-size: 13px; }
+  .melding.ok { background: #EAF2EF; border: 1px solid #B9D9CD; color: var(--goed); }
+  .melding.fout { background: #FBEFEA; border: 1px solid #E8C9BE; color: var(--fout); }
+  .melding.bezig { background: #EEF3F8; border: 1px solid var(--lijn); color: var(--inkt-zacht); }
+  table { width: 100%; border-collapse: collapse; background: var(--wit); border: 1px solid var(--lijn); border-radius: 10px; overflow: hidden; font-size: 13px; margin-top: 12px; max-width: 900px; }
+  th, td { text-align: left; padding: 7px 10px; border-bottom: 1px solid var(--lijn); }
+  th { background: #EEF3F8; font-weight: 600; font-size: 12px; color: var(--inkt-zacht); }
+  tr:last-child td { border-bottom: none; }
+  .num { text-align: right; font-variant-numeric: tabular-nums; }
+  .waarschuwing { color: var(--fout); }
+  code { background: #EEF3F8; padding: 1px 5px; border-radius: 5px; font-size: 12px; }
+  iframe.verborgen { position: absolute; width: 1200px; height: 900px; left: -20000px; top: 0; border: 0; }
+</style>
+</head>
+<body>
+  <h1>Feedbackbundel voor de docent</h1>
+  <p class="sub">Interne pagina — niet gelinkt vanuit het menu, niet bedoeld voor leerlingen.</p>
+
+  <p class="uitleg">Maakt van de inzendingen in de docentensheet één pdf om dubbelzijdig te printen. Elke leerling begint op een oneven pagina, zodat je er per leerling een nietje in kunt doen. De pdf's worden gemaakt door de feedbacktool zelf, dus een leerling krijgt op papier exact wat hij op het scherm zag. Er wordt hierbij niets naar de docentensheet teruggestuurd.</p>
+
+  <div class="kaart">
+    <div class="rij">
+      <div>
+        <label for="toetsId">Toetsbestand</label>
+        <input type="text" id="toetsId" value="4h-pw-m1-h1h2">
+      </div>
+      <div>
+        <label for="docentFilter">Alleen deze docent (leeg = iedereen)</label>
+        <input type="text" id="docentFilter" value="Kers">
+      </div>
+    </div>
+    <label for="invoer">Export uit Apps Script (json)</label>
+    <textarea id="invoer" placeholder='{ "toets": "...", "leerlingen": [ ... ] }'></textarea>
+    <div class="knoppen">
+      <button class="zacht" id="bestandKnop" type="button">Bestand kiezen…</button>
+      <input type="file" id="bestand" accept=".json,application/json" hidden>
+      <button id="lees" type="button">Inlezen en controleren</button>
+      <button id="bouw" type="button" disabled>Bundel maken</button>
+    </div>
+    <div id="melding"></div>
+  </div>
+
+  <div id="overzicht"></div>
+
+  <iframe class="verborgen" id="werkblad" title="werkblad"></iframe>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf-lib/1.17.1/pdf-lib.min.js"></script>
+<script>
+// ============================================================================
+// Bundelt de feedback-pdf's van één toets en één docent tot één bestand.
+// ============================================================================
+// De pdf's worden niet hier opgebouwd maar door feedbacktool.html zelf, in een
+// verborgen venster: die pagina kent de oefenverwijzingen, de aftrekking en de
+// fouttype-teksten al, en zo kan de afdruk niet afwijken van wat de leerling
+// zag. Deze pagina doet drie dingen: de export uitlezen, de tool per leerling
+// aansturen (window.pdfVoorLeerling), en de losse pdf's aan elkaar plakken.
+//
+// Oneven pagina's: elke leerling moet op een rechterpagina beginnen. Daarvoor
+// wordt een blok met een oneven aantal pagina's aangevuld met één lege pagina,
+// zodat elk blok even lang is en de volgende leerling weer op oneven begint.
+// ============================================================================
+
+function esc(s) { return String(s == null ? "" : s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;'); }
+
+const meldingEl = document.getElementById("melding");
+function meld(tekst, soort) {
+  meldingEl.innerHTML = tekst ? `<div class="melding ${soort || "bezig"}">${tekst}</div>` : "";
+}
+
+let GEKOZEN = null;   // { toets, leerlingen: [...] } na het inlezen
+
+document.getElementById("bestandKnop").addEventListener("click", () => document.getElementById("bestand").click());
+document.getElementById("bestand").addEventListener("change", (e) => {
+  const f = e.target.files[0];
+  if (!f) return;
+  const lezer = new FileReader();
+  lezer.onload = () => { document.getElementById("invoer").value = lezer.result; lees(); };
+  lezer.readAsText(f);
+});
+
+document.getElementById("lees").addEventListener("click", lees);
+document.getElementById("bouw").addEventListener("click", bouw);
+
+function lees() {
+  document.getElementById("bouw").disabled = true;
+  document.getElementById("overzicht").innerHTML = "";
+  GEKOZEN = null;
+
+  let data;
+  try {
+    data = JSON.parse(document.getElementById("invoer").value.trim());
+  } catch (e) {
+    meld("De json kon niet gelezen worden: " + esc(e.message), "fout");
+    return;
+  }
+  const alle = Array.isArray(data) ? data : (data.leerlingen || []);
+  if (!alle.length) { meld("Geen leerlingen in deze export gevonden.", "fout"); return; }
+
+  const filter = document.getElementById("docentFilter").value.trim().toLowerCase();
+  const leerlingen = filter
+    ? alle.filter(l => String(l.docent || "").trim().toLowerCase() === filter)
+    : alle.slice();
+
+  if (!leerlingen.length) {
+    meld(`Geen inzendingen gevonden voor docent "${esc(document.getElementById("docentFilter").value.trim())}". In de export komen deze docenten voor: ${esc([...new Set(alle.map(l => l.docent))].join(", "))}.`, "fout");
+    return;
+  }
+
+  // Dubbele inzendingen: dezelfde leerling die twee keer heeft ingeleverd.
+  // De laatste telt, maar het wordt wel gemeld — stil de eerste weggooien is
+  // precies het soort ding dat je pas achteraf ontdekt.
+  const perNaam = new Map();
+  const dubbel = [];
+  leerlingen.forEach(l => {
+    const sleutel = String(l.naam).trim();
+    if (perNaam.has(sleutel)) dubbel.push(sleutel);
+    perNaam.set(sleutel, l);
+  });
+  const uniek = [...perNaam.values()].sort((a, b) =>
+    String(a.naam).localeCompare(String(b.naam), "nl", { numeric: true }));
+
+  GEKOZEN = { toets: data.toets || "", leerlingen: uniek };
+
+  const rijen = uniek.map(l => {
+    const ingevuld = (l.vragen || []).filter(v => v.behaald !== null && v.behaald !== undefined && v.behaald !== "").length;
+    const totaal = (l.vragen || []).length;
+    return `<tr>
+      <td>${esc(l.naam)}</td>
+      <td>${esc(l.docent)}</td>
+      <td class="num">${ingevuld} / ${totaal}</td>
+      <td>${l.printWens ? esc(l.printWens) : "—"}</td>
+      <td>${ingevuld < totaal ? '<span class="waarschuwing">niet alle vragen ingevuld</span>' : ""}</td>
+    </tr>`;
+  }).join("");
+
+  document.getElementById("overzicht").innerHTML = `
+    <h2>Deze leerlingen komen in de bundel</h2>
+    <table>
+      <tr><th>Leerlingnummer</th><th>Docent</th><th>Vragen ingevuld</th><th>Print gewenst</th><th></th></tr>
+      ${rijen}
+    </table>`;
+
+  const dubbelTekst = dubbel.length
+    ? ` Let op: ${dubbel.length} leerling(en) hebben meer dan één keer ingeleverd (${esc([...new Set(dubbel)].join(", "))}); van hen is de laatste inzending gebruikt.`
+    : "";
+  meld(`${uniek.length} leerling(en) klaar om te bundelen.${dubbelTekst}`, dubbel.length ? "bezig" : "ok");
+  document.getElementById("bouw").disabled = false;
+}
+
+// Laadt de feedbacktool met de gevraagde toets in het verborgen venster en
+// wacht tot de stofdata binnen is.
+function laadWerkblad(toetsId) {
+  return new Promise((klaar, mislukt) => {
+    const frame = document.getElementById("werkblad");
+    const tijdslimiet = setTimeout(
+      () => mislukt(new Error("De feedbacktool reageerde niet binnen 30 seconden.")), 30000);
+    frame.onload = async () => {
+      try {
+        const w = frame.contentWindow;
+        if (typeof w.bundelGereed !== "function" || typeof w.pdfVoorLeerling !== "function") {
+          throw new Error("De feedbacktool kent de bundelmodus niet. Staat er een oude versie op de site?");
+        }
+        const stand = await w.bundelGereed();
+        if (!stand.boekGeladen) {
+          throw new Error("De stofdata van het boek is niet geladen; de oefenverwijzingen zouden dan ontbreken.");
+        }
+        clearTimeout(tijdslimiet);
+        klaar({ venster: w, stand: stand });
+      } catch (e) {
+        clearTimeout(tijdslimiet);
+        mislukt(e);
+      }
+    };
+    frame.onerror = () => { clearTimeout(tijdslimiet); mislukt(new Error("De feedbacktool kon niet geladen worden.")); };
+    // Een tijdstempel erbij, zodat het venster ook opnieuw laadt als dezelfde
+    // toets nog openstaat van een vorige poging.
+    frame.src = `feedbacktool.html?toets=${encodeURIComponent(toetsId)}&bundel=${Date.now()}`;
+  });
+}
+
+async function bouw() {
+  const knop = document.getElementById("bouw");
+  knop.disabled = true;
+  const toetsId = document.getElementById("toetsId").value.trim();
+
+  try {
+    meld("Feedbacktool laden…");
+    const { venster: w, stand } = await laadWerkblad(toetsId);
+
+    // De tabbladnaam in de sheet is de titel van de toets. Wijkt die af van
+    // het gekozen toetsbestand, dan horen de vraagnummers niet bij elkaar en
+    // zou de bundel stilzwijgend onzin opleveren.
+    if (GEKOZEN.toets && stand.titel && GEKOZEN.toets.trim() !== stand.titel.trim()) {
+      meld(`De export komt van "${esc(GEKOZEN.toets)}" maar het toetsbestand heet "${esc(stand.titel)}". Controleer of je het juiste toetsbestand hebt ingevuld.`, "fout");
+      knop.disabled = false;
+      return;
+    }
+
+    const bundel = await PDFLib.PDFDocument.create();
+    const waarschuwingen = [];
+    const paginaStart = [];
+
+    for (let i = 0; i < GEKOZEN.leerlingen.length; i++) {
+      const l = GEKOZEN.leerlingen[i];
+      meld(`Pdf maken voor leerling ${esc(l.naam)} (${i + 1} van ${GEKOZEN.leerlingen.length})…`);
+      const uit = await w.pdfVoorLeerling(l);
+      if (uit.ontbrekend && uit.ontbrekend.length) {
+        waarschuwingen.push(`${l.naam}: geen score gevonden voor vraag ${uit.ontbrekend.join(", ")}`);
+      }
+
+      // De bytes komen uit het verborgen venster en horen daar bij een ander
+      // ArrayBuffer-type; pdf-lib herkent dat niet. Daarom eerst overkopiëren
+      // naar een Uint8Array van deze pagina.
+      const bron = new Uint8Array(uit.bytes);
+      const bytesLeerling = new Uint8Array(bron.length);
+      bytesLeerling.set(bron);
+
+      const los = await PDFLib.PDFDocument.load(bytesLeerling);
+      const paginas = await bundel.copyPages(los, los.getPageIndices());
+      paginaStart.push(bundel.getPageCount() + 1);
+      paginas.forEach(p => bundel.addPage(p));
+
+      // Blok even maken, zodat de volgende leerling weer op oneven begint.
+      // Bij de laatste leerling heeft dat geen zin; dat scheelt een lege
+      // achterkant op de stapel.
+      const isLaatste = i === GEKOZEN.leerlingen.length - 1;
+      if (!isLaatste && bundel.getPageCount() % 2 === 1) {
+        const vorige = bundel.getPage(bundel.getPageCount() - 1);
+        const { width, height } = vorige.getSize();
+        bundel.addPage([width, height]);
+      }
+    }
+
+    meld("Bundel samenstellen…");
+    const bytes = await bundel.save();
+    const naam = `feedbackbundel-${toetsId}${document.getElementById("docentFilter").value.trim() ? "-" + document.getElementById("docentFilter").value.trim().toLowerCase() : ""}.pdf`;
+    const url = URL.createObjectURL(new Blob([bytes], { type: "application/pdf" }));
+    const a = document.createElement("a");
+    a.href = url; a.download = naam; a.click();
+    setTimeout(() => URL.revokeObjectURL(url), 10000);
+
+    const oneven = paginaStart.every(p => p % 2 === 1);
+    const lijst = GEKOZEN.leerlingen.map((l, i) => `${esc(l.naam)} vanaf blz. ${paginaStart[i]}`).join(", ");
+    meld(
+      `<strong>${naam}</strong> gedownload: ${GEKOZEN.leerlingen.length} leerling(en), ${bundel.getPageCount()} pagina's. ` +
+      (oneven ? "Elke leerling begint op een oneven pagina." : '<span class="waarschuwing">Let op: niet elke leerling begint op een oneven pagina.</span>') +
+      `<br>${lijst}.` +
+      (waarschuwingen.length ? `<br><span class="waarschuwing">${esc(waarschuwingen.join(" · "))}</span>` : ""),
+      oneven && !waarschuwingen.length ? "ok" : "bezig"
+    );
+  } catch (e) {
+    meld("Het maken van de bundel is misgegaan: " + esc(e.message), "fout");
+  } finally {
+    knop.disabled = false;
+  }
+}
+</script>
+</body>
+</html>
