@@ -393,8 +393,8 @@ const INGEBOUWDE_TOETS = {
     },
     {
       "key": "redeneer",
-      "label": "Uitlegfout",
-      "tekst": "Bouw je antwoord in stappen op. Begin met de oorzaak en gebruik daarbij het juiste begrip. Zet dan de stap naar het gevolg, ook weer met het juiste begrip. Is de stap niet logisch of te groot, geef dan een verklaring. Elke stap is meestal een punt waard, dus één zin is bijna altijd te kort. Je herkent deze vragen aan woorden als leg uit, verklaar, waarom of beredeneer. Oefen ze vooral met de Plusopdrachten en de Examentraining. Maak ze thuis alsof je bij het SE zit, dan kan je bij het nakijken zien of je het echt begrijpt. Twijfel je, lever dan je schrift in tijdens de les of mail een foto van je antwoord.",
+      "label": "Redeneerfout",
+      "tekst": "Bouw je antwoord in stappen op. Begin met de oorzaak en gebruik daarbij het juiste begrip. Zet dan de stap naar het gevolg, ook weer met het juiste begrip. Is de stap niet logisch of te groot, geef dan een verklaring. Elke stap is meestal een punt waard, dus één zin is bijna altijd te kort. Je herkent deze vragen aan woorden als leg uit, verklaar, waarom of beredeneer. Oefen ze vooral met de opgaven uit Toepassen en met oude examenvragen, want daar komen ze het vaakst voor. Maak ze thuis alsof het de toets is, dan kun je bij het nakijken zien of je het echt begrijpt. Twijfel je, lever dan je schrift in tijdens de les of mail een foto van je antwoord.",
       "kleur": "var(--ft-redeneer)",
       "custom": false
     },
@@ -538,12 +538,38 @@ let FOUTTYPEN = {
     tekst: "Markeer wat er precies gevraagd wordt voordat je begint, en markeer in de bron de gegevens die je nodig hebt. Let op woorden als minimaal, per week of in procenten, want daar zit vaak het verschil tussen goed en fout. Oefen dit met vragen waarbij je een bron moet gebruiken." },
   begrip:   { label: "Begripsfout",  klasse: "begrip",   kleur: "var(--ft-begrip)",
     tekst: "Pak de begrippenlijst erbij en overhoor jezelf: dek de omschrijving af, zeg het begrip hardop en controleer daarna of het klopte. Dat werkt aantoonbaar beter dan de lijst doorlezen, want je merkt meteen wat je nog niet weet. Schrijf de begrippen op die je niet kon en herhaal die een paar dagen later opnieuw. De begrippenlijst en de PowerPoints staan op Classroom." },
-  redeneer: { label: "Uitlegfout", klasse: "redeneer", kleur: "var(--ft-redeneer)",
-    tekst: "Bouw je antwoord in stappen op. Begin met de oorzaak en gebruik daarbij het juiste begrip. Zet dan de stap naar het gevolg, ook weer met het juiste begrip. Is de stap niet logisch of te groot, geef dan een verklaring. Elke stap is meestal een punt waard, dus één zin is bijna altijd te kort. Je herkent deze vragen aan woorden als leg uit, verklaar, waarom of beredeneer. Oefen ze vooral met de Plusopdrachten en de Examentraining. Maak ze thuis alsof je bij het SE zit, dan kan je bij het nakijken zien of je het echt begrijpt. Twijfel je, lever dan je schrift in tijdens de les of mail een foto van je antwoord." },
+  redeneer: { label: "Redeneerfout", klasse: "redeneer", kleur: "var(--ft-redeneer)",
+    tekst: "Bouw je antwoord in stappen op. Begin met de oorzaak en gebruik daarbij het juiste begrip. Zet dan de stap naar het gevolg, ook weer met het juiste begrip. Is de stap niet logisch of te groot, geef dan een verklaring. Elke stap is meestal een punt waard, dus één zin is bijna altijd te kort. Je herkent deze vragen aan woorden als leg uit, verklaar, waarom of beredeneer. Oefen ze vooral met de opgaven uit Toepassen en met oude examenvragen, want daar komen ze het vaakst voor. Maak ze thuis alsof het de toets is, dan kun je bij het nakijken zien of je het echt begrijpt. Twijfel je, lever dan je schrift in tijdens de les of mail een foto van je antwoord." },
   overig:   { label: "Overig", klasse: "overig", kleur: "var(--ft-overig)",
     tekst: "Het is misschien nog niet helemaal duidelijk waarom je sommige punten hebt laten liggen. Als dit het geval is, vraag dan aan je docent om er samen naar te kijken. Je mag ook gemaakt huiswerk inleveren, dan krijg je daar gerichte feedback op." }
 };
 let FOUT_VOLGORDE = ["reken", "lees", "begrip", "redeneer", "overig"];
+
+// De bibliotheek hierboven is de standaard en wordt ook hersteld als een
+// toets zijn eigen fouttypen meebrengt en de volgende toets niet.
+const FOUTTYPEN_STANDAARD = FOUTTYPEN;
+const FOUT_VOLGORDE_STANDAARD = FOUT_VOLGORDE;
+
+// Er draaien twee varianten van de feedforward naast elkaar: havo met
+// Praktische Economie, en mavo met Pincode. De bibliotheek hierboven is de
+// havo-variant; wat hier staat overschrijft dat alleen bij weergave "mavo".
+// Dat is nodig omdat de tekst naar het boek van de leerling verwijst:
+// Plusopdrachten en Examentraining zijn rubrieken in Pincode en bestaan niet
+// in Praktische Economie, en een mavoleerling maakt een SE waar havo een
+// proefwerk maakt. Brengt een toets zijn eigen fouttypen mee, dan is dat een
+// bewuste keuze en blijft deze overschrijving eraf.
+const FOUTTYPEN_MAVO = {
+  redeneer: { label: "Uitlegfout",
+    tekst: "Bouw je antwoord in stappen op. Begin met de oorzaak en gebruik daarbij het juiste begrip. Zet dan de stap naar het gevolg, ook weer met het juiste begrip. Is de stap niet logisch of te groot, geef dan een verklaring. Elke stap is meestal een punt waard, dus één zin is bijna altijd te kort. Je herkent deze vragen aan woorden als leg uit, verklaar, waarom of beredeneer. Oefen ze vooral met de Plusopdrachten en de Examentraining. Maak ze thuis alsof je bij het SE zit, dan kan je bij het nakijken zien of je het echt begrijpt. Twijfel je, lever dan je schrift in tijdens de les of mail een foto van je antwoord." }
+};
+let EIGEN_FOUTTYPEN = false;
+
+function foutType(key) {
+  const basis = FOUTTYPEN[key];
+  if (!basis) return null;
+  const afwijking = (!EIGEN_FOUTTYPEN && mavoWeergave()) ? FOUTTYPEN_MAVO[key] : null;
+  return afwijking ? Object.assign({}, basis, afwijking) : basis;
+}
 
 // Teksten voor "Bij welk vraagniveau valt voor jou winst te halen?" (score per WDS-niveau).
 const WDS_ADVIES = {
@@ -629,7 +655,7 @@ function bouwInvoer() {
     <div class="fout-blok" id="fout${v.nr}">
       <p class="fout-vraag">Wat ging er mis bij deze vraag?</p>
       <div class="fout-knoppen">
-        ${FOUT_VOLGORDE.map(k => `<button class="fout-knop" data-vraag="${v.nr}" data-fout="${k}">${FOUTTYPEN[k].label}</button>`).join("")}
+        ${FOUT_VOLGORDE.map(k => `<button class="fout-knop" data-vraag="${v.nr}" data-fout="${k}">${foutType(k).label}</button>`).join("")}
       </div>
     </div>`;
   lijst.appendChild(kaart);
@@ -762,7 +788,13 @@ function laadConfig(config) {
     }))
   };
   TOETS_ID = String(config.id || config.toetsId || titel || "toets");
+  // Terug naar de standaardbibliotheek, zodat een toets zonder eigen
+  // fouttypen niet die van de vorige toets erft.
+  FOUTTYPEN = FOUTTYPEN_STANDAARD;
+  FOUT_VOLGORDE = FOUT_VOLGORDE_STANDAARD;
+  EIGEN_FOUTTYPEN = false;
   if (Array.isArray(config.fouttypen) && config.fouttypen.length) {
+    EIGEN_FOUTTYPEN = true;
     FOUTTYPEN = {};
     FOUT_VOLGORDE = [];
     config.fouttypen.forEach(ft => {
@@ -835,7 +867,8 @@ function oefenLabel() {
 // die zin hoort in het boekbestand en niet in de algemene tekst. Ontbreekt
 // boek.rekentip, dan blijft de tekst precies zoals hij was.
 function foutTipTekst(key) {
-  const basis = (FOUTTYPEN[key] && FOUTTYPEN[key].tekst) || "";
+  const ft = foutType(key);
+  const basis = (ft && ft.tekst) || "";
   if (key !== "reken") return basis;
   const boek = BOEK_INDEX && BOEK_INDEX.boek;
   const extra = boek && typeof boek.rekentip === "string" ? boek.rekentip.trim() : "";
@@ -1299,7 +1332,7 @@ async function maakFeedback() {
     staven.innerHTML = `<div class="niets">Je hebt geen fouttypen aangeklikt. Vul bij de vragen die niet helemaal goed gingen aan wat er misging, dan zie je hier per type hoe je je kunt verbeteren.</div>`;
   } else {
     aanwezig.forEach(t => {
-      const f = FOUTTYPEN[t];
+      const f = foutType(t);
       const pct = Math.round(miss[t] / totaalMiss * 100);
       const kaart = document.createElement("div");
       kaart.className = "staaf-kaart";
@@ -1352,7 +1385,7 @@ async function maakFeedback() {
       const types = [...state[i].fouten];
       const badges = types.length
         ? types.map(t => {
-            const ft = FOUTTYPEN[t];
+            const ft = foutType(t);
             return ft.klasse
               ? `<span class="type-badge type-${ft.klasse}">${ft.label}</span>`
               : `<span class="type-badge" style="background:color-mix(in srgb, ${ft.kleur} 16%, white);color:${ft.kleur}">${ft.label}</span>`;
@@ -1459,12 +1492,12 @@ function maakResultaat(naam, totaalBehaald, miss, totaalMiss) {
   const fouttypen = FOUT_VOLGORDE
     .filter(t => miss[t] > 0)
     .sort((a, b) => miss[b] - miss[a])
-    .map(t => ({ key: t, label: FOUTTYPEN[t].label, punten: Math.round(miss[t] * 10) / 10,
+    .map(t => ({ key: t, label: foutType(t).label, punten: Math.round(miss[t] * 10) / 10,
                  pct: Math.round(miss[t] / totaalMiss * 100), tekst: foutTipTekst(t) }));
   const vragen = TOETS.vragen.map((v, i) => ({
     nr: v.nr, onderwerp: v.onderwerp, wds: v.wds,
     behaald: state[i].behaald, max: v.max,
-    fouten: [...state[i].fouten].map(t => FOUTTYPEN[t] ? FOUTTYPEN[t].label : t),
+    fouten: [...state[i].fouten].map(t => { const ft = foutType(t); return ft ? ft.label : t; }),
     oefenBoekje: v.oefenBoekje || "", oefenPE: v.oefenPE || "",
     geenOefenadvies: !!v.geenOefenadvies,
     algemeneFeedback: v.algemeneFeedback || "",
