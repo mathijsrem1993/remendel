@@ -20,7 +20,8 @@
   label { display: block; font-weight: 600; margin-bottom: 6px; }
   textarea, input, select, button { font: inherit; }
   textarea { width: 100%; min-height: 150px; padding: 10px 12px; border: 1px solid var(--lijn); border-radius: 8px; resize: vertical; font-family: ui-monospace, "Cascadia Mono", Consolas, monospace; font-size: 12px; }
-  input[type="text"] { width: 100%; padding: 8px 12px; border: 1px solid var(--lijn); border-radius: 8px; }
+  input[type="text"], select { width: 100%; padding: 8px 12px; border: 1px solid var(--lijn); border-radius: 8px; background: var(--wit); color: var(--inkt); }
+  select[disabled] { opacity: .6; }
   .rij { display: flex; gap: 14px; flex-wrap: wrap; align-items: flex-end; margin-bottom: 14px; }
   .rij > div { flex: 1 1 240px; }
   button { padding: 9px 16px; border-radius: 8px; border: 1px solid var(--inkt); background: var(--inkt); color: #fff; cursor: pointer; }
@@ -54,8 +55,10 @@
         <input type="text" id="toetsId" value="4h-pw-m1-h1h2">
       </div>
       <div>
-        <label for="docentFilter">Alleen deze docent (leeg = iedereen)</label>
-        <input type="text" id="docentFilter" value="Kers">
+        <label for="docentFilter">Docent</label>
+        <select id="docentFilter" disabled>
+          <option value="">— eerst een export inlezen —</option>
+        </select>
       </div>
     </div>
     <label for="invoer">Export uit Apps Script (json)</label>
@@ -108,12 +111,19 @@ document.getElementById("bestand").addEventListener("change", (e) => {
 });
 
 document.getElementById("lees").addEventListener("click", lees);
+document.getElementById("docentFilter").addEventListener("change", kies);
 document.getElementById("bouw").addEventListener("click", bouw);
 
+let ALLE = null;      // alles uit de export, ongefilterd
+let EXPORT_TOETS = "";
+
+// Inlezen doet twee dingen: de export bewaren en de keuzelijst met docenten
+// vullen met wie er daadwerkelijk in zitten. Daarna filtert kies() alleen nog.
 function lees() {
   document.getElementById("bouw").disabled = true;
   document.getElementById("overzicht").innerHTML = "";
   GEKOZEN = null;
+  ALLE = null;
 
   let data;
   try {
@@ -125,15 +135,49 @@ function lees() {
   const alle = Array.isArray(data) ? data : (data.leerlingen || []);
   if (!alle.length) { meld("Geen leerlingen in deze export gevonden.", "fout"); return; }
 
+  ALLE = alle;
+  EXPORT_TOETS = data.toets || "";
+
+  // Keuzelijst vullen met de docenten die in deze export voorkomen, met
+  // achter elke naam hoeveel inzendingen erbij horen.
+  const telling = new Map();
+  alle.forEach(l => {
+    const d = String(l.docent || "").trim() || "(geen docent ingevuld)";
+    telling.set(d, (telling.get(d) || 0) + 1);
+  });
+  const keuze = document.getElementById("docentFilter");
+  const vorige = keuze.value;
+  keuze.innerHTML = "";
+  const alles = document.createElement("option");
+  alles.value = "";
+  alles.textContent = `Alle docenten (${alle.length})`;
+  keuze.appendChild(alles);
+  [...telling.keys()].sort((a, b) => a.localeCompare(b, "nl")).forEach(d => {
+    const o = document.createElement("option");
+    o.value = d;
+    o.textContent = `${d} (${telling.get(d)})`;
+    keuze.appendChild(o);
+  });
+  keuze.disabled = false;
+  if ([...keuze.options].some(o => o.value === vorige)) keuze.value = vorige;
+
+  kies();
+}
+
+function kies() {
+  document.getElementById("bouw").disabled = true;
+  document.getElementById("overzicht").innerHTML = "";
+  GEKOZEN = null;
+  if (!ALLE) return;
+
+  const alle = ALLE;
+  const data = { toets: EXPORT_TOETS };
   const filter = document.getElementById("docentFilter").value.trim().toLowerCase();
   const leerlingen = filter
-    ? alle.filter(l => String(l.docent || "").trim().toLowerCase() === filter)
+    ? alle.filter(l => (String(l.docent || "").trim() || "(geen docent ingevuld)").toLowerCase() === filter)
     : alle.slice();
 
-  if (!leerlingen.length) {
-    meld(`Geen inzendingen gevonden voor docent "${esc(document.getElementById("docentFilter").value.trim())}". In de export komen deze docenten voor: ${esc([...new Set(alle.map(l => l.docent))].join(", "))}.`, "fout");
-    return;
-  }
+  if (!leerlingen.length) { meld("Geen inzendingen voor deze docent.", "fout"); return; }
 
   // Dubbele inzendingen: dezelfde leerling die twee keer heeft ingeleverd.
   // De laatste telt, maar het wordt wel gemeld — stil de eerste weggooien is
@@ -262,7 +306,9 @@ async function bouw() {
 
     meld("Bundel samenstellen…");
     const bytes = await bundel.save();
-    const naam = `feedbackbundel-${toetsId}${document.getElementById("docentFilter").value.trim() ? "-" + document.getElementById("docentFilter").value.trim().toLowerCase() : ""}.pdf`;
+    const docent = document.getElementById("docentFilter").value.trim();
+    const deel = docent ? "-" + docent.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "") : "-alle-docenten";
+    const naam = `feedbackbundel-${toetsId}${deel}.pdf`;
     const url = URL.createObjectURL(new Blob([bytes], { type: "application/pdf" }));
     const a = document.createElement("a");
     a.href = url; a.download = naam; a.click();

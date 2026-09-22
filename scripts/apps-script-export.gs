@@ -27,7 +27,7 @@
 
 function exporteerVoorBundel() {
   const TABBLAD = "Proefwerk Module 1, hoofdstuk 1 en 2";
-  const DOCENT = "Kers"; // leeg laten voor alle docenten
+  const DOCENT = ""; // leeg = alle docenten; in bundel.html kies je daarna wie je wilt
 
   const blad = SpreadsheetApp.openById(SPREADSHEET_ID).getSheetByName(TABBLAD);
   if (!blad) {
