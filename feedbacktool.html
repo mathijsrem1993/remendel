@@ -323,9 +323,11 @@
     <p class="sectie-uitleg">Per type fout zie je welk deel van je gemiste punten daar vandaan komt, en hoe je die vaardigheid verbetert. De bovenste is je grootste verbeterpunt.</p>
     <div class="staven" id="staven"></div>
 
-    <h2>Bij welk vraagniveau valt voor jou winst te halen?</h2>
-    <p class="sectie-uitleg">Elke vraag vraagt iets anders van je: bij Weten moet je je kennis paraat hebben, bij Doen moet je iets uitvoeren zoals rekenen of een grafiek tekenen, en bij Snappen moet je iets uitleggen of verklaren. Hieronder zie je per soort vraag hoeveel punten je haalde, zodat je weet waar je voorbereiding het meeste oplevert.</p>
-    <div id="wds-winst"></div>
+    <div id="wds-sectie">
+      <h2>Bij welk vraagniveau valt voor jou winst te halen?</h2>
+      <p class="sectie-uitleg">Elke vraag vraagt iets anders van je: bij Weten moet je je kennis paraat hebben, bij Doen moet je iets uitvoeren zoals rekenen of een grafiek tekenen, en bij Snappen moet je iets uitleggen of verklaren. Hieronder zie je per soort vraag hoeveel punten je haalde, zodat je weet waar je voorbereiding het meeste oplevert.</p>
+      <div id="wds-winst"></div>
+    </div>
 
     <h2>Dit ging goed</h2>
     <p class="sectie-uitleg">Bij onderstaande onderwerpen heb je alle punten behaald. Blijf er wel mee oefenen want ze kunnen op een volgende toets terugkomen.</p>
@@ -341,8 +343,8 @@
       <div id="vraag-tips"></div>
     </div>
 
-    <h2>Niet alle stof is getoetst</h2>
-    <p class="let-op">Deze onderwerpen moest je wel leren, maar kwamen niet op de toets voor. Ze kunnen terugkomen bij het schoolexamen, dus het loont om ze niet te laten liggen.</p>
+    <h2 id="stof-kop">Niet alle stof is getoetst</h2>
+    <p class="let-op" id="stof-uitleg">Deze onderwerpen moest je wel leren, maar kwamen niet op de toets voor. Ze kunnen terugkomen bij het schoolexamen, dus het loont om ze niet te laten liggen.</p>
     <div id="niet-getoetst"></div>
 
     <div class="pdf-blok geen-print">
@@ -694,6 +696,20 @@ function bouwInvoer() {
 let TOETS_ID = "";
 let TOETS_BOEK = "";              // config.boek, bv. "PE-M1" — leeg als de toets geen boek opgeeft
 let TOETS_STOFAFBAKENING = null;  // config.stofafbakening — hoofdstukken/extra/uitgesloten, of null
+let TOETS_WEERGAVE = "";          // config.weergave, bv. "mavo" — leeg is de gewone weergave
+let DEKKING_PCT = null;           // % onderwerpen binnen de stofafbakening dat op deze toets voorkwam
+
+// De mavo-weergave is een opmaakkeuze voor die doelgroep, geen boekkeuze:
+// het blok over de vraagniveaus (W/D/S) valt weg, en de opsomming van
+// niet-getoetste onderwerpen wordt één zin over de dekking. Boekafhankelijke
+// teksten horen niet hier maar in index-<boek>.json. Zonder het veld
+// "weergave" verandert er niets en blijft alles zoals het was.
+function mavoWeergave() { return TOETS_WEERGAVE === "mavo"; }
+
+const STOF_KOP_MAVO = "Hoeveel van de stof is getoetst?";
+function dekkingZin(pct) {
+  return `Op deze toets kwam ${pct}% van de onderwerpen uit de toetsstof terug. De rest moest je wel leren, maar is niet getoetst. Die stof kan bij een volgend schoolexamen alsnog terugkomen.`;
+}
 // Sommige (handmatig samengestelde) exports gebruiken een lege array i.p.v.
 // een lege string voor oefenBoekje/oefenPE. Een lege array is truthy in
 // JavaScript, dus "v.oefenBoekje || ''" zou hem ten onrechte als "al
@@ -760,6 +776,7 @@ function laadConfig(config) {
   NIET_GETOETST = Array.isArray(config.nietGetoetst) ? config.nietGetoetst : [];
   TOETS_BOEK = config.boek ? String(config.boek) : "";
   TOETS_STOFAFBAKENING = (config.stofafbakening && typeof config.stofafbakening === "object") ? config.stofafbakening : null;
+  TOETS_WEERGAVE = typeof config.weergave === "string" ? config.weergave : "";
   STOFDATA_BELOFTE = laadStofdata(TOETS_BOEK);
   bouwInvoer();
 }
@@ -1106,6 +1123,20 @@ function berekenNietGetoetst() {
   });
 }
 
+// Welk deel van de onderwerpen binnen de stofafbakening op deze toets is
+// voorgekomen, als heel percentage. Zelfde bron en zelfde telling als
+// berekenNietGetoetst() hierboven: stofCodes is de noemer, de codes daaruit
+// die in getoetst zitten zijn de teller. Zonder stofdata geeft dit null en
+// valt de weergave terug op de gewone tekst.
+function berekenDekking() {
+  if (!TOETS_STOFAFBAKENING || !BOEK_ONDERWERPEN || !BOEK_INDEX) return null;
+  const b = berekenStofafbakening(TOETS_STOFAFBAKENING, TOETS.vragen, BOEK_ONDERWERPEN, BOEK_INDEX);
+  const totaal = b.stofCodes.size;
+  if (!totaal) return null;
+  const getoetst = [...b.stofCodes].filter(c => b.getoetst.has(c)).length;
+  return Math.round(getoetst / totaal * 100);
+}
+
 // ======================================================================
 // STAP 5: OEFENVERWIJZING PER VRAAG
 // Vult v.oefenBoekje / v.oefenPE aan uit de onderwerpcodes van de vraag.
@@ -1216,6 +1247,7 @@ async function maakFeedback() {
   if (STOFDATA_BELOFTE) { try { await STOFDATA_BELOFTE; } catch (e) { /* laadStofdata() vangt dit al af */ } }
   const berekend = berekenNietGetoetst();
   if (berekend) NIET_GETOETST = berekend;
+  DEKKING_PCT = berekenDekking();
   vulOefenverwijzingenAan();
 
   const naam = document.getElementById("leerling-naam").value.trim();
@@ -1269,6 +1301,9 @@ async function maakFeedback() {
   // WDS-winst: score per niveau (Weten/Doen/Snappen). Alle niveaus met
   // punten worden altijd getoond, met een balk zoals bij de fouttypen —
   // ook bij 100%, want dat geeft ook inzicht.
+  // In de mavo-weergave valt dit hele blok weg. Het veld wds per vraag wordt
+  // gewoon ingelezen en meegestuurd, alleen niet aan de leerling getoond.
+  document.getElementById("wds-sectie").style.display = mavoWeergave() ? "none" : "";
   const wdsWinst = document.getElementById("wds-winst");
   const wdsScores = berekenWdsScores();
   const wdsHeelGoedTekst = "Heel goed, je hebt alle vragen in deze categorie goed beantwoord. Zorg ervoor dat je je op eenzelfde manier voor dit soort vragen voorbereidt op de volgende toets.";
@@ -1333,11 +1368,24 @@ async function maakFeedback() {
     });
   }
 
-  // Niet-getoetste stof
+  // Niet-getoetste stof. In de mavo-weergave komt hier één zin over de
+  // dekking te staan in plaats van de opsomming. De kop en de uitleg erboven
+  // worden allebei kanten op gezet, want binnen één sessie kan er van toets
+  // (en dus van weergave) gewisseld worden.
   const ng = document.getElementById("niet-getoetst");
-  ng.innerHTML = NIET_GETOETST.length
-    ? `<div class="tip-vraag"><ul style="margin:0;padding-left:20px;">${NIET_GETOETST.map(o => `<li>${o}</li>`).join("")}</ul></div>`
-    : `<div class="haak"><span class="merk">Lijst:</span><span>volgt zodra het boek, het oefenmateriaal en de begrippenlijst zijn toegevoegd</span></div>`;
+  const stofKop = document.getElementById("stof-kop");
+  const stofUitleg = document.getElementById("stof-uitleg");
+  if (mavoWeergave() && DEKKING_PCT !== null) {
+    stofKop.textContent = STOF_KOP_MAVO;
+    stofUitleg.style.display = "none";
+    ng.innerHTML = `<div class="tip-vraag">${esc(dekkingZin(DEKKING_PCT))}</div>`;
+  } else {
+    stofKop.textContent = "Niet alle stof is getoetst";
+    stofUitleg.style.display = "";
+    ng.innerHTML = NIET_GETOETST.length
+      ? `<div class="tip-vraag"><ul style="margin:0;padding-left:20px;">${NIET_GETOETST.map(o => `<li>${o}</li>`).join("")}</ul></div>`
+      : `<div class="haak"><span class="merk">Lijst:</span><span>volgt zodra het boek, het oefenmateriaal en de begrippenlijst zijn toegevoegd</span></div>`;
+  }
 
   // Blok "Dit ging goed"
   const goedLijst = TOETS.vragen
@@ -1581,8 +1629,13 @@ function maakPdf(res) {
   kop("Je eigen voornemens");
   tekst(res.voornemens || "Je hebt geen eigen voornemens opgeschreven.");
 
-  // Niet-getoetste stof — hoort nog bij pagina 1
-  if (res.nietGetoetst && res.nietGetoetst.length) {
+  // Niet-getoetste stof — hoort nog bij pagina 1. In de mavo-weergave staat
+  // hier één zin over de dekking in plaats van de opsomming, net als op het
+  // scherm.
+  if (mavoWeergave() && DEKKING_PCT !== null) {
+    kop(STOF_KOP_MAVO);
+    tekst(dekkingZin(DEKKING_PCT));
+  } else if (res.nietGetoetst && res.nietGetoetst.length) {
     kop("Niet alle stof is getoetst");
     tekst("Deze onderwerpen moest je wel leren, maar kwamen niet op de toets voor. Ze kunnen terugkomen bij het schoolexamen, dus het loont om ze niet te laten liggen.");
     res.nietGetoetst.forEach(o => tekst(o, { bullet: true }));
@@ -1608,29 +1661,34 @@ function maakPdf(res) {
 
   // WDS-winst: score per niveau (Weten/Doen/Snappen) — begint altijd op
   // een nieuwe pagina. Alle niveaus met punten worden getoond, met een
-  // balk zoals bij de fouttypen hierboven — ook bij 100%.
-  doc.addPage(); y = marge;
-  kop("Bij welk vraagniveau valt voor jou winst te halen?");
-  tekst("Elke vraag vraagt iets anders van je: bij Weten moet je je kennis paraat hebben, bij Doen moet je iets uitvoeren zoals rekenen of een grafiek tekenen, en bij Snappen moet je iets uitleggen of verklaren. Hieronder zie je per soort vraag hoeveel punten je haalde, zodat je weet waar je voorbereiding het meeste oplevert.");
-  y += 4; // witregel tussen de uitleg en het eerste niveau
-  const wdsHeelGoedTekst = "Heel goed, je hebt alle vragen in deze categorie goed beantwoord. Zorg ervoor dat je je op eenzelfde manier voor dit soort vragen voorbereidt op de volgende toets.";
-  res.wdsScores.filter(s => s.max > 0).forEach(s => {
-    const advies = WDS_ADVIES[s.key];
-    const tipTekst = s.pct === 100 ? wdsHeelGoedTekst : advies.intro;
-    const tips = s.pct === 100 ? [] : advies.tips;
-    let blokH = hoogte(advies.naam, { size: 11, stijl: "bold", extra: 5 }) + 7; // kop + balk
-    blokH += hoogte(tipTekst, { label: "Tip:" });
-    tips.forEach(t => { blokH += hoogte(t, { bullet: true }); });
-    blokH += 3;
-    ruimte(blokH); // past het blok niet meer op deze pagina, dan in zijn geheel naar de volgende
-    const puntWoord = s.max === 1 ? "punt" : "punten";
-    balkKop(advies.naam, `${formatPunten(s.behaald)} van de ${s.max} ${puntWoord} (${s.pct}%)`, s.pct, PDF_KLEUR.terra);
-    tekst(tipTekst, { label: "Tip:" });
-    tips.forEach(t => tekst(t, { bullet: true }));
-    y += 3;
-  });
+  // balk zoals bij de fouttypen hierboven — ook bij 100%. In de
+  // mavo-weergave valt het blok weg inclusief zijn paginawissel, zodat er
+  // geen lege pagina overblijft; de wissels voor de fouttypen en voor "Aan
+  // de slag per vraag" blijven ongemoeid.
+  if (!mavoWeergave()) {
+    doc.addPage(); y = marge;
+    kop("Bij welk vraagniveau valt voor jou winst te halen?");
+    tekst("Elke vraag vraagt iets anders van je: bij Weten moet je je kennis paraat hebben, bij Doen moet je iets uitvoeren zoals rekenen of een grafiek tekenen, en bij Snappen moet je iets uitleggen of verklaren. Hieronder zie je per soort vraag hoeveel punten je haalde, zodat je weet waar je voorbereiding het meeste oplevert.");
+    y += 4; // witregel tussen de uitleg en het eerste niveau
+    const wdsHeelGoedTekst = "Heel goed, je hebt alle vragen in deze categorie goed beantwoord. Zorg ervoor dat je je op eenzelfde manier voor dit soort vragen voorbereidt op de volgende toets.";
+    res.wdsScores.filter(s => s.max > 0).forEach(s => {
+      const advies = WDS_ADVIES[s.key];
+      const tipTekst = s.pct === 100 ? wdsHeelGoedTekst : advies.intro;
+      const tips = s.pct === 100 ? [] : advies.tips;
+      let blokH = hoogte(advies.naam, { size: 11, stijl: "bold", extra: 5 }) + 7; // kop + balk
+      blokH += hoogte(tipTekst, { label: "Tip:" });
+      tips.forEach(t => { blokH += hoogte(t, { bullet: true }); });
+      blokH += 3;
+      ruimte(blokH); // past het blok niet meer op deze pagina, dan in zijn geheel naar de volgende
+      const puntWoord = s.max === 1 ? "punt" : "punten";
+      balkKop(advies.naam, `${formatPunten(s.behaald)} van de ${s.max} ${puntWoord} (${s.pct}%)`, s.pct, PDF_KLEUR.terra);
+      tekst(tipTekst, { label: "Tip:" });
+      tips.forEach(t => tekst(t, { bullet: true }));
+      y += 3;
+    });
+  }
 
-  // Per vraag: begint altijd op pagina 4
+  // Per vraag: begint altijd op een eigen pagina
   doc.addPage(); y = marge;
   kop("Aan de slag per vraag");
   const foute = res.vragen.filter(v => v.behaald !== null && v.behaald < v.max);
