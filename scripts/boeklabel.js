@@ -41,3 +41,17 @@ function lesboekLabelVan(boek) {
 function lesboekLabelIsExpliciet(boek) {
   return !!(boek && typeof boek.lesboeklabel === "string" && boek.lesboeklabel.trim());
 }
+
+// Heeft dit boek een oefenboekje naast het lesboek? Dat bepaalt welk label er
+// bij een oefenverwijzing hoort. Met oefenboekje zijn er twee bronnen die uit
+// elkaar gehouden moeten worden ("Oefenboekje:" naast "PE-boek:"), en is de
+// boeknaam nodig. Zonder oefenboekje valt er niets te onderscheiden en is
+// "Oefenen:" duidelijker voor een leerling dan de naam van het boek dat toch
+// al voor zich ligt.
+function boekHeeftOefenboekje(indexData) {
+  return !!(indexData && (indexData.rijen || []).some(r => r.bron === "oefenboekje"));
+}
+
+function oefenLabelVan(indexData) {
+  return boekHeeftOefenboekje(indexData) ? lesboekLabelVan(indexData && indexData.boek) : "Oefenen";
+}

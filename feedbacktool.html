@@ -394,7 +394,7 @@ const INGEBOUWDE_TOETS = {
     {
       "key": "redeneer",
       "label": "Redeneerfout",
-      "tekst": "Bouw je antwoord in stappen op. Begin met de oorzaak en gebruik daarbij het juiste begrip. Zet dan de stap naar het gevolg, ook weer met het juiste begrip. Is de stap niet logisch of te groot, geef dan een verklaring. Elke stap is meestal een punt waard, dus één zin is bijna altijd te kort. Je herkent deze vragen aan woorden als leg uit, verklaar, waarom of beredeneer. Oefen ze vooral met de opgaven uit Toepassen en met oude examenvragen, want daar komen ze het vaakst voor. Maak ze thuis alsof het de toets is, dan kun je bij het nakijken zien of je het echt begrijpt. Twijfel je, lever dan je schrift in tijdens de les of mail een foto van je antwoord.",
+      "tekst": "Bouw je antwoord in stappen op. Begin met de oorzaak en gebruik daarbij het juiste begrip. Zet dan de stap naar het gevolg, ook weer met het juiste begrip. Is de stap niet logisch of te groot, geef dan een verklaring. Elke stap is meestal een punt waard, dus één zin is bijna altijd te kort. Je herkent deze vragen aan woorden als leg uit, verklaar, waarom of beredeneer. Oefen ze vooral met de Plusopdrachten en de Examentraining. Maak ze thuis alsof je bij het SE zit, dan kan je bij het nakijken zien of je het echt begrijpt. Twijfel je, lever dan je schrift in tijdens de les of mail een foto van je antwoord.",
       "kleur": "var(--ft-redeneer)",
       "custom": false
     },
@@ -539,7 +539,7 @@ let FOUTTYPEN = {
   begrip:   { label: "Begripsfout",  klasse: "begrip",   kleur: "var(--ft-begrip)",
     tekst: "Pak de begrippenlijst erbij en overhoor jezelf: dek de omschrijving af, zeg het begrip hardop en controleer daarna of het klopte. Dat werkt aantoonbaar beter dan de lijst doorlezen, want je merkt meteen wat je nog niet weet. Schrijf de begrippen op die je niet kon en herhaal die een paar dagen later opnieuw. De begrippenlijst en de PowerPoints staan op Classroom." },
   redeneer: { label: "Redeneerfout", klasse: "redeneer", kleur: "var(--ft-redeneer)",
-    tekst: "Bouw je antwoord in stappen op. Begin met de oorzaak en gebruik daarbij het juiste begrip. Zet dan de stap naar het gevolg, ook weer met het juiste begrip. Is de stap niet logisch of te groot, geef dan een verklaring. Elke stap is meestal een punt waard, dus één zin is bijna altijd te kort. Je herkent deze vragen aan woorden als leg uit, verklaar, waarom of beredeneer. Oefen ze vooral met de opgaven uit Toepassen en met oude examenvragen, want daar komen ze het vaakst voor. Maak ze thuis alsof het de toets is, dan kun je bij het nakijken zien of je het echt begrijpt. Twijfel je, lever dan je schrift in tijdens de les of mail een foto van je antwoord." },
+    tekst: "Bouw je antwoord in stappen op. Begin met de oorzaak en gebruik daarbij het juiste begrip. Zet dan de stap naar het gevolg, ook weer met het juiste begrip. Is de stap niet logisch of te groot, geef dan een verklaring. Elke stap is meestal een punt waard, dus één zin is bijna altijd te kort. Je herkent deze vragen aan woorden als leg uit, verklaar, waarom of beredeneer. Oefen ze vooral met de Plusopdrachten en de Examentraining. Maak ze thuis alsof je bij het SE zit, dan kan je bij het nakijken zien of je het echt begrijpt. Twijfel je, lever dan je schrift in tijdens de les of mail een foto van je antwoord." },
   overig:   { label: "Overig", klasse: "overig", kleur: "var(--ft-overig)",
     tekst: "Het is misschien nog niet helemaal duidelijk waarom je sommige punten hebt laten liggen. Als dit het geval is, vraag dan aan je docent om er samen naar te kijken. Je mag ook gemaakt huiswerk inleveren, dan krijg je daar gerichte feedback op." }
 };
@@ -820,10 +820,24 @@ function laadStofdata(boek) {
     });
 }
 
-// Hoe het lesboek in het oefenadvies genoemd wordt: gedeelde logica met
-// controle.html, zie scripts/boeklabel.js. Zonder geladen boek "Lesboek".
-function lesboekLabel() {
-  return lesboekLabelVan(BOEK_INDEX && BOEK_INDEX.boek);
+// Het label vóór een oefenverwijzing. Heeft het boek een oefenboekje, dan is
+// dat de boeknaam, naast "Oefenboekje:". Heeft het er geen, dan wordt het
+// "Oefenen:" — zie scripts/boeklabel.js.
+function oefenLabel() {
+  return oefenLabelVan(BOEK_INDEX);
+}
+
+// De tiptekst van een fouttype, met de boekspecifieke aanvulling erachter als
+// het geladen index-<boek>.json die heeft. Alleen voor "reken": Pincode heeft
+// extra rekenopdrachten achter in elk hoofdstuk, Praktische Economie niet, dus
+// die zin hoort in het boekbestand en niet in de algemene tekst. Ontbreekt
+// boek.rekentip, dan blijft de tekst precies zoals hij was.
+function foutTipTekst(key) {
+  const basis = (FOUTTYPEN[key] && FOUTTYPEN[key].tekst) || "";
+  if (key !== "reken") return basis;
+  const boek = BOEK_INDEX && BOEK_INDEX.boek;
+  const extra = boek && typeof boek.rekentip === "string" ? boek.rekentip.trim() : "";
+  return extra ? `${basis} ${extra}` : basis;
 }
 
 // --- Knoppen van het laad-paneel ---
@@ -1106,7 +1120,7 @@ function berekenNietGetoetst() {
       .sort((a, b) => (a.blzSet[0] || 0) - (b.blzSet[0] || 0) || Number(a.grondnummer) - Number(b.grondnummer))
       .slice(0, MAX_NIET_GETOETST);
     const lesStukken = formatMetPagina(lesItems); // elk stuk: "opgave(n) (blz. ...)"
-    const lesDeel = lesStukken.length ? `${lesboekLabel()}: opgave ${dutchLijst(lesStukken)}` : "";
+    const lesDeel = lesStukken.length ? `${oefenLabel()}: opgave ${dutchLijst(lesStukken)}` : "";
 
     // Oefenboekje: alleen het opgavenummer/bereik, geen sectie of paginanummer.
     const oefItems = groepeerOpGrondnummer(rijen.filter(r => r.bron === "oefenboekje"), alleRijen, "oefenboekje")
@@ -1293,7 +1307,7 @@ async function maakFeedback() {
           <span class="staaf-pct">${formatPunten(miss[t])} van je ${formatPunten(totaalMiss)} gemiste ${totaalMiss === 1 ? "punt" : "punten"} (${pct}%)</span>
         </div>
         <div class="staaf-spoor"><span class="staaf-vul" style="width:${pct}%;background:var(--inkt)"></span></div>
-        <p class="staaf-tip"><strong>Tip:</strong> ${f.tekst}</p>`;
+        <p class="staaf-tip"><strong>Tip:</strong> ${foutTipTekst(t)}</p>`;
       staven.appendChild(kaart);
     });
   }
@@ -1349,7 +1363,7 @@ async function maakFeedback() {
       const geenAdviesTekst = v.algemeneFeedback || algemeneFeedbackTheorievragen;
       const oefB = v.geenOefenadvies || !v.oefenBoekje
         ? "" : `<div class="haak"><span class="merk">Oefenboekje:</span><span>opgave ${esc(v.oefenBoekje)}</span></div>`;
-      const boekMerk = esc(lesboekLabel());
+      const boekMerk = esc(oefenLabel());
       const oefP = v.geenOefenadvies
         ? `<div class="haak"><span class="merk">Advies:</span><span>${esc(geenAdviesTekst)}</span></div>`
         : v.oefenPE
@@ -1437,7 +1451,7 @@ function maakResultaat(naam, totaalBehaald, miss, totaalMiss) {
     .filter(t => miss[t] > 0)
     .sort((a, b) => miss[b] - miss[a])
     .map(t => ({ key: t, label: FOUTTYPEN[t].label, punten: Math.round(miss[t] * 10) / 10,
-                 pct: Math.round(miss[t] / totaalMiss * 100), tekst: FOUTTYPEN[t].tekst }));
+                 pct: Math.round(miss[t] / totaalMiss * 100), tekst: foutTipTekst(t) }));
   const vragen = TOETS.vragen.map((v, i) => ({
     nr: v.nr, onderwerp: v.onderwerp, wds: v.wds,
     behaald: state[i].behaald, max: v.max,
@@ -1710,7 +1724,7 @@ function maakPdf(res) {
       const haken = v.geenOefenadvies
         ? [["Advies:", geenAdviesTekst]]
         : [...(v.oefenBoekje ? [["Oefenboekje:", `opgave ${v.oefenBoekje}`]] : []),
-           [`${lesboekLabel()}:`, v.oefenPE || "opgaven en pagina's volgen nog"]];
+           [`${oefenLabel()}:`, v.oefenPE || "opgaven en pagina's volgen nog"]];
       if (v.specifiek) haken.push(["Tip van je docent:", v.specifiek]);
       let blokH = hoogte(kopStr, { stijl: "bold", rechts: metaStr }) + 2.5;
       haken.forEach(h => { blokH += hoogte(h[1], { label: h[0], bullet: true }); });
