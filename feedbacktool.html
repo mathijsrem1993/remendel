@@ -743,6 +743,31 @@ function dekkingZin(pct) {
 // ingevuld" behandelen. Alleen een echte, niet-lege string telt als tekst.
 function tekstOf(x) { return (typeof x === "string" && x) ? x : ""; }
 
+// De docentenlijst hoort bij de toets: 4 havo krijgt les van andere docenten
+// dan 4 mavo. Een toetsbestand mag daarom een veld "docenten" meebrengen.
+// Ontbreekt dat, dan blijft de vaste lijst uit de html gelden, zodat
+// bestaande toetsen niets merken.
+const docentKeuze = document.getElementById("leerling-docent");
+const DOCENTEN_STANDAARD = [...docentKeuze.options].map(o => o.value).filter(Boolean);
+
+function vulDocenten(lijst) {
+  const namen = (Array.isArray(lijst) ? lijst.map(n => String(n).trim()).filter(Boolean) : []);
+  const tonen = namen.length ? namen : DOCENTEN_STANDAARD;
+  docentKeuze.innerHTML = "";
+  const leeg = document.createElement("option");
+  leeg.value = "";
+  leeg.textContent = "Kies je docent";
+  leeg.selected = true;
+  leeg.disabled = true;
+  docentKeuze.appendChild(leeg);
+  tonen.forEach(naam => {
+    const o = document.createElement("option");
+    o.value = naam;
+    o.textContent = naam;
+    docentKeuze.appendChild(o);
+  });
+}
+
 // De n-term komt uit het toetsbestand en is bij ons altijd 1. Ontbreekt het
 // veld, dan is dat een fout in de export en geen keuze: stil terugvallen op 0
 // zou elk cijfer een vol punt te laag maken, zonder dat iemand het merkt. We
@@ -811,6 +836,7 @@ function laadConfig(config) {
   TOETS_STOFAFBAKENING = (config.stofafbakening && typeof config.stofafbakening === "object") ? config.stofafbakening : null;
   TOETS_WEERGAVE = typeof config.weergave === "string" ? config.weergave : "";
   TOETS_VERSIE = typeof config.versie === "string" ? config.versie : "";
+  vulDocenten(config.docenten);
   STOFDATA_BELOFTE = laadStofdata(TOETS_BOEK);
   bouwInvoer();
 }

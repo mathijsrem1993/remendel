@@ -3,6 +3,11 @@
   "toets": "SE1 H1 + H2 Versie 1",
   "versie": "V1",
   "docent": "Mathijs Remmerswaal",
+  "docenten": [
+    "Rem",
+    "Pols",
+    "Kasius"
+  ],
   "boek": "PIN",
   "weergave": "mavo",
   "nterm": 1,
