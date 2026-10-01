@@ -100,6 +100,7 @@
       if (entered.length === 4) {
         for (let j = 0; j < 4; j++) {
           const mark = document.createElement("span");
+          mark.className = "w-12 text-center";
           mark.textContent = entered[j] === correctCode[j] ? "✅" : "❌";
           feedback.appendChild(mark);
         }
