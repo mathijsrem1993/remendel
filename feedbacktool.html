@@ -553,14 +553,23 @@ const FOUT_VOLGORDE_STANDAARD = FOUT_VOLGORDE;
 // Er draaien twee varianten van de feedforward naast elkaar: havo met
 // Praktische Economie, en mavo met Pincode. De bibliotheek hierboven is de
 // havo-variant; wat hier staat overschrijft dat alleen bij weergave "mavo".
-// Dat is nodig omdat de tekst naar het boek van de leerling verwijst:
-// Plusopdrachten en Examentraining zijn rubrieken in Pincode en bestaan niet
-// in Praktische Economie, en een mavoleerling maakt een SE waar havo een
-// proefwerk maakt. Brengt een toets zijn eigen fouttypen mee, dan is dat een
-// bewuste keuze en blijft deze overschrijving eraf.
+// Het gaat om alle vijf de teksten, niet alleen om de boekspecifieke: de
+// mavoteksten zijn korter gehouden en verwijzen waar nodig naar rubrieken uit
+// Pincode (Plusopdrachten, Examentraining) die in Praktische Economie niet
+// bestaan. Alleen "redeneer" wijzigt ook zijn label, de andere vier houden het
+// label uit de bibliotheek hierboven. Brengt een toets zijn eigen fouttypen
+// mee, dan is dat een bewuste keuze en blijft deze overschrijving eraf.
 const FOUTTYPEN_MAVO = {
+  reken: {
+    tekst: "Schrijf je tussenstappen op in plaats van alles in de rekenmachine te doen, en kijk daarna of je antwoord logisch is." },
+  lees: {
+    tekst: "Markeer eerst wat er gevraagd wordt, en daarna in de bron de gegevens die je nodig hebt. Let op woorden als minimaal, per week en in procenten: daar zit meestal het verschil tussen goed en fout." },
+  begrip: {
+    tekst: "Overhoor jezelf met de begrippenlijst: dek de omschrijving af, zeg het begrip hardop, controleer. Schrijf op wat je niet wist en herhaal dat een paar dagen later. De begrippenlijst en de PowerPoints staan op Classroom." },
   redeneer: { label: "Uitlegfout",
-    tekst: "Bouw je antwoord in stappen op. Begin met de oorzaak en gebruik daarbij het juiste begrip. Zet dan de stap naar het gevolg, ook weer met het juiste begrip. Is de stap niet logisch of te groot, geef dan een verklaring. Elke stap is meestal een punt waard, dus één zin is bijna altijd te kort. Je herkent deze vragen aan woorden als leg uit, verklaar, waarom of beredeneer. Oefen ze vooral met de Plusopdrachten en de Examentraining. Maak ze thuis alsof je bij het SE zit, dan kan je bij het nakijken zien of je het echt begrijpt. Twijfel je, lever dan je schrift in tijdens de les of mail een foto van je antwoord." }
+    tekst: "Bouw je antwoord in stappen op: eerst de oorzaak met het juiste begrip, dan het gevolg met het juiste begrip. Elke stap is een punt waard, dus één zin is bijna altijd te kort. Je herkent deze vragen aan leg uit, verklaar, waarom of beredeneer. Oefenen: de Plusopdrachten en Examentraining die je aan het eind van elk hoofdstuk vindt." },
+  overig: {
+    tekst: "Neem deze vragen mee naar de les en vraag of we er samen naar kijken. Je mag ook je uitwerking inleveren of een foto mailen." }
 };
 let EIGEN_FOUTTYPEN = false;
 
@@ -1764,7 +1773,9 @@ function maakPdf(res, geefTerug) {
   tekst(res.toets, { size: 17, stijl: "bold", extra: 7.5 });
   // De versie staat erbij als de toets er meer dan één heeft, zodat op het
   // papier en in de pdf hetzelfde kenmerk staat (V1 of V2, rechtsboven).
-  const versieDeel = res.versie ? `  ·  versie ${res.versie}` : "";
+  // In de mavo-weergave staat de versie al in de toetstitel erboven, dus daar
+  // zou hij hier een tweede keer komen te staan.
+  const versieDeel = (res.versie && !mavoWeergave()) ? `  ·  versie ${res.versie}` : "";
   tekst(`Leerling ${res.naam}  ·  docent ${res.docent}${versieDeel}`, { extra: 5.5 });
   y += 1.5;
   doc.setDrawColor(...PDF_KLEUR.terra); doc.setLineWidth(1.1);
@@ -1779,7 +1790,11 @@ function maakPdf(res, geefTerug) {
   doc.setFont("helvetica", "bold"); doc.setFontSize(17.6);
   doc.text(String(res.cijfer.toFixed(1)).replace(".", ","), marge + 8, y + 8.4);
   doc.setFont("helvetica", "normal"); doc.setFontSize(PDF_TEKST);
-  const scoreZin = `Op basis van de gegeven informatie haal je ${formatPunten(res.punten)} van de ${res.max} punten (${res.pct}%).`;
+  // De mavo-weergave gebruikt dezelfde zin als het scherm; de havo-weergave
+  // houdt het voorbehoud dat de score van de ingevulde punten afhangt.
+  const scoreZin = mavoWeergave()
+    ? `Je haalde ${formatPunten(res.punten)} van de ${res.max} punten (${res.pct}%).`
+    : `Op basis van de gegeven informatie haal je ${formatPunten(res.punten)} van de ${res.max} punten (${res.pct}%).`;
   const scoreRegels = doc.splitTextToSize(scoreZin, breed - 40);
   if (scoreRegels.length === 1) { doc.text(scoreRegels[0], marge + 30, y + 8.1); }
   else { doc.text(scoreRegels[0], marge + 30, y + 5.9); doc.text(scoreRegels[1], marge + 30, y + 10.4); }

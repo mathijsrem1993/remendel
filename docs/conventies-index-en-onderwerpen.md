@@ -89,7 +89,7 @@ aandachtspunten[]           onderwerp of opgave, punt
 ### `index-<boek>.json`
 
 ```
-boek        id, titel, niveau, lesboeklabel (optioneel), status
+boek        id, titel, niveau, lesboeklabel (optioneel), rekentip (optioneel), status
 legenda     uitleg van W, D, S en van de velden stof, paragraaf, soort en blz
 rijen[]
   bron                      "lesboek" of "oefenboekje"
@@ -111,6 +111,22 @@ rijen[]
 **Het veld `soort`** zegt in wat voor onderdeel van het hoofdstuk een opgave staat. `paragraaf` is een gewone paragraafopgave; de andere waarden horen bij de rubrieken die naast de paragrafen staan: `weet-je-het-nog`, `herhaling` (Herhalingsopdrachten), `plus` (Plusopdrachten), `rekenen` en `examentraining`. Boeken zonder die rubrieken hebben overal `paragraaf` staan, of laten het veld weg.
 
 **Bij een rubriek bevat `paragraaf` de rubrieknaam**, dus "Weet je het nog?", "Herhalingsopdrachten", "Plusopdrachten", "Rekenen" of "Examentraining", en geen §-nummer. Dat is nodig omdat de opgavenummering per rubriek opnieuw begint: hoofdstuk 1 heeft een opgave 1 in §1.1, en ook een opgave 1 bij Rekenen. Pas met hoofdstuk + paragraaf + opgave is een regel uniek. In Pincode loopt alleen binnen de Herhalingsopdrachten de nummering door over het hele hoofdstuk.
+
+**Het veld `rekentip`** is optioneel en hoort bij het boek, niet bij de algemene tiptekst. Hij wordt achter de tip bij rekenfouten geplakt, zodat die naar het oefenmateriaal van dát boek kan verwijzen. Pincode heeft Rekenopdrachten achter in elk hoofdstuk en een rekentrainer online; Praktische Economie heeft die rubrieken niet en laat het veld dus weg. Ontbreekt het, dan blijft de tip precies zoals hij in de tool staat.
+
+### Toetsbestanden: `weergave`
+
+**Elke toets voor 4 mavo krijgt `"weergave": "mavo"`.** Zonder dat veld valt de toets terug op de gewone (havo-)weergave, en dat is bij een mavotoets altijd een fout en geen keuze. Het veld is een opmaakkeuze voor de doelgroep en staat los van `boek`: het boek bepaalt waar de oefenverwijzingen vandaan komen, de weergave bepaalt hoe de feedback eruitziet.
+
+Wat de mavo-weergave doet, op scherm en in de pdf tegelijk:
+
+- **Geen W/D/S-blok.** "Bij welk vraagniveau valt voor jou winst te halen?" vervalt in zijn geheel, inclusief de paginawissel die er in de pdf bij hoort.
+- **Niet-getoetste stof als percentage.** In plaats van de volledige lijst met onderwerpen komt er één zin onder de kop "Hoeveel van de stof is getoetst?".
+- **Mavoteksten bij alle vijf de fouttypen.** `FOUTTYPEN_MAVO` in `feedbacktool.html` overschrijft de tekst van reken, lees, begrip, redeneer en overig. Alleen redeneer wijzigt ook zijn label, naar "Uitlegfout". Brengt een toets eigen `fouttypen` mee, dan gaat deze overschrijving er bewust af.
+- **Geen versie in de leerlingregel van de pdf.** Bij de SE-versies staat de versie al in de toetstitel; hem ook achter naam en docent zetten levert een dubbeling op.
+- **Dezelfde scorezin als op het scherm:** "Je haalde X van de Y punten (Z%)." De havo-weergave houdt "Op basis van de gegeven informatie haal je …".
+
+De havo-variant blijft bewust ongemoeid tot die weer aan de beurt is. Dat betekent concreet: raak `FOUTTYPEN` en de fouttypen van de ingebouwde toets niet aan, en zet mavoteksten nooit in de gedeelde bibliotheek maar altijd in het overschrijfblok.
 
 ---
 
