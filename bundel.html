@@ -61,6 +61,14 @@
         </select>
       </div>
     </div>
+    <div class="rij">
+      <div>
+        <label for="alleenPrint" style="font-weight:400;display:flex;gap:8px;align-items:center;cursor:pointer;">
+          <input type="checkbox" id="alleenPrint" checked style="width:auto;">
+          Alleen leerlingen die het formulier geprint willen hebben (Print gewenst = ja)
+        </label>
+      </div>
+    </div>
     <label for="invoer">Export uit Apps Script (json)</label>
     <textarea id="invoer" placeholder='{ "toets": "...", "leerlingen": [ ... ] }'></textarea>
     <div class="knoppen">
@@ -112,6 +120,7 @@ document.getElementById("bestand").addEventListener("change", (e) => {
 
 document.getElementById("lees").addEventListener("click", lees);
 document.getElementById("docentFilter").addEventListener("change", kies);
+document.getElementById("alleenPrint").addEventListener("change", kies);
 document.getElementById("bouw").addEventListener("click", bouw);
 
 let ALLE = null;      // alles uit de export, ongefilterd
@@ -189,8 +198,20 @@ function kies() {
     if (perNaam.has(sleutel)) dubbel.push(sleutel);
     perNaam.set(sleutel, l);
   });
-  const uniek = [...perNaam.values()].sort((a, b) =>
+  const eerst = [...perNaam.values()];
+
+  // Printwens: pas ná het ontdubbelen filteren. Heeft een leerling twee keer
+  // ingeleverd, dan telt de laatste inzending, ook voor de printkeuze.
+  const alleenPrint = document.getElementById("alleenPrint").checked;
+  const wilPrinten = l => String(l.printWens || "").trim().toLowerCase() === "ja";
+  const weggelaten = alleenPrint ? eerst.filter(l => !wilPrinten(l)) : [];
+  const uniek = (alleenPrint ? eerst.filter(wilPrinten) : eerst).sort((a, b) =>
     String(a.naam).localeCompare(String(b.naam), "nl", { numeric: true }));
+
+  if (!uniek.length) {
+    meld(`Van de ${eerst.length} inzending(en) heeft niemand om een geprint formulier gevraagd. Zet het vinkje uit als je toch iedereen wilt printen.`, "fout");
+    return;
+  }
 
   GEKOZEN = { toets: data.toets || "", leerlingen: uniek };
 
@@ -216,7 +237,10 @@ function kies() {
   const dubbelTekst = dubbel.length
     ? ` Let op: ${dubbel.length} leerling(en) hebben meer dan één keer ingeleverd (${esc([...new Set(dubbel)].join(", "))}); van hen is de laatste inzending gebruikt.`
     : "";
-  meld(`${uniek.length} leerling(en) klaar om te bundelen.${dubbelTekst}`, dubbel.length ? "bezig" : "ok");
+  const weggelatenTekst = alleenPrint
+    ? ` ${weggelaten.length} leerling(en) zonder printwens zijn weggelaten${weggelaten.length ? " (" + esc(weggelaten.map(l => l.naam).join(", ")) + ")" : ""}.`
+    : "";
+  meld(`${uniek.length} leerling(en) klaar om te bundelen.${weggelatenTekst}${dubbelTekst}`, dubbel.length ? "bezig" : "ok");
   document.getElementById("bouw").disabled = false;
 }
 
