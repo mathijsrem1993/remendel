@@ -50,9 +50,13 @@
 
   <div class="kaart">
     <div class="rij">
+      <div id="toetsKeuzeBlok" hidden>
+        <label for="toetsKeuze">Toets</label>
+        <select id="toetsKeuze"></select>
+      </div>
       <div>
         <label for="toetsId">Toetsbestand</label>
-        <input type="text" id="toetsId" value="4h-pw-m1-h1h2">
+        <input type="text" id="toetsId" value="" placeholder="wordt ingevuld zodra je een toets kiest">
       </div>
       <div>
         <label for="docentFilter">Docent</label>
@@ -78,6 +82,7 @@
       <button id="bouw" type="button" disabled>Bundel maken</button>
     </div>
     <div id="melding"></div>
+    <div id="overgeslagen" class="uitleg"></div>
   </div>
 
   <div id="overzicht"></div>
@@ -85,6 +90,7 @@
   <iframe class="verborgen" id="werkblad" title="werkblad"></iframe>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf-lib/1.17.1/pdf-lib.min.js"></script>
+<script src="toetsanalyse-data.js"></script>
 <script>
 // ============================================================================
 // Bundelt de feedback-pdf's van één toets en één docent tot één bestand.
@@ -120,11 +126,42 @@ document.getElementById("bestand").addEventListener("change", (e) => {
 
 document.getElementById("lees").addEventListener("click", lees);
 document.getElementById("docentFilter").addEventListener("change", kies);
+document.getElementById("toetsKeuze").addEventListener("change", () => kiesToets(document.getElementById("toetsKeuze").value));
 document.getElementById("alleenPrint").addEventListener("change", kies);
 document.getElementById("bouw").addEventListener("click", bouw);
 
-let ALLE = null;      // alles uit de export, ongefilterd
+let ALLE = null;      // inzendingen van de gekozen toets, ongefilterd
 let EXPORT_TOETS = "";
+let TOETSEN = null;   // nieuwe export: [{ toets, leerlingen }, ...]
+
+// Welke naam in de sheet hoort bij welk toetsbestand? De tool schrijft de
+// titel van de toets als tabbladnaam (zonder de haakjes aan het eind). Via de
+// toetsenlijst van de site (toetsanalyse-data.js) halen we alle toetsbestanden
+// op en leggen die titel naast elkaar, zodat het toetsbestand vanzelf klopt.
+let KOPPELING = null;
+function toetsIdsUitSite() {
+  const ids = new Set();
+  const vondst = tekst => { const m = /[?&]toets=([^&#]+)/.exec(String(tekst || "")); if (m) ids.add(decodeURIComponent(m[1])); };
+  (typeof KEUZE_DATA !== "undefined" ? KEUZE_DATA : []).forEach(n => (n.klassen || []).forEach(k => (k.items || []).forEach(i => {
+    vondst(i.bron);
+    (i.versies || []).forEach(v => vondst(v.bron));
+  })));
+  return [...ids];
+}
+async function laadKoppeling() {
+  if (KOPPELING) return KOPPELING;
+  KOPPELING = new Map();
+  await Promise.all(toetsIdsUitSite().map(async id => {
+    try {
+      const r = await fetch(`toetsen/${encodeURIComponent(id)}.json`, { cache: "no-store" });
+      if (!r.ok) return;
+      const c = await r.json();
+      const titel = String(c.titel || c.toets || "").replace(/\s*\([^)]*\)\s*$/, "").trim();
+      if (titel) KOPPELING.set(titel.toLowerCase(), id);
+    } catch (e) { /* pagina los geopend of bestand ontbreekt: toetsbestand blijft handmatig */ }
+  }));
+  return KOPPELING;
+}
 
 // Inlezen doet twee dingen: de export bewaren en de keuzelijst met docenten
 // vullen met wie er daadwerkelijk in zitten. Daarna filtert kies() alleen nog.
@@ -141,11 +178,60 @@ function lees() {
     meld("De json kon niet gelezen worden: " + esc(e.message), "fout");
     return;
   }
+  TOETSEN = null;
+  document.getElementById("toetsKeuzeBlok").hidden = true;
+  document.getElementById("overgeslagen").textContent = "";
+
+  // Nieuwe export: alle toetsen uit de sheet in één bestand.
+  if (data && Array.isArray(data.toetsen)) {
+    const bruikbaar = data.toetsen.filter(t => t && (t.leerlingen || []).length);
+    if (!bruikbaar.length) { meld("Geen inzendingen in deze export gevonden.", "fout"); return; }
+    TOETSEN = bruikbaar;
+    TOETSEN_OVERGESLAGEN = data.overgeslagen || [];
+    const keuze = document.getElementById("toetsKeuze");
+    const vorige = keuze.value;
+    keuze.innerHTML = "";
+    bruikbaar.forEach(t => {
+      const o = document.createElement("option");
+      o.value = t.toets;
+      o.textContent = `${t.toets} (${t.leerlingen.length} inzendingen)`;
+      keuze.appendChild(o);
+    });
+    if ([...keuze.options].some(o => o.value === vorige)) keuze.value = vorige;
+    document.getElementById("toetsKeuzeBlok").hidden = false;
+    document.getElementById("overgeslagen").textContent = TOETSEN_OVERGESLAGEN.length
+      ? "Niet in de lijst (geen printkolom of geen inzendingen): " + TOETSEN_OVERGESLAGEN.join(", ") + "."
+      : "";
+    kiesToets(keuze.value || bruikbaar[0].toets);
+    return;
+  }
+
+  // Oud formaat: één toets per bestand.
   const alle = Array.isArray(data) ? data : (data.leerlingen || []);
   if (!alle.length) { meld("Geen leerlingen in deze export gevonden.", "fout"); return; }
+  neemOver(alle, data.toets || "");
+}
 
+let TOETSEN_OVERGESLAGEN = [];
+
+async function kiesToets(naam) {
+  const t = (TOETSEN || []).find(x => x.toets === naam);
+  if (!t) return;
+  neemOver(t.leerlingen, t.toets);
+  const koppeling = await laadKoppeling();
+  const id = koppeling.get(String(t.toets).replace(/\s*\([^)]*\)\s*$/, "").trim().toLowerCase());
+  if (id) {
+    document.getElementById("toetsId").value = id;
+  } else {
+    document.getElementById("toetsId").value = "";
+    meld(`Voor "${esc(t.toets)}" vond ik geen toetsbestand op de site. Vul het toetsbestand hierboven zelf in (de naam in de map toetsen/, zonder .json).`, "fout");
+  }
+}
+
+// Bewaart de inzendingen van de gekozen toets en vult de docentenlijst.
+function neemOver(alle, toets) {
   ALLE = alle;
-  EXPORT_TOETS = data.toets || "";
+  EXPORT_TOETS = toets;
 
   // Keuzelijst vullen met de docenten die in deze export voorkomen, met
   // achter elke naam hoeveel inzendingen erbij horen.
@@ -279,6 +365,11 @@ async function bouw() {
   const knop = document.getElementById("bouw");
   knop.disabled = true;
   const toetsId = document.getElementById("toetsId").value.trim();
+  if (!toetsId) {
+    meld("Vul eerst het toetsbestand in (of kies een toets in de lijst).", "fout");
+    knop.disabled = false;
+    return;
+  }
 
   try {
     meld("Feedbacktool laden…");

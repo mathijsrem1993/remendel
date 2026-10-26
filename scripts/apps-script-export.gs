@@ -3,113 +3,93 @@
    ======================================================================
    Plak deze functie onderaan het bestaande ontvangstscript in Apps Script
    (hetzelfde bestand waar doPost en schrijfNaarSheet in staan, zodat de
-   constante SPREADSHEET_ID gewoon bruikbaar is).
+   constante SPREADSHEET_ID gewoon bruikbaar is). Staat daar al een oudere
+   versie van exporteerVoorBundel, haal die dan eerst weg.
 
-   Wat het doet: de inzendingen van één tabblad en één docent uit de
-   docentensheet halen en als json wegschrijven, in de vorm die bundel.html
-   verwacht. Het leest alleen; er wordt niets gewijzigd of gemaild.
+   Wat het doet: de inzendingen van ALLE toetsen (tabbladen) uit de
+   docentensheet halen en als één json-bestand in je Drive zetten, in de
+   vorm die bundel.html verwacht. Het leest alleen; er wordt niets
+   gewijzigd of gemaild. Er valt niets in te stellen: kies de functie
+   exporteerVoorBundel, klik Uitvoeren, en open de link in het logboek.
+   Welke toets en welke docent je wilt, kies je daarna in bundel.html.
 
-   Gebruik:
-     1. Zet TABBLAD en DOCENT hieronder goed.
-        TABBLAD is de titel van de toets zoals hij als tabbladnaam in de
-        sheet staat, bijvoorbeeld "Proefwerk Module 1, hoofdstuk 1 en 2".
-        DOCENT leeg laten betekent: alle docenten.
-     2. Kies in de editor de functie exporteerVoorBundel en klik Uitvoeren.
-        De eerste keer vraagt Google opnieuw om toestemming, omdat dit
-        script nu ook een bestand in Drive aanmaakt.
-     3. In het uitvoervenster staat een link naar het json-bestand in je
-        Drive. Open dat, kopieer de inhoud, en plak hem in bundel.html.
-        Of download het en kies het daar met "Bestand kiezen".
+   Tabbladen zonder kolom "Print gewenst" (toetsen van voor die kolom
+   bestond) of zonder inzendingen worden overgeslagen en genoemd in het
+   bestand, zodat je ziet waarom een toets ontbreekt.
 
    De json bevat leerlingnummers, cijfers en eigen voornemens. Laat het
    bestand niet in een gedeelde map staan.
    ====================================================================== */
 
 function exporteerVoorBundel() {
-  const TABBLAD = "Proefwerk Module 1, hoofdstuk 1 en 2";
-  const DOCENT = ""; // leeg = alle docenten; in bundel.html kies je daarna wie je wilt
+  const bladen = SpreadsheetApp.openById(SPREADSHEET_ID).getSheets();
+  const toetsen = [];
+  const overgeslagen = [];
 
-  const blad = SpreadsheetApp.openById(SPREADSHEET_ID).getSheetByName(TABBLAD);
-  if (!blad) {
-    const namen = SpreadsheetApp.openById(SPREADSHEET_ID).getSheets().map(function (b) { return b.getName(); });
-    throw new Error('Tabblad "' + TABBLAD + '" niet gevonden. Aanwezig: ' + namen.join(" | "));
-  }
+  bladen.forEach(function (blad) {
+    const naam = blad.getName();
+    const alles = blad.getDataRange().getValues();
+    if (alles.length < 2) { overgeslagen.push(naam + " (nog geen inzendingen)"); return; }
 
-  const alles = blad.getDataRange().getValues();
-  if (alles.length < 2) throw new Error('Tabblad "' + TABBLAD + '" bevat nog geen inzendingen.');
+    const koppen = alles.shift();
+    const idx = function (k) { return koppen.indexOf(k); };
+    const kDatum = idx("Datum"), kNaam = idx("Leerlingnummer"), kDocent = idx("Docent"),
+          kPrint = idx("Print gewenst"), kFouten = idx("Fouttypen per vraag"),
+          kVoornemens = idx("Eigen voornemens");
+    if (kNaam === -1 || kDocent === -1 || kFouten === -1) { overgeslagen.push(naam + " (geen toetstabblad)"); return; }
+    if (kPrint === -1) { overgeslagen.push(naam + " (geen kolom Print gewenst)"); return; }
 
-  const koppen = alles.shift();
-  const kol = function (naam) {
-    const i = koppen.indexOf(naam);
-    if (i === -1) throw new Error('Kolom "' + naam + '" ontbreekt in ' + TABBLAD + ".");
-    return i;
-  };
+    // De vraagkolommen heten "V1a (2p)" — daar halen we het vraagnummer uit.
+    const vraagKolommen = [];
+    koppen.forEach(function (k, i) {
+      const m = /^V(.+?)\s*\(([\d.,]+)p\)$/.exec(String(k));
+      if (m) vraagKolommen.push({ index: i, nr: m[1] });
+    });
+    if (!vraagKolommen.length) { overgeslagen.push(naam + " (geen vraagkolommen)"); return; }
 
-  // De vraagkolommen heten "V1a (2p)" — daar halen we het vraagnummer uit.
-  const vraagKolommen = [];
-  koppen.forEach(function (k, i) {
-    const m = /^V(.+?)\s*\(([\d.,]+)p\)$/.exec(String(k));
-    if (m) vraagKolommen.push({ index: i, nr: m[1] });
-  });
-  if (!vraagKolommen.length) throw new Error("Geen vraagkolommen gevonden in " + TABBLAD + ".");
-
-  const kDatum = kol("Datum");
-  const kNaam = kol("Leerlingnummer");
-  const kDocent = kol("Docent");
-  const kPrint = kol("Print gewenst");
-  const kFouten = kol("Fouttypen per vraag");
-  const kVoornemens = kol("Eigen voornemens");
-
-  const gewenst = String(DOCENT).trim().toLowerCase();
-
-  const leerlingen = alles
-    .filter(function (r) {
-      if (!String(r[kNaam]).trim()) return false;
-      if (!gewenst) return true;
-      return String(r[kDocent]).trim().toLowerCase() === gewenst;
-    })
-    .map(function (r) {
-      // "1a: Rekenfout/Leesfout; 2: Begripsfout" uit elkaar halen.
-      const perVraag = {};
-      String(r[kFouten] || "").split(";").forEach(function (deel) {
-        const punt = deel.indexOf(":");
-        if (punt === -1) return;
-        const nr = deel.slice(0, punt).trim();
-        if (!nr) return;
-        perVraag[nr] = deel.slice(punt + 1).split("/")
-          .map(function (x) { return x.trim(); })
-          .filter(function (x) { return x; });
+    const leerlingen = alles
+      .filter(function (r) { return String(r[kNaam]).trim(); })
+      .map(function (r) {
+        // "1a: Rekenfout/Leesfout; 2: Begripsfout" uit elkaar halen.
+        const perVraag = {};
+        String(r[kFouten] || "").split(";").forEach(function (deel) {
+          const punt = deel.indexOf(":");
+          if (punt === -1) return;
+          const nr = deel.slice(0, punt).trim();
+          if (!nr) return;
+          perVraag[nr] = deel.slice(punt + 1).split("/")
+            .map(function (x) { return x.trim(); })
+            .filter(function (x) { return x; });
+        });
+        return {
+          naam: String(r[kNaam]).trim(),
+          docent: String(r[kDocent] || "").trim(),
+          datum: (r[kDatum] instanceof Date) ? r[kDatum].toISOString() : String(r[kDatum] || ""),
+          printWens: String(r[kPrint] || "").trim(),
+          voornemens: kVoornemens === -1 ? "" : String(r[kVoornemens] || ""),
+          vragen: vraagKolommen.map(function (v) {
+            const waarde = r[v.index];
+            return {
+              nr: v.nr,
+              behaald: (waarde === "" || waarde === null || waarde === undefined) ? null : Number(waarde),
+              fouten: perVraag[v.nr] || []
+            };
+          })
+        };
       });
 
-      return {
-        naam: String(r[kNaam]).trim(),
-        docent: String(r[kDocent] || "").trim(),
-        datum: (r[kDatum] instanceof Date) ? r[kDatum].toISOString() : String(r[kDatum] || ""),
-        printWens: String(r[kPrint] || "").trim(),
-        voornemens: String(r[kVoornemens] || ""),
-        vragen: vraagKolommen.map(function (v) {
-          const waarde = r[v.index];
-          return {
-            nr: v.nr,
-            behaald: (waarde === "" || waarde === null || waarde === undefined) ? null : Number(waarde),
-            fouten: perVraag[v.nr] || []
-          };
-        })
-      };
-    });
+    if (!leerlingen.length) { overgeslagen.push(naam + " (nog geen inzendingen)"); return; }
+    toetsen.push({ toets: naam, leerlingen: leerlingen });
+  });
 
-  if (!leerlingen.length) {
-    const aanwezig = alles.map(function (r) { return String(r[kDocent]).trim(); })
-      .filter(function (d, i, a) { return d && a.indexOf(d) === i; });
-    throw new Error('Geen inzendingen voor docent "' + DOCENT + '". Wel aanwezig: ' + aanwezig.join(", "));
-  }
+  if (!toetsen.length) throw new Error("Geen enkel tabblad met bruikbare inzendingen. Overgeslagen: " + overgeslagen.join(" | "));
 
-  const uit = JSON.stringify({ toets: TABBLAD, docent: DOCENT, leerlingen: leerlingen }, null, 1);
-  const bestandsnaam = "bundel-" + TABBLAD.replace(/[^\w]+/g, "-").toLowerCase() +
-                       (gewenst ? "-" + gewenst : "") + ".json";
-  const bestand = DriveApp.createFile(bestandsnaam, uit, MimeType.PLAIN_TEXT);
+  const uit = JSON.stringify({ toetsen: toetsen, overgeslagen: overgeslagen }, null, 1);
+  const datum = Utilities.formatDate(new Date(), Session.getScriptTimeZone(), "yyyy-MM-dd");
+  const bestand = DriveApp.createFile("bundel-export-" + datum + ".json", uit, MimeType.PLAIN_TEXT);
 
-  Logger.log(leerlingen.length + " inzending(en) geexporteerd.");
+  Logger.log(toetsen.map(function (t) { return t.toets + ": " + t.leerlingen.length; }).join(" | "));
+  if (overgeslagen.length) Logger.log("Overgeslagen: " + overgeslagen.join(" | "));
   Logger.log("Bestand: " + bestand.getUrl());
   return bestand.getUrl();
 }
