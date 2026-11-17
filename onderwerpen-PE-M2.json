@@ -1,0 +1,908 @@
+{
+ "schema": "remendel-onderwerpen/1",
+ "boek": "PE-M2",
+ "onderwerpen": [
+  {
+   "id": "M2-H1-01",
+   "label": "Vraag en de wet van de vraag",
+   "hoofdstuk": 1,
+   "paragrafen": [
+    "§1",
+    "§2"
+   ],
+   "begrippen": [
+    "gevraagde hoeveelheid",
+    "wet van de vraag"
+   ],
+   "synoniemen": [
+    "vraag",
+    "individuele vraag",
+    "vraag naar een product"
+   ],
+   "wds": [
+    "D",
+    "S"
+   ],
+   "aantal_opgaven": 26
+  },
+  {
+   "id": "M2-H1-02",
+   "label": "Betalingsbereidheid",
+   "hoofdstuk": 1,
+   "paragrafen": [
+    "§1",
+    "§2"
+   ],
+   "begrippen": [
+    "betalingsbereidheid"
+   ],
+   "synoniemen": [
+    "maximale prijs",
+    "wil betalen"
+   ],
+   "wds": [
+    "D",
+    "S",
+    "W"
+   ],
+   "aantal_opgaven": 18
+  },
+  {
+   "id": "M2-H1-03",
+   "label": "Consumentensurplus",
+   "hoofdstuk": 1,
+   "paragrafen": [
+    "§2"
+   ],
+   "begrippen": [
+    "collectief consumentensurplus"
+   ],
+   "synoniemen": [
+    "consumentensurplus",
+    "CS"
+   ],
+   "wds": [
+    "D",
+    "S",
+    "W"
+   ],
+   "aantal_opgaven": 43
+  },
+  {
+   "id": "M2-H1-04",
+   "label": "De vraaglijn opstellen, tekenen en aflezen",
+   "hoofdstuk": 1,
+   "paragrafen": [
+    "§1",
+    "§2"
+   ],
+   "begrippen": [
+    "collectieve vraaglijn",
+    "prijs-afzetlijn"
+   ],
+   "synoniemen": [
+    "vraaglijn",
+    "vraagfunctie",
+    "Qv",
+    "collectieve vraag",
+    "vragers"
+   ],
+   "wds": [
+    "D",
+    "S",
+    "W"
+   ],
+   "aantal_opgaven": 87
+  },
+  {
+   "id": "M2-H1-05",
+   "label": "Verschuiving van de vraaglijn",
+   "hoofdstuk": 1,
+   "paragrafen": [
+    "§2"
+   ],
+   "begrippen": [
+    "substitueerbaar product",
+    "complementair product",
+    "exogene factor"
+   ],
+   "synoniemen": [
+    "substituut",
+    "complementair",
+    "verschuiving vraaglijn",
+    "exogeen"
+   ],
+   "wds": [
+    "D",
+    "S",
+    "W"
+   ],
+   "aantal_opgaven": 27
+  },
+  {
+   "id": "M2-H1-06",
+   "label": "Afzetgebied",
+   "hoofdstuk": 1,
+   "paragrafen": [
+    "§2"
+   ],
+   "begrippen": [
+    "afzetgebied"
+   ],
+   "synoniemen": [
+    "afzetgebied"
+   ],
+   "wds": [
+    "D",
+    "S"
+   ],
+   "aantal_opgaven": 9
+  },
+  {
+   "id": "M2-H1-07",
+   "label": "Prijselasticiteit berekenen",
+   "hoofdstuk": 1,
+   "paragrafen": [
+    "§3",
+    "§5"
+   ],
+   "begrippen": [
+    "prijselasticiteit van de vraag"
+   ],
+   "synoniemen": [
+    "prijselasticiteit",
+    "elasticiteit van de vraag"
+   ],
+   "wds": [
+    "D",
+    "S"
+   ],
+   "aantal_opgaven": 52
+  },
+  {
+   "id": "M2-H1-08",
+   "label": "Elastische en inelastische vraag herkennen",
+   "hoofdstuk": 1,
+   "paragrafen": [
+    "§3",
+    "§5"
+   ],
+   "begrippen": [
+    "elastische vraag",
+    "inelastische vraag"
+   ],
+   "synoniemen": [
+    "elastisch",
+    "inelastisch",
+    "gevoelig voor prijsveranderingen"
+   ],
+   "wds": [
+    "D",
+    "S"
+   ],
+   "aantal_opgaven": 24
+  },
+  {
+   "id": "M2-H1-09",
+   "label": "Prijselasticiteit en omzet",
+   "hoofdstuk": 1,
+   "paragrafen": [
+    "§3",
+    "§5"
+   ],
+   "begrippen": [
+    "omzet"
+   ],
+   "synoniemen": [
+    "omzet en elasticiteit",
+    "gevolg voor de omzet"
+   ],
+   "wds": [
+    "D",
+    "S"
+   ],
+   "aantal_opgaven": 18
+  },
+  {
+   "id": "M2-H1-10",
+   "label": "Inkomenselasticiteit berekenen",
+   "hoofdstuk": 1,
+   "paragrafen": [
+    "§4",
+    "§5"
+   ],
+   "begrippen": [
+    "inkomenselasticiteit"
+   ],
+   "synoniemen": [
+    "inkomenselasticiteit"
+   ],
+   "wds": [
+    "D",
+    "S",
+    "W"
+   ],
+   "aantal_opgaven": 23
+  },
+  {
+   "id": "M2-H1-11",
+   "label": "Goederensoorten en de inkomenselasticiteit",
+   "hoofdstuk": 1,
+   "paragrafen": [
+    "§4",
+    "§5"
+   ],
+   "begrippen": [
+    "normaal goed",
+    "inferieur goed",
+    "indifferent goed",
+    "luxe goed",
+    "noodzakelijk goed"
+   ],
+   "synoniemen": [
+    "soort goed",
+    "goederensoort",
+    "luxe",
+    "noodzakelijk",
+    "inferieur",
+    "indifferent"
+   ],
+   "wds": [
+    "D",
+    "S",
+    "W"
+   ],
+   "aantal_opgaven": 25
+  },
+  {
+   "id": "M2-H2-01",
+   "label": "Productiefactoren en het productieproces",
+   "hoofdstuk": 2,
+   "paragrafen": [
+    "§1"
+   ],
+   "begrippen": [
+    "productiefactor",
+    "kapitaal",
+    "arbeid",
+    "natuur",
+    "ondernemerschap",
+    "kennis",
+    "produceren"
+   ],
+   "synoniemen": [
+    "productieproces",
+    "productiefactoren",
+    "locatie"
+   ],
+   "wds": [
+    "D",
+    "S"
+   ],
+   "aantal_opgaven": 20
+  },
+  {
+   "id": "M2-H2-02",
+   "label": "De productiefunctie",
+   "hoofdstuk": 2,
+   "paragrafen": [
+    "§1"
+   ],
+   "begrippen": [
+    "productiefunctie"
+   ],
+   "synoniemen": [
+    "productiefunctie",
+    "arbeidsproductiviteit"
+   ],
+   "wds": [
+    "D",
+    "S"
+   ],
+   "aantal_opgaven": 8
+  },
+  {
+   "id": "M2-H2-03",
+   "label": "Kostensoorten: vast, variabel en totaal",
+   "hoofdstuk": 2,
+   "paragrafen": [
+    "§2"
+   ],
+   "begrippen": [
+    "vaste kosten",
+    "constante kosten",
+    "variabele kosten",
+    "totale kosten",
+    "productiekosten"
+   ],
+   "synoniemen": [
+    "TK",
+    "TCK",
+    "TVK",
+    "CK",
+    "VK",
+    "kostensoorten"
+   ],
+   "wds": [
+    "D",
+    "S",
+    "W"
+   ],
+   "aantal_opgaven": 66
+  },
+  {
+   "id": "M2-H2-04",
+   "label": "Gemiddelde kosten en het verloop van de GTK-lijn",
+   "hoofdstuk": 2,
+   "paragrafen": [
+    "§2"
+   ],
+   "begrippen": [
+    "gemiddelde totale kosten",
+    "gemiddelde constante kosten",
+    "gemiddelde variabele kosten"
+   ],
+   "synoniemen": [
+    "GTK",
+    "GCK",
+    "GVK",
+    "gemiddelde kosten"
+   ],
+   "wds": [
+    "D",
+    "S",
+    "W"
+   ],
+   "aantal_opgaven": 27
+  },
+  {
+   "id": "M2-H2-05",
+   "label": "Marginale kosten",
+   "hoofdstuk": 2,
+   "paragrafen": [
+    "§2"
+   ],
+   "begrippen": [
+    "marginale kosten"
+   ],
+   "synoniemen": [
+    "MK"
+   ],
+   "wds": [
+    "D",
+    "S",
+    "W"
+   ],
+   "aantal_opgaven": 27
+  },
+  {
+   "id": "M2-H2-06",
+   "label": "Progressief, proportioneel en degressief variabele kosten",
+   "hoofdstuk": 2,
+   "paragrafen": [
+    "§2"
+   ],
+   "begrippen": [
+    "progressief variabele kosten",
+    "proportioneel variabele kosten",
+    "degressief variabele kosten"
+   ],
+   "synoniemen": [
+    "progressief",
+    "proportioneel",
+    "degressief"
+   ],
+   "wds": [
+    "D",
+    "S",
+    "W"
+   ],
+   "aantal_opgaven": 13
+  },
+  {
+   "id": "M2-H2-07",
+   "label": "Totale opbrengst en omzet",
+   "hoofdstuk": 2,
+   "paragrafen": [
+    "§3"
+   ],
+   "begrippen": [
+    "totale opbrengst",
+    "omzet",
+    "afzet"
+   ],
+   "synoniemen": [
+    "TO",
+    "marktomzet",
+    "opbrengst"
+   ],
+   "wds": [
+    "D",
+    "S"
+   ],
+   "aantal_opgaven": 45
+  },
+  {
+   "id": "M2-H2-08",
+   "label": "Gemiddelde en marginale opbrengst",
+   "hoofdstuk": 2,
+   "paragrafen": [
+    "§3"
+   ],
+   "begrippen": [
+    "gemiddelde opbrengst",
+    "marginale opbrengst"
+   ],
+   "synoniemen": [
+    "GO",
+    "MO"
+   ],
+   "wds": [
+    "D",
+    "S",
+    "W"
+   ],
+   "aantal_opgaven": 13
+  },
+  {
+   "id": "M2-H2-09",
+   "label": "Winst en winstmaximalisatie",
+   "hoofdstuk": 2,
+   "paragrafen": [
+    "§3"
+   ],
+   "begrippen": [
+    "winst"
+   ],
+   "synoniemen": [
+    "totale winst",
+    "TW",
+    "maximale winst",
+    "verlies"
+   ],
+   "wds": [
+    "D",
+    "S",
+    "W"
+   ],
+   "aantal_opgaven": 47
+  },
+  {
+   "id": "M2-H2-10",
+   "label": "Break-evenpunt",
+   "hoofdstuk": 2,
+   "paragrafen": [
+    "§3"
+   ],
+   "begrippen": [
+    "break-evenpoint"
+   ],
+   "synoniemen": [
+    "break-even",
+    "quitte draaien",
+    "kostendekkend"
+   ],
+   "wds": [
+    "D",
+    "S",
+    "W"
+   ],
+   "aantal_opgaven": 33
+  },
+  {
+   "id": "M2-H2-11",
+   "label": "Collectief aanbod en de aanbodlijn",
+   "hoofdstuk": 2,
+   "paragrafen": [
+    "§4",
+    "§5"
+   ],
+   "begrippen": [
+    "collectief aanbod",
+    "collectieve aanbodlijn"
+   ],
+   "synoniemen": [
+    "aanbodlijn",
+    "Qa",
+    "aanbieders",
+    "aanbod"
+   ],
+   "wds": [
+    "D",
+    "S",
+    "W"
+   ],
+   "aantal_opgaven": 46
+  },
+  {
+   "id": "M2-H2-12",
+   "label": "Producentensurplus",
+   "hoofdstuk": 2,
+   "paragrafen": [
+    "§4",
+    "§5"
+   ],
+   "begrippen": [
+    "collectief producentensurplus"
+   ],
+   "synoniemen": [
+    "producentensurplus",
+    "PS"
+   ],
+   "wds": [
+    "D",
+    "S",
+    "W"
+   ],
+   "aantal_opgaven": 31
+  },
+  {
+   "id": "M2-H3-01",
+   "label": "Marktevenwicht berekenen en aflezen",
+   "hoofdstuk": 3,
+   "paragrafen": [
+    "§1",
+    "§2",
+    "§3"
+   ],
+   "begrippen": [
+    "marktevenwicht",
+    "evenwichtsprijs",
+    "evenwichtshoeveelheid"
+   ],
+   "synoniemen": [
+    "evenwicht",
+    "snijpunt vraag en aanbod"
+   ],
+   "wds": [
+    "D",
+    "S",
+    "W"
+   ],
+   "aantal_opgaven": 36
+  },
+  {
+   "id": "M2-H3-02",
+   "label": "Vraagoverschot en aanbodoverschot",
+   "hoofdstuk": 3,
+   "paragrafen": [
+    "§1",
+    "§2",
+    "§3"
+   ],
+   "begrippen": [
+    "vraagoverschot",
+    "aanbodoverschot"
+   ],
+   "synoniemen": [
+    "overschot",
+    "tekort"
+   ],
+   "wds": [
+    "D",
+    "S",
+    "W"
+   ],
+   "aantal_opgaven": 17
+  },
+  {
+   "id": "M2-H3-03",
+   "label": "Prijsmechanisme en vrije prijsvorming",
+   "hoofdstuk": 3,
+   "paragrafen": [
+    "§1",
+    "§3"
+   ],
+   "begrippen": [
+    "prijsmechanisme",
+    "onzichtbare hand",
+    "vrije prijsvorming"
+   ],
+   "synoniemen": [
+    "marktmechanisme",
+    "Adam Smith",
+    "marktmeester"
+   ],
+   "wds": [
+    "D",
+    "S",
+    "W"
+   ],
+   "aantal_opgaven": 19
+  },
+  {
+   "id": "M2-H3-04",
+   "label": "Totale surplus en welvaart",
+   "hoofdstuk": 3,
+   "paragrafen": [
+    "§1",
+    "§2",
+    "§3"
+   ],
+   "begrippen": [
+    "totale surplus",
+    "welvaart"
+   ],
+   "synoniemen": [
+    "TS",
+    "totaal surplus"
+   ],
+   "wds": [
+    "D",
+    "W"
+   ],
+   "aantal_opgaven": 9
+  },
+  {
+   "id": "M2-H3-05",
+   "label": "Gevolgen van een verschuiving voor het marktevenwicht",
+   "hoofdstuk": 3,
+   "paragrafen": [
+    "§2",
+    "§3"
+   ],
+   "begrippen": [],
+   "synoniemen": [
+    "nieuwe vraaglijn",
+    "nieuwe aanbodlijn",
+    "nieuw marktevenwicht",
+    "verschuiving"
+   ],
+   "wds": [
+    "D",
+    "S"
+   ],
+   "aantal_opgaven": 35
+  },
+  {
+   "id": "M2-A-01",
+   "label": "Procentuele verandering berekenen en terugrekenen",
+   "hoofdstuk": null,
+   "paragrafen": [],
+   "begrippen": [],
+   "synoniemen": [],
+   "feedback": "Bij deze vraag moest je rekenen met procenten. Wil je hier extra mee oefenen, bekijk dan het oefenboekje van Module 1 op Classroom.",
+   "wds": [
+    "D"
+   ],
+   "aantal_opgaven": 1
+  },
+  {
+   "id": "M2-A-02",
+   "label": "Rekenen met aantallen en bedragen: schatten, vermenigvuldigen, gemiddelde, saldo",
+   "hoofdstuk": null,
+   "paragrafen": [],
+   "begrippen": [],
+   "synoniemen": [],
+   "feedback": "Bij deze vraag moest je rekenen met aantallen en bedragen. Wil je hier extra mee oefenen, bekijk dan het oefenboekje van Module 1 op Classroom.",
+   "wds": [
+    "D"
+   ],
+   "aantal_opgaven": 5
+  }
+ ],
+ "buiten_toetsstof": [
+  {
+   "hoofdstuk": 1,
+   "label": "Individuele vraaglijn: formule, tekenen, snijpunten met de assen",
+   "waar": "§1 blz. 10 en 11, §2 blz. 21 en 22",
+   "reden": "Buiten de toetsstof geplaatst; de begrippenlijst kent alleen de collectieve vraaglijn",
+   "raakt": "§1: 2-III (15), 11b t/m 11e (18), 14a, 14b (19), 14e (19) · §2: 1-IV (25), 3a t/m 3c (26), 5a t/m 5d (27), 6b (27) · §5: 4a (47), 9a (49), 9f (50)",
+   "advies": "Buiten de stof laten"
+  },
+  {
+   "hoofdstuk": 1,
+   "label": "Individueel consumentensurplus",
+   "waar": "§1 blz. 9 en 11, §2 blz. 24",
+   "reden": "Buiten de toetsstof geplaatst; de begrippenlijst kent alleen het collectieve consumentensurplus",
+   "raakt": "§1: 2-V (15), 6c, 6d (17), 7f (17), 11f (18), 12c (19), 13-I t/m 13-V (19), 14c, 14d (19) · §2: 1-V (25), 3f, 3g (26), 5h (27), 6a (27), 8d (28), 9c (29) · §5: 4b, 4c (47), 10a t/m 10c (50)",
+   "advies": "Buiten de stof laten"
+  },
+  {
+   "hoofdstuk": 1,
+   "label": "Kanteling van de vraaglijn bij een groter aantal consumenten",
+   "waar": "§2 blz. 22 en 23, bron 4 op blz. 23",
+   "reden": "Buiten de toetsstof geplaatst: alleen evenwijdige verschuivingen zijn stof",
+   "raakt": "Geen opgave toetst het kantelen rechtstreeks",
+   "advies": "Theorie overslaan; let op dat leerlingen kantelen en verschuiven niet door elkaar halen"
+  },
+  {
+   "hoofdstuk": 1,
+   "label": "Praktijkonderzoek 'De bereidheid om te betalen voor Fairtrade-koffie'",
+   "waar": "§1 blz. 9, bron 3",
+   "reden": "Praktijkonderzoek: de begrippen die hier worden geïntroduceerd horen niet tot de leerstof",
+   "raakt": "§1: 4a (16), 4d (16)",
+   "advies": "Buiten de stof laten; 4b en 4c blijven op Ja omdat die met substituten en complementen te maken zijn"
+  },
+  {
+   "hoofdstuk": 1,
+   "label": "Praktijkonderzoek 'De waarde van de prijselasticiteit' en 'De inkomenselasticiteit van benzine en diesel'",
+   "waar": "§3 blz. 32 en 33, §4 blz. 41",
+   "reden": "De onderzoeksuitkomsten zelf horen niet tot de leerstof",
+   "raakt": "Geen opgaven op Nee",
+   "advies": "De opgaven 6 (§3) en 9 (§4) staan op Ja: ze zijn te maken met prijselasticiteit of inkomenselasticiteit plus de bijgeleverde tabel"
+  },
+  {
+   "hoofdstuk": 2,
+   "label": "Meeropbrengsten en afnemende meeropbrengsten",
+   "waar": "§1 blz. 55",
+   "reden": "Ondersteunend begrip: helpt om het kostenverloop te begrijpen, maar hoort niet tot de toetsstof en staat niet in de begrippenlijst",
+   "raakt": "§1: 2-V (57), 8a (59), 9c t/m 9e (59), 10a, 10b (60)",
+   "advies": "Wel in de les behandelen, niet toetsen"
+  },
+  {
+   "hoofdstuk": 2,
+   "label": "Arbeidsmarktdefinities: beroepsbevolking, werkzame beroepsbevolking, werkgelegenheid, werkloosheid, werkgever, werknemer, arbeidsvoorwaarden, bruto- en nettoloon, loonkosten en arbeidsaanbodlijn",
+   "waar": "§1 blz. 53, §2 blz. 63 en §4 blz. 89, rubriek De arbeidsmarkt",
+   "reden": "Verplaatst naar de verplichte context Arbeidsmarkt; deze begrippen staan niet in de begrippenlijst van module 2",
+   "raakt": "§1: 2-I (57), 6a, 6b (58), 6d (58), 6e, 6f (59) · §2: 6a t/m 6c (72) · §4: 8c (93) · §5: 7a, 7b (98), 7e (98)",
+   "advies": "Buiten de stof laten; het marktmechanisme op de arbeidsmarkt blijft wel stof"
+  },
+  {
+   "hoofdstuk": 2,
+   "label": "Individuele aanbodlijn: formule, tekenen, geldigheidsbereik",
+   "waar": "§4 blz. 84 tot en met 87",
+   "reden": "Buiten de toetsstof geplaatst; de begrippenlijst kent alleen de collectieve aanbodlijn",
+   "raakt": "§4: 1-I (90), 1-V (90), 3c (91), 4a (92), 4c (92), 9b (93), 9i (94) · §5: 6a (97)",
+   "advies": "Buiten de stof laten; opgaven waarin de collectieve aanbodlijn wordt afgeleid of getekend blijven op Ja"
+  },
+  {
+   "hoofdstuk": 2,
+   "label": "Individueel producentensurplus",
+   "waar": "§3 blz. 78, §4 blz. 85 en 86",
+   "reden": "Buiten de toetsstof geplaatst; de begrippenlijst kent alleen het collectieve producentensurplus",
+   "raakt": "§3: 10a (83), 10d (83) · §4: 3e, 3f (91), 4f (92), 6a (92), 7a (93), 9d (93), 9k, 9l (94) · §5: 6b (97)",
+   "advies": "Buiten de stof laten; opgaven waarin het collectieve producentensurplus wordt berekend blijven op Ja"
+  },
+  {
+   "hoofdstuk": 2,
+   "label": "Opofferingskosten",
+   "waar": "§1 blz. 53 en §4 blz. 89, rubriek De arbeidsmarkt",
+   "reden": "Staat niet in de begrippenlijst van module 2 en stond in module 1 al buiten de toetsstof",
+   "raakt": "§1: 6c (58) · §4: 8a, 8b (93), 9h (94)",
+   "advies": "Buiten de stof laten"
+  },
+  {
+   "hoofdstuk": 2,
+   "label": "Halffabricaten",
+   "waar": "§1 blz. 52, §2 blz. 61 en 62, §5 blz. 95 (bron 1)",
+   "reden": "Buiten de toetsstof geplaatst; staat ook niet in de begrippenlijst",
+   "raakt": "§2: 1-V (71)",
+   "advies": "Buiten de stof laten"
+  },
+  {
+   "hoofdstuk": 3,
+   "label": "Individuele vraaglijn",
+   "waar": "§3 blz. 125, bron 11",
+   "reden": "Buiten de toetsstof geplaatst",
+   "raakt": "§3: 8a (125)",
+   "advies": "Buiten de stof laten; 8d en 8e blijven op Ja omdat daar de collectieve vraaglijn wordt afgeleid"
+  },
+  {
+   "hoofdstuk": 3,
+   "label": "Individuele aanbodlijn",
+   "waar": "§2 blz. 117 en §3 blz. 121, 122 en 125 (opgaven)",
+   "reden": "Buiten de toetsstof geplaatst; de begrippenlijst kent alleen de collectieve aanbodlijn",
+   "raakt": "§2: 8a t/m 8c (117) · §3: 4b (121), 4g (122), 8b (125)",
+   "advies": "Buiten de stof laten"
+  },
+  {
+   "hoofdstuk": 3,
+   "label": "Minimumprijs",
+   "waar": "Alleen in opgave 10 van §2, blz. 118",
+   "reden": "Wordt in de leertekst van module 2 niet behandeld en staat niet in de begrippenlijst",
+   "raakt": "§2: 10a t/m 10f (118)",
+   "advies": "Buiten de stof laten"
+  },
+  {
+   "hoofdstuk": 3,
+   "label": "Marginale kosten als startpunt van de (individuele) aanbodlijn",
+   "waar": "§3 blz. 121, bron 4",
+   "reden": "De afleiding van het aanbod uit de MK-lijn wordt niet behandeld; marginale kosten blijven als kostenbegrip wel stof",
+   "raakt": "§2: 9e (117) · §3: 4a, 4b (121), 4f, 4g (122)",
+   "advies": "Buiten de stof laten; 4c t/m 4e en 4h t/m 4k blijven op Ja omdat die met de gegeven collectieve aanbodlijn werken"
+  },
+  {
+   "hoofdstuk": 2,
+   "label": "Marginale kosten als startpunt van de (individuele) aanbodlijn",
+   "waar": "§4 blz. 84 tot en met 87, §5 blz. 97",
+   "reden": "De afleiding van de productieomvang uit MK = p wordt niet behandeld; marginale kosten blijven als kostenbegrip wel stof",
+   "raakt": "§1: 9b (59) · §3: 9e (83) · §4: 3b (91), 4b (92), 9c (93), 9j (94) · §5: 5a (97)",
+   "advies": "Buiten de stof laten; §4 6e (92) blijft op Ja omdat die met gegeven individuele formules rekent, en de opgaven waarin de collectieve aanbodlijn wordt opgeteld of getekend blijven ook op Ja"
+  }
+ ],
+ "wel_behandeld": [
+  {
+   "hoofdstuk": 1,
+   "begrip": "Volkomen inelastische vraag",
+   "waar": "§3 blz. 33",
+   "raakt": "§3: 1-III (35), 5e (36), 7c (36), 8 (37)",
+   "toelichting": "De lijst kent elastische en inelastische vraag, maar niet het grensgeval met een elasticiteit van 0"
+  },
+  {
+   "hoofdstuk": 1,
+   "begrip": "Individuele voorkeuren en beschikbaar budget",
+   "waar": "§1 blz. 12",
+   "raakt": "§1: 8-I t/m 8-VI (17), 9 (18), 12b (19) · §5: 6c (48)",
+   "toelichting": "Drie van de vijf factoren staan wél in de lijst (substitueerbaar product, complementair product, exogene factor); deze twee niet"
+  },
+  {
+   "hoofdstuk": 1,
+   "begrip": "Vraag naar producten en diensten",
+   "waar": "§1 blz. 7",
+   "raakt": "§1: 1a t/m 1d (15), 3a t/m 3c (16)",
+   "toelichting": "Het openingsbegrip van de module; de lijst begint pas bij gevraagde hoeveelheid"
+  },
+  {
+   "hoofdstuk": 1,
+   "begrip": "Primair goed",
+   "waar": "§4 blz. 40",
+   "raakt": "§4: 1-V (43), 4 (43)",
+   "toelichting": "Het boek gebruikt dit als synoniem voor noodzakelijk goed; alleen een naamsverschil"
+  },
+  {
+   "hoofdstuk": 2,
+   "begrip": "Productieomvang",
+   "waar": "§1 blz. 54, §2 blz. 61",
+   "raakt": "Vrijwel alle reken- en tekenopgaven van §2 tot en met §5",
+   "toelichting": "Het symbool q wordt overal gebruikt; de lijst kent wel afzet"
+  },
+  {
+   "hoofdstuk": 2,
+   "begrip": "Innovaties",
+   "waar": "§1 blz. 54",
+   "raakt": "Geen opgaven rechtstreeks",
+   "toelichting": "Onderdeel van de productiefactor ondernemerschap"
+  },
+  {
+   "hoofdstuk": 2,
+   "begrip": "Kostprijs",
+   "waar": "§2 blz. 65",
+   "raakt": "§5: 4b (96)",
+   "toelichting": "De lijst noemt het tussen haakjes bij de GTK; alleen een naamsverschil"
+  },
+  {
+   "hoofdstuk": 3,
+   "begrip": "Marktmeester",
+   "waar": "§1 blz. 104",
+   "raakt": "§1: 2-IV (107), 9d (110)",
+   "toelichting": "Wordt naast de onzichtbare hand behandeld en in twee opgaven getoetst"
+  },
+  {
+   "hoofdstuk": 3,
+   "begrip": "Arbeidsvraaglijn en arbeidsaanbodlijn",
+   "waar": "§1 blz. 103, hoofdstuk 2 §4 blz. 89",
+   "raakt": "§1: 7a t/m 7d (109) · §2: 5c, 5d (116)",
+   "toelichting": "Staan niet in de begrippenlijst. De opgaven blijven op Ja omdat ze het marktmechanisme toetsen: het loon als evenwichtsprijs en een verschuiving van de vraaglijn"
+  },
+  {
+   "hoofdstuk": 3,
+   "begrip": "Krapte op de arbeidsmarkt",
+   "waar": "§1 blz. 109 en §2 blz. 116 (opgaven en bronnen)",
+   "raakt": "§1: 7c, 7d (109) · §2: 5a (116)",
+   "toelichting": "Wordt alleen via opgaven en bronnen geïntroduceerd. De opgaven blijven op Ja: krapte is een vraagoverschot op de arbeidsmarkt, en dat begrip staat wel in de lijst"
+  }
+ ],
+ "aandachtspunten": [
+  {
+   "betreft": "Domein A",
+   "toelichting": "M2-A-01 en M2-A-02 hebben een vaste feedbacktekst die naar het oefenboekje van module 1 op Classroom verwijst; voor deze codes worden geen oefenopgaven uit module 2 gesuggereerd."
+  },
+  {
+   "betreft": "M2-H3-05",
+   "toelichting": "Dit onderwerp hangt niet aan een begrip uit de begrippenlijst. Het staat er omdat een leerling die de verkeerde lijn verschuift een ander gat heeft dan een leerling die de oorzaak van de verschuiving niet kent (M2-H1-05)."
+  },
+  {
+   "betreft": "Een onderwerp moet zelfstandig voorkomen",
+   "toelichting": "Elke code komt in minstens vier opgaven als enige code voor. Zonder zelfstandig voorkomen kan de feedbacktool een fout niet aan één onderwerp toeschrijven."
+  },
+  {
+   "betreft": "M2-H2-03 en M2-H2-05",
+   "toelichting": "Beide zijn groot (66 en 27 opgaven). Na de eerste toetsronde nagaan of een splitsing nodig is."
+  },
+  {
+   "betreft": "M2-H2-11",
+   "toelichting": "De collectieve aanbodlijn wordt in §4 en §5 opgebouwd uit individuele uitkomsten die nu buiten de stof vallen. Bij het behandelen de individuele stap overslaan en meteen met het gegeven collectieve aanbod werken."
+  }
+ ]
+}
