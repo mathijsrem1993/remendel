@@ -45,8 +45,8 @@
       "max": 2,
       "oefenBoekje": "",
       "oefenPE": "",
-      "algemeneFeedback": "Oefen met de rekenopgaven in paragraaf 1.3 (Prijselasticiteit) van je oefenboekje M2. Schrijf eerst %ΔQv en %ΔP apart uit en deel daarna pas.",
-      "specifiek": "Eerst de nieuwe afzet uitrekenen met de vraagfunctie (195 kaartjes), dan pas de procentuele veranderingen. Schrijf eerst %ΔQv en %ΔP apart uit en deel daarna pas."
+      "algemeneFeedback": "Oefen met de rekenopgaven in paragraaf 1.3 (Prijselasticiteit) van je oefenboekje M2. Schrijf eerst de procentuele verandering van Qv en van P apart uit en deel daarna pas.",
+      "specifiek": "Eerst de nieuwe afzet uitrekenen met de vraagfunctie (195 kaartjes), dan pas de procentuele veranderingen. Schrijf eerst de procentuele verandering van Qv en van P apart uit en deel daarna pas."
     },
     {
       "nr": "3",
@@ -98,8 +98,8 @@
       "max": 2,
       "oefenBoekje": "",
       "oefenPE": "",
-      "algemeneFeedback": "Oefen met de rekenopgaven in paragraaf 1.3 van je oefenboekje M2 waarbij de elasticiteit gegeven is. Reken eerst %ΔQv uit (Ev × %ΔP) en pas dat daarna toe op de oude afzet.",
-      "specifiek": "Reken eerst %ΔQv uit (Ev × %ΔP) en pas dat daarna toe op de oude afzet."
+      "algemeneFeedback": "Oefen met de rekenopgaven in paragraaf 1.3 van je oefenboekje M2 waarbij de elasticiteit gegeven is. Reken eerst de procentuele verandering van Qv uit (Ev × procentuele verandering van P) en pas dat daarna toe op de oude afzet.",
+      "specifiek": "Reken eerst de procentuele verandering van Qv uit (Ev × procentuele verandering van P) en pas dat daarna toe op de oude afzet."
     },
     {
       "nr": "7",
@@ -189,8 +189,8 @@
       "max": 2,
       "oefenBoekje": "",
       "oefenPE": "",
-      "algemeneFeedback": "Oefen met de rekenopgaven in paragraaf 1.4 van je oefenboekje M2. Reken eerst Qv uit bij het oude en het nieuwe inkomen, daarna %ΔQv en %ΔI.",
-      "specifiek": "Reken eerst Qv uit bij het oude en het nieuwe inkomen, daarna %ΔQv en %ΔI."
+      "algemeneFeedback": "Oefen met de rekenopgaven in paragraaf 1.4 van je oefenboekje M2. Reken eerst Qv uit bij het oude en het nieuwe inkomen, daarna de procentuele verandering van Qv en van het inkomen.",
+      "specifiek": "Reken eerst Qv uit bij het oude en het nieuwe inkomen, daarna de procentuele verandering van Qv en van het inkomen."
     }
   ]
 }
