@@ -325,7 +325,7 @@
 
     <div id="wds-sectie">
       <h2>Bij welk vraagniveau valt voor jou winst te halen?</h2>
-      <p class="sectie-uitleg">Elke vraag vraagt iets anders van je: bij Weten moet je je kennis paraat hebben, bij Doen moet je iets uitvoeren zoals rekenen of een grafiek tekenen, en bij Snappen moet je iets uitleggen of verklaren. Hieronder zie je per soort vraag hoeveel punten je haalde, zodat je weet waar je voorbereiding het meeste oplevert.</p>
+      <p class="sectie-uitleg" id="wds-uitleg">Elke vraag vraagt iets anders van je: bij Weten moet je je kennis paraat hebben, bij Doen moet je iets uitvoeren zoals rekenen of een grafiek tekenen, en bij Snappen moet je iets uitleggen of verklaren. Hieronder zie je per soort vraag hoeveel punten je haalde, zodat je weet waar je voorbereiding het meeste oplevert.</p>
       <div id="wds-winst"></div>
     </div>
 
@@ -599,6 +599,37 @@ const WDS_ADVIES = {
     "Bedenk zelf een toetsvraag over de stof en schrijf het antwoordmodel erbij."
   ] }
 };
+
+// Uitleg en Snappen-tip passen zich aan de niveaus in de toets aan: een toets
+// zonder Weten-vragen noemt Weten nergens (bv. 4h-pw-m2-h1). Met alle drie de
+// niveaus blijven de teksten exact zoals ze waren.
+function wdsInToets() {
+  const aanwezig = new Set(TOETS.vragen.filter(v => v.max > 0).map(v => v.wds));
+  return ["W", "D", "S"].filter(k => aanwezig.has(k));
+}
+function wdsUitlegTekst() {
+  const delen = {
+    W: "bij Weten moet je je kennis paraat hebben",
+    D: "bij Doen moet je iets uitvoeren zoals rekenen of een grafiek tekenen",
+    S: "bij Snappen moet je iets uitleggen of verklaren"
+  };
+  const z = wdsInToets().map(k => delen[k]);
+  const opsomming = z.length === 3 ? `${z[0]}, ${z[1]}, en ${z[2]}`
+                  : z.length === 2 ? `${z[0]} en ${z[1]}` : (z[0] || "");
+  return `Elke vraag vraagt iets anders van je: ${opsomming}. Hieronder zie je per soort vraag hoeveel punten je haalde, zodat je weet waar je voorbereiding het meeste oplevert.`;
+}
+function wdsIntro(key) {
+  const intro = WDS_ADVIES[key].intro;
+  if (key !== "S") return intro;
+  const ervoor = wdsInToets().filter(k => k !== "S");
+  if (ervoor.length === 2) return intro;
+  const basis = "Bij vragen waarbij je iets moet uitleggen of verklaren valt voor jou de meeste winst te behalen.";
+  if (ervoor.length === 0) return basis;
+  return ervoor[0] === "D"
+    ? basis + " Snappen begint wel bij het onderdeel hierboven: zonder oefening kom je hier niet."
+    : basis + " Snappen begint wel bij het onderdeel hierboven: zonder de begrippen kom je hier niet.";
+}
+
 
 // Rekent per WDS-niveau (elke vraag heeft er precies één) uit hoeveel
 // punten de leerling haalde van het totaal in dat niveau.
@@ -1389,6 +1420,7 @@ async function maakFeedback() {
     });
   }
 
+  document.getElementById("wds-uitleg").textContent = wdsUitlegTekst();
   // WDS-winst: score per niveau (Weten/Doen/Snappen). Alle niveaus met
   // punten worden altijd getoond, met een balk zoals bij de fouttypen —
   // ook bij 100%, want dat geeft ook inzicht.
@@ -1402,7 +1434,7 @@ async function maakFeedback() {
     const advies = WDS_ADVIES[s.key];
     const inhoud = s.pct === 100
       ? `<p class="staaf-tip"><strong>Tip:</strong> ${esc(wdsHeelGoedTekst)}</p>`
-      : `<p class="staaf-tip"><strong>Tip:</strong> ${esc(advies.intro)}</p>
+      : `<p class="staaf-tip"><strong>Tip:</strong> ${esc(wdsIntro(s.key))}</p>
          <ul style="margin:8px 0 0;padding-left:20px;">${advies.tips.map(t => `<li>${esc(t)}</li>`).join("")}</ul>`;
     return `<div class="staaf-kaart">
       <div class="staaf-rij">
@@ -1852,12 +1884,12 @@ function maakPdf(res, geefTerug) {
   if (!mavoWeergave()) {
     doc.addPage(); y = marge;
     kop("Bij welk vraagniveau valt voor jou winst te halen?");
-    tekst("Elke vraag vraagt iets anders van je: bij Weten moet je je kennis paraat hebben, bij Doen moet je iets uitvoeren zoals rekenen of een grafiek tekenen, en bij Snappen moet je iets uitleggen of verklaren. Hieronder zie je per soort vraag hoeveel punten je haalde, zodat je weet waar je voorbereiding het meeste oplevert.");
+    tekst(wdsUitlegTekst());
     y += 4; // witregel tussen de uitleg en het eerste niveau
     const wdsHeelGoedTekst = "Heel goed, je hebt alle vragen in deze categorie goed beantwoord. Zorg ervoor dat je je op eenzelfde manier voor dit soort vragen voorbereidt op de volgende toets.";
     res.wdsScores.filter(s => s.max > 0).forEach(s => {
       const advies = WDS_ADVIES[s.key];
-      const tipTekst = s.pct === 100 ? wdsHeelGoedTekst : advies.intro;
+      const tipTekst = s.pct === 100 ? wdsHeelGoedTekst : wdsIntro(s.key);
       const tips = s.pct === 100 ? [] : advies.tips;
       let blokH = hoogte(advies.naam, { size: 11, stijl: "bold", extra: 5 }) + 7; // kop + balk
       blokH += hoogte(tipTekst, { label: "Tip:" });
