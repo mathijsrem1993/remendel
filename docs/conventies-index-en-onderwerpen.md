@@ -64,7 +64,9 @@ Regels:
 
 Een A-code krijgt `hoofdstuk: null`. Hij wordt alleen aangemaakt voor een rekenvaardigheid die **niet** aan een vakinhoudelijk onderwerp van dat boek vastzit. Een procentsom die een tussenstap is in een elasticiteitsopgave hoort bij de elasticiteit, niet bij Domein A; alleen een som die los staat van elk onderwerp krijgt een A-code.
 
-Een A-code mag een veld `feedback` hebben met een vaste tekst. Staat die er, dan toont de tool die tekst in plaats van oefenopgaven uit de eigen module. Dat is de uitweg wanneer een module te weinig losse rekenopgaven bevat om zinnig naar te verwijzen: M2 heeft er zes, verdeeld over twee codes, en verwijst daarom in de feedbacktekst naar het oefenboekje van M1 op Classroom. De regel dat een toets van een module alleen naar opgaven van diezelfde module verwijst blijft daarmee overeind, want er komt geen opgave uit een ander boek in de suggestielijst terecht.
+Een A-code mag een veld `feedback` hebben met een vaste tekst. Bedoeling: wanneer een module te weinig losse rekenopgaven bevat om zinnig naar te verwijzen, krijgt de leerling die tekst in plaats van oefenopgaven. M2 heeft er zes, verdeeld over twee codes, en verwijst daarom in de feedbacktekst naar het oefenboekje van M1 op Classroom.
+
+**Let op: de feedbacktool leest dit veld nog niet.** Alleen het bouwscript van de Word-index drukt de tekst af. Koppel zo'n A-code daarom niet aan een toetsvraag en zet hem niet in `extra` van de stofafbakening, anders krijgt de leerling toch de enkele losse opgave aangeraden, of ziet hij de code terug in de lijst met niet-getoetste stof. Wil je bij een rekenvraag de vaste tekst tonen, geef die vraag dan `geenOefenadvies: true` en zet de tekst in `algemeneFeedback`. Zo is het bij PW M2 H1 gedaan: geen enkele vraag draagt een M2-A-code.
 
 ---
 
@@ -106,7 +108,7 @@ onderwerpen[]
   synoniemen[]              alternatieve schrijfwijzen, zodat matching niet breekt
   wds[]                     welke niveaus voorkomen (afgeleid, niet handmatig)
   aantal_opgaven            afgeleid, niet handmatig
-  feedback                  optioneel, alleen bij A-codes: vaste tekst in plaats van opgavesuggesties
+  feedback                  optioneel, alleen bij A-codes: vaste tekst (nog niet gelezen door de feedbacktool, zie Domein A)
 buiten_toetsstof[]
   hoofdstuk, label, waar, reden
   raakt                     optioneel: welke opgaven het raakt, als tekst
@@ -151,6 +153,20 @@ rijen[]
 
 **Het veld `rekentip`** is optioneel en hoort bij het boek, niet bij de algemene tiptekst. Hij wordt achter de tip bij rekenfouten geplakt, zodat die naar het oefenmateriaal van dát boek kan verwijzen. Pincode heeft Rekenopdrachten achter in elk hoofdstuk en een rekentrainer online; Praktische Economie heeft die rubrieken niet en laat het veld dus weg. Ontbreekt het, dan blijft de tip precies zoals hij in de tool staat.
 
+### Toetsbestanden: `boek`, `stofafbakening` en onderwerpen per vraag
+
+Een toets gebruikt de index en de onderwerpen pas als drie dingen kloppen. Alleen `"boek"` invullen doet niets zichtbaars.
+
+- **`boek`**: het boek-id, bijvoorbeeld `"PE-M2"`. Daarmee laadt de tool `index-PE-M2.json` en `onderwerpen-PE-M2.json`.
+- **`stofafbakening`**: `hoofdstukken` (de getoetste hoofdstukken), `extra` (losse codes erbij, meestal A-codes) en `uitgesloten` (codes eraf). Zonder dit blok blijft de handmatige lijst `nietGetoetst` staan en komt er geen berekende lijst "Niet alle stof is getoetst".
+- **`onderwerpen` per vraag**: de codes die de vraag toetst. Een vraag zonder codes, of met `geenOefenadvies: true`, krijgt geen oefenopgaven.
+
+**Oefenopgaven komen alleen uit de getoetste hoofdstukken.** Een opgave uit H3 kan ook een H1- of A-code dragen (een herhalingsopdracht, een rekensom). Zonder filter zou een leerling die alleen H1 heeft gehad die opgave aangeraden krijgen. `rijBinnenHoofdstukken` in `scripts/stofafbakening.js` houdt die buiten de deur. Bij lesboekregels telt het veld `hoofdstuk`; bij oefenboekjeregels wordt het hoofdstuk afgeleid uit de sectienaam ("1.3 …", "gemengd H2", "H2 §3"). Secties waaruit geen hoofdstuk valt af te leiden, zoals "gemengd M1" of "procenten", blijven altijd meedoen. Geef oefenboeksecties daarom een naam waar het hoofdstuk uit blijkt.
+
+**`algemeneFeedback` verschijnt alleen bij `geenOefenadvies: true`.** Krijgt een vraag codes en dus oefenopgaven, dan valt die tekst weg. Zet een aanwijzing die moet blijven staan in `specifiek`; die verschijnt als "Tip van je docent".
+
+**Na het koppelen van een toets:** zet hem in `BEKENDE_TOETSEN` in `controle.html` en controleer daar het label, de stofafbakening en de onderwerpen die niet getoetst zijn. Bovenaan die pagina draait een vaste controle op de toets PW M1 H1+H2. Verandert de rekenlogica bewust, pas dan de verwachte getallen aan en schrijf in het commentaar waarom.
+
 ### Toetsbestanden: `weergave`
 
 **Elke toets voor 4 mavo krijgt `"weergave": "mavo"`.** Zonder dat veld valt de toets terug op de gewone (havo-)weergave, en dat is bij een mavotoets altijd een fout en geen keuze. Het veld is een opmaakkeuze voor de doelgroep en staat los van `boek`: het boek bepaalt waar de oefenverwijzingen vandaan komen, de weergave bepaalt hoe de feedback eruitziet.
@@ -187,7 +203,7 @@ Automatisch toekennen op de omschrijving werkt, maar controleer handmatig. Index
 ## 8. Werkwijze per boek
 
 1. **Brondocumenten inlezen.** Index van het lesboek, index van het oefenboekje, en het oefenboekje zelf voor de begrippenlijst.
-2. **Onderwerpen ontwerpen per hoofdstuk**, met punt 4 als richtlijn. Eerst voorleggen, dan pas doorwerken.
+2. **Onderwerpen ontwerpen per hoofdstuk**, met hoofdstuk 5 als richtlijn. Eerst voorleggen, dan pas doorwerken.
 3. **Elke opgave koppelen.** Een opgave mag aan meerdere onderwerpen hangen, ook aan een onderwerp uit een ander hoofdstuk. In M1 raakten negen opgaven uit hoofdstuk 2 en 3 stof uit een eerder hoofdstuk. Die kruisverbanden zijn waardevol: zonder die koppeling zou een leerling met een gat bij schaarste de bijbehorende oefening uit hoofdstuk 3 nooit te zien krijgen.
 4. **Valideren.** Drie controles die altijd moeten slagen:
    - elke code die in de index voorkomt bestaat in het onderwerpenbestand
