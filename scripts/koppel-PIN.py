@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-"""Koppelt de indexregels van hoofdstuk 1 en 2 aan onderwerpcodes, valideert en
+"""Koppelt de indexregels van hoofdstuk 1, 2 en 3 aan onderwerpcodes, valideert en
 schrijft een controleoverzicht. De JSON is de bron; dit script vult alleen het
 veld onderwerpen en de afgeleide velden wds en aantal_opgaven."""
 import json, sys, collections
@@ -10,7 +10,8 @@ H1 = import_module("koppeling-h1".replace("-", "_")) if False else None
 import runpy
 _h1 = runpy.run_path(__file__.rsplit("/",1)[0] + "/koppeling-h1.py")
 _h2 = runpy.run_path(__file__.rsplit("/",1)[0] + "/koppeling-h2.py")
-KOPPELING = {1: _h1["H1"], 2: _h2["H2"]}
+_h3 = runpy.run_path(__file__.rsplit("/",1)[0] + "/koppeling-h3.py")
+KOPPELING = {1: _h1["H1"], 2: _h2["H2"], 3: _h3["H3"]}
 WDS_VOLGORDE = {"W": 0, "D": 1, "S": 2}
 
 def main(index_pad, onderwerpen_pad, overzicht_pad):
@@ -29,7 +30,12 @@ def main(index_pad, onderwerpen_pad, overzicht_pad):
         codes = tabel.get(rij["opgave"])
         if codes is None:
             fouten.append(f"opgave zonder koppeling: H{h} {rij['paragraaf']} {rij['opgave']}"); continue
-        rij["onderwerpen"] = ["PIN-" + c for c in codes.split()]
+        if codes == "BUITEN":
+            rij["stof"] = False
+            rij["onderwerpen"] = []
+        else:
+            rij["stof"] = True
+            rij["onderwerpen"] = ["PIN-" + c for c in codes.split()]
         gekoppeld += 1
 
     # controle 1: elke gebruikte code bestaat
@@ -56,12 +62,12 @@ def main(index_pad, onderwerpen_pad, overzicht_pad):
     ongebruikt = [o["id"] for o in ond["onderwerpen"] if o["aantal_opgaven"] == 0]
 
     idx["boek"]["status"] = ("alle acht hoofdstukken omgezet uit de Word-indexen; "
-        "hoofdstuk 1 en 2 gekoppeld aan onderwerpen, hoofdstuk 3 t/m 8 nog niet")
+        "hoofdstuk 1, 2 en 3 gekoppeld aan onderwerpen, hoofdstuk 4 t/m 8 nog niet")
     json.dump(idx, open(index_pad, "w", encoding="utf-8"), ensure_ascii=False, indent=2)
     json.dump(ond, open(onderwerpen_pad, "w", encoding="utf-8"), ensure_ascii=False, indent=2)
 
     # controleoverzicht
-    regels = ["# Controleoverzicht Pincode 4 · hoofdstuk 1 en 2", "",
+    regels = ["# Controleoverzicht Pincode 4 · hoofdstuk 1, 2 en 3", "",
               "Per onderwerp de opgaven die eraan gekoppeld zijn. Gesorteerd op code.",
               "Kolom W/D/S geeft het niveau, Blz. het gedrukte paginanummer.", ""]
     for o in ond["onderwerpen"]:

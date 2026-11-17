@@ -5,7 +5,7 @@
     "titel": "Pincode 4 · vmbo GL/TL",
     "niveau": "4 mavo (GL/TL)",
     "rekentip": "Oefenen: de Rekenopdrachten die je aan het eind van elk hoofdstuk vindt, of maak de rekentrainer in de online omgeving.",
-    "status": "alle acht hoofdstukken omgezet uit de Word-indexen; hoofdstuk 1 en 2 gekoppeld aan onderwerpen, hoofdstuk 3 t/m 8 nog niet"
+    "status": "alle acht hoofdstukken omgezet uit de Word-indexen; hoofdstuk 1, 2 en 3 gekoppeld aan onderwerpen, hoofdstuk 4 t/m 8 nog niet"
   },
   "legenda": {
     "W": "Weten",
@@ -4024,7 +4024,8 @@
       "blz": 55,
       "stof": true,
       "onderwerpen": [
-        "PIN-H2-15"
+        "PIN-H2-15",
+        "PIN-H3-15"
       ]
     },
     {
@@ -5680,7 +5681,9 @@
       "tags": [],
       "blz": 77,
       "stof": true,
-      "onderwerpen": []
+      "onderwerpen": [
+        "PIN-H3-01"
+      ]
     },
     {
       "bron": "lesboek",
@@ -5693,7 +5696,10 @@
       "tags": [],
       "blz": 77,
       "stof": true,
-      "onderwerpen": []
+      "onderwerpen": [
+        "PIN-H3-01",
+        "PIN-H1-03"
+      ]
     },
     {
       "bron": "lesboek",
@@ -5708,7 +5714,9 @@
       ],
       "blz": 77,
       "stof": true,
-      "onderwerpen": []
+      "onderwerpen": [
+        "PIN-H3-06"
+      ]
     },
     {
       "bron": "lesboek",
@@ -5723,7 +5731,9 @@
       ],
       "blz": 77,
       "stof": true,
-      "onderwerpen": []
+      "onderwerpen": [
+        "PIN-H3-07"
+      ]
     },
     {
       "bron": "lesboek",
@@ -5736,7 +5746,10 @@
       "tags": [],
       "blz": 77,
       "stof": true,
-      "onderwerpen": []
+      "onderwerpen": [
+        "PIN-H3-07",
+        "PIN-H3-09"
+      ]
     },
     {
       "bron": "lesboek",
@@ -5751,7 +5764,9 @@
       ],
       "blz": 77,
       "stof": true,
-      "onderwerpen": []
+      "onderwerpen": [
+        "PIN-H3-07"
+      ]
     },
     {
       "bron": "lesboek",
@@ -5766,7 +5781,9 @@
       ],
       "blz": 77,
       "stof": true,
-      "onderwerpen": []
+      "onderwerpen": [
+        "PIN-H3-08"
+      ]
     },
     {
       "bron": "lesboek",
@@ -5779,7 +5796,9 @@
       "tags": [],
       "blz": 77,
       "stof": true,
-      "onderwerpen": []
+      "onderwerpen": [
+        "PIN-H3-08"
+      ]
     },
     {
       "bron": "lesboek",
@@ -5794,7 +5813,10 @@
       ],
       "blz": 77,
       "stof": true,
-      "onderwerpen": []
+      "onderwerpen": [
+        "PIN-H3-08",
+        "PIN-A-04"
+      ]
     },
     {
       "bron": "lesboek",
@@ -5809,7 +5831,10 @@
       ],
       "blz": 77,
       "stof": true,
-      "onderwerpen": []
+      "onderwerpen": [
+        "PIN-H3-08",
+        "PIN-A-04"
+      ]
     },
     {
       "bron": "lesboek",
@@ -5822,7 +5847,9 @@
       "tags": [],
       "blz": 77,
       "stof": true,
-      "onderwerpen": []
+      "onderwerpen": [
+        "PIN-H3-14"
+      ]
     },
     {
       "bron": "lesboek",
@@ -5835,7 +5862,9 @@
       "tags": [],
       "blz": 77,
       "stof": true,
-      "onderwerpen": []
+      "onderwerpen": [
+        "PIN-H3-14"
+      ]
     },
     {
       "bron": "lesboek",
@@ -5848,7 +5877,9 @@
       "tags": [],
       "blz": 77,
       "stof": true,
-      "onderwerpen": []
+      "onderwerpen": [
+        "PIN-H3-15"
+      ]
     },
     {
       "bron": "lesboek",
@@ -5861,7 +5892,10 @@
       "tags": [],
       "blz": 77,
       "stof": true,
-      "onderwerpen": []
+      "onderwerpen": [
+        "PIN-H3-14",
+        "PIN-H3-08"
+      ]
     },
     {
       "bron": "lesboek",
@@ -5874,7 +5908,9 @@
       "tags": [],
       "blz": 78,
       "stof": true,
-      "onderwerpen": []
+      "onderwerpen": [
+        "PIN-H3-01"
+      ]
     },
     {
       "bron": "lesboek",
@@ -5887,7 +5923,9 @@
       "tags": [],
       "blz": 78,
       "stof": true,
-      "onderwerpen": []
+      "onderwerpen": [
+        "PIN-H3-01"
+      ]
     },
     {
       "bron": "lesboek",
@@ -5900,7 +5938,9 @@
       "tags": [],
       "blz": 79,
       "stof": true,
-      "onderwerpen": []
+      "onderwerpen": [
+        "PIN-H3-01"
+      ]
     },
     {
       "bron": "lesboek",
@@ -5913,7 +5953,9 @@
       "tags": [],
       "blz": 79,
       "stof": true,
-      "onderwerpen": []
+      "onderwerpen": [
+        "PIN-H3-02"
+      ]
     },
     {
       "bron": "lesboek",
@@ -5928,7 +5970,9 @@
       ],
       "blz": 79,
       "stof": true,
-      "onderwerpen": []
+      "onderwerpen": [
+        "PIN-H3-04"
+      ]
     },
     {
       "bron": "lesboek",
@@ -5943,7 +5987,9 @@
       ],
       "blz": 79,
       "stof": true,
-      "onderwerpen": []
+      "onderwerpen": [
+        "PIN-H3-04"
+      ]
     },
     {
       "bron": "lesboek",
@@ -5958,7 +6004,9 @@
       ],
       "blz": 79,
       "stof": true,
-      "onderwerpen": []
+      "onderwerpen": [
+        "PIN-H3-04"
+      ]
     },
     {
       "bron": "lesboek",
@@ -5971,7 +6019,9 @@
       "tags": [],
       "blz": 79,
       "stof": true,
-      "onderwerpen": []
+      "onderwerpen": [
+        "PIN-H3-03"
+      ]
     },
     {
       "bron": "lesboek",
@@ -5986,7 +6036,9 @@
       ],
       "blz": 80,
       "stof": true,
-      "onderwerpen": []
+      "onderwerpen": [
+        "PIN-H3-05"
+      ]
     },
     {
       "bron": "lesboek",
@@ -6001,7 +6053,9 @@
       ],
       "blz": 80,
       "stof": true,
-      "onderwerpen": []
+      "onderwerpen": [
+        "PIN-H3-06"
+      ]
     },
     {
       "bron": "lesboek",
@@ -6014,7 +6068,9 @@
       "tags": [],
       "blz": 80,
       "stof": true,
-      "onderwerpen": []
+      "onderwerpen": [
+        "PIN-H3-03"
+      ]
     },
     {
       "bron": "lesboek",
@@ -6029,7 +6085,9 @@
       ],
       "blz": 80,
       "stof": true,
-      "onderwerpen": []
+      "onderwerpen": [
+        "PIN-H3-05"
+      ]
     },
     {
       "bron": "lesboek",
@@ -6044,7 +6102,9 @@
       ],
       "blz": 80,
       "stof": true,
-      "onderwerpen": []
+      "onderwerpen": [
+        "PIN-H3-05"
+      ]
     },
     {
       "bron": "lesboek",
@@ -6057,7 +6117,9 @@
       "tags": [],
       "blz": 81,
       "stof": true,
-      "onderwerpen": []
+      "onderwerpen": [
+        "PIN-H3-06"
+      ]
     },
     {
       "bron": "lesboek",
@@ -6072,7 +6134,9 @@
       ],
       "blz": 81,
       "stof": true,
-      "onderwerpen": []
+      "onderwerpen": [
+        "PIN-H3-06"
+      ]
     },
     {
       "bron": "lesboek",
@@ -6087,7 +6151,9 @@
       ],
       "blz": 81,
       "stof": true,
-      "onderwerpen": []
+      "onderwerpen": [
+        "PIN-H3-07"
+      ]
     },
     {
       "bron": "lesboek",
@@ -6102,7 +6168,9 @@
       ],
       "blz": 81,
       "stof": true,
-      "onderwerpen": []
+      "onderwerpen": [
+        "PIN-H3-06"
+      ]
     },
     {
       "bron": "lesboek",
@@ -6115,7 +6183,9 @@
       "tags": [],
       "blz": 82,
       "stof": true,
-      "onderwerpen": []
+      "onderwerpen": [
+        "PIN-H3-09"
+      ]
     },
     {
       "bron": "lesboek",
@@ -6130,7 +6200,9 @@
       ],
       "blz": 82,
       "stof": true,
-      "onderwerpen": []
+      "onderwerpen": [
+        "PIN-H3-09"
+      ]
     },
     {
       "bron": "lesboek",
@@ -6145,7 +6217,9 @@
       ],
       "blz": 83,
       "stof": true,
-      "onderwerpen": []
+      "onderwerpen": [
+        "PIN-H3-09"
+      ]
     },
     {
       "bron": "lesboek",
@@ -6160,7 +6234,9 @@
       ],
       "blz": 83,
       "stof": true,
-      "onderwerpen": []
+      "onderwerpen": [
+        "PIN-H3-07"
+      ]
     },
     {
       "bron": "lesboek",
@@ -6173,7 +6249,9 @@
       "tags": [],
       "blz": 83,
       "stof": true,
-      "onderwerpen": []
+      "onderwerpen": [
+        "PIN-H3-07"
+      ]
     },
     {
       "bron": "lesboek",
@@ -6185,7 +6263,7 @@
       "wds": "D",
       "tags": [],
       "blz": 83,
-      "stof": true,
+      "stof": false,
       "onderwerpen": []
     },
     {
@@ -6198,7 +6276,7 @@
       "wds": "S",
       "tags": [],
       "blz": 83,
-      "stof": true,
+      "stof": false,
       "onderwerpen": []
     },
     {
@@ -6212,7 +6290,9 @@
       "tags": [],
       "blz": 84,
       "stof": true,
-      "onderwerpen": []
+      "onderwerpen": [
+        "PIN-H3-10"
+      ]
     },
     {
       "bron": "lesboek",
@@ -6227,7 +6307,10 @@
       ],
       "blz": 84,
       "stof": true,
-      "onderwerpen": []
+      "onderwerpen": [
+        "PIN-H3-11",
+        "PIN-A-01"
+      ]
     },
     {
       "bron": "lesboek",
@@ -6240,7 +6323,9 @@
       "tags": [],
       "blz": 84,
       "stof": true,
-      "onderwerpen": []
+      "onderwerpen": [
+        "PIN-H3-11"
+      ]
     },
     {
       "bron": "lesboek",
@@ -6253,7 +6338,10 @@
       "tags": [],
       "blz": 85,
       "stof": true,
-      "onderwerpen": []
+      "onderwerpen": [
+        "PIN-H3-11",
+        "PIN-H3-09"
+      ]
     },
     {
       "bron": "lesboek",
@@ -6266,7 +6354,10 @@
       "tags": [],
       "blz": 85,
       "stof": true,
-      "onderwerpen": []
+      "onderwerpen": [
+        "PIN-H3-13",
+        "PIN-H1-10"
+      ]
     },
     {
       "bron": "lesboek",
@@ -6279,7 +6370,10 @@
       "tags": [],
       "blz": 85,
       "stof": true,
-      "onderwerpen": []
+      "onderwerpen": [
+        "PIN-H3-12",
+        "PIN-H3-13"
+      ]
     },
     {
       "bron": "lesboek",
@@ -6292,7 +6386,9 @@
       "tags": [],
       "blz": 86,
       "stof": true,
-      "onderwerpen": []
+      "onderwerpen": [
+        "PIN-H3-14"
+      ]
     },
     {
       "bron": "lesboek",
@@ -6305,7 +6401,9 @@
       "tags": [],
       "blz": 86,
       "stof": true,
-      "onderwerpen": []
+      "onderwerpen": [
+        "PIN-H3-15"
+      ]
     },
     {
       "bron": "lesboek",
@@ -6320,7 +6418,9 @@
       ],
       "blz": 86,
       "stof": true,
-      "onderwerpen": []
+      "onderwerpen": [
+        "PIN-A-01"
+      ]
     },
     {
       "bron": "lesboek",
@@ -6333,7 +6433,9 @@
       "tags": [],
       "blz": 87,
       "stof": true,
-      "onderwerpen": []
+      "onderwerpen": [
+        "PIN-H3-15"
+      ]
     },
     {
       "bron": "lesboek",
@@ -6346,7 +6448,9 @@
       "tags": [],
       "blz": 87,
       "stof": true,
-      "onderwerpen": []
+      "onderwerpen": [
+        "PIN-H3-16"
+      ]
     },
     {
       "bron": "lesboek",
@@ -6361,7 +6465,10 @@
       ],
       "blz": 87,
       "stof": true,
-      "onderwerpen": []
+      "onderwerpen": [
+        "PIN-H3-16",
+        "PIN-H3-08"
+      ]
     },
     {
       "bron": "lesboek",
@@ -6375,7 +6482,7 @@
         "tekenen"
       ],
       "blz": 87,
-      "stof": true,
+      "stof": false,
       "onderwerpen": []
     },
     {
@@ -6389,7 +6496,9 @@
       "tags": [],
       "blz": 87,
       "stof": true,
-      "onderwerpen": []
+      "onderwerpen": [
+        "PIN-H3-16"
+      ]
     },
     {
       "bron": "lesboek",
@@ -6403,7 +6512,7 @@
         "tekenen"
       ],
       "blz": 88,
-      "stof": true,
+      "stof": false,
       "onderwerpen": []
     },
     {
@@ -6417,7 +6526,10 @@
       "tags": [],
       "blz": 88,
       "stof": true,
-      "onderwerpen": []
+      "onderwerpen": [
+        "PIN-H3-16",
+        "PIN-H3-15"
+      ]
     },
     {
       "bron": "lesboek",
@@ -6431,7 +6543,7 @@
         "tekenen"
       ],
       "blz": 88,
-      "stof": true,
+      "stof": false,
       "onderwerpen": []
     },
     {
@@ -6445,7 +6557,10 @@
       "tags": [],
       "blz": 88,
       "stof": true,
-      "onderwerpen": []
+      "onderwerpen": [
+        "PIN-H3-16",
+        "PIN-H3-15"
+      ]
     },
     {
       "bron": "lesboek",
@@ -6458,7 +6573,9 @@
       "tags": [],
       "blz": 88,
       "stof": true,
-      "onderwerpen": []
+      "onderwerpen": [
+        "PIN-H3-15"
+      ]
     },
     {
       "bron": "lesboek",
@@ -6471,7 +6588,9 @@
       "tags": [],
       "blz": 89,
       "stof": true,
-      "onderwerpen": []
+      "onderwerpen": [
+        "PIN-H3-17"
+      ]
     },
     {
       "bron": "lesboek",
@@ -6484,7 +6603,9 @@
       "tags": [],
       "blz": 89,
       "stof": true,
-      "onderwerpen": []
+      "onderwerpen": [
+        "PIN-H3-17"
+      ]
     },
     {
       "bron": "lesboek",
@@ -6497,7 +6618,9 @@
       "tags": [],
       "blz": 89,
       "stof": true,
-      "onderwerpen": []
+      "onderwerpen": [
+        "PIN-H3-17"
+      ]
     },
     {
       "bron": "lesboek",
@@ -6510,7 +6633,10 @@
       "tags": [],
       "blz": 89,
       "stof": true,
-      "onderwerpen": []
+      "onderwerpen": [
+        "PIN-H3-17",
+        "PIN-H3-15"
+      ]
     },
     {
       "bron": "lesboek",
@@ -6523,7 +6649,9 @@
       "tags": [],
       "blz": 89,
       "stof": true,
-      "onderwerpen": []
+      "onderwerpen": [
+        "PIN-H3-18"
+      ]
     },
     {
       "bron": "lesboek",
@@ -6536,7 +6664,9 @@
       "tags": [],
       "blz": 89,
       "stof": true,
-      "onderwerpen": []
+      "onderwerpen": [
+        "PIN-H3-18"
+      ]
     },
     {
       "bron": "lesboek",
@@ -6549,7 +6679,9 @@
       "tags": [],
       "blz": 89,
       "stof": true,
-      "onderwerpen": []
+      "onderwerpen": [
+        "PIN-H3-18"
+      ]
     },
     {
       "bron": "lesboek",
@@ -6564,7 +6696,9 @@
       ],
       "blz": 90,
       "stof": true,
-      "onderwerpen": []
+      "onderwerpen": [
+        "PIN-H3-08"
+      ]
     },
     {
       "bron": "lesboek",
@@ -6579,7 +6713,10 @@
       ],
       "blz": 90,
       "stof": true,
-      "onderwerpen": []
+      "onderwerpen": [
+        "PIN-H3-08",
+        "PIN-A-01"
+      ]
     },
     {
       "bron": "lesboek",
@@ -6592,7 +6729,9 @@
       "tags": [],
       "blz": 90,
       "stof": true,
-      "onderwerpen": []
+      "onderwerpen": [
+        "PIN-H3-19"
+      ]
     },
     {
       "bron": "lesboek",
@@ -6605,7 +6744,9 @@
       "tags": [],
       "blz": 91,
       "stof": true,
-      "onderwerpen": []
+      "onderwerpen": [
+        "PIN-H1-07"
+      ]
     },
     {
       "bron": "lesboek",
@@ -6618,7 +6759,9 @@
       "tags": [],
       "blz": 91,
       "stof": true,
-      "onderwerpen": []
+      "onderwerpen": [
+        "PIN-H3-20"
+      ]
     },
     {
       "bron": "lesboek",
@@ -6631,7 +6774,10 @@
       "tags": [],
       "blz": 91,
       "stof": true,
-      "onderwerpen": []
+      "onderwerpen": [
+        "PIN-H3-20",
+        "PIN-H3-03"
+      ]
     },
     {
       "bron": "lesboek",
@@ -6643,7 +6789,7 @@
       "wds": "S",
       "tags": [],
       "blz": 91,
-      "stof": true,
+      "stof": false,
       "onderwerpen": []
     },
     {
@@ -6657,7 +6803,9 @@
       "tags": [],
       "blz": 91,
       "stof": true,
-      "onderwerpen": []
+      "onderwerpen": [
+        "PIN-H3-20"
+      ]
     },
     {
       "bron": "lesboek",
@@ -6670,7 +6818,9 @@
       "tags": [],
       "blz": 91,
       "stof": true,
-      "onderwerpen": []
+      "onderwerpen": [
+        "PIN-H3-23"
+      ]
     },
     {
       "bron": "lesboek",
@@ -6683,7 +6833,9 @@
       "tags": [],
       "blz": 92,
       "stof": true,
-      "onderwerpen": []
+      "onderwerpen": [
+        "PIN-H3-22"
+      ]
     },
     {
       "bron": "lesboek",
@@ -6696,7 +6848,9 @@
       "tags": [],
       "blz": 92,
       "stof": true,
-      "onderwerpen": []
+      "onderwerpen": [
+        "PIN-H3-15"
+      ]
     },
     {
       "bron": "lesboek",
@@ -6709,7 +6863,10 @@
       "tags": [],
       "blz": 92,
       "stof": true,
-      "onderwerpen": []
+      "onderwerpen": [
+        "PIN-H3-22",
+        "PIN-H3-21"
+      ]
     },
     {
       "bron": "lesboek",
@@ -6722,7 +6879,10 @@
       "tags": [],
       "blz": 93,
       "stof": true,
-      "onderwerpen": []
+      "onderwerpen": [
+        "PIN-H3-21",
+        "PIN-H3-22"
+      ]
     },
     {
       "bron": "lesboek",
@@ -6735,7 +6895,10 @@
       "tags": [],
       "blz": 93,
       "stof": true,
-      "onderwerpen": []
+      "onderwerpen": [
+        "PIN-H3-22",
+        "PIN-H3-15"
+      ]
     },
     {
       "bron": "lesboek",
@@ -6748,7 +6911,9 @@
       "tags": [],
       "blz": 93,
       "stof": true,
-      "onderwerpen": []
+      "onderwerpen": [
+        "PIN-H3-25"
+      ]
     },
     {
       "bron": "lesboek",
@@ -6761,7 +6926,9 @@
       "tags": [],
       "blz": 93,
       "stof": true,
-      "onderwerpen": []
+      "onderwerpen": [
+        "PIN-H3-25"
+      ]
     },
     {
       "bron": "lesboek",
@@ -6774,7 +6941,9 @@
       "tags": [],
       "blz": 93,
       "stof": true,
-      "onderwerpen": []
+      "onderwerpen": [
+        "PIN-H3-25"
+      ]
     },
     {
       "bron": "lesboek",
@@ -6787,7 +6956,10 @@
       "tags": [],
       "blz": 93,
       "stof": true,
-      "onderwerpen": []
+      "onderwerpen": [
+        "PIN-H3-25",
+        "PIN-H3-22"
+      ]
     },
     {
       "bron": "lesboek",
@@ -6800,7 +6972,9 @@
       "tags": [],
       "blz": 96,
       "stof": true,
-      "onderwerpen": []
+      "onderwerpen": [
+        "PIN-H3-01"
+      ]
     },
     {
       "bron": "lesboek",
@@ -6813,7 +6987,9 @@
       "tags": [],
       "blz": 96,
       "stof": true,
-      "onderwerpen": []
+      "onderwerpen": [
+        "PIN-H3-02"
+      ]
     },
     {
       "bron": "lesboek",
@@ -6828,7 +7004,9 @@
       ],
       "blz": 96,
       "stof": true,
-      "onderwerpen": []
+      "onderwerpen": [
+        "PIN-H3-04"
+      ]
     },
     {
       "bron": "lesboek",
@@ -6843,7 +7021,9 @@
       ],
       "blz": 96,
       "stof": true,
-      "onderwerpen": []
+      "onderwerpen": [
+        "PIN-H3-04"
+      ]
     },
     {
       "bron": "lesboek",
@@ -6856,7 +7036,9 @@
       "tags": [],
       "blz": 96,
       "stof": true,
-      "onderwerpen": []
+      "onderwerpen": [
+        "PIN-H3-03"
+      ]
     },
     {
       "bron": "lesboek",
@@ -6871,7 +7053,9 @@
       ],
       "blz": 96,
       "stof": true,
-      "onderwerpen": []
+      "onderwerpen": [
+        "PIN-H3-05"
+      ]
     },
     {
       "bron": "lesboek",
@@ -6886,7 +7070,9 @@
       ],
       "blz": 96,
       "stof": true,
-      "onderwerpen": []
+      "onderwerpen": [
+        "PIN-H3-05"
+      ]
     },
     {
       "bron": "lesboek",
@@ -6901,7 +7087,9 @@
       ],
       "blz": 96,
       "stof": true,
-      "onderwerpen": []
+      "onderwerpen": [
+        "PIN-H3-07"
+      ]
     },
     {
       "bron": "lesboek",
@@ -6916,7 +7104,9 @@
       ],
       "blz": 96,
       "stof": true,
-      "onderwerpen": []
+      "onderwerpen": [
+        "PIN-H3-07"
+      ]
     },
     {
       "bron": "lesboek",
@@ -6931,7 +7121,9 @@
       ],
       "blz": 96,
       "stof": true,
-      "onderwerpen": []
+      "onderwerpen": [
+        "PIN-H3-09"
+      ]
     },
     {
       "bron": "lesboek",
@@ -6944,7 +7136,9 @@
       "tags": [],
       "blz": 96,
       "stof": true,
-      "onderwerpen": []
+      "onderwerpen": [
+        "PIN-H3-09"
+      ]
     },
     {
       "bron": "lesboek",
@@ -6959,7 +7153,9 @@
       ],
       "blz": 96,
       "stof": true,
-      "onderwerpen": []
+      "onderwerpen": [
+        "PIN-H3-10"
+      ]
     },
     {
       "bron": "lesboek",
@@ -6974,7 +7170,9 @@
       ],
       "blz": 96,
       "stof": true,
-      "onderwerpen": []
+      "onderwerpen": [
+        "PIN-H3-10"
+      ]
     },
     {
       "bron": "lesboek",
@@ -6987,7 +7185,9 @@
       "tags": [],
       "blz": 96,
       "stof": true,
-      "onderwerpen": []
+      "onderwerpen": [
+        "PIN-H3-11"
+      ]
     },
     {
       "bron": "lesboek",
@@ -7002,7 +7202,10 @@
       ],
       "blz": 96,
       "stof": true,
-      "onderwerpen": []
+      "onderwerpen": [
+        "PIN-H3-11",
+        "PIN-A-04"
+      ]
     },
     {
       "bron": "lesboek",
@@ -7015,7 +7218,10 @@
       "tags": [],
       "blz": 96,
       "stof": true,
-      "onderwerpen": []
+      "onderwerpen": [
+        "PIN-H3-05",
+        "PIN-H3-11"
+      ]
     },
     {
       "bron": "lesboek",
@@ -7028,7 +7234,9 @@
       "tags": [],
       "blz": 96,
       "stof": true,
-      "onderwerpen": []
+      "onderwerpen": [
+        "PIN-H3-12"
+      ]
     },
     {
       "bron": "lesboek",
@@ -7041,7 +7249,9 @@
       "tags": [],
       "blz": 97,
       "stof": true,
-      "onderwerpen": []
+      "onderwerpen": [
+        "PIN-H3-15"
+      ]
     },
     {
       "bron": "lesboek",
@@ -7054,7 +7264,9 @@
       "tags": [],
       "blz": 97,
       "stof": true,
-      "onderwerpen": []
+      "onderwerpen": [
+        "PIN-H3-16"
+      ]
     },
     {
       "bron": "lesboek",
@@ -7067,7 +7279,9 @@
       "tags": [],
       "blz": 97,
       "stof": true,
-      "onderwerpen": []
+      "onderwerpen": [
+        "PIN-H3-16"
+      ]
     },
     {
       "bron": "lesboek",
@@ -7082,7 +7296,10 @@
       ],
       "blz": 97,
       "stof": true,
-      "onderwerpen": []
+      "onderwerpen": [
+        "PIN-H3-16",
+        "PIN-H3-08"
+      ]
     },
     {
       "bron": "lesboek",
@@ -7096,7 +7313,7 @@
         "tekenen"
       ],
       "blz": 97,
-      "stof": true,
+      "stof": false,
       "onderwerpen": []
     },
     {
@@ -7111,7 +7328,7 @@
         "tekenen"
       ],
       "blz": 97,
-      "stof": true,
+      "stof": false,
       "onderwerpen": []
     },
     {
@@ -7125,7 +7342,9 @@
       "tags": [],
       "blz": 97,
       "stof": true,
-      "onderwerpen": []
+      "onderwerpen": [
+        "PIN-H3-16"
+      ]
     },
     {
       "bron": "lesboek",
@@ -7138,7 +7357,9 @@
       "tags": [],
       "blz": 97,
       "stof": true,
-      "onderwerpen": []
+      "onderwerpen": [
+        "PIN-H3-16"
+      ]
     },
     {
       "bron": "lesboek",
@@ -7151,7 +7372,9 @@
       "tags": [],
       "blz": 97,
       "stof": true,
-      "onderwerpen": []
+      "onderwerpen": [
+        "PIN-H3-17"
+      ]
     },
     {
       "bron": "lesboek",
@@ -7164,7 +7387,9 @@
       "tags": [],
       "blz": 97,
       "stof": true,
-      "onderwerpen": []
+      "onderwerpen": [
+        "PIN-H3-18"
+      ]
     },
     {
       "bron": "lesboek",
@@ -7177,7 +7402,9 @@
       "tags": [],
       "blz": 97,
       "stof": true,
-      "onderwerpen": []
+      "onderwerpen": [
+        "PIN-H3-19"
+      ]
     },
     {
       "bron": "lesboek",
@@ -7190,7 +7417,9 @@
       "tags": [],
       "blz": 97,
       "stof": true,
-      "onderwerpen": []
+      "onderwerpen": [
+        "PIN-H3-20"
+      ]
     },
     {
       "bron": "lesboek",
@@ -7205,7 +7434,10 @@
       ],
       "blz": 97,
       "stof": true,
-      "onderwerpen": []
+      "onderwerpen": [
+        "PIN-H3-19",
+        "PIN-A-01"
+      ]
     },
     {
       "bron": "lesboek",
@@ -7218,7 +7450,9 @@
       "tags": [],
       "blz": 97,
       "stof": true,
-      "onderwerpen": []
+      "onderwerpen": [
+        "PIN-H3-23"
+      ]
     },
     {
       "bron": "lesboek",
@@ -7231,7 +7465,10 @@
       "tags": [],
       "blz": 97,
       "stof": true,
-      "onderwerpen": []
+      "onderwerpen": [
+        "PIN-H3-21",
+        "PIN-H3-22"
+      ]
     },
     {
       "bron": "lesboek",
@@ -7244,7 +7481,10 @@
       "tags": [],
       "blz": 97,
       "stof": true,
-      "onderwerpen": []
+      "onderwerpen": [
+        "PIN-H3-21",
+        "PIN-H3-22"
+      ]
     },
     {
       "bron": "lesboek",
@@ -7257,7 +7497,9 @@
       "tags": [],
       "blz": 97,
       "stof": true,
-      "onderwerpen": []
+      "onderwerpen": [
+        "PIN-H3-25"
+      ]
     },
     {
       "bron": "lesboek",
@@ -7270,7 +7512,9 @@
       "tags": [],
       "blz": 97,
       "stof": true,
-      "onderwerpen": []
+      "onderwerpen": [
+        "PIN-H3-25"
+      ]
     },
     {
       "bron": "lesboek",
@@ -7285,7 +7529,9 @@
       ],
       "blz": 98,
       "stof": true,
-      "onderwerpen": []
+      "onderwerpen": [
+        "PIN-H3-02"
+      ]
     },
     {
       "bron": "lesboek",
@@ -7300,7 +7546,9 @@
       ],
       "blz": 98,
       "stof": true,
-      "onderwerpen": []
+      "onderwerpen": [
+        "PIN-H3-04"
+      ]
     },
     {
       "bron": "lesboek",
@@ -7313,7 +7561,9 @@
       "tags": [],
       "blz": 98,
       "stof": true,
-      "onderwerpen": []
+      "onderwerpen": [
+        "PIN-H3-03"
+      ]
     },
     {
       "bron": "lesboek",
@@ -7328,7 +7578,10 @@
       ],
       "blz": 98,
       "stof": true,
-      "onderwerpen": []
+      "onderwerpen": [
+        "PIN-H3-05",
+        "PIN-H3-06"
+      ]
     },
     {
       "bron": "lesboek",
@@ -7343,7 +7596,9 @@
       ],
       "blz": 98,
       "stof": true,
-      "onderwerpen": []
+      "onderwerpen": [
+        "PIN-H3-06"
+      ]
     },
     {
       "bron": "lesboek",
@@ -7358,7 +7613,9 @@
       ],
       "blz": 98,
       "stof": true,
-      "onderwerpen": []
+      "onderwerpen": [
+        "PIN-H3-09"
+      ]
     },
     {
       "bron": "lesboek",
@@ -7371,7 +7628,9 @@
       "tags": [],
       "blz": 98,
       "stof": true,
-      "onderwerpen": []
+      "onderwerpen": [
+        "PIN-H3-10"
+      ]
     },
     {
       "bron": "lesboek",
@@ -7386,7 +7645,9 @@
       ],
       "blz": 98,
       "stof": true,
-      "onderwerpen": []
+      "onderwerpen": [
+        "PIN-H3-11"
+      ]
     },
     {
       "bron": "lesboek",
@@ -7399,7 +7660,9 @@
       "tags": [],
       "blz": 99,
       "stof": true,
-      "onderwerpen": []
+      "onderwerpen": [
+        "PIN-H3-14"
+      ]
     },
     {
       "bron": "lesboek",
@@ -7414,7 +7677,9 @@
       ],
       "blz": 99,
       "stof": true,
-      "onderwerpen": []
+      "onderwerpen": [
+        "PIN-H3-08"
+      ]
     },
     {
       "bron": "lesboek",
@@ -7428,7 +7693,7 @@
         "tekenen"
       ],
       "blz": 99,
-      "stof": true,
+      "stof": false,
       "onderwerpen": []
     },
     {
@@ -7443,7 +7708,7 @@
         "tekenen"
       ],
       "blz": 99,
-      "stof": true,
+      "stof": false,
       "onderwerpen": []
     },
     {
@@ -7459,7 +7724,10 @@
       ],
       "blz": 99,
       "stof": true,
-      "onderwerpen": []
+      "onderwerpen": [
+        "PIN-H3-16",
+        "PIN-H3-08"
+      ]
     },
     {
       "bron": "lesboek",
@@ -7472,7 +7740,9 @@
       "tags": [],
       "blz": 99,
       "stof": true,
-      "onderwerpen": []
+      "onderwerpen": [
+        "PIN-H3-17"
+      ]
     },
     {
       "bron": "lesboek",
@@ -7485,7 +7755,9 @@
       "tags": [],
       "blz": 99,
       "stof": true,
-      "onderwerpen": []
+      "onderwerpen": [
+        "PIN-H3-20"
+      ]
     },
     {
       "bron": "lesboek",
@@ -7498,7 +7770,9 @@
       "tags": [],
       "blz": 99,
       "stof": true,
-      "onderwerpen": []
+      "onderwerpen": [
+        "PIN-H3-22"
+      ]
     },
     {
       "bron": "lesboek",
@@ -7511,7 +7785,9 @@
       "tags": [],
       "blz": 99,
       "stof": true,
-      "onderwerpen": []
+      "onderwerpen": [
+        "PIN-H3-24"
+      ]
     },
     {
       "bron": "lesboek",
@@ -7524,7 +7800,9 @@
       "tags": [],
       "blz": 99,
       "stof": true,
-      "onderwerpen": []
+      "onderwerpen": [
+        "PIN-H3-24"
+      ]
     },
     {
       "bron": "lesboek",
@@ -7537,7 +7815,9 @@
       "tags": [],
       "blz": 99,
       "stof": true,
-      "onderwerpen": []
+      "onderwerpen": [
+        "PIN-H3-24"
+      ]
     },
     {
       "bron": "lesboek",
@@ -7550,7 +7830,9 @@
       "tags": [],
       "blz": 99,
       "stof": true,
-      "onderwerpen": []
+      "onderwerpen": [
+        "PIN-H3-25"
+      ]
     },
     {
       "bron": "lesboek",
@@ -7565,7 +7847,9 @@
       ],
       "blz": 100,
       "stof": true,
-      "onderwerpen": []
+      "onderwerpen": [
+        "PIN-H3-04"
+      ]
     },
     {
       "bron": "lesboek",
@@ -7580,7 +7864,9 @@
       ],
       "blz": 100,
       "stof": true,
-      "onderwerpen": []
+      "onderwerpen": [
+        "PIN-H3-04"
+      ]
     },
     {
       "bron": "lesboek",
@@ -7595,7 +7881,9 @@
       ],
       "blz": 100,
       "stof": true,
-      "onderwerpen": []
+      "onderwerpen": [
+        "PIN-H3-04"
+      ]
     },
     {
       "bron": "lesboek",
@@ -7610,7 +7898,9 @@
       ],
       "blz": 100,
       "stof": true,
-      "onderwerpen": []
+      "onderwerpen": [
+        "PIN-H3-04"
+      ]
     },
     {
       "bron": "lesboek",
@@ -7625,7 +7915,9 @@
       ],
       "blz": 100,
       "stof": true,
-      "onderwerpen": []
+      "onderwerpen": [
+        "PIN-H3-05"
+      ]
     },
     {
       "bron": "lesboek",
@@ -7640,7 +7932,9 @@
       ],
       "blz": 100,
       "stof": true,
-      "onderwerpen": []
+      "onderwerpen": [
+        "PIN-H3-05"
+      ]
     },
     {
       "bron": "lesboek",
@@ -7655,7 +7949,9 @@
       ],
       "blz": 100,
       "stof": true,
-      "onderwerpen": []
+      "onderwerpen": [
+        "PIN-H3-05"
+      ]
     },
     {
       "bron": "lesboek",
@@ -7670,7 +7966,9 @@
       ],
       "blz": 100,
       "stof": true,
-      "onderwerpen": []
+      "onderwerpen": [
+        "PIN-H3-03"
+      ]
     },
     {
       "bron": "lesboek",
@@ -7685,7 +7983,9 @@
       ],
       "blz": 100,
       "stof": true,
-      "onderwerpen": []
+      "onderwerpen": [
+        "PIN-H3-05"
+      ]
     },
     {
       "bron": "lesboek",
@@ -7700,7 +8000,9 @@
       ],
       "blz": 100,
       "stof": true,
-      "onderwerpen": []
+      "onderwerpen": [
+        "PIN-H3-03"
+      ]
     },
     {
       "bron": "lesboek",
@@ -7715,7 +8017,9 @@
       ],
       "blz": 100,
       "stof": true,
-      "onderwerpen": []
+      "onderwerpen": [
+        "PIN-A-01"
+      ]
     },
     {
       "bron": "lesboek",
@@ -7730,7 +8034,9 @@
       ],
       "blz": 100,
       "stof": true,
-      "onderwerpen": []
+      "onderwerpen": [
+        "PIN-H3-05"
+      ]
     },
     {
       "bron": "lesboek",
@@ -7745,7 +8051,9 @@
       ],
       "blz": 100,
       "stof": true,
-      "onderwerpen": []
+      "onderwerpen": [
+        "PIN-H3-07"
+      ]
     },
     {
       "bron": "lesboek",
@@ -7760,7 +8068,9 @@
       ],
       "blz": 100,
       "stof": true,
-      "onderwerpen": []
+      "onderwerpen": [
+        "PIN-H3-07"
+      ]
     },
     {
       "bron": "lesboek",
@@ -7775,7 +8085,9 @@
       ],
       "blz": 100,
       "stof": true,
-      "onderwerpen": []
+      "onderwerpen": [
+        "PIN-H3-06"
+      ]
     },
     {
       "bron": "lesboek",
@@ -7790,7 +8102,9 @@
       ],
       "blz": 101,
       "stof": true,
-      "onderwerpen": []
+      "onderwerpen": [
+        "PIN-H3-07"
+      ]
     },
     {
       "bron": "lesboek",
@@ -7805,7 +8119,9 @@
       ],
       "blz": 101,
       "stof": true,
-      "onderwerpen": []
+      "onderwerpen": [
+        "PIN-H3-09"
+      ]
     },
     {
       "bron": "lesboek",
@@ -7820,7 +8136,9 @@
       ],
       "blz": 101,
       "stof": true,
-      "onderwerpen": []
+      "onderwerpen": [
+        "PIN-H3-09"
+      ]
     },
     {
       "bron": "lesboek",
@@ -7835,7 +8153,9 @@
       ],
       "blz": 101,
       "stof": true,
-      "onderwerpen": []
+      "onderwerpen": [
+        "PIN-H3-10"
+      ]
     },
     {
       "bron": "lesboek",
@@ -7850,7 +8170,10 @@
       ],
       "blz": 101,
       "stof": true,
-      "onderwerpen": []
+      "onderwerpen": [
+        "PIN-H3-10",
+        "PIN-A-01"
+      ]
     },
     {
       "bron": "lesboek",
@@ -7865,7 +8188,10 @@
       ],
       "blz": 101,
       "stof": true,
-      "onderwerpen": []
+      "onderwerpen": [
+        "PIN-H3-11",
+        "PIN-A-04"
+      ]
     },
     {
       "bron": "lesboek",
@@ -7880,7 +8206,9 @@
       ],
       "blz": 101,
       "stof": true,
-      "onderwerpen": []
+      "onderwerpen": [
+        "PIN-H3-10"
+      ]
     },
     {
       "bron": "lesboek",
@@ -7895,7 +8223,9 @@
       ],
       "blz": 102,
       "stof": true,
-      "onderwerpen": []
+      "onderwerpen": [
+        "PIN-H3-08"
+      ]
     },
     {
       "bron": "lesboek",
@@ -7908,7 +8238,9 @@
       "tags": [],
       "blz": 102,
       "stof": true,
-      "onderwerpen": []
+      "onderwerpen": [
+        "PIN-H3-08"
+      ]
     },
     {
       "bron": "lesboek",
@@ -7921,7 +8253,9 @@
       "tags": [],
       "blz": 103,
       "stof": true,
-      "onderwerpen": []
+      "onderwerpen": [
+        "PIN-H3-25"
+      ]
     },
     {
       "bron": "lesboek",
@@ -7936,7 +8270,9 @@
       ],
       "blz": 103,
       "stof": true,
-      "onderwerpen": []
+      "onderwerpen": [
+        "PIN-H3-09"
+      ]
     },
     {
       "bron": "lesboek",
@@ -7949,7 +8285,10 @@
       "tags": [],
       "blz": 103,
       "stof": true,
-      "onderwerpen": []
+      "onderwerpen": [
+        "PIN-H3-22",
+        "PIN-H3-21"
+      ]
     },
     {
       "bron": "lesboek",
@@ -7964,7 +8303,9 @@
       ],
       "blz": 103,
       "stof": true,
-      "onderwerpen": []
+      "onderwerpen": [
+        "PIN-H3-11"
+      ]
     },
     {
       "bron": "lesboek",
@@ -7979,7 +8320,9 @@
       ],
       "blz": 104,
       "stof": true,
-      "onderwerpen": []
+      "onderwerpen": [
+        "PIN-H3-05"
+      ]
     },
     {
       "bron": "lesboek",
@@ -7992,7 +8335,10 @@
       "tags": [],
       "blz": 104,
       "stof": true,
-      "onderwerpen": []
+      "onderwerpen": [
+        "PIN-H3-06",
+        "PIN-H3-09"
+      ]
     },
     {
       "bron": "lesboek",
@@ -8005,7 +8351,9 @@
       "tags": [],
       "blz": 104,
       "stof": true,
-      "onderwerpen": []
+      "onderwerpen": [
+        "PIN-H3-22"
+      ]
     },
     {
       "bron": "lesboek",
@@ -8018,7 +8366,9 @@
       "tags": [],
       "blz": 104,
       "stof": true,
-      "onderwerpen": []
+      "onderwerpen": [
+        "PIN-H3-21"
+      ]
     },
     {
       "bron": "lesboek",
@@ -8033,7 +8383,9 @@
       ],
       "blz": 105,
       "stof": true,
-      "onderwerpen": []
+      "onderwerpen": [
+        "PIN-H3-08"
+      ]
     },
     {
       "bron": "lesboek",
@@ -8046,7 +8398,9 @@
       "tags": [],
       "blz": 105,
       "stof": true,
-      "onderwerpen": []
+      "onderwerpen": [
+        "PIN-H3-15"
+      ]
     },
     {
       "bron": "lesboek",

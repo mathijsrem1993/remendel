@@ -1,4 +1,4 @@
-# Controleoverzicht Pincode 4 · hoofdstuk 1 en 2
+# Controleoverzicht Pincode 4 · hoofdstuk 1, 2 en 3
 
 Per onderwerp de opgaven die eraan gekoppeld zijn. Gesorteerd op code.
 Kolom W/D/S geeft het niveau, Blz. het gedrukte paginanummer.
@@ -41,7 +41,7 @@ Wel behandeld, niet in de begrippenlijst: consumeren
 ## PIN-H1-03 · Soorten goederen en diensten
 
 Begrippen: producten, diensten, gebruiksgoederen, verbruiksgoederen  
-Paragrafen: 1.1, Weet je het nog? · niveaus: D · 4 opgaven
+Paragrafen: 1.1, Weet je het nog? · niveaus: D · 5 opgaven
 
 | Waar | Opgave | Niveau | Blz. | Omschrijving |
 |---|---|---|---|---|
@@ -49,6 +49,7 @@ Paragrafen: 1.1, Weet je het nog? · niveaus: D · 4 opgaven
 | H1 Weet je het nog? | 2b | D | 9 | Product en behoefte van een schoenmaker classificeren |
 | H1 Weet je het nog? | 2c | D | 9 | Product en behoefte van een bioscoop classificeren |
 | H1 Weet je het nog? | 2d | D | 9 | Product en behoefte van een sportwinkel classificeren |
+| H3 Weet je het nog? | 2 | D | 77 | Twee voorbeelden van diensten die de overheid produceert noemen |
 
 ## PIN-H1-04 · Doelgroep en koopgedrag
 
@@ -93,7 +94,7 @@ Wel behandeld, niet in de begrippenlijst: reclame
 ## PIN-H1-07 · Marketing en de zes marketinginstrumenten
 
 Begrippen: marketing, marketinginstrumenten, productbeleid, prijsbeleid, plaatsbeleid, promotiebeleid, personeelsbeleid, presentatiebeleid  
-Paragrafen: 1.1 · niveaus: W/D/S · 6 opgaven
+Paragrafen: 1.1 · niveaus: W/D/S · 7 opgaven
 
 | Waar | Opgave | Niveau | Blz. | Omschrijving |
 |---|---|---|---|---|
@@ -103,6 +104,7 @@ Paragrafen: 1.1 · niveaus: W/D/S · 6 opgaven
 | H1 Herhalingsopdrachten | 2b | W | 28 | Overige marketinginstrumenten noemen |
 | H1 Plusopdrachten | 1 | D | 30 | Marketinginstrumenten voorstellen om jongeren te laten lezen, met toelichting |
 | H1 Examentraining | 11 | W | 37 | Juiste woorden kiezen in tekst over influencers en e-commerce |
+| H3 3.4 | 3 | D | 91 | Drie marketinginstrumenten herkennen bij supermarktconcurrentie |
 
 ## PIN-H1-08 · Consumentenbescherming
 
@@ -140,7 +142,7 @@ Wel behandeld, niet in de begrippenlijst: ecologische voetafdruk, CO2-uitstoot
 ## PIN-H1-10 · Maatschappelijke kosten en opbrengsten
 
 Begrippen: maatschappelijke kosten, maatschappelijke opbrengsten  
-Paragrafen: 1.1 · niveaus: D/S · 5 opgaven
+Paragrafen: 1.1 · niveaus: D/S · 6 opgaven
 
 Wel behandeld, niet in de begrippenlijst: extern effect
 
@@ -151,6 +153,7 @@ Wel behandeld, niet in de begrippenlijst: extern effect
 | H2 2.1 | 10 | S | 47 | Uitleggen wat iemand bedoelt met 'het levert ons allemaal veel op' |
 | H2 Herhalingsopdrachten | 5 | S | 62 | Uitleggen wat duurzaam beleggingsbeleid oplevert voor de samenleving |
 | H2 Plusopdrachten | 5b | S | 64 | Bezwaar tegen de uitspraak van Ariane formuleren |
+| H3 3.2 | 9 | D | 85 | Voorbeeld geven van een maatschappelijke opbrengst van duurzame bezorging |
 
 ## PIN-H1-11 · Technologische ontwikkeling
 
@@ -776,10 +779,404 @@ Wel behandeld, niet in de begrippenlijst: risico, rentemarge
 | H2 Plusopdrachten | 13 | S | 65 | Verklaring geven voor het renteverschil tussen ondernemer en werknemer |
 | H2 Rekenen | 16a | D ·rekenen | 67 | Rekenen: rente bij rood staan het hele jaar berekenen |
 
+## PIN-H3-01 · Produceren en productiefactoren
+
+Begrippen: produceren, productiefactoren, kapitaal, arbeid, natuur, ondernemerschap  
+Paragrafen: 3.1, Weet je het nog? · niveaus: W/D · 6 opgaven
+
+Wel behandeld, niet in de begrippenlijst: beloning per productiefactor: rente of huur, loon, pacht, winst
+
+| Waar | Opgave | Niveau | Blz. | Omschrijving |
+|---|---|---|---|---|
+| H3 Weet je het nog? | 1 | D | 77 | Juiste beweringen over productie herkennen |
+| H3 Weet je het nog? | 2 | D | 77 | Twee voorbeelden van diensten die de overheid produceert noemen |
+| H3 3.1 | 1 | W | 78 | Ontbrekende woorden invullen over productiefactoren bij Mosa Meat |
+| H3 3.1 | 2 | D | 78 | Twee voorbeelden van de productiefactor kapitaal bij Mosa Meat noemen |
+| H3 3.1 | 3 | W | 79 | Beloning noteren bij elke productiefactor |
+| H3 Herhalingsopdrachten | 1 | W | 96 | Productiefactor bij vier voorbeelden noteren |
+
+## PIN-H3-02 · Toegevoegde waarde
+
+Begrippen: toegevoegde waarde  
+Paragrafen: 3.1 · niveaus: D/S · 3 opgaven
+
+| Waar | Opgave | Niveau | Blz. | Omschrijving |
+|---|---|---|---|---|
+| H3 3.1 | 4 | S | 79 | Uitleggen waarom de toegevoegde waarde van de eerste hamburger zo groot is |
+| H3 Herhalingsopdrachten | 2 | D | 96 | Voorbeeld van toegevoegde waarde bij een fietsenwinkel geven |
+| H3 Plusopdrachten | 1 | D ·rekenen | 98 | Rekenen: toegevoegde waarde op twee manieren berekenen |
+
+## PIN-H3-03 · Vaste en variabele kosten
+
+Begrippen: vaste kosten, variabele kosten  
+Paragrafen: 3.1 · niveaus: D/S · 7 opgaven
+
+| Waar | Opgave | Niveau | Blz. | Omschrijving |
+|---|---|---|---|---|
+| H3 3.1 | 6 | D | 79 | Kosten indelen als variabel of vast |
+| H3 3.1 | 7c | S | 80 | Gedrag van vaste en variabele kosten bij productiestijging voorspellen |
+| H3 3.4 | 4b | S | 91 | Voorbeeld van besparing op vaste kosten na een fusie geven, met uitleg |
+| H3 Herhalingsopdrachten | 4 | D | 96 | Vaste en variabele loonkosten bij een bedrijf bepalen |
+| H3 Plusopdrachten | 3 | S | 98 | Bepalen welk bedrijf de hoogste vaste en variabele kosten heeft, met uitleg |
+| H3 Rekenen | 5b | D ·rekenen | 100 | Rekenen: totale variabele kosten na productiedaling berekenen |
+| H3 Rekenen | 6a | D ·rekenen | 100 | Rekenen: totale productiekosten van een fietsfabriek berekenen |
+
+## PIN-H3-04 · Investeren en afschrijving
+
+Begrippen: investeren, afschrijving  
+Paragrafen: 3.1 · niveaus: D · 10 opgaven
+
+Wel behandeld, niet in de begrippenlijst: restwaarde, terugverdientijd
+
+| Waar | Opgave | Niveau | Blz. | Omschrijving |
+|---|---|---|---|---|
+| H3 3.1 | 5a | D ·rekenen | 79 | Rekenen: jaarlijkse afschrijving berekenen |
+| H3 3.1 | 5b | D ·rekenen | 79 | Rekenen: afschrijvingskosten per kilometer berekenen |
+| H3 3.1 | 5c | D ·rekenen | 79 | Rekenen: terugverdientijd van een investering berekenen |
+| H3 Herhalingsopdrachten | 3a | D ·rekenen | 96 | Rekenen: jaarlijkse afschrijving berekenen |
+| H3 Herhalingsopdrachten | 3b | D ·rekenen | 96 | Rekenen: waarde van een truck na drie jaar berekenen |
+| H3 Plusopdrachten | 2 | D ·rekenen | 98 | Rekenen: waarde van een bestelbus na twee jaar berekenen |
+| H3 Rekenen | 1a | D ·rekenen | 100 | Rekenen: afschrijving per jaar berekenen |
+| H3 Rekenen | 1b | D ·rekenen | 100 | Rekenen: waarde van een taxi na twee jaar berekenen |
+| H3 Rekenen | 2 | D ·rekenen | 100 | Rekenen: jaarlijkse afschrijving van drie bestelbusmodellen berekenen |
+| H3 Rekenen | 3 | D ·rekenen | 100 | Rekenen: aanschafprijs van negen jaar geleden berekenen |
+
+## PIN-H3-05 · Kostprijs
+
+Begrippen: kostprijs  
+Paragrafen: 3.1 · niveaus: D/S · 13 opgaven
+
+| Waar | Opgave | Niveau | Blz. | Omschrijving |
+|---|---|---|---|---|
+| H3 3.1 | 7a | D ·rekenen | 80 | Rekenen: kostprijs per fietsband berekenen |
+| H3 3.1 | 7d | D ·rekenen | 80 | Rekenen: kostprijs na productieverhoging berekenen |
+| H3 3.1 | 7e | D ·rekenen | 80 | Rekenen: verandering van de kostprijs per product berekenen |
+| H3 Herhalingsopdrachten | 12b | S | 96 | Verklaren dat de kostprijs kan dalen bij meer productie-uren |
+| H3 Herhalingsopdrachten | 5a | D ·rekenen | 96 | Rekenen: kostprijs per shirt berekenen |
+| H3 Herhalingsopdrachten | 5b | D ·rekenen | 96 | Rekenen: nieuwe kostprijs per shirt berekenen |
+| H3 Plusopdrachten | 4 | D ·rekenen | 98 | Rekenen: gemiddelde verkoopprijs zonder verlies berekenen |
+| H3 Rekenen | 4a | D ·rekenen | 100 | Rekenen: kostprijs per bank berekenen |
+| H3 Rekenen | 4b | D ·rekenen | 100 | Rekenen: kostprijs per bank na productiestijging berekenen |
+| H3 Rekenen | 5a | D ·rekenen | 100 | Rekenen: kostprijs per taart berekenen |
+| H3 Rekenen | 5c | D ·rekenen | 100 | Rekenen: nieuwe kostprijs per taart berekenen |
+| H3 Rekenen | 6c | D ·rekenen | 100 | Rekenen: daling van de kostprijs per fiets berekenen |
+| H3 Examentraining | 7 | D ·rekenen | 104 | Rekenen: totale kostprijs per product na productie-uitbreiding berekenen |
+
+## PIN-H3-06 · Van inkoopprijs naar verkoopprijs
+
+Begrippen: inkoopprijs, brutowinstopslag, verkoopprijs  
+Paragrafen: 3.1, Weet je het nog? · niveaus: D/S · 9 opgaven
+
+| Waar | Opgave | Niveau | Blz. | Omschrijving |
+|---|---|---|---|---|
+| H3 Weet je het nog? | 3 | D ·rekenen | 77 | Rekenen: brutowinstopslag in procenten berekenen |
+| H3 3.1 | 7b | D ·rekenen | 80 | Rekenen: winstopslag in procenten berekenen |
+| H3 3.1 | 11 | D ·rekenen | 81 | Rekenen: verkoopprijs en brutowinstmarge berekenen |
+| H3 3.1 | 8 | S | 81 | Uitleggen wat de brutowinstopslag inhoudt |
+| H3 3.1 | 9 | D ·rekenen | 81 | Rekenen: ontbrekende bedragen bij inkoop- en verkoopprijs berekenen |
+| H3 Plusopdrachten | 4 | D ·rekenen | 98 | Rekenen: gemiddelde verkoopprijs zonder verlies berekenen |
+| H3 Plusopdrachten | 5 | D ·rekenen | 98 | Rekenen: inkoopprijs van een buffetkast berekenen |
+| H3 Rekenen | 9 | D ·rekenen | 100 | Rekenen: brutowinstopslag in procenten van de inkoopprijs berekenen |
+| H3 Examentraining | 8 | D | 104 | Gevolg van een gelijkblijvende verkoopprijs voor de winstmarge bepalen |
+
+## PIN-H3-07 · Btw en consumentenprijs
+
+Begrippen: btw, consumentenprijs  
+Paragrafen: 3.1, Weet je het nog? · niveaus: D/S · 11 opgaven
+
+| Waar | Opgave | Niveau | Blz. | Omschrijving |
+|---|---|---|---|---|
+| H3 Weet je het nog? | 4a | D ·rekenen | 77 | Rekenen: consumentenprijs berekenen |
+| H3 Weet je het nog? | 4b | S | 77 | Uitleggen waarom Mirjam geen rekening houdt met btw bij haar winst |
+| H3 Weet je het nog? | 5 | D ·rekenen | 77 | Rekenen: ontbrekende bedragen in een btw-tabel berekenen |
+| H3 3.1 | 10 | D ·rekenen | 81 | Rekenen: verkoopprijs exclusief btw berekenen |
+| H3 3.2 | 4a | D ·rekenen | 83 | Rekenen: verschil tussen ontvangen en betaalde btw berekenen |
+| H3 3.2 | 4b | S | 83 | Uitleggen of btw betaald of teruggekregen moet worden |
+| H3 Herhalingsopdrachten | 6 | D ·rekenen | 96 | Rekenen: consumentenprijs van een hockeystick berekenen |
+| H3 Herhalingsopdrachten | 7 | D ·rekenen | 96 | Rekenen: verkoopprijs exclusief btw berekenen |
+| H3 Rekenen | 7 | D ·rekenen | 100 | Rekenen: consumentenprijs van tablets berekenen |
+| H3 Rekenen | 8 | D ·rekenen | 100 | Rekenen: consumentenprijs van een sloep berekenen |
+| H3 Rekenen | 10 | D ·rekenen | 101 | Rekenen: verkoopprijs exclusief btw berekenen in een tabel |
+
+## PIN-H3-08 · Afzet en omzet
+
+Begrippen: afzet, omzet  
+Paragrafen: 3.2, Weet je het nog? · niveaus: W/D/S · 14 opgaven
+
+| Waar | Opgave | Niveau | Blz. | Omschrijving |
+|---|---|---|---|---|
+| H3 Weet je het nog? | 11 | W | 77 | Puzzelwoorden invullen over markt en omzet |
+| H3 Weet je het nog? | 6 | D ·rekenen | 77 | Rekenen: ontbrekende getallen bij afzet, prijs en omzet berekenen |
+| H3 Weet je het nog? | 7 | S | 77 | Verklaren waarom de omzet toeneemt ondanks minder klanten |
+| H3 Weet je het nog? | 8a | D ·rekenen | 77 | Rekenen: gemiddelde omzet per maand berekenen |
+| H3 Weet je het nog? | 8b | D ·rekenen | 77 | Rekenen: gemiddelde afzet per week berekenen |
+| H3 3.3 | 3c | D ·rekenen | 87 | Rekenen: omzet bij de evenwichtsprijs berekenen |
+| H3 3.4 | 1a | D ·rekenen | 90 | Rekenen: totale omzet van supermarkten berekenen |
+| H3 3.4 | 1b | D ·rekenen | 90 | Rekenen: omzetverlies van Jumbo berekenen |
+| H3 Herhalingsopdrachten | 15c | D ·rekenen | 97 | Rekenen: omzet bij de evenwichtsprijs berekenen |
+| H3 Plusopdrachten | 10c | D ·rekenen | 99 | Rekenen: omzet bij de nieuwe evenwichtsprijs berekenen |
+| H3 Plusopdrachten | 9b | D ·rekenen | 99 | Rekenen: verschil in omzet bij een afwijkende verkoopprijs berekenen |
+| H3 Examentraining | 1 | D ·rekenen | 102 | Rekenen: totale omzet van twee strandtenten berekenen |
+| H3 Examentraining | 2 | S | 102 | Uitleggen dat de afzet van Henk stijgt door zijn nieuwe locatie |
+| H3 Examentraining | 11 | D ·rekenen | 105 | Rekenen: omzet van alle vluchten berekenen |
+
+## PIN-H3-09 · Van omzet naar nettoresultaat
+
+Begrippen: inkoopwaarde, brutowinst, bedrijfskosten, nettoresultaat  
+Paragrafen: 3.2 · niveaus: D/S · 12 opgaven
+
+| Waar | Opgave | Niveau | Blz. | Omschrijving |
+|---|---|---|---|---|
+| H3 Weet je het nog? | 4b | S | 77 | Uitleggen waarom Mirjam geen rekening houdt met btw bij haar winst |
+| H3 3.2 | 1 | S | 82 | Twee mogelijke oorzaken noemen waarom nettowinst minder hard steeg dan omzet |
+| H3 3.2 | 2 | D ·rekenen | 82 | Rekenen: minimum aantal bossen bloemen berekenen voor brutowinst |
+| H3 3.2 | 3 | D ·rekenen | 83 | Rekenen: ontbrekende bedragen bij omzet, brutowinst en nettoresultaat berekenen |
+| H3 3.2 | 8 | S | 85 | Gevolg van onvoldoende benutte productiecapaciteit voor het nettoresultaat verklaren |
+| H3 Herhalingsopdrachten | 8 | D ·rekenen | 96 | Rekenen: brutowinst en nettoresultaat berekenen |
+| H3 Herhalingsopdrachten | 9 | D | 96 | Voorbeelden van bedrijfskosten herkennen |
+| H3 Plusopdrachten | 6 | D ·rekenen | 98 | Rekenen: ontbrekende bedragen bij omzet en resultaat berekenen |
+| H3 Rekenen | 11 | D ·rekenen | 101 | Rekenen: overzicht van omzet, kosten en nettoresultaat invullen |
+| H3 Rekenen | 12 | D ·rekenen | 101 | Rekenen: ontbrekende bedragen in een resultatenoverzicht berekenen |
+| H3 Examentraining | 4 | D ·rekenen | 103 | Rekenen: nettoresultaat berekenen |
+| H3 Examentraining | 8 | D | 104 | Gevolg van een gelijkblijvende verkoopprijs voor de winstmarge bepalen |
+
+## PIN-H3-10 · Arbeidsproductiviteit
+
+Begrippen: arbeidsproductiviteit  
+Paragrafen: 3.2 · niveaus: D/S · 7 opgaven
+
+Wel behandeld, niet in de begrippenlijst: automatisering, mechanisering, arbeidsdeling
+
+| Waar | Opgave | Niveau | Blz. | Omschrijving |
+|---|---|---|---|---|
+| H3 3.2 | 6 | S | 84 | Gevolgen van hogere arbeidsproductiviteit voor prijs en productiewijze beredeneren |
+| H3 Herhalingsopdrachten | 10a | D ·rekenen | 96 | Rekenen: arbeidsproductiviteit per week berekenen |
+| H3 Herhalingsopdrachten | 10b | D ·rekenen | 96 | Rekenen: arbeidsproductiviteit na aanschaf van een robot berekenen |
+| H3 Plusopdrachten | 7 | S | 98 | Redenering over automatisering en werkgelegenheid in de juiste volgorde zetten |
+| H3 Rekenen | 13a | D ·rekenen | 101 | Rekenen: arbeidsproductiviteit per dag berekenen |
+| H3 Rekenen | 13b | D ·rekenen | 101 | Rekenen: percentuele stijging van de arbeidsproductiviteit berekenen |
+| H3 Rekenen | 14b | D ·rekenen | 101 | Rekenen: toename van de arbeidsproductiviteit per jaar berekenen |
+
+## PIN-H3-11 · Productiecapaciteit en bezettingsgraad
+
+Begrippen: productiecapaciteit, bezettingsgraad  
+Paragrafen: 3.2 · niveaus: W/D/S · 9 opgaven
+
+| Waar | Opgave | Niveau | Blz. | Omschrijving |
+|---|---|---|---|---|
+| H3 3.2 | 7a | D ·rekenen | 84 | Rekenen: percentuele toename van de productiecapaciteit berekenen |
+| H3 3.2 | 7b | D | 84 | Twee voorbeelden uit een bericht noemen van toegenomen productiecapaciteit |
+| H3 3.2 | 8 | S | 85 | Gevolg van onvoldoende benutte productiecapaciteit voor het nettoresultaat verklaren |
+| H3 Herhalingsopdrachten | 11 | W | 96 | Factoren waarvan de productiecapaciteit afhangt noemen |
+| H3 Herhalingsopdrachten | 12a | D ·rekenen | 96 | Rekenen: productie per week berekenen |
+| H3 Herhalingsopdrachten | 12b | S | 96 | Verklaren dat de kostprijs kan dalen bij meer productie-uren |
+| H3 Plusopdrachten | 8 | D ·rekenen | 98 | Rekenen: jaarlijkse productie vóór een nieuwe fabriek berekenen |
+| H3 Rekenen | 14a | D ·rekenen | 101 | Rekenen: productie per jaar berekenen |
+| H3 Examentraining | 6 | D ·rekenen | 103 | Rekenen: uitbreidingsruimte in afzet tot volledige productiecapaciteit berekenen |
+
+## PIN-H3-12 · Maatschappelijk verantwoord ondernemen
+
+Begrippen: maatschappelijk verantwoord ondernemen  
+Paragrafen: 3.2 · niveaus: D/S · 2 opgaven
+
+| Waar | Opgave | Niveau | Blz. | Omschrijving |
+|---|---|---|---|---|
+| H3 3.2 | 10 | S | 85 | Gevolgen van duurzaam ondernemen voor kosten en externe effecten beredeneren |
+| H3 Herhalingsopdrachten | 13 | D | 96 | Twee voorbeelden van maatschappelijk verantwoord ondernemen noemen |
+
+## PIN-H3-13 · Externe effecten
+
+Begrippen: positieve externe effecten, negatieve externe effecten  
+Paragrafen: 3.2 · niveaus: D/S · 2 opgaven
+
+| Waar | Opgave | Niveau | Blz. | Omschrijving |
+|---|---|---|---|---|
+| H3 3.2 | 10 | S | 85 | Gevolgen van duurzaam ondernemen voor kosten en externe effecten beredeneren |
+| H3 3.2 | 9 | D | 85 | Voorbeeld geven van een maatschappelijke opbrengst van duurzame bezorging |
+
+## PIN-H3-14 · Concrete en abstracte markt
+
+Begrippen: concrete markt, abstracte markt  
+Paragrafen: 3.3, Weet je het nog? · niveaus: W/D · 5 opgaven
+
+Wel behandeld, niet in de begrippenlijst: deelmarkt
+
+| Waar | Opgave | Niveau | Blz. | Omschrijving |
+|---|---|---|---|---|
+| H3 Weet je het nog? | 10a | D | 77 | Twee voorbeelden van deelmarkten van de woningmarkt noemen |
+| H3 Weet je het nog? | 11 | W | 77 | Puzzelwoorden invullen over markt en omzet |
+| H3 Weet je het nog? | 9 | W | 77 | Ontbrekende woorden invullen over markten |
+| H3 3.3 | 1 | W | 86 | Markt classificeren als abstract of concreet |
+| H3 Plusopdrachten | 9a | W | 99 | Markt voor telefoons classificeren als abstract of concreet |
+
+## PIN-H3-15 · Vraag en aanbod
+
+Begrippen: vraag, aanbod  
+Paragrafen: 3.3 · niveaus: W/D/S · 12 opgaven
+
+Wel behandeld, niet in de begrippenlijst: vraaglijn, aanbodlijn, verschuiving
+
+| Waar | Opgave | Niveau | Blz. | Omschrijving |
+|---|---|---|---|---|
+| H2 2.3 | 12b | S | 55 | Stijging van huizenprijzen verklaren met vraag en aanbod |
+| H3 Weet je het nog? | 10b | S | 77 | Gevolg van veel vraag en weinig aanbod voor de prijs verklaren |
+| H3 3.3 | 2a | D | 86 | Juiste woorden bepalen in een bericht over vraag en aanbod |
+| H3 3.3 | 3a | D | 87 | Vraag en aanbod aflezen uit een grafiek en in een tabel invullen |
+| H3 3.3 | 5b | D | 88 | Nieuwe evenwichtsprijs en -hoeveelheid bepalen na aanbodtoename |
+| H3 3.3 | 5d | D | 88 | Nieuwe evenwichtsprijs en -hoeveelheid bepalen na vraagtoename |
+| H3 3.3 | 6 | W | 88 | Juiste woorden omcirkelen over het verschuiven van vraag- en aanbodlijn |
+| H3 3.3 | 8b | S | 89 | Voorspellen of de vraag naar arbeid toe- of afneemt bij een sterke stijging van het minimumloon, met uitleg |
+| H3 3.4 | 8a | W | 92 | Aanbieders en vragers van aandelen Ajax noemen |
+| H3 3.4 | 10 | S | 93 | Gevolgen van een nieuwe energieaanbieder voor prijs, omzet en winst beredeneren |
+| H3 Herhalingsopdrachten | 14 | W | 97 | Juiste antwoorden omcirkelen over vraag en aanbod bij een prijsstijging |
+| H3 Examentraining | 12 | D | 105 | Grafiek herkennen die de verwachting van de econoom over een vliegtaks weergeeft |
+
+## PIN-H3-16 · Evenwichtsprijs en evenwichtshoeveelheid
+
+Begrippen: evenwichtsprijs, evenwichtshoeveelheid  
+Paragrafen: 3.3 · niveaus: D · 11 opgaven
+
+| Waar | Opgave | Niveau | Blz. | Omschrijving |
+|---|---|---|---|---|
+| H3 3.3 | 3b | D | 87 | Evenwichtsprijs en evenwichtshoeveelheid invullen |
+| H3 3.3 | 3c | D ·rekenen | 87 | Rekenen: omzet bij de evenwichtsprijs berekenen |
+| H3 3.3 | 4b | D | 87 | Nieuwe evenwichtsprijs en -hoeveelheid bepalen |
+| H3 3.3 | 5b | D | 88 | Nieuwe evenwichtsprijs en -hoeveelheid bepalen na aanbodtoename |
+| H3 3.3 | 5d | D | 88 | Nieuwe evenwichtsprijs en -hoeveelheid bepalen na vraagtoename |
+| H3 Herhalingsopdrachten | 15a | D | 97 | Evenwichtsprijs noteren |
+| H3 Herhalingsopdrachten | 15b | D | 97 | Evenwichtshoeveelheid noteren |
+| H3 Herhalingsopdrachten | 15c | D ·rekenen | 97 | Rekenen: omzet bij de evenwichtsprijs berekenen |
+| H3 Herhalingsopdrachten | 16c | D | 97 | Nieuwe evenwichtsprijs bepalen |
+| H3 Herhalingsopdrachten | 16d | D | 97 | Nieuwe evenwichtshoeveelheid bepalen |
+| H3 Plusopdrachten | 10c | D ·rekenen | 99 | Rekenen: omzet bij de nieuwe evenwichtsprijs berekenen |
+
+## PIN-H3-17 · Vrije marktwerking, maximum- en minimumprijs
+
+Begrippen: vrije marktwerking, maximumprijs, minimumprijs  
+Paragrafen: 3.3 · niveaus: W/S · 6 opgaven
+
+Wel behandeld, niet in de begrippenlijst: minimumloon, huurtoeslag
+
+| Waar | Opgave | Niveau | Blz. | Omschrijving |
+|---|---|---|---|---|
+| H3 3.3 | 7a | S | 89 | Bepalen wie beschermd worden door een maximumprijs, met uitleg |
+| H3 3.3 | 7b | W | 89 | Andere manier noemen waarop de overheid huurwoningen betaalbaar houdt |
+| H3 3.3 | 8a | W | 89 | Bepalen wie beschermd worden door het minimumloon |
+| H3 3.3 | 8b | S | 89 | Voorspellen of de vraag naar arbeid toe- of afneemt bij een sterke stijging van het minimumloon, met uitleg |
+| H3 Herhalingsopdrachten | 17 | W | 97 | Twee voorbeelden van markten met een maximumprijs noemen |
+| H3 Plusopdrachten | 11 | S | 99 | Verklaren waarom de overheid bij telefoons geen min- of maximumprijs vaststelt |
+
+## PIN-H3-18 · Transparante markt
+
+Begrippen: transparante markt  
+Paragrafen: 3.3 · niveaus: W/S · 4 opgaven
+
+| Waar | Opgave | Niveau | Blz. | Omschrijving |
+|---|---|---|---|---|
+| H3 3.3 | 10a | W | 89 | Voordeel van een transparante markt voor consumenten noemen |
+| H3 3.3 | 10b | W | 89 | Nadeel van een transparante markt voor producenten noemen |
+| H3 3.3 | 9 | S | 89 | Beoordelen of markten transparant zijn, met uitleg |
+| H3 Herhalingsopdrachten | 18 | W | 97 | Betekenis van een transparante markt noemen |
+
+## PIN-H3-19 · Marktaandeel
+
+Begrippen: marktaandeel  
+Paragrafen: 3.4 · niveaus: W/D/S · 3 opgaven
+
+| Waar | Opgave | Niveau | Blz. | Omschrijving |
+|---|---|---|---|---|
+| H3 3.4 | 2 | S | 90 | Verklaren waarom het marktaandeel van goedkopere supermarkten stijgt |
+| H3 Herhalingsopdrachten | 19 | W | 97 | Juiste omschrijving van marktaandeel herkennen |
+| H3 Herhalingsopdrachten | 20b | D ·rekenen | 97 | Rekenen: gezamenlijk marktaandeel berekenen |
+
+## PIN-H3-20 · Fusie en overname
+
+Begrippen: fusie  
+Paragrafen: 3.4 · niveaus: W/S · 5 opgaven
+
+Wel behandeld, niet in de begrippenlijst: overname
+
+| Waar | Opgave | Niveau | Blz. | Omschrijving |
+|---|---|---|---|---|
+| H3 3.4 | 4a | W | 91 | Term voor het samengaan van twee bedrijven tot één noemen (fusie) |
+| H3 3.4 | 4b | S | 91 | Voorbeeld van besparing op vaste kosten na een fusie geven, met uitleg |
+| H3 3.4 | 5b | S | 91 | Argument noemen voor de voorwaarde bij de fusie van Plus en Coop |
+| H3 Herhalingsopdrachten | 20a | W | 97 | Term voor het samengaan van twee bedrijven tot één noemen (fusie) |
+| H3 Plusopdrachten | 12 | S | 99 | Mogelijk nadeel van een overname voor werknemers en klanten noemen |
+
+## PIN-H3-21 · Homogene en heterogene producten
+
+Begrippen: homogeen product, heterogeen product  
+Paragrafen: 3.4 · niveaus: W/D/S · 6 opgaven
+
+| Waar | Opgave | Niveau | Blz. | Omschrijving |
+|---|---|---|---|---|
+| H3 3.4 | 8b | S | 92 | Marktvorm van de aandelenmarkt bepalen, met uitleg |
+| H3 3.4 | 9 | D | 93 | Voorbeelden indelen bij homogeen en heterogeen oligopolie |
+| H3 Herhalingsopdrachten | 22 | W | 97 | Juiste woorden omcirkelen over groente als product en marktvorm |
+| H3 Herhalingsopdrachten | 23 | W | 97 | Juiste woorden omcirkelen over de oliemarkt |
+| H3 Examentraining | 5 | D | 103 | Marktvorm bepalen bij een bedrijf met heterogene producten en veel concurrenten |
+| H3 Examentraining | 10 | D | 104 | Voorbeeld geven waaruit blijkt dat een vliegreis een heterogeen goed is |
+
+## PIN-H3-22 · Marktvormen
+
+Begrippen: volkomen concurrentie, monopolistische concurrentie, oligopolie  
+Paragrafen: 3.4 · niveaus: W/D/S · 10 opgaven
+
+| Waar | Opgave | Niveau | Blz. | Omschrijving |
+|---|---|---|---|---|
+| H3 3.4 | 7 | D | 92 | Marktvorm van de woningmarkt herkennen |
+| H3 3.4 | 8b | S | 92 | Marktvorm van de aandelenmarkt bepalen, met uitleg |
+| H3 3.4 | 10 | S | 93 | Gevolgen van een nieuwe energieaanbieder voor prijs, omzet en winst beredeneren |
+| H3 3.4 | 12 | S | 93 | Uitleggen waarom een kartel vooral bij een oligopolie kan voorkomen |
+| H3 3.4 | 9 | D | 93 | Voorbeelden indelen bij homogeen en heterogeen oligopolie |
+| H3 Herhalingsopdrachten | 22 | W | 97 | Juiste woorden omcirkelen over groente als product en marktvorm |
+| H3 Herhalingsopdrachten | 23 | W | 97 | Juiste woorden omcirkelen over de oliemarkt |
+| H3 Plusopdrachten | 13 | W | 99 | Twee kenmerken van monopolistische concurrentie bij spijkerbroeken noemen |
+| H3 Examentraining | 5 | D | 103 | Marktvorm bepalen bij een bedrijf met heterogene producten en veel concurrenten |
+| H3 Examentraining | 9 | W | 104 | Juiste woorden kiezen in tekst over de markt voor vliegtickets |
+
+## PIN-H3-23 · Monopolie en soorten monopolie
+
+Begrippen: monopolie, natuurlijk monopolie, overheidsmonopolie, economisch monopolie  
+Paragrafen: 3.4 · niveaus: S · 2 opgaven
+
+| Waar | Opgave | Niveau | Blz. | Omschrijving |
+|---|---|---|---|---|
+| H3 3.4 | 6 | S | 91 | Verklaring geven waarom de overheid een monopolie heeft bij bepaalde diensten |
+| H3 Herhalingsopdrachten | 21 | S | 97 | Uitleggen waarom de overheid geen monopolies wil, met het oog op de consument |
+
+## PIN-H3-24 · Prijzenoorlog
+
+Begrippen: prijzenoorlog  
+Paragrafen: 3.4 · niveaus: S · 3 opgaven
+
+| Waar | Opgave | Niveau | Blz. | Omschrijving |
+|---|---|---|---|---|
+| H3 Plusopdrachten | 14a | S | 99 | Risico van het zelf beginnen van een prijzenoorlog benoemen |
+| H3 Plusopdrachten | 14b | S | 99 | Reden voor een groot bedrijf om een prijzenoorlog te beginnen benoemen |
+| H3 Plusopdrachten | 14c | S | 99 | Reden voor een nieuw bedrijf om een prijzenoorlog te beginnen benoemen |
+
+## PIN-H3-25 · Kartel
+
+Begrippen: kartel  
+Paragrafen: 3.4 · niveaus: W/S · 8 opgaven
+
+| Waar | Opgave | Niveau | Blz. | Omschrijving |
+|---|---|---|---|---|
+| H3 3.4 | 11a | S | 93 | Mogelijke kartelafspraak tussen banken over spaarrekeningen noemen |
+| H3 3.4 | 11b | S | 93 | Uitleggen waarom deze kartelafspraak nadelig is voor de consument |
+| H3 3.4 | 11c | S | 93 | Voordeel van verboden prijsafspraken voor bedrijven noemen |
+| H3 3.4 | 12 | S | 93 | Uitleggen waarom een kartel vooral bij een oligopolie kan voorkomen |
+| H3 Herhalingsopdrachten | 24a | W | 97 | Term voor een afspraak tussen bedrijven om concurrentie te beperken noemen (kartel) |
+| H3 Herhalingsopdrachten | 24b | S | 97 | Uitleggen waarom kartelafspraken bij wet verboden zijn |
+| H3 Plusopdrachten | 15 | S | 99 | Uitleggen waarom prijsafspraken ondanks het verbod toch aantrekkelijk zijn |
+| H3 Examentraining | 3 | S | 103 | Financieel nadeel van het ontbreken van een prijsafspraak uitleggen |
+
 ## PIN-A-01 · Rekenen met percentages
 
 Begrippen: —  
-Paragrafen: Rekenen · niveaus: D · 29 opgaven
+Paragrafen: Rekenen · niveaus: D · 35 opgaven
 
 Wel behandeld, niet in de begrippenlijst: percentage berekenen, bedrag met een percentage berekenen
 
@@ -814,6 +1211,12 @@ Wel behandeld, niet in de begrippenlijst: percentage berekenen, bedrag met een p
 | H2 2.4 | 2b | D ·rekenen | 56 | Rekenen: percentueel verschil in contant betalen tussen leeftijdsgroepen berekenen |
 | H2 Plusopdrachten | 7 | D ·rekenen | 64 | Rekenen: bedrag na schenkbelasting berekenen |
 | H2 Examentraining | 9 | D ·rekenen | 71 | Rekenen: gemiddelde jaarlijkse besteding aan voeding per huisdier berekenen |
+| H3 3.2 | 7a | D ·rekenen | 84 | Rekenen: percentuele toename van de productiecapaciteit berekenen |
+| H3 3.3 | 2b | D ·rekenen | 86 | Rekenen: gemiddelde woningprijs van een jaar eerder berekenen |
+| H3 3.4 | 1b | D ·rekenen | 90 | Rekenen: omzetverlies van Jumbo berekenen |
+| H3 Herhalingsopdrachten | 20b | D ·rekenen | 97 | Rekenen: gezamenlijk marktaandeel berekenen |
+| H3 Rekenen | 6b | D ·rekenen | 100 | Rekenen: percentuele toename van de productiekosten berekenen |
+| H3 Rekenen | 13b | D ·rekenen | 101 | Rekenen: percentuele stijging van de arbeidsproductiviteit berekenen |
 
 ## PIN-A-02 · Rekenen met groeifactoren
 
@@ -858,7 +1261,7 @@ Wel behandeld, niet in de begrippenlijst: absolute verandering, relatieve verand
 ## PIN-A-04 · Omrekenen tussen week, maand en jaar
 
 Begrippen: —  
-Paragrafen: Rekenen · niveaus: D · 9 opgaven
+Paragrafen: Rekenen · niveaus: D · 13 opgaven
 
 Wel behandeld, niet in de begrippenlijst: omrekenen naar een andere periode
 
@@ -873,4 +1276,8 @@ Wel behandeld, niet in de begrippenlijst: omrekenen naar een andere periode
 | H2 Rekenen | 1 | D ·rekenen | 66 | Rekenen: inkomen per week berekenen |
 | H2 Rekenen | 2 | D ·rekenen | 66 | Rekenen: jaarinkomen vergelijken met weekloon |
 | H2 Rekenen | 16b | D ·rekenen | 67 | Rekenen: rente bij rood staan gedurende twee maanden berekenen |
+| H3 Weet je het nog? | 8a | D ·rekenen | 77 | Rekenen: gemiddelde omzet per maand berekenen |
+| H3 Weet je het nog? | 8b | D ·rekenen | 77 | Rekenen: gemiddelde afzet per week berekenen |
+| H3 Herhalingsopdrachten | 12a | D ·rekenen | 96 | Rekenen: productie per week berekenen |
+| H3 Rekenen | 14a | D ·rekenen | 101 | Rekenen: productie per jaar berekenen |
 

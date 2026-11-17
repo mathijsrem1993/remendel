@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-"""Bouwt onderwerpen-PIN.json voor Pincode 4, hoofdstuk 1 en 2 plus basisvaardigheden."""
+"""Bouwt onderwerpen-PIN.json voor Pincode 4, hoofdstuk 1, 2 en 3 plus basisvaardigheden."""
 import json, sys
 
 # (id, label, hoofdstuk, paragrafen, begrippen, begrippen_via_boek, synoniemen)
@@ -142,6 +142,73 @@ O = [
   ["debetrente","creditrente"],["risico","rentemarge"],
   ["verschil tussen spaarrente en leenrente","marge","risico-opslag"]),
 
+ ("PIN-H3-01","Produceren en productiefactoren",3,["3.1","Weet je het nog?"],
+  ["produceren","productiefactoren","kapitaal","arbeid","natuur","ondernemerschap"],
+  ["beloning per productiefactor: rente of huur, loon, pacht, winst"],
+  ["productiefactor","productiemiddelen","beloning","pacht","ondernemer"]),
+ ("PIN-H3-02","Toegevoegde waarde",3,["3.1"],
+  ["toegevoegde waarde"],[],["waarde toevoegen","bewerken"]),
+ ("PIN-H3-03","Vaste en variabele kosten",3,["3.1"],
+  ["vaste kosten","variabele kosten"],[],["constante kosten","totale kosten"]),
+ ("PIN-H3-04","Investeren en afschrijving",3,["3.1"],
+  ["investeren","afschrijving"],["restwaarde","terugverdientijd"],
+  ["afschrijven","afschrijvingskosten","waardevermindering","duurzame productiemiddelen","investering"]),
+ ("PIN-H3-05","Kostprijs",3,["3.1"],
+  ["kostprijs"],[],["kostprijs per product","gemiddelde kosten per product"]),
+ ("PIN-H3-06","Van inkoopprijs naar verkoopprijs",3,["3.1","Weet je het nog?"],
+  ["inkoopprijs","brutowinstopslag","verkoopprijs"],[],
+  ["brutowinstmarge","winstopslag","prijs exclusief btw","marge"]),
+ ("PIN-H3-07","Btw en consumentenprijs",3,["3.1","Weet je het nog?"],
+  ["btw","consumentenprijs"],[],
+  ["belasting toegevoegde waarde","prijs inclusief btw","9%","21%","ontvangen en betaalde btw"]),
+ ("PIN-H3-08","Afzet en omzet",3,["3.2","Weet je het nog?"],
+  ["afzet","omzet"],[],["aantal verkochte producten","verkoopopbrengst","omzet is afzet keer prijs"]),
+ ("PIN-H3-09","Van omzet naar nettoresultaat",3,["3.2"],
+  ["inkoopwaarde","brutowinst","bedrijfskosten","nettoresultaat"],[],
+  ["resultatenoverzicht","nettowinst","winst of verlies","inkoopwaarde van de omzet"]),
+ ("PIN-H3-10","Arbeidsproductiviteit",3,["3.2"],
+  ["arbeidsproductiviteit"],["automatisering","mechanisering","arbeidsdeling"],
+  ["productie per werknemer","productie per persoon","productiviteit"]),
+ ("PIN-H3-11","Productiecapaciteit en bezettingsgraad",3,["3.2"],
+  ["productiecapaciteit","bezettingsgraad"],[],
+  ["maximale productie","benutting","werkelijke productie"]),
+ ("PIN-H3-12","Maatschappelijk verantwoord ondernemen",3,["3.2"],
+  ["maatschappelijk verantwoord ondernemen"],[],["mvo","duurzaam ondernemen"]),
+ ("PIN-H3-13","Externe effecten",3,["3.2"],
+  ["positieve externe effecten","negatieve externe effecten"],[],
+  ["extern effect","externe effecten","onbedoelde gevolgen","brede welvaart"]),
+ ("PIN-H3-14","Concrete en abstracte markt",3,["3.3","Weet je het nog?"],
+  ["concrete markt","abstracte markt"],["deelmarkt"],
+  ["markt","soorten markten","deelmarkten"]),
+ ("PIN-H3-15","Vraag en aanbod",3,["3.3"],
+  ["vraag","aanbod"],["vraaglijn","aanbodlijn","verschuiving"],
+  ["vraag naar","aanbod van","vragers","aanbieders","vraaglijn","aanbodlijn"]),
+ ("PIN-H3-16","Evenwichtsprijs en evenwichtshoeveelheid",3,["3.3"],
+  ["evenwichtsprijs","evenwichtshoeveelheid"],[],
+  ["marktevenwicht","evenwicht","prijs waarbij vraag en aanbod gelijk zijn"]),
+ ("PIN-H3-17","Vrije marktwerking, maximum- en minimumprijs",3,["3.3"],
+  ["vrije marktwerking","maximumprijs","minimumprijs"],["minimumloon","huurtoeslag"],
+  ["vrije markt","prijsregulering","maximumhuur","minimumloon"]),
+ ("PIN-H3-18","Transparante markt",3,["3.3"],
+  ["transparante markt"],[],["transparantie","doorzichtige markt","overzicht op de markt"]),
+ ("PIN-H3-19","Marktaandeel",3,["3.4"],
+  ["marktaandeel"],[],["aandeel in de markt","marktaandelen"]),
+ ("PIN-H3-20","Fusie en overname",3,["3.4"],
+  ["fusie"],["overname"],["fuseren","samengaan","overnemen"]),
+ ("PIN-H3-21","Homogene en heterogene producten",3,["3.4"],
+  ["homogeen product","heterogeen product"],[],
+  ["homogene goederen","heterogene goederen","identieke producten","merkverschil"]),
+ ("PIN-H3-22","Marktvormen",3,["3.4"],
+  ["volkomen concurrentie","monopolistische concurrentie","oligopolie"],[],
+  ["marktvorm","marktvormen","aantal aanbieders","concurrentievorm"]),
+ ("PIN-H3-23","Monopolie en soorten monopolie",3,["3.4"],
+  ["monopolie","natuurlijk monopolie","overheidsmonopolie","economisch monopolie"],[],
+  ["monopolist","enige aanbieder","octrooi","patent"]),
+ ("PIN-H3-24","Prijzenoorlog",3,["3.4"],
+  ["prijzenoorlog"],[],["prijsverlaging om marktaandeel","prijsgevecht"]),
+ ("PIN-H3-25","Kartel",3,["3.4"],
+  ["kartel"],[],["kartelafspraak","prijsafspraak","verboden afspraken","illegale afspraken"]),
+
  ("PIN-A-01","Rekenen met percentages",None,["Rekenen"],
   [],["percentage berekenen","bedrag met een percentage berekenen"],
   ["procenten","percentage","procentuele stijging","procentuele daling","korting"]),
@@ -155,7 +222,14 @@ O = [
   ["per week","per maand","per jaar","deel van een jaar","naar rato"]),
 ]
 
-BUITEN = []
+BUITEN = [
+ {"hoofdstuk": 3, "label": "Vraag- en aanbodlijnen tekenen", "waar": "H3 \u00a73.3 opgave 4a, 5a en 5c, Herhalingsopdracht 16a en 16b, Plusopdracht 10a en 10b",
+  "reden": "Leerlingen hoeven op dit niveau geen vraag- of aanbodlijn te tekenen. Het aflezen en het bepalen van de nieuwe evenwichtsprijs blijft wel toetsstof."},
+ {"hoofdstuk": 3, "label": "Stukloon en prestatiebeloning", "waar": "H3 \u00a73.2 opgave 5a en 5b",
+  "reden": "Staat niet in de begrippenlijst en dus niet in de syllabus."},
+ {"hoofdstuk": 3, "label": "ACM", "waar": "H3 \u00a73.4 opgave 5a",
+  "reden": "Staat niet in de begrippenlijst en dus niet in de syllabus."},
+]
 AANDACHT = [
  {"onderwerp":"PIN-H1-14","punt":"De Begrippen-pagina van het boek (blz. 27) plaatst primaire en secundaire inkomens onder §1.1, terwijl alle opgaven erover in §1.2 staan. De onderwerpen volgen de opgaven."},
  {"onderwerp":"PIN-H1-18","punt":"Het boek schrijft 'schaars' en 'prioriteiten stellen', de begrippenlijst 'schaarste' en 'prioriteiten'. Beide vormen staan als synoniem opgenomen."},
@@ -174,6 +248,12 @@ AANDACHT = [
  {"onderwerp":"PIN-H2-16","punt":"Twee opgaven, beide van het type 'herken de geldfunctie'. Geen enkele opgave vraagt om uitleg of toepassing."},
  {"onderwerp":None,"punt":"Van de 347 opgaven in hoofdstuk 1 en 2 staan er 23 op W-niveau (7 procent). 28 van de 51 onderwerpen hebben geen enkele W-opgave. Feedback op weetniveau moet daarom naar de begrippenlijst verwijzen en niet naar boekopgaven."},
  {"onderwerp":None,"punt":"22 onderwerpen hebben geen enkele opgave met de tag rekenen. Daar kan een leerling met een rekenfout niet naar een oefenopgave binnen het onderwerp zelf worden gestuurd; daarvoor zijn de basisvaardigheden PIN-A-01 tot en met PIN-A-04 bedoeld."},
+ {"onderwerp":"PIN-H3-10","punt":"De begrippenlijst omschrijft arbeidsproductiviteit als de productie per werknemer per uur, het boek (blz. 95) als de productie per persoon in een bepaalde tijd. De begrippenlijst is leidend; bij rekenopgaven per dag of per week moet de eenheid dus zelf worden omgerekend."},
+ {"onderwerp":"PIN-H3-13","punt":"Externe effecten komen in twee hoofdstukken voor: in H1 als maatschappelijke kosten en opbrengsten (PIN-H1-10), in H3 als positieve en negatieve externe effecten. Beide codes blijven bestaan omdat de begrippen in beide begrippenlijsten staan; opgaven die allebei raken zijn aan beide gekoppeld."},
+ {"onderwerp":"PIN-H3-01","punt":"Zes begrippen in \u00e9\u00e9n onderwerp, inclusief de beloning per productiefactor (rente of huur, loon, pacht, winst). Die beloningen staan niet los in de begrippenlijst maar wel in de aanvullingskolom; ze horen bij dezelfde vraag en leveren geen ander fouttype op."},
+ {"onderwerp":"PIN-H3-21","punt":"Het boek schrijft 'homogene goederen' en 'heterogene goederen', de begrippenlijst 'homogeen product' en 'heterogeen product'. Beide vormen staan als synoniem opgenomen."},
+ {"onderwerp":"PIN-H3-05","punt":"Het boek schrijft 'kostprijs per product', de begrippenlijst 'kostprijs'. Als synoniem opgenomen."},
+ {"onderwerp":"PIN-H2-15","punt":"Afgehandeld: \u00a72.3 opgave 12b (huizenprijzen verklaren met vraag en aanbod) is nu ook gekoppeld aan PIN-H3-15."},
 ]
 
 def main(uit):
@@ -194,7 +274,7 @@ def main(uit):
                 "die begrippenlijst is gebaseerd op de syllabus van het centraal examen. Begrippen die wel "
                 "in het boek worden behandeld maar niet in de begrippenlijst staan, zijn opgenomen in het "
                 "veld begrippen_via_presentatie."),
-            "status": "hoofdstuk 1 en 2 plus basisvaardigheden; hoofdstuk 3 t/m 8 nog te doen",
+            "status": "hoofdstuk 1, 2 en 3 plus basisvaardigheden; hoofdstuk 4 t/m 8 nog te doen",
         },
         "onderwerpen": ond,
         "buiten_toetsstof": BUITEN,

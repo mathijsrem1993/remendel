@@ -5,7 +5,7 @@
     "titel": "Pincode 4 · vmbo GL/TL",
     "niveau": "4 mavo (GL/TL)",
     "toetsstofcriterium": "De stof uit het boek, aangevuld met de begrippenlijst bij het vak; die begrippenlijst is gebaseerd op de syllabus van het centraal examen. Begrippen die wel in het boek worden behandeld maar niet in de begrippenlijst staan, zijn opgenomen in het veld begrippen_via_presentatie.",
-    "status": "hoofdstuk 1 en 2 plus basisvaardigheden; hoofdstuk 3 t/m 8 nog te doen"
+    "status": "hoofdstuk 1, 2 en 3 plus basisvaardigheden; hoofdstuk 4 t/m 8 nog te doen"
   },
   "onderwerpen": [
     {
@@ -90,7 +90,7 @@
       "wds": [
         "D"
       ],
-      "aantal_opgaven": 4
+      "aantal_opgaven": 5
     },
     {
       "id": "PIN-H1-04",
@@ -196,7 +196,7 @@
         "D",
         "S"
       ],
-      "aantal_opgaven": 6
+      "aantal_opgaven": 7
     },
     {
       "id": "PIN-H1-08",
@@ -270,7 +270,7 @@
         "D",
         "S"
       ],
-      "aantal_opgaven": 5
+      "aantal_opgaven": 6
     },
     {
       "id": "PIN-H1-11",
@@ -1217,6 +1217,621 @@
       "aantal_opgaven": 12
     },
     {
+      "id": "PIN-H3-01",
+      "label": "Produceren en productiefactoren",
+      "hoofdstuk": 3,
+      "paragrafen": [
+        "3.1",
+        "Weet je het nog?"
+      ],
+      "begrippen": [
+        "produceren",
+        "productiefactoren",
+        "kapitaal",
+        "arbeid",
+        "natuur",
+        "ondernemerschap"
+      ],
+      "begrippen_via_presentatie": [
+        "beloning per productiefactor: rente of huur, loon, pacht, winst"
+      ],
+      "synoniemen": [
+        "productiefactor",
+        "productiemiddelen",
+        "beloning",
+        "pacht",
+        "ondernemer"
+      ],
+      "wds": [
+        "W",
+        "D"
+      ],
+      "aantal_opgaven": 6
+    },
+    {
+      "id": "PIN-H3-02",
+      "label": "Toegevoegde waarde",
+      "hoofdstuk": 3,
+      "paragrafen": [
+        "3.1"
+      ],
+      "begrippen": [
+        "toegevoegde waarde"
+      ],
+      "begrippen_via_presentatie": [],
+      "synoniemen": [
+        "waarde toevoegen",
+        "bewerken"
+      ],
+      "wds": [
+        "D",
+        "S"
+      ],
+      "aantal_opgaven": 3
+    },
+    {
+      "id": "PIN-H3-03",
+      "label": "Vaste en variabele kosten",
+      "hoofdstuk": 3,
+      "paragrafen": [
+        "3.1"
+      ],
+      "begrippen": [
+        "vaste kosten",
+        "variabele kosten"
+      ],
+      "begrippen_via_presentatie": [],
+      "synoniemen": [
+        "constante kosten",
+        "totale kosten"
+      ],
+      "wds": [
+        "D",
+        "S"
+      ],
+      "aantal_opgaven": 7
+    },
+    {
+      "id": "PIN-H3-04",
+      "label": "Investeren en afschrijving",
+      "hoofdstuk": 3,
+      "paragrafen": [
+        "3.1"
+      ],
+      "begrippen": [
+        "investeren",
+        "afschrijving"
+      ],
+      "begrippen_via_presentatie": [
+        "restwaarde",
+        "terugverdientijd"
+      ],
+      "synoniemen": [
+        "afschrijven",
+        "afschrijvingskosten",
+        "waardevermindering",
+        "duurzame productiemiddelen",
+        "investering"
+      ],
+      "wds": [
+        "D"
+      ],
+      "aantal_opgaven": 10
+    },
+    {
+      "id": "PIN-H3-05",
+      "label": "Kostprijs",
+      "hoofdstuk": 3,
+      "paragrafen": [
+        "3.1"
+      ],
+      "begrippen": [
+        "kostprijs"
+      ],
+      "begrippen_via_presentatie": [],
+      "synoniemen": [
+        "kostprijs per product",
+        "gemiddelde kosten per product"
+      ],
+      "wds": [
+        "D",
+        "S"
+      ],
+      "aantal_opgaven": 13
+    },
+    {
+      "id": "PIN-H3-06",
+      "label": "Van inkoopprijs naar verkoopprijs",
+      "hoofdstuk": 3,
+      "paragrafen": [
+        "3.1",
+        "Weet je het nog?"
+      ],
+      "begrippen": [
+        "inkoopprijs",
+        "brutowinstopslag",
+        "verkoopprijs"
+      ],
+      "begrippen_via_presentatie": [],
+      "synoniemen": [
+        "brutowinstmarge",
+        "winstopslag",
+        "prijs exclusief btw",
+        "marge"
+      ],
+      "wds": [
+        "D",
+        "S"
+      ],
+      "aantal_opgaven": 9
+    },
+    {
+      "id": "PIN-H3-07",
+      "label": "Btw en consumentenprijs",
+      "hoofdstuk": 3,
+      "paragrafen": [
+        "3.1",
+        "Weet je het nog?"
+      ],
+      "begrippen": [
+        "btw",
+        "consumentenprijs"
+      ],
+      "begrippen_via_presentatie": [],
+      "synoniemen": [
+        "belasting toegevoegde waarde",
+        "prijs inclusief btw",
+        "9%",
+        "21%",
+        "ontvangen en betaalde btw"
+      ],
+      "wds": [
+        "D",
+        "S"
+      ],
+      "aantal_opgaven": 11
+    },
+    {
+      "id": "PIN-H3-08",
+      "label": "Afzet en omzet",
+      "hoofdstuk": 3,
+      "paragrafen": [
+        "3.2",
+        "Weet je het nog?"
+      ],
+      "begrippen": [
+        "afzet",
+        "omzet"
+      ],
+      "begrippen_via_presentatie": [],
+      "synoniemen": [
+        "aantal verkochte producten",
+        "verkoopopbrengst",
+        "omzet is afzet keer prijs"
+      ],
+      "wds": [
+        "W",
+        "D",
+        "S"
+      ],
+      "aantal_opgaven": 14
+    },
+    {
+      "id": "PIN-H3-09",
+      "label": "Van omzet naar nettoresultaat",
+      "hoofdstuk": 3,
+      "paragrafen": [
+        "3.2"
+      ],
+      "begrippen": [
+        "inkoopwaarde",
+        "brutowinst",
+        "bedrijfskosten",
+        "nettoresultaat"
+      ],
+      "begrippen_via_presentatie": [],
+      "synoniemen": [
+        "resultatenoverzicht",
+        "nettowinst",
+        "winst of verlies",
+        "inkoopwaarde van de omzet"
+      ],
+      "wds": [
+        "D",
+        "S"
+      ],
+      "aantal_opgaven": 12
+    },
+    {
+      "id": "PIN-H3-10",
+      "label": "Arbeidsproductiviteit",
+      "hoofdstuk": 3,
+      "paragrafen": [
+        "3.2"
+      ],
+      "begrippen": [
+        "arbeidsproductiviteit"
+      ],
+      "begrippen_via_presentatie": [
+        "automatisering",
+        "mechanisering",
+        "arbeidsdeling"
+      ],
+      "synoniemen": [
+        "productie per werknemer",
+        "productie per persoon",
+        "productiviteit"
+      ],
+      "wds": [
+        "D",
+        "S"
+      ],
+      "aantal_opgaven": 7
+    },
+    {
+      "id": "PIN-H3-11",
+      "label": "Productiecapaciteit en bezettingsgraad",
+      "hoofdstuk": 3,
+      "paragrafen": [
+        "3.2"
+      ],
+      "begrippen": [
+        "productiecapaciteit",
+        "bezettingsgraad"
+      ],
+      "begrippen_via_presentatie": [],
+      "synoniemen": [
+        "maximale productie",
+        "benutting",
+        "werkelijke productie"
+      ],
+      "wds": [
+        "W",
+        "D",
+        "S"
+      ],
+      "aantal_opgaven": 9
+    },
+    {
+      "id": "PIN-H3-12",
+      "label": "Maatschappelijk verantwoord ondernemen",
+      "hoofdstuk": 3,
+      "paragrafen": [
+        "3.2"
+      ],
+      "begrippen": [
+        "maatschappelijk verantwoord ondernemen"
+      ],
+      "begrippen_via_presentatie": [],
+      "synoniemen": [
+        "mvo",
+        "duurzaam ondernemen"
+      ],
+      "wds": [
+        "D",
+        "S"
+      ],
+      "aantal_opgaven": 2
+    },
+    {
+      "id": "PIN-H3-13",
+      "label": "Externe effecten",
+      "hoofdstuk": 3,
+      "paragrafen": [
+        "3.2"
+      ],
+      "begrippen": [
+        "positieve externe effecten",
+        "negatieve externe effecten"
+      ],
+      "begrippen_via_presentatie": [],
+      "synoniemen": [
+        "extern effect",
+        "externe effecten",
+        "onbedoelde gevolgen",
+        "brede welvaart"
+      ],
+      "wds": [
+        "D",
+        "S"
+      ],
+      "aantal_opgaven": 2
+    },
+    {
+      "id": "PIN-H3-14",
+      "label": "Concrete en abstracte markt",
+      "hoofdstuk": 3,
+      "paragrafen": [
+        "3.3",
+        "Weet je het nog?"
+      ],
+      "begrippen": [
+        "concrete markt",
+        "abstracte markt"
+      ],
+      "begrippen_via_presentatie": [
+        "deelmarkt"
+      ],
+      "synoniemen": [
+        "markt",
+        "soorten markten",
+        "deelmarkten"
+      ],
+      "wds": [
+        "W",
+        "D"
+      ],
+      "aantal_opgaven": 5
+    },
+    {
+      "id": "PIN-H3-15",
+      "label": "Vraag en aanbod",
+      "hoofdstuk": 3,
+      "paragrafen": [
+        "3.3"
+      ],
+      "begrippen": [
+        "vraag",
+        "aanbod"
+      ],
+      "begrippen_via_presentatie": [
+        "vraaglijn",
+        "aanbodlijn",
+        "verschuiving"
+      ],
+      "synoniemen": [
+        "vraag naar",
+        "aanbod van",
+        "vragers",
+        "aanbieders",
+        "vraaglijn",
+        "aanbodlijn"
+      ],
+      "wds": [
+        "W",
+        "D",
+        "S"
+      ],
+      "aantal_opgaven": 12
+    },
+    {
+      "id": "PIN-H3-16",
+      "label": "Evenwichtsprijs en evenwichtshoeveelheid",
+      "hoofdstuk": 3,
+      "paragrafen": [
+        "3.3"
+      ],
+      "begrippen": [
+        "evenwichtsprijs",
+        "evenwichtshoeveelheid"
+      ],
+      "begrippen_via_presentatie": [],
+      "synoniemen": [
+        "marktevenwicht",
+        "evenwicht",
+        "prijs waarbij vraag en aanbod gelijk zijn"
+      ],
+      "wds": [
+        "D"
+      ],
+      "aantal_opgaven": 11
+    },
+    {
+      "id": "PIN-H3-17",
+      "label": "Vrije marktwerking, maximum- en minimumprijs",
+      "hoofdstuk": 3,
+      "paragrafen": [
+        "3.3"
+      ],
+      "begrippen": [
+        "vrije marktwerking",
+        "maximumprijs",
+        "minimumprijs"
+      ],
+      "begrippen_via_presentatie": [
+        "minimumloon",
+        "huurtoeslag"
+      ],
+      "synoniemen": [
+        "vrije markt",
+        "prijsregulering",
+        "maximumhuur",
+        "minimumloon"
+      ],
+      "wds": [
+        "W",
+        "S"
+      ],
+      "aantal_opgaven": 6
+    },
+    {
+      "id": "PIN-H3-18",
+      "label": "Transparante markt",
+      "hoofdstuk": 3,
+      "paragrafen": [
+        "3.3"
+      ],
+      "begrippen": [
+        "transparante markt"
+      ],
+      "begrippen_via_presentatie": [],
+      "synoniemen": [
+        "transparantie",
+        "doorzichtige markt",
+        "overzicht op de markt"
+      ],
+      "wds": [
+        "W",
+        "S"
+      ],
+      "aantal_opgaven": 4
+    },
+    {
+      "id": "PIN-H3-19",
+      "label": "Marktaandeel",
+      "hoofdstuk": 3,
+      "paragrafen": [
+        "3.4"
+      ],
+      "begrippen": [
+        "marktaandeel"
+      ],
+      "begrippen_via_presentatie": [],
+      "synoniemen": [
+        "aandeel in de markt",
+        "marktaandelen"
+      ],
+      "wds": [
+        "W",
+        "D",
+        "S"
+      ],
+      "aantal_opgaven": 3
+    },
+    {
+      "id": "PIN-H3-20",
+      "label": "Fusie en overname",
+      "hoofdstuk": 3,
+      "paragrafen": [
+        "3.4"
+      ],
+      "begrippen": [
+        "fusie"
+      ],
+      "begrippen_via_presentatie": [
+        "overname"
+      ],
+      "synoniemen": [
+        "fuseren",
+        "samengaan",
+        "overnemen"
+      ],
+      "wds": [
+        "W",
+        "S"
+      ],
+      "aantal_opgaven": 5
+    },
+    {
+      "id": "PIN-H3-21",
+      "label": "Homogene en heterogene producten",
+      "hoofdstuk": 3,
+      "paragrafen": [
+        "3.4"
+      ],
+      "begrippen": [
+        "homogeen product",
+        "heterogeen product"
+      ],
+      "begrippen_via_presentatie": [],
+      "synoniemen": [
+        "homogene goederen",
+        "heterogene goederen",
+        "identieke producten",
+        "merkverschil"
+      ],
+      "wds": [
+        "W",
+        "D",
+        "S"
+      ],
+      "aantal_opgaven": 6
+    },
+    {
+      "id": "PIN-H3-22",
+      "label": "Marktvormen",
+      "hoofdstuk": 3,
+      "paragrafen": [
+        "3.4"
+      ],
+      "begrippen": [
+        "volkomen concurrentie",
+        "monopolistische concurrentie",
+        "oligopolie"
+      ],
+      "begrippen_via_presentatie": [],
+      "synoniemen": [
+        "marktvorm",
+        "marktvormen",
+        "aantal aanbieders",
+        "concurrentievorm"
+      ],
+      "wds": [
+        "W",
+        "D",
+        "S"
+      ],
+      "aantal_opgaven": 10
+    },
+    {
+      "id": "PIN-H3-23",
+      "label": "Monopolie en soorten monopolie",
+      "hoofdstuk": 3,
+      "paragrafen": [
+        "3.4"
+      ],
+      "begrippen": [
+        "monopolie",
+        "natuurlijk monopolie",
+        "overheidsmonopolie",
+        "economisch monopolie"
+      ],
+      "begrippen_via_presentatie": [],
+      "synoniemen": [
+        "monopolist",
+        "enige aanbieder",
+        "octrooi",
+        "patent"
+      ],
+      "wds": [
+        "S"
+      ],
+      "aantal_opgaven": 2
+    },
+    {
+      "id": "PIN-H3-24",
+      "label": "Prijzenoorlog",
+      "hoofdstuk": 3,
+      "paragrafen": [
+        "3.4"
+      ],
+      "begrippen": [
+        "prijzenoorlog"
+      ],
+      "begrippen_via_presentatie": [],
+      "synoniemen": [
+        "prijsverlaging om marktaandeel",
+        "prijsgevecht"
+      ],
+      "wds": [
+        "S"
+      ],
+      "aantal_opgaven": 3
+    },
+    {
+      "id": "PIN-H3-25",
+      "label": "Kartel",
+      "hoofdstuk": 3,
+      "paragrafen": [
+        "3.4"
+      ],
+      "begrippen": [
+        "kartel"
+      ],
+      "begrippen_via_presentatie": [],
+      "synoniemen": [
+        "kartelafspraak",
+        "prijsafspraak",
+        "verboden afspraken",
+        "illegale afspraken"
+      ],
+      "wds": [
+        "W",
+        "S"
+      ],
+      "aantal_opgaven": 8
+    },
+    {
       "id": "PIN-A-01",
       "label": "Rekenen met percentages",
       "hoofdstuk": null,
@@ -1238,7 +1853,7 @@
       "wds": [
         "D"
       ],
-      "aantal_opgaven": 29
+      "aantal_opgaven": 35
     },
     {
       "id": "PIN-A-02",
@@ -1306,10 +1921,29 @@
       "wds": [
         "D"
       ],
-      "aantal_opgaven": 9
+      "aantal_opgaven": 13
     }
   ],
-  "buiten_toetsstof": [],
+  "buiten_toetsstof": [
+    {
+      "hoofdstuk": 3,
+      "label": "Vraag- en aanbodlijnen tekenen",
+      "waar": "H3 §3.3 opgave 4a, 5a en 5c, Herhalingsopdracht 16a en 16b, Plusopdracht 10a en 10b",
+      "reden": "Leerlingen hoeven op dit niveau geen vraag- of aanbodlijn te tekenen. Het aflezen en het bepalen van de nieuwe evenwichtsprijs blijft wel toetsstof."
+    },
+    {
+      "hoofdstuk": 3,
+      "label": "Stukloon en prestatiebeloning",
+      "waar": "H3 §3.2 opgave 5a en 5b",
+      "reden": "Staat niet in de begrippenlijst en dus niet in de syllabus."
+    },
+    {
+      "hoofdstuk": 3,
+      "label": "ACM",
+      "waar": "H3 §3.4 opgave 5a",
+      "reden": "Staat niet in de begrippenlijst en dus niet in de syllabus."
+    }
+  ],
   "aandachtspunten": [
     {
       "onderwerp": "PIN-H1-14",
@@ -1378,6 +2012,30 @@
     {
       "onderwerp": null,
       "punt": "22 onderwerpen hebben geen enkele opgave met de tag rekenen. Daar kan een leerling met een rekenfout niet naar een oefenopgave binnen het onderwerp zelf worden gestuurd; daarvoor zijn de basisvaardigheden PIN-A-01 tot en met PIN-A-04 bedoeld."
+    },
+    {
+      "onderwerp": "PIN-H3-10",
+      "punt": "De begrippenlijst omschrijft arbeidsproductiviteit als de productie per werknemer per uur, het boek (blz. 95) als de productie per persoon in een bepaalde tijd. De begrippenlijst is leidend; bij rekenopgaven per dag of per week moet de eenheid dus zelf worden omgerekend."
+    },
+    {
+      "onderwerp": "PIN-H3-13",
+      "punt": "Externe effecten komen in twee hoofdstukken voor: in H1 als maatschappelijke kosten en opbrengsten (PIN-H1-10), in H3 als positieve en negatieve externe effecten. Beide codes blijven bestaan omdat de begrippen in beide begrippenlijsten staan; opgaven die allebei raken zijn aan beide gekoppeld."
+    },
+    {
+      "onderwerp": "PIN-H3-01",
+      "punt": "Zes begrippen in één onderwerp, inclusief de beloning per productiefactor (rente of huur, loon, pacht, winst). Die beloningen staan niet los in de begrippenlijst maar wel in de aanvullingskolom; ze horen bij dezelfde vraag en leveren geen ander fouttype op."
+    },
+    {
+      "onderwerp": "PIN-H3-21",
+      "punt": "Het boek schrijft 'homogene goederen' en 'heterogene goederen', de begrippenlijst 'homogeen product' en 'heterogeen product'. Beide vormen staan als synoniem opgenomen."
+    },
+    {
+      "onderwerp": "PIN-H3-05",
+      "punt": "Het boek schrijft 'kostprijs per product', de begrippenlijst 'kostprijs'. Als synoniem opgenomen."
+    },
+    {
+      "onderwerp": "PIN-H2-15",
+      "punt": "Afgehandeld: §2.3 opgave 12b (huizenprijzen verklaren met vraag en aanbod) is nu ook gekoppeld aan PIN-H3-15."
     }
   ]
 }
