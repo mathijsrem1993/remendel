@@ -1,0 +1,150 @@
+{
+  "toetsId": "4H-PW-M2-H1",
+  "toets": "Proefwerk Module 2, hoofdstuk 1 (4 havo, 50 minuten, 23 punten)",
+  "docent": "Mathijs Remmerswaal",
+  "docenten": [
+    "Werter",
+    "Kloek",
+    "Kers",
+    "Rem"
+  ],
+  "nterm": 1,
+  "publicatie": "2026-11-17",
+  "nietGetoetst": [
+    "De collectieve vraag: individuele vraaglijnen optellen tot één collectieve vraaglijn (oefenboekje M2, paragraaf 1.2)"
+  ],
+  "vragen": [
+    {
+      "nr": "1",
+      "onderwerp": "Gevraagde hoeveelheid berekenen met een vraagfunctie",
+      "wds": "D",
+      "max": 1,
+      "oefenBoekje": "",
+      "oefenPE": "",
+      "geenOefenadvies": true,
+      "algemeneFeedback": "Oefen met de opgaven over de vraagfunctie in paragraaf 1.1 en 1.2 van je oefenboekje M2. Vul de prijs in de functie in en reken stap voor stap uit."
+    },
+    {
+      "nr": "2",
+      "onderwerp": "Prijselasticiteit van de vraag berekenen bij een prijsverlaging",
+      "wds": "D",
+      "max": 2,
+      "oefenBoekje": "",
+      "oefenPE": "",
+      "geenOefenadvies": true,
+      "algemeneFeedback": "Oefen met de rekenopgaven in paragraaf 1.3 (Prijselasticiteit) van je oefenboekje M2. Schrijf eerst %ΔQv en %ΔP apart uit en deel daarna pas.",
+      "specifiek": "Eerst de nieuwe afzet uitrekenen met de vraagfunctie (195 kaartjes), dan pas de procentuele veranderingen."
+    },
+    {
+      "nr": "3",
+      "onderwerp": "Prijselasticiteit en omzet: prijs verhogen of verlagen bij een elastische vraag",
+      "wds": "S",
+      "max": 2,
+      "oefenBoekje": "",
+      "oefenPE": "",
+      "geenOefenadvies": true,
+      "algemeneFeedback": "Oefen met de opgaven over elasticiteit en omzet in paragraaf 1.3 van je oefenboekje M2 en met de gemengde opgaven van hoofdstuk 1.",
+      "specifiek": "Een uitleg heeft twee stappen: de vraag is elastisch (Ev < –1), dus de afzet stijgt relatief meer dan de prijs daalt. Daardoor stijgt de omzet."
+    },
+    {
+      "nr": "4",
+      "onderwerp": "Invloed van substituten op de prijselasticiteit",
+      "wds": "S",
+      "max": 2,
+      "oefenBoekje": "",
+      "oefenPE": "",
+      "geenOefenadvies": true,
+      "algemeneFeedback": "Herhaal in paragraaf 1.3 van je oefenboekje M2 welke factoren de prijselasticiteit bepalen. Leg bij elke factor uit hoe de consument reageert."
+    },
+    {
+      "nr": "5",
+      "onderwerp": "Verklaren waarom de prijselasticiteit van de vraag (vrijwel) altijd negatief is",
+      "wds": "S",
+      "max": 2,
+      "oefenBoekje": "",
+      "oefenPE": "",
+      "geenOefenadvies": true,
+      "algemeneFeedback": "Herhaal in paragraaf 1.3 van je oefenboekje M2 de formule van de prijselasticiteit. Een verklaring noemt het verband tussen prijs en gevraagde hoeveelheid én wat dat doet met teller en noemer."
+    },
+    {
+      "nr": "6",
+      "onderwerp": "Nieuwe afzet berekenen met een gegeven prijselasticiteit",
+      "wds": "D",
+      "max": 2,
+      "oefenBoekje": "",
+      "oefenPE": "",
+      "geenOefenadvies": true,
+      "algemeneFeedback": "Oefen met de rekenopgaven in paragraaf 1.3 van je oefenboekje M2 waarbij de elasticiteit gegeven is. Reken eerst %ΔQv uit (Ev × %ΔP) en pas dat daarna toe op de oude afzet."
+    },
+    {
+      "nr": "7",
+      "onderwerp": "Verschuiving van of beweging langs de vraaglijn herkennen (A t/m D)",
+      "wds": "S",
+      "max": 3,
+      "oefenBoekje": "",
+      "oefenPE": "",
+      "geenOefenadvies": true,
+      "algemeneFeedback": "Oefen met de opgaven in paragraaf 1.1 en 1.2 van je oefenboekje M2. Vraag je steeds af: verandert de prijs van het product zelf (beweging langs de lijn) of iets anders (de hele lijn verschuift)?"
+    },
+    {
+      "nr": "8",
+      "onderwerp": "Vraaglijn tekenen vanuit een vraagfunctie",
+      "wds": "D",
+      "max": 1,
+      "oefenBoekje": "",
+      "oefenPE": "",
+      "geenOefenadvies": true,
+      "algemeneFeedback": "Oefen met het tekenen van vraaglijnen in paragraaf 1.1 en 1.2 van je oefenboekje M2. Bereken twee punten (bij p = 0 en bij Qv = 0) en let op de eenheden op de as (× 1000)."
+    },
+    {
+      "nr": "9",
+      "onderwerp": "Consumentensurplus arceren",
+      "wds": "D",
+      "max": 1,
+      "oefenBoekje": "",
+      "oefenPE": "",
+      "geenOefenadvies": true,
+      "algemeneFeedback": "Oefen met het consumentensurplus in opgave 2 en 5 van je oefenboekje M2. Het consumentensurplus is de driehoek onder de vraaglijn en boven de prijs."
+    },
+    {
+      "nr": "10",
+      "onderwerp": "Verandering van het consumentensurplus berekenen",
+      "wds": "D",
+      "max": 3,
+      "oefenBoekje": "",
+      "oefenPE": "",
+      "geenOefenadvies": true,
+      "algemeneFeedback": "Oefen met het berekenen van het consumentensurplus in opgave 2 en 5 van je oefenboekje M2. Bereken het surplus voor en na apart en trek ze daarna van elkaar af."
+    },
+    {
+      "nr": "11",
+      "onderwerp": "Soort goed bepalen met de inkomenselasticiteit (inferieur goed)",
+      "wds": "S",
+      "max": 1,
+      "oefenBoekje": "",
+      "oefenPE": "",
+      "geenOefenadvies": true,
+      "algemeneFeedback": "Herhaal in paragraaf 1.4 (Inkomenselasticiteit) van je oefenboekje M2 welke soorten goederen er zijn en bij welke waarde van de inkomenselasticiteit ze horen."
+    },
+    {
+      "nr": "12",
+      "onderwerp": "Waarde van de inkomenselasticiteit bepalen (inkomensonafhankelijk)",
+      "wds": "S",
+      "max": 1,
+      "oefenBoekje": "",
+      "oefenPE": "",
+      "geenOefenadvies": true,
+      "algemeneFeedback": "Herhaal in paragraaf 1.4 (Inkomenselasticiteit) van je oefenboekje M2 wat de waarde van de inkomenselasticiteit betekent: kleiner dan 0, 0, tussen 0 en 1, of groter dan 1."
+    },
+    {
+      "nr": "13",
+      "onderwerp": "Inkomenselasticiteit berekenen met een vraagfunctie",
+      "wds": "D",
+      "max": 2,
+      "oefenBoekje": "",
+      "oefenPE": "",
+      "geenOefenadvies": true,
+      "algemeneFeedback": "Oefen met de rekenopgaven in paragraaf 1.4 van je oefenboekje M2. Reken eerst Qv uit bij het oude en het nieuwe inkomen, daarna %ΔQv en %ΔI."
+    }
+  ]
+}

@@ -20,7 +20,7 @@ var KEUZE_DATA = [
   ] },
   { niveau: "HAVO", klassen: [
     { naam: "4 HAVO eco", items: [
-      { titel: "Proefwerk M1 (H1 + H2)", bron: "feedbacktool.html?v=1&toets=4h-pw-m1-h1h2" }
+      { titel: "Proefwerk M2 (H1)", bron: "feedbacktool.html?v=2&toets=4h-pw-m2-h1" }
     ] }
   ] },
   { niveau: "VWO", klassen: [
