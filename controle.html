@@ -54,12 +54,12 @@
 
   <div id="inhoud"></div>
 
-<script src="scripts/stofafbakening.js"></script>
+<script src="scripts/stofafbakening.js?v=2"></script>
 <script src="scripts/boeklabel.js"></script>
 <script>
 // Handmatig bijhouden welke toetsen er zijn (dezelfde bestanden als toetsen/*.json).
 // Alleen voor het keuzemenu van deze controlepagina.
-const BEKENDE_TOETSEN = ["4h-pw-m1-h1h2", "4m-se1-h1h2-v1", "4m-se1-h1h2-v2"];
+const BEKENDE_TOETSEN = ["4h-pw-m1-h1h2", "4h-pw-m2-h1", "4m-se1-h1h2-v1", "4m-se1-h1h2-v2"];
 
 function esc(s) { return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;'); }
 
@@ -78,8 +78,11 @@ async function laadStofdataVoor(toetsId) {
 // 4H-PW-M1-H1H2, hardgecodeerd. Slaagt of faalt zichtbaar, onafhankelijk van
 // welke toets er in het keuzemenu hieronder staat — zodat een latere
 // wijziging aan de logica (in scripts/stofafbakening.js) meteen opvalt.
+// November 2026 bewust aangepast (was 318 / 56 / 262 / 109 / 153): sindsdien
+// tellen alleen opgaven uit de getoetste hoofdstukken mee, en vallen de
+// opgaven uit H3 die een H1-, H2- of A-code dragen af.
 // ---------------------------------------------------------------------------
-const VERWACHT_4H_PW_M1_H1H2 = { binnenStofafbakening: 318, aftrekking: 56, adviespool: 262, alleenGeenAdvies: 109, strengeAdviespool: 153 };
+const VERWACHT_4H_PW_M1_H1H2 = { binnenStofafbakening: 303, aftrekking: 54, adviespool: 249, alleenGeenAdvies: 104, strengeAdviespool: 145 };
 
 async function voerRegressiecheckUit() {
   const el = document.getElementById("regressie");
@@ -96,7 +99,7 @@ async function voerRegressiecheckUit() {
     };
     const verschillen = Object.keys(VERWACHT_4H_PW_M1_H1H2).filter(k => VERWACHT_4H_PW_M1_H1H2[k] !== gevonden[k]);
     if (verschillen.length === 0) {
-      el.innerHTML = `<div class="check-ok">✓ Regressiecheck geslaagd — 4H-PW-M1-H1H2 geeft nog steeds 318 / 56 / 262 / 109 / 153.</div>`;
+      el.innerHTML = `<div class="check-ok">✓ Regressiecheck geslaagd — 4H-PW-M1-H1H2 geeft nog steeds ${Object.values(VERWACHT_4H_PW_M1_H1H2).join(" / ")}.</div>`;
     } else {
       el.innerHTML = `<div class="check-fout">✗ Regressiecheck GEFAALD — de berekening is veranderd: ${esc(verschillen.map(k => `${k} verwacht ${VERWACHT_4H_PW_M1_H1H2[k]}, nu ${gevonden[k]}`).join("; "))}</div>`;
     }
@@ -219,7 +222,7 @@ async function laad(toetsId) {
       ${kaart("Bereikbare adviespool (excl. alleen-geenOefenadvies)", strengeAdviespool, true)}
       ${kaart("Tussenstap — zo rekent de tool nu voor 'Niet alle stof is getoetst'", adviespool)}
     </div>
-    <p class="uitleg">De tool zelf blijft rekenen met de tussenstap (262) voor de lijst die leerlingen zien — dat is niet veranderd. De bereikbare adviespool (153) is wat overblijft als je de onderwerpen die uitsluitend in een geenOefenadvies-vraag voorkomen er ook uit haalt; die onderwerpen leveren toch nooit advies op.</p>
+    <p class="uitleg">De tool zelf blijft rekenen met de tussenstap (${adviespool.totaal}) voor de lijst die leerlingen zien — dat is niet veranderd. De bereikbare adviespool (${strengeAdviespool.totaal}) is wat overblijft als je de onderwerpen die uitsluitend in een geenOefenadvies-vraag voorkomen er ook uit haalt; die onderwerpen leveren toch nooit advies op.</p>
 
     <h2>Apart: onderwerpen die uitsluitend in een geenOefenadvies-vraag voorkomen</h2>
     <div class="kaarten">${kaart("Opgaven van deze onderwerpen", alleenGeenAdviesSom)}</div>

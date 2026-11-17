@@ -8,7 +8,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Newsreader:wght@400;500;600&family=Hanken+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js" defer></script>
-<script src="scripts/stofafbakening.js"></script>
+<script src="scripts/stofafbakening.js?v=2"></script>
 <script src="scripts/boeklabel.js"></script>
 <style>
   :root {
@@ -1189,7 +1189,8 @@ function berekenNietGetoetst() {
   return overCodes.map(code => {
     const ond = (BOEK_ONDERWERPEN.onderwerpen || []).find(o => o.id === code);
     const label = ond ? ond.label : code;
-    const rijen = alleRijen.filter(r => r.stof === true && Array.isArray(r.onderwerpen) && r.onderwerpen.includes(code));
+    const rijen = alleRijen.filter(r => r.stof === true && Array.isArray(r.onderwerpen) && r.onderwerpen.includes(code) &&
+      rijBinnenHoofdstukken(r, TOETS_STOFAFBAKENING));
 
     // Lesboek: op boekvolgorde (paginanummer), met paginanummer(s) erbij.
     const lesItems = groepeerOpGrondnummer(rijen.filter(r => r.bron === "lesboek"), alleRijen, "lesboek")
@@ -1308,7 +1309,7 @@ function vulOefenverwijzingenAan() {
     if (v.geenOefenadvies) return;
     if (!v.onderwerpen || !v.onderwerpen.length) return;
     const rijen = alleRijen.filter(r => r.stof === true && Array.isArray(r.onderwerpen) &&
-      r.onderwerpen.some(c => v.onderwerpen.includes(c)));
+      r.onderwerpen.some(c => v.onderwerpen.includes(c)) && rijBinnenHoofdstukken(r, TOETS_STOFAFBAKENING));
 
     const handmatigOefB = ontledHandmatig(v.oefenBoekje, false);
     const resterendOefB = MAX - handmatigOefB.aantal;

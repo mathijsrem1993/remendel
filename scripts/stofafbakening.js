@@ -13,6 +13,31 @@
 // van elke pagina (feedbacktool.html maakt er leesbare zinnen van met
 // grondnummer-samenvoeging, controle.html toont kale telling per code).
 // ----------------------------------------------------------------------------
+
+// Uit welk hoofdstuk komt een indexregel? Lesboekregels hebben een veld
+// hoofdstuk. Oefenboekjeregels hebben alleen een sectie; het hoofdstuk wordt
+// afgeleid uit "1.3 Prijselasticiteit", "gemengd H2" of "H2 §3". Lukt dat
+// niet (bv. "gemengd M1", "procenten"), dan null: onbekend.
+function hoofdstukVanRij(r) {
+  if (Number.isInteger(r.hoofdstuk)) return r.hoofdstuk;
+  const s = String(r.sectie || "");
+  const m = s.match(/^(\d+)\./) || s.match(/^gemengd H(\d+)/i) || s.match(/^H(\d+)\s*§/);
+  return m ? Number(m[1]) : null;
+}
+
+// Mag deze regel als oefenopgave dienen bij een toets met deze
+// stofafbakening? Alleen regels uit de getoetste hoofdstukken, zodat een
+// leerling geen opgave uit een hoofdstuk krijgt dat nog niet behandeld is
+// (een opgave uit H3 kan ook een H1- of A-code dragen). Regels waarvan het
+// hoofdstuk onbekend is blijven meedoen, net als alle regels bij een toets
+// zonder hoofdstukken in de stofafbakening.
+function rijBinnenHoofdstukken(r, stofafbakening) {
+  const hoofdstukken = stofafbakening && Array.isArray(stofafbakening.hoofdstukken) ? stofafbakening.hoofdstukken : [];
+  if (!hoofdstukken.length) return true;
+  const h = hoofdstukVanRij(r);
+  return h === null || hoofdstukken.includes(h);
+}
+
 function berekenStofafbakening(stofafbakening, vragen, onderwerpenData, indexData) {
   const hoofdstukken = Array.isArray(stofafbakening.hoofdstukken) ? stofafbakening.hoofdstukken : [];
   const extra = Array.isArray(stofafbakening.extra) ? stofafbakening.extra : [];
@@ -47,7 +72,8 @@ function berekenStofafbakening(stofafbakening, vragen, onderwerpenData, indexDat
   const strengNietGetoetstCodes = [...stofCodes].filter(c => !getoetst.has(c) || alleenGeenAdvies.includes(c)).sort();
 
   function telOpgaven(code) {
-    const rijen = (indexData.rijen || []).filter(r => r.stof === true && Array.isArray(r.onderwerpen) && r.onderwerpen.includes(code));
+    const rijen = (indexData.rijen || []).filter(r => r.stof === true && Array.isArray(r.onderwerpen) && r.onderwerpen.includes(code) &&
+      rijBinnenHoofdstukken(r, stofafbakening));
     const pe = rijen.filter(r => r.bron === "lesboek").length;
     const boekje = rijen.filter(r => r.bron === "oefenboekje").length;
     return { pe, boekje, totaal: pe + boekje };
